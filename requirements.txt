@@ -1,0 +1,14 @@
+# Procesamiento de Datos
+pandas==2.2.0
+numpy==1.26.0
+
+# Conectividad de Base de Datos
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.25
+
+# Ingesta (Scraping y APIs)
+requests==2.31.0
+beautifulsoup4==4.12.3
+
+# Visualización de Datos (Opcional para backend)
+networkx==3.2.1
