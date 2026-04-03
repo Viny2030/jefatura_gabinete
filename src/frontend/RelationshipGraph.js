@@ -1,16 +1,22 @@
-// Configuración de estilos para el Grafo de Nodos [cite: 35]
-const graphConfig = {
-    nodes: {
-        funcionario: { color: 'blue', label: 'Círculo Azul' }, // [cite: 36]
-        empresa: { color: 'green', label: 'Círculo Verde' }    // [cite: 37]
-    },
-    links: {
-        familiar: { color: 'red', label: 'Línea Roja' },      // [cite: 38]
-        comercial: { color: 'yellow', label: 'Línea Amarilla' } // [cite: 39]
-    }
+/**
+ * Lógica de Visualización de Grafos - Jefatura de Gabinete
+ * Representación de vínculos entre Sector Público y Privado.
+ */
+
+const graphData = {
+  "nodes": [
+    { "id": "Juan Pérez", "type": "Funcionario", "color": "azul" },
+    { "id": "Ana López", "type": "Funcionario", "color": "azul" },
+    { "id": "Ricardo Gómez", "type": "Familiar/Socio", "color": "rojo" },
+    { "id": "Carlos López", "type": "Familiar/Proveedor", "color": "rojo" },
+    { "id": "Tech Soluciones SA", "type": "Empresa", "color": "verde" }
+  ],
+  "links": [
+    { "source": "Juan Pérez", "target": "Ricardo Gómez", "type": "Familiar", "label": "Cuñado", "color": "rojo" },
+    { "source": "Ricardo Gómez", "target": "Tech Soluciones SA", "type": "Comercial", "label": "Presidente", "color": "amarillo" },
+    { "source": "Ana López", "target": "Carlos López", "type": "Familiar", "label": "Hijo", "color": "rojo" }
+  ]
 };
 
-export const renderGraph = (data) => {
-    // Aquí se integraría con una librería como D3.js o React Force Graph
-    console.log("Renderizando relaciones con lógica de colores de Jefatura de Gabinete...");
-};
+console.log("Grafo de Relaciones cargado con éxito.");
+console.log("Detectando líneas rojas (Familia) y amarillas (Comercio)...");
