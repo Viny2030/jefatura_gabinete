@@ -1,9 +1,7 @@
-cat <<EOF > src/engine/matrix_corporate.py
 import pandas as pd
 
 def analizar_vinculos_societarios():
-    # Datos basados en el documento: Relación Funcionario -> Empresa
-    # Cruza IGJ con Nómina de Personal 
+    # Datos basados en el documento: Relacion Funcionario -> Empresa
     data = {
         'Persona': ['Ricardo Gómez', 'Juan Pérez'],
         'Relacion_Funcionario': ['Cuñado (de Ministro)', 'Ministro'],
@@ -14,7 +12,7 @@ def analizar_vinculos_societarios():
     
     df = pd.DataFrame(data)
     
-    # Si la persona tiene acciones o roles vigentes, es un riesgo [cite: 28, 29]
+    # Riesgo: Si tiene acciones vigentes es un conflicto flagrante
     df['Riesgo_Conflicto'] = df['Participacion_Pct'].apply(
         lambda x: 'ALTO' if x > 0 else 'HISTÓRICO'
     )
@@ -24,4 +22,3 @@ def analizar_vinculos_societarios():
 
 if __name__ == "__main__":
     analizar_vinculos_societarios()
-EOF
