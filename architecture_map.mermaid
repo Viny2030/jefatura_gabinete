@@ -1,0 +1,17 @@
+graph TD
+    A[Fuentes Diarias] --> B[Capa de Ingesta - Bots Python]
+    B --> C[(Base de Datos Central - PostgreSQL)]
+    C --> D[Motor de Cruce e Inteligencia]
+    D --> E[Interfaz de Usuario - Frontend]
+
+    subgraph Fuentes
+    A1[Boletín Oficial - BORA]
+    A2[Licitaciones - COMPR.AR]
+    A3[Pagos - TGN]
+    end
+
+    subgraph Salidas Independientes
+    E1[Monitor de Contratos]
+    E2[Nómina de Personal]
+    E3[Alertas de Parentesco]
+    end
