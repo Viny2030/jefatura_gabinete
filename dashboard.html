@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monitor Anticorrupción — Jefatura de Gabinete</title>
+<style>
+:root {
+  --bg: #0f1117; --bg2: #1a1d26; --bg3: #22263a;
+  --text: #e8eaf0; --text2: #9ba3bf; --text3: #5c6480;
+  --azul: #3b82f6; --azul2: #1d4ed8; --verde: #22c55e; --verde2: #15803d;
+  --rojo: #ef4444; --rojo2: #991b1b; --amarillo: #eab308;
+  --naranja: #f97316; --gris: #6b7280;
+  --border: #2d3250; --card: #1e2235;
+  --alta: #ef4444; --media: #eab308;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); min-height: 100vh; }
+
+/* HEADER */
+.header { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 14px 28px; display: flex; align-items: center; gap: 16px; }
+.header-logo { width: 38px; height: 38px; background: linear-gradient(135deg, var(--azul), var(--naranja)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.header-title { font-size: 17px; font-weight: 600; }
+.header-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.header-badge { margin-left: auto; background: var(--rojo2); color: #fca5a5; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--rojo); }
+.ultima-act { font-size: 11px; color: var(--text3); margin-left: 12px; }
+
+/* LAYOUT */
+.main { padding: 24px 28px; max-width: 1400px; margin: 0 auto; }
+.grid-kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.grid-main { display: grid; grid-template-columns: 1fr 380px; gap: 20px; }
+@media (max-width: 1100px) { .grid-main { grid-template-columns: 1fr; } }
+
+/* KPI CARDS */
+.kpi { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.kpi-valor { font-size: 32px; font-weight: 700; line-height: 1; }
+.kpi-label { font-size: 12px; color: var(--text2); margin-top: 6px; }
+.kpi-sub { font-size: 11px; color: var(--text3); margin-top: 3px; }
+.kpi.alta .kpi-valor { color: var(--alta); }
+.kpi.media .kpi-valor { color: var(--media); }
+.kpi.azul .kpi-valor { color: var(--azul); }
+.kpi.verde .kpi-valor { color: var(--verde); }
+
+/* GRAFO */
+.panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.panel-header { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; }
+.panel-body { padding: 18px; }
+#grafo-canvas { width: 100%; height: 460px; background: var(--bg); border-radius: 8px; position: relative; overflow: hidden; cursor: grab; }
+#grafo-canvas:active { cursor: grabbing; }
+.grafo-leyenda { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 11px; color: var(--text2); }
+.leyenda-item { display: flex; align-items: center; gap: 5px; }
+.leyenda-dot { width: 10px; height: 10px; border-radius: 50%; }
+.leyenda-line { width: 18px; height: 2px; border-radius: 1px; }
+
+/* ALERTAS */
+.alertas-list { display: flex; flex-direction: column; gap: 10px; }
+.alerta-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 13px 15px; border-left: 3px solid var(--gris); }
+.alerta-card.alta { border-left-color: var(--alta); }
+.alerta-card.media { border-left-color: var(--media); }
+.alerta-tipo { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text3); }
+.alerta-desc { font-size: 13px; color: var(--text); margin-top: 5px; line-height: 1.4; }
+.alerta-meta { display: flex; gap: 12px; margin-top: 7px; flex-wrap: wrap; }
+.alerta-meta span { font-size: 11px; color: var(--text2); }
+.alerta-nivel { display: inline-block; font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px; margin-right: 6px; }
+.alerta-nivel.alta { background: #450a0a; color: #fca5a5; border: 1px solid var(--rojo2); }
+.alerta-nivel.media { background: #451a03; color: #fde68a; border: 1px solid #92400e; }
+
+/* FILTROS */
+.filtros { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.btn-filtro { background: var(--bg3); border: 1px solid var(--border); color: var(--text2); font-size: 12px; padding: 5px 12px; border-radius: 20px; cursor: pointer; transition: all .15s; }
+.btn-filtro:hover { border-color: var(--azul); color: var(--text); }
+.btn-filtro.active { background: var(--azul2); border-color: var(--azul); color: #fff; }
+
+/* TOOLTIP */
+.tooltip { position: fixed; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 12px; pointer-events: none; z-index: 100; max-width: 260px; display: none; }
+.tooltip strong { color: var(--text); display: block; margin-bottom: 4px; }
+.tooltip span { color: var(--text2); }
+
+/* SECTION TITLE */
+.sec { font-size: 13px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; }
+
+.empty { color: var(--text3); font-size: 13px; text-align: center; padding: 32px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">🏛</div>
+  <div>
+    <div class="header-title">Monitor Anticorrupción — Jefatura de Gabinete</div>
+    <div class="header-sub">Matrices de Parentesco · Societaria · Flujo de Fondos</div>
+  </div>
+  <div class="header-badge" id="badge-alertas">Cargando...</div>
+  <div class="ultima-act" id="ultima-act"></div>
+</div>
+
+<div class="main">
+
+  <!-- KPIs -->
+  <div class="grid-kpi" id="kpi-grid">
+    <div class="kpi alta"><div class="kpi-valor" id="k-alta">—</div><div class="kpi-label">Alertas ALTA</div><div class="kpi-sub">Requieren acción inmediata</div></div>
+    <div class="kpi media"><div class="kpi-valor" id="k-media">—</div><div class="kpi-label">Alertas MEDIA</div><div class="kpi-sub">Requieren seguimiento</div></div>
+    <div class="kpi azul"><div class="kpi-valor" id="k-func">—</div><div class="kpi-label">Funcionarios en alerta</div><div class="kpi-sub">Aparecen en algún cruce</div></div>
+    <div class="kpi verde"><div class="kpi-valor" id="k-emp">—</div><div class="kpi-label">Empresas vinculadas</div><div class="kpi-sub">Con contratos JGM</div></div>
+    <div class="kpi" style="--v:#ef4444"><div class="kpi-valor" id="k-familiar" style="color:#ef4444">—</div><div class="kpi-label">Vínculos familiares</div><div class="kpi-sub">Aristas rojas en el grafo</div></div>
+    <div class="kpi" style="--v:#eab308"><div class="kpi-valor" id="k-comercial" style="color:#eab308">—</div><div class="kpi-label">Vínculos comerciales</div><div class="kpi-sub">Funcionario = socio proveedor</div></div>
+  </div>
+
+  <div class="grid-main">
+
+    <!-- GRAFO + ALERTAS -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+
+      <!-- Grafo de nodos -->
+      <div class="panel">
+        <div class="panel-header">
+          🕸 Grafo de relaciones
+          <span style="font-size:11px;color:var(--text3);font-weight:400;margin-left:auto">Hover para detalles · Drag para mover</span>
+        </div>
+        <div class="panel-body">
+          <canvas id="grafo-canvas"></canvas>
+          <div class="grafo-leyenda">
+            <div class="leyenda-item"><div class="leyenda-dot" style="background:#3b82f6"></div> Funcionario</div>
+            <div class="leyenda-item"><div class="leyenda-dot" style="background:#22c55e"></div> Empresa proveedora</div>
+            <div class="leyenda-item"><div class="leyenda-line" style="background:#ef4444"></div> Vínculo familiar</div>
+            <div class="leyenda-item"><div class="leyenda-line" style="background:#eab308"></div> Vínculo comercial</div>
+            <div class="leyenda-item"><div class="leyenda-line" style="background:#f97316"></div> Flujo de fondos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de alertas -->
+      <div class="panel">
+        <div class="panel-header">⚠ Alertas detectadas</div>
+        <div class="panel-body">
+          <div class="filtros">
+            <button class="btn-filtro active" onclick="filtrarAlertas('todos')">Todas</button>
+            <button class="btn-filtro" onclick="filtrarAlertas('NEPOTISMO')">Nepotismo</button>
+            <button class="btn-filtro" onclick="filtrarAlertas('CONFLICTO_SOCIETARIO')">Societario</button>
+            <button class="btn-filtro" onclick="filtrarAlertas('DESVIO')">Flujo de fondos</button>
+            <button class="btn-filtro" onclick="filtrarAlertas('ALTA')">Solo ALTA</button>
+          </div>
+          <div class="alertas-list" id="alertas-list">
+            <div class="empty">Cargando alertas...</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR: fuentes y contratos -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+
+      <div class="panel">
+        <div class="panel-header">📡 Fuentes de datos</div>
+        <div class="panel-body">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div id="fuente-bora" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:12px;font-weight:600;color:var(--text)">📰 BORA</div>
+              <div style="font-size:11px;color:var(--text2);margin-top:4px">Boletín Oficial · Designaciones y decretos JGM</div>
+              <div id="bora-stat" style="font-size:11px;color:var(--text3);margin-top:4px">—</div>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:12px;font-weight:600;color:var(--text)">📋 COMPRAR / SIPRO</div>
+              <div style="font-size:11px;color:var(--text2);margin-top:4px">Contratos y adjudicaciones · Padrón de proveedores</div>
+              <div id="comprar-stat" style="font-size:11px;color:var(--text3);margin-top:4px">—</div>
+            </div>
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px">
+              <div style="font-size:12px;font-weight:600;color:var(--text)">💰 TGN / Presupuesto Abierto</div>
+              <div style="font-size:11px;color:var(--text2);margin-top:4px">Pagos reales · IAP Jurisdicción 25</div>
+              <div id="tgn-stat" style="font-size:11px;color:var(--text3);margin-top:4px">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">📊 Top contratos por monto</div>
+        <div class="panel-body">
+          <div id="top-contratos" style="display:flex;flex-direction:column;gap:8px">
+            <div class="empty">Sin datos de contratos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">🔎 Matriz de cumplimiento</div>
+        <div class="panel-body" style="font-size:12px;color:var(--text2);line-height:1.7">
+          <div style="margin-bottom:8px;font-weight:600;color:var(--text)">Datos publicables (art. 20 Ley 27.275)</div>
+          <div>✅ Sueldos y escalas salariales</div>
+          <div>✅ CUITs de proveedores</div>
+          <div>✅ Montos de contratos</div>
+          <div>✅ Declaraciones juradas</div>
+          <div style="margin-top:10px;font-weight:600;color:var(--text)">Protegidos — no publicar</div>
+          <div>🔒 Domicilio particular</div>
+          <div>🔒 DNI completo</div>
+          <div>🔒 Datos ANSES individuales</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ============================================================
+// Datos — se cargan desde data/inteligencia.json en Railway
+// En local file:// se inyectan via inject_json.py
+// ============================================================
+var DATOS = window.__JGM_DATA__ || null;
+var ALERTAS_TODAS = [];
+var GRAFO_DATA = { nodos: [], aristas: [] };
+
+// ============================================================
+// Carga de datos
+// ============================================================
+async function cargarDatos() {
+  if (DATOS) {
+    inicializar(DATOS);
+    return;
+  }
+  try {
+    var res = await fetch('/api/inteligencia');
+    if (!res.ok) throw new Error(res.status);
+    DATOS = await res.json();
+    inicializar(DATOS);
+  } catch(e) {
+    // Fallback: datos demo
+    DATOS = generarDemoData();
+    inicializar(DATOS);
+  }
+}
+
+function generarDemoData() {
+  return {
+    meta: { total_alertas: 3, alertas_alta: 1, alertas_media: 2,
+            funcionarios_analizados: 5, contratos_analizados: 0,
+            ultima_actualizacion: new Date().toISOString() },
+    alertas: [
+      { tipo_alerta: 'NEPOTISMO', nivel: 'ALTA', descripcion: 'Empresa "GOMEZ & ASOC SRL" tiene vínculo familiar con Subsecretario López Rodríguez', funcionario_contratante: 'LOPEZ RODRIGUEZ, CARLOS', monto_m: 12.5, proveedor: 'GOMEZ & ASOC SRL', fecha: '2025-11-15', nodo_a: 'F003', nodo_b: '20-56789012-3', tipo_enlace: 'familiar' },
+      { tipo_alerta: 'CONFLICTO_SOCIETARIO', nivel: 'MEDIA', descripcion: 'Funcionaria Fernández podría ser propietaria de empresa proveedora (similitud 0.78)', funcionario: 'FERNANDEZ, MARIA JOSE', empresa_razon_social: 'FERNANDEZ SOLUCIONES SA', monto_total_m: 4.2, nodo_a: 'F004', nodo_b: '27-45678901-2', tipo_enlace: 'comercial' },
+      { tipo_alerta: 'DESVIO_IAP_GLOBAL', nivel: 'MEDIA', descripcion: 'IAP global JGM = 0.94 (desvío 6% respecto al presupuesto)', iap: 0.94, desvio_pct: 6.0, nodo_a: 'JGM', nodo_b: 'TGN', tipo_enlace: 'flujo' }
+    ],
+    grafo: {
+      nodos: [
+        { id: 'F001', label: 'GARCIA PEREZ, JUAN CARLOS', tipo: 'funcionario', color: 'azul', cargo: 'Jefe de Gabinete', alertas: 0 },
+        { id: 'F002', label: 'MARTINEZ, ANA LUCIA', tipo: 'funcionario', color: 'azul', cargo: 'Sec. Innovación', alertas: 0 },
+        { id: 'F003', label: 'LOPEZ RODRIGUEZ, CARLOS', tipo: 'funcionario', color: 'azul', cargo: 'Subsec. RRHH', alertas: 1 },
+        { id: 'F004', label: 'FERNANDEZ, MARIA JOSE', tipo: 'funcionario', color: 'azul', cargo: 'Directora Compras', alertas: 1 },
+        { id: 'F005', label: 'GOMEZ, RICARDO D.', tipo: 'funcionario', color: 'azul', cargo: 'Coord. IT', alertas: 0 },
+        { id: '20-56789012-3', label: 'GOMEZ & ASOC SRL', tipo: 'empresa', color: 'verde', monto_total_m: 12.5, contratos: 3, alertas: 1 },
+        { id: '27-45678901-2', label: 'FERNANDEZ SOLUCIONES SA', tipo: 'empresa', color: 'verde', monto_total_m: 4.2, contratos: 1, alertas: 1 },
+      ],
+      aristas: [
+        { from: 'F003', to: '20-56789012-3', color: 'rojo', nivel: 'ALTA', descripcion: 'Vínculo familiar (cuñados)' },
+        { from: 'F004', to: '27-45678901-2', color: 'amarillo', nivel: 'MEDIA', descripcion: 'Posible participación societaria' },
+        { from: 'F003', to: 'F005', color: 'rojo', nivel: 'ALTA', descripcion: 'Cuñados' },
+      ],
+      stats: { nodos_funcionarios: 5, nodos_empresas: 2, aristas_rojas: 2, aristas_amarillas: 1 }
+    }
+  };
+}
+
+// ============================================================
+// Inicialización
+// ============================================================
+function inicializar(d) {
+  var meta = d.meta || {};
+  var grafo = d.grafo || {};
+  var stats = grafo.stats || {};
+
+  // Badge header
+  document.getElementById('badge-alertas').textContent = (meta.alertas_alta || 0) + ' alertas ALTA';
+  var ua = meta.ultima_actualizacion ? new Date(meta.ultima_actualizacion).toLocaleDateString('es-AR') : '';
+  document.getElementById('ultima-act').textContent = ua ? 'Actualizado: ' + ua : '';
+
+  // KPIs
+  document.getElementById('k-alta').textContent = meta.alertas_alta || 0;
+  document.getElementById('k-media').textContent = meta.alertas_media || 0;
+  document.getElementById('k-func').textContent = stats.nodos_funcionarios || meta.funcionarios_analizados || 0;
+  document.getElementById('k-emp').textContent = stats.nodos_empresas || 0;
+  document.getElementById('k-familiar').textContent = stats.aristas_rojas || 0;
+  document.getElementById('k-comercial').textContent = stats.aristas_amarillas || 0;
+
+  // Alertas
+  ALERTAS_TODAS = d.alertas || [];
+  renderAlertas(ALERTAS_TODAS);
+
+  // Grafo
+  GRAFO_DATA = grafo;
+  renderGrafo(grafo.nodos || [], grafo.aristas || []);
+
+  // Fuentes (stats desde los JSONs raw si disponibles)
+  document.getElementById('comprar-stat').textContent = meta.contratos_analizados
+    ? meta.contratos_analizados + ' contratos analizados'
+    : 'Pendiente de scraping';
+  document.getElementById('tgn-stat').textContent = 'Jurisdicción 25 (JGM)';
+  document.getElementById('bora-stat').textContent = 'Relevancia filtrada por organismo';
+
+  // Top contratos
+  renderTopContratos(d.alertas || []);
+}
+
+// ============================================================
+// Renderizado de alertas
+// ============================================================
+function renderAlertas(alertas) {
+  var el = document.getElementById('alertas-list');
+  if (!alertas.length) {
+    el.innerHTML = '<div class="empty">Sin alertas para este filtro</div>';
+    return;
+  }
+  el.innerHTML = alertas.slice(0, 20).map(function(a) {
+    var nivel = (a.nivel || 'MEDIA').toLowerCase();
+    var montoStr = a.monto_m ? '$' + a.monto_m.toFixed(1) + 'M ARS' : (a.monto_total_m ? '$' + a.monto_total_m.toFixed(1) + 'M ARS' : '');
+    var tipoLabel = {
+      'NEPOTISMO': '🔴 Nepotismo',
+      'CONFLICTO_SOCIETARIO': '🟡 Conflicto societario',
+      'DESVIO_IAP_GLOBAL': '🟠 Desvío presupuestario',
+      'DESVIO_PRESUPUESTARIO': '🟠 Desvío presupuestario',
+      'MONTO_ATIPICO': '🟡 Monto atípico',
+    }[a.tipo_alerta] || a.tipo_alerta;
+    return '<div class="alerta-card ' + nivel + '">'
+      + '<div class="alerta-tipo"><span class="alerta-nivel ' + nivel + '">' + (a.nivel || 'MEDIA') + '</span>' + tipoLabel + '</div>'
+      + '<div class="alerta-desc">' + (a.descripcion || '') + '</div>'
+      + '<div class="alerta-meta">'
+      + (montoStr ? '<span>💰 ' + montoStr + '</span>' : '')
+      + (a.fecha ? '<span>📅 ' + a.fecha + '</span>' : '')
+      + (a.fuente ? '<span>📡 ' + a.fuente + '</span>' : '')
+      + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+function filtrarAlertas(tipo) {
+  document.querySelectorAll('.btn-filtro').forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+  if (tipo === 'todos') { renderAlertas(ALERTAS_TODAS); return; }
+  if (tipo === 'ALTA') { renderAlertas(ALERTAS_TODAS.filter(function(a) { return a.nivel === 'ALTA'; })); return; }
+  if (tipo === 'DESVIO') { renderAlertas(ALERTAS_TODAS.filter(function(a) { return a.tipo_alerta && a.tipo_alerta.includes('DESVIO'); })); return; }
+  renderAlertas(ALERTAS_TODAS.filter(function(a) { return a.tipo_alerta === tipo; }));
+}
+
+function renderTopContratos(alertas) {
+  var contratos = alertas.filter(function(a) { return a.monto_m || a.monto_total_m; })
+    .sort(function(a, b) { return (b.monto_m || b.monto_total_m || 0) - (a.monto_m || a.monto_total_m || 0); })
+    .slice(0, 5);
+  var el = document.getElementById('top-contratos');
+  if (!contratos.length) { el.innerHTML = '<div class="empty">Sin contratos con montos</div>'; return; }
+  el.innerHTML = contratos.map(function(c) {
+    var monto = c.monto_m || c.monto_total_m || 0;
+    return '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px">'
+      + '<div style="font-size:12px;color:var(--text);font-weight:500">' + (c.proveedor || c.empresa_razon_social || '—') + '</div>'
+      + '<div style="font-size:11px;color:var(--text2);margin-top:3px">' + (c.descripcion_contrato || c.descripcion || '').slice(0, 80) + '</div>'
+      + '<div style="font-size:13px;font-weight:700;color:var(--naranja);margin-top:5px">$' + monto.toFixed(1) + 'M ARS</div>'
+      + '</div>';
+  }).join('');
+}
+
+// ============================================================
+// Grafo de nodos (Canvas 2D)
+// ============================================================
+var grafoState = { nodos: [], aristas: [], drag: null, offset: {x: 0, y: 0}, scale: 1, pan: {x: 0, y: 0} };
+
+function renderGrafo(nodos, aristas) {
+  var canvas = document.getElementById('grafo-canvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
+  // Posicionar nodos en layout circular/force-like simple
+  var cx = canvas.width / 2, cy = canvas.height / 2;
+  var R = Math.min(cx, cy) * 0.65;
+  nodos.forEach(function(n, i) {
+    var angle = (i / nodos.length) * Math.PI * 2 - Math.PI / 2;
+    n._x = cx + R * Math.cos(angle);
+    n._y = cy + R * Math.sin(angle);
+    n._r = n.tipo === 'funcionario' ? 22 : 18;
+    if (n.alertas > 0) n._r += 4;
+  });
+
+  grafoState.nodos = nodos;
+  grafoState.aristas = aristas;
+
+  dibujarGrafo(ctx, canvas);
+  setupGrafoEvents(canvas, ctx);
+}
+
+function dibujarGrafo(ctx, canvas) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  ctx.translate(grafoState.pan.x, grafoState.pan.y);
+  ctx.scale(grafoState.scale, grafoState.scale);
+
+  var nodos = grafoState.nodos;
+  var aristas = grafoState.aristas;
+  var nodoMap = {};
+  nodos.forEach(function(n) { nodoMap[n.id] = n; });
+
+  // Dibujar aristas
+  aristas.forEach(function(a) {
+    var na = nodoMap[a.from], nb = nodoMap[a.to];
+    if (!na || !nb) return;
+    ctx.beginPath();
+    ctx.moveTo(na._x, na._y);
+    ctx.lineTo(nb._x, nb._y);
+    var colores = { rojo: '#ef4444', amarillo: '#eab308', naranja: '#f97316', gris: '#6b7280' };
+    ctx.strokeStyle = colores[a.color] || '#6b7280';
+    ctx.lineWidth = a.nivel === 'ALTA' ? 2.5 : 1.5;
+    if (a.color === 'gris') ctx.setLineDash([4, 4]);
+    else ctx.setLineDash([]);
+    ctx.globalAlpha = 0.7;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.setLineDash([]);
+  });
+
+  // Dibujar nodos
+  nodos.forEach(function(n) {
+    var color = n.tipo === 'funcionario' ? '#1d4ed8' : '#15803d';
+    var colorBorde = n.tipo === 'funcionario' ? '#3b82f6' : '#22c55e';
+    if (n.alertas > 0) colorBorde = '#ef4444';
+
+    ctx.beginPath();
+    ctx.arc(n._x, n._y, n._r, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.strokeStyle = colorBorde;
+    ctx.lineWidth = n.alertas > 0 ? 2.5 : 1.5;
+    ctx.stroke();
+
+    // Label
+    var label = (n.label || '').split(',')[0].split(' ').slice(-1)[0]; // último apellido
+    ctx.fillStyle = '#e8eaf0';
+    ctx.font = '10px Segoe UI, system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(label, n._x, n._y + n._r + 13);
+
+    // Ícono alerta
+    if (n.alertas > 0) {
+      ctx.fillStyle = '#ef4444';
+      ctx.beginPath();
+      ctx.arc(n._x + n._r - 4, n._y - n._r + 4, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 8px sans-serif';
+      ctx.fillText(n.alertas, n._x + n._r - 4, n._y - n._r + 7);
+    }
+  });
+
+  ctx.restore();
+}
+
+function setupGrafoEvents(canvas, ctx) {
+  var tooltip = document.getElementById('tooltip');
+  var isDragging = false, lastPos = null;
+
+  canvas.addEventListener('mousemove', function(e) {
+    var rect = canvas.getBoundingClientRect();
+    var mx = (e.clientX - rect.left - grafoState.pan.x) / grafoState.scale;
+    var my = (e.clientY - rect.top - grafoState.pan.y) / grafoState.scale;
+
+    var hoveredNode = null;
+    grafoState.nodos.forEach(function(n) {
+      var d = Math.sqrt((mx - n._x) ** 2 + (my - n._y) ** 2);
+      if (d < n._r + 4) hoveredNode = n;
+    });
+
+    if (hoveredNode) {
+      tooltip.style.display = 'block';
+      tooltip.style.left = (e.clientX + 14) + 'px';
+      tooltip.style.top = (e.clientY - 10) + 'px';
+      var extra = hoveredNode.tipo === 'funcionario'
+        ? '<span>' + (hoveredNode.cargo || '') + '</span>'
+        : '<span>Contratos: ' + (hoveredNode.contratos || 0) + ' · $' + (hoveredNode.monto_total_m || 0).toFixed(1) + 'M</span>';
+      tooltip.innerHTML = '<strong>' + hoveredNode.label + '</strong>' + extra
+        + (hoveredNode.alertas ? '<br><span style="color:#ef4444">⚠ ' + hoveredNode.alertas + ' alerta(s)</span>' : '');
+    } else {
+      tooltip.style.display = 'none';
+    }
+
+    if (isDragging && lastPos) {
+      grafoState.pan.x += e.clientX - lastPos.x;
+      grafoState.pan.y += e.clientY - lastPos.y;
+      lastPos = { x: e.clientX, y: e.clientY };
+      dibujarGrafo(ctx, canvas);
+    }
+  });
+
+  canvas.addEventListener('mousedown', function(e) { isDragging = true; lastPos = { x: e.clientX, y: e.clientY }; });
+  canvas.addEventListener('mouseup', function() { isDragging = false; lastPos = null; });
+  canvas.addEventListener('mouseleave', function() { isDragging = false; tooltip.style.display = 'none'; });
+
+  canvas.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    grafoState.scale = Math.max(0.4, Math.min(3, grafoState.scale * (e.deltaY < 0 ? 1.1 : 0.9)));
+    dibujarGrafo(ctx, canvas);
+  }, { passive: false });
+
+  window.addEventListener('resize', function() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    dibujarGrafo(ctx, canvas);
+  });
+}
+
+// Arrancar
+cargarDatos();
+</script>
+</body>
+</html>
