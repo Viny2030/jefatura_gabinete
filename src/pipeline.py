@@ -2,7 +2,6 @@
 pipeline.py
 ===========
 Orquestador principal del portal anticorrupción JGM.
-Corre en orden: scrapers → motor de matrices → genera data/inteligencia.json
 
 Uso:
     python pipeline.py                    # pipeline completo
@@ -11,11 +10,6 @@ Uso:
     python pipeline.py --step bora        # solo BORA
     python pipeline.py --step comprar     # solo COMPRAR
     python pipeline.py --step tgn         # solo TGN
-
-Scheduling:
-    - Cron diario (BORA, TGN): 0 7 * * *
-    - Cron semanal (COMPRAR completo): 0 6 * * 1
-    - GitHub Action: .github/workflows/update_data.yml
 """
 
 import argparse
@@ -25,69 +19,66 @@ import sys
 import time
 from datetime import datetime
 
-# Ajustar path para imports relativos
-sys.path.insert(0, os.path.dirname(__file__))
+# Ajustar path — funciona desde src/ o desde raiz del proyecto
+_SRC = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _SRC)
+sys.path.insert(0, os.path.join(_SRC, "ingestion"))
+sys.path.insert(0, os.path.join(_SRC, "engine"))
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
+DATA_DIR = os.path.join(_SRC, "..", "data")
 
 
-def run_step(nombre: str, func, *args, **kwargs):
-    """Ejecuta un step con logging de tiempo y manejo de errores."""
-    print(f"\n{'='*60}")
-    print(f"[PIPELINE] STEP: {nombre}")
-    print(f"{'='*60}")
+def run_step(nombre, func, *args, **kwargs):
+    print("\n" + "="*60)
+    print("[PIPELINE] STEP: " + nombre)
+    print("="*60)
     t0 = time.time()
     try:
         result = func(*args, **kwargs)
-        elapsed = time.time() - t0
-        print(f"[OK] {nombre} completado en {elapsed:.1f}s")
+        print("[OK] {} completado en {:.1f}s".format(nombre, time.time() - t0))
         return result
     except Exception as e:
-        elapsed = time.time() - t0
-        print(f"[ERROR] {nombre} falló en {elapsed:.1f}s: {e}")
+        print("[ERROR] {} falló en {:.1f}s: {}".format(nombre, time.time() - t0, e))
         import traceback
         traceback.print_exc()
         return None
 
 
-def step_bora(dias: int = 1):
-    from ingestion.extractor_bora import run as bora_run, save as bora_save
-    data = bora_run(dias=dias)
-    bora_save(data)
+def step_bora(dias=1):
+    import extractor_bora as m
+    data = m.run(dias=dias)
+    m.save(data)
     return data
 
 
-def step_comprar(anio: int = None):
-    from ingestion.extractor_comprar import run as comprar_run, save as comprar_save
-    data = comprar_run(anio=anio)
-    comprar_save(data)
+def step_comprar(anio=None):
+    import extractor_comprar as m
+    data = m.run(anio=anio)
+    m.save(data)
     return data
 
 
-def step_tgn(anio: int = None):
-    from ingestion.extractor_tgn import run as tgn_run, save as tgn_save
-    data = tgn_run(anio=anio)
-    tgn_save(data)
+def step_tgn(anio=None):
+    import extractor_tgn as m
+    data = m.run(anio=anio)
+    m.save(data)
     return data
 
 
-def step_motor(solo: str = None):
-    from engine.motor_matrices import run as motor_run, save as motor_save
-    data = motor_run(solo=solo)
-    motor_save(data)
+def step_motor(solo=None):
+    import motor_matrices as m
+    data = m.run(solo=solo)
+    m.save(data)
     return data
 
 
-def generar_resumen(inteligencia: dict) -> dict:
-    """Genera un resumen ejecutivo para el dashboard."""
+def generar_resumen(inteligencia):
     if not inteligencia:
         return {}
-
     meta = inteligencia.get("meta", {})
     alertas = inteligencia.get("alertas", [])
     grafo = inteligencia.get("grafo", {})
 
-    # Agrupar alertas por tipo
     tipos = {}
     for a in alertas:
         t = a.get("tipo_alerta", "OTRO")
@@ -99,14 +90,7 @@ def generar_resumen(inteligencia: dict) -> dict:
         else:
             tipos[t]["media"] += 1
 
-    # Top 5 alertas de mayor impacto financiero
-    alertas_financieras = sorted(
-        [a for a in alertas if a.get("monto_m") or a.get("monto_total_m")],
-        key=lambda x: x.get("monto_m") or x.get("monto_total_m") or 0,
-        reverse=True
-    )[:5]
-
-    resumen = {
+    return {
         "kpis": {
             "total_alertas": meta.get("total_alertas", 0),
             "alertas_alta": meta.get("alertas_alta", 0),
@@ -117,23 +101,19 @@ def generar_resumen(inteligencia: dict) -> dict:
             "vinculos_comerciales": grafo.get("stats", {}).get("aristas_amarillas", 0),
         },
         "por_tipo": tipos,
-        "top_alertas_financieras": alertas_financieras,
         "ultima_actualizacion": meta.get("ultima_actualizacion", ""),
         "fuentes": ["BORA", "COMPRAR/SIPRO", "TGN/Presupuesto Abierto"]
     }
 
-    return resumen
 
-
-def run_pipeline(steps: list = None, dias_bora: int = 1, anio: int = None):
-    """Corre el pipeline completo o los steps especificados."""
+def run_pipeline(steps=None, dias_bora=1, anio=None):
     t_total = time.time()
     all_steps = steps or ["bora", "comprar", "tgn", "motor"]
 
-    print(f"\n{'#'*60}")
-    print(f"# PIPELINE ANTICORRUPCIÓN JGM — {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"# Steps: {', '.join(all_steps)}")
-    print(f"{'#'*60}")
+    print("\n" + "#"*60)
+    print("# PIPELINE ANTICORRUPCIÓN JGM — " + datetime.now().strftime("%Y-%m-%d %H:%M"))
+    print("# Steps: " + ", ".join(all_steps))
+    print("#"*60)
 
     os.makedirs(DATA_DIR, exist_ok=True)
 
@@ -155,25 +135,26 @@ def run_pipeline(steps: list = None, dias_bora: int = 1, anio: int = None):
         resumen_path = os.path.join(DATA_DIR, "resumen.json")
         with open(resumen_path, "w", encoding="utf-8") as f:
             json.dump(resumen, f, ensure_ascii=False, indent=2)
-        print(f"[OK] Resumen guardado en {resumen_path}")
+        print("[OK] Resumen guardado en " + resumen_path)
 
-    elapsed_total = time.time() - t_total
-    print(f"\n{'#'*60}")
-    print(f"# PIPELINE COMPLETADO en {elapsed_total:.1f}s")
+    print("\n" + "#"*60)
+    print("# PIPELINE COMPLETADO en {:.1f}s".format(time.time() - t_total))
     if inteligencia:
         meta = inteligencia.get("meta", {})
-        print(f"# Alertas: {meta.get('total_alertas',0)} ({meta.get('alertas_alta',0)} ALTA, {meta.get('alertas_media',0)} MEDIA)")
-    print(f"{'#'*60}\n")
-
+        print("# Alertas: {} ({} ALTA, {} MEDIA)".format(
+            meta.get("total_alertas", 0),
+            meta.get("alertas_alta", 0),
+            meta.get("alertas_media", 0)
+        ))
+    print("#"*60 + "\n")
     return inteligencia
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Pipeline anticorrupción JGM")
-    parser.add_argument("--step", choices=["bora", "comprar", "tgn", "motor", "ingesta"],
-                        help="Step específico a correr")
-    parser.add_argument("--dias", type=int, default=1, help="Días de BORA hacia atrás")
-    parser.add_argument("--anio", type=int, help="Año para COMPRAR y TGN")
+    parser.add_argument("--step", choices=["bora", "comprar", "tgn", "motor", "ingesta"])
+    parser.add_argument("--dias", type=int, default=1)
+    parser.add_argument("--anio", type=int)
     args = parser.parse_args()
 
     steps = [args.step] if args.step else None
