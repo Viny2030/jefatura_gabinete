@@ -1,17 +1,21 @@
 """
 extractor_comprar.py
 ====================
-Extractor de contratos y licitaciones de la Jefatura de Gabinete de Ministros.
+Extractor de contratos y licitaciones de la Jefatura de Gabinete (SAF 25).
 
-Fuentes:
-  1. datos.gob.ar — dataset ONC / COMPRAR (CSV público, sin auth)
-     URL: https://infra.datos.gob.ar/catalog/modernizacion/dataset/2/
-  2. API OCDS de datos.gob.ar — estándar Open Contracting
+Fuente real: infra.datos.gob.ar/catalog/jgm/dataset/4/
+  - Convocatorias: distribution/4.{N}/download/convocatorias-{anio}.csv
+  - Adjudicaciones: distribution/4.{N}/download/adjudicaciones-{anio}.csv
+  - Proveedores:   distribution/2.11/download/proveedores.csv (catalogo modernizacion)
+
+Columnas clave en adjudicaciones:
+  Nro SAF | Descripcion SAF | Nro UOC | CUIT | Descripción Proveedor | Monto | Tipo de Procedimiento
+
+El SAF 25 = Jefatura de Gabinete de Ministros.
 
 Uso:
     python extractor_comprar.py
-    python extractor_comprar.py --anio 2025
-    python extractor_comprar.py --organismo "jefatura"
+    python extractor_comprar.py --anio 2024
 """
 
 import argparse
@@ -25,50 +29,73 @@ from datetime import datetime
 import requests
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; JefaturaMonitor/1.0)"}
-TIMEOUT = 60
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data")
+TIMEOUT = 90
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
 
-# Codigos de unidad operativa de Jefatura de Gabinete
-# UO 25 = Jefatura de Gabinete de Ministros
-JGM_CODIGOS_UO = {"25", "025"}
-JGM_TERMINOS = ["jefatura de gabinete", "jgm", "secretaria de innovacion publica"]
+# SAF 25 = Jefatura de Gabinete
+JGM_SAF = {"25"}
+JGM_TERMINOS = ["jefatura de gabinete", "jgm", "innovacion publica", "modernizacion"]
 
-# URLs de datasets de contrataciones en datos.gob.ar
-DATASETS = {
-    "convocatorias": "https://infra.datos.gob.ar/catalog/modernizacion/dataset/2/distribution/2.1/download/convocatorias-{anio}.csv",
-    "adjudicaciones": "https://infra.datos.gob.ar/catalog/modernizacion/dataset/2/distribution/2.4/download/adjudicaciones-{anio}.csv",
-    "contratos": "https://infra.datos.gob.ar/catalog/modernizacion/dataset/2/distribution/2.3/download/contratos-{anio}.csv",
-    "proveedores": "https://infra.datos.gob.ar/catalog/modernizacion/dataset/2/distribution/2.6/download/proveedores.csv",
+# URLs reales del catalogo jgm en infra.datos.gob.ar
+# El numero de distribution cambia por anio — mapeamos los conocidos
+URL_CONVOCATORIAS = {
+    2025: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.37/download/convocatorias-2025.csv",
+    2024: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.35/download/convocatorias-2024.csv",
+    2023: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.33/download/convocatorias-2023.csv",
+    2022: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.31/download/convocatorias-2022.csv",
+    2021: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.28/download/convocatorias-2021.csv",
+    2020: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.24/download/convocatorias-2020.csv",
 }
 
+URL_ADJUDICACIONES = {
+    2025: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.38/download/adjudicaciones-2025.csv",
+    2024: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.36/download/adjudicaciones-2024.csv",
+    2023: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.34/download/adjudicaciones-2023.csv",
+    2022: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.32/download/adjudicaciones-2022.csv",
+    2021: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.29/download/adjudicaciones-2021.csv",
+    2020: "https://infra.datos.gob.ar/catalog/jgm/dataset/4/distribution/4.20/download/adjudicaciones-2020.csv",
+}
 
-def _es_jgm(row: dict) -> bool:
-    """Detecta si una fila de contratación pertenece a JGM."""
-    uo = str(row.get("unidad_operativa", "") or row.get("codigo_organismo", "")).strip()
-    organismo = (row.get("organismo", "") or row.get("nombre_organismo", "") or "").lower()
-    if uo in JGM_CODIGOS_UO:
+URL_PROVEEDORES = "https://infra.datos.gob.ar/catalog/modernizacion/dataset/2/distribution/2.11/download/proveedores.csv"
+
+
+def _es_jgm(row):
+    saf = str(row.get("Nro SAF") or row.get("nro_saf") or row.get("unidad_operativa") or "").strip()
+    desc = (row.get("Descripcion SAF") or row.get("descripcion_saf") or row.get("organismo") or "").lower()
+    if saf in JGM_SAF:
         return True
-    return any(term in organismo for term in JGM_TERMINOS)
+    return any(t in desc for t in JGM_TERMINOS)
 
 
-def fetch_csv(url: str) -> list:
-    """Descarga y parsea un CSV de datos.gob.ar."""
+def _float(v):
+    try:
+        return float(str(v).replace(".", "").replace(",", ".").strip() or "0")
+    except ValueError:
+        return 0.0
+
+
+def fetch_csv(url):
     try:
         res = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
         if res.status_code == 404:
+            print("[WARN] 404: " + url[:80])
             return []
         res.raise_for_status()
+        # El CSV usa ; como separador
         content = res.content.decode("utf-8", errors="replace")
-        reader = csv.DictReader(io.StringIO(content))
+        sep = ";" if content.count(";") > content.count(",") else ","
+        reader = csv.DictReader(io.StringIO(content), delimiter=sep)
         return list(reader)
     except Exception as e:
-        print(f"[WARN] {url[:80]}: {e}")
+        print("[WARN] {}: {}".format(url[:80], e))
         return []
 
 
-def fetch_convocatorias(anio: int) -> list:
-    """Trae licitaciones convocadas del año dado."""
-    url = DATASETS["convocatorias"].format(anio=anio)
+def fetch_convocatorias(anio):
+    url = URL_CONVOCATORIAS.get(anio)
+    if not url:
+        print("[WARN] COMPRAR: sin URL de convocatorias para {}".format(anio))
+        return []
     rows = fetch_csv(url)
     resultado = []
     for row in rows:
@@ -78,23 +105,26 @@ def fetch_convocatorias(anio: int) -> list:
             "fuente": "COMPRAR",
             "tipo": "convocatoria",
             "anio": anio,
-            "numero_proceso": row.get("numero_proceso_de_compra") or row.get("nro_proceso") or "",
-            "modalidad": row.get("modalidad_de_contratacion") or row.get("modalidad") or "",
-            "descripcion": (row.get("descripcion") or row.get("objeto") or "")[:300],
-            "organismo": row.get("nombre_organismo") or row.get("organismo") or "JGM",
-            "monto_estimado": _parse_monto(row.get("monto_estimado") or row.get("monto") or ""),
-            "fecha_publicacion": row.get("fecha_publicacion") or row.get("fecha") or "",
-            "estado": row.get("estado") or "convocatoria",
+            "numero_proceso": row.get("Número Procedimiento") or row.get("numero_proceso") or "",
+            "modalidad": row.get("Tipo de Procedimiento") or row.get("modalidad") or "",
+            "descripcion": (row.get("Descripcion") or row.get("descripcion") or "")[:300],
+            "organismo": row.get("Descripcion SAF") or row.get("descripcion_saf") or "JGM",
+            "unidad": row.get("Descripcion UOC") or row.get("descripcion_uoc") or "",
+            "monto_estimado": _float(row.get("Monto") or row.get("monto") or "0"),
+            "fecha_publicacion": row.get("Fecha de Adjudicación") or row.get("fecha") or "",
+            "estado": "convocatoria",
             "proveedor_cuit": "",
             "proveedor_nombre": "",
         })
-    print(f"[COMPRAR] Convocatorias {anio}: {len(resultado)} de JGM")
+    print("[COMPRAR] Convocatorias {}: {} de JGM".format(anio, len(resultado)))
     return resultado
 
 
-def fetch_adjudicaciones(anio: int) -> list:
-    """Trae licitaciones adjudicadas — acá están el CUIT y proveedor ganador."""
-    url = DATASETS["adjudicaciones"].format(anio=anio)
+def fetch_adjudicaciones(anio):
+    url = URL_ADJUDICACIONES.get(anio)
+    if not url:
+        print("[WARN] COMPRAR: sin URL de adjudicaciones para {}".format(anio))
+        return []
     rows = fetch_csv(url)
     resultado = []
     for row in rows:
@@ -104,75 +134,57 @@ def fetch_adjudicaciones(anio: int) -> list:
             "fuente": "COMPRAR",
             "tipo": "adjudicacion",
             "anio": anio,
-            "numero_proceso": row.get("numero_proceso_de_compra") or row.get("nro_proceso") or "",
-            "modalidad": row.get("modalidad_de_contratacion") or row.get("modalidad") or "",
-            "descripcion": (row.get("descripcion") or row.get("objeto") or "")[:300],
-            "organismo": row.get("nombre_organismo") or row.get("organismo") or "JGM",
-            "monto_estimado": _parse_monto(row.get("monto_total") or row.get("monto_adjudicado") or ""),
-            "fecha_publicacion": row.get("fecha_publicacion") or row.get("fecha_adjudicacion") or "",
+            "numero_proceso": row.get("Número Procedimiento") or row.get("numero_proceso") or "",
+            "modalidad": row.get("Tipo de Procedimiento") or row.get("modalidad") or "",
+            "descripcion": (row.get("Descripcion") or row.get("descripcion") or "")[:300],
+            "organismo": row.get("Descripcion SAF") or row.get("descripcion_saf") or "JGM",
+            "unidad": row.get("Descripcion UOC") or row.get("descripcion_uoc") or "",
+            "monto_estimado": _float(row.get("Monto") or row.get("monto") or "0"),
+            "fecha_publicacion": row.get("Fecha de Adjudicación") or row.get("fecha_adjudicacion") or "",
             "estado": "adjudicada",
-            "proveedor_cuit": row.get("cuit_proveedor") or row.get("cuit") or "",
-            "proveedor_nombre": row.get("razon_social") or row.get("proveedor") or "",
+            "proveedor_cuit": row.get("CUIT") or row.get("cuit") or "",
+            "proveedor_nombre": row.get("Descripción Proveedor") or row.get("razon_social") or "",
         })
-    print(f"[COMPRAR] Adjudicaciones {anio}: {len(resultado)} de JGM")
+    print("[COMPRAR] Adjudicaciones {}: {} de JGM".format(anio, len(resultado)))
     return resultado
 
 
-def fetch_proveedores() -> dict:
-    """
-    Descarga el padrón de proveedores (SIPRO) para enriquecer con datos del proveedor.
-    Devuelve dict CUIT -> datos.
-    """
-    url = DATASETS["proveedores"]
-    rows = fetch_csv(url)
+def fetch_proveedores():
+    rows = fetch_csv(URL_PROVEEDORES)
     mapa = {}
     for row in rows:
-        cuit = str(row.get("cuit") or row.get("nro_cuit") or "").strip()
+        cuit = str(row.get("cuit___nit") or row.get("cuit") or "").strip()
         if cuit:
             mapa[cuit] = {
                 "cuit": cuit,
-                "razon_social": row.get("razon_social") or row.get("nombre") or "",
-                "tipo_empresa": row.get("tipo_persona") or row.get("tipo") or "",
-                "estado_sipro": row.get("estado") or "",
+                "razon_social": row.get("razon_social") or "",
+                "tipo": row.get("tipo_de_personeria") or "",
+                "localidad": row.get("localidad") or "",
+                "rubros": row.get("rubros") or "",
             }
-    print(f"[COMPRAR] Proveedores SIPRO: {len(mapa)} registros")
+    print("[COMPRAR] Proveedores SIPRO: {} registros".format(len(mapa)))
     return mapa
 
 
-def _parse_monto(valor: str) -> float:
-    """Convierte string de monto a float."""
-    if not valor:
-        return 0.0
-    try:
-        return float(re.sub(r"[^\d.,]", "", str(valor)).replace(",", ".") or "0")
-    except ValueError:
-        return 0.0
-
-
-def run(anio: int = None, organismo_filtro: str = None) -> dict:
+def run(anio=None):
     if anio is None:
         anio = datetime.now().year
 
-    # Traer anio actual + anterior (contratos pueden cruzar años)
     contratos = []
-    for a in [anio, anio - 1]:
+    # Traer 3 años para tener contexto histórico
+    for a in [anio, anio - 1, anio - 2]:
         contratos.extend(fetch_convocatorias(a))
         contratos.extend(fetch_adjudicaciones(a))
 
-    # Filtro adicional por organismo si se especifica
-    if organismo_filtro:
-        filtro = organismo_filtro.lower()
-        contratos = [c for c in contratos if filtro in c.get("organismo", "").lower()]
-
     proveedores = fetch_proveedores()
 
-    # Enriquecer contratos con datos del proveedor
+    # Enriquecer con datos del proveedor
     for c in contratos:
         cuit = c.get("proveedor_cuit", "")
         if cuit and cuit in proveedores:
             c["proveedor_datos"] = proveedores[cuit]
 
-    print(f"[COMPRAR] Total: {len(contratos)} contratos/licitaciones JGM")
+    print("[COMPRAR] Total: {} contratos/licitaciones JGM".format(len(contratos)))
     return {
         "contratos": contratos,
         "proveedores": proveedores,
@@ -185,20 +197,18 @@ def run(anio: int = None, organismo_filtro: str = None) -> dict:
     }
 
 
-def save(data: dict, path: str = None):
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+def save(data, path=None):
+    os.makedirs(DATA_DIR, exist_ok=True)
     if path is None:
-        path = os.path.join(OUTPUT_DIR, "comprar_raw.json")
+        path = os.path.join(DATA_DIR, "comprar_raw.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"[COMPRAR] Guardado en {path}")
+    print("[COMPRAR] Guardado en " + path)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--anio", type=int, help="Año (default: actual)")
-    parser.add_argument("--organismo", help="Filtro adicional por organismo")
+    parser.add_argument("--anio", type=int)
     args = parser.parse_args()
-
-    data = run(anio=args.anio, organismo_filtro=args.organismo)
+    data = run(anio=args.anio)
     save(data)
