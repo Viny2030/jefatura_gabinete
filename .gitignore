@@ -1,20 +1,7 @@
-# Entorno Virtual
-venv/
-.env
-
-# Python
+.venv/
+.idea/
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Base de Datos (Local)
-*.sqlite3
-postgres-data/
-
-# Logs y Temporales
-*.log
-log_ingesta_*.json
-
-# OS
-.DS_Store
-Thumbs.db
+*.pyc
+data/
+.env
+*.egg-info/

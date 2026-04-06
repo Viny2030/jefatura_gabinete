@@ -1,0 +1,56 @@
+name: Actualizar datos diarios
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 6 AM Argentina (UTC-3)
+  workflow_dispatch:        # ejecución manual desde GitHub
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Scraper COMPR.AR (adjudicaciones)
+        run: python src/ingestion/scraper_comprar.py
+        continue-on-error: true
+
+      - name: Scraper BORA (resoluciones)
+        run: python src/ingestion/scraper_bora.py
+        continue-on-error: true
+
+      - name: Scraper nómina JGM
+        run: python src/ingestion/scraper_nomina.py
+        continue-on-error: true
+
+      - name: Motor de cruce - parentesco
+        run: python src/engine/matrix_kinship.py
+        continue-on-error: true
+
+      - name: Motor de cruce - societario
+        run: python src/engine/matrix_corporate.py
+        continue-on-error: true
+
+      - name: Motor de cruce - flujo de fondos
+        run: python src/engine/matrix_cashflow.py
+        continue-on-error: true
+
+      - name: Commit datos actualizados
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'datos: actualización automática ${{ github.run_id }}'
+          file_pattern: 'data/*.csv data/*.json'

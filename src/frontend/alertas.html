@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alertas · Portal Anticorrupción JGM</title>
+<style>
+:root {
+  --bg:#0f1117; --surface:#1a1d27; --card:#21253a;
+  --border:#2e3250; --text:#e2e8f0; --muted:#8892a4;
+  --accent:#4f8ef7; --alta:#f05252; --media:#f59e0b; --baja:#10b981;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; font-size: 14px; min-height: 100vh; }
+
+header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; align-items: center; gap: 12px; }
+header h1 { font-size: 15px; font-weight: 600; }
+nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; gap: 4px; }
+nav a { color: var(--muted); text-decoration: none; padding: 8px 14px; font-size: 13px; border-bottom: 2px solid transparent; }
+nav a.active { color: var(--text); border-bottom-color: var(--accent); }
+nav a:hover { color: var(--text); }
+
+main { padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+.resumen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+@media (max-width: 600px) { .resumen-grid { grid-template-columns: 1fr; } }
+
+.resumen-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px; display: flex; align-items: center; gap: 16px;
+}
+.resumen-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+}
+.resumen-card.alta-card  .resumen-icon { background: #f0525215; }
+.resumen-card.media-card .resumen-icon { background: #f59e0b15; }
+.resumen-card.baja-card  .resumen-icon { background: #10b98115; }
+.resumen-num  { font-size: 28px; font-weight: 700; }
+.resumen-label { font-size: 12px; color: var(--muted); }
+.alta-card  .resumen-num { color: var(--alta); }
+.media-card .resumen-num { color: var(--media); }
+.baja-card  .resumen-num { color: var(--baja); }
+
+.filtros-bar {
+  display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;
+}
+.filtros-bar select, .filtros-bar input {
+  background: var(--card); border: 1px solid var(--border); color: var(--text);
+  border-radius: 6px; padding: 6px 10px; font-size: 12px; outline: none;
+}
+.filtros-bar select:focus, .filtros-bar input:focus { border-color: var(--accent); }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 6px 14px; font-size: 12px; cursor: pointer; }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); border-radius: 6px; padding: 6px 14px; font-size: 12px; cursor: pointer; }
+.btn-ghost:hover { color: var(--text); border-color: var(--text); }
+
+.total-label { font-size: 12px; color: var(--muted); margin-left: auto; }
+
+/* Cards de alerta */
+.alerta-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px; margin-bottom: 12px;
+  border-left: 4px solid var(--border);
+  transition: border-color .15s;
+}
+.alerta-card.alta  { border-left-color: var(--alta); }
+.alerta-card.media { border-left-color: var(--media); }
+.alerta-card.baja  { border-left-color: var(--baja); }
+.alerta-card:hover { border-color: var(--accent); }
+
+.alerta-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 3px 8px; border-radius: 99px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0;
+}
+.badge.alta  { background: #f0525220; color: var(--alta); }
+.badge.media { background: #f59e0b20; color: var(--media); }
+.badge.baja  { background: #10b98120; color: var(--baja); }
+
+.badge-tipo {
+  font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 99px;
+  background: var(--surface); color: var(--muted); flex-shrink: 0;
+}
+.alerta-titulo-text { font-size: 14px; font-weight: 500; flex: 1; }
+.alerta-desc { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+.alerta-footer {
+  display: flex; gap: 16px; font-size: 11px; color: var(--muted);
+  border-top: 1px solid var(--border); padding-top: 8px;
+}
+.alerta-footer span strong { color: var(--text); }
+
+.spinner { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
+.empty   { text-align: center; padding: 60px; color: var(--muted); font-size: 13px; }
+
+.paginacion { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<header>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f05252" stroke-width="2">
+    <path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+  </svg>
+  <h1>Centro de alertas · JGM</h1>
+</header>
+<nav>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="grafo_nodos.html">Grafo de relaciones</a>
+  <a href="alertas.html" class="active">Alertas</a>
+</nav>
+
+<main>
+  <!-- Resumen -->
+  <div class="resumen-grid">
+    <div class="resumen-card alta-card">
+      <div class="resumen-icon">🔴</div>
+      <div><div class="resumen-num" id="cnt-alta">—</div><div class="resumen-label">Nivel ALTA</div></div>
+    </div>
+    <div class="resumen-card media-card">
+      <div class="resumen-icon">🟡</div>
+      <div><div class="resumen-num" id="cnt-media">—</div><div class="resumen-label">Nivel MEDIA</div></div>
+    </div>
+    <div class="resumen-card baja-card">
+      <div class="resumen-icon">🟢</div>
+      <div><div class="resumen-num" id="cnt-baja">—</div><div class="resumen-label">Nivel BAJA</div></div>
+    </div>
+  </div>
+
+  <!-- Filtros -->
+  <div class="filtros-bar">
+    <select id="f-nivel" onchange="cargar()">
+      <option value="">Todos los niveles</option>
+      <option value="alta">Alta</option>
+      <option value="media">Media</option>
+      <option value="baja">Baja</option>
+    </select>
+    <select id="f-tipo" onchange="cargar()">
+      <option value="">Todos los tipos</option>
+      <option value="nepotismo">Nepotismo</option>
+      <option value="sobreprecio">Sobreprecio</option>
+      <option value="concentracion">Concentración</option>
+    </select>
+    <input id="f-buscar" placeholder="Buscar en título…" style="width:220px" oninput="filtrarLocal(this.value)"/>
+    <button class="btn-ghost" onclick="resetFiltros()">Limpiar</button>
+    <span class="total-label" id="total-label"></span>
+  </div>
+
+  <!-- Lista -->
+  <div id="alertas-container">
+    <div class="spinner">Cargando alertas…</div>
+  </div>
+
+  <div class="paginacion" id="paginacion"></div>
+</main>
+
+<script>
+const API = '';
+let pagina = 0;
+const POR_PAG = 20;
+let todasLasAlertas = [];
+
+function fmt(n) {
+  if (!n && n !== 0) return '';
+  return '$' + Number(n).toLocaleString('es-AR', { maximumFractionDigits: 0 });
+}
+
+async function cargarConteos() {
+  const niveles = ['alta', 'media', 'baja'];
+  for (const n of niveles) {
+    const d = await fetch(API + `/api/v1/alertas?nivel=${n}&limit=1`).then(r => r.json()).catch(() => []);
+    // Aproximación: usamos el array; para conteo real habría endpoint /count
+    document.getElementById(`cnt-${n}`).textContent = '—';
+  }
+  // Traer conteo real
+  const alta  = await fetch(API + '/api/v1/alertas?nivel=alta&limit=500').then(r=>r.json()).catch(()=>[]);
+  const media = await fetch(API + '/api/v1/alertas?nivel=media&limit=500').then(r=>r.json()).catch(()=>[]);
+  const baja  = await fetch(API + '/api/v1/alertas?nivel=baja&limit=500').then(r=>r.json()).catch(()=>[]);
+  document.getElementById('cnt-alta').textContent  = alta.length;
+  document.getElementById('cnt-media').textContent = media.length;
+  document.getElementById('cnt-baja').textContent  = baja.length;
+}
+
+async function cargar() {
+  const nivel = document.getElementById('f-nivel').value;
+  const tipo  = document.getElementById('f-tipo').value;
+  const params = new URLSearchParams({ limit: 200 });
+  if (nivel) params.set('nivel', nivel);
+  if (tipo)  params.set('tipo', tipo);
+
+  document.getElementById('alertas-container').innerHTML = '<div class="spinner">Cargando…</div>';
+  const data = await fetch(API + '/api/v1/alertas?' + params).then(r=>r.json()).catch(()=>null);
+
+  if (!data) {
+    document.getElementById('alertas-container').innerHTML = '<div class="empty">Error al cargar alertas</div>';
+    return;
+  }
+  todasLasAlertas = data;
+  pagina = 0;
+  renderAlertas(todasLasAlertas);
+}
+
+function filtrarLocal(q) {
+  if (!q) { renderAlertas(todasLasAlertas); return; }
+  const filtradas = todasLasAlertas.filter(a =>
+    a.titulo.toLowerCase().includes(q.toLowerCase()) ||
+    (a.descripcion || '').toLowerCase().includes(q.toLowerCase())
+  );
+  renderAlertas(filtradas);
+}
+
+function renderAlertas(lista) {
+  const container = document.getElementById('alertas-container');
+  document.getElementById('total-label').textContent = `${lista.length} alertas`;
+
+  if (!lista.length) {
+    container.innerHTML = '<div class="empty">Sin alertas para los filtros seleccionados</div>';
+    return;
+  }
+
+  const slice = lista.slice(pagina * POR_PAG, (pagina + 1) * POR_PAG);
+  container.innerHTML = slice.map(a => `
+    <div class="alerta-card ${a.nivel}">
+      <div class="alerta-head">
+        <span class="badge ${a.nivel}">${a.nivel}</span>
+        <span class="badge-tipo">${a.tipo}</span>
+        <span class="alerta-titulo-text">${a.titulo}</span>
+      </div>
+      <div class="alerta-desc">${a.descripcion || 'Sin descripción adicional.'}</div>
+      <div class="alerta-footer">
+        <span><strong>Detectada:</strong> ${a.fecha_creacion ? a.fecha_creacion.substring(0,10) : '—'}</span>
+        ${a.monto_involucrado ? `<span><strong>Monto:</strong> ${fmt(a.monto_involucrado)}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  // Paginación
+  const total = Math.ceil(lista.length / POR_PAG);
+  const pag = document.getElementById('paginacion');
+  if (total <= 1) { pag.innerHTML = ''; return; }
+
+  let btns = '';
+  for (let i = 0; i < total; i++) {
+    btns += `<button
+      class="${i === pagina ? 'btn' : 'btn-ghost'}"
+      onclick="irPagina(${i})"
+    >${i + 1}</button>`;
+  }
+  pag.innerHTML = btns;
+}
+
+function irPagina(n) {
+  pagina = n;
+  renderAlertas(todasLasAlertas);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function resetFiltros() {
+  document.getElementById('f-nivel').value = '';
+  document.getElementById('f-tipo').value  = '';
+  document.getElementById('f-buscar').value = '';
+  cargar();
+}
+
+cargarConteos();
+cargar();
+</script>
+</body>
+</html>
