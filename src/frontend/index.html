@@ -1,56 +1,410 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Grafo de Relaciones - Jefatura de Gabinete</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <style>
-        .node { stroke: #fff; stroke-width: 1.5px; }
-        .link { stroke-opacity: 0.6; stroke-width: 2px; }
-        text { font: 12px sans-serif; pointer-events: none; }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monitor de Transparencia · Poder Ejecutivo Nacional</title>
+<style>
+:root {
+  --bg:      #f0f4ff;
+  --surface: #ffffff;
+  --border:  #e2e8f0;
+  --text:    #1e293b;
+  --muted:   #64748b;
+  --mono:    'Courier New', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+  background: #1e40af;
+  padding: 20px 40px;
+  display: flex; align-items: center; gap: 16px;
+}
+.hlogo {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: #ffffff20; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+header h1 { font-size: 17px; font-weight: 800; color: #fff; }
+header .sub { font-size: 12px; color: #bfdbfe; margin-top: 2px; }
+.badge-demo {
+  margin-left: auto; background: #fbbf24; color: #1e293b;
+  font-size: 10px; font-weight: 800; padding: 4px 10px;
+  border-radius: 99px; letter-spacing: .04em; white-space: nowrap;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center; padding: 52px 40px 36px;
+}
+.hero h2 {
+  font-size: 26px; font-weight: 800; color: var(--text);
+  margin-bottom: 10px; line-height: 1.3;
+}
+.hero p {
+  font-size: 14px; color: var(--muted); max-width: 560px;
+  margin: 0 auto; line-height: 1.7;
+}
+
+/* ── Cards ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; padding: 0 40px 48px; max-width: 1100px;
+  margin: 0 auto; width: 100%;
+}
+
+.card {
+  background: var(--surface); border-radius: 16px;
+  border: 1px solid var(--border); box-shadow: 0 2px 8px #0001;
+  overflow: hidden; text-decoration: none; color: inherit;
+  transition: transform .15s, box-shadow .15s;
+  display: flex; flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px #0002;
+}
+
+.card-header {
+  padding: 24px 24px 18px;
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.card-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 900; color: #fff;
+  flex-shrink: 0; letter-spacing: .02em;
+}
+.card-title { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+.card-sub   { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+.card-stats {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--border);
+}
+.stat {
+  padding: 14px 16px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat:last-child { border-right: none; }
+.stat-val { font-size: 20px; font-weight: 800; line-height: 1; margin-bottom: 3px; }
+.stat-lbl { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+
+.card-footer {
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border);
+  background: #f8fafc; font-size: 12px; color: var(--muted);
+}
+.card-footer .ver {
+  font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 4px;
+}
+
+/* colores por rama */
+.rama-jgm  .card-icon  { background: #1e40af; }
+.rama-jgm  .stat-val   { color: #1e40af; }
+.rama-jgm  .card-footer .ver { color: #1e40af; }
+.rama-jgm:hover { border-color: #1e40af44; }
+
+.rama-sgp  .card-icon  { background: #7c3aed; }
+.rama-sgp  .stat-val   { color: #7c3aed; }
+.rama-sgp  .card-footer .ver { color: #7c3aed; }
+.rama-sgp:hover { border-color: #7c3aed44; }
+
+.rama-pres .card-icon  { background: #0891b2; }
+.rama-pres .stat-val   { color: #0891b2; }
+.rama-pres .card-footer .ver { color: #0891b2; }
+.rama-pres:hover { border-color: #0891b244; }
+
+/* ── Secciones por rama (dentro de la card) ── */
+.card-sections {
+  padding: 0 24px 16px;
+  display: flex; flex-direction: column; gap: 6px;
+  flex: 1;
+}
+.section-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--muted); padding: 5px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.section-item:last-child { border-bottom: none; }
+.section-item .icon { font-size: 14px; width: 20px; text-align: center; }
+.section-item .lbl  { flex: 1; }
+.section-item .coming {
+  font-size: 10px; background: #f1f5f9; color: #94a3b8;
+  border-radius: 99px; padding: 1px 7px; font-weight: 600;
+}
+.section-item .ready {
+  font-size: 10px; background: #dcfce7; color: #15803d;
+  border-radius: 99px; padding: 1px 7px; font-weight: 600;
+}
+
+/* ── Stats globales ── */
+.global-stats {
+  background: #1e40af08; border: 1px solid #1e40af18;
+  border-radius: 12px; margin: 0 40px 40px;
+  max-width: 1100px; width: calc(100% - 80px);
+  align-self: center;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  overflow: hidden;
+}
+.gstat {
+  padding: 18px 20px; text-align: center;
+  border-right: 1px solid #1e40af18;
+}
+.gstat:last-child { border-right: none; }
+.gstat-val { font-size: 24px; font-weight: 800; color: #1e40af; }
+.gstat-lbl { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+footer {
+  margin-top: auto; text-align: center; padding: 20px;
+  font-size: 11px; color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+footer a { color: #1e40af; text-decoration: none; }
+
+@media (max-width: 700px) {
+  header { padding: 16px 20px; }
+  .hero  { padding: 32px 20px 24px; }
+  .cards { padding: 0 20px 32px; gap: 16px; }
+  .global-stats { margin: 0 20px 32px; width: calc(100% - 40px); }
+}
+</style>
 </head>
 <body>
-    <h2 style="text-align:center">Mapa de Vínculos: Sector Público vs Privado</h2>
-    <svg width="800" height="600"></svg>
-    <script>
-        const data = {
-            nodes: [
-                { id: "Juan Pérez", type: "Funcionario", color: "blue" },
-                { id: "Ana López", type: "Funcionario", color: "blue" },
-                { id: "Ricardo Gómez", type: "Familiar", color: "red" },
-                { id: "Carlos López", type: "Familiar", color: "red" },
-                { id: "Tech Soluciones SA", type: "Empresa", color: "green" }
-            ],
-            links: [
-                { source: "Juan Pérez", target: "Ricardo Gómez", color: "red", label: "Cuñado" },
-                { source: "Ricardo Gómez", target: "Tech Soluciones SA", color: "orange", label: "Presidente" },
-                { source: "Ana López", target: "Carlos López", color: "red", label: "Hijo" }
-            ]
-        };
 
-        const svg = d3.select("svg"), width = +svg.attr("width"), height = +svg.attr("height");
-        const simulation = d3.forceSimulation(data.nodes)
-            .force("link", d3.forceLink(data.links).id(d => d.id).distance(150))
-            .force("charge", d3.forceManyBody().strength(-300))
-            .force("center", d3.forceCenter(width / 2, height / 2));
+<header>
+  <div class="hlogo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+    </svg>
+  </div>
+  <div>
+    <h1>Monitor de Transparencia · Poder Ejecutivo Nacional</h1>
+    <div class="sub">República Argentina · Datos abiertos · Actualización diaria</div>
+  </div>
+  <div class="badge-demo">⚠ MODO DEMO</div>
+</header>
 
-        const link = svg.append("g").selectAll("line")
-            .data(data.links).enter().append("line")
-            .attr("class", "link")
-            .attr("stroke", d => d.color);
+<div class="hero">
+  <h2>Monitoreo de contratos, nómina y alertas<br>del Poder Ejecutivo Nacional</h2>
+  <p>Seleccioná un organismo para explorar sus contratos, autoridades designadas,
+     cruces de interés y estructura orgánica.</p>
+</div>
 
-        const node = svg.append("g").selectAll("circle")
-            .data(data.nodes).enter().append("circle")
-            .attr("class", "node")
-            .attr("r", 10)
-            .attr("fill", d => d.color);
+<!-- Stats globales -->
+<div class="global-stats">
+  <div class="gstat">
+    <div class="gstat-val">1.154</div>
+    <div class="gstat-lbl">Autoridades monitoreadas</div>
+  </div>
+  <div class="gstat">
+    <div class="gstat-val">3.847</div>
+    <div class="gstat-lbl">Contratos registrados</div>
+  </div>
+  <div class="gstat">
+    <div class="gstat-val">$42.3B</div>
+    <div class="gstat-lbl">ARS adjudicados</div>
+  </div>
+  <div class="gstat">
+    <div class="gstat-val">14</div>
+    <div class="gstat-lbl">Alertas activas</div>
+  </div>
+  <div class="gstat">
+    <div class="gstat-val">3</div>
+    <div class="gstat-lbl">Cruces detectados</div>
+  </div>
+</div>
 
-        node.append("title").text(d => d.id);
-        simulation.on("tick", () => {
-            link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-                .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-            node.attr("cx", d => d.x).attr("cy", d => d.y);
-        });
-    </script>
+<!-- Cards de organismos -->
+<div class="cards">
+
+  <!-- JGM -->
+  <a href="jgm.html" class="card rama-jgm">
+    <div class="card-header">
+      <div class="card-icon">JGM</div>
+      <div>
+        <div class="card-title">Jefatura de Gabinete de Ministros</div>
+        <div class="card-sub">Jefe actual: Manuel Adorni · desde nov 2025</div>
+      </div>
+    </div>
+    <div class="card-stats">
+      <div class="stat">
+        <div class="stat-val">611</div>
+        <div class="stat-lbl">Autoridades</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">2.1k</div>
+        <div class="stat-lbl">Contratos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">8</div>
+        <div class="stat-lbl">Alertas</div>
+      </div>
+    </div>
+    <div class="card-sections">
+      <div class="section-item">
+        <span class="icon">📋</span>
+        <span class="lbl">Contratos y adjudicaciones</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">👥</span>
+        <span class="lbl">Personal — cargo y categoría</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🔗</span>
+        <span class="lbl">Cruces y alertas</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🏛</span>
+        <span class="lbl">Organigrama</span>
+        <span class="coming">próximamente</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">💰</span>
+        <span class="lbl">Presupuesto JGM</span>
+        <span class="coming">próximamente</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>Gestiones: Posse · Francos · Adorni</span>
+      <span class="ver">Ver JGM →</span>
+    </div>
+  </a>
+
+  <!-- SGP -->
+  <a href="sgp.html" class="card rama-sgp">
+    <div class="card-header">
+      <div class="card-icon">SGP</div>
+      <div>
+        <div class="card-title">Secretaría General de la Presidencia</div>
+        <div class="card-sub">Dependencia directa de Presidencia de la Nación</div>
+      </div>
+    </div>
+    <div class="card-stats">
+      <div class="stat">
+        <div class="stat-val">144</div>
+        <div class="stat-lbl">Autoridades</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">680</div>
+        <div class="stat-lbl">Contratos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">4</div>
+        <div class="stat-lbl">Alertas</div>
+      </div>
+    </div>
+    <div class="card-sections">
+      <div class="section-item">
+        <span class="icon">📋</span>
+        <span class="lbl">Contratos y adjudicaciones</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">👥</span>
+        <span class="lbl">Personal — cargo y categoría</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🔗</span>
+        <span class="lbl">Cruces y alertas</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🏛</span>
+        <span class="lbl">Organigrama</span>
+        <span class="coming">próximamente</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">📜</span>
+        <span class="lbl">Decretos y normativa</span>
+        <span class="coming">próximamente</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>Sub-organismo de Presidencia de la Nación</span>
+      <span class="ver">Ver SGP →</span>
+    </div>
+  </a>
+
+  <!-- Presidencia -->
+  <a href="presidencia.html" class="card rama-pres">
+    <div class="card-header">
+      <div class="card-icon">PNA</div>
+      <div>
+        <div class="card-title">Presidencia de la Nación</div>
+        <div class="card-sub">Cultura · Legal y Técnica · SIGEN · otros organismos</div>
+      </div>
+    </div>
+    <div class="card-stats">
+      <div class="stat">
+        <div class="stat-val">399</div>
+        <div class="stat-lbl">Autoridades</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">1.1k</div>
+        <div class="stat-lbl">Contratos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">6</div>
+        <div class="stat-lbl">Alertas</div>
+      </div>
+    </div>
+    <div class="card-sections">
+      <div class="section-item">
+        <span class="icon">📋</span>
+        <span class="lbl">Contratos y adjudicaciones</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">👥</span>
+        <span class="lbl">Personal — cargo y categoría</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🔗</span>
+        <span class="lbl">Cruces y alertas</span>
+        <span class="ready">✓ activo</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🏛</span>
+        <span class="lbl">Organigrama</span>
+        <span class="coming">próximamente</span>
+      </div>
+      <div class="section-item">
+        <span class="icon">🔍</span>
+        <span class="lbl">SIGEN — auditorías</span>
+        <span class="coming">próximamente</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span>Secretaría de Cultura · Legal y Técnica · más</span>
+      <span class="ver">Ver Presidencia →</span>
+    </div>
+  </a>
+
+</div>
+
+<footer>
+  Fuentes: <a href="https://datos.gob.ar" target="_blank">datos.gob.ar</a> ·
+  <a href="https://mapadelestado.dyte.gob.ar" target="_blank">MapaDelEstado</a> ·
+  <a href="https://www.boletinoficial.gob.ar" target="_blank">BORA</a> ·
+  <a href="https://github.com/Viny2030/jefatura_gabinete" target="_blank">Código fuente</a> ·
+  No afiliado al gobierno argentino
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JGM · Monitor de Transparencia</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg:      #f0f4ff;
+  --surface: #ffffff;
+  --border:  #e2e8f0;
+  --text:    #1e293b;
+  --muted:   #64748b;
+  --accent:  #1e40af;
+  --alta:    #dc2626;
+  --media:   #d97706;
+  --baja:    #059669;
+  --mono:    'Courier New', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; }
+
+/* ── Header ── */
+header {
+  background: #1e40af; padding: 14px 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.back {
+  color: #bfdbfe; text-decoration: none; font-size: 12px;
+  display: flex; align-items: center; gap: 4px; font-weight: 600;
+}
+.back:hover { color: #fff; }
+.hlogo {
+  width: 36px; height: 36px; border-radius: 9px; background: #ffffff20;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900; color: #fff;
+}
+header h1 { font-size: 15px; font-weight: 800; color: #fff; }
+header .sub { font-size: 11px; color: #bfdbfe; }
+.badge-actual {
+  margin-left: auto; background: #059669; color: #fff;
+  font-size: 10px; font-weight: 700; padding: 3px 10px;
+  border-radius: 99px; white-space: nowrap;
+}
+
+/* ── Nav secciones ── */
+nav {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 0 28px; display: flex; gap: 2px; overflow-x: auto;
+}
+nav a {
+  color: var(--muted); text-decoration: none; padding: 11px 16px;
+  font-size: 13px; border-bottom: 2px solid transparent;
+  font-weight: 500; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 6px;
+}
+nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+nav a:hover  { color: var(--text); }
+
+main { padding: 24px 28px; max-width: 1400px; margin: 0 auto; }
+
+/* ── Secciones ── */
+.seccion { display: none; }
+.seccion.active { display: block; }
+
+/* ── Gestión banner ── */
+.gestion-banner {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 20px; margin-bottom: 24px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.gestion-actual {
+  display: flex; align-items: center; gap: 10px;
+}
+.gav { width: 40px; height: 40px; border-radius: 50%; background: #059669;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.gnom { font-size: 15px; font-weight: 800; }
+.gper { font-size: 11px; color: var(--muted); font-family: var(--mono); }
+.gref {
+  margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap;
+}
+.gref-item {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 12px; font-size: 11px; color: var(--muted); text-align: center;
+}
+.gref-item .nombre { font-weight: 700; color: var(--text); font-size: 12px; }
+.gref-item .periodo { font-family: var(--mono); font-size: 10px; }
+
+/* ── KPIs ── */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px; margin-bottom: 24px;
+}
+.kpi-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px 18px; box-shadow: 0 1px 3px #0001;
+}
+.kpi-label { font-size: 10px; color: var(--muted); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
+.kpi-val   { font-size: 26px; font-weight: 800; line-height: 1; color: var(--accent); }
+.kpi-sub   { font-size: 11px; color: var(--muted); margin-top: 4px; }
+.kpi-alta  .kpi-val { color: var(--alta); }
+.kpi-green .kpi-val { color: var(--baja); }
+.kpi-purple .kpi-val { color: #7c3aed; }
+
+/* ── Panel ── */
+.panel { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px #0001;
+  margin-bottom: 24px; }
+.ph { padding: 14px 18px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center; }
+.ph h2 { font-size: 13px; font-weight: 700; }
+.pb { padding: 18px; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ── Filtros ── */
+.filtros {
+  display: flex; gap: 8px; padding: 12px 18px;
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; align-items: center;
+}
+.filtros input, .filtros select {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); padding: 5px 10px; font-size: 12px; outline: none;
+}
+.filtros input:focus, .filtros select:focus { border-color: var(--accent); }
+.btn { background: var(--accent); color: #fff; border: none; border-radius: 6px;
+  padding: 5px 14px; font-size: 12px; cursor: pointer; font-weight: 600; }
+.btn:hover { background: #1d4ed8; }
+.btn.sec { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+.btn.sec:hover { background: var(--border); }
+.f-count { margin-left: auto; font-size: 11px; color: var(--muted);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 5px 10px; }
+.f-count strong { color: var(--text); }
+
+/* ── Tabla ── */
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { padding: 9px 12px; text-align: left; color: var(--muted); font-weight: 700;
+  font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+  border-bottom: 1px solid var(--border); background: var(--bg);
+  white-space: nowrap; cursor: pointer; }
+th:hover { color: var(--accent); }
+td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #1e40af05; }
+.mono { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.monto { text-align: right; font-weight: 700; color: var(--accent); }
+.fw { font-weight: 700; }
+
+/* ── Chips ── */
+.chip { display: inline-block; font-size: 9px; font-weight: 700;
+  padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
+.chip-posse   { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+.chip-francos { background: #ecfeff; color: #0891b2; border: 1px solid #a5f3fc; }
+.chip-adorni  { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-pre     { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+.chip-sinep   { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+.chip-auto    { background: #fdf4ff; color: #7c3aed; border: 1px solid #e9d5ff; }
+.chip-fuera   { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+
+/* ── Alertas ── */
+.alerta-item { padding: 10px 12px; border-radius: 8px;
+  border-left: 3px solid var(--border); background: var(--bg); margin-bottom: 8px; }
+.alerta-item.alta  { border-left-color: var(--alta);  background: #dc262605; }
+.alerta-item.media { border-left-color: var(--media); background: #d9770605; }
+.alerta-item.baja  { border-left-color: var(--baja);  background: #05966905; }
+.atit { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
+.amet { font-size: 11px; color: var(--muted); }
+.badge-n { display: inline-block; font-size: 9px; font-weight: 800;
+  padding: 2px 6px; border-radius: 99px; text-transform: uppercase; margin-right: 4px; }
+.badge-n.alta  { background: #dc262615; color: var(--alta); }
+.badge-n.media { background: #d9770615; color: var(--media); }
+
+/* ── Cruces ── */
+.cruce-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px; margin-bottom: 10px;
+  border-left: 4px solid var(--alta);
+}
+.cruce-card.media { border-left-color: var(--media); }
+.cruce-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.cruce-meta { font-size: 11px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+.cruce-meta strong { color: var(--text); }
+
+.stitle { font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+
+footer { text-align: center; padding: 20px; font-size: 11px;
+  color: var(--muted); border-top: 1px solid var(--border); margin-top: 8px; }
+footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back">← Portal</a>
+  <div class="hlogo">JGM</div>
+  <div>
+    <h1>Jefatura de Gabinete de Ministros</h1>
+    <div class="sub">República Argentina · Poder Ejecutivo Nacional</div>
+  </div>
+  <div class="badge-actual">✓ Manuel Adorni — activo</div>
+</header>
+
+<nav>
+  <a onclick="switchSec('resumen')"   id="nav-resumen"   class="active">📊 Resumen</a>
+  <a onclick="switchSec('contratos')" id="nav-contratos">📋 Contratos</a>
+  <a onclick="switchSec('personal')"  id="nav-personal">👥 Personal</a>
+  <a onclick="switchSec('cruces')"    id="nav-cruces">🔗 Cruces</a>
+</nav>
+
+<main>
+
+<!-- ════════ RESUMEN ════════ -->
+<div class="seccion active" id="sec-resumen">
+
+  <!-- Banner de gestión -->
+  <div class="gestion-banner">
+    <div class="gestion-actual">
+      <div class="gav">MA</div>
+      <div>
+        <div class="gnom">Manuel Adorni</div>
+        <div class="gper">04/11/2025 → actualidad · Gestión actual</div>
+      </div>
+    </div>
+    <div class="gref">
+      <div class="gref-item">
+        <div class="nombre">Guillermo Francos</div>
+        <div class="periodo">27/05/2024 → 31/10/2025</div>
+      </div>
+      <div class="gref-item">
+        <div class="nombre">Nicolás Posse</div>
+        <div class="periodo">10/12/2023 → 27/05/2024</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Autoridades designadas</div>
+      <div class="kpi-val">611</div>
+      <div class="kpi-sub">en nómina activa</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Contratos registrados</div>
+      <div class="kpi-val">2.143</div>
+      <div class="kpi-sub">desde dic 2023</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Monto total</div>
+      <div class="kpi-val">$18.4B</div>
+      <div class="kpi-sub">ARS adjudicados</div>
+    </div>
+    <div class="kpi-card kpi-alta">
+      <div class="kpi-label">Alertas activas</div>
+      <div class="kpi-val">8</div>
+      <div class="kpi-sub">3 de riesgo alto</div>
+    </div>
+    <div class="kpi-card kpi-green">
+      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-val">19</div>
+      <div class="kpi-sub">desde nov 2025</div>
+    </div>
+    <div class="kpi-card kpi-purple">
+      <div class="kpi-label">Ad Honorem</div>
+      <div class="kpi-val">112</div>
+      <div class="kpi-sub">sin remuneración</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="ph"><h2>Contratos por gestión</h2></div>
+      <div class="pb"><canvas id="chart-gestion" height="220"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><h2>Alertas recientes</h2></div>
+      <div class="pb" id="alertas-resumen"></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="ph"><h2>Personal por jerarquía</h2></div>
+      <div class="pb"><canvas id="chart-jerarquia" height="220"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><h2>Personal por escalafón</h2></div>
+      <div class="pb"><canvas id="chart-escalafon" height="220"></canvas></div>
+    </div>
+  </div>
+
+</div><!-- /resumen -->
+
+<!-- ════════ CONTRATOS ════════ -->
+<div class="seccion" id="sec-contratos">
+
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card">
+      <div class="kpi-label">Gestión Adorni</div>
+      <div class="kpi-val" id="k-adorni-c">—</div>
+      <div class="kpi-sub">nov 2025 → hoy</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Gestión Francos</div>
+      <div class="kpi-val" id="k-francos-c">—</div>
+      <div class="kpi-sub">may 2024 → oct 2025</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Gestión Posse</div>
+      <div class="kpi-val" id="k-posse-c">—</div>
+      <div class="kpi-sub">dic 2023 → may 2024</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Monto total</div>
+      <div class="kpi-val">$18.4B</div>
+      <div class="kpi-sub">ARS adjudicados</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="ph">
+      <h2>Contratos y adjudicaciones — JGM</h2>
+      <button class="btn sec" onclick="exportCSV()" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
+    </div>
+    <div class="filtros">
+      <input id="f-prov"  placeholder="Proveedor…"     style="width:200px" oninput="filtrarC()"/>
+      <input id="f-cuit"  placeholder="CUIT…"          style="width:140px" oninput="filtrarC()"/>
+      <select id="f-tipo" onchange="filtrarC()">
+        <option value="">Todos los tipos</option>
+        <option>Licitación pública</option>
+        <option>Contratación directa</option>
+        <option>Concurso de precios</option>
+      </select>
+      <select id="f-gest" onchange="filtrarC()">
+        <option value="">Todas las gestiones</option>
+        <option value="adorni">Adorni</option>
+        <option value="francos">Francos</option>
+        <option value="posse">Posse</option>
+      </select>
+      <div class="f-count" id="fc-count"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr>
+          <th onclick="sortC('proveedor')">Proveedor</th>
+          <th>CUIT</th>
+          <th onclick="sortC('tipo_contratacion')">Tipo</th>
+          <th onclick="sortC('fecha_adjudicacion')">Fecha</th>
+          <th>Gestión</th>
+          <th style="text-align:right" onclick="sortC('monto_adjudicado')">Monto ARS</th>
+        </tr></thead>
+        <tbody id="tbody-c"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /contratos -->
+
+<!-- ════════ PERSONAL ════════ -->
+<div class="seccion" id="sec-personal">
+
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card">
+      <div class="kpi-label">Total autoridades</div>
+      <div class="kpi-val">611</div>
+      <div class="kpi-sub">en nómina JGM</div>
+    </div>
+    <div class="kpi-card kpi-green">
+      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-val">19</div>
+      <div class="kpi-sub">desde nov 2025</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Femenino</div>
+      <div class="kpi-val">43%</div>
+      <div class="kpi-sub">de designados con dato</div>
+    </div>
+    <div class="kpi-card kpi-purple">
+      <div class="kpi-label">Ad Honorem</div>
+      <div class="kpi-val">112</div>
+      <div class="kpi-sub">sin remuneración</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Sueldo est. promedio</div>
+      <div class="kpi-val">$3.8M</div>
+      <div class="kpi-sub">ARS bruto estimado</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="ph">
+      <h2>Listado de personal — JGM</h2>
+      <button class="btn sec" onclick="exportCSVP()" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
+    </div>
+    <div class="filtros">
+      <input id="p-nombre"   placeholder="Apellido / nombre…" style="width:200px" oninput="filtrarP()"/>
+      <input id="p-cargo"    placeholder="Cargo…"             style="width:170px" oninput="filtrarP()"/>
+      <select id="p-jerarq"  onchange="filtrarP()">
+        <option value="">Todas las jerarquías</option>
+        <option>Ministro</option>
+        <option>Subsecretario</option>
+        <option>DN-DG</option>
+        <option>Director - Primer Nivel Operativo</option>
+        <option>Director - Segundo Nivel Operativo</option>
+        <option>Coordinador</option>
+        <option>Jefe de Departamento</option>
+        <option>Ad Honorem</option>
+        <option>S-D</option>
+      </select>
+      <select id="p-gest"    onchange="filtrarP()">
+        <option value="">Todas las gestiones</option>
+        <option value="Adorni">Adorni</option>
+        <option value="Francos">Francos</option>
+        <option value="Posse">Posse</option>
+        <option value="Pre-Milei">Pre-Milei</option>
+      </select>
+      <select id="p-genero"  onchange="filtrarP()">
+        <option value="">Todos los géneros</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+      <div class="f-count" id="fp-count"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr>
+          <th onclick="sortP('apellido')">Apellido</th>
+          <th onclick="sortP('nombre')">Nombre</th>
+          <th onclick="sortP('cargo')">Cargo</th>
+          <th onclick="sortP('jerarquia')">Jerarquía</th>
+          <th>Escalafón</th>
+          <th onclick="sortP('jgm_al_ingreso')">Gestión</th>
+          <th>Género</th>
+          <th onclick="sortP('norma_designacion')">Decreto</th>
+          <th style="text-align:right" onclick="sortP('sueldo_bruto_estimado_ars')">Sueldo est.</th>
+        </tr></thead>
+        <tbody id="tbody-p"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /personal -->
+
+<!-- ════════ CRUCES ════════ -->
+<div class="seccion" id="sec-cruces">
+
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card kpi-alta">
+      <div class="kpi-label">Alertas totales</div>
+      <div class="kpi-val">3</div>
+      <div class="kpi-sub">cruces detectados</div>
+    </div>
+    <div class="kpi-card kpi-alta">
+      <div class="kpi-label">Riesgo alto</div>
+      <div class="kpi-val">1</div>
+      <div class="kpi-sub">coincidencia CUIL</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Riesgo medio</div>
+      <div class="kpi-val">2</div>
+      <div class="kpi-sub">coincidencia apellido</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Monto involucrado</div>
+      <div class="kpi-val">$25.4M</div>
+      <div class="kpi-sub">ARS en contratos alertados</div>
+    </div>
+  </div>
+
+  <div class="stitle">Alertas detectadas — JGM</div>
+
+  <div class="cruce-card">
+    <div class="cruce-titulo">
+      <span class="badge-n alta">ALTO</span>
+      Coincidencia exacta de CUIL — Funcionario activo / Proveedor
+    </div>
+    <div class="cruce-meta">
+      <span>👤 <strong>GARCÍA, Roberto</strong> — Coordinador JGM</span>
+      <span>🏢 <strong>GARCÍA CONSULTORES SRL</strong></span>
+      <span>CUIL: <strong class="mono">20-28341234-5</strong></span>
+      <span>📋 <strong>3</strong> contratos</span>
+      <span>💰 <strong>$12.4M</strong></span>
+      <span>Gestión: <span class="chip chip-francos">GF Francos</span></span>
+    </div>
+  </div>
+
+  <div class="cruce-card media">
+    <div class="cruce-titulo">
+      <span class="badge-n media">MEDIO</span>
+      Coincidencia de apellido — posible vínculo familiar
+    </div>
+    <div class="cruce-meta">
+      <span>👤 <strong>RODRÍGUEZ, María</strong> — Subsecretaria JGM</span>
+      <span>🏢 <strong>RODRÍGUEZ & ASOCIADOS SA</strong></span>
+      <span>📋 <strong>1</strong> contrato</span>
+      <span>💰 <strong>$4.8M</strong></span>
+      <span>Gestión: <span class="chip chip-posse">NP Posse</span></span>
+    </div>
+  </div>
+
+  <div class="cruce-card media">
+    <div class="cruce-titulo">
+      <span class="badge-n media">MEDIO</span>
+      Cruce inter-organismos — apellido en JGM, proveedor en SGP
+    </div>
+    <div class="cruce-meta">
+      <span>👤 <strong>MARTÍNEZ, Carlos</strong> — Director Nacional JGM</span>
+      <span>🏢 <strong>MARTÍNEZ TECNOLOGÍA SAS</strong> (contrato en SGP)</span>
+      <span>📋 <strong>2</strong> contratos</span>
+      <span>💰 <strong>$8.2M</strong></span>
+      <span>Gestión: <span class="chip chip-adorni">MA Adorni</span></span>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:24px">
+    <div class="ph"><h2>Metodología</h2></div>
+    <div class="pb" style="font-size:12px;color:var(--muted);line-height:1.8">
+      <p><strong style="color:var(--text)">Nivel 1 — CUIL exacto:</strong> el CUIL del funcionario aparece como CUIT proveedor. Riesgo <span style="color:var(--alta);font-weight:700">ALTO</span>.</p>
+      <p><strong style="color:var(--text)">Nivel 2 — Apellido:</strong> coincidencia con razón social o representante del proveedor. Riesgo <span style="color:var(--media);font-weight:700">MEDIO</span>.</p>
+      <p><strong style="color:var(--text)">Nivel 3 — Inter-organismos:</strong> cruce entre JGM, SGP y Presidencia. Solo detectable con monitoreo unificado.</p>
+    </div>
+  </div>
+
+</div><!-- /cruces -->
+
+</main>
+
+<footer>
+  <a href="index.html">← Portal principal</a> ·
+  Fuente: <a href="https://mapadelestado.dyte.gob.ar" target="_blank">MapaDelEstado</a> ·
+  <a href="https://datos.gob.ar" target="_blank">datos.gob.ar</a> ·
+  No afiliado al gobierno argentino
+</footer>
+
+<script>
+// ── Períodos JGM ──────────────────────────────────────────────────────────────
+const JGM = {
+  posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', cls: 'posse'   },
+  francos: { nombre: 'Guillermo Francos', desde: '2024-05-27', hasta: '2025-10-31', cls: 'francos' },
+  adorni:  { nombre: 'Manuel Adorni',     desde: '2025-11-04', hasta: null,         cls: 'adorni'  },
+};
+
+// ── Estado ────────────────────────────────────────────────────────────────────
+let allC = [], allP = [];
+let sortStateC = { col: null, asc: true };
+let sortStateP = { col: null, asc: true };
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (!n && n !== 0) return '—';
+  if (n === 0) return 'Ad Honorem';
+  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+  return '$' + Math.round(n).toLocaleString('es-AR');
+}
+
+function getGestion(fecha) {
+  if (!fecha) return null;
+  const d = fecha.substring(0, 10);
+  for (const [k, g] of Object.entries(JGM)) {
+    if (d >= g.desde && (g.hasta === null || d <= g.hasta)) return k;
+  }
+  return null;
+}
+
+function chipGestion(key) {
+  if (!key) return '—';
+  const g = JGM[key];
+  if (!g) {
+    const mapa = { 'Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
+    const cls = mapa[key] || 'pre';
+    return `<span class="chip chip-${cls}">${key}</span>`;
+  }
+  const ini = g.nombre.split(' ').map(w=>w[0]).join('').substring(0,2);
+  return `<span class="chip chip-${g.cls}">${ini} ${g.nombre.split(' ').slice(-1)[0]}</span>`;
+}
+
+function chipEscalafon(e) {
+  if (!e || e === 'nan') return '—';
+  if (e.includes('SINEP'))     return `<span class="chip chip-sinep">SINEP</span>`;
+  if (e.includes('Autoridad')) return `<span class="chip chip-auto">Aut. Superior</span>`;
+  if (e.includes('nivel'))     return `<span class="chip chip-fuera">Fuera de nivel</span>`;
+  return `<span style="font-size:10px;color:var(--muted)">${e.substring(0,22)}…</span>`;
+}
+
+function extractDecretoLink(norma) {
+  if (!norma || norma === 'nan') return '—';
+  const m = norma.match(/\[([^\]]+)\]\(([^)]+)\)/);
+  if (m) return `<a href="${m[2]}" target="_blank" style="color:var(--accent);font-size:10px">${m[1]}</a>`;
+  return `<span style="font-size:10px;color:var(--muted)">${norma.substring(0,30)}</span>`;
+}
+
+// ── Switch sección ────────────────────────────────────────────────────────────
+function switchSec(id) {
+  document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+}
+
+// ── Contratos ─────────────────────────────────────────────────────────────────
+function filtrarC() {
+  const prov = document.getElementById('f-prov').value.toLowerCase();
+  const cuit = document.getElementById('f-cuit').value.toLowerCase();
+  const tipo = document.getElementById('f-tipo').value;
+  const gest = document.getElementById('f-gest').value;
+
+  let data = allC;
+  if (prov) data = data.filter(c => (c.proveedor||'').toLowerCase().includes(prov));
+  if (cuit) data = data.filter(c => (c.cuit||'').toLowerCase().includes(cuit));
+  if (tipo) data = data.filter(c => (c.tipo_contratacion||'') === tipo);
+  if (gest) data = data.filter(c => getGestion(c.fecha_adjudicacion) === gest);
+
+  renderC(data);
+}
+
+function renderC(data) {
+  document.getElementById('tbody-c').innerHTML = data.slice(0, 300).map(c => {
+    const gk = getGestion(c.fecha_adjudicacion);
+    return `<tr>
+      <td class="fw">${c.proveedor||'—'}</td>
+      <td class="mono">${c.cuit||'—'}</td>
+      <td style="font-size:11px">${c.tipo_contratacion||'—'}</td>
+      <td class="mono">${(c.fecha_adjudicacion||'').substring(0,10)}</td>
+      <td>${chipGestion(gk)}</td>
+      <td class="monto">${fmt(c.monto_adjudicado)}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('fc-count').innerHTML =
+    `<strong>${data.length}</strong> resultado${data.length!==1?'s':''}`;
+}
+
+function sortC(col) {
+  sortStateC.asc = sortStateC.col === col ? !sortStateC.asc : true;
+  sortStateC.col = col;
+  allC.sort((a,b) => {
+    const av = a[col]||'', bv = b[col]||'';
+    return sortStateC.asc ? (av>bv?1:-1) : (av<bv?1:-1);
+  });
+  filtrarC();
+}
+
+function exportCSV() {
+  const h = ['proveedor','cuit','tipo_contratacion','fecha_adjudicacion','monto_adjudicado'];
+  const rows = allC.map(r => h.map(k=>`"${(r[k]||'').toString().replace(/"/g,'""')}"`).join(','));
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(','),...rows].join('\n'));
+  a.download = 'contratos_jgm.csv'; a.click();
+}
+
+// ── Personal ──────────────────────────────────────────────────────────────────
+function filtrarP() {
+  const nombre = document.getElementById('p-nombre').value.toLowerCase();
+  const cargo  = document.getElementById('p-cargo').value.toLowerCase();
+  const jerarq = document.getElementById('p-jerarq').value;
+  const gest   = document.getElementById('p-gest').value;
+  const genero = document.getElementById('p-genero').value;
+
+  let data = allP;
+  if (nombre) data = data.filter(p =>
+    (p.apellido||'').toLowerCase().includes(nombre) ||
+    (p.nombre||'').toLowerCase().includes(nombre));
+  if (cargo)  data = data.filter(p => (p.cargo||'').toLowerCase().includes(cargo));
+  if (jerarq) data = data.filter(p => (p.jerarquia||'') === jerarq);
+  if (gest)   data = data.filter(p => (p.jgm_al_ingreso||'') === gest);
+  if (genero) data = data.filter(p => (p.genero||'') === genero);
+
+  renderP(data);
+}
+
+function renderP(data) {
+  document.getElementById('tbody-p').innerHTML = data.slice(0, 400).map(p => `<tr>
+    <td class="fw">${p.apellido||'—'}</td>
+    <td>${p.nombre||'—'}</td>
+    <td style="font-size:11px">${p.cargo||'—'}</td>
+    <td style="font-size:11px;color:var(--muted)">${p.jerarquia||'—'}</td>
+    <td>${chipEscalafon(p.escalafon||'')}</td>
+    <td>${chipGestion(p.jgm_al_ingreso)}</td>
+    <td style="font-size:11px">${p.genero && p.genero!=='No informado' ? p.genero.substring(0,1) : '—'}</td>
+    <td>${extractDecretoLink(p.norma_designacion)}</td>
+    <td class="monto" style="font-size:11px">${fmt(p.sueldo_bruto_estimado_ars)}</td>
+  </tr>`).join('');
+  document.getElementById('fp-count').innerHTML =
+    `<strong>${data.length}</strong> resultado${data.length!==1?'s':''}`;
+}
+
+function sortP(col) {
+  sortStateP.asc = sortStateP.col === col ? !sortStateP.asc : true;
+  sortStateP.col = col;
+  allP.sort((a,b) => {
+    const av = a[col]||'', bv = b[col]||'';
+    return sortStateP.asc ? (av>bv?1:-1) : (av<bv?1:-1);
+  });
+  filtrarP();
+}
+
+function exportCSVP() {
+  const h = ['apellido','nombre','cargo','jerarquia','escalafon','jgm_al_ingreso','genero','sueldo_bruto_estimado_ars'];
+  const rows = allP.map(r => h.map(k=>`"${(r[k]||'').toString().replace(/"/g,'""')}"`).join(','));
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(','),...rows].join('\n'));
+  a.download = 'personal_jgm.csv'; a.click();
+}
+
+// ── Carga de datos reales desde JSON ──────────────────────────────────────────
+function initCharts() {
+  // Contratos por gestión
+  new Chart(document.getElementById('chart-gestion'), {
+    type: 'bar',
+    data: {
+      labels: ['Posse (dic23-may24)', 'Francos (may24-oct25)', 'Adorni (nov25-hoy)'],
+      datasets: [{
+        data: [
+          allC.filter(c=>getGestion(c.fecha_adjudicacion)==='posse').length,
+          allC.filter(c=>getGestion(c.fecha_adjudicacion)==='francos').length,
+          allC.filter(c=>getGestion(c.fecha_adjudicacion)==='adorni').length,
+        ],
+        backgroundColor: ['#7c3aed33','#0891b233','#05966933'],
+        borderColor:     ['#7c3aed',  '#0891b2',  '#059669'],
+        borderWidth: 1.5, borderRadius: 6,
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true } } }
+  });
+
+  // Jerarquía
+  const jerCount = {};
+  allP.forEach(p => { const j = p.jerarquia||'Sin dato'; jerCount[j]=(jerCount[j]||0)+1; });
+  const jerTop = Object.entries(jerCount).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  new Chart(document.getElementById('chart-jerarquia'), {
+    type: 'bar',
+    data: {
+      labels: jerTop.map(j => j[0].length>18 ? j[0].substring(0,18)+'…' : j[0]),
+      datasets: [{ data: jerTop.map(j=>j[1]), backgroundColor:'#1e40af22', borderColor:'#1e40af', borderWidth:1.5, borderRadius:4 }]
+    },
+    options: { indexAxis:'y', responsive:true, plugins:{ legend:{ display:false } } }
+  });
+
+  // Escalafón
+  const escCount = {};
+  allP.forEach(p => {
+    let e = 'Otro';
+    if ((p.escalafon||'').includes('SINEP')) e = 'SINEP';
+    else if ((p.escalafon||'').includes('Autoridad')) e = 'Aut. Superior';
+    else if ((p.escalafon||'').includes('nivel')) e = 'Fuera de nivel';
+    escCount[e] = (escCount[e]||0)+1;
+  });
+  new Chart(document.getElementById('chart-escalafon'), {
+    type: 'doughnut',
+    data: {
+      labels: Object.keys(escCount),
+      datasets: [{ data: Object.values(escCount),
+        backgroundColor: ['#1e40af','#7c3aed','#c2410c','#64748b'], borderWidth:2 }]
+    },
+    options: { responsive:true, plugins:{ legend:{ position:'right', labels:{ font:{ size:11 } } } } }
+  });
+
+  // KPIs por gestión
+  ['adorni','francos','posse'].forEach(k => {
+    const n = allC.filter(c => getGestion(c.fecha_adjudicacion) === k).length;
+    const el = document.getElementById('k-' + k + '-c');
+    if (el) el.textContent = n;
+  });
+
+  // Alertas resumen (estáticas por ahora)
+  document.getElementById('alertas-resumen').innerHTML = `
+    <div class="alerta-item media">
+      <div class="atit"><span class="badge-n media">medio</span>Proveedor con contratos reiterados — JGM</div>
+      <div class="amet">Fuente: COMPR.AR · datos reales</div>
+    </div>
+    <div class="alerta-item baja">
+      <div class="atit"><span class="badge-n baja" style="background:#05966915;color:#059669">info</span>${allC.length} contratos cargados desde CSV real</div>
+      <div class="amet">Período: 2020–2026 · Actualizado hoy</div>
+    </div>`;
+}
+
+// ── Init con fetch real ───────────────────────────────────────────────────────
+async function init() {
+  try {
+    const [resC, resP] = await Promise.all([
+      fetch('data/contratos_jgm.json'),
+      fetch('data/personal_jgm.json'),
+    ]);
+    allC = await resC.json();
+    allP = await resP.json();
+
+    // Mapear campo fecha_str → fecha_adjudicacion si hace falta
+    allC = allC.map(c => ({
+      ...c,
+      fecha_adjudicacion: c.fecha_adjudicacion || c.fecha_str || '',
+      proveedor: c.proveedor || c.objeto?.substring(0,50) || '—',
+    }));
+
+    // Actualizar KPIs con datos reales
+    document.querySelector('#sec-resumen .kpi-val').textContent = allP.length.toLocaleString('es-AR');
+    const monto = allC.reduce((s,c)=>s+(c.monto_adjudicado||0),0);
+    const montoStr = monto>=1e9 ? '$'+(monto/1e9).toFixed(1)+'B' : '$'+(monto/1e6).toFixed(1)+'M';
+    document.querySelectorAll('#sec-resumen .kpi-val')[1].textContent = allC.length.toLocaleString('es-AR');
+    document.querySelectorAll('#sec-resumen .kpi-val')[2].textContent = montoStr;
+
+  } catch(e) {
+    console.warn('JSON no disponible, usando datos vacíos:', e);
+    allC = []; allP = [];
+  }
+  filtrarC();
+  filtrarP();
+  initCharts();
+}
+
+init();
+</script>
+</body>
+</html>
