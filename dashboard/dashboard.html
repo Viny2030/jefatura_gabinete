@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portal Anticorrupción · Jefatura de Gabinete</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg:      #f4f6fb;
+  --surface: #ffffff;
+  --card:    #ffffff;
+  --border:  #e2e8f0;
+  --text:    #1e293b;
+  --muted:   #64748b;
+  --accent:  #2563eb;
+  --alta:    #dc2626;
+  --media:   #d97706;
+  --baja:    #059669;
+  --mono:    'Courier New', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; }
+
+header {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 14px 28px; display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 1px 3px #0001;
+}
+.hlogo {
+  width: 34px; height: 34px; border-radius: 8px; background: #2563eb12;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+header h1 { font-size: 15px; font-weight: 700; }
+header .sub { font-size: 11px; color: var(--muted); }
+.badge-demo {
+  margin-left: auto; background: #fffbeb; color: #92400e;
+  font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 99px;
+  border: 1px solid #fde68a; letter-spacing: .04em; white-space: nowrap;
+}
+
+nav {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 0 28px; display: flex; gap: 2px;
+}
+nav a {
+  color: var(--muted); text-decoration: none; padding: 10px 14px;
+  font-size: 13px; border-bottom: 2px solid transparent;
+  transition: color .15s; font-weight: 500;
+}
+nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+nav a:hover  { color: var(--text); }
+
+main { padding: 24px 28px; max-width: 1400px; margin: 0 auto; }
+
+.demo-banner {
+  background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;
+  padding: 10px 16px; margin-bottom: 20px; font-size: 12px; color: #92400e;
+  display: flex; align-items: center; gap: 8px; line-height: 1.5;
+}
+code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+.stitle { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
+
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px; margin-bottom: 28px;
+}
+.kpi-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 18px 20px; box-shadow: 0 1px 3px #0001;
+}
+.kpi-label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+.kpi-val   { font-size: 28px; font-weight: 800; line-height: 1; }
+.kpi-sub   { font-size: 11px; color: var(--muted); margin-top: 5px; }
+.kc-alta   .kpi-val { color: var(--alta); }
+.kc-blue   .kpi-val { color: var(--accent); }
+.kc-green  .kpi-val { color: var(--baja); }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px #0001;
+}
+.ph {
+  padding: 14px 18px; border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.ph h2 { font-size: 13px; font-weight: 700; }
+.ph a  { font-size: 11px; color: var(--accent); text-decoration: none; font-weight: 500; }
+.pb { padding: 18px; }
+
+.alerta-item {
+  padding: 10px 12px; border-radius: 8px; border-left: 3px solid var(--border);
+  background: var(--bg); margin-bottom: 8px;
+}
+.alerta-item:last-child { margin-bottom: 0; }
+.alerta-item.alta  { border-left-color: var(--alta);  background: #dc262605; }
+.alerta-item.media { border-left-color: var(--media); background: #d9770605; }
+.alerta-item.baja  { border-left-color: var(--baja);  background: #05966905; }
+.atit { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
+.amet { font-size: 11px; color: var(--muted); }
+.badge-n {
+  display: inline-block; font-size: 9px; font-weight: 800;
+  padding: 2px 6px; border-radius: 99px; text-transform: uppercase; margin-right: 4px;
+}
+.badge-n.alta  { background: #dc262615; color: var(--alta); }
+.badge-n.media { background: #d9770615; color: var(--media); }
+.badge-n.baja  { background: #05966915; color: var(--baja); }
+
+.filtros {
+  display: flex; gap: 8px; padding: 12px 18px;
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; align-items: center;
+}
+.filtros input, .filtros select {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); padding: 5px 10px; font-size: 12px; outline: none;
+}
+.filtros input:focus, .filtros select:focus { border-color: var(--accent); }
+.btn-b {
+  background: var(--accent); color: #fff; border: none;
+  border-radius: 6px; padding: 5px 14px; font-size: 12px; cursor: pointer; font-weight: 600;
+}
+
+.tw { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th {
+  padding: 9px 12px; text-align: left; color: var(--muted); font-weight: 700;
+  font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+  border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap;
+}
+td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #2563eb05; }
+.mono  { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.monto { text-align: right; font-weight: 700; color: var(--accent); }
+
+footer {
+  text-align: center; padding: 20px; font-size: 11px;
+  color: var(--muted); border-top: 1px solid var(--border); margin-top: 8px;
+}
+footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hlogo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+    </svg>
+  </div>
+  <div>
+    <h1>Portal Anticorrupción · JGM</h1>
+    <div class="sub">Jefatura de Gabinete de Ministros · República Argentina</div>
+  </div>
+  <div class="badge-demo">⚠ MODO DEMO</div>
+</header>
+
+<nav>
+  <a href="dashboard.html" class="active">Dashboard</a>
+  <a href="grafo_nodos.html">Grafo de relaciones</a>
+  <a href="alertas.html">Alertas</a>
+</nav>
+
+<main>
+
+  <div class="demo-banner">
+    ⚡ Datos de demostración. Para datos reales: ejecutá los scrapers y levantá
+    <code>uvicorn src.api.api_server:app --port 8000</code> con <code>DATABASE_URL</code> configurada.
+  </div>
+
+  <div class="stitle">Indicadores principales</div>
+  <div class="kpi-grid" id="kpi-grid"></div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="ph"><h2>Gasto por organismo — ARS millones</h2></div>
+      <div class="pb"><canvas id="chart-org" height="240"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="ph">
+        <h2>Alertas activas</h2>
+        <a href="alertas.html">Ver todas →</a>
+      </div>
+      <div class="pb" id="alertas-lista"></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-bottom:24px">
+    <div class="ph"><h2>Contratos y adjudicaciones</h2></div>
+    <div class="filtros">
+      <input id="f-org" placeholder="Organismo…" style="width:190px" oninput="filtrarTabla()"/>
+      <input id="f-prov" placeholder="Proveedor…" style="width:190px" oninput="filtrarTabla()"/>
+      <select id="f-tipo" onchange="filtrarTabla()">
+        <option value="">Todos los tipos</option>
+        <option>Licitación pública</option>
+        <option>Contratación directa</option>
+        <option>Concurso de precios</option>
+      </select>
+      <button class="btn-b" onclick="filtrarTabla()">Buscar</button>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>Organismo</th><th>Proveedor</th><th>CUIT</th>
+            <th>Tipo</th><th>Fecha</th><th style="text-align:right">Monto (ARS)</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Fuentes: <a href="https://datos.gob.ar" target="_blank">datos.gob.ar</a> ·
+  <a href="https://www.boletinoficial.gob.ar" target="_blank">BORA</a> ·
+  <a href="https://github.com/Viny2030/jefatura_gabinete" target="_blank">Código fuente</a> ·
+  Actualizado diariamente · No afiliado al gobierno argentino
+</footer>
+
+<script>
+// ── Datos demo ─────────────────────────────────────────────────────────────────
+const D_KPIS = {
+  alertas_activas:14, alertas_alta:5, total_contratos:3847,
+  monto_total_ars:42_300_000_000, proveedores_unicos:612, funcionarios_monitoreados:1284,
+};
+const D_ORG = [
+  {organismo:'Sec. Innovación Pública',   monto_total:8_400_000_000},
+  {organismo:'ANSES',                      monto_total:6_200_000_000},
+  {organismo:'Ministerio de Economía',     monto_total:5_100_000_000},
+  {organismo:'Min. Infraestructura',       monto_total:4_300_000_000},
+  {organismo:'Jefatura de Gabinete',       monto_total:3_900_000_000},
+  {organismo:'Sec. Gestión y Empleo',      monto_total:3_200_000_000},
+  {organismo:'AFIP',                       monto_total:2_800_000_000},
+  {organismo:'Min. del Interior',          monto_total:2_400_000_000},
+  {organismo:'INDEC',                      monto_total:1_900_000_000},
+  {organismo:'Casa Rosada',                monto_total:1_100_000_000},
+];
+const D_ALERTAS = [
+  {nivel:'alta', tipo:'nepotismo',    titulo:'Coincidencia apellido FERNÁNDEZ — Tech Fernández SRL',  monto_involucrado:24_500_000, fecha_creacion:'2024-04-01'},
+  {nivel:'alta', tipo:'sobreprecio',  titulo:'Sobreprecio +82% licitación ANSES — Consultoría XYZ SA',monto_involucrado:85_000_000, fecha_creacion:'2024-03-28'},
+  {nivel:'alta', tipo:'concentracion',titulo:'Concentración 51% gasto — Innovación Pública / Datos SA',monto_involucrado:4_300_000_000,fecha_creacion:'2024-03-25'},
+  {nivel:'media',tipo:'nepotismo',    titulo:'Apellido RODRIGUEZ en nómina y proveedor del mismo organismo',monto_involucrado:8_200_000,fecha_creacion:'2024-03-22'},
+  {nivel:'media',tipo:'sobreprecio',  titulo:'Sobreprecio +47% contratación directa — Servicios Digitales SA',monto_involucrado:12_000_000,fecha_creacion:'2024-03-20'},
+  {nivel:'baja', tipo:'nepotismo',    titulo:'Coincidencia apellido LÓPEZ — posible parentesco lejano',monto_involucrado:3_100_000,fecha_creacion:'2024-03-18'},
+];
+const D_CONTRATOS = [
+  {organismo:'Sec. Innovación Pública',  proveedor:'Datos SA',              cuit_proveedor:'30-71234567-8',tipo_proceso:'Licitación pública',   fecha_adjudicacion:'2024-03-15',monto_adjudicado:285_000_000},
+  {organismo:'ANSES',                    proveedor:'Consultoría XYZ SA',    cuit_proveedor:'30-99887766-5',tipo_proceso:'Contratación directa', fecha_adjudicacion:'2024-03-10',monto_adjudicado:850_000_000},
+  {organismo:'Ministerio de Economía',   proveedor:'Tech Fernández SRL',    cuit_proveedor:'30-55544433-1',tipo_proceso:'Concurso de precios',  fecha_adjudicacion:'2024-03-08',monto_adjudicado:24_500_000},
+  {organismo:'Jefatura de Gabinete',     proveedor:'Servicios Digitales SA',cuit_proveedor:'30-66677788-2',tipo_proceso:'Contratación directa', fecha_adjudicacion:'2024-03-05',monto_adjudicado:120_000_000},
+  {organismo:'AFIP',                     proveedor:'Infraestructura AR SA', cuit_proveedor:'30-33322211-9',tipo_proceso:'Licitación pública',   fecha_adjudicacion:'2024-02-28',monto_adjudicado:430_000_000},
+  {organismo:'Min. Infraestructura',     proveedor:'Construcciones Norte SRL',cuit_proveedor:'30-44455566-7',tipo_proceso:'Licitación pública', fecha_adjudicacion:'2024-02-20',monto_adjudicado:1_200_000_000},
+  {organismo:'INDEC',                    proveedor:'Sistemas Estadísticos SA',cuit_proveedor:'30-11122233-4',tipo_proceso:'Contratación directa',fecha_adjudicacion:'2024-02-15',monto_adjudicado:62_000_000},
+  {organismo:'Sec. Gestión y Empleo',    proveedor:'RR HH Consultores SA',  cuit_proveedor:'30-88899900-3',tipo_proceso:'Concurso de precios',  fecha_adjudicacion:'2024-02-10',monto_adjudicado:95_000_000},
+];
+
+// ── Fetch con fallback silencioso ──────────────────────────────────────────────
+async function apiFetch(path) {
+  try {
+    const r = await fetch(path, { signal: AbortSignal.timeout(4000) });
+    if (!r.ok) throw 0;
+    return await r.json();
+  } catch { return null; }
+}
+
+function fmt(n) {
+  if (!n && n !== 0) return '—';
+  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(0) + 'M';
+  return '$' + Number(n).toLocaleString('es-AR', {maximumFractionDigits:0});
+}
+
+// ── KPIs ──────────────────────────────────────────────────────────────────────
+async function cargarKPIs() {
+  const d = (await apiFetch('/api/v1/kpis')) || D_KPIS;
+  document.getElementById('kpi-grid').innerHTML = `
+    <div class="kpi-card kc-alta">
+      <div class="kpi-label">Alertas activas</div>
+      <div class="kpi-val">${d.alertas_activas}</div>
+      <div class="kpi-sub">${d.alertas_alta} de nivel ALTA</div>
+    </div>
+    <div class="kpi-card kc-blue">
+      <div class="kpi-label">Total contratos</div>
+      <div class="kpi-val">${Number(d.total_contratos).toLocaleString('es-AR')}</div>
+      <div class="kpi-sub">COMPR.AR 2023–2024</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Monto adjudicado</div>
+      <div class="kpi-val" style="font-size:22px">${fmt(d.monto_total_ars)}</div>
+      <div class="kpi-sub">total acumulado</div>
+    </div>
+    <div class="kpi-card kc-green">
+      <div class="kpi-label">Proveedores únicos</div>
+      <div class="kpi-val">${Number(d.proveedores_unicos).toLocaleString('es-AR')}</div>
+      <div class="kpi-sub">en SIPRO</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Funcionarios</div>
+      <div class="kpi-val">${Number(d.funcionarios_monitoreados).toLocaleString('es-AR')}</div>
+      <div class="kpi-sub">nómina JGM</div>
+    </div>`;
+}
+
+// ── Gráfico ───────────────────────────────────────────────────────────────────
+async function cargarGrafico() {
+  const raw = (await apiFetch('/api/v1/contratos/por-organismo')) || D_ORG;
+  const d = raw.slice(0,10);
+  new Chart(document.getElementById('chart-org'), {
+    type: 'bar',
+    data: {
+      labels: d.map(r => r.organismo.length > 26 ? r.organismo.substring(0,24)+'…' : r.organismo),
+      datasets: [{
+        data: d.map(r => +(r.monto_total/1e6).toFixed(0)),
+        backgroundColor: '#2563eb18', borderColor: '#2563eb',
+        borderWidth: 1.5, borderRadius: 5,
+      }]
+    },
+    options: {
+      responsive:true,
+      plugins:{ legend:{display:false},
+        tooltip:{ callbacks:{ label: c=>' $'+c.parsed.y.toLocaleString('es-AR')+'M' }}},
+      scales:{
+        x:{ ticks:{color:'#64748b',font:{size:10}}, grid:{display:false} },
+        y:{ ticks:{color:'#64748b',font:{size:10},callback:v=>'$'+v+'M'}, grid:{color:'#e2e8f0'} }
+      }
+    }
+  });
+}
+
+// ── Alertas ───────────────────────────────────────────────────────────────────
+async function cargarAlertas() {
+  const d = (await apiFetch('/api/v1/alertas?limit=6')) || D_ALERTAS;
+  document.getElementById('alertas-lista').innerHTML = d.slice(0,6).map(a=>`
+    <div class="alerta-item ${a.nivel}">
+      <div class="atit"><span class="badge-n ${a.nivel}">${a.nivel}</span>${a.titulo}</div>
+      <div class="amet">${a.tipo}${a.monto_involucrado?' · '+fmt(a.monto_involucrado):''} · ${(a.fecha_creacion||'').substring(0,10)}</div>
+    </div>`).join('');
+}
+
+// ── Tabla ─────────────────────────────────────────────────────────────────────
+let allContratos = [];
+
+async function cargarContratos() {
+  allContratos = (await apiFetch('/api/v1/contratos?limit=50')) || D_CONTRATOS;
+  renderTabla(allContratos);
+}
+
+function filtrarTabla() {
+  const org  = document.getElementById('f-org').value.toLowerCase();
+  const prov = document.getElementById('f-prov').value.toLowerCase();
+  const tipo = document.getElementById('f-tipo').value.toLowerCase();
+  renderTabla(allContratos.filter(c=>
+    (!org  || (c.organismo||'').toLowerCase().includes(org))  &&
+    (!prov || (c.proveedor||'').toLowerCase().includes(prov)) &&
+    (!tipo || (c.tipo_proceso||'').toLowerCase().includes(tipo))
+  ));
+}
+
+function renderTabla(data) {
+  document.getElementById('tbody').innerHTML = data.length
+    ? data.map(c=>`<tr>
+        <td>${c.organismo||'—'}</td>
+        <td>${c.proveedor||'—'}</td>
+        <td class="mono">${c.cuit_proveedor||'—'}</td>
+        <td>${c.tipo_proceso||'—'}</td>
+        <td class="mono">${(c.fecha_adjudicacion||'').substring(0,10)||'—'}</td>
+        <td class="monto">${fmt(c.monto_adjudicado)}</td>
+      </tr>`).join('')
+    : '<tr><td colspan="6" style="text-align:center;color:#64748b;padding:24px">Sin resultados</td></tr>';
+}
+
+cargarKPIs(); cargarGrafico(); cargarAlertas(); cargarContratos();
+</script>
+</body>
+</html>
