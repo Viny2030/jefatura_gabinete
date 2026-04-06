@@ -1,123 +1,134 @@
 """
-scraper_comprar.py
-Descarga adjudicaciones y convocatorias de COMPR.AR desde datos.gob.ar
-Fuente oficial: https://datos.gob.ar/dataset/jgm-sistema-contrataciones-electronicas
+scraper_bora.py
+Extrae resoluciones y decisiones administrativas del Boletín Oficial (BORA)
+relacionadas con la Jefatura de Gabinete de Ministros.
+Fuente: https://www.boletinoficial.gob.ar/
 """
 
 import os
-import io
+import time
 import logging
 import requests
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
+from bs4 import BeautifulSoup
 from sqlalchemy import create_engine, text
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [COMPRAR] %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [BORA] %(message)s")
 log = logging.getLogger(__name__)
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
-# URLs oficiales de datos.gob.ar - CSVs descargables sin autenticación
-FUENTES = {
-    "adjudicaciones_2024": (
-        "https://infra.datos.gob.ar/catalog/modernizacion/dataset/4/distribution/"
-        "4.16/download/adjudicaciones-2024.csv"
-    ),
-    "adjudicaciones_2023": (
-        "https://infra.datos.gob.ar/catalog/modernizacion/dataset/4/distribution/"
-        "4.14/download/adjudicaciones-2023.csv"
-    ),
-    "convocatorias_2024": (
-        "https://infra.datos.gob.ar/catalog/modernizacion/dataset/4/distribution/"
-        "4.15/download/convocatorias-2024.csv"
-    ),
-    "sipro_proveedores": (
-        "https://infra.datos.gob.ar/catalog/modernizacion/dataset/4/distribution/"
-        "4.5/download/sipro.csv"
-    ),
-}
+BASE_URL = "https://www.boletinoficial.gob.ar"
+SEARCH_URL = f"{BASE_URL}/busquedaAvanzada/realizarBusqueda"
 
 HEADERS = {
-    "User-Agent": "PortalAnticorrupcion/1.0 (transparencia publica; contacto: github.com/Viny2030)"
+    "User-Agent": "PortalAnticorrupcion/1.0 (transparencia publica)",
+    "Accept": "application/json, text/javascript, */*",
+    "X-Requested-With": "XMLHttpRequest",
+    "Referer": f"{BASE_URL}/busquedaAvanzada/index",
 }
 
-COLUMNAS_ADJUDICACIONES = {
-    "ejercicio": "ejercicio",
-    "nro_proceso": "nro_proceso",
-    "organismo_contratante": "organismo",
-    "tipo_proceso": "tipo_proceso",
-    "objeto_contratacion": "objeto",
-    "razon_social_adjudicado": "proveedor",
-    "cuit_adjudicado": "cuit_proveedor",
-    "monto_adjudicado": "monto_adjudicado",
-    "moneda": "moneda",
-    "fecha_adjudicacion": "fecha_adjudicacion",
-}
+TERMINOS_JGM = [
+    "Jefatura de Gabinete",
+    "Decisión Administrativa",
+    "designación",
+    "contratación directa",
+]
+
+RUBRO_PRIMERA_SECCION = "1"  # Primera sección del BORA = actos normativos
 
 
-def descargar_csv(nombre: str, url: str) -> pd.DataFrame | None:
-    log.info("Descargando %s ...", nombre)
+def fecha_ayer() -> str:
+    return (datetime.now() - timedelta(days=1)).strftime("%d/%m/%Y")
+
+
+def fecha_hoy() -> str:
+    return datetime.now().strftime("%d/%m/%Y")
+
+
+def buscar_bora(termino: str, fecha_desde: str, fecha_hasta: str) -> list[dict]:
+    """Realiza búsqueda en la API interna del BORA."""
+    payload = {
+        "params": {
+            "denominacion": termino,
+            "seccion": RUBRO_PRIMERA_SECCION,
+            "fechaDesde": fecha_desde,
+            "fechaHasta": fecha_hasta,
+            "cantidadPorPagina": 100,
+            "paginaActual": 1,
+        }
+    }
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=60)
+        resp = requests.post(SEARCH_URL, json=payload, headers=HEADERS, timeout=30)
         resp.raise_for_status()
-        df = pd.read_csv(
-            io.StringIO(resp.text),
-            encoding="utf-8",
-            low_memory=False,
-            dtype=str,
-        )
-        log.info("  → %d filas, %d columnas", len(df), len(df.columns))
-        return df
+        data = resp.json()
+        items = data.get("data", {}).get("items", [])
+        log.info("  '%s': %d resultados", termino, len(items))
+        return items
     except requests.HTTPError as e:
-        log.error("HTTP %s para %s: %s", e.response.status_code, nombre, url)
-        return None
+        log.error("HTTP %s buscando '%s': %s", e.response.status_code, termino, e)
+        return []
     except Exception as e:
-        log.error("Error descargando %s: %s", nombre, e)
-        return None
+        log.error("Error buscando '%s' en BORA: %s", termino, e)
+        return []
 
 
-def normalizar_adjudicaciones(df: pd.DataFrame) -> pd.DataFrame:
-    # Mapear solo columnas que existan en el CSV recibido
-    columnas_presentes = {k: v for k, v in COLUMNAS_ADJUDICACIONES.items() if k in df.columns}
-    df = df.rename(columns=columnas_presentes)
-
-    columnas_finales = list(columnas_presentes.values())
-    df = df[[c for c in columnas_finales if c in df.columns]].copy()
-
-    if "monto_adjudicado" in df.columns:
-        df["monto_adjudicado"] = (
-            df["monto_adjudicado"]
-            .str.replace(",", ".", regex=False)
-            .str.replace("[^0-9.]", "", regex=True)
-        )
-        df["monto_adjudicado"] = pd.to_numeric(df["monto_adjudicado"], errors="coerce")
-
-    if "fecha_adjudicacion" in df.columns:
-        df["fecha_adjudicacion"] = pd.to_datetime(
-            df["fecha_adjudicacion"], dayfirst=True, errors="coerce"
-        )
-
-    df["fuente"] = "COMPR.AR"
-    df["fecha_ingesta"] = datetime.now()
-    return df.drop_duplicates()
+def parsear_detalle(url_detalle: str) -> str:
+    """Extrae texto de la página de detalle de una norma."""
+    try:
+        resp = requests.get(f"{BASE_URL}{url_detalle}", headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+        contenedor = soup.find("div", class_="contenidoArt") or soup.find("article")
+        if contenedor:
+            return contenedor.get_text(separator=" ", strip=True)[:2000]
+        return ""
+    except Exception:
+        return ""
 
 
-def cargar_en_db(df: pd.DataFrame, tabla: str, engine) -> None:
+def normalizar_items(items: list[dict], termino: str) -> list[dict]:
+    registros = []
+    for item in items:
+        registro = {
+            "numero_norma": item.get("nroNorma", ""),
+            "tipo_norma": item.get("tipoNorma", ""),
+            "organismo": item.get("dependencia", ""),
+            "fecha_publicacion": item.get("fechaPublicacion", ""),
+            "titulo": item.get("titulo", "")[:500],
+            "url": item.get("urlDetalle", ""),
+            "termino_busqueda": termino,
+            "fuente": "BORA",
+            "fecha_ingesta": datetime.now().isoformat(),
+        }
+        registros.append(registro)
+    return registros
+
+
+def cargar_en_db(registros: list[dict], engine) -> None:
+    df = pd.DataFrame(registros)
     try:
         with engine.begin() as conn:
-            conn.execute(text(f"DELETE FROM {tabla} WHERE fuente = 'COMPR.AR'"))
-        df.to_sql(tabla, engine, if_exists="append", index=False, chunksize=500)
-        log.info("  → %d filas cargadas en '%s'", len(df), tabla)
+            # Evitar duplicados por número de norma
+            for _, row in df.iterrows():
+                if row.get("numero_norma"):
+                    conn.execute(
+                        text("DELETE FROM normas_bora WHERE numero_norma = :n"),
+                        {"n": row["numero_norma"]},
+                    )
+        df.to_sql("normas_bora", engine, if_exists="append", index=False, chunksize=200)
+        log.info("  → %d normas cargadas en DB", len(df))
     except Exception as e:
-        log.error("Error cargando en DB tabla %s: %s", tabla, e)
+        log.error("Error cargando normas en DB: %s", e)
 
 
-def guardar_csv_local(df: pd.DataFrame, nombre: str) -> None:
-    """Fallback: guarda CSV localmente si no hay DB configurada."""
+def guardar_csv_local(registros: list[dict]) -> None:
     os.makedirs("data", exist_ok=True)
-    ruta = f"data/{nombre}_{datetime.now().strftime('%Y%m%d')}.csv"
+    df = pd.DataFrame(registros)
+    ruta = f"data/bora_{datetime.now().strftime('%Y%m%d')}.csv"
     df.to_csv(ruta, index=False, encoding="utf-8-sig")
-    log.info("  → guardado en %s", ruta)
+    log.info("  → guardado en %s (%d filas)", ruta, len(df))
 
 
 def main():
@@ -125,30 +136,29 @@ def main():
     if not engine:
         log.warning("DATABASE_URL no configurada — modo CSV local")
 
-    frames_adj = []
+    fecha_desde = fecha_ayer()
+    fecha_hasta = fecha_hoy()
+    log.info("Período: %s → %s", fecha_desde, fecha_hasta)
 
-    for nombre, url in FUENTES.items():
-        df_raw = descargar_csv(nombre, url)
-        if df_raw is None:
-            continue
+    todos_los_registros = []
 
-        if "adjudicacion" in nombre:
-            df = normalizar_adjudicaciones(df_raw)
-            frames_adj.append(df)
-        elif nombre == "sipro_proveedores":
-            guardar_csv_local(df_raw, "sipro_proveedores")
-            if engine:
-                df_raw["fecha_ingesta"] = datetime.now()
-                cargar_en_db(df_raw, "proveedores_sipro", engine)
+    for termino in TERMINOS_JGM:
+        items = buscar_bora(termino, fecha_desde, fecha_hasta)
+        registros = normalizar_items(items, termino)
+        todos_los_registros.extend(registros)
+        time.sleep(1.5)  # Respetar rate limit del BORA
 
-    if frames_adj:
-        df_total = pd.concat(frames_adj, ignore_index=True)
-        log.info("Total adjudicaciones consolidadas: %d", len(df_total))
-        guardar_csv_local(df_total, "adjudicaciones")
-        if engine:
-            cargar_en_db(df_total, "contratos", engine)
+    # Deduplicar por numero_norma
+    df = pd.DataFrame(todos_los_registros)
+    if not df.empty and "numero_norma" in df.columns:
+        df = df.drop_duplicates(subset=["numero_norma"])
+        log.info("Total normas únicas: %d", len(df))
 
-    log.info("Scraper COMPR.AR finalizado.")
+    guardar_csv_local(df.to_dict("records") if not df.empty else [])
+    if engine and not df.empty:
+        cargar_en_db(df.to_dict("records"), engine)
+
+    log.info("Scraper BORA finalizado.")
 
 
 if __name__ == "__main__":
