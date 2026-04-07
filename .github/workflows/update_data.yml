@@ -73,8 +73,10 @@ jobs:
         run: |
           git config --global user.name  'Robot Monitor PEN'
           git config --global user.email 'robot@noreply.github.com'
-          git add -f src/frontend/data/
-          git add -f data/adjudicaciones_*.csv data/cruces.json data/mapeos_organismos.csv 2>/dev/null || true
+          git add -f src/frontend/data/ || true
+          git add -f data/adjudicaciones_*.csv || true
+          git add -f data/cruces.json || true
+          git add -f data/mapeos_organismos.csv || true
           git diff --staged --quiet \
             && echo "Sin cambios nuevos" \
             && exit 0
