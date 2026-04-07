@@ -1,56 +1,123 @@
-name: Actualizar datos diarios
+name: Monitor Diario PEN
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # 6 AM Argentina (UTC-3)
-  workflow_dispatch:        # ejecución manual desde GitHub
+    - cron: '0 12 * * 1-5'  # 09:00 Argentina (UTC-3), lunes a viernes
+  workflow_dispatch:          # ejecución manual desde GitHub
+
+permissions:
+  contents: write
 
 jobs:
   actualizar:
     runs-on: ubuntu-latest
 
-    env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
     steps:
-      - name: Checkout repositorio
-        uses: actions/checkout@v4
 
-      - name: Configurar Python
+      # ── 1. Checkout ───────────────────────────────────────────────
+      - name: Checkout jefatura_gabinete1
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ── 2. Checkout monitor_contratos_v2 como repo hermano ────────
+      - name: Checkout monitor_contratos_v2
+        uses: actions/checkout@v4
+        with:
+          repository: Viny2030/monitor_contratos_v2
+          ref: feature/base-datos
+          path: monitor_contratos_v2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 3. Python ─────────────────────────────────────────────────
+      - name: Configurar Python 3.12
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: 'pip'
+          python-version: '3.12'
 
+      # ── 4. Dependencias ───────────────────────────────────────────
       - name: Instalar dependencias
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests beautifulsoup4 openpyxl lxml pdfminer.six holidays
 
-      - name: Scraper COMPR.AR (adjudicaciones)
-        run: python src/ingestion/scraper_comprar.py
+      # ── 5. Capturar fecha ─────────────────────────────────────────
+      - name: Capturar fecha
+        id: fecha
+        run: echo "fecha=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      # ── 6. Reclasificar reportes de monitor_contratos_v2 ─────────
+      - name: Reclasificar contratos PEN
+        run: |
+          python scripts/reclasificar_pen.py \
+            --repo monitor_contratos_v2 \
+            --todo
         continue-on-error: true
 
-      - name: Scraper BORA (resoluciones)
-        run: python src/ingestion/scraper_bora.py
+      # ── 7. Actualizar nómina ──────────────────────────────────────
+      - name: Scraper nómina APN
+        run: python scripts/scraper_nomina.py
         continue-on-error: true
 
-      - name: Scraper nómina JGM
-        run: python src/ingestion/scraper_nomina.py
+      # ── 8. Generar JSONs para dashboards ──────────────────────────
+      - name: Generar JSONs
+        run: python scripts/generar_json.py
+
+      # ── 9. Motor de cruces CUIL vs CUIT ──────────────────────────
+      - name: Cruces CUIL vs CUIT
+        run: python scripts/cruzar_cuil_cuit.py
         continue-on-error: true
 
-      - name: Motor de cruce - parentesco
-        run: python src/engine/matrix_kinship.py
-        continue-on-error: true
-
-      - name: Motor de cruce - societario
-        run: python src/engine/matrix_corporate.py
-        continue-on-error: true
-
-      - name: Motor de cruce - flujo de fondos
-        run: python src/engine/matrix_cashflow.py
-        continue-on-error: true
-
+      # ── 10. Commit y push ─────────────────────────────────────────
       - name: Commit datos actualizados
-        uses: stefanzweifel/git-auto-commit-action@v5
+        run: |
+          git config --global user.name  'Robot Monitor PEN'
+          git config --global user.email 'robot@noreply.github.com'
+          git add src/frontend/data/
+          git add data/adjudicaciones_*.csv data/cruces.json data/mapeos_organismos.csv 2>/dev/null || true
+          git diff --staged --quiet \
+            && echo "Sin cambios nuevos" \
+            && exit 0
+          git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} — datos actualizados"
+          git push origin HEAD:main
+
+      # ── 11. Notificación éxito ────────────────────────────────────
+      - name: Notificar éxito
+        if: success()
+        uses: dawidd6/action-send-mail@v3
         with:
-          commit_message: 'datos: actualización automática ${{ github.run_id }}'
-          file_pattern: 'data/*.csv data/*.json'
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          to: ${{ secrets.MAIL_TO }}
+          from: Monitor PEN <${{ secrets.MAIL_USER }}>
+          subject: "✅ Monitor PEN OK — ${{ steps.fecha.outputs.fecha }}"
+          body: |
+            El pipeline diario del Monitor de Transparencia PEN se ejecutó correctamente.
+
+            🔗 Ver run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      # ── 12. Notificación fallo ────────────────────────────────────
+      - name: Notificar fallo
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          to: ${{ secrets.MAIL_TO }}
+          from: Monitor PEN <${{ secrets.MAIL_USER }}>
+          subject: "❌ Monitor PEN FALLÓ — ${{ steps.fecha.outputs.fecha }}"
+          body: |
+            ⚠️ El pipeline diario falló y requiere revisión.
+
+            🔗 Ver logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Causas comunes:
+            - monitor_contratos_v2 no tiene reportes nuevos
+            - BORA / MapaDelEstado no respondieron
+            - Error en scripts de reclasificación
