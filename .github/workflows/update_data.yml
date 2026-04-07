@@ -91,7 +91,7 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USER }}
           password: ${{ secrets.MAIL_PASS }}
-          to: ${{ secrets.MAIL_TO }}
+          to: viny01958@gmail.com
           from: Monitor PEN <${{ secrets.MAIL_USER }}>
           subject: "✅ Monitor PEN OK — ${{ steps.fecha.outputs.fecha }}"
           body: |
@@ -109,7 +109,7 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USER }}
           password: ${{ secrets.MAIL_PASS }}
-          to: ${{ secrets.MAIL_TO }}
+          to: viny01958@gmail.com
           from: Monitor PEN <${{ secrets.MAIL_USER }}>
           subject: "❌ Monitor PEN FALLÓ — ${{ steps.fecha.outputs.fecha }}"
           body: |
