@@ -1,0 +1,22 @@
+{
+  "generado": "2026-04-07 13:47",
+  "total_contratos": 165,
+  "total_personal": 6093,
+  "ramas": {
+    "jgm": {
+      "contratos": 165,
+      "personal": 611,
+      "monto_total": 147547575.94
+    },
+    "sgp": {
+      "contratos": 0,
+      "personal": 144,
+      "monto_total": 0.0
+    },
+    "presidencia": {
+      "contratos": 0,
+      "personal": 399,
+      "monto_total": 0.0
+    }
+  }
+}
