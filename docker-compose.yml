@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: jgm_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: jgm_anticorrupcion
+    ports:
+      - "5433:5432"   # 5433 local para no chocar con marketing_db en 5432
+    volumes:
+      - jgm_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d jgm_anticorrupcion"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jgm_pgdata:
