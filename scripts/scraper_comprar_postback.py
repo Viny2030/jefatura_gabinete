@@ -374,10 +374,11 @@ def _parse_grid(soup, area_key, saf_id, nombre_org):
     rows = grid.find_all("tr")
     for row in rows:
         cells = row.find_all("td")
+        texts = [c.get_text(strip=True) for c in cells]
+        primer_link = row.find("a", href=True)
+        url_detalle = ("https://comprar.gob.ar" + primer_link["href"]) if primer_link else None
         if len(cells) < 4:
             continue
-
-        texts = [c.get_text(strip=True) for c in cells]
 
         # Filtrar filas de paginación (solo números) o cabecera
         if not texts[0] or texts[0].isdigit():
@@ -437,6 +438,7 @@ def _parse_grid(soup, area_key, saf_id, nombre_org):
             "area":           area_key,
             "saf":            saf_id,
             "organismo":      nombre_org,
+            "url_detalle": url_detalle,
         })
 
     return contratos
