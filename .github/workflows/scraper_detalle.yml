@@ -1,0 +1,178 @@
+name: Scraper Detalle Contratos JGM — Nocturno
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 00:00 ART = 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  scrape-detalle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: jgm_anticorrupcion
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Importar contratos desde CSV
+        env:
+          DATABASE_URL: postgresql://user:password@localhost:5432/jgm_anticorrupcion
+        run: |
+          python - << 'PYEOF'
+          import os, csv, psycopg2
+          conn = psycopg2.connect(os.environ["DATABASE_URL"])
+          cur  = conn.cursor()
+
+          # Crear tabla contratos
+          cur.execute("""
+            CREATE TABLE IF NOT EXISTS contratos (
+              id                SERIAL PRIMARY KEY,
+              numero_proceso    VARCHAR(60) NOT NULL UNIQUE,
+              nombre_proceso    TEXT,
+              tipo_proceso      VARCHAR(80),
+              fecha_apertura    DATE,
+              estado            VARCHAR(60),
+              unidad_ejecutora  TEXT,
+              saf_texto         TEXT,
+              area              VARCHAR(40),
+              saf               VARCHAR(10),
+              organismo         TEXT,
+              monto_adjudicado  NUMERIC(20,2),
+              moneda            VARCHAR(10),
+              proveedor_razon   TEXT,
+              proveedor_cuit    VARCHAR(20),
+              url_detalle       TEXT,
+              detalle_scrapeado BOOLEAN DEFAULT FALSE,
+              created_at        TIMESTAMP DEFAULT NOW()
+            )
+          """)
+          conn.commit()
+
+          # Importar desde contratos_detalle.csv si existe
+          csv_path = "contratos_detalle.csv"
+          if os.path.exists(csv_path):
+            with open(csv_path, encoding="utf-8") as f:
+              reader = csv.DictReader(f)
+              for row in reader:
+                cur.execute("""
+                  INSERT INTO contratos
+                    (numero_proceso, nombre_proceso, tipo_proceso, estado,
+                     unidad_ejecutora, organismo, monto_adjudicado,
+                     proveedor_razon, proveedor_cuit, detalle_scrapeado)
+                  VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                  ON CONFLICT (numero_proceso) DO UPDATE SET
+                    monto_adjudicado  = EXCLUDED.monto_adjudicado,
+                    proveedor_razon   = EXCLUDED.proveedor_razon,
+                    proveedor_cuit    = EXCLUDED.proveedor_cuit,
+                    detalle_scrapeado = EXCLUDED.detalle_scrapeado
+                """, (
+                  row.get("numero_proceso",""),
+                  row.get("nombre_proceso",""),
+                  row.get("tipo_proceso",""),
+                  row.get("estado",""),
+                  row.get("unidad_ejecutora",""),
+                  row.get("organismo",""),
+                  row.get("monto_adjudicado") or None,
+                  row.get("proveedor_razon") or None,
+                  row.get("proveedor_cuit") or None,
+                  row.get("detalle_scrapeado","false").lower() == "true",
+                ))
+            conn.commit()
+            print(f"CSV importado")
+          else:
+            # Primera corrida: importar desde contratos_jgm.csv (scraper base)
+            with open("contratos_jgm.csv", encoding="utf-8") as f:
+              reader = csv.DictReader(f)
+              for row in reader:
+                cur.execute("""
+                  INSERT INTO contratos (numero_proceso, nombre_proceso, tipo_proceso,
+                    fecha_apertura, estado, unidad_ejecutora, organismo)
+                  VALUES (%s,%s,%s,%s,%s,%s,%s)
+                  ON CONFLICT (numero_proceso) DO NOTHING
+                """, (
+                  row.get("numero_proceso",""),
+                  row.get("nombre_proceso",""),
+                  row.get("tipo_proceso",""),
+                  row.get("fecha_apertura") or None,
+                  row.get("estado",""),
+                  row.get("unidad_ejecutora",""),
+                  row.get("saf",""),
+                ))
+            conn.commit()
+            print("Primera corrida: importado desde contratos_jgm.csv")
+
+          cur.execute("SELECT COUNT(*) FROM contratos")
+          print(f"Contratos en DB: {cur.fetchone()[0]}")
+          cur.execute("SELECT COUNT(*) FROM contratos WHERE detalle_scrapeado = TRUE")
+          print(f"Ya procesados: {cur.fetchone()[0]}")
+          cur.close()
+          conn.close()
+          PYEOF
+
+      - name: Correr scraper de detalle
+        env:
+          DATABASE_URL: postgresql://user:password@localhost:5432/jgm_anticorrupcion
+        run: python scripts/scraper_detalle_contratos.py --limit 300
+
+      - name: Exportar resultados a CSV
+        env:
+          DATABASE_URL: postgresql://user:password@localhost:5432/jgm_anticorrupcion
+        run: |
+          python - << 'PYEOF'
+          import os, csv, psycopg2
+          conn = psycopg2.connect(os.environ["DATABASE_URL"])
+          cur  = conn.cursor()
+          cur.execute("""
+            SELECT numero_proceso, nombre_proceso, tipo_proceso, estado,
+                   unidad_ejecutora, organismo, monto_adjudicado,
+                   proveedor_razon, proveedor_cuit, detalle_scrapeado
+            FROM contratos ORDER BY numero_proceso
+          """)
+          rows = cur.fetchall()
+          cols = ["numero_proceso","nombre_proceso","tipo_proceso","estado",
+                  "unidad_ejecutora","organismo","monto_adjudicado",
+                  "proveedor_razon","proveedor_cuit","detalle_scrapeado"]
+          with open("contratos_detalle.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(cols)
+            w.writerows(rows)
+          procesados = sum(1 for r in rows if r[9])
+          con_monto  = sum(1 for r in rows if r[6])
+          print(f"Total: {len(rows)} | Procesados: {procesados} | Con monto: {con_monto}")
+          cur.close()
+          conn.close()
+          PYEOF
+
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add contratos_detalle.csv
+          git diff --staged --quiet || git commit -m "chore: detalle contratos JGM [$(date -u '+%Y-%m-%d')]"
+          git push
