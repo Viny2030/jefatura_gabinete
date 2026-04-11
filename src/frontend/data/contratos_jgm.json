@@ -1,1817 +1,1586 @@
 [
   {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 10/2025",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407958/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
-    "proveedor": "ELEVAR SRL",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 01/26",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": 1164000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407959/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 431/2025",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407960/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0029-LPU25",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407961/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "33-57391612-9",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPRAR  63-0063-LPU25",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407962/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 10/2025",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408002/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CUYO",
-    "proveedor": "ELEVADORES  EXON  S.A.S",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 01/26",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": 1176000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408003/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Privada 39/2025",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408004/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Privada 40/2025",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408005/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA Contrataciones Directas",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408006/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR  63-0035-LPU25",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408007/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública INM 6012",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408073/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408074/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "CODYELA S.A",
-    "cuit": "30-70961103-4",
-    "tipo_contratacion": "Licitación Pública 1176/2025",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408075/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 59/2025",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408076/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - GENDARMERA NACIONAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-62557427-3",
-    "tipo_contratacion": "Licitación Pública 61/2025",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408077/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0031-LPU25",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408078/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0045-LPU25",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408079/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
-    "proveedor": "ETAP SRL",
-    "cuit": "30-64024633-9",
-    "tipo_contratacion": "Licitación Pública 29/25",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408143/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "la misma al Sr. OLIVARES ANTONIO",
-    "cuit": "20-13112636-1",
-    "tipo_contratacion": "Licitación Pública 74/2025",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408144/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "MEDICINA PARA EMPRESAS S.A. (",
-    "cuit": "30-70771220-8",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0028-LPU25",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408145/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "AUTOSUCHIN S.R.L. (",
-    "cuit": "30-70931785-3",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0049-LPU25",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408146/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "COMPLUS  S.A.  (",
-    "cuit": "33-67724820-9",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0071-LPU25",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408147/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
-    "proveedor": "ETAP SRL",
-    "cuit": "30-64024633-9",
-    "tipo_contratacion": "Licitación Pública 29/25",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408143/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "la misma al Sr. OLIVARES ANTONIO",
-    "cuit": "20-13112636-1",
-    "tipo_contratacion": "Licitación Pública 74/2025",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408144/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "MEDICINA PARA EMPRESAS S.A. (",
-    "cuit": "30-70771220-8",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0028-LPU25",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408145/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "AUTOSUCHIN S.R.L. (",
-    "cuit": "30-70931785-3",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0049-LPU25",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408146/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "COMPLUS  S.A.  (",
-    "cuit": "33-67724820-9",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0071-LPU25",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408147/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
-    "proveedor": "ETAP SRL",
-    "cuit": "30-64024633-9",
-    "tipo_contratacion": "Licitación Pública 29/25",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408143/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "la misma al Sr. OLIVARES ANTONIO",
-    "cuit": "20-13112636-1",
-    "tipo_contratacion": "Licitación Pública 74/2025",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408144/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "MEDICINA PARA EMPRESAS S.A. (",
-    "cuit": "30-70771220-8",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0028-LPU25",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408145/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "AUTOSUCHIN S.R.L. (",
-    "cuit": "30-70931785-3",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0049-LPU25",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408146/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "COMPLUS  S.A.  (",
-    "cuit": "33-67724820-9",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0071-LPU25",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408147/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-03-02",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408190/20260302",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MENDOZA",
-    "proveedor": "N° 1, 2, 4 y 5: SUAREZ ENRIQUE JAVIER",
-    "cuit": "20-13540381-5",
-    "tipo_contratacion": "Licitación Pública 2/2026",
-    "fecha_adjudicacion": "2026-03-02",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408191/20260302",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 59/2025",
-    "fecha_adjudicacion": "2026-03-02",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408192/20260302",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública INM 6023",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408195/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 0000001/2026",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408196/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MENDOZA",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "20-17986257-4",
-    "tipo_contratacion": "Contratación Directa 1/2026",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408197/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE REGULACIN DEL TRANSPORTE",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 4/2025",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408198/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR  63-0044-LPU25",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408199/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL Licitaciones Pblicas",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-03-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408337/20260304",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "OLEIROS S.A. (",
-    "cuit": "30-71543213-3",
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0002-LPU25",
-    "fecha_adjudicacion": "2026-03-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408338/20260304",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0037-LPU25",
-    "fecha_adjudicacion": "2026-03-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408339/20260304",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "20-33431651-4",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual  13/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 1131000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408405/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "30-69723276-8",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 07/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408406/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "YAKU  SRL",
-    "cuit": "30-71592624-1",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 08/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 2758000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408407/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "ONELAB",
-    "cuit": "30-71494691-5",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 09/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 240806.8,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408408/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "Lara Martin Miguel",
-    "cuit": "20-27594242-2",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 10/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 358000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408409/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "20-37091579-8",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 11/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408410/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "30-71593195-4",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 12/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408411/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "BARRIONUEVO ROBERTO MARCOS",
-    "cuit": "20-25421512-1",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 14/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 2415000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408412/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "Dominguez  Juan  Carlos",
-    "cuit": "20-07838036-6",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 15/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 116306890.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408413/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "ONE  LAB  SOLUTIONS  SA",
-    "cuit": "30-71494691-5",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 16/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 292861.14,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408414/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "MARTINEZ JAVIER ATILIO",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 17/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 378400.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408415/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "30-71592624-1",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 18/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408416/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "LOBOV CIA",
-    "cuit": "30-54167722-0",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 19/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 8038600.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408417/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "ALBERTO RAUL ELIAS",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual 20/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 2300000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408418/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-07",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-08",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-51989149-9",
-    "tipo_contratacion": "Licitación Pública 21/2025",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408510/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 31-0020-LPU25",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408511/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-61029860-1",
-    "tipo_contratacion": "Licitación Pública 80/2025",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408512/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408513/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
-    "proveedor": "SOLUCIONES  INTEGRALES  APLICADAS  SRL",
-    "cuit": "30709196991",
-    "tipo_contratacion": "Contratación Directa 0000002/2026",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": 988450.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408554/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-71048086-5",
-    "tipo_contratacion": "Licitación Pública 12/2025",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408555/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-66362548-5",
-    "tipo_contratacion": "Licitación Pública 69/2025",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408556/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL POSADAS Contrataciones Directas",
-    "proveedor": "ERNESTO NIVEYRO S.A",
-    "cuit": "30557129908",
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408557/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE ADMINISTRACIN DE BIENES DEL ESTADO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "20-39914546-6",
-    "tipo_contratacion": "Subasta Pública 100/2025",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408558/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE ADMINISTRACIN DE BIENES DEL ESTADO",
-    "proveedor": "CIUDAD G3 SOCIEDAD ANÓNIMA (",
-    "cuit": "30-71826383-9",
-    "tipo_contratacion": "Subasta Pública 392-0090-SPU25",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408559/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 21/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408574/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA RO COLORADO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-71046390-1",
-    "tipo_contratacion": "Licitación Pública 23/25",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408575/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 26/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408576/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 63/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408577/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-60407526-9",
-    "tipo_contratacion": "Licitación Pública 66/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408578/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-66362548-5",
-    "tipo_contratacion": "Licitación Pública 74/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408579/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 83/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408584/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO Listado rdenes de Compra Emitidas en el Mes de Febrero de 2026",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408585/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0038-LPU25",
-    "fecha_adjudicacion": "2026-03-12",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408665/20260312",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ERNESTO NIVEYRO S.A",
-    "cuit": "30-55712990-8",
-    "tipo_contratacion": "Licitación Pública 1148/2025",
-    "fecha_adjudicacion": "2026-03-13",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408794/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ABEL OMAR BAGGIO",
-    "cuit": "20-05099630-2",
-    "tipo_contratacion": "Licitación Privada 1959/2025",
-    "fecha_adjudicacion": "2026-03-13",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408795/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "BRILLAFE S.R.L",
-    "cuit": "30-71875410-7",
-    "tipo_contratacion": "Licitación Pública 3/2026",
-    "fecha_adjudicacion": "2026-03-13",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408796/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ERNESTO NIVEYRO S.A",
-    "cuit": "30-55712990-8",
-    "tipo_contratacion": "Licitación Pública 1148/2025",
-    "fecha_adjudicacion": "2026-03-14",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408794/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ABEL OMAR BAGGIO",
-    "cuit": "20-05099630-2",
-    "tipo_contratacion": "Licitación Privada 1959/2025",
-    "fecha_adjudicacion": "2026-03-14",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408795/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "BRILLAFE S.R.L",
-    "cuit": "30-71875410-7",
-    "tipo_contratacion": "Licitación Pública 3/2026",
-    "fecha_adjudicacion": "2026-03-14",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408796/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ERNESTO NIVEYRO S.A",
-    "cuit": "30-55712990-8",
-    "tipo_contratacion": "Licitación Pública 1148/2025",
-    "fecha_adjudicacion": "2026-03-15",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408794/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ABEL OMAR BAGGIO",
-    "cuit": "20-05099630-2",
-    "tipo_contratacion": "Licitación Privada 1959/2025",
-    "fecha_adjudicacion": "2026-03-15",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408795/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "BRILLAFE S.R.L",
-    "cuit": "30-71875410-7",
-    "tipo_contratacion": "Licitación Pública 3/2026",
-    "fecha_adjudicacion": "2026-03-15",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408796/20260313",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "CECILIA MARIANELA NATEL",
-    "cuit": "27328514996",
-    "tipo_contratacion": "Licitación Privada 1957/2025",
-    "fecha_adjudicacion": "2026-03-16",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408858/20260316",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "ABC LATINOAMERICANA DE COMERCIALIZACIÓN SA",
-    "cuit": "30715066056",
-    "tipo_contratacion": "Licitación Privada 1958/2025",
-    "fecha_adjudicacion": "2026-03-16",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408859/20260316",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-64106337-8",
-    "tipo_contratacion": "Licitación Pública 39/2025",
-    "fecha_adjudicacion": "2026-03-16",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408860/20260316",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 86/2025",
-    "fecha_adjudicacion": "2026-03-16",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408861/20260316",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Privada 34/2025",
-    "fecha_adjudicacion": "2026-03-17",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408913/20260317",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública INM 6029",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409019/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA SANTIAGO DEL ESTERO",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "33-71602778-9",
-    "tipo_contratacion": "Contratación Directa 1/2026",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409020/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-61181661-4",
-    "tipo_contratacion": "Licitación Pública 1216/2025",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409021/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "23-20427139-9",
-    "tipo_contratacion": "Licitación Pública 1233/2025",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408971/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 19/2025",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408972/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 27/2025",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408973/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "CEMYC S.R.L",
-    "cuit": "30-55598503-3",
-    "tipo_contratacion": "Licitación Pública 5/2026",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408974/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GONZALO PAMPURI",
-    "cuit": "20-37247479-4",
-    "tipo_contratacion": "Licitación Pública 1232/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409092/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FRATELLI HERMANOS SRL",
-    "cuit": "30-71850768-1",
-    "tipo_contratacion": "Licitación Pública 1234/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409093/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial CIUDAD TANQUE S.R.L",
-    "cuit": "30-71571501-1",
-    "tipo_contratacion": "Licitación Pública 32/2026",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409094/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 524/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409095/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 541/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409096/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-71164320-2",
-    "tipo_contratacion": "Licitación Pública 79/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409097/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUB S.A",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 1182/2025",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 1235/2025",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
-    "cuit": "20-36599700-5",
-    "tipo_contratacion": "Licitación Pública 1240/2026",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 524/2025",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409108/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 541/2025",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409109/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUB S.A",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 1182/2025",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 1235/2025",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
-    "cuit": "20-36599700-5",
-    "tipo_contratacion": "Licitación Pública 1240/2026",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 524/2025",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409108/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 541/2025",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409109/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUB S.A",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 1182/2025",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 1235/2025",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
-    "cuit": "20-36599700-5",
-    "tipo_contratacion": "Licitación Pública 1240/2026",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 524/2025",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409108/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 541/2025",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409109/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE CRDOBA - SECRETARA DE PLANEAMIENTO FSICO",
-    "proveedor": "ESCALA  CONSTRUCCIONES  S.R.L",
-    "cuit": "33-68096045-9",
-    "tipo_contratacion": "Licitación Pública 14/2026",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409240/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409242/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 1239/2026",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409243/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 1243/2026",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409244/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DEL OESTE",
-    "proveedor": "ARQUIMEDES  CONSTRUCCIONES  S.A.  (",
-    "cuit": "30-71456753-1",
-    "tipo_contratacion": "Contratación Directa por Urgencia 01/2026",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409245/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 0000005/2026",
-    "fecha_adjudicacion": "2026-03-26",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409298/20260326",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Privada 33/2025",
-    "fecha_adjudicacion": "2026-03-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409299/20260326",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública A0PC000000-0002-LPU25",
-    "fecha_adjudicacion": "2026-03-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409300/20260326",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
-    "proveedor": "CORPORACIÓN COSTA SUR SA",
-    "cuit": "30-71244662-1",
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409371/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
-    "proveedor": "AGROPECUARIA DON MARCELINO SRL",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 02/26",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409372/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "30-71081955-2",
-    "tipo_contratacion": "Licitación Pública 1230/2025",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409373/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 1231/2025",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409374/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial SEISAN BA S.A",
-    "cuit": "30-71703506-9",
-    "tipo_contratacion": "Licitación Pública 1234/2025",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409375/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-71512526-5",
-    "tipo_contratacion": "Licitación Pública 23/25",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409376/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "27252357918",
-    "tipo_contratacion": "Licitación Pública 3/2026",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409377/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 301/2025",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": 84.0,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409378/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA NORESTE Adjudicaciones Febrero 2026",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409379/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL OESTE",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "30-71141777-6",
-    "tipo_contratacion": "Contratación Directa por Trámite Simplificado 01/2026",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": 9999400.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409380/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública INM 6031",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409470/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ROSA MARIA LEONOR POLLERO",
-    "cuit": "30-71872914-5",
-    "tipo_contratacion": "Licitación Pública 1244/2026",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409471/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 301/2025",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": 84.0,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409472/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
-    "proveedor": "GRUB S. A. (",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 33/2025",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409473/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "SITUS S.A",
-    "cuit": "30-70927224-8",
-    "tipo_contratacion": "Licitación Pública 34/2025",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409474/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 22/2025",
-    "fecha_adjudicacion": "2026-03-31",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409557/20260331",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO DE INVESTIGACIONES CIENTFICAS Y TCNICAS PARA LA DEFENSA",
-    "proveedor": "GASTRONOM S.A (",
-    "cuit": "33-70924676-9",
-    "tipo_contratacion": "Licitación Pública 36-0003-LPU25",
-    "fecha_adjudicacion": "2026-03-31",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409558/20260331",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública A0PC000000-0004-LPU25",
-    "fecha_adjudicacion": "2026-03-31",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409559/20260331",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AUDITORA GENERAL DE LA NACIN",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 1/2026",
-    "fecha_adjudicacion": "2026-04-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409701/20260401",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - NUCLEOELCTRICA ARGENTINA S.A. - DEPARTAMENTO EVALUACIN DE OFERTAS",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública",
-    "fecha_adjudicacion": "2026-04-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409702/20260401",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO DE INVESTIGACIONES CIENTFICAS Y TCNICAS PARA LA DEFENSA",
-    "proveedor": "GASTRONOM S.A (",
-    "cuit": "33-70924676-9",
-    "tipo_contratacion": "Licitación Pública 36-0003-LPU25",
-    "fecha_adjudicacion": "2026-04-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409703/20260401",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 1/2026",
-    "fecha_adjudicacion": "2026-04-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409763/20260406",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 30/2025",
-    "fecha_adjudicacion": "2026-04-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409764/20260406",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 60/2025",
-    "fecha_adjudicacion": "2026-04-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409765/20260406",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública A0KG000000-0004-LPU24",
-    "fecha_adjudicacion": "2026-04-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409766/20260406",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa por Excepción 01/2022",
-    "fecha_adjudicacion": "2026-04-06",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409767/20260406",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL Solicitudes de Provisin",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-04-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409768/20260406",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública A0KJ000000-0011-LPU24",
-    "fecha_adjudicacion": "2026-04-07",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409847/20260407",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - NOTA ACLARATORIA - SERVICIO PENITENCIARIO FEDERAL Solicitudes  de Provisin",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-04-07",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409848/20260407",
-    "ejercicio": 2026,
-    "gestion": "Milei"
+    "numero_proceso": "79-0001-CDI24",
+    "nombre_proceso": "Contratación de la firma EJES S.A. - servicio mensual de monitoreo de medios de comunicación",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "15/03/2024 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0001-CDI25",
+    "nombre_proceso": "Solicitud de adquisición, renovación y actualización licencias Microsoft.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "23/01/2025 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0001-LPR24",
+    "nombre_proceso": "Servicio de limpieza y desinfección de tanques de agua de los edificios pertenecientes a la JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "13/06/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0001-LPR25",
+    "nombre_proceso": "Adquisición de enlaces de INTERNET y enlaces LAN to LAN.",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "28/02/2025 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0001-LPU25",
+    "nombre_proceso": "SERVICIO INTEGRAL DE BARRIDO Y LIMPIEZA en los edificios de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "05/03/2025 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-CDI23",
+    "nombre_proceso": "Convenio con la EMPRESA ARGENTINA DE SOLUCIONES SATELITALES SOCIEDAD ANÓNIMA AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "09/01/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-CDI24",
+    "nombre_proceso": "Servicio de mantenimiento de persianas y portón de acceso vehicular",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/06/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-CDI25",
+    "nombre_proceso": "Adquisición de elementos de protección personal para talleres de mantenimiento de la JGM",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "28/05/2025 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-LPR23",
+    "nombre_proceso": "Servicio de guardería de vehículos para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "08/03/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-LPR24",
+    "nombre_proceso": "PROVISIÓN DE ALIMENTOS PARA LAS DISTINTAS DEPENDENCIAS DE LA JEFATURA DE GABINETE DE MINISTROS.",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "31/10/2024 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-LPR25",
+    "nombre_proceso": "Seguros con cobertura de Todo Riesgo Operativo y Responsabilidad Civil para JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "02/06/2025 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0002-LPU25",
+    "nombre_proceso": "Servicio de mantenimiento integral, correctivo con asistencia tecnica para los ascensores de JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "01/12/2025 10:00 Hrs.",
+    "estado": "Disponible Para Adjudicar",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-CDI23",
+    "nombre_proceso": "Convenio con CORREO OFICIAL DE LA REPÚBLICA ARGENTINA S.A.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "20/01/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-CDI25",
+    "nombre_proceso": "Adquisición de indumentaria y calzado para el personal de la JGM",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/06/2025 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-LPR23",
+    "nombre_proceso": "Servicio de mantenimiento del Sistema de Administración de Recursos Humanos “SARHA”",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "24/04/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-LPR24",
+    "nombre_proceso": "Adquisición de materiales eléctricos para la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "27/08/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-LPR25",
+    "nombre_proceso": "Requerimiento Servicio de mantenimiento y soporte de base de datos Oracle y consultoría",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "24/06/2025 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-LPU23",
+    "nombre_proceso": "Servicio de suscripción de Licencias ADOBE CREATIVE CLOUD FOR TEAMS ALL APPS",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "16/02/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0003-LPU25",
+    "nombre_proceso": "CONTRATACIÓN DE UN SERVICIO MANEJO INTEGRAL DE PLAGAS Y LIMPIEZA DE TANQUES DE AGUA POTABLE JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "01/12/2025 10:00 Hrs.",
+    "estado": "Disponible Para Adjudicar",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0004-CDI23",
+    "nombre_proceso": "Contratación de un servicio de monitoreo de medios de comunicación brindado por la firma EJES S.A.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "02/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0004-CDI24",
+    "nombre_proceso": "Contratación de OTOBA S.A. para el servicio de alquiler de oficinas en inmueble",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "09/04/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0004-CDI25",
+    "nombre_proceso": "Adquisición de útiles de oficina para la JEFATURA E GABINETE DE MINISTROS",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "10/10/2025 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0004-LPR23",
+    "nombre_proceso": "Servicio de mantenimiento preventivo, correctivo y de emergencia de vehículos de la JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "05/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0005-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE CUYO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 09:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0005-CDI24",
+    "nombre_proceso": "Adquisicion de Certificados de Seguridad SSL a implementarse en Jefatura de Gabinete de Ministros",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "24/05/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0005-CDI25",
+    "nombre_proceso": "Contratación de un Servicio Integral de Exámenes Preocupacionales",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "16/10/2025 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0005-LPR23",
+    "nombre_proceso": "Adquisición de bienes para el desarrollo de diferentes jornadas y actividades INJUVE",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "12/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0005-LPU24",
+    "nombre_proceso": "Servicio de restauración y mantenimiento integral de los ascensores de la JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "04/11/2024 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0006-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE ROSARIO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0006-CDI25",
+    "nombre_proceso": "CONTRATACIÓN DE SERVICIO INTEGRAL PARA LA GESTIÓN DE RESIDUOS PATOGÉNICOS",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "16/10/2025 10:00 Hrs.",
+    "estado": "Fracasado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0006-LPR23",
+    "nombre_proceso": "Adquisición de resmas de papel",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "28/04/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0006-LPR24",
+    "nombre_proceso": "ADQUISICIÓN DE ARTÍCULOS DE LIMPIEZA PARA JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "20/09/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0007-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DEL SUR y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0007-LPR23",
+    "nombre_proceso": "ADQUISICIÓN DE ÚTILES DE OFICINA",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "12/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0007-LPR24",
+    "nombre_proceso": "Adquisición de útiles de oficina para la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "20/11/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0007-LPR25",
+    "nombre_proceso": "ADQUISICIÓN DE ALIMENTOS Y ALQUILER DE MÁQUINAS DE CAFÉ PARA LAS DISTINTAS DEPENDENCIAS DE LA JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "16/12/2025 10:00 Hrs.",
+    "estado": "Adjudicado con doc. contractuales generados",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0007-LPU23",
+    "nombre_proceso": "Adquisición computadoras portátiles y accesorios para la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "02/05/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0008-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE LANÚS y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 09:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0008-LPR24",
+    "nombre_proceso": "Servicio por el mantenimiento de la puerta automática de ingreso peatonal del edificio de la JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "26/08/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0008-LPR25",
+    "nombre_proceso": "Servicio y Mantenimiento de Cortinas Metálicas para JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "23/12/2025 10:00 Hrs.",
+    "estado": "Disponible Para Adjudicar",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0009-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE LA MATANZA y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0009-LPR23",
+    "nombre_proceso": "Adquisición de materiales de conectividad y herramientas",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "15/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0009-LPR24",
+    "nombre_proceso": "Adquisición de vestimenta y calzado para el personal de la JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "10/10/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0010-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE LOMAS DE ZAMORA / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0010-LPR23",
+    "nombre_proceso": "Servicio de readecuación del sector de la COORDINACION DE MEDICINA DEL TRABAJO",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "19/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0011-CDI23",
+    "nombre_proceso": "Convenio entre UNIVERSIDAD NACIONAL DE GENERAL SAN MARTÍN / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0011-LPR23",
+    "nombre_proceso": "Adquisición de elementos para actividades deportivas",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "07/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0011-LPR24",
+    "nombre_proceso": "Sistema de alarma contra robo del edificio sede de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "30/09/2024 10:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0012-CDI23",
+    "nombre_proceso": "Convenio entre UNIVERSIDAD NACIONAL RAÚL SCALABRINI ORTIZ / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 10:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0012-LPR23",
+    "nombre_proceso": "Adquisición de materiales para promoción, difusión y organización de temáticas abordadas por INJUVE",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "03/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0012-LPR24",
+    "nombre_proceso": "ADQUISICIÓN DE VAJILLA Y ARTÍCULOS DE BAZAR Y MENAJE PARA LA JEFATURA DE GABINETE DE MINISTROS.",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "25/10/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0013-CDI23",
+    "nombre_proceso": "Convenio entre UNIVERSIDAD NACIONAL DE TRES DE FEBRERO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0013-LPR23",
+    "nombre_proceso": "Adquisición de materiales eléctricos para la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "31/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0013-LPR24",
+    "nombre_proceso": "Solicitud de adquisición de desfibriladores",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "18/10/2024 12:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0013-LPU23",
+    "nombre_proceso": "Servicio de mantenimiento preventivo, correctivo y de emergencia de equipos y sistemas de aires",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "16/06/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0014-CDI23",
+    "nombre_proceso": "Contratación de los servicios de la “Asociación para el Fortalecimiento Comunitario”",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "27/02/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0014-LPR23",
+    "nombre_proceso": "Adquisición de impresoras de códigos de barras y equipamientos varios para la JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "18/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0014-LPU23",
+    "nombre_proceso": "Servicio de envío de correos electrónicos transaccionales",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "07/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0015-LPR23",
+    "nombre_proceso": "Servicio de renovación de licencias de antivirus para estaciones de trabajo y servidores",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "11/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0015-LPR24",
+    "nombre_proceso": "Adquisición de Solución Llave en mano para Implementación de Sistema de CCTV Ed. Somisa JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "28/11/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0015-LPU22",
+    "nombre_proceso": "Servicio de mantenimiento de equipos de aire acondicionado para edificios JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "09/02/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0016-LPR23",
+    "nombre_proceso": "Contratación servicio integral de organización de eventos - Consejo Federal de la Sociedad Civil",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "01/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado con doc. contractuales generados",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0016-LPR24",
+    "nombre_proceso": "Adquisición de elementos de protección personal para los distintos talleres de JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "15/10/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0016-LPU22",
+    "nombre_proceso": "Servicio de producción logística integral para operativos territoriales de atención a ciudadanos",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "16/01/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0016-LPU23",
+    "nombre_proceso": "Servicio de soporte correctivo, técnico y evolutivo de la Plataforma de Firma Digital Remota",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "22/08/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0017-CDI23",
+    "nombre_proceso": "Servicio de limpieza y desinfección de tanques de agua",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "09/03/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0017-LPR23",
+    "nombre_proceso": "Servicio de impresión de libro",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "31/08/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0017-LPR24",
+    "nombre_proceso": "Adquisición de Licencias Adobe",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "24/10/2024 10:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0017-LPU22",
+    "nombre_proceso": "CONTRATACIÓN DEL SERVICIO DE TRANSPORTE TERRESTRE DE PERSONAS EN EL MARCO DEL PROG. “DESARROLLARTE\"",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "23/01/2023 09:00 Hrs.",
+    "estado": "Fracasado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0017-LPU23",
+    "nombre_proceso": "Servicio de infraestructura de la Plataforma de Firma Digital de la Autoridad Certificante ONTI",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "22/08/2023 10:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0017-LPU24",
+    "nombre_proceso": "Solicitud de adquisición de computadoras de escritorio y portátiles para JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "29/11/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0018-CDI23",
+    "nombre_proceso": "Contratación de la Facultad Latinoamericana de Ciencias Sociales (FLACSO-Argentina) para estudio",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "24/02/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0018-LPR23",
+    "nombre_proceso": "Servicio de exámenes preocupacionales para personal de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "08/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0018-LPR24",
+    "nombre_proceso": "Adquisición, instalación y mantenimiento de servicios LAN to LAN, Internet y servicios TLS nivel 2",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "26/11/2024 11:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0018-LPU23",
+    "nombre_proceso": "Contratación de servicios integrales de organización de eventos y alquiler de pantallas led",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "14/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0019-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE ENTRE RÍOS y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0019-LPR23",
+    "nombre_proceso": "Adquisición de discos SSD para computadoras de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "21/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0019-LPR24",
+    "nombre_proceso": "Solicitud de compra y recarga de matafuegos para la JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "25/11/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0019-LPU23",
+    "nombre_proceso": "servicios de producción logística integral para operativos territoriales de atención a ciudadanos",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "08/09/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0019-LPU24",
+    "nombre_proceso": "Solicitud de contratación servicio de mantenimiento Aire Acondicionado para las sedes de la JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "19/11/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0020-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE SANTIAGO DEL ESTERO y la SECRETARÍA DE GESTIÓN Y EMPLEO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 10:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0020-LPR23",
+    "nombre_proceso": "Adquisición de equipamiento para videoconferencias en la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "09/11/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0020-LPR24",
+    "nombre_proceso": "Contratación de seguros para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "05/11/2024 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0020-LPU23",
+    "nombre_proceso": "Contratación asistencia técnica para actividades complementarias Festival Quiero",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "30/08/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0021-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DEL LITORAL y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0021-LPU23",
+    "nombre_proceso": "Adquisición de sillas ergonómicas para las dependencias de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "11/09/2023 09:00 Hrs.",
+    "estado": "Disponible Para Adjudicar",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0022-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DEL CHACO AUSTRAL y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/03/2023 10:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0022-LPR24",
+    "nombre_proceso": "Servicio de mantenimiento y soporte sistema SARHA - Liquidación de haberes JGM",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "21/11/2024 10:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0022-LPU23",
+    "nombre_proceso": "Adquisición computadoras portátiles y accesorios para la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "20/09/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0023-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL ARTURO JAURETCHE y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/03/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0023-LPR24",
+    "nombre_proceso": "SERVICIO MANTENIMIENTO PREVENTIVO Y CORRECTIVO INTEGRAL DEL SISTEMA DE DETECCIÓN",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "20/11/2024 11:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0024-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE MISIONES y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "09/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0024-LPR22",
+    "nombre_proceso": "adquisición de vestimenta para el personal",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "05/01/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0024-LPU24",
+    "nombre_proceso": "Adquisición remodelación y mantenimiento Data Center JGM",
+    "tipo_proceso": "Licitación Pública",
+    "fecha_apertura": "29/11/2024 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0025-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE SAN JUAN y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "02/08/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0025-LPR24",
+    "nombre_proceso": "Servicio de mantenimiento preventivo, correctivo y de emergencia de la flota automotor",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "22/11/2024 13:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0026-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE RÍO NEGRO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "08/05/2023 13:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0027-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DEL NORDESTE y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "05/06/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0027-LPR22",
+    "nombre_proceso": "Servicio de guardería de vehículos para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "01/02/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0028-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE QUILMES y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "27/04/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0028-LPR24",
+    "nombre_proceso": "SISTEMA DE CONTROL DE TIEMPO Y ASISTENCIA, CONTROL DE ACCESOS Y CONTROL DE VISITAS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "16/12/2024 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0029-CDI23",
+    "nombre_proceso": "Convenio Interadministrativo entre la UEET Argentina Futura y EUDEBA S.E.M.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/04/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0030-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE AVELLANEDA y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "05/05/2023 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0030-LPR22",
+    "nombre_proceso": "Servicio de guardería de vehículos para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "18/01/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0030-LPR24",
+    "nombre_proceso": "Solicitud de adquisición de desfibriladores externos automáticos",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "22/11/2024 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0031-CDI23",
+    "nombre_proceso": "Adquisición de elementos para evento INJUVE",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "13/04/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0032-CDI23",
+    "nombre_proceso": "Convenio Específico entre la UEETAF y la UNPAZ",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/06/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0033-CDI23",
+    "nombre_proceso": "Contratación de FUNSAM para la realización de un estudio de investigación",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "28/04/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0033-LPR24",
+    "nombre_proceso": "Adquisición de Licencias de Software Adobe",
+    "tipo_proceso": "Licitación Privada",
+    "fecha_apertura": "04/12/2024 10:00 Hrs.",
+    "estado": "En Apertura",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0034-CDI23",
+    "nombre_proceso": "Servicio de mantenimiento preventivo y correctivo del sistema de detección y extinción de incendios",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "28/04/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0035-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE CUYO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/04/2023 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0036-CDI23",
+    "nombre_proceso": "Convenio entre UNIVERSIDAD NACIONAL RAÚL SCALABRINI ORTIZ / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "11/04/2023 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0037-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE SANTIAGO DEL ESTERO y la SECRETARÍA DE GESTIÓN Y EMPLEO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "11/04/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0038-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DEL CHACO AUSTRAL y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/04/2023 11:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0039-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE LANÚS y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "19/04/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0040-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/05/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0041-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y el INSTITUTO GEOGRAFICO NACIONAL",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/05/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0042-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO y la UNIVERSIDAD TECNOLÓGICA NACION",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "05/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0043-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/06/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0044-CDI23",
+    "nombre_proceso": "Adquisición de sensores de monitoreo PRTG",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "08/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0046-CDI23",
+    "nombre_proceso": "Servicio de provisión de diarios y revistas",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "21/04/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0047-CDI23",
+    "nombre_proceso": "Convenio de Cooperación entre la SDG y la UNTREF",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "10/05/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0048-CDI23",
+    "nombre_proceso": "Adquisición de insumos médicos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "16/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0049-CDI23",
+    "nombre_proceso": "Adquisición de medicamentos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "22/05/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0050-CDI23",
+    "nombre_proceso": "Provisión de paneles desmontables para techos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "17/05/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0051-CDI23",
+    "nombre_proceso": "Adquisición de banderas argentinas de ceremonia y de flameo",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "17/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0052-CDI23",
+    "nombre_proceso": "Convenio entre la UNIVERSIDAD NACIONAL DE TUCUMÁN y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/07/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0053-CDI23",
+    "nombre_proceso": "Servicio de medición de iluminación, ruido, puesta a tierra y estudio ergonómico",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0054-CDI23",
+    "nombre_proceso": "Renovación de Licencias Microsoft",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/05/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0055-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "05/06/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0056-CDI23",
+    "nombre_proceso": "Servicio de mantenimiento y soporte del módulo INTEROPER.AR brindado por la firma UNITECH S.A.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "24/05/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0057-CDI23",
+    "nombre_proceso": "Servicio de mantenimiento y soporte de la PLATAFORMA DE AUTENTICACIÓN ELECTRÓNICA CENTRAL (PAEC)",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "24/05/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0060-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT Nube híbrida",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "18/07/2023 10:00 Hrs.",
+    "estado": "Disponible Para Adjudicar",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0061-CDI23",
+    "nombre_proceso": "Convenio UNSAM-SIP servicio soporte técnico en relacion al sistema de Gestión Documental Electrónica",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/06/2023 12:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0062-CDI23",
+    "nombre_proceso": "Provisión de paneles desmontables para techos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "23/06/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0063-CDI23",
+    "nombre_proceso": "Convenio entre la UNIDAD EJECUTORA ESPECIAL TEMPORARIA “ARGENTINA FUTURA” y UBATEC S.A.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "16/06/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0064-CDI23",
+    "nombre_proceso": "Servicio de validación biométrica para la aplicación Mi Argentina",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0065-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO y LA UNIVERSIDAD NACIONAL DE LA MATANZA",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/08/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0066-CDI23",
+    "nombre_proceso": "Convenio carta de Adhesión - YPF S.A. Combustibles y Aerolubricantes",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "21/07/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0067-CDI23",
+    "nombre_proceso": "Contratación de GUADALQUIVIR S.A. para el servicio de alquiler de oficinas en inmueble",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "26/06/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0068-CDI22",
+    "nombre_proceso": "Convenio Específico con la UNIVERSIDAD TECNOLÓGICA NACIONAL - FACULTAD REGIONAL SAN NICOLÁS",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "27/01/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0068-CDI23",
+    "nombre_proceso": "Adquisición de materiales para actividades educativas",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "17/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0069-CDI23",
+    "nombre_proceso": "Convenio Específico entre la SUBSECRETARÍA DE COORDINACIÓN POLÍTICA E INSTITUCIONAL y la UNSAM",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "01/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0070-CDI23",
+    "nombre_proceso": "Servicio de desinfección con ozono para el saneamiento ambiental de los edificios de la JGM",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "28/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0071-CDI22",
+    "nombre_proceso": "Adquisición de vajilla",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "12/01/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0071-CDI23",
+    "nombre_proceso": "Servicio de asistencia de emergencias y urgencias médicas",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "20/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0072-CDI23",
+    "nombre_proceso": "Convenio entre la SIP y CORASA - Kits Robótica Educativa",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "21/07/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0076-CDI23",
+    "nombre_proceso": "Convenio entre la SUBSECRETARIA DE RELACIONES DE LA SOCIEDAD CIVIL de la JGM y la UNTREF",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0077-CDI22",
+    "nombre_proceso": "Convenio Específico con la UNIVERSIDAD TECNOLOGICA NACIONAL",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "09/01/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0077-CDI23",
+    "nombre_proceso": "Convenio entre la UEETAF de la JGM y EUDEBA S.E.M.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "18/07/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0078-CDI22",
+    "nombre_proceso": "Convenio Interadministrativo con CORREO OFICIAL DE LA REPUBLICA ARGENTINA S.A.",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "17/01/2023 10:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0078-CDI23",
+    "nombre_proceso": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Incendio-Todo Riesgo Operativo",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0079-CDI23",
+    "nombre_proceso": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Responsabilidad Civil JGM",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/09/2023 14:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0080-CDI23",
+    "nombre_proceso": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Equipo técnico",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0081-CDI22",
+    "nombre_proceso": "Servicio de recarga, control trimestral de matafuegos y prueba hidráulica de mangueras",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "16/01/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0081-CDI23",
+    "nombre_proceso": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Accidentes Personales UEETEB",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/09/2023 14:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0082-CDI22",
+    "nombre_proceso": "Convenio con la EMPRESA ARGENTINA DE SOLUCIONES SATELITALES SOCIEDAD ANÓNIMA AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "04/01/2023 10:00 Hrs.",
+    "estado": "Desierto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0082-CDI23",
+    "nombre_proceso": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Responsabilidad Civil UEETEB",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "06/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0083-CDI22",
+    "nombre_proceso": "servicio de limpieza y desinfección de tanques de agua del edificio sede de la JGM",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "20/01/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0083-CDI23",
+    "nombre_proceso": "Contratación de la FUNDACIÓN UNIVERSIDAD CATÓLICA ARGENTINA para un estudio de investigación",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "14/07/2023 11:00 Hrs.",
+    "estado": "Fracasado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0084-CDI23",
+    "nombre_proceso": "Adquisición de equipamiento informático y fotográfico para el INSTITUTO NACIONAL DE JUVENTUDES",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "14/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0086-CDI23",
+    "nombre_proceso": "Servicio de provisión de insumos, recolección y disposición final de residuos patogénicos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "18/08/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0087-CDI23",
+    "nombre_proceso": "Contratación de la FUNDACIÓN UNIVERSIDAD CATÓLICA ARGENTINA para un estudio de investigación",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "30/08/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0089-CDI23",
+    "nombre_proceso": "Contratación de UBATEC S.A. para la investigación de capacidades competitivas de las clases sociales",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "07/11/2023 10:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0090-CDI23",
+    "nombre_proceso": "Contratación de UBATEC S.A. para la realización de estudios del capital social en Argentina",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "07/11/2023 10:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0091-CDI23",
+    "nombre_proceso": "Servicio de recarga y mantenimiento de extintores y de la red de hidrantes de SGYEP",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "15/09/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0092-CDI23",
+    "nombre_proceso": "Servicio de suscripción de licencias ZOOM BUSINESS",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "22/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0093-CDI23",
+    "nombre_proceso": "Servicio de provisión de insumos, recolección y disposición final de residuos patogénicos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "08/09/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0094-CDI23",
+    "nombre_proceso": "Suscripción anual a diversas publicaciones de la LEY S.A. EDITORA E IMPRESORA",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "05/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0095-CDI23",
+    "nombre_proceso": "Convenio entre la UEETEB y la UNIVERSIDAD NACIONAL ARTURO JAURETCHE",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "22/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0096-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "18/09/2023 09:00 Hrs.",
+    "estado": "Pendiente Análisis",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0097-CDI23",
+    "nombre_proceso": "ADQUISICIÓN DE MEDICAMENTOS",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "22/09/2023 09:00 Hrs.",
+    "estado": "Dejado Sin Efecto",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0098-CDI23",
+    "nombre_proceso": "Adquisición de insumos médicos",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "28/09/2023 09:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0099-CDI23",
+    "nombre_proceso": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "11/10/2023 09:00 Hrs.",
+    "estado": "Disponible Para Adjudicar",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0100-CDI23",
+    "nombre_proceso": "Contratación de los servicios de la ASOCIACIÓN PARA EL FORTALECIMIENTO COMUNITARIO",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/10/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
+  },
+  {
+    "numero_proceso": "79-0102-CDI23",
+    "nombre_proceso": "Contratación de los servicios del INSTITUTO DE INVESTIGACIÓN Y DESARROLLO DE LAS TELECOMUNICACIONES",
+    "tipo_proceso": "Contratación Directa",
+    "fecha_apertura": "31/10/2023 10:00 Hrs.",
+    "estado": "Adjudicado",
+    "unidad_ejecutora": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "saf": "305 - Jefatura de Gabinete de Ministros"
   }
 ]

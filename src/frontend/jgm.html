@@ -300,68 +300,66 @@ footer a { color: var(--accent); text-decoration: none; }
 
 <!-- ════════ CONTRATOS ════════ -->
 <div class="seccion" id="sec-contratos">
-
-  <div class="kpi-grid" style="margin-bottom:20px">
-    <div class="kpi-card">
-      <div class="kpi-label">Gestión Adorni</div>
-      <div class="kpi-val" id="k-adorni-c">—</div>
-      <div class="kpi-sub">nov 2025 → hoy</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Gestión Francos</div>
-      <div class="kpi-val" id="k-francos-c">—</div>
-      <div class="kpi-sub">may 2024 → oct 2025</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Gestión Posse</div>
-      <div class="kpi-val" id="k-posse-c">—</div>
-      <div class="kpi-sub">dic 2023 → may 2024</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Monto total</div>
-      <div class="kpi-val">$18.4B</div>
-      <div class="kpi-sub">ARS adjudicados</div>
-    </div>
-  </div>
-
-  <div class="panel">
-    <div class="ph">
-      <h2>Contratos y adjudicaciones — JGM</h2>
-      <button class="btn sec" onclick="exportCSV()" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
-    </div>
-    <div class="filtros">
-      <input id="f-prov"  placeholder="Proveedor…"     style="width:200px" oninput="filtrarC()"/>
-      <input id="f-cuit"  placeholder="CUIT…"          style="width:140px" oninput="filtrarC()"/>
-      <select id="f-tipo" onchange="filtrarC()">
-        <option value="">Todos los tipos</option>
-        <option>Licitación pública</option>
-        <option>Contratación directa</option>
-        <option>Concurso de precios</option>
-      </select>
-      <select id="f-gest" onchange="filtrarC()">
-        <option value="">Todas las gestiones</option>
-        <option value="adorni">Adorni</option>
-        <option value="francos">Francos</option>
-        <option value="posse">Posse</option>
-      </select>
-      <div class="f-count" id="fc-count"></div>
-    </div>
-    <div class="tw">
-      <table>
-        <thead><tr>
-          <th onclick="sortC('proveedor')">Proveedor</th>
-          <th>CUIT</th>
-          <th onclick="sortC('tipo_contratacion')">Tipo</th>
-          <th onclick="sortC('fecha_adjudicacion')">Fecha</th>
-          <th>Gestión</th>
-          <th style="text-align:right" onclick="sortC('monto_adjudicado')">Monto ARS</th>
-        </tr></thead>
-        <tbody id="tbody-c"></tbody>
-      </table>
-    </div>
-  </div>
-
-</div><!-- /contratos -->
+<div class="kpi-grid" style="margin-bottom:20px">
+<div class="kpi-card">
+<div class="kpi-label">Total procesos</div>
+<div class="kpi-val" id="k-total-c">—</div>
+<div class="kpi-sub">desde dic 2023</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Adjudicados</div>
+<div class="kpi-val" id="k-adj-c">—</div>
+<div class="kpi-sub">con contrato firmado</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">En curso</div>
+<div class="kpi-val" id="k-enc-c">—</div>
+<div class="kpi-sub">abiertos / en evaluación</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-label">Última apertura</div>
+<div class="kpi-val" id="k-upd-c" style="font-size:13px">—</div>
+<div class="kpi-sub">scraping automático</div>
+</div>
+</div>
+<div class="panel">
+<div class="ph">
+<h2>Contratos y procesos — JGM</h2>
+<button class="btn sec" onclick="exportCSV()" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
+</div>
+<div class="filtros">
+<input id="f-nup"    oninput="filtrarC()" placeholder="Nº proceso…"   style="width:160px"/>
+<input id="f-nombre" oninput="filtrarC()" placeholder="Nombre…"        style="width:200px"/>
+<select id="f-tipo"  onchange="filtrarC()">
+<option value="">Todos los tipos</option>
+<option value="Contratación Directa">Contratación Directa</option>
+<option value="Licitación Privada">Licitación Privada</option>
+<option value="Licitación Pública">Licitación Pública</option>
+</select>
+<select id="f-estado" onchange="filtrarC()">
+<option value="">Todos los estados</option>
+<option value="Adjudicado">Adjudicado</option>
+<option value="Publicado">Publicado</option>
+<option value="Dejado Sin Efecto">Dejado Sin Efecto</option>
+<option value="Desierto">Desierto</option>
+</select>
+<div class="f-count" id="fc-count"></div>
+</div>
+<div class="tw">
+<table>
+<thead><tr>
+<th onclick="sortC('numero_proceso')">Nº Proceso</th>
+<th onclick="sortC('nombre_proceso')">Nombre</th>
+<th onclick="sortC('tipo_proceso')">Tipo</th>
+<th onclick="sortC('fecha_apertura')">Fecha apertura</th>
+<th onclick="sortC('estado')">Estado</th>
+<th>Unidad Ejecutora</th>
+</tr></thead>
+<tbody id="tbody-c"></tbody>
+</table>
+</div>
+</div>
+</div>
 
 <!-- ════════ PERSONAL ════════ -->
 <div class="seccion" id="sec-personal">
@@ -605,54 +603,73 @@ function switchSec(id) {
   document.getElementById('nav-' + id).classList.add('active');
 }
 
-// ── Contratos ─────────────────────────────────────────────────────────────────
+// ── Contratos ──────────────────────────────────────────────────────────────────────────────
 function filtrarC() {
-  const prov = document.getElementById('f-prov').value.toLowerCase();
-  const cuit = document.getElementById('f-cuit').value.toLowerCase();
-  const tipo = document.getElementById('f-tipo').value;
-  const gest = document.getElementById('f-gest').value;
-
-  let data = allC;
-  if (prov) data = data.filter(c => (c.proveedor||'').toLowerCase().includes(prov));
-  if (cuit) data = data.filter(c => (c.cuit||'').toLowerCase().includes(cuit));
-  if (tipo) data = data.filter(c => (c.tipo_contratacion||'') === tipo);
-  if (gest) data = data.filter(c => getGestion(c.fecha_adjudicacion) === gest);
-
+  var nup    = document.getElementById('f-nup').value.toLowerCase();
+  var nombre = document.getElementById('f-nombre').value.toLowerCase();
+  var tipo   = document.getElementById('f-tipo').value;
+  var estado = document.getElementById('f-estado').value;
+  var data = allC;
+  if (nup)    data = data.filter(function(c){ return (c.numero_proceso||'').toLowerCase().indexOf(nup) >= 0; });
+  if (nombre) data = data.filter(function(c){ return (c.nombre_proceso||'').toLowerCase().indexOf(nombre) >= 0; });
+  if (tipo)   data = data.filter(function(c){ return (c.tipo_proceso||'') === tipo; });
+  if (estado) data = data.filter(function(c){ return (c.estado||'') === estado; });
   renderC(data);
 }
 
 function renderC(data) {
-  document.getElementById('tbody-c').innerHTML = data.slice(0, 300).map(c => {
-    const gk = getGestion(c.fecha_adjudicacion);
-    return `<tr>
-      <td class="fw">${c.proveedor||'—'}</td>
-      <td class="mono">${c.cuit||'—'}</td>
-      <td style="font-size:11px">${c.tipo_contratacion||'—'}</td>
-      <td class="mono">${(c.fecha_adjudicacion||'').substring(0,10)}</td>
-      <td>${chipGestion(gk)}</td>
-      <td class="monto">${fmt(c.monto_adjudicado)}</td>
-    </tr>`;
+  var COLORES = {
+    'Adjudicado':        {bg:'#05966920',fg:'#059669'},
+    'Dejado Sin Efecto': {bg:'#dc262620',fg:'#dc2626'},
+    'Desierto':          {bg:'#d9770620',fg:'#d97706'},
+    'Publicado':         {bg:'#1e40af20',fg:'#1e40af'}
+  };
+  document.getElementById('tbody-c').innerHTML = data.slice(0,300).map(function(c){
+    var est = COLORES[c.estado] || {bg:'#64748b20',fg:'#64748b'};
+    var ue  = (c.unidad_ejecutora||'').replace(/^[0-9]+\/[0-9]+ - /, '');
+    var nom = (c.nombre_proceso||'—');
+    var fec = (c.fecha_apertura||'').substring(0,10);
+    return '<tr>'
+      + '<td class="mono" style="font-size:11px;font-weight:700">' + (c.numero_proceso||'—') + '</td>'
+      + '<td style="font-size:11px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + nom + '">' + nom + '</td>'
+      + '<td style="font-size:11px">' + (c.tipo_proceso||'—') + '</td>'
+      + '<td class="mono" style="font-size:11px">' + fec + '</td>'
+      + '<td><span style="background:' + est.bg + ';color:' + est.fg + ';padding:2px 8px;border-radius:99px;font-size:10px;font-weight:700">' + (c.estado||'—') + '</span></td>'
+      + '<td style="font-size:10px;color:var(--muted)">' + ue + '</td>'
+      + '</tr>';
   }).join('');
   document.getElementById('fc-count').innerHTML =
-    `<strong>${data.length}</strong> resultado${data.length!==1?'s':''}`;
+    '<strong>' + data.length + '</strong> resultado' + (data.length !== 1 ? 's' : '');
 }
 
 function sortC(col) {
   sortStateC.asc = sortStateC.col === col ? !sortStateC.asc : true;
   sortStateC.col = col;
-  allC.sort((a,b) => {
-    const av = a[col]||'', bv = b[col]||'';
+  allC.sort(function(a,b){
+    var av = a[col]||'', bv = b[col]||'';
     return sortStateC.asc ? (av>bv?1:-1) : (av<bv?1:-1);
   });
   filtrarC();
 }
 
 function exportCSV() {
-  const h = ['proveedor','cuit','tipo_contratacion','fecha_adjudicacion','monto_adjudicado'];
-  const rows = allC.map(r => h.map(k=>`"${(r[k]||'').toString().replace(/"/g,'""')}"`).join(','));
-  const a = document.createElement('a');
-  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(','),...rows].join('\n'));
+  var h = ['numero_proceso','nombre_proceso','tipo_proceso','fecha_apertura','estado','unidad_ejecutora'];
+  var rows = allC.map(function(r){ return h.map(function(k){ return '"' + (r[k]||'').toString().replace(/"/g,'""') + '"'; }).join(','); });
+  var a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(',')].concat(rows).join('\n'));
   a.download = 'contratos_jgm.csv'; a.click();
+}
+
+function updateKPIsC() {
+  document.getElementById('k-total-c').textContent = allC.length;
+  document.getElementById('k-adj-c').textContent =
+    allC.filter(function(c){ return c.estado === 'Adjudicado'; }).length;
+  document.getElementById('k-enc-c').textContent =
+    allC.filter(function(c){
+      return ['Adjudicado','Dejado Sin Efecto','Desierto','Fracasado'].indexOf(c.estado) < 0;
+    }).length;
+  var fechas = allC.map(function(c){ return c.fecha_apertura; }).filter(Boolean).sort().reverse();
+  if (fechas.length) document.getElementById('k-upd-c').textContent = fechas[0].substring(0,10);
 }
 
 // ── Personal ──────────────────────────────────────────────────────────────────
