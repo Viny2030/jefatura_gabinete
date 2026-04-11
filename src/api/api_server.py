@@ -1,32 +1,30 @@
 """
 api_server.py
 FastAPI - Portal Anticorrupción JGM
-Endpoints REST para el dashboard público
 """
 
 import os
 from contextlib import asynccontextmanager
 from typing import Optional
+from datetime import date
 
 from fastapi import FastAPI, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from dotenv import load_dotenv
 import databases
 import sqlalchemy
 from pydantic import BaseModel
-from datetime import date
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://localhost/jgm")
+load_dotenv()
+
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
+
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL no configurada. Copiá .env.example a .env y completá los datos.")
 
 database = databases.Database(DATABASE_URL)
-metadata = sqlalchemy.MetaData()
-
-# ── Tablas reflejadas ──────────────────────────────────────────────────────────
-alertas_tbl   = sqlalchemy.Table("alertas",   metadata, autoload_with=sqlalchemy.create_engine(DATABASE_URL))
-contratos_tbl = sqlalchemy.Table("contratos", metadata, autoload_with=sqlalchemy.create_engine(DATABASE_URL))
-nomina_tbl    = sqlalchemy.Table("nomina",    metadata, autoload_with=sqlalchemy.create_engine(DATABASE_URL))
-vinculos_tbl  = sqlalchemy.Table("vinculos",  metadata, autoload_with=sqlalchemy.create_engine(DATABASE_URL))
 
 
 @asynccontextmanager
@@ -38,7 +36,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Portal Anticorrupción - JGM",
-    description="API pública de monitoreo de contratos y alertas de la Jefatura de Gabinete",
+    description="API pública de monitoreo de contratos y alertas",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -50,28 +48,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Servir frontend estático
 app.mount("/static", StaticFiles(directory="src/frontend"), name="static")
 
-
-# ── Schemas ───────────────────────────────────────────────────────────────────
-class AlertaOut(BaseModel):
-    id: str
-    tipo: str
-    nivel: str
-    titulo: str
-    descripcion: Optional[str]
-    monto_involucrado: Optional[float]
-    fecha_creacion: str
-
-class ContratoOut(BaseModel):
-    id: str
-    organismo: Optional[str]
-    proveedor: Optional[str]
-    cuit_proveedor: Optional[str]
-    monto_adjudicado: Optional[float]
-    tipo_proceso: Optional[str]
-    fecha_adjudicacion: Optional[str]
 
 class KPIOut(BaseModel):
     total_contratos: int
@@ -82,27 +60,18 @@ class KPIOut(BaseModel):
     funcionarios_monitoreados: int
 
 
-# ── Endpoints ─────────────────────────────────────────────────────────────────
-
 @app.get("/", include_in_schema=False)
 async def root():
     return FileResponse("src/frontend/dashboard.html")
 
+
 @app.get("/api/v1/kpis", response_model=KPIOut, tags=["Dashboard"])
 async def get_kpis():
-    """Indicadores principales para el dashboard."""
-    q_contratos = "SELECT COUNT(*) as n, COALESCE(SUM(monto_adjudicado),0) as total FROM contratos"
-    q_alertas   = "SELECT COUNT(*) as n FROM alertas WHERE resuelta = FALSE"
-    q_alta      = "SELECT COUNT(*) as n FROM alertas WHERE nivel = 'alta' AND resuelta = FALSE"
-    q_proveed   = "SELECT COUNT(DISTINCT cuit_proveedor) as n FROM contratos WHERE cuit_proveedor IS NOT NULL"
-    q_func      = "SELECT COUNT(*) as n FROM nomina"
-
-    c  = await database.fetch_one(q_contratos)
-    a  = await database.fetch_one(q_alertas)
-    al = await database.fetch_one(q_alta)
-    p  = await database.fetch_one(q_proveed)
-    f  = await database.fetch_one(q_func)
-
+    c  = await database.fetch_one("SELECT COUNT(*) as n, COALESCE(SUM(monto_adjudicado),0) as total FROM contratos")
+    a  = await database.fetch_one("SELECT COUNT(*) as n FROM alertas WHERE resuelta = FALSE")
+    al = await database.fetch_one("SELECT COUNT(*) as n FROM alertas WHERE nivel = 'alta' AND resuelta = FALSE")
+    p  = await database.fetch_one("SELECT COUNT(DISTINCT cuit_proveedor) as n FROM contratos WHERE cuit_proveedor IS NOT NULL")
+    f  = await database.fetch_one("SELECT COUNT(*) as n FROM nomina")
     return KPIOut(
         total_contratos=c["n"],
         monto_total_ars=float(c["total"]),
@@ -115,12 +84,11 @@ async def get_kpis():
 
 @app.get("/api/v1/alertas", tags=["Alertas"])
 async def get_alertas(
-    nivel: Optional[str] = Query(None, description="alta | media | baja"),
-    tipo:  Optional[str] = Query(None, description="nepotismo | sobreprecio | concentracion"),
+    nivel: Optional[str] = None,
+    tipo:  Optional[str] = None,
     limit: int = Query(50, le=500),
     offset: int = 0,
 ):
-    """Lista de alertas activas con filtros opcionales."""
     where = "WHERE resuelta = FALSE"
     params = {}
     if nivel:
@@ -129,18 +97,15 @@ async def get_alertas(
     if tipo:
         where += " AND tipo = :tipo"
         params["tipo"] = tipo
-
+    params["limit"]  = limit
+    params["offset"] = offset
     query = f"""
         SELECT id::text, tipo, nivel, titulo, descripcion,
                monto_involucrado, fecha_creacion::text
         FROM alertas {where}
-        ORDER BY
-            CASE nivel WHEN 'alta' THEN 1 WHEN 'media' THEN 2 ELSE 3 END,
-            fecha_creacion DESC
+        ORDER BY CASE nivel WHEN 'alta' THEN 1 WHEN 'media' THEN 2 ELSE 3 END, fecha_creacion DESC
         LIMIT :limit OFFSET :offset
     """
-    params["limit"] = limit
-    params["offset"] = offset
     rows = await database.fetch_all(query, params)
     return [dict(r) for r in rows]
 
@@ -149,28 +114,17 @@ async def get_alertas(
 async def get_contratos(
     organismo: Optional[str] = None,
     proveedor: Optional[str] = None,
-    desde: Optional[date] = None,
-    hasta: Optional[date] = None,
     limit: int = Query(100, le=1000),
     offset: int = 0,
 ):
-    """Contratos con filtros."""
     where_parts = []
     params: dict = {"limit": limit, "offset": offset}
-
     if organismo:
         where_parts.append("organismo ILIKE :organismo")
         params["organismo"] = f"%{organismo}%"
     if proveedor:
         where_parts.append("proveedor ILIKE :proveedor")
         params["proveedor"] = f"%{proveedor}%"
-    if desde:
-        where_parts.append("fecha_adjudicacion >= :desde")
-        params["desde"] = desde
-    if hasta:
-        where_parts.append("fecha_adjudicacion <= :hasta")
-        params["hasta"] = hasta
-
     where = ("WHERE " + " AND ".join(where_parts)) if where_parts else ""
     query = f"""
         SELECT id::text, organismo, proveedor, cuit_proveedor,
@@ -185,16 +139,11 @@ async def get_contratos(
 
 @app.get("/api/v1/contratos/por-organismo", tags=["Contratos"])
 async def contratos_por_organismo():
-    """Gasto total por organismo para el gráfico de barras."""
     query = """
-        SELECT organismo,
-               COUNT(*) as cantidad,
+        SELECT organismo, COUNT(*) as cantidad,
                COALESCE(SUM(monto_adjudicado), 0) as monto_total
-        FROM contratos
-        WHERE organismo IS NOT NULL
-        GROUP BY organismo
-        ORDER BY monto_total DESC
-        LIMIT 20
+        FROM contratos WHERE organismo IS NOT NULL
+        GROUP BY organismo ORDER BY monto_total DESC LIMIT 20
     """
     rows = await database.fetch_all(query)
     return [dict(r) for r in rows]
@@ -202,39 +151,126 @@ async def contratos_por_organismo():
 
 @app.get("/api/v1/contratos/top-proveedores", tags=["Contratos"])
 async def top_proveedores(limit: int = Query(20, le=100)):
-    """Top proveedores por monto total adjudicado."""
     query = """
         SELECT proveedor, cuit_proveedor,
                COUNT(*) as contratos,
                COALESCE(SUM(monto_adjudicado), 0) as monto_total
-        FROM contratos
-        WHERE proveedor IS NOT NULL
+        FROM contratos WHERE proveedor IS NOT NULL
         GROUP BY proveedor, cuit_proveedor
-        ORDER BY monto_total DESC
-        LIMIT :limit
+        ORDER BY monto_total DESC LIMIT :limit
     """
     rows = await database.fetch_all(query, {"limit": limit})
     return [dict(r) for r in rows]
 
 
-@app.get("/api/v1/nomina", tags=["Nómina"])
-async def get_nomina(
-    apellido: Optional[str] = None,
-    organismo: Optional[str] = None,
-    limit: int = Query(100, le=500),
+# ── Contratos comprar.gob.ar ──────────────────────────────────────────────────
+
+@app.get("/api/v1/contratos/comprar", tags=["Contratos"])
+async def get_contratos_comprar(
+    tipo:             Optional[str] = None,
+    estado:           Optional[str] = None,
+    unidad_ejecutora: Optional[str] = None,
+    numero_proceso:   Optional[str] = None,
+    limit:  int = Query(100, le=1000),
     offset: int = 0,
 ):
-    """Nómina de personal de la JGM."""
+    """
+    Lista de procesos de compra scrapeados de comprar.gob.ar.
+    Filtros: tipo_proceso, estado, unidad_ejecutora, numero_proceso.
+    """
     where_parts = []
     params: dict = {"limit": limit, "offset": offset}
 
+    if tipo:
+        where_parts.append("tipo_proceso ILIKE :tipo")
+        params["tipo"] = f"%{tipo}%"
+    if estado:
+        where_parts.append("estado ILIKE :estado")
+        params["estado"] = f"%{estado}%"
+    if unidad_ejecutora:
+        where_parts.append("unidad_ejecutora ILIKE :unidad_ejecutora")
+        params["unidad_ejecutora"] = f"%{unidad_ejecutora}%"
+    if numero_proceso:
+        where_parts.append("numero_proceso ILIKE :numero_proceso")
+        params["numero_proceso"] = f"%{numero_proceso}%"
+
+    where = ("WHERE " + " AND ".join(where_parts)) if where_parts else ""
+
+    count_query = f"SELECT COUNT(*) as n FROM contratos_comprar {where}"
+    total = (await database.fetch_one(count_query, params))["n"]
+
+    query = f"""
+        SELECT
+            numero_proceso,
+            expediente,
+            nombre_proceso,
+            tipo_proceso,
+            fecha_apertura,
+            estado,
+            unidad_ejecutora,
+            saf,
+            scraped_at::text
+        FROM contratos_comprar
+        {where}
+        ORDER BY numero_proceso DESC
+        LIMIT :limit OFFSET :offset
+    """
+    rows = await database.fetch_all(query, params)
+    return {
+        "total":  total,
+        "limit":  limit,
+        "offset": offset,
+        "data":   [dict(r) for r in rows],
+    }
+
+
+@app.get("/api/v1/contratos/comprar/resumen", tags=["Contratos"])
+async def resumen_contratos_comprar():
+    """KPIs y agrupamientos de los contratos de comprar.gob.ar."""
+    total = await database.fetch_one(
+        "SELECT COUNT(*) as n, MAX(scraped_at)::text as ultima_actualizacion FROM contratos_comprar"
+    )
+    por_tipo = await database.fetch_all("""
+        SELECT tipo_proceso, COUNT(*) as cantidad
+        FROM contratos_comprar
+        GROUP BY tipo_proceso ORDER BY cantidad DESC
+    """)
+    por_estado = await database.fetch_all("""
+        SELECT estado, COUNT(*) as cantidad
+        FROM contratos_comprar
+        GROUP BY estado ORDER BY cantidad DESC
+    """)
+    por_unidad = await database.fetch_all("""
+        SELECT unidad_ejecutora, COUNT(*) as cantidad
+        FROM contratos_comprar
+        GROUP BY unidad_ejecutora ORDER BY cantidad DESC LIMIT 10
+    """)
+    return {
+        "total_procesos":       total["n"],
+        "ultima_actualizacion": total["ultima_actualizacion"],
+        "por_tipo_proceso":     [dict(r) for r in por_tipo],
+        "por_estado":           [dict(r) for r in por_estado],
+        "por_unidad_ejecutora": [dict(r) for r in por_unidad],
+    }
+
+
+# ── Nómina ────────────────────────────────────────────────────────────────────
+
+@app.get("/api/v1/nomina", tags=["Nómina"])
+async def get_nomina(
+    apellido:  Optional[str] = None,
+    organismo: Optional[str] = None,
+    limit:  int = Query(100, le=500),
+    offset: int = 0,
+):
+    where_parts = []
+    params: dict = {"limit": limit, "offset": offset}
     if apellido:
         where_parts.append("apellido ILIKE :apellido")
         params["apellido"] = f"%{apellido}%"
     if organismo:
         where_parts.append("organismo ILIKE :organismo")
         params["organismo"] = f"%{organismo}%"
-
     where = ("WHERE " + " AND ".join(where_parts)) if where_parts else ""
     query = f"""
         SELECT id::text, nombre, apellido, cuil, cargo, tipo_contratacion,
@@ -247,50 +283,37 @@ async def get_nomina(
     return [dict(r) for r in rows]
 
 
+# ── Grafo ─────────────────────────────────────────────────────────────────────
+
 @app.get("/api/v1/grafo/nodos", tags=["Grafo"])
 async def grafo_nodos():
-    """
-    Devuelve nodos y aristas para el grafo de relaciones.
-    Formato compatible con vis.js Network.
-    """
-    # Nodos: funcionarios
     func_query = """
         SELECT DISTINCT v.cuil_a as id,
                n.nombre || ' ' || n.apellido as label,
-               n.cargo as title,
-               'funcionario' as grupo
-        FROM vinculos v
-        JOIN nomina n ON n.cuil = v.cuil_a
-        LIMIT 200
+               n.cargo as title, 'funcionario' as grupo
+        FROM vinculos v JOIN nomina n ON n.cuil = v.cuil_a LIMIT 200
     """
-    # Nodos: proveedores
     prov_query = """
         SELECT DISTINCT v.cuil_b as id,
                COALESCE(s.razon_social, v.cuil_b) as label,
-               'Proveedor' as title,
-               'proveedor' as grupo
-        FROM vinculos v
-        LEFT JOIN proveedores_sipro s ON s.cuit = v.cuil_b
-        LIMIT 200
+               'Proveedor' as title, 'proveedor' as grupo
+        FROM vinculos v LEFT JOIN proveedores_sipro s ON s.cuit = v.cuil_b LIMIT 200
     """
-    # Aristas
     edge_query = """
         SELECT cuil_a as from, cuil_b as to,
-               tipo_vinculo as type,
-               nivel_alerta as nivel
-        FROM vinculos
-        LIMIT 500
+               tipo_vinculo as type, nivel_alerta as nivel
+        FROM vinculos LIMIT 500
     """
-
     func_rows = await database.fetch_all(func_query)
     prov_rows = await database.fetch_all(prov_query)
     edge_rows = await database.fetch_all(edge_query)
+    return {
+        "nodes": [dict(r) for r in func_rows] + [dict(r) for r in prov_rows],
+        "edges": [dict(r) for r in edge_rows],
+    }
 
-    nodes = [dict(r) for r in func_rows] + [dict(r) for r in prov_rows]
-    edges = [dict(r) for r in edge_rows]
 
-    return {"nodes": nodes, "edges": edges}
-
+# ── Health ────────────────────────────────────────────────────────────────────
 
 @app.get("/api/v1/health", tags=["Sistema"])
 async def health():
