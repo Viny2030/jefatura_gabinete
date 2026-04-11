@@ -1,526 +1,383 @@
+#!/usr/bin/env python3
 """
-scraper_comprar.py
-==================
-Scraper diario de contratos del PEN para el Monitor de Transparencia.
-Fuentes: BORA Sección 3ra + COMPR.AR + TGN Presupuesto Abierto.
+scraper_comprar.py — scraper de producción para comprar.gob.ar
+Extrae todos los procesos de compra de la JGM (SAF 591) con paginación completa.
 
-Filtra y mapea resultados a los tres organismos del proyecto:
-  - JGM       (Jefatura de Gabinete de Ministros)
-  - SGP       (Secretaría General de la Presidencia)
-  - Presidencia resto
-
-Produce:
-  data/adjudicaciones_YYYYMMDD.csv  — mismo formato que generar_json.py consume
+Columnas: Número proceso | Expediente | Nombre proceso | Tipo de Proceso
+          Fecha de apertura | Estado | Unidad Ejecutora | SAF
 
 Uso:
-  python scripts/scraper_comprar.py              # corre todo, solo días hábiles
-  python scripts/scraper_comprar.py --force      # ignora guardia fin de semana
-  python scripts/scraper_comprar.py --fuente bora
-  python scripts/scraper_comprar.py --fuente comprar
-  python scripts/scraper_comprar.py --fuente tgn
-
-Lógica de actualización:
-  - Si ya existe un CSV del día, agrega filas nuevas (no duplica por nro_proceso+cuit)
-  - Si no existe, crea uno nuevo
+    python scripts/scraper_comprar.py               # scraping completo
+    python scripts/scraper_comprar.py --db          # guarda en PostgreSQL
+    python scripts/scraper_comprar.py --csv         # guarda en CSV
+    python scripts/scraper_comprar.py --db --csv    # ambos
 """
-
-import os
 import re
-import io
+import os
+import csv
 import sys
+import math
 import time
-import codecs
 import argparse
-import requests
-import pandas as pd
-from bs4 import BeautifulSoup
+import warnings
 from datetime import datetime
 
-import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+import requests
+from bs4 import BeautifulSoup
 
-# ── Rutas ─────────────────────────────────────────────────────────────────────
-BASE     = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE, "..", "data")
-os.makedirs(DATA_DIR, exist_ok=True)
+warnings.filterwarnings("ignore")
 
-# ── Columnas de salida (mismo esquema que adjudicaciones_20260406.csv) ─────────
-COLS_SALIDA = [
-    "ejercicio", "organismo", "tipo_proceso", "cuit_proveedor",
-    "monto_adjudicado", "moneda", "objeto", "fuente",
-    "fecha_ingesta", "nro_proceso", "proveedor", "fecha_adjudicacion"
-]
+# ── Configuración ─────────────────────────────────────────────────────────────
+BASE_URL         = "https://comprar.gob.ar/BuscarAvanzado.aspx"
+SAF_ID           = "591"        # Jefatura de Gabinete de Ministros
+FECHA_DESDE      = "01/01/2023"
+FILAS_POR_PAGINA = 10          # filas reales por página del GridView
+DELAY_SEG        = 1.5
 
-# ── Mapeo de organismos a ramas del proyecto ──────────────────────────────────
-KEYWORDS_JGM = [
-    "JEFATURA DE GABINETE", "JEFATURA GABINETE", "JGM",
-    "OFICINA NACIONAL DE CONTRATACIONES", "SECRETARIA DE INNOVACION",
-    "SECRETARIA DE TRANSFORMACION",
-]
-KEYWORDS_SGP = [
-    "SECRETARIA GENERAL DE LA PRESIDENCIA", "SECRETARIA GENERAL PRESIDENCIA",
-    "SGP", "SECRETARIA GENERAL DE PRESIDENCIA",
-]
-KEYWORDS_PRESIDENCIA = [
-    "PRESIDENCIA DE LA NACION", "PRESIDENCIA DE LA REPÚBLICA",
-    "SECRETARIA LEGAL Y TECNICA", "SECRETARIA DE CULTURA",
-    "SIGEN", "SINDICATURA GENERAL", "CASA MILITAR",
-    "SECRETARIA DE COMUNICACION", "AGENCIA FEDERAL DE INTELIGENCIA",
-]
-
-# Códigos SAF para filtrar TGN
-CODIGOS_JGM         = ["305"]
-CODIGOS_SGP         = ["301"]
-CODIGOS_PRESIDENCIA = ["338", "337", "322", "303", "300", "302", "304",
-                       "306", "307", "308", "309"]
-TODOS_CODIGOS = CODIGOS_JGM + CODIGOS_SGP + CODIGOS_PRESIDENCIA
-
-HEADERS = {
-    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                   "AppleWebKit/537.36 (KHTML, like Gecko) "
-                   "Chrome/120.0.0.0 Safari/537.36"),
-    "Accept": "text/html,application/xhtml+xml,*/*;q=0.9",
+HEADERS_GET = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "es-AR,es;q=0.9",
-    "Connection": "keep-alive",
 }
 
-TGN_TOKEN = os.environ.get("TGN_TOKEN", "707cb8c8-83e6-4c4d-a202-3e49c14eda89")
+HEADERS_AJAX = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept": "*/*",
+    "Accept-Language": "es-AR,es;q=0.9",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "X-Requested-With": "XMLHttpRequest",
+    "X-MicrosoftAjax": "Delta=true",
+    "Cache-Control": "no-cache",
+    "Referer": BASE_URL,
+    "Origin": "https://comprar.gob.ar",
+}
+
+COLUMNAS_CSV = [
+    "numero_proceso", "expediente", "nombre_proceso",
+    "tipo_proceso", "fecha_apertura", "estado",
+    "unidad_ejecutora", "saf", "scraped_at",
+]
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
-def get_con_reintentos(url, intentos=3, timeout=60, espera=15, verify=False):
-    for i in range(intentos):
-        try:
-            print(f"  🔄 Intento {i+1}: {url[:80]}...")
-            r = requests.get(url, headers=HEADERS, timeout=timeout, verify=verify)
-            r.raise_for_status()
-            return r
-        except Exception as e:
-            print(f"  ⚠️  Error intento {i+1}: {e}")
-            if i < intentos - 1:
-                time.sleep(espera)
-    raise Exception(f"❌ Fallaron todos los intentos: {url}")
+# ── ViewState ─────────────────────────────────────────────────────────────────
+def extraer_viewstate(soup):
+    def v(id_):
+        el = soup.find("input", {"id": id_})
+        return el["value"] if el else ""
+    dxs = soup.find("input", {"name": "DXScript"})
+    return {
+        "__VIEWSTATE":          v("__VIEWSTATE"),
+        "__EVENTVALIDATION":    v("__EVENTVALIDATION"),
+        "__VIEWSTATEGENERATOR": v("__VIEWSTATEGENERATOR"),
+        "DXScript":             dxs["value"] if dxs else "1_103,1_105,2_13,2_12,2_7,1_96,1_100,1_83,2_6",
+    }
 
 
-def mapear_rama(organismo):
-    """Determina a qué rama pertenece un organismo por texto libre."""
-    org = str(organismo).upper().strip()
-    for kw in KEYWORDS_JGM:
-        if kw in org:
-            return "JGM"
-    for kw in KEYWORDS_SGP:
-        if kw in org:
-            return "SGP"
-    for kw in KEYWORDS_PRESIDENCIA:
-        if kw in org:
-            return "PRESIDENCIA"
-    return None
+def actualizar_viewstate(texto_crudo, vs):
+    for campo in ["__VIEWSTATE", "__EVENTVALIDATION", "__VIEWSTATEGENERATOR"]:
+        m = re.search(rf'\d+\|hiddenField\|{re.escape(campo)}\|(.*?)\|', texto_crudo)
+        if m:
+            vs[campo] = m.group(1)
 
 
-def es_organismo_pen(organismo):
-    return mapear_rama(organismo) is not None
-
-
-def extraer_cuit(texto):
-    if not texto:
-        return ""
-    m = re.search(r'\b(\d{2}-\d{7,8}-\d{1})\b', texto)
+def extraer_panel(texto_crudo, panel_id):
+    pattern = rf'\d+\|updatePanel\|{re.escape(panel_id)}\|(.*?)(?=\d+\|(?:updatePanel|hiddenField|arrayDeclaration|scriptBlock|pageTitle|focus|error|asyncPostBack)\|)'
+    m = re.search(pattern, texto_crudo, re.DOTALL)
     if m:
         return m.group(1)
-    m = re.search(r'\b(20|23|24|27|30|33|34)\d{9}\b', texto)
-    if m:
-        return m.group(0)
-    return ""
+    m2 = re.search(rf'\d+\|updatePanel\|{re.escape(panel_id)}\|(.*)', texto_crudo, re.DOTALL)
+    return m2.group(1).rstrip("|") if m2 else ""
 
 
-def extraer_monto(texto):
-    if not texto:
-        return None
-    m = re.search(
-        r'(?:MONTO TOTAL ADJUDICADO|TOTAL ADJUDICADO|IMPORTE ADJUDICADO|MONTO ADJUDICADO)'
-        r'[^\$\d]*\$?\s*([\d\.,]+)',
-        texto, re.IGNORECASE
-    )
-    if m:
-        raw = m.group(1).strip().replace(".", "").replace(",", ".")
-        try:
-            return float(raw)
-        except Exception:
-            return None
-    return None
-
-
-def extraer_proveedor(texto):
-    if not texto:
-        return ""
-    patrones = [
-        r'PROVEEDOR ADJUDICADO[:\s]+([A-ZÁÉÍÓÚÑ][^\n\r]{3,80}?)(?:\s*[,\.]?\s*CUIT|\s*$)',
-        r'ADJUDICATARIO[:\s]+([A-ZÁÉÍÓÚÑ][^\n\r]{3,80}?)(?:\s*[,\.]?\s*CUIT|\s*$)',
-        r'adjudicada?\s+(?:la\s+firma\s+|a\s+la\s+firma\s+|a\s+)([A-ZÁÉÍÓÚÑ][^\n\r]{3,80}?)(?:\s*[,\.]?\s*CUIT|\s*[,\.])',
-        r'firma\s+([A-ZÁÉÍÓÚÑ][^\n\r]{3,80}?)\s*[,\.]?\s*(?:CUIT|C\.U\.I\.T)',
-    ]
-    for patron in patrones:
-        m = re.search(patron, texto, re.IGNORECASE)
-        if m:
-            resultado = m.group(1).strip().rstrip(".,- ")
-            if len(resultado) > 3:
-                return resultado
-    return ""
-
-
-# ── SCRAPER 1: BORA ───────────────────────────────────────────────────────────
-
-def obtener_texto_aviso_bora(aviso_id, fecha_pub):
-    fecha_raw = fecha_pub.replace("-", "")
-    urls = [
-        f"https://www.boletinoficial.gob.ar/detalleAviso/tercera/{aviso_id}/{fecha_raw}",
-        f"https://www.boletinoficial.gob.ar/pdf/aviso/tercera/{aviso_id}/{fecha_raw}",
-    ]
-    for url in urls:
-        try:
-            r = requests.get(url, headers=HEADERS, timeout=20, verify=False)
-            if r.status_code != 200:
-                continue
-            if "pdf" in r.headers.get("Content-Type", "").lower():
-                try:
-                    from pdfminer.high_level import extract_text as pdf_extract
-                    texto = pdf_extract(io.BytesIO(r.content))
-                    if texto and len(texto) > 30:
-                        return texto
-                except Exception:
-                    pass
-                continue
-            soup = BeautifulSoup(r.text, "html.parser")
-            for selector in [{"id": "cuerpoAviso"}, {"id": "textoAviso"},
-                              {"class": "aviso-cuerpo"}, {"class": "texto-aviso"}]:
-                div = soup.find("div", selector)
-                if div:
-                    texto = div.get_text(separator=" ", strip=True)
-                    if len(texto) > 50:
-                        return texto
-            texto_completo = soup.get_text(separator=" ", strip=True)
-            if any(kw in texto_completo.upper() for kw in ["CUIT", "ADJUDIC", "PROVEEDOR"]):
-                return texto_completo
-        except Exception as e:
-            print(f"  ⚠️  URL texto falló ({url[:60]}): {e}")
-    return ""
-
-
-def scraper_bora():
-    url = "https://www.boletinoficial.gob.ar/seccion/tercera"
-    print("\n📰 BORA — Sección Tercera...")
-
-    try:
-        response = get_con_reintentos(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-
-        avisos_adj = []
-        categoria_actual = ""
-        for elem in soup.find_all(["h5", "a"]):
-            if elem.name == "h5":
-                categoria_actual = elem.text.strip()
-            elif elem.name == "a" and "/detalleAviso/tercera/" in elem.get("href", ""):
-                if "ADJUDICACION" not in categoria_actual.upper():
-                    continue
-                href   = elem["href"]
-                partes = href.strip("/").split("/")
-                aviso_id  = partes[-2] if len(partes) >= 2 else ""
-                fecha_raw = partes[-1] if len(partes) >= 1 else ""
-                fecha_pub = (f"{fecha_raw[:4]}-{fecha_raw[4:6]}-{fecha_raw[6:]}"
-                             if len(fecha_raw) == 8 else fecha_raw)
-
-                lineas = [l.strip() for l in elem.text.strip().split("\n") if l.strip()]
-                palabras_tipo = ["Licitación", "Contratación", "Concurso",
-                                 "Adjudicación", "Subasta", "Compulsa"]
-                tipo_proceso = ""
-                lineas_org   = []
-                for linea in lineas:
-                    if any(p.lower() in linea.lower() for p in palabras_tipo):
-                        tipo_proceso = linea
-                    else:
-                        lineas_org.append(linea)
-                organismo = re.sub(r'\s*-\s*$', '', " ".join(lineas_org)).strip()
-
-                if not es_organismo_pen(organismo):
-                    continue
-
-                avisos_adj.append({
-                    "aviso_id":    aviso_id,
-                    "fecha_pub":   fecha_pub,
-                    "organismo":   organismo,
-                    "tipo_proceso": tipo_proceso,
-                })
-
-        print(f"  📋 {len(avisos_adj)} adjudicaciones PEN en BORA")
-
-        registros = []
-        for av in avisos_adj:
-            time.sleep(1)
-            texto = obtener_texto_aviso_bora(av["aviso_id"], av["fecha_pub"])
-            cuit  = extraer_cuit(texto)
-            prov  = extraer_proveedor(texto)
-            monto = extraer_monto(texto)
-            rama  = mapear_rama(av["organismo"])
-
-            registros.append({
-                "ejercicio":          datetime.now().year,
-                "organismo":          f"{rama} - {av['organismo']}",
-                "tipo_proceso":       av["tipo_proceso"],
-                "cuit_proveedor":     cuit,
-                "monto_adjudicado":   monto,
-                "moneda":             "Peso Argentino",
-                "objeto":             texto[:200] if texto else "",
-                "fuente":             "BORA Sección 3ra",
-                "fecha_ingesta":      datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "nro_proceso":        av["aviso_id"],
-                "proveedor":          prov,
-                "fecha_adjudicacion": av["fecha_pub"],
-            })
-            estado = f"✅ CUIT:{cuit}" if cuit else "⚠️  sin CUIT"
-            print(f"  {estado} | {rama} | {prov[:35] if prov else 'sin proveedor'}")
-
-        print(f"  ✅ BORA: {len(registros)} registros PEN")
-        return (pd.DataFrame(registros, columns=COLS_SALIDA)
-                if registros else pd.DataFrame(columns=COLS_SALIDA))
-
-    except Exception as e:
-        print(f"  ❌ Error BORA: {e}")
-        return pd.DataFrame(columns=COLS_SALIDA)
-
-
-# ── SCRAPER 2: COMPR.AR ───────────────────────────────────────────────────────
-
-def scraper_comprar():
-    url = "https://comprar.gob.ar/Compras.aspx?qs=W1HXHGHtH10="
-    print("\n🛒 COMPR.AR — procesos abiertos...")
-
-    try:
-        response = get_con_reintentos(url, timeout=60)
-        soup  = BeautifulSoup(response.text, "html.parser")
-        tabla = soup.find("table", {"id": "ctl00_CPH1_GridListaPliegosAperturaProxima"})
-
-        if not tabla:
-            print("  ⚠️  Tabla no encontrada en COMPR.AR")
-            return pd.DataFrame(columns=COLS_SALIDA)
-
-        registros = []
-        for row in tabla.find_all("tr")[1:]:
-            cols = row.find_all("td")
-            if len(cols) < 5:
-                continue
-
-            unidad         = cols[5].text.strip() if len(cols) > 5 else ""
-            nombre_proceso = cols[1].text.strip()
-            texto_filtro   = unidad + " " + nombre_proceso
-
-            if not es_organismo_pen(texto_filtro):
-                continue
-
-            rama = mapear_rama(texto_filtro)
-            link_tag = cols[0].find("a") or cols[1].find("a")
-            href = link_tag["href"] if link_tag else ""
-
-            registros.append({
-                "ejercicio":          datetime.now().year,
-                "organismo":          f"{rama} - {unidad}" if rama else unidad,
-                "tipo_proceso":       cols[2].text.strip(),
-                "cuit_proveedor":     "",
-                "monto_adjudicado":   None,
-                "moneda":             "Peso Argentino",
-                "objeto":             nombre_proceso,
-                "fuente":             "COMPR.AR",
-                "fecha_ingesta":      datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "nro_proceso":        cols[0].text.strip(),
-                "proveedor":          "",
-                "fecha_adjudicacion": cols[3].text.strip(),
-            })
-
-        print(f"  ✅ COMPR.AR: {len(registros)} procesos PEN")
-        return (pd.DataFrame(registros, columns=COLS_SALIDA)
-                if registros else pd.DataFrame(columns=COLS_SALIDA))
-
-    except Exception as e:
-        print(f"  ❌ Error COMPR.AR: {e}")
-        return pd.DataFrame(columns=COLS_SALIDA)
-
-
-# ── SCRAPER 3: TGN ───────────────────────────────────────────────────────────
-
-def scraper_tgn():
-    anio = datetime.now().year
-    print(f"\n💰 TGN — Presupuesto Abierto {anio}...")
-
-    url = "https://www.presupuestoabierto.gob.ar/api/v1/credito"
-    headers_api = {
-        "Authorization": f"Bearer {TGN_TOKEN}",
-        "Content-Type":  "application/json",
-        "Accept":        "text/csv",
-    }
-    body = {
-        "columns": [
-            "ejercicio_presupuestario",
-            "jurisdiccion_id",
-            "jurisdiccion_desc",
-            "entidad_desc",
-            "unidad_ejecutora_desc",
-            "credito_pagado",
-            "credito_devengado",
-        ]
+# ── Payload base ──────────────────────────────────────────────────────────────
+def payload_base(vs, saf_id, fecha_desde, fecha_hasta, fecha_hasta_ts):
+    dt_desde = datetime.strptime(fecha_desde, "%d/%m/%Y")
+    ts_desde = str(int(dt_desde.timestamp() * 1000))
+    return {
+        "DXScript":                                                   vs["DXScript"],
+        "__EVENTTARGET":                                              "",
+        "__EVENTARGUMENT":                                            "",
+        "__LASTFOCUS":                                                "",
+        "__VIEWSTATE":                                                vs["__VIEWSTATE"],
+        "__VIEWSTATEGENERATOR":                                       vs["__VIEWSTATEGENERATOR"],
+        "__EVENTVALIDATION":                                          vs["__EVENTVALIDATION"],
+        "ctl00$CtrlMenuPortal$logIn$txtUsername$txtTextBox":          "",
+        "ctl00$CtrlMenuPortal$logIn$textBoxUserRecuperoContrasenia":  "",
+        "ctl00$CtrlMenuPortal$logIn$txtMail$txtTextBox":              "",
+        "ctl00$CtrlMenuPortal$logIn$txtMail2$txtTextBox":             "",
+        "ctl00$CPH1$txtNumeroProceso":                                "",
+        "ctl00$CPH1$txtExpediente":                                   "",
+        "ctl00$CPH1$txtNombrePliego":                                 "",
+        "ctl00$CPH1$ddlJurisdicion":                                  saf_id,
+        "ctl00$CPH1$ddlUnidadEjecutora":                              "-2",
+        "ctl00$CPH1$ddlTipoProceso":                                  "-2",
+        "ctl00$CPH1$ddlEstadoProceso":                                "-2",
+        "ctl00$CPH1$ddlRubro":                                        "-2",
+        "ctl00$CPH1$devCbPnlNombreProveedor$txtNombreProveedor":      "",
+        "ctl00_CPH1_devDteEdtFechaAperturaDesde_Raw":                 ts_desde,
+        "ctl00$CPH1$devDteEdtFechaAperturaDesde":                     fecha_desde,
+        "ctl00_CPH1_devDteEdtFechaAperturaDesde_DDDWS":               "0:0:12000:30:1584:0:0:0",
+        "ctl00_CPH1_devDteEdtFechaAperturaDesde_DDD_C_FNPWS":         "0:0:-1:0:0:0:0:0:",
+        "ctl00$CPH1$devDteEdtFechaAperturaDesde$DDD$C":               f"{fecha_desde}:{fecha_desde}",
+        "ctl00_CPH1_devDteEdtFechaAperturaHasta_Raw":                 fecha_hasta_ts,
+        "ctl00$CPH1$devDteEdtFechaAperturaHasta":                     fecha_hasta,
+        "ctl00_CPH1_devDteEdtFechaAperturaHasta_DDDWS":               "0:0:12000:30:1584:0:0:0",
+        "ctl00_CPH1_devDteEdtFechaAperturaHasta_DDD_C_FNPWS":         "0:0:-1:0:0:0:0:0:",
+        "ctl00$CPH1$devDteEdtFechaAperturaHasta$DDD$C":               fecha_hasta,
+        "ctl00$CPH1$ddlResultadoOrdenadoPor":                         "PLI.Pliego.NumeroPliego",
+        "ctl00$CPH1$ddlTipoOperacion":                                "-2",
+        "ctl00$CPH1$hidEstadoListaPliegos":                           "NOREPORTEEXCEL",
+        "ctl00$CPH1$devCbPnlPopupListarProveedor$txtPopupNombreProveedor": "",
+        "ctl00$CPH1$devCbPnlPopupListarProveedor$txtPopupCuitProveedor":   "",
+        "ctl00_CPH1_devPopupListarProveedorWS":                       "0:0:-1:0:0:0:0:0:",
+        "ctl00$CPH1$hdnFldIdProveedorSeleccionado":                   "",
+        "ctl00_CPH1_devPopupVistaPreviaProcesoCompraCiudadanoWS":     "0:0:-1:0:0:0:0:0:",
+        "ctl00_CPH1_devPopupVistaPreviaPliegoWS":                     "0:0:-1:0:0:0:0:0:",
     }
 
-    try:
-        r = requests.post(url, headers=headers_api, json=body, timeout=60, verify=False)
-        r.raise_for_status()
-        df = pd.read_csv(io.StringIO(r.text), sep=",", on_bad_lines="skip")
 
-        if "ejercicio_presupuestario" in df.columns:
-            df = df[df["ejercicio_presupuestario"] == anio].copy()
+# ── Parser ────────────────────────────────────────────────────────────────────
+def parsear_tabla(panel_html, scraped_at):
+    """
+    Extrae filas de datos de GridListaPliegos.
+    Filtro robusto: solo filas cuya celda 0 contiene un <a id="...lnkNumeroProceso">.
+    Las filas del paginador nunca tienen ese link — solo tienen números o "...".
+    """
+    soup  = BeautifulSoup(panel_html, "html.parser")
+    tabla = soup.find("table", {"id": "ctl00_CPH1_GridListaPliegos"})
+    if not tabla:
+        return []
 
-        if df.empty:
-            print(f"  ⚠️  Sin datos TGN para {anio}")
-            return pd.DataFrame(columns=COLS_SALIDA)
+    tbody = tabla.find("tbody")
+    filas = tbody.find_all("tr") if tbody else tabla.find_all("tr")[1:]
 
-        # Filtrar por código de jurisdicción
-        if "jurisdiccion_id" in df.columns:
-            df = df[df["jurisdiccion_id"].astype(str).isin(TODOS_CODIGOS)].copy()
+    resultados = []
+    for fila in filas:
+        celdas = fila.find_all("td")
+        if not celdas:
+            continue
 
-        if df.empty:
-            print("  ⚠️  Sin datos TGN para los organismos PEN")
-            return pd.DataFrame(columns=COLS_SALIDA)
+        # Filtro definitivo: solo filas con link de proceso real
+        link = celdas[0].find("a", id=re.compile(r"lnkNumeroProceso"))
+        if not link:
+            continue
 
-        def rama_por_codigo(cod):
-            c = str(cod)
-            if c in CODIGOS_JGM:        return "JGM"
-            if c in CODIGOS_SGP:        return "SGP"
-            return "PRESIDENCIA"
+        numero = link.get_text(strip=True)
 
-        registros = []
-        for _, row in df.iterrows():
-            monto  = pd.to_numeric(row.get("credito_pagado", 0), errors="coerce") or 0
-            rama   = rama_por_codigo(row.get("jurisdiccion_id", ""))
-            entidad = str(row.get("entidad_desc", ""))
-            unidad  = str(row.get("unidad_ejecutora_desc", ""))
+        resultados.append({
+            "numero_proceso":   numero,
+            "expediente":       celdas[1].get_text(strip=True) if len(celdas) > 1 else "",
+            "nombre_proceso":   celdas[2].get_text(strip=True) if len(celdas) > 2 else "",
+            "tipo_proceso":     celdas[3].get_text(strip=True) if len(celdas) > 3 else "",
+            "fecha_apertura":   celdas[4].get_text(strip=True) if len(celdas) > 4 else "",
+            "estado":           celdas[5].get_text(strip=True) if len(celdas) > 5 else "",
+            "unidad_ejecutora": celdas[6].get_text(strip=True) if len(celdas) > 6 else "",
+            "saf":              celdas[7].get_text(strip=True) if len(celdas) > 7 else "",
+            "scraped_at":       scraped_at,
+        })
 
-            registros.append({
-                "ejercicio":          anio,
-                "organismo":          f"{rama} - {entidad} / {unidad}".strip(" -/"),
-                "tipo_proceso":       "Ejecución Presupuestaria",
-                "cuit_proveedor":     "",
-                "monto_adjudicado":   float(monto),
-                "moneda":             "Peso Argentino",
-                "objeto":             f"Crédito pagado {anio}",
-                "fuente":             f"TGN Presupuesto Abierto {anio}",
-                "fecha_ingesta":      datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "nro_proceso":        "",
-                "proveedor":          entidad,
-                "fecha_adjudicacion": f"{anio}-01-01",
-            })
-
-        print(f"  ✅ TGN: {len(registros)} líneas presupuestarias PEN")
-        return pd.DataFrame(registros, columns=COLS_SALIDA)
-
-    except Exception as e:
-        print(f"  ❌ Error TGN: {e}")
-        return pd.DataFrame(columns=COLS_SALIDA)
+    return resultados
 
 
-# ── Guardar CSV ───────────────────────────────────────────────────────────────
+def cantidad_total(panel_html):
+    m = re.search(r'encontrado.*?\((\d+)\)', panel_html)
+    return int(m.group(1)) if m else 0
 
-def guardar_csv(df_nuevo):
-    hoy        = datetime.now().strftime("%Y%m%d")
-    csv_salida = os.path.join(DATA_DIR, f"adjudicaciones_{hoy}.csv")
 
-    if os.path.exists(csv_salida):
-        df_existente = pd.read_csv(csv_salida, encoding="utf-8-sig", low_memory=False)
-        df_existente.columns = df_existente.columns.str.strip()
-        df_combinado = pd.concat([df_existente, df_nuevo], ignore_index=True)
-        df_combinado["_key"] = (
-            df_combinado["nro_proceso"].astype(str).str.strip() + "|" +
-            df_combinado["cuit_proveedor"].astype(str).str.strip()
-        )
-        df_combinado = df_combinado.drop_duplicates(subset="_key", keep="first")
-        df_combinado = df_combinado.drop(columns=["_key"])
-        nuevos = len(df_combinado) - len(df_existente)
-        print(f"\n  📎 Registros nuevos agregados: {nuevos}")
+# ── Request de una página ─────────────────────────────────────────────────────
+def scrapear_pagina(session, vs, saf_id, fecha_desde, fecha_hasta, fecha_hasta_ts,
+                    numero_pagina, scraped_at):
+    p = payload_base(vs, saf_id, fecha_desde, fecha_hasta, fecha_hasta_ts)
+
+    if numero_pagina == 1:
+        p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$btnListarPliegoAvanzado"
+        p["__EVENTTARGET"]        = "ctl00$CPH1$btnListarPliegoAvanzado"
+        p["__EVENTARGUMENT"]      = "undefined"
+        p["__ASYNCPOST"]          = "true"
     else:
-        df_combinado = df_nuevo
+        # El GridView acepta Page$N para cualquier N válido directamente,
+        # sin necesidad de que el número esté visible en el paginador HTML.
+        p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$GridListaPliegos"
+        p["__EVENTTARGET"]        = "ctl00$CPH1$GridListaPliegos"
+        p["__EVENTARGUMENT"]      = f"Page${numero_pagina}"
+        p["__ASYNCPOST"]          = "true"
 
-    with codecs.open(csv_salida, "w", encoding="utf-8-sig") as f:
-        df_combinado.to_csv(f, index=False)
+    r = session.post(BASE_URL, data=p, headers=HEADERS_AJAX, verify=False)
+    if r.status_code != 200:
+        print(f"  ⚠️  Página {numero_pagina}: HTTP {r.status_code}")
+        return [], r.text
 
-    print(f"  💾 CSV: {csv_salida}  ({len(df_combinado):,} filas)")
-    return csv_salida
+    panel1 = extraer_panel(r.text, "ctl00_CPH1_UpdatePanel1")
+    actualizar_viewstate(r.text, vs)
+    return parsear_tabla(panel1, scraped_at), r.text
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# ── Scraping completo ─────────────────────────────────────────────────────────
+def scrapear_todos(verbose=True):
+    session        = requests.Session()
+    scraped_at     = datetime.now().isoformat()
+    fecha_hasta    = datetime.today().strftime("%d/%m/%Y")
+    fecha_hasta_ts = str(int(datetime.today().replace(
+        hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000))
 
-def main():
-    parser = argparse.ArgumentParser(description="Scraper PEN — BORA + COMPR.AR + TGN")
-    parser.add_argument("--force",  action="store_true",
-                        help="Ignora guardia fin de semana/feriados")
-    parser.add_argument("--fuente", choices=["bora", "comprar", "tgn", "todas"],
-                        default="todas", help="Fuente a scrapear (default: todas)")
+    if verbose:
+        print("=" * 60)
+        print(f"Scraping comprar.gob.ar — SAF {SAF_ID} (JGM)")
+        print(f"Período: {FECHA_DESDE} → {fecha_hasta}")
+        print("=" * 60)
+
+    # PASO 1: GET
+    r1   = session.get(BASE_URL, headers=HEADERS_GET, verify=False)
+    soup = BeautifulSoup(r1.text, "html.parser")
+    vs   = extraer_viewstate(soup)
+    if verbose:
+        print(f"  ViewState: {bool(vs['__VIEWSTATE'])}")
+
+    # PASO 2: Seleccionar SAF → actualiza dropdown unidades ejecutoras
+    time.sleep(DELAY_SEG)
+    p2 = payload_base(vs, SAF_ID, FECHA_DESDE, fecha_hasta, fecha_hasta_ts)
+    p2["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$ddlJurisdicion"
+    p2["__EVENTTARGET"]        = "ctl00$CPH1$ddlJurisdicion"
+    p2["__EVENTARGUMENT"]      = ""
+    r2 = session.post(BASE_URL, data=p2, headers=HEADERS_AJAX, verify=False)
+    actualizar_viewstate(r2.text, vs)
+    if verbose:
+        panel2 = extraer_panel(r2.text, "ctl00_CPH1_UpdatePanel2")
+        soup2  = BeautifulSoup(panel2, "html.parser")
+        ues    = [o.get_text(strip=True) for o in soup2.find_all("option") if o.get("value")]
+        print(f"  Unidades ejecutoras: {len(ues)}")
+
+    # PASO 3: Página 1 — obtener total real de resultados
+    time.sleep(DELAY_SEG)
+    todos = []
+    filas_p1, raw_p1 = scrapear_pagina(
+        session, vs, SAF_ID, FECHA_DESDE, fecha_hasta, fecha_hasta_ts,
+        numero_pagina=1, scraped_at=scraped_at,
+    )
+    todos.extend(filas_p1)
+    panel1        = extraer_panel(raw_p1, "ctl00_CPH1_UpdatePanel1")
+    total         = cantidad_total(panel1)
+    total_paginas = math.ceil(total / FILAS_POR_PAGINA)
+
+    if verbose:
+        print(f"\n  Total resultados: {total}")
+        print(f"  Total páginas:    {total_paginas}")
+        print(f"  Página 1: {len(filas_p1)} filas")
+
+    # PASO 4: Páginas 2..N calculadas matemáticamente
+    for num_pag in range(2, total_paginas + 1):
+        time.sleep(DELAY_SEG)
+        filas, _ = scrapear_pagina(
+            session, vs, SAF_ID, FECHA_DESDE, fecha_hasta, fecha_hasta_ts,
+            numero_pagina=num_pag, scraped_at=scraped_at,
+        )
+        todos.extend(filas)
+        if verbose:
+            print(f"  Página {num_pag}/{total_paginas}: {len(filas)} filas  acumulado={len(todos)}")
+
+    if verbose:
+        print(f"\n  ✅ Total scrapeado: {len(todos)} / {total} contratos")
+        if len(todos) != total:
+            print(f"  ⚠️  Diferencia de {abs(total - len(todos))} filas")
+
+    return todos
+
+
+# ── CSV ───────────────────────────────────────────────────────────────────────
+def guardar_csv(resultados, path="contratos_jgm.csv"):
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=COLUMNAS_CSV)
+        writer.writeheader()
+        writer.writerows(resultados)
+    print(f"  💾 CSV: {path} ({len(resultados)} filas)")
+
+
+# ── PostgreSQL ────────────────────────────────────────────────────────────────
+def guardar_db(resultados):
+    try:
+        import psycopg2
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError as e:
+        print(f"  ⚠️  Dependencia faltante: {e}")
+        return
+
+    dsn = os.getenv("DATABASE_URL")
+    if not dsn:
+        print("  ⚠️  DATABASE_URL no definida en .env")
+        return
+
+    try:
+        conn = psycopg2.connect(dsn)
+    except psycopg2.OperationalError as e:
+        print(f"  ⚠️  No se pudo conectar a la DB: {e}")
+        return
+
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS contratos_comprar (
+            id                SERIAL PRIMARY KEY,
+            numero_proceso    VARCHAR(50) UNIQUE,
+            expediente        TEXT,
+            nombre_proceso    TEXT,
+            tipo_proceso      VARCHAR(100),
+            fecha_apertura    VARCHAR(30),
+            estado            VARCHAR(50),
+            unidad_ejecutora  TEXT,
+            saf               TEXT,
+            scraped_at        TIMESTAMP
+        )
+    """)
+    conn.commit()
+
+    insertados = actualizados = 0
+    for r in resultados:
+        cur.execute("""
+            INSERT INTO contratos_comprar
+                (numero_proceso, expediente, nombre_proceso, tipo_proceso,
+                 fecha_apertura, estado, unidad_ejecutora, saf, scraped_at)
+            VALUES (%(numero_proceso)s, %(expediente)s, %(nombre_proceso)s,
+                    %(tipo_proceso)s, %(fecha_apertura)s, %(estado)s,
+                    %(unidad_ejecutora)s, %(saf)s, %(scraped_at)s)
+            ON CONFLICT (numero_proceso) DO UPDATE SET
+                estado     = EXCLUDED.estado,
+                scraped_at = EXCLUDED.scraped_at
+            RETURNING (xmax = 0)
+        """, r)
+        if cur.fetchone()[0]:
+            insertados += 1
+        else:
+            actualizados += 1
+
+    conn.commit()
+    cur.close()
+    conn.close()
+    print(f"  💾 DB: {insertados} nuevos, {actualizados} actualizados")
+
+
+# ── CLI ───────────────────────────────────────────────────────────────────────
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Scraper comprar.gob.ar JGM")
+    parser.add_argument("--db",  action="store_true", help="Guardar en PostgreSQL")
+    parser.add_argument("--csv", action="store_true", help="Guardar en CSV")
     args = parser.parse_args()
 
-    # Guardia días hábiles
-    if not args.force:
-        hoy = datetime.now()
-        if hoy.weekday() >= 5:
-            dia = "sábado" if hoy.weekday() == 5 else "domingo"
-            print(f"⏭️  Hoy es {dia} — usá --force para forzar la ejecución.")
-            sys.exit(0)
-        try:
-            import holidays
-            feriados_ar = holidays.Argentina(years=hoy.year)
-            if hoy.date() in feriados_ar:
-                print(f"⏭️  Feriado: {feriados_ar.get(hoy.date())} — usá --force.")
-                sys.exit(0)
-        except ImportError:
-            pass
+    resultados = scrapear_todos(verbose=True)
 
-    print("\n" + "="*60)
-    print("SCRAPER PEN — BORA + COMPR.AR + TGN")
-    print(f"Ejecutado: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"Fuente: {args.fuente.upper()}")
-    print("="*60)
+    if not resultados:
+        print("⚠️  Sin resultados")
+        sys.exit(1)
 
-    dfs = []
+    print(f"\nMuestra (primeras 3 filas):")
+    for r in resultados[:3]:
+        print(f"  {r['numero_proceso']} | {r['tipo_proceso']} | {r['estado']} | {r['fecha_apertura']}")
 
-    if args.fuente in ("bora", "todas"):
-        df = scraper_bora()
-        if not df.empty:
-            dfs.append(df)
-
-    if args.fuente in ("comprar", "todas"):
-        df = scraper_comprar()
-        if not df.empty:
-            dfs.append(df)
-
-    if args.fuente in ("tgn", "todas"):
-        df = scraper_tgn()
-        if not df.empty:
-            dfs.append(df)
-
-    if not dfs:
-        print("\n⚠️  Ninguna fuente devolvió datos PEN.")
-        sys.exit(0)
-
-    df_final = pd.concat(dfs, ignore_index=True)[COLS_SALIDA]
-    csv_path = guardar_csv(df_final)
-
-    print("\n" + "="*60)
-    print("RESUMEN")
-    print("="*60)
-    for fuente, grp in df_final.groupby("fuente"):
-        print(f"  {fuente:<35}  {len(grp):>5} registros")
-    for rama in ["JGM", "SGP", "PRESIDENCIA"]:
-        n = df_final["organismo"].str.startswith(rama).sum()
-        if n:
-            print(f"  → {rama:<12}  {n:>5} registros")
-    print(f"\nSiguiente: python scripts/generar_json.py")
-    print("="*60)
-
-
-if __name__ == "__main__":
-    main()
+    if args.db:
+        guardar_db(resultados)
+    if args.csv:
+        guardar_csv(resultados)
+    if not args.db and not args.csv:
+        print("\n(Sin --db ni --csv: solo se imprimieron los resultados)")
+        print("Usar: python scripts/scraper_comprar.py --csv")
