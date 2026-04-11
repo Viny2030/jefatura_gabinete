@@ -1,3 +1,5 @@
+- name: Instalar dependencias
+        run: pip install requests beautifulsoup4 lxml psycopg2-binary python-dotenv pandas numpy
 name: Scraper comprar.gob.ar — JGM
 
 on:
