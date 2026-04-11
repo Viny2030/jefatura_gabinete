@@ -31,7 +31,7 @@ warnings.filterwarnings("ignore")
 BASE_URL         = "https://comprar.gob.ar/BuscarAvanzado.aspx"
 SAF_ID           = "591"        # Jefatura de Gabinete de Ministros
 FECHA_DESDE      = "01/01/2023"
-FILAS_POR_PAGINA = 12           # filas reales por página del GridView
+FILAS_POR_PAGINA = 10           # filas reales por página del GridView
 DELAY_SEG        = 1.5
 
 HEADERS_GET = {
