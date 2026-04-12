@@ -1,8 +1,39 @@
 {
-  "generado_en": "2026-04-12T13:35:30.620129",
-  "total": 0,
+  "generado_en": "2026-04-12T14:11:11.141498",
+  "total": 2,
   "altos": 0,
-  "medios": 0,
-  "monto_total": 0,
-  "cruces": []
+  "medios": 2,
+  "monto_total": 232614496.0,
+  "cruces": [
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "DOMINGUEZ, Luciano Martín",
+      "cargo": "Coordinador/a",
+      "gestion": "Posse",
+      "empresa": "Dominguez  Juan  Carlos",
+      "cuit": "20078380366",
+      "organismo": "INSTITUTO NACIONAL DE TECNOLOGÍA AGROPECUARIA - ESTACIÓN EXPERIMENTAL AGROPECUARIA FAMAILLÁ",
+      "monto": 232613780.0,
+      "monto_fmt": "$232.6M",
+      "fecha": "2026-03-05",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408413/20260305",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "MARTIN, Cecilia Ángeles",
+      "cargo": "Director/a",
+      "gestion": "Posse",
+      "empresa": "Lara Martin Miguel",
+      "cuit": "20275942422",
+      "organismo": "INSTITUTO NACIONAL DE TECNOLOGÍA AGROPECUARIA - ESTACIÓN EXPERIMENTAL AGROPECUARIA FAMAILLÁ",
+      "monto": 716.0,
+      "monto_fmt": "$716",
+      "fecha": "2026-03-05",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408409/20260305",
+      "contratos": 2
+    }
+  ]
 }
