@@ -874,15 +874,58 @@ function initCharts() {
     + '</div>';
 }
 
+// ── Cruces desde JSON externo (generado por workflow) ────────────────────────
+function renderCrucesDesdeJSON(data) {
+  document.getElementById('k-cruces-total').textContent = data.total || '0';
+  document.getElementById('k-cruces-alto').textContent  = data.altos  || '0';
+  document.getElementById('k-cruces-medio').textContent = data.medios || '0';
+  document.getElementById('k-cruces-monto').textContent = fmt(data.monto_total || 0);
+  var elAlertas = document.getElementById('k-alertas-total');
+  if (elAlertas) elAlertas.textContent = data.total || '0';
+
+  var container = document.getElementById('cruces-container');
+  if (!container) return;
+
+  if (!data.cruces || data.cruces.length === 0) {
+    container.innerHTML =
+      '<div class="alerta-item baja" style="text-align:center;padding:24px">'
+      + '<div class="atit">✅ Sin cruces detectados aún</div>'
+      + '<div class="amet">El scraper nocturno está acumulando datos de proveedores. '
+      + 'Los cruces aparecerán automáticamente cuando haya suficiente cobertura (~3 semanas).</div>'
+      + '</div>';
+    return;
+  }
+
+  container.innerHTML = data.cruces.map(function(c) {
+    var badgeCls = c.nivel === 'ALTO' ? 'alta' : 'media';
+    var cardCls  = c.nivel === 'MEDIO' ? 'media' : '';
+    return '<div class="cruce-card ' + cardCls + '">'
+      + '<div class="cruce-titulo"><span class="badge-n ' + badgeCls + '">' + c.nivel + '</span> ' + c.tipo + '</div>'
+      + '<div class="cruce-meta">'
+      + (c.funcionario !== '—' ? '<span>👤 <strong>' + c.funcionario + '</strong> — ' + c.cargo + '</span>' : '')
+      + '<span>🏢 <strong>' + c.empresa + '</strong></span>'
+      + (c.nivel === 'ALTO' ? '<span>CUIT: <strong class="mono">' + c.cuit + '</strong></span>' : '')
+      + '<span>📋 <strong>' + c.contratos + '</strong> contrato' + (c.contratos !== 1 ? 's' : '') + '</span>'
+      + (c.monto_fmt && c.monto_fmt !== '—' ? '<span>💰 <strong>' + c.monto_fmt + '</strong></span>' : '')
+      + '<span>🏛️ ' + c.organismo.substring(0, 60) + (c.organismo.length > 60 ? '…' : '') + '</span>'
+      + (c.gestion !== '—' ? '<span>Gestión: ' + chipGestion(c.gestion) + '</span>' : '')
+      + '</div></div>';
+  }).join('');
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 async function init() {
+  var crucesData = null;
+
   try {
     var responses = await Promise.all([
       fetch('data/contratos_jgm.json'),
       fetch('data/personal_jgm.json'),
+      fetch('data/cruces.json'),
     ]);
     allC = await responses[0].json();
     allP = await responses[1].json();
+    crucesData = await responses[2].json();
 
     allC = allC.map(function(c) {
       return Object.assign({}, c, {
@@ -906,10 +949,16 @@ async function init() {
   }
 
   filtrarC();
-  updateKPIsC();   // PATCH 1 ← KPIs sección contratos
+  updateKPIsC();
   filtrarP();
   initCharts();
-  generarCruces(); // PATCH 2 ← Cruces dinámicos con datos reales
+
+  // Cruces: usar JSON del workflow si tiene datos, sino calcular en browser
+  if (crucesData && crucesData.total > 0) {
+    renderCrucesDesdeJSON(crucesData);
+  } else {
+    generarCruces();
+  }
 }
 
 init();
