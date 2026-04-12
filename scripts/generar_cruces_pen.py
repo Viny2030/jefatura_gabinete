@@ -30,23 +30,18 @@ BASE_DIR     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PERSONAL_JGM = os.path.join(BASE_DIR, "src", "frontend", "data", "personal_jgm.json")
 OUTPUT_JSON  = os.path.join(BASE_DIR, "src", "frontend", "data", "cruces.json")
 
-# Rutas de datos de los repos hermanos (relativas a la raíz del workspace en CI)
-# En CI: checkout de monitor → ../monitor, checkout de tgn → ../tgn
-# Local: ajustar según rutas reales
 DATA_PATHS = [
-    os.path.join(BASE_DIR, "..", "monitor", "data"),        # CI
-    os.path.join(BASE_DIR, "..", "tgn", "data"),            # CI
-    # Fallback local
+    os.path.join(BASE_DIR, "..", "monitor", "data"),
+    os.path.join(BASE_DIR, "..", "tgn", "data"),
     r"C:\Users\ASUS\PycharmProjects\monitor_contratos_v2\data",
     r"C:\Users\ASUS\PycharmProjects\gob_bo_comprar_tgn\data",
 ]
 
-JGM_SAF = "305"  # SAF de JGM en comprar.gob.ar
+JGM_SAF = "305"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def normalizar(texto):
-    """Quita tildes, pasa a mayúsculas, deja solo letras y espacios."""
     if not texto:
         return ""
     texto = str(texto).upper().strip()
@@ -57,23 +52,45 @@ def normalizar(texto):
 
 
 def cuil_a_str(cuil):
-    """Convierte float cuil (2.028e10) a string limpio '20280522067'."""
     if not cuil or (isinstance(cuil, float) and pd.isna(cuil)):
         return ""
     return re.sub(r"\D", "", str(int(round(float(cuil)))))
 
 
 def cuit_a_str(cuit):
-    """Limpia CUIT '30-12345678-9' → '30123456789'."""
     if not cuit or (isinstance(cuit, float) and pd.isna(cuit)):
         return ""
     return re.sub(r"\D", "", str(cuit))
 
 
+def parse_monto(val):
+    """Convierte montos en cualquier formato a float. Ej: '$1.163.068.90' -> 1163068.90"""
+    if val is None:
+        return 0
+    if isinstance(val, (int, float)):
+        if pd.isna(val):
+            return 0
+        return float(val)
+    try:
+        limpio = str(val).replace("$", "").replace(" ", "").strip()
+        if "," in limpio and "." in limpio:
+            limpio = limpio.replace(".", "").replace(",", ".")
+        elif "," in limpio:
+            limpio = limpio.replace(",", ".")
+        elif limpio.count(".") > 1:
+            limpio = limpio.replace(".", "")
+        return float(limpio) if limpio else 0
+    except Exception:
+        return 0
+
+
 def fmt_monto(n):
-    if not n or pd.isna(n):
+    if not n:
         return "—"
-    n = float(n)
+    try:
+        n = float(n)
+    except Exception:
+        return "—"
     if n >= 1e9:
         return f"${n/1e9:.1f}B"
     if n >= 1e6:
@@ -92,12 +109,12 @@ def cargar_personal():
         if not apellido or len(apellido) < 4:
             continue
         personal.append({
-            "apellido":    apellido,
-            "nombre":      p.get("nombre", ""),
-            "cargo":       p.get("cargo", ""),
-            "jerarquia":   p.get("jerarquia", ""),
-            "gestion":     p.get("jgm_al_ingreso", ""),
-            "cuil":        cuil,
+            "apellido":  apellido,
+            "nombre":    p.get("nombre", ""),
+            "cargo":     p.get("cargo", ""),
+            "jerarquia": p.get("jerarquia", ""),
+            "gestion":   p.get("jgm_al_ingreso", ""),
+            "cuil":      cuil,
         })
     log.info(f"Personal JGM cargado: {len(personal)} registros")
     return personal
@@ -105,7 +122,6 @@ def cargar_personal():
 
 # ── Carga de contratos PEN ────────────────────────────────────────────────────
 def cargar_contratos_pen():
-    """Lee todos los reporte_*.xlsx de todas las rutas disponibles."""
     registros = []
     rutas_usadas = []
 
@@ -123,8 +139,7 @@ def cargar_contratos_pen():
             try:
                 xl = pd.ExcelFile(archivo)
 
-                # Intentar hoja de detalle primero, sino hoja 0
-                hoja = 0  # default: primera hoja
+                hoja = 0
                 for nombre in xl.sheet_names:
                     if "Detalle" in nombre or "detalle" in nombre:
                         hoja = nombre
@@ -132,12 +147,10 @@ def cargar_contratos_pen():
 
                 df = pd.read_excel(archivo, sheet_name=hoja)
 
-                # Filtrar columnas necesarias
                 cols_req = ["cuit_proveedor", "proveedor_adjudicado", "organismo_contratante"]
                 if not all(c in df.columns for c in cols_req):
                     continue
 
-                # Solo filas con CUIT
                 df = df[df["cuit_proveedor"].notna()].copy()
                 if df.empty:
                     continue
@@ -147,13 +160,13 @@ def cargar_contratos_pen():
                     if not cuit:
                         continue
                     registros.append({
-                        "cuit":        cuit,
-                        "proveedor":   str(row.get("proveedor_adjudicado", "")).strip(),
-                        "organismo":   str(row.get("organismo_contratante", "")).strip(),
-                        "monto_bora":  row.get("monto_adjudicado_bora"),
-                        "monto_tgn":   row.get("monto_cobrado_tgn"),
-                        "fecha":       str(row.get("fecha", ""))[:10],
-                        "link":        str(row.get("link_bora", "")),
+                        "cuit":       cuit,
+                        "proveedor":  str(row.get("proveedor_adjudicado", "")).strip(),
+                        "organismo":  str(row.get("organismo_contratante", "")).strip(),
+                        "monto_bora": row.get("monto_adjudicado_bora"),
+                        "monto_tgn":  row.get("monto_cobrado_tgn"),
+                        "fecha":      str(row.get("fecha", ""))[:10],
+                        "link":       str(row.get("link_bora", "")),
                         "nivel_riesgo": str(row.get("nivel_riesgo_licit", "")),
                     })
             except Exception as e:
@@ -171,6 +184,7 @@ def nivel1(personal, contratos):
     for c in contratos:
         if c["cuit"] in cuil_map:
             p = cuil_map[c["cuit"]]
+            monto = parse_monto(c["monto_bora"])
             cruces.append({
                 "nivel":       "ALTO",
                 "tipo":        "CUIL/CUIT exacto — Funcionario activo / Proveedor",
@@ -180,8 +194,8 @@ def nivel1(personal, contratos):
                 "empresa":     c["proveedor"],
                 "cuit":        c["cuit"],
                 "organismo":   c["organismo"],
-                "monto":       float(c["monto_bora"]) if c["monto_bora"] and not pd.isna(c["monto_bora"]) else 0,
-                "monto_fmt":   fmt_monto(c["monto_bora"]),
+                "monto":       monto,
+                "monto_fmt":   fmt_monto(monto),
                 "fecha":       c["fecha"],
                 "link":        c["link"],
                 "contratos":   1,
@@ -223,8 +237,7 @@ def nivel2(personal, contratos):
                         "link":        c["link"],
                         "contratos":   0,
                     }
-                monto = float(c["monto_bora"]) if c["monto_bora"] and not pd.isna(c["monto_bora"]) else 0
-                agrupados[key]["monto"]     += monto
+                agrupados[key]["monto"]     += parse_monto(c["monto_bora"])
                 agrupados[key]["contratos"] += 1
 
     resultado = list(agrupados.values())
@@ -237,12 +250,9 @@ def nivel2(personal, contratos):
 
 # ── Nivel 3: Proveedor cobra en JGM y en otro organismo ──────────────────────
 def nivel3(contratos):
-    """Detecta proveedores que tienen contratos en JGM (organismo con '305' o 'JEFATURA')
-    y también en otros organismos."""
     cruces = []
-
-    # Agrupar por CUIT
     por_cuit = {}
+
     for c in contratos:
         cuit = c["cuit"]
         if not cuit:
@@ -254,7 +264,6 @@ def nivel3(contratos):
 
     for cuit, data in por_cuit.items():
         organismos = data["organismos"]
-        # Verificar si alguno es JGM
         es_jgm = any(
             "JEFATURA" in o.upper() or "GABINETE" in o.upper()
             for o in organismos
@@ -263,13 +272,11 @@ def nivel3(contratos):
             continue
 
         otros = [o for o in organismos if "JEFATURA" not in o.upper() and "GABINETE" not in o.upper()]
-        monto_total = sum(
-            float(c["monto_bora"]) for c in data["contratos"]
-            if c["monto_bora"] and not pd.isna(c["monto_bora"])
-        )
+        monto_total = sum(parse_monto(c["monto_bora"]) for c in data["contratos"])
+
         cruces.append({
             "nivel":       "MEDIO",
-            "tipo":        f"Proveedor multi-organismo — JGM + {len(otros)} organismo(s) más",
+            "tipo":        f"Proveedor multi-organismo — JGM + {len(otros)} organismo(s) mas",
             "funcionario": "—",
             "cargo":       "—",
             "gestion":     "—",
@@ -294,12 +301,11 @@ def main():
     log.info(f"  {datetime.now().strftime('%d/%m/%Y %H:%M')}")
     log.info("=" * 60)
 
-    personal   = cargar_personal()
-    contratos  = cargar_contratos_pen()
+    personal  = cargar_personal()
+    contratos = cargar_contratos_pen()
 
     if not contratos:
         log.warning("No se encontraron contratos con CUIT. Verificar rutas de datos.")
-        # Exportar JSON vacío para que el frontend no rompa
         resultado = {
             "generado_en": datetime.now().isoformat(),
             "total":       0,
@@ -314,8 +320,6 @@ def main():
         cruces_n3 = nivel3(contratos)
 
         todos = cruces_n1 + cruces_n2 + cruces_n3
-
-        # Ordenar: ALTO primero, luego monto desc
         todos.sort(key=lambda x: (0 if x["nivel"] == "ALTO" else 1, -x["monto"]))
 
         monto_total = sum(c["monto"] for c in todos)
@@ -328,7 +332,7 @@ def main():
             "altos":       altos,
             "medios":      medios,
             "monto_total": monto_total,
-            "cruces":      todos[:100],  # máximo 100 en el JSON
+            "cruces":      todos[:100],
         }
 
     os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
