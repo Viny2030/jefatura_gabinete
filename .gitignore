@@ -1,9 +1,10 @@
+# Reemplazar .gitignore completo
+@"
 .venv/
 .idea/
 __pycache__/
 *.pyc
-data/
 .env
 *.egg-info/
-
 contratos_jgm.csv
+"@ | Out-File -FilePath .gitignore -Encoding utf8
