@@ -2,7 +2,7 @@ name: Scraper Detalle Contratos JGM — Nocturno
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # 00:00 ART = 03:00 UTC
+    - cron: "0 16 * * *"   # 13:00 ART = 16:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -46,6 +46,22 @@ jobs:
         run: |
           python - << 'PYEOF'
           import os, csv, psycopg2
+          from datetime import datetime
+
+          def parsear_fecha(valor):
+              """Limpia '15/03/2024 10:30 hrs.' → date object, o None si falla"""
+              if not valor or not valor.strip():
+                  return None
+              # Tomar solo la parte de fecha, descartar hora y sufijos como 'hrs.'
+              limpio = valor.strip().split(" ")[0]
+              for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y"):
+                  try:
+                      return datetime.strptime(limpio, fmt).date()
+                  except ValueError:
+                      continue
+              print(f"  [WARN] fecha no parseada: '{valor}'")
+              return None
+
           conn = psycopg2.connect(os.environ["DATABASE_URL"])
           cur  = conn.cursor()
 
@@ -77,55 +93,56 @@ jobs:
           # Importar desde contratos_detalle.csv si existe
           csv_path = "contratos_detalle.csv"
           if os.path.exists(csv_path):
-            with open(csv_path, encoding="utf-8") as f:
-              reader = csv.DictReader(f)
-              for row in reader:
-                cur.execute("""
-                  INSERT INTO contratos
-                    (numero_proceso, nombre_proceso, tipo_proceso, estado,
-                     unidad_ejecutora, organismo, monto_adjudicado,
-                     proveedor_razon, proveedor_cuit, detalle_scrapeado)
-                  VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-                  ON CONFLICT (numero_proceso) DO UPDATE SET
-                    monto_adjudicado  = EXCLUDED.monto_adjudicado,
-                    proveedor_razon   = EXCLUDED.proveedor_razon,
-                    proveedor_cuit    = EXCLUDED.proveedor_cuit,
-                    detalle_scrapeado = EXCLUDED.detalle_scrapeado
-                """, (
-                  row.get("numero_proceso",""),
-                  row.get("nombre_proceso",""),
-                  row.get("tipo_proceso",""),
-                  row.get("estado",""),
-                  row.get("unidad_ejecutora",""),
-                  row.get("organismo",""),
-                  row.get("monto_adjudicado") or None,
-                  row.get("proveedor_razon") or None,
-                  row.get("proveedor_cuit") or None,
-                  row.get("detalle_scrapeado","false").lower() == "true",
-                ))
-            conn.commit()
-            print(f"CSV importado")
+              with open(csv_path, encoding="utf-8") as f:
+                  reader = csv.DictReader(f)
+                  for row in reader:
+                      cur.execute("""
+                        INSERT INTO contratos
+                          (numero_proceso, nombre_proceso, tipo_proceso, estado,
+                           unidad_ejecutora, organismo, monto_adjudicado,
+                           proveedor_razon, proveedor_cuit, detalle_scrapeado)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                        ON CONFLICT (numero_proceso) DO UPDATE SET
+                          monto_adjudicado  = EXCLUDED.monto_adjudicado,
+                          proveedor_razon   = EXCLUDED.proveedor_razon,
+                          proveedor_cuit    = EXCLUDED.proveedor_cuit,
+                          detalle_scrapeado = EXCLUDED.detalle_scrapeado
+                      """, (
+                        row.get("numero_proceso",""),
+                        row.get("nombre_proceso",""),
+                        row.get("tipo_proceso",""),
+                        row.get("estado",""),
+                        row.get("unidad_ejecutora",""),
+                        row.get("organismo",""),
+                        row.get("monto_adjudicado") or None,
+                        row.get("proveedor_razon") or None,
+                        row.get("proveedor_cuit") or None,
+                        row.get("detalle_scrapeado","false").lower() == "true",
+                      ))
+              conn.commit()
+              print("CSV importado: contratos_detalle.csv")
           else:
-            # Primera corrida: importar desde contratos_jgm.csv (scraper base)
-            with open("contratos_jgm.csv", encoding="utf-8") as f:
-              reader = csv.DictReader(f)
-              for row in reader:
-                cur.execute("""
-                  INSERT INTO contratos (numero_proceso, nombre_proceso, tipo_proceso,
-                    fecha_apertura, estado, unidad_ejecutora, organismo)
-                  VALUES (%s,%s,%s,%s,%s,%s,%s)
-                  ON CONFLICT (numero_proceso) DO NOTHING
-                """, (
-                  row.get("numero_proceso",""),
-                  row.get("nombre_proceso",""),
-                  row.get("tipo_proceso",""),
-                  row.get("fecha_apertura") or None,
-                  row.get("estado",""),
-                  row.get("unidad_ejecutora",""),
-                  row.get("saf",""),
-                ))
-            conn.commit()
-            print("Primera corrida: importado desde contratos_jgm.csv")
+              # Primera corrida: importar desde contratos_jgm.csv (scraper base)
+              with open("contratos_jgm.csv", encoding="utf-8") as f:
+                  reader = csv.DictReader(f)
+                  for row in reader:
+                      fecha = parsear_fecha(row.get("fecha_apertura",""))
+                      cur.execute("""
+                        INSERT INTO contratos (numero_proceso, nombre_proceso, tipo_proceso,
+                          fecha_apertura, estado, unidad_ejecutora, organismo)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s)
+                        ON CONFLICT (numero_proceso) DO NOTHING
+                      """, (
+                        row.get("numero_proceso",""),
+                        row.get("nombre_proceso",""),
+                        row.get("tipo_proceso",""),
+                        fecha,
+                        row.get("estado",""),
+                        row.get("unidad_ejecutora",""),
+                        row.get("saf",""),
+                      ))
+              conn.commit()
+              print("Primera corrida: importado desde contratos_jgm.csv")
 
           cur.execute("SELECT COUNT(*) FROM contratos")
           print(f"Contratos en DB: {cur.fetchone()[0]}")
@@ -159,9 +176,9 @@ jobs:
                   "unidad_ejecutora","organismo","monto_adjudicado",
                   "proveedor_razon","proveedor_cuit","detalle_scrapeado"]
           with open("contratos_detalle.csv", "w", newline="", encoding="utf-8") as f:
-            w = csv.writer(f)
-            w.writerow(cols)
-            w.writerows(rows)
+              w = csv.writer(f)
+              w.writerow(cols)
+              w.writerows(rows)
           procesados = sum(1 for r in rows if r[9])
           con_monto  = sum(1 for r in rows if r[6])
           print(f"Total: {len(rows)} | Procesados: {procesados} | Con monto: {con_monto}")
