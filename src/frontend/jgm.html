@@ -219,7 +219,6 @@ footer a { color: var(--accent); text-decoration: none; }
 <!-- ════════ RESUMEN ════════ -->
 <div class="seccion active" id="sec-resumen">
 
-  <!-- Banner de gestión -->
   <div class="gestion-banner">
     <div class="gestion-actual">
       <div class="gav">MA</div>
@@ -240,27 +239,26 @@ footer a { color: var(--accent); text-decoration: none; }
     </div>
   </div>
 
-  <!-- KPIs -->
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-label">Autoridades designadas</div>
-      <div class="kpi-val">611</div>
+      <div class="kpi-val" id="k-personal-total">611</div>
       <div class="kpi-sub">en nómina activa</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Contratos registrados</div>
-      <div class="kpi-val">2.143</div>
+      <div class="kpi-val" id="k-contratos-total">—</div>
       <div class="kpi-sub">desde dic 2023</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto total</div>
-      <div class="kpi-val">$18.4B</div>
+      <div class="kpi-val" id="k-monto-total">—</div>
       <div class="kpi-sub">ARS adjudicados</div>
     </div>
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Alertas activas</div>
-      <div class="kpi-val">8</div>
-      <div class="kpi-sub">3 de riesgo alto</div>
+      <div class="kpi-val" id="k-alertas-total">—</div>
+      <div class="kpi-sub">cruces detectados</div>
     </div>
     <div class="kpi-card kpi-green">
       <div class="kpi-label">Designados Adorni</div>
@@ -300,66 +298,66 @@ footer a { color: var(--accent); text-decoration: none; }
 
 <!-- ════════ CONTRATOS ════════ -->
 <div class="seccion" id="sec-contratos">
-<div class="kpi-grid" style="margin-bottom:20px">
-<div class="kpi-card">
-<div class="kpi-label">Total procesos</div>
-<div class="kpi-val" id="k-total-c">—</div>
-<div class="kpi-sub">desde dic 2023</div>
-</div>
-<div class="kpi-card">
-<div class="kpi-label">Adjudicados</div>
-<div class="kpi-val" id="k-adj-c">—</div>
-<div class="kpi-sub">con contrato firmado</div>
-</div>
-<div class="kpi-card">
-<div class="kpi-label">En curso</div>
-<div class="kpi-val" id="k-enc-c">—</div>
-<div class="kpi-sub">abiertos / en evaluación</div>
-</div>
-<div class="kpi-card">
-<div class="kpi-label">Última apertura</div>
-<div class="kpi-val" id="k-upd-c" style="font-size:13px">—</div>
-<div class="kpi-sub">scraping automático</div>
-</div>
-</div>
-<div class="panel">
-<div class="ph">
-<h2>Contratos y procesos — JGM</h2>
-<button class="btn sec" onclick="exportCSV()" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
-</div>
-<div class="filtros">
-<input id="f-nup"    oninput="filtrarC()" placeholder="Nº proceso…"   style="width:160px"/>
-<input id="f-nombre" oninput="filtrarC()" placeholder="Nombre…"        style="width:200px"/>
-<select id="f-tipo"  onchange="filtrarC()">
-<option value="">Todos los tipos</option>
-<option value="Contratación Directa">Contratación Directa</option>
-<option value="Licitación Privada">Licitación Privada</option>
-<option value="Licitación Pública">Licitación Pública</option>
-</select>
-<select id="f-estado" onchange="filtrarC()">
-<option value="">Todos los estados</option>
-<option value="Adjudicado">Adjudicado</option>
-<option value="Publicado">Publicado</option>
-<option value="Dejado Sin Efecto">Dejado Sin Efecto</option>
-<option value="Desierto">Desierto</option>
-</select>
-<div class="f-count" id="fc-count"></div>
-</div>
-<div class="tw">
-<table>
-<thead><tr>
-<th onclick="sortC('numero_proceso')">Nº Proceso</th>
-<th onclick="sortC('nombre_proceso')">Nombre</th>
-<th onclick="sortC('tipo_proceso')">Tipo</th>
-<th onclick="sortC('fecha_apertura')">Fecha apertura</th>
-<th onclick="sortC('estado')">Estado</th>
-<th>Unidad Ejecutora</th>
-</tr></thead>
-<tbody id="tbody-c"></tbody>
-</table>
-</div>
-</div>
-</div>
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card">
+      <div class="kpi-label">Total procesos</div>
+      <div class="kpi-val" id="k-total-c">—</div>
+      <div class="kpi-sub">desde dic 2023</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Adjudicados</div>
+      <div class="kpi-val" id="k-adj-c">—</div>
+      <div class="kpi-sub">con contrato firmado</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">En curso</div>
+      <div class="kpi-val" id="k-enc-c">—</div>
+      <div class="kpi-sub">abiertos / en evaluación</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Última apertura</div>
+      <div class="kpi-val" id="k-upd-c" style="font-size:13px">—</div>
+      <div class="kpi-sub">scraping automático</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="ph">
+      <h2>Contratos y procesos — JGM</h2>
+      <button class="btn sec" onclick="exportCSV()" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
+    </div>
+    <div class="filtros">
+      <input id="f-nup"    oninput="filtrarC()" placeholder="Nº proceso…"   style="width:160px"/>
+      <input id="f-nombre" oninput="filtrarC()" placeholder="Nombre…"        style="width:200px"/>
+      <select id="f-tipo"  onchange="filtrarC()">
+        <option value="">Todos los tipos</option>
+        <option value="Contratación Directa">Contratación Directa</option>
+        <option value="Licitación Privada">Licitación Privada</option>
+        <option value="Licitación Pública">Licitación Pública</option>
+      </select>
+      <select id="f-estado" onchange="filtrarC()">
+        <option value="">Todos los estados</option>
+        <option value="Adjudicado">Adjudicado</option>
+        <option value="Publicado">Publicado</option>
+        <option value="Dejado Sin Efecto">Dejado Sin Efecto</option>
+        <option value="Desierto">Desierto</option>
+      </select>
+      <div class="f-count" id="fc-count"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr>
+          <th onclick="sortC('numero_proceso')">Nº Proceso</th>
+          <th onclick="sortC('nombre_proceso')">Nombre</th>
+          <th onclick="sortC('tipo_proceso')">Tipo</th>
+          <th onclick="sortC('fecha_apertura')">Fecha apertura</th>
+          <th onclick="sortC('estado')">Estado</th>
+          <th>Unidad Ejecutora</th>
+        </tr></thead>
+        <tbody id="tbody-c"></tbody>
+      </table>
+    </div>
+  </div>
+</div><!-- /contratos -->
 
 <!-- ════════ PERSONAL ════════ -->
 <div class="seccion" id="sec-personal">
@@ -452,70 +450,30 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="kpi-grid" style="margin-bottom:20px">
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Alertas totales</div>
-      <div class="kpi-val">3</div>
+      <div class="kpi-val" id="k-cruces-total">—</div>
       <div class="kpi-sub">cruces detectados</div>
     </div>
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Riesgo alto</div>
-      <div class="kpi-val">1</div>
+      <div class="kpi-val" id="k-cruces-alto">—</div>
       <div class="kpi-sub">coincidencia CUIL</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Riesgo medio</div>
-      <div class="kpi-val">2</div>
+      <div class="kpi-val" id="k-cruces-medio">—</div>
       <div class="kpi-sub">coincidencia apellido</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto involucrado</div>
-      <div class="kpi-val">$25.4M</div>
+      <div class="kpi-val" id="k-cruces-monto">—</div>
       <div class="kpi-sub">ARS en contratos alertados</div>
     </div>
   </div>
 
   <div class="stitle">Alertas detectadas — JGM</div>
 
-  <div class="cruce-card">
-    <div class="cruce-titulo">
-      <span class="badge-n alta">ALTO</span>
-      Coincidencia exacta de CUIL — Funcionario activo / Proveedor
-    </div>
-    <div class="cruce-meta">
-      <span>👤 <strong>GARCÍA, Roberto</strong> — Coordinador JGM</span>
-      <span>🏢 <strong>GARCÍA CONSULTORES SRL</strong></span>
-      <span>CUIL: <strong class="mono">20-28341234-5</strong></span>
-      <span>📋 <strong>3</strong> contratos</span>
-      <span>💰 <strong>$12.4M</strong></span>
-      <span>Gestión: <span class="chip chip-francos">GF Francos</span></span>
-    </div>
-  </div>
-
-  <div class="cruce-card media">
-    <div class="cruce-titulo">
-      <span class="badge-n media">MEDIO</span>
-      Coincidencia de apellido — posible vínculo familiar
-    </div>
-    <div class="cruce-meta">
-      <span>👤 <strong>RODRÍGUEZ, María</strong> — Subsecretaria JGM</span>
-      <span>🏢 <strong>RODRÍGUEZ & ASOCIADOS SA</strong></span>
-      <span>📋 <strong>1</strong> contrato</span>
-      <span>💰 <strong>$4.8M</strong></span>
-      <span>Gestión: <span class="chip chip-posse">NP Posse</span></span>
-    </div>
-  </div>
-
-  <div class="cruce-card media">
-    <div class="cruce-titulo">
-      <span class="badge-n media">MEDIO</span>
-      Cruce inter-organismos — apellido en JGM, proveedor en SGP
-    </div>
-    <div class="cruce-meta">
-      <span>👤 <strong>MARTÍNEZ, Carlos</strong> — Director Nacional JGM</span>
-      <span>🏢 <strong>MARTÍNEZ TECNOLOGÍA SAS</strong> (contrato en SGP)</span>
-      <span>📋 <strong>2</strong> contratos</span>
-      <span>💰 <strong>$8.2M</strong></span>
-      <span>Gestión: <span class="chip chip-adorni">MA Adorni</span></span>
-    </div>
-  </div>
+  <!-- ← Cards dinámicas generadas por generarCruces() -->
+  <div id="cruces-container"></div>
 
   <div class="panel" style="margin-top:24px">
     <div class="ph"><h2>Metodología</h2></div>
@@ -546,9 +504,9 @@ const JGM = {
 };
 
 // ── Estado ────────────────────────────────────────────────────────────────────
-let allC = [], allP = [];
-let sortStateC = { col: null, asc: true };
-let sortStateP = { col: null, asc: true };
+var allC = [], allP = [];
+var sortStateC = { col: null, asc: true };
+var sortStateP = { col: null, asc: true };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function fmt(n) {
@@ -561,8 +519,9 @@ function fmt(n) {
 
 function getGestion(fecha) {
   if (!fecha) return null;
-  const d = fecha.substring(0, 10);
-  for (const [k, g] of Object.entries(JGM)) {
+  var d = fecha.substring(0, 10);
+  for (var k in JGM) {
+    var g = JGM[k];
     if (d >= g.desde && (g.hasta === null || d <= g.hasta)) return k;
   }
   return null;
@@ -570,40 +529,40 @@ function getGestion(fecha) {
 
 function chipGestion(key) {
   if (!key) return '—';
-  const g = JGM[key];
+  var g = JGM[key];
   if (!g) {
-    const mapa = { 'Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
-    const cls = mapa[key] || 'pre';
-    return `<span class="chip chip-${cls}">${key}</span>`;
+    var mapa = { 'Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
+    var cls = mapa[key] || 'pre';
+    return '<span class="chip chip-' + cls + '">' + key + '</span>';
   }
-  const ini = g.nombre.split(' ').map(w=>w[0]).join('').substring(0,2);
-  return `<span class="chip chip-${g.cls}">${ini} ${g.nombre.split(' ').slice(-1)[0]}</span>`;
+  var ini = g.nombre.split(' ').map(function(w){ return w[0]; }).join('').substring(0,2);
+  return '<span class="chip chip-' + g.cls + '">' + ini + ' ' + g.nombre.split(' ').slice(-1)[0] + '</span>';
 }
 
 function chipEscalafon(e) {
   if (!e || e === 'nan') return '—';
-  if (e.includes('SINEP'))     return `<span class="chip chip-sinep">SINEP</span>`;
-  if (e.includes('Autoridad')) return `<span class="chip chip-auto">Aut. Superior</span>`;
-  if (e.includes('nivel'))     return `<span class="chip chip-fuera">Fuera de nivel</span>`;
-  return `<span style="font-size:10px;color:var(--muted)">${e.substring(0,22)}…</span>`;
+  if (e.includes('SINEP'))     return '<span class="chip chip-sinep">SINEP</span>';
+  if (e.includes('Autoridad')) return '<span class="chip chip-auto">Aut. Superior</span>';
+  if (e.includes('nivel'))     return '<span class="chip chip-fuera">Fuera de nivel</span>';
+  return '<span style="font-size:10px;color:var(--muted)">' + e.substring(0,22) + '…</span>';
 }
 
 function extractDecretoLink(norma) {
   if (!norma || norma === 'nan') return '—';
-  const m = norma.match(/\[([^\]]+)\]\(([^)]+)\)/);
-  if (m) return `<a href="${m[2]}" target="_blank" style="color:var(--accent);font-size:10px">${m[1]}</a>`;
-  return `<span style="font-size:10px;color:var(--muted)">${norma.substring(0,30)}</span>`;
+  var m = norma.match(/\[([^\]]+)\]\(([^)]+)\)/);
+  if (m) return '<a href="' + m[2] + '" target="_blank" style="color:var(--accent);font-size:10px">' + m[1] + '</a>';
+  return '<span style="font-size:10px;color:var(--muted)">' + norma.substring(0,30) + '</span>';
 }
 
 // ── Switch sección ────────────────────────────────────────────────────────────
 function switchSec(id) {
-  document.querySelectorAll('.seccion').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.seccion').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('nav a').forEach(function(a){ a.classList.remove('active'); });
   document.getElementById('sec-' + id).classList.add('active');
   document.getElementById('nav-' + id).classList.add('active');
 }
 
-// ── Contratos ──────────────────────────────────────────────────────────────────────────────
+// ── Contratos ─────────────────────────────────────────────────────────────────
 function filtrarC() {
   var nup    = document.getElementById('f-nup').value.toLowerCase();
   var nombre = document.getElementById('f-nombre').value.toLowerCase();
@@ -660,6 +619,7 @@ function exportCSV() {
   a.download = 'contratos_jgm.csv'; a.click();
 }
 
+// ── PATCH 1: updateKPIsC ──────────────────────────────────────────────────────
 function updateKPIsC() {
   document.getElementById('k-total-c').textContent = allC.length;
   document.getElementById('k-adj-c').textContent =
@@ -674,70 +634,194 @@ function updateKPIsC() {
 
 // ── Personal ──────────────────────────────────────────────────────────────────
 function filtrarP() {
-  const nombre = document.getElementById('p-nombre').value.toLowerCase();
-  const cargo  = document.getElementById('p-cargo').value.toLowerCase();
-  const jerarq = document.getElementById('p-jerarq').value;
-  const gest   = document.getElementById('p-gest').value;
-  const genero = document.getElementById('p-genero').value;
-
-  let data = allP;
-  if (nombre) data = data.filter(p =>
-    (p.apellido||'').toLowerCase().includes(nombre) ||
-    (p.nombre||'').toLowerCase().includes(nombre));
-  if (cargo)  data = data.filter(p => (p.cargo||'').toLowerCase().includes(cargo));
-  if (jerarq) data = data.filter(p => (p.jerarquia||'') === jerarq);
-  if (gest)   data = data.filter(p => (p.jgm_al_ingreso||'') === gest);
-  if (genero) data = data.filter(p => (p.genero||'') === genero);
-
+  var nombre = document.getElementById('p-nombre').value.toLowerCase();
+  var cargo  = document.getElementById('p-cargo').value.toLowerCase();
+  var jerarq = document.getElementById('p-jerarq').value;
+  var gest   = document.getElementById('p-gest').value;
+  var genero = document.getElementById('p-genero').value;
+  var data = allP;
+  if (nombre) data = data.filter(function(p){
+    return (p.apellido||'').toLowerCase().indexOf(nombre) >= 0 ||
+           (p.nombre||'').toLowerCase().indexOf(nombre) >= 0;
+  });
+  if (cargo)  data = data.filter(function(p){ return (p.cargo||'').toLowerCase().indexOf(cargo) >= 0; });
+  if (jerarq) data = data.filter(function(p){ return (p.jerarquia||'') === jerarq; });
+  if (gest)   data = data.filter(function(p){ return (p.jgm_al_ingreso||'') === gest; });
+  if (genero) data = data.filter(function(p){ return (p.genero||'') === genero; });
   renderP(data);
 }
 
 function renderP(data) {
-  document.getElementById('tbody-p').innerHTML = data.slice(0, 400).map(p => `<tr>
-    <td class="fw">${p.apellido||'—'}</td>
-    <td>${p.nombre||'—'}</td>
-    <td style="font-size:11px">${p.cargo||'—'}</td>
-    <td style="font-size:11px;color:var(--muted)">${p.jerarquia||'—'}</td>
-    <td>${chipEscalafon(p.escalafon||'')}</td>
-    <td>${chipGestion(p.jgm_al_ingreso)}</td>
-    <td style="font-size:11px">${p.genero && p.genero!=='No informado' ? p.genero.substring(0,1) : '—'}</td>
-    <td>${extractDecretoLink(p.norma_designacion)}</td>
-    <td class="monto" style="font-size:11px">${fmt(p.sueldo_bruto_estimado_ars)}</td>
-  </tr>`).join('');
+  document.getElementById('tbody-p').innerHTML = data.slice(0, 400).map(function(p){
+    return '<tr>'
+      + '<td class="fw">' + (p.apellido||'—') + '</td>'
+      + '<td>' + (p.nombre||'—') + '</td>'
+      + '<td style="font-size:11px">' + (p.cargo||'—') + '</td>'
+      + '<td style="font-size:11px;color:var(--muted)">' + (p.jerarquia||'—') + '</td>'
+      + '<td>' + chipEscalafon(p.escalafon||'') + '</td>'
+      + '<td>' + chipGestion(p.jgm_al_ingreso) + '</td>'
+      + '<td style="font-size:11px">' + (p.genero && p.genero!=='No informado' ? p.genero.substring(0,1) : '—') + '</td>'
+      + '<td>' + extractDecretoLink(p.norma_designacion) + '</td>'
+      + '<td class="monto" style="font-size:11px">' + fmt(p.sueldo_bruto_estimado_ars) + '</td>'
+      + '</tr>';
+  }).join('');
   document.getElementById('fp-count').innerHTML =
-    `<strong>${data.length}</strong> resultado${data.length!==1?'s':''}`;
+    '<strong>' + data.length + '</strong> resultado' + (data.length !== 1 ? 's' : '');
 }
 
 function sortP(col) {
   sortStateP.asc = sortStateP.col === col ? !sortStateP.asc : true;
   sortStateP.col = col;
-  allP.sort((a,b) => {
-    const av = a[col]||'', bv = b[col]||'';
+  allP.sort(function(a,b){
+    var av = a[col]||'', bv = b[col]||'';
     return sortStateP.asc ? (av>bv?1:-1) : (av<bv?1:-1);
   });
   filtrarP();
 }
 
 function exportCSVP() {
-  const h = ['apellido','nombre','cargo','jerarquia','escalafon','jgm_al_ingreso','genero','sueldo_bruto_estimado_ars'];
-  const rows = allP.map(r => h.map(k=>`"${(r[k]||'').toString().replace(/"/g,'""')}"`).join(','));
-  const a = document.createElement('a');
-  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(','),...rows].join('\n'));
+  var h = ['apellido','nombre','cargo','jerarquia','escalafon','jgm_al_ingreso','genero','sueldo_bruto_estimado_ars'];
+  var rows = allP.map(function(r){ return h.map(function(k){ return '"' + (r[k]||'').toString().replace(/"/g,'""') + '"'; }).join(','); });
+  var a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(',')].concat(rows).join('\n'));
   a.download = 'personal_jgm.csv'; a.click();
 }
 
-// ── Carga de datos reales desde JSON ──────────────────────────────────────────
+// ── PATCH 2: Cruces dinámicos ─────────────────────────────────────────────────
+function normalizarApellido(texto) {
+  if (!texto) return '';
+  return texto
+    .toUpperCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^A-Z\s]/g, '')
+    .trim();
+}
+
+function generarCruces() {
+  var container = document.getElementById('cruces-container');
+  if (!container) return;
+
+  var cruces = [];
+
+  // ── NIVEL 1: CUIL funcionario == CUIT proveedor ───────────────────────────
+  allP.forEach(function(p) {
+    // cuil viene como float (ej: 20280522067.0) → convertir a string limpio
+    var cuil = p.cuil ? String(Math.round(p.cuil)) : '';
+    if (!cuil || cuil.length < 10) return;
+    allC.filter(function(c) {
+      if (!c.proveedor_cuit) return false;
+      var cuit = c.proveedor_cuit.replace(/\D/g, '');
+      return cuit === cuil;
+    }).forEach(function(c) {
+      cruces.push({
+        nivel:       'ALTO',
+        cls:         '',
+        tipo:        'Coincidencia exacta CUIT/CUIL — Funcionario activo / Proveedor',
+        funcionario: (p.apellido||'') + ', ' + (p.nombre||''),
+        cargo:       p.cargo || '—',
+        empresa:     c.proveedor_razon || '—',
+        cuit:        c.proveedor_cuit || '—',
+        contratos:   1,
+        monto:       c.monto_adjudicado || 0,
+        gestion:     p.jgm_al_ingreso || '—',
+        nup:         c.numero_proceso,
+      });
+    });
+  });
+
+  // ── NIVEL 2: Apellido funcionario en razón social proveedor ──────────────
+  var nivel2 = {};
+  allP.forEach(function(p) {
+    var apellido = normalizarApellido(p.apellido);
+    if (!apellido || apellido.length < 4) return;
+    allC.filter(function(c) {
+      if (!c.proveedor_razon) return false;
+      var razon = normalizarApellido(c.proveedor_razon);
+      var regex = new RegExp('\\b' + apellido + '\\b');
+      return regex.test(razon);
+    }).forEach(function(c) {
+      var key = apellido + '|' + (c.proveedor_razon||'');
+      if (!nivel2[key]) {
+        nivel2[key] = {
+          nivel:       'MEDIO',
+          cls:         'media',
+          tipo:        'Coincidencia de apellido — posible vínculo',
+          funcionario: (p.apellido||'') + ', ' + (p.nombre||''),
+          cargo:       p.cargo || '—',
+          empresa:     c.proveedor_razon || '—',
+          cuit:        c.proveedor_cuit || '—',
+          contratos:   0,
+          monto:       0,
+          gestion:     p.jgm_al_ingreso || '—',
+          nup:         c.numero_proceso,
+        };
+      }
+      nivel2[key].contratos += 1;
+      nivel2[key].monto     += (c.monto_adjudicado || 0);
+    });
+  });
+  Object.values(nivel2).forEach(function(v){ cruces.push(v); });
+
+  // ── Ordenar: ALTO primero, luego monto desc ───────────────────────────────
+  cruces.sort(function(a, b) {
+    if (a.nivel !== b.nivel) return a.nivel === 'ALTO' ? -1 : 1;
+    return b.monto - a.monto;
+  });
+
+  // ── KPIs dinámicos ────────────────────────────────────────────────────────
+  var altos  = cruces.filter(function(c){ return c.nivel === 'ALTO'; });
+  var medios = cruces.filter(function(c){ return c.nivel === 'MEDIO'; });
+  var montoTotal = cruces.reduce(function(s, c){ return s + c.monto; }, 0);
+
+  document.getElementById('k-cruces-total').textContent = cruces.length || '0';
+  document.getElementById('k-cruces-alto').textContent  = altos.length  || '0';
+  document.getElementById('k-cruces-medio').textContent = medios.length || '0';
+  document.getElementById('k-cruces-monto').textContent = fmt(montoTotal);
+
+  // También actualizar el KPI de alertas en Resumen
+  var elAlertas = document.getElementById('k-alertas-total');
+  if (elAlertas) elAlertas.textContent = cruces.length || '0';
+
+  // ── Render cards ──────────────────────────────────────────────────────────
+  if (cruces.length === 0) {
+    container.innerHTML =
+      '<div class="alerta-item baja" style="text-align:center;padding:24px">' +
+      '<div class="atit">✅ Sin cruces detectados aún</div>' +
+      '<div class="amet">El scraper nocturno está acumulando datos de proveedores. ' +
+      'Los cruces aparecerán automáticamente cuando haya suficiente cobertura (~3 semanas).</div>' +
+      '</div>';
+    return;
+  }
+
+  container.innerHTML = cruces.slice(0, 50).map(function(c) {
+    var badgeCls = c.nivel === 'ALTO' ? 'alta' : 'media';
+    return '<div class="cruce-card ' + c.cls + '">'
+      + '<div class="cruce-titulo">'
+      +   '<span class="badge-n ' + badgeCls + '">' + c.nivel + '</span> ' + c.tipo
+      + '</div>'
+      + '<div class="cruce-meta">'
+      +   '<span>👤 <strong>' + c.funcionario + '</strong> — ' + c.cargo + '</span>'
+      +   '<span>🏢 <strong>' + c.empresa + '</strong></span>'
+      +   (c.nivel === 'ALTO' ? '<span>CUIT: <strong class="mono">' + c.cuit + '</strong></span>' : '')
+      +   '<span>📋 <strong>' + c.contratos + '</strong> contrato' + (c.contratos !== 1 ? 's' : '') + '</span>'
+      +   (c.monto ? '<span>💰 <strong>' + fmt(c.monto) + '</strong></span>' : '')
+      +   '<span>Gestión: ' + chipGestion(c.gestion) + '</span>'
+      + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+// ── Charts ────────────────────────────────────────────────────────────────────
 function initCharts() {
-  // Contratos por gestión
   new Chart(document.getElementById('chart-gestion'), {
     type: 'bar',
     data: {
       labels: ['Posse (dic23-may24)', 'Francos (may24-oct25)', 'Adorni (nov25-hoy)'],
       datasets: [{
         data: [
-          allC.filter(c=>getGestion(c.fecha_adjudicacion)==='posse').length,
-          allC.filter(c=>getGestion(c.fecha_adjudicacion)==='francos').length,
-          allC.filter(c=>getGestion(c.fecha_adjudicacion)==='adorni').length,
+          allC.filter(function(c){ return getGestion(c.fecha_apertura)==='posse'; }).length,
+          allC.filter(function(c){ return getGestion(c.fecha_apertura)==='francos'; }).length,
+          allC.filter(function(c){ return getGestion(c.fecha_apertura)==='adorni'; }).length,
         ],
         backgroundColor: ['#7c3aed33','#0891b233','#05966933'],
         borderColor:     ['#7c3aed',  '#0891b2',  '#059669'],
@@ -748,23 +832,21 @@ function initCharts() {
       scales: { y: { beginAtZero: true } } }
   });
 
-  // Jerarquía
-  const jerCount = {};
-  allP.forEach(p => { const j = p.jerarquia||'Sin dato'; jerCount[j]=(jerCount[j]||0)+1; });
-  const jerTop = Object.entries(jerCount).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  var jerCount = {};
+  allP.forEach(function(p){ var j = p.jerarquia||'Sin dato'; jerCount[j]=(jerCount[j]||0)+1; });
+  var jerTop = Object.entries(jerCount).sort(function(a,b){ return b[1]-a[1]; }).slice(0,8);
   new Chart(document.getElementById('chart-jerarquia'), {
     type: 'bar',
     data: {
-      labels: jerTop.map(j => j[0].length>18 ? j[0].substring(0,18)+'…' : j[0]),
-      datasets: [{ data: jerTop.map(j=>j[1]), backgroundColor:'#1e40af22', borderColor:'#1e40af', borderWidth:1.5, borderRadius:4 }]
+      labels: jerTop.map(function(j){ return j[0].length>18 ? j[0].substring(0,18)+'…' : j[0]; }),
+      datasets: [{ data: jerTop.map(function(j){ return j[1]; }), backgroundColor:'#1e40af22', borderColor:'#1e40af', borderWidth:1.5, borderRadius:4 }]
     },
     options: { indexAxis:'y', responsive:true, plugins:{ legend:{ display:false } } }
   });
 
-  // Escalafón
-  const escCount = {};
-  allP.forEach(p => {
-    let e = 'Otro';
+  var escCount = {};
+  allP.forEach(function(p) {
+    var e = 'Otro';
     if ((p.escalafon||'').includes('SINEP')) e = 'SINEP';
     else if ((p.escalafon||'').includes('Autoridad')) e = 'Aut. Superior';
     else if ((p.escalafon||'').includes('nivel')) e = 'Fuera de nivel';
@@ -780,56 +862,54 @@ function initCharts() {
     options: { responsive:true, plugins:{ legend:{ position:'right', labels:{ font:{ size:11 } } } } }
   });
 
-  // KPIs por gestión
-  ['adorni','francos','posse'].forEach(k => {
-    const n = allC.filter(c => getGestion(c.fecha_adjudicacion) === k).length;
-    const el = document.getElementById('k-' + k + '-c');
-    if (el) el.textContent = n;
-  });
-
-  // Alertas resumen (estáticas por ahora)
-  document.getElementById('alertas-resumen').innerHTML = `
-    <div class="alerta-item media">
-      <div class="atit"><span class="badge-n media">medio</span>Proveedor con contratos reiterados — JGM</div>
-      <div class="amet">Fuente: COMPR.AR · datos reales</div>
-    </div>
-    <div class="alerta-item baja">
-      <div class="atit"><span class="badge-n baja" style="background:#05966915;color:#059669">info</span>${allC.length} contratos cargados desde CSV real</div>
-      <div class="amet">Período: 2020–2026 · Actualizado hoy</div>
-    </div>`;
+  document.getElementById('alertas-resumen').innerHTML =
+    '<div class="alerta-item media">'
+    + '<div class="atit"><span class="badge-n media">medio</span>Proveedor con contratos reiterados — JGM</div>'
+    + '<div class="amet">Fuente: COMPR.AR · datos reales</div>'
+    + '</div>'
+    + '<div class="alerta-item baja">'
+    + '<div class="atit"><span class="badge-n baja" style="background:#05966915;color:#059669">info</span>'
+    + allC.length + ' contratos cargados desde CSV real</div>'
+    + '<div class="amet">Período: 2023–2026 · Actualizado automáticamente</div>'
+    + '</div>';
 }
 
-// ── Init con fetch real ───────────────────────────────────────────────────────
+// ── Init ──────────────────────────────────────────────────────────────────────
 async function init() {
   try {
-    const [resC, resP] = await Promise.all([
+    var responses = await Promise.all([
       fetch('data/contratos_jgm.json'),
       fetch('data/personal_jgm.json'),
     ]);
-    allC = await resC.json();
-    allP = await resP.json();
+    allC = await responses[0].json();
+    allP = await responses[1].json();
 
-    // Mapear campo fecha_str → fecha_adjudicacion si hace falta
-    allC = allC.map(c => ({
-      ...c,
-      fecha_adjudicacion: c.fecha_adjudicacion || c.fecha_str || '',
-      proveedor: c.proveedor || c.objeto?.substring(0,50) || '—',
-    }));
+    allC = allC.map(function(c) {
+      return Object.assign({}, c, {
+        fecha_adjudicacion: c.fecha_adjudicacion || c.fecha_str || '',
+        proveedor: c.proveedor || (c.objeto ? c.objeto.substring(0,50) : '—'),
+      });
+    });
 
-    // Actualizar KPIs con datos reales
-    document.querySelector('#sec-resumen .kpi-val').textContent = allP.length.toLocaleString('es-AR');
-    const monto = allC.reduce((s,c)=>s+(c.monto_adjudicado||0),0);
-    const montoStr = monto>=1e9 ? '$'+(monto/1e9).toFixed(1)+'B' : '$'+(monto/1e6).toFixed(1)+'M';
-    document.querySelectorAll('#sec-resumen .kpi-val')[1].textContent = allC.length.toLocaleString('es-AR');
-    document.querySelectorAll('#sec-resumen .kpi-val')[2].textContent = montoStr;
+    // KPIs resumen
+    var elPersonal = document.getElementById('k-personal-total');
+    if (elPersonal) elPersonal.textContent = allP.length.toLocaleString('es-AR');
+    var elContratosTotal = document.getElementById('k-contratos-total');
+    if (elContratosTotal) elContratosTotal.textContent = allC.length.toLocaleString('es-AR');
+    var monto = allC.reduce(function(s,c){ return s+(c.monto_adjudicado||0); }, 0);
+    var elMonto = document.getElementById('k-monto-total');
+    if (elMonto) elMonto.textContent = fmt(monto);
 
   } catch(e) {
     console.warn('JSON no disponible, usando datos vacíos:', e);
     allC = []; allP = [];
   }
+
   filtrarC();
+  updateKPIsC();   // PATCH 1 ← KPIs sección contratos
   filtrarP();
   initCharts();
+  generarCruces(); // PATCH 2 ← Cruces dinámicos con datos reales
 }
 
 init();
