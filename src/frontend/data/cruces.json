@@ -1,0 +1,48 @@
+[
+  {
+    "cuil": "20270881069",
+    "nombre": "Julio Pablo",
+    "apellido": "COMADIRA",
+    "organismo": "Ministerio de Justicia",
+    "sub_organismo": "nan",
+    "cargo": "Subprocurador/a",
+    "jerarquia": "Secretario",
+    "fecha_ingreso": "2025-01-01",
+    "n_contratos": 1,
+    "monto_total_ars": 790000.0,
+    "contratos": [
+      {
+        "organismo": "349 - ProcuraciÃ³n del Tesoro de la NaciÃ³n",
+        "tipo_proceso": "ContrataciÃ³n Directa",
+        "monto_adjudicado": 790000.0,
+        "objeto": "SERV. PROFESIONAL Y COMERCIAL;",
+        "ejercicio": 2020,
+        "fecha_adjudicacion": null,
+        "cuit_proveedor": "20-27088106-9"
+      }
+    ]
+  },
+  {
+    "cuil": "20221100272",
+    "nombre": "Sebastián Gabriel",
+    "apellido": "LUDUEÑA",
+    "organismo": "Ministerio de Defensa",
+    "sub_organismo": "nan",
+    "cargo": "Director/a",
+    "jerarquia": "Director - Segundo Nivel Operativo",
+    "fecha_ingreso": "2019-01-01",
+    "n_contratos": 1,
+    "monto_total_ars": 90000.0,
+    "contratos": [
+      {
+        "organismo": "656 - Organismo Regulador de Seguridad de Presas",
+        "tipo_proceso": "ContrataciÃ³n Directa",
+        "monto_adjudicado": 90000.0,
+        "objeto": "SERV. PROFESIONAL Y COMERCIAL;",
+        "ejercicio": 2018,
+        "fecha_adjudicacion": "2018-07-18",
+        "cuit_proveedor": "20-22110027-2"
+      }
+    ]
+  }
+]

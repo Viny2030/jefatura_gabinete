@@ -1,0 +1,80 @@
+[
+  {
+    "area": "presidencia",
+    "area_label": "Presidencia de la Nación",
+    "total": 116,
+    "organismos": 2
+  },
+  {
+    "area": "sgp",
+    "area_label": "Secretaría General de la Presidencia",
+    "total": 0,
+    "organismos": 0
+  },
+  {
+    "area": "jgm",
+    "area_label": "Jefatura de Gabinete de Ministros",
+    "total": 1317,
+    "organismos": 14
+  },
+  {
+    "area": "interior",
+    "area_label": "Ministerio del Interior",
+    "total": 560,
+    "organismos": 7
+  },
+  {
+    "area": "exteriores",
+    "area_label": "Ministerio de Relaciones Exteriores, Comercio Internacional y Culto",
+    "total": 120,
+    "organismos": 1
+  },
+  {
+    "area": "economia",
+    "area_label": "Ministerio de Economía",
+    "total": 1734,
+    "organismos": 18
+  },
+  {
+    "area": "infraestructura",
+    "area_label": "Ministerio de Infraestructura",
+    "total": 461,
+    "organismos": 9
+  },
+  {
+    "area": "justicia",
+    "area_label": "Ministerio de Justicia",
+    "total": 112,
+    "organismos": 4
+  },
+  {
+    "area": "seguridad",
+    "area_label": "Ministerio de Seguridad",
+    "total": 1089,
+    "organismos": 9
+  },
+  {
+    "area": "defensa",
+    "area_label": "Ministerio de Defensa",
+    "total": 499,
+    "organismos": 7
+  },
+  {
+    "area": "salud",
+    "area_label": "Ministerio de Salud",
+    "total": 2123,
+    "organismos": 10
+  },
+  {
+    "area": "capital_humano",
+    "area_label": "Ministerio de Capital Humano",
+    "total": 1131,
+    "organismos": 15
+  },
+  {
+    "area": "control",
+    "area_label": "Organismos de Control",
+    "total": 42,
+    "organismos": 1
+  }
+]
