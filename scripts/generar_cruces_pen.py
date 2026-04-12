@@ -121,9 +121,10 @@ def cargar_contratos_pen():
 
         for archivo in archivos:
             try:
-                # Intentar leer hoja de detalle completo primero
                 xl = pd.ExcelFile(archivo)
-                hoja = None
+
+                # Intentar hoja de detalle primero, sino hoja 0
+                hoja = 0  # default: primera hoja
                 for nombre in xl.sheet_names:
                     if "Detalle" in nombre or "detalle" in nombre:
                         hoja = nombre
