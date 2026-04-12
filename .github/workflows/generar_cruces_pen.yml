@@ -2,7 +2,7 @@ name: Generador de Cruces PEN
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # 02:00 ART = 05:00 UTC (después del scraper nocturno)
+    - cron: "0 5 * * *"   # 02:00 ART = 05:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -61,16 +61,16 @@ jobs:
       - name: Verificar output
         run: |
           cd jgm
-          python -c "
+          python - << 'PYEOF'
           import json
           with open('src/frontend/data/cruces.json') as f:
               d = json.load(f)
-          print(f'Total cruces: {d[\"total\"]}')
-          print(f'ALTO: {d[\"altos\"]} | MEDIO: {d[\"medios\"]}')
-          print(f'Generado: {d[\"generado_en\"]}')
-          "
+          print(f'Total cruces: {d["total"]}')
+          print(f'ALTO: {d["altos"]} | MEDIO: {d["medios"]}')
+          print(f'Generado: {d["generado_en"]}')
+          PYEOF
 
-        - name: Commit y push cruces.json
+      - name: Commit y push cruces.json
         run: |
           cd jgm
           git config user.name "github-actions[bot]"
