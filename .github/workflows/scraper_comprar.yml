@@ -44,7 +44,9 @@ jobs:
         env:
           DATABASE_URL: postgresql://user:password@localhost:5432/jgm_anticorrupcion
         run: python scripts/scraper_comprar.py --db --csv
-
+      - name: Run scraper
+        continue-on-error: true
+         run: python scripts/scraper_comprar.py --db --csv
       - name: Commit y push si hay cambios
         run: |
           git config user.name "github-actions[bot]"
