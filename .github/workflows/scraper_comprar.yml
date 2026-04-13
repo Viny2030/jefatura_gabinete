@@ -41,12 +41,18 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Correr scraper
+        continue-on-error: true
         env:
           DATABASE_URL: postgresql://user:password@localhost:5432/jgm_anticorrupcion
-        run: python scripts/scraper_comprar.py --db --csv
-      - name: Run scraper
-        continue-on-error: true
-         run: python scripts/scraper_comprar.py --db --csv
+        run: |
+          for i in 1 2 3; do
+            echo "Intento $i de 3..."
+            python scripts/scraper_comprar.py --db --csv && break
+            echo "Falló intento $i, esperando 60s..."
+            sleep 60
+          done
+          echo "Scraper finalizado (con o sin datos)"
+
       - name: Commit y push si hay cambios
         run: |
           git config user.name "github-actions[bot]"
