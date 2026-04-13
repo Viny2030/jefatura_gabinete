@@ -1,10 +1,643 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Manual de Usuario · Monitor XAI · PEN</title>
+<style>
+:root {
+  --bg:      #f4f6fb;
+  --surface: #ffffff;
+  --border:  #e2e8f0;
+  --text:    #1e293b;
+  --muted:   #64748b;
+  --accent:  #2563eb;
+  --alta:    #dc2626;
+  --media:   #d97706;
+  --baja:    #059669;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; }
+
+/* ── Header ── */
+header {
+  background: #1e40af; padding: 16px 40px;
+  display: flex; align-items: center; gap: 14px;
+}
+.hlogo {
+  width: 38px; height: 38px; border-radius: 9px;
+  background: #ffffff20; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+header h1 { font-size: 15px; font-weight: 800; color: #fff; }
+header .sub { font-size: 11px; color: #bfdbfe; margin-top: 2px; }
+
+/* ── Nav ── */
+nav {
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 0 40px; display: flex; gap: 2px; align-items: center;
+}
+nav a {
+  color: var(--muted); text-decoration: none; padding: 11px 14px;
+  font-size: 13px; border-bottom: 2px solid transparent;
+  font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 5px;
+}
+nav a:hover { color: var(--text); }
+nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── Layout ── */
+.layout {
+  display: grid; grid-template-columns: 240px 1fr;
+  max-width: 1100px; margin: 32px auto; gap: 28px; padding: 0 28px;
+}
+@media (max-width: 768px) { .layout { grid-template-columns: 1fr; } }
+
+/* ── Sidebar / TOC ── */
+.toc {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; height: fit-content;
+  position: sticky; top: 20px;
+}
+.toc h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 14px; }
+.toc a {
+  display: block; padding: 6px 10px; font-size: 12px; color: var(--muted);
+  text-decoration: none; border-radius: 6px; margin-bottom: 2px;
+  border-left: 2px solid transparent; transition: all .12s;
+}
+.toc a:hover { background: #eff6ff; color: var(--accent); border-left-color: var(--accent); }
+.toc a.active { background: #eff6ff; color: var(--accent); border-left-color: var(--accent); font-weight: 600; }
+.toc-num { font-size: 10px; color: #94a3b8; margin-right: 5px; font-family: monospace; }
+
+/* ── Contenido ── */
+.content { min-width: 0; }
+
+.disclaimer {
+  background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px;
+  padding: 14px 18px; margin-bottom: 28px; font-size: 12px; color: #92400e; line-height: 1.6;
+  display: flex; gap: 10px;
+}
+.disclaimer .icon { font-size: 18px; flex-shrink: 0; }
+
+.autor {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 18px; margin-bottom: 28px; display: flex; align-items: center; gap: 14px;
+}
+.autor-avatar {
+  width: 44px; height: 44px; border-radius: 50%; background: #1e40af;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0;
+}
+.autor-nombre { font-size: 13px; font-weight: 700; }
+.autor-sub    { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* Secciones */
+.seccion {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px #0001;
+}
+.sec-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+.sec-num {
+  width: 32px; height: 32px; border-radius: 8px; background: #eff6ff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: var(--accent); flex-shrink: 0;
+}
+.sec-titulo { font-size: 16px; font-weight: 800; }
+
+p { line-height: 1.7; color: var(--text); margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+
+/* Listas */
+ul, ol { padding-left: 20px; margin-bottom: 12px; }
+li { line-height: 1.7; margin-bottom: 4px; }
+
+/* Tabla de secciones */
+.secciones-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px;
+}
+@media (max-width: 600px) { .secciones-grid { grid-template-columns: 1fr; } }
+.sec-item {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start;
+}
+.sec-item .emoji { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.sec-item-titulo { font-size: 12px; font-weight: 700; margin-bottom: 3px; }
+.sec-item-desc   { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+/* Pasos */
+.pasos { display: flex; flex-direction: column; gap: 10px; }
+.paso {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;
+}
+.paso-num {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--accent);
+  color: #fff; font-size: 12px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.paso-titulo { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.paso-desc   { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* Tabla de alertas */
+.alertas-tabla { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+.alertas-tabla th {
+  padding: 8px 12px; text-align: left; background: var(--bg);
+  border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+}
+.alertas-tabla td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.alertas-tabla tr:last-child td { border-bottom: none; }
+.badge-n {
+  display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px;
+  border-radius: 99px; text-transform: uppercase; white-space: nowrap;
+}
+.badge-alta  { background: #dc262615; color: var(--alta); }
+.badge-media { background: #d9770615; color: var(--media); }
+.badge-baja  { background: #05966915; color: var(--baja); }
+
+/* Matrices */
+.matrices { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+.matriz {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px;
+  border-left: 4px solid var(--accent);
+}
+.matriz.rojo  { border-left-color: var(--alta); }
+.matriz.naranja { border-left-color: var(--media); }
+.matriz.verde { border-left-color: var(--baja); }
+.matriz-titulo { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.matriz code   { background: #eff6ff; color: var(--accent); padding: 1px 6px; border-radius: 4px; font-size: 11px; font-family: monospace; }
+
+/* Tabla API */
+.api-tabla { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+.api-tabla th {
+  padding: 8px 12px; text-align: left; background: var(--bg);
+  border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+}
+.api-tabla td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.api-tabla tr:last-child td { border-bottom: none; }
+.method { background: #dcfce7; color: #15803d; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; font-family: monospace; }
+.endpoint { font-family: monospace; font-size: 11px; color: var(--accent); }
+
+/* Bloques de código */
+.code-block {
+  background: #0f172a; color: #e2e8f0; border-radius: 8px;
+  padding: 14px 16px; font-family: monospace; font-size: 12px;
+  line-height: 1.7; margin-bottom: 10px; overflow-x: auto;
+}
+.code-label { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+
+/* Tip */
+.tip {
+  background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px;
+  padding: 12px 16px; font-size: 12px; color: #1d4ed8; line-height: 1.6;
+  display: flex; gap: 8px; margin-top: 12px;
+}
+.tip .icon { flex-shrink: 0; }
+
+/* Deploy */
+.deploy-pasos { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.deploy-paso {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 10px 14px;
+}
+.deploy-ico { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.deploy-texto { font-size: 12px; line-height: 1.5; }
+.deploy-texto strong { color: var(--text); }
+
+/* Footer */
+footer {
+  text-align: center; padding: 20px; font-size: 11px; color: var(--muted);
+  border-top: 1px solid var(--border); margin-top: 8px;
+}
+footer a { color: var(--accent); text-decoration: none; }
+
+/* ── Sobre el Autor ── */
+.autor-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px #0001;
+}
+.autor-perfil {
+  display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap;
+}
+.autor-foto {
+  width: 100px; height: 100px; border-radius: 50%;
+  object-fit: cover; border: 3px solid #bfdbfe; flex-shrink: 0;
+}
+.autor-info { flex: 1; min-width: 220px; }
+.autor-nombre { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+.autor-titulo { font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+.autor-bio { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.autor-bio em { color: var(--text); font-style: italic; }
+.autor-contacto { display: flex; gap: 8px; flex-wrap: wrap; }
+.autor-mail {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent); color: #fff; border-radius: 6px;
+  padding: 6px 14px; font-size: 12px; font-weight: 600;
+  text-decoration: none; transition: background .15s;
+}
+.autor-mail:hover { background: #1d4ed8; }
+</style>
 </head>
 <body>
-$END$
+
+<header>
+  <div class="hlogo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+    </svg>
+  </div>
+  <div>
+    <h1>Monitor XAI · Manual de Usuario</h1>
+    <div class="sub">Portal Anticorrupción · Poder Ejecutivo Nacional · República Argentina</div>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="alertas.html">🔔 Alertas</a>
+  <a href="grafos_nodos.html">🕸 Grafo</a>
+  <a href="manual_usuario.html" class="active">📖 Manual</a>
+</nav>
+
+<div class="layout">
+
+  <!-- TOC -->
+  <aside class="toc">
+    <h2>Contenido</h2>
+    <a href="#sec-autor"><span class="toc-num">👤</span> Sobre el Autor</a>
+    <a href="#sec1"><span class="toc-num">01</span> Introducción</a>
+    <a href="#sec2"><span class="toc-num">02</span> Secciones del Portal</a>
+    <a href="#sec3"><span class="toc-num">03</span> Cómo Usar</a>
+    <a href="#sec4"><span class="toc-num">04</span> Niveles de Alerta</a>
+    <a href="#sec5"><span class="toc-num">05</span> Motor XAI</a>
+    <a href="#sec6"><span class="toc-num">06</span> API REST</a>
+    <a href="#sec7"><span class="toc-num">07</span> Instalación Local</a>
+    <a href="#sec8"><span class="toc-num">08</span> Deploy en Railway</a>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="content">
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <span class="icon">⚠️</span>
+      <span><strong>HERRAMIENTA EXPERIMENTAL Y ACADÉMICA.</strong> Los datos provienen de fuentes públicas oficiales del Estado argentino. Los resultados son indicadores algorítmicos de riesgo — no implican juicio de valor, acusación ni determinación de responsabilidad sobre ninguna empresa, organismo o persona. El objetivo es promover la transparencia y el debate informado sobre el gasto público.</span>
+    </div>
+
+
+    <!-- Sobre el Autor -->
+    <div class="autor-card" id="sec-autor">
+      <div class="sec-header" style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)">
+        <div class="sec-num" style="background:#eff6ff">👤</div>
+        <div class="sec-titulo">Sobre el Autor</div>
+      </div>
+      <div class="autor-perfil">
+        <img class="autor-foto" src="data:image/jpeg;base64,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" alt="Ph.D. Vicente Humberto Monteverde"/>
+        <div class="autor-info">
+          <div class="autor-nombre">Ph.D. Vicente Humberto Monteverde</div>
+          <div class="autor-titulo">Doctor en Ciencias Económicas · Investigador en Transparencia Pública</div>
+          <p class="autor-bio">
+            Investigador en economía política y fenómenos de corrupción. Autor de la teoría de
+            <em>Transferencia Regresiva de Ingresos</em> y desarrollador del algoritmo XAI aplicado
+            al análisis de contrataciones públicas.
+          </p>
+          <p class="autor-bio">
+            Publicaciones en <em>Journal of Financial Crime</em> (Emerald Publishing).
+            Asesor en transparencia y auditoría algorítmica del gasto público.
+          </p>
+          <div class="autor-contacto">
+            <a class="autor-mail" href="mailto:vhmonte@retina.ar">✉ vhmonte@retina.ar</a>
+            <a class="autor-mail" href="mailto:viny01958@gmail.com" style="background:#059669">✉ viny01958@gmail.com</a>
+            <a class="autor-mail" href="https://github.com/Viny2030" target="_blank" style="background:#1e293b">🐙 github.com/Viny2030</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 Introducción -->
+    <div class="seccion" id="sec1">
+      <div class="sec-header">
+        <div class="sec-num">01</div>
+        <div class="sec-titulo">Introducción al Sistema</div>
+      </div>
+      <p>El <strong>Monitor XAI</strong> es una herramienta de transparencia y auditoría algorítmica del gasto público argentino. Monitorea contratos, nómina y alertas de conflicto de interés en organismos del Poder Ejecutivo Nacional, usando datos exclusivamente de fuentes públicas oficiales.</p>
+
+      <p><strong>Organismos monitoreados:</strong></p>
+      <ul>
+        <li>Jefatura de Gabinete de Ministros (JGM)</li>
+        <li>Secretaría General de la Presidencia (SGP)</li>
+        <li>Presidencia de la Nación (PNA)</li>
+      </ul>
+
+      <p style="margin-top:14px"><strong>Fuentes de datos:</strong></p>
+      <ul>
+        <li><strong>comprar.gob.ar / datos.gob.ar</strong> — contratos y adjudicaciones</li>
+        <li><strong>Boletín Oficial (BORA)</strong> — resoluciones y designaciones</li>
+        <li><strong>MapaDelEstado</strong> — nómina de autoridades</li>
+        <li><strong>SIPRO</strong> — proveedores del Estado</li>
+      </ul>
+    </div>
+
+    <!-- 02 Secciones -->
+    <div class="seccion" id="sec2">
+      <div class="sec-header">
+        <div class="sec-num">02</div>
+        <div class="sec-titulo">Secciones del Portal</div>
+      </div>
+      <div class="secciones-grid">
+        <div class="sec-item">
+          <span class="emoji">📊</span>
+          <div>
+            <div class="sec-item-titulo">Dashboard</div>
+            <div class="sec-item-desc">KPIs globales: contratos, montos, alertas activas y proveedores únicos por organismo.</div>
+          </div>
+        </div>
+        <div class="sec-item">
+          <span class="emoji">🔔</span>
+          <div>
+            <div class="sec-item-titulo">Alertas</div>
+            <div class="sec-item-desc">Panel de alertas clasificadas por nivel: Alta, Media y Baja, con filtros por tipo.</div>
+          </div>
+        </div>
+        <div class="sec-item">
+          <span class="emoji">🏛</span>
+          <div>
+            <div class="sec-item-titulo">JGM / SGP / PNA</div>
+            <div class="sec-item-desc">Fichas por organismo: contratos, nómina, cruces y estadísticas de gasto.</div>
+          </div>
+        </div>
+        <div class="sec-item">
+          <span class="emoji">🕸</span>
+          <div>
+            <div class="sec-item-titulo">Grafo de Relaciones</div>
+            <div class="sec-item-desc">Visualización interactiva de vínculos entre funcionarios y proveedores.</div>
+          </div>
+        </div>
+        <div class="sec-item">
+          <span class="emoji">⚡</span>
+          <div>
+            <div class="sec-item-titulo">API REST</div>
+            <div class="sec-item-desc">Acceso programático a todos los datos vía endpoints documentados en /api/docs.</div>
+          </div>
+        </div>
+        <div class="sec-item">
+          <span class="emoji">📖</span>
+          <div>
+            <div class="sec-item-titulo">Manual de Usuario</div>
+            <div class="sec-item-desc">Esta guía. Explica el sistema, los algoritmos y cómo instalar el portal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Cómo usar -->
+    <div class="seccion" id="sec3">
+      <div class="sec-header">
+        <div class="sec-num">03</div>
+        <div class="sec-titulo">Cómo Usar el Sistema</div>
+      </div>
+      <div class="pasos">
+        <div class="paso">
+          <div class="paso-num">1</div>
+          <div>
+            <div class="paso-titulo">Seleccionar un organismo</div>
+            <div class="paso-desc">En el inicio hacé clic en la card del organismo que querés analizar: JGM, SGP o Presidencia. Cada uno tiene datos independientes de contratos y nómina.</div>
+          </div>
+        </div>
+        <div class="paso">
+          <div class="paso-num">2</div>
+          <div>
+            <div class="paso-titulo">Explorar contratos</div>
+            <div class="paso-desc">Dentro de cada ficha encontrarás la tabla de contratos con filtros por tipo, proveedor y rango de fechas. Podés exportar a CSV con un clic.</div>
+          </div>
+        </div>
+        <div class="paso">
+          <div class="paso-num">3</div>
+          <div>
+            <div class="paso-titulo">Revisar alertas generadas</div>
+            <div class="paso-desc">El algoritmo XAI genera alertas automáticas. Una alerta ALTA indica sobreprecio >80% sobre la mediana del rubro, o funcionario con CUIL idéntico al CUIT de un proveedor adjudicado.</div>
+          </div>
+        </div>
+        <div class="paso">
+          <div class="paso-num">4</div>
+          <div>
+            <div class="paso-titulo">Usar el Grafo de Relaciones</div>
+            <div class="paso-desc">Navegá a Grafo de Nodos para visualizar las conexiones. Nodos azules = funcionarios, nodos verdes = proveedores. Las aristas muestran el tipo de vínculo detectado.</div>
+          </div>
+        </div>
+        <div class="paso">
+          <div class="paso-num">5</div>
+          <div>
+            <div class="paso-titulo">Acceder a la API para análisis avanzados</div>
+            <div class="paso-desc">Consultá <strong>/api/docs</strong> para la documentación Swagger interactiva. Todos los endpoints son de libre acceso (GET) sin autenticación requerida.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Niveles de alerta -->
+    <div class="seccion" id="sec4">
+      <div class="sec-header">
+        <div class="sec-num">04</div>
+        <div class="sec-titulo">Niveles de Alerta</div>
+      </div>
+      <p>El sistema genera tres niveles de alerta según el riesgo detectado:</p>
+      <table class="alertas-tabla" style="margin-top:14px">
+        <thead>
+          <tr>
+            <th>Nivel</th>
+            <th>Tipo</th>
+            <th>Criterio de activación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-n badge-alta">🔴 ALTA</span></td>
+            <td><strong>Sobreprecio crítico</strong></td>
+            <td>Contrato >80% sobre la mediana del rubro/organismo.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-n badge-alta">🔴 ALTA</span></td>
+            <td><strong>Conflicto societario</strong></td>
+            <td>CUIL del funcionario idéntico al CUIT del proveedor adjudicado.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-n badge-media">🟡 MEDIA</span></td>
+            <td><strong>Sobreprecio moderado</strong></td>
+            <td>Contrato entre 40% y 80% sobre la mediana del rubro.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-n badge-media">🟡 MEDIA</span></td>
+            <td><strong>Concentración alta</strong></td>
+            <td>Un proveedor concentra más del 30% del gasto de un organismo.</td>
+          </tr>
+          <tr>
+            <td><span class="badge-n badge-baja">🟢 BAJA</span></td>
+            <td><strong>Parentesco posible</strong></td>
+            <td>Apellido de funcionario coincide con token de razón social del proveedor.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 05 Motor XAI -->
+    <div class="seccion" id="sec5">
+      <div class="sec-header">
+        <div class="sec-num">05</div>
+        <div class="sec-titulo">Motor XAI — Algoritmos de Detección</div>
+      </div>
+      <p>El núcleo del sistema está compuesto por tres matrices de detección que operan en forma automática:</p>
+      <div class="matrices">
+        <div class="matriz rojo">
+          <div class="matriz-titulo">Matriz de Parentesco <code>matrix_kinship.py</code></div>
+          <p style="font-size:12px;margin:0">Cruza los apellidos de la nómina de funcionarios contra los tokens de la razón social de cada proveedor adjudicado. Genera alerta <strong>ALTA</strong> cuando el proveedor opera para el mismo organismo que el funcionario con apellido coincidente.</p>
+        </div>
+        <div class="matriz rojo">
+          <div class="matriz-titulo">Matriz Societaria <code>matrix_corporate.py</code></div>
+          <p style="font-size:12px;margin:0">Detecta cuando el CUIL de un funcionario es exactamente igual al CUIT de un proveedor adjudicado. Indica que una persona física es simultáneamente empleado estatal y proveedor del mismo Estado.</p>
+        </div>
+        <div class="matriz naranja">
+          <div class="matriz-titulo">Matriz de Flujo de Fondos <code>matrix_cashflow.py</code></div>
+          <p style="font-size:12px;margin-bottom:6px">Detecta dos tipos de anomalías:</p>
+          <ul style="font-size:12px;padding-left:16px">
+            <li><strong>Sobreprecio:</strong> contratos con precio >40% sobre la mediana del rubro/organismo generan alerta MEDIA; si supera el 80%, la alerta es ALTA.</li>
+            <li><strong>Concentración:</strong> proveedor que concentra más del 30% del gasto total de un organismo genera alerta MEDIA o ALTA según el umbral.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 API REST -->
+    <div class="seccion" id="sec6">
+      <div class="sec-header">
+        <div class="sec-num">06</div>
+        <div class="sec-titulo">Referencia de la API REST</div>
+      </div>
+      <p>Todos los endpoints son de acceso libre (sin autenticación). Documentación interactiva disponible en <strong>/api/docs</strong> (Swagger UI).</p>
+      <table class="api-tabla" style="margin-top:14px">
+        <thead>
+          <tr><th>Método</th><th>Endpoint</th><th>Descripción</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/kpis</span></td><td>KPIs globales del sistema</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/alertas</span></td><td>Alertas activas (filtrable por nivel y tipo)</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/contratos</span></td><td>Contratos con filtros por organismo y proveedor</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/contratos/comprar</span></td><td>Procesos scrapeados de comprar.gob.ar</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/contratos/top-proveedores</span></td><td>Ranking de proveedores por monto adjudicado</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/nomina</span></td><td>Nómina de funcionarios con cargo y organismo</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/grafo/nodos</span></td><td>Nodos y aristas del grafo de relaciones</td></tr>
+          <tr><td><span class="method">GET</span></td><td><span class="endpoint">/api/v1/health</span></td><td>Estado del sistema y conexión a base de datos</td></tr>
+        </tbody>
+      </table>
+      <div class="tip">
+        <span class="icon">💡</span>
+        <span><strong>Tip avanzado:</strong> Para cruzar datos programáticamente, combiná <code style="background:#dbeafe;padding:1px 5px;border-radius:3px">/api/v1/nomina?organismo=JGM</code> con <code style="background:#dbeafe;padding:1px 5px;border-radius:3px">/api/v1/contratos?organismo=JGM</code> y buscá CUILs de funcionarios que aparezcan como CUIT de proveedor. La Matriz Societaria ya hace esto automáticamente.</span>
+      </div>
+    </div>
+
+    <!-- 07 Instalación local -->
+    <div class="seccion" id="sec7">
+      <div class="sec-header">
+        <div class="sec-num">07</div>
+        <div class="sec-titulo">Instalación y Configuración Local</div>
+      </div>
+      <p><strong>Requisitos previos:</strong> Python 3.11+, PostgreSQL 15+ (o Docker), Git.</p>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px">
+        <div>
+          <div class="code-label">1 — Clonar el repositorio</div>
+          <div class="code-block">git clone https://github.com/Viny2030/jefatura_gabinete.git</div>
+        </div>
+        <div>
+          <div class="code-label">2 — Crear y activar entorno virtual</div>
+          <div class="code-block">cd jefatura_gabinete
+python -m venv .venv
+.venv\Scripts\activate    # Windows PowerShell</div>
+        </div>
+        <div>
+          <div class="code-label">3 — Instalar dependencias</div>
+          <div class="code-block">pip install -r requirements.txt</div>
+        </div>
+        <div>
+          <div class="code-label">4 — Configurar base de datos</div>
+          <div class="code-block">cp .env.example .env   # Editar con tu DATABASE_URL</div>
+        </div>
+        <div>
+          <div class="code-label">5 — Crear esquema</div>
+          <div class="code-block">psql $DATABASE_URL -f src/database/schema.sql</div>
+        </div>
+        <div>
+          <div class="code-label">6 — Levantar la API</div>
+          <div class="code-block">uvicorn src.api.api_server:app --reload --port 8000</div>
+        </div>
+        <div>
+          <div class="code-label">7 — Abrir el frontend</div>
+          <div class="code-block">cd src/frontend
+python -m http.server 8080
+# Abrir http://localhost:8080/index.html</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 Deploy Railway -->
+    <div class="seccion" id="sec8">
+      <div class="sec-header">
+        <div class="sec-num">08</div>
+        <div class="sec-titulo">Deploy en Railway</div>
+      </div>
+      <div class="deploy-pasos">
+        <div class="deploy-paso">
+          <span class="deploy-ico">🚂</span>
+          <div class="deploy-texto"><strong>Crear proyecto en Railway</strong> y agregar servicio PostgreSQL.</div>
+        </div>
+        <div class="deploy-paso">
+          <span class="deploy-ico">🔑</span>
+          <div class="deploy-texto">Copiar <strong>DATABASE_URL</strong> de Railway a las variables de entorno del servicio web.</div>
+        </div>
+        <div class="deploy-paso">
+          <span class="deploy-ico">🐙</span>
+          <div class="deploy-texto">Conectar el repositorio GitHub — Railway detecta el <strong>Dockerfile</strong> automáticamente.</div>
+        </div>
+        <div class="deploy-paso">
+          <span class="deploy-ico">🔐</span>
+          <div class="deploy-texto">Agregar <strong>DATABASE_URL</strong> como secreto en GitHub Actions (Settings → Secrets).</div>
+        </div>
+        <div class="deploy-paso">
+          <span class="deploy-ico">⏰</span>
+          <div class="deploy-texto">Los scrapers corren diariamente a las <strong>6 AM UTC</strong> vía GitHub Actions (<code style="font-size:11px;background:#f1f5f9;padding:1px 5px;border-radius:3px">.github/workflows/</code>).</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  Monitor XAI · Portal Anticorrupción · Poder Ejecutivo Nacional Argentina<br>
+  <a href="https://github.com/Viny2030/jefatura_gabinete" target="_blank">github.com/Viny2030/jefatura_gabinete</a> ·
+  Licencia MIT · No afiliado al gobierno argentino
+</footer>
+
+<script>
+// Highlight TOC activo al scrollear
+const secciones = document.querySelectorAll('.seccion');
+const tocLinks  = document.querySelectorAll('.toc a');
+
+function actualizarTOC() {
+  let actual = '';
+  secciones.forEach(function(s) {
+    if (window.scrollY >= s.offsetTop - 80) actual = s.id;
+  });
+  tocLinks.forEach(function(a) {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + actual);
+  });
+}
+window.addEventListener('scroll', actualizarTOC);
+actualizarTOC();
+</script>
 </body>
 </html>
