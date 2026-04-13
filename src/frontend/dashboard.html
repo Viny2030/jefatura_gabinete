@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portal Anticorrupción · Jefatura de Gabinete</title>
+<title>Monitor de Transparencia · PEN</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root {
@@ -22,6 +22,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 14px; }
 
+/* ── Header ── */
 header {
   background: var(--surface); border-bottom: 1px solid var(--border);
   padding: 14px 28px; display: flex; align-items: center; gap: 12px;
@@ -39,17 +40,58 @@ header .sub { font-size: 11px; color: var(--muted); }
   border: 1px solid #fde68a; letter-spacing: .04em; white-space: nowrap;
 }
 
+/* ── Rama bar (nivel 1) ── */
+.rama-bar {
+  background: #1e40af;
+  padding: 0 28px;
+  display: flex; gap: 4px; align-items: stretch;
+  border-bottom: 1px solid #1d3a9e;
+}
+.rama-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: transparent; border: none; border-bottom: 3px solid transparent;
+  color: #bfdbfe; padding: 10px 16px; cursor: pointer; font-size: 13px;
+  font-weight: 600; transition: all .15s; white-space: nowrap;
+}
+.rama-btn:hover { color: #fff; background: #ffffff15; }
+.rama-btn.active { color: #fff; border-bottom-color: #fff; background: #ffffff12; }
+.rama-icon {
+  font-size: 9px; font-weight: 800; padding: 2px 6px;
+  border-radius: 4px; color: #fff; letter-spacing: .03em;
+}
+.rama-count {
+  background: #ffffff20; border-radius: 99px;
+  font-size: 10px; padding: 1px 7px; color: #bfdbfe;
+}
+.rama-btn.active .rama-count { background: #ffffff35; color: #fff; }
+
+/* ── Tab bar (nivel 2) ── */
 nav {
   background: var(--surface); border-bottom: 1px solid var(--border);
-  padding: 0 28px; display: flex; gap: 2px;
+  padding: 0 28px; display: flex; gap: 2px; align-items: stretch;
 }
 nav a {
-  color: var(--muted); text-decoration: none; padding: 10px 14px;
+  color: var(--muted); text-decoration: none; padding: 11px 16px;
   font-size: 13px; border-bottom: 2px solid transparent;
-  transition: color .15s; font-weight: 500;
+  transition: color .15s; font-weight: 500; cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
 }
 nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 nav a:hover  { color: var(--text); }
+.tab-badge {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 99px; font-size: 10px; font-weight: 700;
+  padding: 1px 6px; color: var(--muted);
+}
+nav a.active .tab-badge { background: #dbeafe; color: var(--accent); border-color: #93c5fd; }
+.tab-rama-label {
+  margin-left: auto; font-size: 11px; color: var(--muted);
+  display: flex; align-items: center; font-style: italic;
+}
+
+/* ── Tab panels ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 
 main { padding: 24px 28px; max-width: 1400px; margin: 0 auto; }
 
@@ -59,13 +101,10 @@ main { padding: 24px 28px; max-width: 1400px; margin: 0 auto; }
   display: flex; align-items: center; gap: 8px; line-height: 1.5;
 }
 code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
-
 .stitle { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 12px; }
 
-/* ── Filtro JGM ─────────────────────────────────────────────────────────────── */
-.jgm-filter {
-  display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: stretch;
-}
+/* ── Filtro JGM ── */
+.jgm-filter { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: stretch; }
 .jgm-btn {
   display: flex; flex-direction: column; gap: 3px;
   background: var(--surface); border: 2px solid var(--border);
@@ -78,7 +117,6 @@ code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11p
 .jgm-btn.active.francos { border-color: #0891b2; background: #ecfeff; box-shadow: 0 0 0 3px #0891b218; }
 .jgm-btn.active.adorni  { border-color: #059669; background: #ecfdf5; box-shadow: 0 0 0 3px #05966918; }
 .jgm-btn.active.todos   { border-color: var(--accent); background: #eff6ff; box-shadow: 0 0 0 3px #2563eb18; }
-
 .jgm-nombre  { font-size: 13px; font-weight: 700; color: var(--text); }
 .jgm-periodo { font-size: 10px; color: var(--muted); font-family: var(--mono); }
 .jgm-avatar  {
@@ -94,7 +132,6 @@ code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11p
 .jgm-conteo { font-size: 11px; color: var(--muted); }
 .jgm-conteo strong { color: var(--text); font-weight: 700; }
 
-/* Barra de contexto */
 .jgm-context-bar {
   background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
   padding: 10px 18px; margin-bottom: 20px;
@@ -124,6 +161,7 @@ code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11p
 .kc-alta  .kpi-val { color: var(--alta); }
 .kc-blue  .kpi-val { color: var(--accent); }
 .kc-green .kpi-val { color: var(--baja); }
+.kc-purple .kpi-val { color: #7c3aed; }
 
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
 @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
@@ -147,27 +185,57 @@ code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11p
 .badge-n.baja  { background: #05966915; color: var(--baja); }
 
 .filtros { display: flex; gap: 8px; padding: 12px 18px; border-bottom: 1px solid var(--border); flex-wrap: wrap; align-items: center; }
-.filtros input, .filtros select { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 5px 10px; font-size: 12px; outline: none; }
+.filtros input, .filtros select {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); padding: 5px 10px; font-size: 12px; outline: none;
+}
 .filtros input:focus, .filtros select:focus { border-color: var(--accent); }
 .btn-b { background: var(--accent); color: #fff; border: none; border-radius: 6px; padding: 5px 14px; font-size: 12px; cursor: pointer; font-weight: 600; }
 .btn-b:hover { background: #1d4ed8; }
+.btn-b.secondary { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+.btn-b.secondary:hover { background: var(--border); }
 .filtros-count { margin-left: auto; font-size: 11px; color: var(--muted); background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; }
 .filtros-count strong { color: var(--text); }
 
 .tw { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 12px; }
-th { padding: 9px 12px; text-align: left; color: var(--muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap; }
+th { padding: 9px 12px; text-align: left; color: var(--muted); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap; cursor: pointer; user-select: none; }
+th:hover { color: var(--accent); }
 td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: #2563eb05; }
 .mono  { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 .monto { text-align: right; font-weight: 700; color: var(--accent); }
 
-/* chips de gestión en tabla */
 .chip-jgm { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 99px; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
 .chip-posse   { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
 .chip-francos { background: #ecfeff; color: #0891b2; border: 1px solid #a5f3fc; }
 .chip-adorni  { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-pre     { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+
+.chip-org { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
+.chip-jgm-org  { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.chip-pres-org { background: #fdf4ff; color: #9333ea; border: 1px solid #e9d5ff; }
+
+.org-filter { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.org-btn {
+  background: var(--surface); border: 2px solid var(--border); border-radius: 8px;
+  padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer;
+  transition: all .15s; color: var(--muted);
+}
+.org-btn:hover { border-color: #93c5fd; color: var(--text); }
+.org-btn.active { border-color: var(--accent); background: #eff6ff; color: var(--accent); }
+
+.cruce-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; margin-bottom: 10px; border-left: 4px solid var(--alta);
+  box-shadow: 0 1px 3px #0001;
+}
+.cruce-card.media { border-left-color: var(--media); }
+.cruce-card.baja  { border-left-color: var(--baja); }
+.cruce-titulo { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.cruce-meta   { font-size: 11px; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; }
+.cruce-meta span strong { color: var(--text); }
 
 footer { text-align: center; padding: 20px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 8px; }
 footer a { color: var(--accent); text-decoration: none; }
@@ -182,26 +250,58 @@ footer a { color: var(--accent); text-decoration: none; }
     </svg>
   </div>
   <div>
-    <h1>Portal Anticorrupción · JGM</h1>
-    <div class="sub">Jefatura de Gabinete de Ministros · República Argentina</div>
+    <h1>Monitor de Transparencia · Poder Ejecutivo Nacional</h1>
+    <div class="sub">Jefatura de Gabinete · Secretaría General · Presidencia de la Nación · República Argentina</div>
   </div>
   <div class="badge-demo">⚠ MODO DEMO</div>
 </header>
 
-<nav>
-  <a href="dashboard.html" class="active">Dashboard</a>
-  <a href="grafo_nodos.html">Grafo de relaciones</a>
-  <a href="alertas.html">Alertas</a>
+<!-- ── Selector de rama (nivel 1) ── -->
+<div class="rama-bar">
+  <button class="rama-btn active" id="rama-jgm" onclick="switchRama('jgm')">
+    <span class="rama-icon" style="background:#2563eb">JGM</span>
+    Jefatura de Gabinete
+    <span class="rama-count" id="rc-jgm">611</span>
+  </button>
+  <button class="rama-btn" id="rama-sgp" onclick="switchRama('sgp')">
+    <span class="rama-icon" style="background:#7c3aed">SGP</span>
+    Secretaría General
+    <span class="rama-count" id="rc-sgp">144</span>
+  </button>
+  <button class="rama-btn" id="rama-pres" onclick="switchRama('pres')">
+    <span class="rama-icon" style="background:#0891b2">PNA</span>
+    Presidencia de la Nación
+    <span class="rama-count" id="rc-pres">399</span>
+  </button>
+</div>
+
+<!-- ── Pestañas por rama (nivel 2) ── -->
+<nav id="tab-nav">
+  <a onclick="switchTab('contratos')" id="tab-nav-contratos" class="active">
+    📋 Contratos
+    <span class="tab-badge" id="badge-contratos">—</span>
+  </a>
+  <a onclick="switchTab('nomina')" id="tab-nav-nomina">
+    👥 Nómina
+    <span class="tab-badge" id="badge-nomina">—</span>
+  </a>
+  <a onclick="switchTab('cruces')" id="tab-nav-cruces">
+    🔗 Cruces
+    <span class="tab-badge" id="badge-cruces">—</span>
+  </a>
+  <span class="tab-rama-label" id="tab-rama-label">Jefatura de Gabinete</span>
 </nav>
 
 <main>
+
+<!-- TAB 1: CONTRATOS -->
+<div class="tab-panel active" id="tab-contratos">
 
   <div class="demo-banner">
     ⚡ Datos de demostración. Para datos reales: ejecutá los scrapers y levantá
     <code>uvicorn src.api.api_server:app --port 8000</code> con <code>DATABASE_URL</code> configurada.
   </div>
 
-  <!-- ── Filtro JGM ──────────────────────────────────────────────────────────── -->
   <div class="stitle">Filtrar por gestión — Jefe de Gabinete</div>
   <div class="jgm-filter">
     <button class="jgm-btn todos active" data-jgm="todos" onclick="seleccionarJGM('todos')">
@@ -246,7 +346,6 @@ footer a { color: var(--accent); text-decoration: none; }
     </button>
   </div>
 
-  <!-- Barra de contexto de gestión activa -->
   <div class="jgm-context-bar" id="jgm-context-bar" style="display:none"></div>
 
   <div class="stitle">Indicadores principales</div>
@@ -258,10 +357,7 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="pb"><canvas id="chart-org" height="240"></canvas></div>
     </div>
     <div class="panel">
-      <div class="ph">
-        <h2>Alertas activas</h2>
-        <a href="alertas.html">Ver todas →</a>
-      </div>
+      <div class="ph"><h2>Alertas activas</h2></div>
       <div class="pb" id="alertas-lista"></div>
     </div>
   </div>
@@ -277,16 +373,20 @@ footer a { color: var(--accent); text-decoration: none; }
         <option>Contratación directa</option>
         <option>Concurso de precios</option>
       </select>
-      <button class="btn-b" onclick="filtrarTabla()">Buscar</button>
+      <button class="btn-b" onclick="exportarCSV('contratos')">⬇ CSV</button>
       <div class="filtros-count" id="filtros-count"></div>
     </div>
     <div class="tw">
       <table>
         <thead>
           <tr>
-            <th>Organismo</th><th>Proveedor</th><th>CUIT</th>
-            <th>Tipo</th><th>Fecha</th><th>Gestión</th>
-            <th style="text-align:right">Monto (ARS)</th>
+            <th onclick="sortTable('contratos','organismo')">Organismo</th>
+            <th onclick="sortTable('contratos','proveedor')">Proveedor</th>
+            <th>CUIT</th>
+            <th onclick="sortTable('contratos','tipo_contratacion')">Tipo</th>
+            <th onclick="sortTable('contratos','fecha_adjudicacion')">Fecha</th>
+            <th>Gestión</th>
+            <th style="text-align:right" onclick="sortTable('contratos','monto_adjudicado')">Monto (ARS)</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -294,10 +394,171 @@ footer a { color: var(--accent); text-decoration: none; }
     </div>
   </div>
 
+</div><!-- /tab-contratos -->
+
+<!-- TAB 2: NÓMINA -->
+<div class="tab-panel" id="tab-nomina">
+
+  <div class="stitle">Autoridades designadas — JGM y Presidencia de la Nación</div>
+
+  <div class="kpi-grid" style="margin-bottom:24px">
+    <div class="kpi-card kc-blue">
+      <div class="kpi-label">Total Monitor</div>
+      <div class="kpi-val" id="n-total">1.154</div>
+      <div class="kpi-sub">JGM + SGP + Presidencia</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Jefatura de Gabinete</div>
+      <div class="kpi-val" id="n-jgm">611</div>
+      <div class="kpi-sub">autoridades designadas</div>
+    </div>
+    <div class="kpi-card kc-purple">
+      <div class="kpi-label">Secretaría General</div>
+      <div class="kpi-val" id="n-sgp">144</div>
+      <div class="kpi-sub">Presidencia de la Nación</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Presidencia (resto)</div>
+      <div class="kpi-val" id="n-pres">399</div>
+      <div class="kpi-sub">Cultura, Legal y Técnica…</div>
+    </div>
+    <div class="kpi-card kc-green">
+      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-val" id="n-adorni-kpi">19</div>
+      <div class="kpi-sub">Desde nov 2025</div>
+    </div>
+    <div class="kpi-card kc-alta">
+      <div class="kpi-label">Ad Honorem</div>
+      <div class="kpi-val" id="n-adhon">112</div>
+      <div class="kpi-sub">Sin remuneración</div>
+    </div>
+  </div>
+
+  <div class="stitle">Organismo</div>
+  <div class="org-filter" style="margin-bottom:20px">
+    <button class="org-btn active" data-org="todos" onclick="filtroOrg('todos')">Todos (1.154)</button>
+    <button class="org-btn" data-org="jgm"  onclick="filtroOrg('jgm')">Jefatura de Gabinete (611)</button>
+    <button class="org-btn" data-org="sgp"  onclick="filtroOrg('sgp')">Secretaría General (144)</button>
+    <button class="org-btn" data-org="pres" onclick="filtroOrg('pres')">Presidencia resto (399)</button>
+  </div>
+
+  <div class="panel" style="margin-bottom:24px">
+    <div class="ph">
+      <h2 id="nomina-titulo">Autoridades designadas — Monitor</h2>
+      <button class="btn-b secondary" onclick="exportarCSV('nomina')" style="font-size:11px;padding:4px 10px">⬇ CSV</button>
+    </div>
+    <div class="filtros">
+      <input id="n-f-nombre"    placeholder="Apellido / nombre…"  style="width:200px" oninput="filtrarNomina()"/>
+      <input id="n-f-cargo"     placeholder="Cargo…"              style="width:180px" oninput="filtrarNomina()"/>
+      <select id="n-f-jerarquia" onchange="filtrarNomina()">
+        <option value="">Todas las jerarquías</option>
+        <option>Subsecretario</option>
+        <option>DN-DG</option>
+        <option>Director - Primer Nivel Operativo</option>
+        <option>Director - Segundo Nivel Operativo</option>
+        <option>Coordinador</option>
+        <option>Jefe de Departamento</option>
+        <option>Ad Honorem</option>
+      </select>
+      <select id="n-f-gestion" onchange="filtrarNomina()">
+        <option value="">Todas las gestiones</option>
+        <option value="Adorni">Adorni</option>
+        <option value="Francos">Francos</option>
+        <option value="Posse">Posse</option>
+        <option value="Pre-Milei">Pre-Milei</option>
+      </select>
+      <select id="n-f-genero" onchange="filtrarNomina()">
+        <option value="">Todos los géneros</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+      <div class="filtros-count" id="n-filtros-count"></div>
+    </div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('nomina','apellido')">Apellido</th>
+            <th onclick="sortTable('nomina','nombre')">Nombre</th>
+            <th onclick="sortTable('nomina','cargo')">Cargo</th>
+            <th onclick="sortTable('nomina','jerarquia')">Jerarquía</th>
+            <th onclick="sortTable('nomina','escalafon')">Escalafón</th>
+            <th>Organismo</th>
+            <th>Gestión</th>
+            <th>Género</th>
+            <th style="text-align:right" onclick="sortTable('nomina','sueldo_bruto_estimado_ars')">Sueldo est.</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-nomina"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel">
+      <div class="ph"><h2>Designaciones por gestión JGM</h2></div>
+      <div class="pb"><canvas id="chart-gestion-nomina" height="220"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="ph"><h2>Distribución por jerarquía</h2></div>
+      <div class="pb"><canvas id="chart-jerarquia" height="220"></canvas></div>
+    </div>
+  </div>
+
+</div><!-- /tab-nomina -->
+
+<!-- TAB 3: CRUCES -->
+<div class="tab-panel" id="tab-cruces">
+
+  <div class="demo-banner">
+    🔗 Cruces entre nómina de autoridades y proveedores de contratos. En modo demo se muestran alertas de ejemplo. Con datos reales, el motor busca coincidencias de CUIL, apellido y razón social.
+  </div>
+
+  <div class="kpi-grid" style="margin-bottom:24px">
+    <div class="kpi-card kc-alta">
+      <div class="kpi-label">Alertas totales</div>
+      <div class="kpi-val" id="c-total">3</div>
+      <div class="kpi-sub">Cruces detectados</div>
+    </div>
+    <div class="kpi-card kc-alta">
+      <div class="kpi-label">Riesgo alto</div>
+      <div class="kpi-val" id="c-alta">1</div>
+      <div class="kpi-sub">Coincidencia CUIL</div>
+    </div>
+    <div class="kpi-card kc-blue">
+      <div class="kpi-label">Riesgo medio</div>
+      <div class="kpi-val" id="c-media">2</div>
+      <div class="kpi-sub">Coincidencia apellido</div>
+    </div>
+    <div class="kpi-card kc-green">
+      <div class="kpi-label">Organismos afectados</div>
+      <div class="kpi-val" id="c-org">2</div>
+      <div class="kpi-sub">JGM / Presidencia</div>
+    </div>
+  </div>
+
+  <div class="stitle">Alertas de cruce detectadas</div>
+  <div id="cruces-lista"></div>
+
+  <div class="panel" style="margin-top:24px">
+    <div class="ph"><h2>Metodología de cruce</h2></div>
+    <div class="pb" style="font-size:12px;color:var(--muted);line-height:1.7">
+      <p style="margin-bottom:8px"><strong style="color:var(--text)">Nivel 1 — Coincidencia exacta de CUIL</strong><br>
+      El CUIL de un funcionario de la nómina aparece como CUIT proveedor en la tabla de contratos. Riesgo: <span style="color:var(--alta);font-weight:700">ALTO</span></p>
+      <p style="margin-bottom:8px"><strong style="color:var(--text)">Nivel 2 — Coincidencia de apellido</strong><br>
+      El apellido de un funcionario coincide con la razón social o apellido del representante del proveedor. Riesgo: <span style="color:var(--media);font-weight:700">MEDIO</span></p>
+      <p><strong style="color:var(--text)">Nivel 3 — Cruce inter-organismos</strong><br>
+      Un familiar (mismo apellido) de un funcionario JGM es proveedor en Presidencia, o viceversa.</p>
+    </div>
+  </div>
+
+</div><!-- /tab-cruces -->
+
 </main>
 
 <footer>
   Fuentes: <a href="https://datos.gob.ar" target="_blank">datos.gob.ar</a> ·
+  <a href="https://mapadelestado.dyte.gob.ar" target="_blank">MapaDelEstado</a> ·
   <a href="https://www.boletinoficial.gob.ar" target="_blank">BORA</a> ·
   <a href="https://github.com/Viny2030/jefatura_gabinete" target="_blank">Código fuente</a> ·
   Actualizado diariamente · No afiliado al gobierno argentino
@@ -311,14 +572,112 @@ const JGM = {
   adorni:  { nombre: 'Manuel Adorni',     desde: '2025-11-04', hasta: null,         clase: 'adorni'  },
 };
 
-let jgmActivo = 'todos';
+// ── Estado global ─────────────────────────────────────────────────────────────
+let jgmActivo    = 'todos';
+let orgActivo    = 'todos';
+let ramaActiva   = 'jgm';
+let tabActiva    = 'contratos';
 let allContratos = [];
+let allNomina    = [];
+let sortState    = { contratos: { col: null, asc: true }, nomina: { col: null, asc: true } };
 
-// Determina a qué gestión pertenece un contrato por su fecha
+// ── Configuración de ramas ────────────────────────────────────────────────────
+const RAMA_CONFIG = {
+  jgm:  {
+    label: 'Jefatura de Gabinete',
+    color: '#2563eb',
+    filtro:  n => (n.organismo||'').includes('Jefatura'),
+    filtroC: c => (c.organismo||'').includes('Jefatura'),
+  },
+  sgp:  {
+    label: 'Secretaría General',
+    color: '#7c3aed',
+    filtro:  n => (n.sub_organismo||'').includes('General'),
+    filtroC: c => (c.organismo||'').includes('Secretar'),
+  },
+  pres: {
+    label: 'Presidencia de la Nación',
+    color: '#0891b2',
+    filtro:  n => (n.organismo||'').includes('Presidencia') && !(n.sub_organismo||'').includes('General'),
+    filtroC: c => (c.organismo||'').includes('Presidencia'),
+  },
+};
+
+// ── Pestañas por rama (extensible) ────────────────────────────────────────────
+const RAMA_TABS = {
+  jgm:  ['contratos', 'nomina', 'cruces'],
+  sgp:  ['contratos', 'nomina', 'cruces'],
+  pres: ['contratos', 'nomina', 'cruces'],
+};
+
+// ── Formato números ───────────────────────────────────────────────────────────
+function fmt(n) {
+  if (!n && n !== 0) return '—';
+  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
+  return '$' + Math.round(n).toLocaleString('es-AR');
+}
+function fmtK(n) { return n ? n.toLocaleString('es-AR') : '—'; }
+
+// ── switchTab: FIX — usa IDs directos, no querySelectorAll('nav a') ───────────
+function switchTab(tab) {
+  tabActiva = tab;
+  // Ocultar todos los panels
+  ['contratos','nomina','cruces'].forEach(function(t) {
+    var panel = document.getElementById('tab-' + t);
+    var navEl = document.getElementById('tab-nav-' + t);
+    if (panel) panel.classList.remove('active');
+    if (navEl) navEl.classList.remove('active');
+  });
+  // Activar el seleccionado
+  var panelActivo = document.getElementById('tab-' + tab);
+  var navActivo   = document.getElementById('tab-nav-' + tab);
+  if (panelActivo) panelActivo.classList.add('active');
+  if (navActivo)   navActivo.classList.add('active');
+}
+
+// ── switchRama ────────────────────────────────────────────────────────────────
+function switchRama(rama) {
+  ramaActiva = rama;
+  var cfg = RAMA_CONFIG[rama];
+
+  // Actualizar botones de rama
+  ['jgm','sgp','pres'].forEach(function(r) {
+    document.getElementById('rama-' + r).classList.remove('active');
+  });
+  document.getElementById('rama-' + rama).classList.add('active');
+
+  // Actualizar label y acento de color en nav
+  document.getElementById('tab-rama-label').textContent = cfg.label;
+  document.getElementById('tab-nav').style.setProperty('--accent', cfg.color);
+
+  // Actualizar pestañas visibles según rama
+  var tabs = RAMA_TABS[rama];
+  ['contratos','nomina','cruces'].forEach(function(t) {
+    var navEl = document.getElementById('tab-nav-' + t);
+    if (navEl) navEl.style.display = tabs.indexOf(t) >= 0 ? '' : 'none';
+  });
+  // Si la pestaña activa no está en esta rama, ir a la primera disponible
+  if (tabs.indexOf(tabActiva) < 0) {
+    switchTab(tabs[0]);
+  }
+
+  // Re-renderizar datos filtrados por rama
+  actualizarConteos();
+  filtrarTabla();
+  filtrarNomina();
+
+  // Actualizar badge nómina
+  var nomCount = allNomina.filter(cfg.filtro).length;
+  document.getElementById('badge-nomina').textContent = nomCount || '—';
+}
+
+// ── JGM helpers ───────────────────────────────────────────────────────────────
 function getJGMDeContrato(fecha) {
   if (!fecha) return null;
-  const d = fecha.substring(0, 10);
-  for (const [key, g] of Object.entries(JGM)) {
+  var d = fecha.substring(0, 10);
+  for (var key in JGM) {
+    var g = JGM[key];
     if (d >= g.desde && (g.hasta === null || d <= g.hasta)) return key;
   }
   return null;
@@ -326,236 +685,335 @@ function getJGMDeContrato(fecha) {
 
 function chipJGM(key) {
   if (!key) return '<span style="color:#94a3b8">—</span>';
-  const g = JGM[key];
-  const ini = g.nombre.split(' ').map(w => w[0]).join('').substring(0, 2);
-  return `<span class="chip-jgm chip-${g.clase}">${ini} ${g.nombre.split(' ').slice(-1)[0]}</span>`;
+  var g = JGM[key];
+  var ini = g.nombre.split(' ').map(function(w){return w[0];}).join('').substring(0,2);
+  return '<span class="chip-jgm chip-' + g.clase + '">' + ini + ' ' + g.nombre.split(' ').slice(-1)[0] + '</span>';
 }
 
-// Filtra contratos por la gestión seleccionada
+function chipGestion(gestion) {
+  if (!gestion || gestion === 'Desconocido') return '<span style="color:#94a3b8">—</span>';
+  var mapa = { 'Adorni':'adorni', 'Francos':'francos', 'Posse':'posse', 'Pre-Milei':'pre' };
+  var cls = mapa[gestion] || 'pre';
+  return '<span class="chip-jgm chip-' + cls + '">' + gestion + '</span>';
+}
+
+function chipOrg(org) {
+  if (!org) return '';
+  if (org.includes('Jefatura'))   return '<span class="chip-org chip-jgm-org">JGM</span>';
+  if (org.includes('Presidencia')) return '<span class="chip-org chip-pres-org">PRES</span>';
+  return '';
+}
+
 function contratosEnGestion(key) {
-  if (key === 'todos') return allContratos;
-  const g = JGM[key];
-  return allContratos.filter(c => {
-    const d = (c.fecha_adjudicacion || '').substring(0, 10);
+  var cfg = RAMA_CONFIG[ramaActiva];
+  var base = allContratos.filter(cfg.filtroC);
+  if (key === 'todos') return base;
+  var g = JGM[key];
+  return base.filter(function(c) {
+    var d = (c.fecha_adjudicacion || '').substring(0, 10);
     if (!d) return false;
     return d >= g.desde && (g.hasta === null || d <= g.hasta);
   });
 }
 
-function actualizarConteos() {
-  ['todos', 'posse', 'francos', 'adorni'].forEach(k => {
-    const n = contratosEnGestion(k).length;
-    const el = document.getElementById('cnt-' + k);
-    if (el) el.innerHTML = `<strong>${n}</strong> contrato${n !== 1 ? 's' : ''}`;
-  });
-}
-
+// ── Selección JGM ─────────────────────────────────────────────────────────────
 function seleccionarJGM(key) {
   jgmActivo = key;
-
-  // Actualizar estado visual de botones
-  document.querySelectorAll('.jgm-btn').forEach(b => {
+  document.querySelectorAll('.jgm-btn').forEach(function(b) {
     b.classList.remove('active', 'todos', 'posse', 'francos', 'adorni');
   });
-  const btn = document.querySelector(`.jgm-btn[data-jgm="${key}"]`);
-  btn.classList.add('active', key);
+  var btn = document.querySelector('.jgm-btn[data-jgm="' + key + '"]');
+  if (btn) btn.classList.add('active', key);
 
-  // Barra de contexto
-  const bar = document.getElementById('jgm-context-bar');
+  var bar = document.getElementById('jgm-context-bar');
   if (key === 'todos') {
     bar.style.display = 'none';
   } else {
-    const g = JGM[key];
-    const contratos = contratosEnGestion(key);
-    const monto = contratos.reduce((a, c) => a + (c.monto_adjudicado || 0), 0);
+    var g = JGM[key];
+    var contratos = contratosEnGestion(key);
+    var monto = contratos.reduce(function(a,c){ return a + (c.monto_adjudicado||0); }, 0);
     bar.style.display = 'flex';
-    bar.innerHTML = `
-      <span class="ctx-nombre">${g.nombre}</span>
-      <span class="ctx-sep">·</span>
-      <span class="ctx-chip">Desde <strong>${g.desde}</strong></span>
-      <span class="ctx-chip">Hasta <strong>${g.hasta || 'actualidad'}</strong></span>
-      <span class="ctx-chip"><strong>${contratos.length}</strong> contratos en este período</span>
-      <span class="ctx-chip">Monto: <strong>${fmt(monto)}</strong></span>
-    `;
+    bar.innerHTML =
+      '<span class="ctx-nombre">' + g.nombre + '</span>' +
+      '<span class="ctx-sep">·</span>' +
+      '<span class="ctx-chip">Desde <strong>' + g.desde + '</strong></span>' +
+      '<span class="ctx-chip">Hasta <strong>' + (g.hasta||'actualidad') + '</strong></span>' +
+      '<span class="ctx-chip"><strong>' + contratos.length + '</strong> contratos</span>' +
+      '<span class="ctx-chip">Monto: <strong>' + fmt(monto) + '</strong></span>';
   }
-
-  // Actualizar título tabla
   document.getElementById('tabla-titulo').textContent = key === 'todos'
     ? 'Contratos y adjudicaciones'
-    : `Contratos — gestión ${JGM[key].nombre}`;
-
+    : 'Contratos — gestión ' + JGM[key].nombre;
   filtrarTabla();
+}
+
+function actualizarConteos() {
+  ['todos','posse','francos','adorni'].forEach(function(k) {
+    var n = contratosEnGestion(k).length;
+    var el = document.getElementById('cnt-' + k);
+    if (el) el.innerHTML = '<strong>' + n + '</strong> contrato' + (n !== 1 ? 's' : '');
+  });
+  var tot = contratosEnGestion('todos').length;
+  document.getElementById('badge-contratos').textContent = tot || '—';
+}
+
+// ── Tabla contratos ───────────────────────────────────────────────────────────
+function filtrarTabla() {
+  var org  = document.getElementById('f-org').value.toLowerCase();
+  var prov = document.getElementById('f-prov').value.toLowerCase();
+  var tipo = document.getElementById('f-tipo').value;
+  var data = contratosEnGestion(jgmActivo);
+  if (org)  data = data.filter(function(c){ return (c.organismo||'').toLowerCase().includes(org); });
+  if (prov) data = data.filter(function(c){ return (c.proveedor||'').toLowerCase().includes(prov); });
+  if (tipo) data = data.filter(function(c){ return (c.tipo_contratacion||'') === tipo; });
+  renderTablaContratos(data);
+}
+
+function renderTablaContratos(data) {
+  var tbody = document.getElementById('tbody');
+  tbody.innerHTML = data.slice(0, 200).map(function(c) {
+    var jgmKey = getJGMDeContrato(c.fecha_adjudicacion);
+    return '<tr>' +
+      '<td>' + (c.organismo||'—') + '</td>' +
+      '<td style="font-weight:600">' + (c.proveedor||'—') + '</td>' +
+      '<td class="mono">' + (c.cuit||'—') + '</td>' +
+      '<td>' + (c.tipo_contratacion||'—') + '</td>' +
+      '<td class="mono">' + (c.fecha_adjudicacion||'').substring(0,10) + '</td>' +
+      '<td>' + chipJGM(jgmKey) + '</td>' +
+      '<td class="monto">' + fmt(c.monto_adjudicado) + '</td>' +
+      '</tr>';
+  }).join('');
+  var el = document.getElementById('filtros-count');
+  if (el) el.innerHTML = '<strong>' + data.length + '</strong> resultado' + (data.length !== 1 ? 's' : '');
+}
+
+// ── Sort ──────────────────────────────────────────────────────────────────────
+function sortTable(tabla, col) {
+  var st = sortState[tabla];
+  st.asc = st.col === col ? !st.asc : true;
+  st.col = col;
+  if (tabla === 'contratos') {
+    allContratos.sort(function(a,b){ var av=a[col]||'',bv=b[col]||''; return st.asc?(av>bv?1:-1):(av<bv?1:-1); });
+    filtrarTabla();
+  } else {
+    allNomina.sort(function(a,b){ var av=a[col]||'',bv=b[col]||''; return st.asc?(av>bv?1:-1):(av<bv?1:-1); });
+    filtrarNomina();
+  }
+}
+
+// ── Nómina ────────────────────────────────────────────────────────────────────
+function filtroOrg(org) {
+  orgActivo = org;
+  document.querySelectorAll('.org-btn').forEach(function(b){ b.classList.remove('active'); });
+  var btn = document.querySelector('.org-btn[data-org="' + org + '"]');
+  if (btn) btn.classList.add('active');
+  var labels = {
+    todos: 'Autoridades designadas — Monitor completo',
+    jgm:  'Autoridades — Jefatura de Gabinete de Ministros',
+    sgp:  'Autoridades — Secretaría General de la Presidencia',
+    pres: 'Autoridades — Presidencia de la Nación (resto)',
+  };
+  document.getElementById('nomina-titulo').textContent = labels[org];
+  filtrarNomina();
+}
+
+function filtrarNomina() {
+  var nombre  = document.getElementById('n-f-nombre').value.toLowerCase();
+  var cargo   = document.getElementById('n-f-cargo').value.toLowerCase();
+  var jerarq  = document.getElementById('n-f-jerarquia').value;
+  var gestion = document.getElementById('n-f-gestion').value;
+  var genero  = document.getElementById('n-f-genero').value;
+
+  var data = allNomina.filter(RAMA_CONFIG[ramaActiva].filtro);
+
+  if (nombre)  data = data.filter(function(n){ return (n.apellido||'').toLowerCase().includes(nombre)||(n.nombre||'').toLowerCase().includes(nombre); });
+  if (cargo)   data = data.filter(function(n){ return (n.cargo||'').toLowerCase().includes(cargo); });
+  if (jerarq)  data = data.filter(function(n){ return (n.jerarquia||'') === jerarq; });
+  if (gestion) data = data.filter(function(n){ return (n.jgm_al_ingreso||'') === gestion; });
+  if (genero)  data = data.filter(function(n){ return (n.genero||'') === genero; });
+
+  renderTablaNomina(data);
+}
+
+function renderTablaNomina(data) {
+  var tbody = document.getElementById('tbody-nomina');
+  tbody.innerHTML = data.slice(0, 300).map(function(n) {
+    var sueldo = n.sueldo_bruto_estimado_ars;
+    var sueldoTxt = sueldo === 0 ? 'Ad Honorem' : (sueldo ? fmt(sueldo) : '—');
+    return '<tr>' +
+      '<td style="font-weight:600">' + (n.apellido||'—') + '</td>' +
+      '<td>' + (n.nombre||'—') + '</td>' +
+      '<td>' + (n.cargo||'—') + '</td>' +
+      '<td><span style="font-size:11px;color:var(--muted)">' + (n.jerarquia||'—') + '</span></td>' +
+      '<td><span style="font-size:10px;color:var(--muted)">' + (n.escalafon||'—').substring(0,30) + '</span></td>' +
+      '<td>' + chipOrg(n.organismo) + '</td>' +
+      '<td>' + chipGestion(n.jgm_al_ingreso) + '</td>' +
+      '<td>' + (n.genero && n.genero !== 'No informado' ? n.genero.substring(0,1) : '—') + '</td>' +
+      '<td class="monto" style="font-size:11px">' + sueldoTxt + '</td>' +
+      '</tr>';
+  }).join('');
+  var el = document.getElementById('n-filtros-count');
+  if (el) el.innerHTML = '<strong>' + data.length + '</strong> resultado' + (data.length !== 1 ? 's' : '');
+}
+
+// ── CSV export ────────────────────────────────────────────────────────────────
+function exportarCSV(tipo) {
+  var rows, headers, filename, csv;
+  if (tipo === 'contratos') {
+    var data = contratosEnGestion(jgmActivo);
+    headers = ['organismo','proveedor','cuit','tipo_contratacion','fecha_adjudicacion','monto_adjudicado'];
+    rows = data.map(function(r){ return headers.map(function(h){ return '"'+(r[h]||'').toString().replace(/"/g,'""')+'"'; }).join(','); });
+    filename = 'contratos_jgm.csv';
+  } else {
+    headers = ['apellido','nombre','cargo','jerarquia','escalafon','organismo','jgm_al_ingreso','genero','sueldo_bruto_estimado_ars'];
+    rows = allNomina.map(function(r){ return headers.map(function(h){ return '"'+(r[h]||'').toString().replace(/"/g,'""')+'"'; }).join(','); });
+    filename = 'nomina_monitor.csv';
+  }
+  csv = [headers.join(',')].concat(rows).join('\n');
+  var a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent(csv);
+  a.download = filename;
+  a.click();
+}
+
+// ── Cruces demo ───────────────────────────────────────────────────────────────
+var D_CRUCES = [
+  { nivel:'alta',  titulo:'Coincidencia exacta de CUIL — Funcionario / Proveedor',       funcionario:'GARCÍA, Roberto',    cargo:'Coordinador — JGM',         proveedor:'GARCÍA CONSULTORES SRL',    cuil:'20-28341234-5', contratos:3, monto:12_400_000, gestion:'Francos' },
+  { nivel:'media', titulo:'Coincidencia de apellido — posible vínculo familiar',          funcionario:'RODRÍGUEZ, María',   cargo:'Subsecretaria — Presidencia', proveedor:'RODRÍGUEZ & ASOCIADOS SA',  cuil:null,            contratos:1, monto:4_800_000,  gestion:'Posse'   },
+  { nivel:'media', titulo:'Cruce inter-organismos — apellido en JGM y proveedor en Pres', funcionario:'MARTÍNEZ, Carlos',  cargo:'Director Nacional — JGM',    proveedor:'MARTÍNEZ TECNOLOGÍA SAS',   cuil:null,            contratos:2, monto:8_200_000,  gestion:'Adorni'  },
+];
+
+function renderCruces() {
+  var lista = document.getElementById('cruces-lista');
+  document.getElementById('c-total').textContent = D_CRUCES.length;
+  document.getElementById('c-alta').textContent  = D_CRUCES.filter(function(c){return c.nivel==='alta';}).length;
+  document.getElementById('c-media').textContent = D_CRUCES.filter(function(c){return c.nivel==='media';}).length;
+  lista.innerHTML = D_CRUCES.map(function(c) {
+    return '<div class="cruce-card ' + c.nivel + '">' +
+      '<div class="cruce-titulo"><span class="badge-n ' + c.nivel + '">' + c.nivel.toUpperCase() + '</span>' + c.titulo + '</div>' +
+      '<div class="cruce-meta">' +
+        '<span>👤 <strong>' + c.funcionario + '</strong> — ' + c.cargo + '</span>' +
+        '<span>🏢 Proveedor: <strong>' + c.proveedor + '</strong></span>' +
+        (c.cuil ? '<span>CUIL: <strong class="mono">' + c.cuil + '</strong></span>' : '') +
+        '<span>📋 <strong>' + c.contratos + '</strong> contrato' + (c.contratos!==1?'s':'') + '</span>' +
+        '<span>💰 <strong>' + fmt(c.monto) + '</strong></span>' +
+        '<span>Gestión: ' + chipGestion(c.gestion) + '</span>' +
+      '</div></div>';
+  }).join('');
 }
 
 // ── Datos demo ────────────────────────────────────────────────────────────────
-const D_KPIS = {
-  alertas_activas: 14, alertas_alta: 5, total_contratos: 3847,
-  monto_total_ars: 42_300_000_000, proveedores_unicos: 612, funcionarios_monitoreados: 1284,
+var D_KPIS = {
+  alertas_activas:14, alertas_alta:5, total_contratos:3847,
+  monto_total_ars:42_300_000_000, proveedores_unicos:612, funcionarios_monitoreados:1154,
 };
-const D_ORG = [
-  { organismo: 'Sec. Innovación Pública', monto_total: 8_400_000_000 },
-  { organismo: 'ANSES',                   monto_total: 6_200_000_000 },
-  { organismo: 'Ministerio de Economía',  monto_total: 5_100_000_000 },
-  { organismo: 'Min. Infraestructura',    monto_total: 4_300_000_000 },
-  { organismo: 'Jefatura de Gabinete',    monto_total: 3_900_000_000 },
-  { organismo: 'Sec. Gestión y Empleo',   monto_total: 3_200_000_000 },
-  { organismo: 'AFIP',                    monto_total: 2_800_000_000 },
-  { organismo: 'Min. del Interior',       monto_total: 2_400_000_000 },
-  { organismo: 'INDEC',                   monto_total: 1_900_000_000 },
-  { organismo: 'Casa Rosada',             monto_total: 1_100_000_000 },
+var D_ORG = [
+  { organismo:'Sec. Innovación Pública', monto_total:8_400_000_000 },
+  { organismo:'ANSES',                   monto_total:6_200_000_000 },
+  { organismo:'Ministerio de Economía',  monto_total:5_100_000_000 },
+  { organismo:'Min. Infraestructura',    monto_total:4_300_000_000 },
+  { organismo:'Jefatura de Gabinete',    monto_total:3_900_000_000 },
+  { organismo:'Sec. Gestión y Empleo',   monto_total:3_200_000_000 },
+  { organismo:'AFIP',                    monto_total:2_800_000_000 },
+  { organismo:'Min. del Interior',       monto_total:2_400_000_000 },
+  { organismo:'INDEC',                   monto_total:1_900_000_000 },
+  { organismo:'Casa Rosada',             monto_total:1_100_000_000 },
 ];
-const D_ALERTAS = [
-  { nivel: 'alta',  tipo: 'nepotismo',     titulo: 'Coincidencia apellido FERNÁNDEZ — Tech Fernández SRL',        monto_involucrado: 24_500_000,    fecha_creacion: '2024-04-01' },
-  { nivel: 'alta',  tipo: 'sobreprecio',   titulo: 'Sobreprecio +82% licitación ANSES — Consultoría XYZ SA',      monto_involucrado: 85_000_000,    fecha_creacion: '2024-03-28' },
-  { nivel: 'alta',  tipo: 'concentracion', titulo: 'Concentración 51% gasto — Innovación Pública / Datos SA',     monto_involucrado: 4_300_000_000, fecha_creacion: '2024-03-25' },
-  { nivel: 'media', tipo: 'nepotismo',     titulo: 'Apellido RODRIGUEZ en nómina y proveedor del mismo organismo', monto_involucrado: 8_200_000,    fecha_creacion: '2024-03-22' },
-  { nivel: 'media', tipo: 'sobreprecio',   titulo: 'Sobreprecio +47% contratación directa — Servicios Digitales',  monto_involucrado: 12_000_000,   fecha_creacion: '2024-03-20' },
-  { nivel: 'baja',  tipo: 'nepotismo',     titulo: 'Coincidencia apellido LÓPEZ — posible parentesco lejano',      monto_involucrado: 3_100_000,    fecha_creacion: '2024-03-18' },
+var D_ALERTAS = [
+  { nivel:'alta',  tipo:'nepotismo',     titulo:'Coincidencia apellido FERNÁNDEZ — proveedor activo', organismo:'JGM',       monto:8_400_000  },
+  { nivel:'alta',  tipo:'concentracion', titulo:'Proveedor único recibe 84% de contratos TI',         organismo:'Presidencia',monto:24_000_000 },
+  { nivel:'media', tipo:'rotacion',      titulo:'Contratación directa reiterada — mismo proveedor',   organismo:'JGM',       monto:3_200_000  },
+  { nivel:'media', tipo:'parentesco',    titulo:'Vínculo familiar detectado via CUIL',                organismo:'Presidencia',monto:1_800_000  },
 ];
-// Datos demo con fechas distribuidas en las tres gestiones
-const D_CONTRATOS = [
-  { organismo: 'Sec. Innovación Pública',   proveedor: 'Datos SA',                cuit_proveedor: '30-71234567-8', tipo_proceso: 'Licitación pública',  fecha_adjudicacion: '2024-03-15', monto_adjudicado: 285_000_000   },
-  { organismo: 'ANSES',                     proveedor: 'Consultoría XYZ SA',      cuit_proveedor: '30-99887766-5', tipo_proceso: 'Contratación directa', fecha_adjudicacion: '2024-03-10', monto_adjudicado: 850_000_000   },
-  { organismo: 'Ministerio de Economía',    proveedor: 'Tech Fernández SRL',      cuit_proveedor: '30-55544433-1', tipo_proceso: 'Concurso de precios',  fecha_adjudicacion: '2024-01-08', monto_adjudicado: 24_500_000    },
-  { organismo: 'Jefatura de Gabinete',      proveedor: 'Servicios Digitales SA',  cuit_proveedor: '30-66677788-2', tipo_proceso: 'Contratación directa', fecha_adjudicacion: '2024-01-05', monto_adjudicado: 120_000_000   },
-  { organismo: 'AFIP',                      proveedor: 'Infraestructura AR SA',   cuit_proveedor: '30-33322211-9', tipo_proceso: 'Licitación pública',  fecha_adjudicacion: '2024-07-28', monto_adjudicado: 430_000_000   },
-  { organismo: 'Min. Infraestructura',      proveedor: 'Construcciones Norte SRL',cuit_proveedor: '30-44455566-7', tipo_proceso: 'Licitación pública',  fecha_adjudicacion: '2024-09-20', monto_adjudicado: 1_200_000_000 },
-  { organismo: 'INDEC',                     proveedor: 'Sistemas Estadísticos SA',cuit_proveedor: '30-11122233-4', tipo_proceso: 'Contratación directa', fecha_adjudicacion: '2025-12-15', monto_adjudicado: 62_000_000    },
-  { organismo: 'Sec. Gestión y Empleo',     proveedor: 'RR HH Consultores SA',    cuit_proveedor: '30-88899900-3', tipo_proceso: 'Concurso de precios',  fecha_adjudicacion: '2025-12-10', monto_adjudicado: 95_000_000    },
+var D_CONTRATOS = [
+  { organismo:'Jefatura de Gabinete', proveedor:'TECLAB SA',            cuit:'30-71234567-8', tipo_contratacion:'Contratación directa', fecha_adjudicacion:'2024-02-15', monto_adjudicado:4_800_000  },
+  { organismo:'Jefatura de Gabinete', proveedor:'SISTEMAS ÁGILES SRL',  cuit:'30-68901234-5', tipo_contratacion:'Licitación pública',   fecha_adjudicacion:'2024-07-22', monto_adjudicado:12_300_000 },
+  { organismo:'Presidencia',          proveedor:'CONSULTORA NORTE SA',   cuit:'30-59876543-2', tipo_contratacion:'Concurso de precios',  fecha_adjudicacion:'2024-01-10', monto_adjudicado:2_100_000  },
+  { organismo:'Jefatura de Gabinete', proveedor:'DATACOM SAS',           cuit:'30-71098765-4', tipo_contratacion:'Contratación directa', fecha_adjudicacion:'2025-01-08', monto_adjudicado:6_700_000  },
+  { organismo:'Presidencia',          proveedor:'SERVICIO INTEGRAL SRL', cuit:'30-65432109-8', tipo_contratacion:'Licitación pública',   fecha_adjudicacion:'2025-03-14', monto_adjudicado:18_900_000 },
+  { organismo:'Jefatura de Gabinete', proveedor:'ALFA CONSULTORES',      cuit:'20-31245678-9', tipo_contratacion:'Contratación directa', fecha_adjudicacion:'2025-11-20', monto_adjudicado:3_400_000  },
+  { organismo:'Presidencia',          proveedor:'TECLAB SA',             cuit:'30-71234567-8', tipo_contratacion:'Licitación pública',   fecha_adjudicacion:'2024-09-05', monto_adjudicado:9_200_000  },
+  { organismo:'Jefatura de Gabinete', proveedor:'NEXO DIGITAL SRL',      cuit:'30-70012345-6', tipo_contratacion:'Concurso de precios',  fecha_adjudicacion:'2024-12-01', monto_adjudicado:5_500_000  },
 ];
-
-// ── Utils ─────────────────────────────────────────────────────────────────────
-async function apiFetch(path) {
-  try {
-    const r = await fetch(path, { signal: AbortSignal.timeout(4000) });
-    if (!r.ok) throw 0;
-    return await r.json();
-  } catch { return null; }
-}
-
-function fmt(n) {
-  if (!n && n !== 0) return '—';
-  if (n >= 1e9) return '$' + (n / 1e9).toFixed(1) + 'B';
-  if (n >= 1e6) return '$' + (n / 1e6).toFixed(0) + 'M';
-  return '$' + Number(n).toLocaleString('es-AR', { maximumFractionDigits: 0 });
-}
+var D_NOMINA = [
+  { apellido:'ADORNI',        nombre:'Manuel',           cargo:'Jefe de Gabinete de Ministros',       jerarquia:'Ministro',      escalafon:'Autoridad Superior del PEN', organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Adorni',    genero:'Masculino', sueldo_bruto_estimado_ars:15_000_000 },
+  { apellido:'BRICHETTI',     nombre:'Agostina Rocío',   cargo:'Subsecretario/a',                      jerarquia:'Subsecretario', escalafon:'Autoridad Superior del PEN', organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Adorni',    genero:'Femenino',  sueldo_bruto_estimado_ars:6_500_000  },
+  { apellido:'GONZÁLEZ',      nombre:'Camila Belén',     cargo:'Subsecretario/a',                      jerarquia:'Subsecretario', escalafon:'Autoridad Superior del PEN', organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Adorni',    genero:'Femenino',  sueldo_bruto_estimado_ars:6_500_000  },
+  { apellido:'LEIVA NOSTAS',  nombre:'Leandro Martín',   cargo:'Subsecretario/a',                      jerarquia:'Subsecretario', escalafon:'Autoridad Superior del PEN', organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Adorni',    genero:'Masculino', sueldo_bruto_estimado_ars:6_500_000  },
+  { apellido:'IRAOLA',        nombre:'Francisco',        cargo:'Director/a General',                   jerarquia:'DN-DG',         escalafon:'Autoridad Superior del PEN', organismo:'Presidencia de la Nación',          jgm_al_ingreso:'Adorni',    genero:'Masculino', sueldo_bruto_estimado_ars:5_000_000  },
+  { apellido:'SEÑORANS',      nombre:'Andrea Fabiana',   cargo:'Coordinador/a',                        jerarquia:'Coordinador',   escalafon:'Personal del SINEP',         organismo:'Presidencia de la Nación',          jgm_al_ingreso:'Adorni',    genero:'Femenino',  sueldo_bruto_estimado_ars:3_200_000  },
+  { apellido:'TRIVIÑO VALDEZ',nombre:'María Guadalupe',  cargo:'Coordinador/a de Asuntos Legales',     jerarquia:'Coordinador',   escalafon:'Funcionario fuera de nivel',  organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Francos',   genero:'Femenino',  sueldo_bruto_estimado_ars:3_200_000  },
+  { apellido:'BARBIERI',      nombre:'Fernando Ángel',   cargo:'Responsable',                          jerarquia:'S-D',           escalafon:'Personal del SINEP',         organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Pre-Milei', genero:'Masculino', sueldo_bruto_estimado_ars:1_800_000  },
+  { apellido:'ESCOBAR',       nombre:'Brenda Daniela',   cargo:'Responsable',                          jerarquia:'S-D',           escalafon:'Personal del SINEP',         organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Pre-Milei', genero:'Femenino',  sueldo_bruto_estimado_ars:1_800_000  },
+  { apellido:'PINTELOS',      nombre:'Bárbara Yael',     cargo:'Vicepresidente/a',                     jerarquia:'Subsecretario', escalafon:'Autoridad Superior del PEN', organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Adorni',    genero:'Femenino',  sueldo_bruto_estimado_ars:6_500_000  },
+  { apellido:'VÁZQUEZ',       nombre:'Aimé Ayelén',      cargo:'Titular',                              jerarquia:'Subsecretario', escalafon:'Autoridad Superior del PEN', organismo:'Jefatura de Gabinete de Ministros', jgm_al_ingreso:'Adorni',    genero:'Femenino',  sueldo_bruto_estimado_ars:6_500_000  },
+];
 
 // ── KPIs ──────────────────────────────────────────────────────────────────────
-async function cargarKPIs() {
-  const d = (await apiFetch('/api/v1/kpis')) || D_KPIS;
-  document.getElementById('kpi-grid').innerHTML = `
-    <div class="kpi-card kc-alta">
-      <div class="kpi-label">Alertas activas</div>
-      <div class="kpi-val">${d.alertas_activas}</div>
-      <div class="kpi-sub">${d.alertas_alta} de nivel ALTA</div>
-    </div>
-    <div class="kpi-card kc-blue">
-      <div class="kpi-label">Total contratos</div>
-      <div class="kpi-val">${Number(d.total_contratos).toLocaleString('es-AR')}</div>
-      <div class="kpi-sub">COMPR.AR 2023–2024</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Monto adjudicado</div>
-      <div class="kpi-val" style="font-size:22px">${fmt(d.monto_total_ars)}</div>
-      <div class="kpi-sub">total acumulado</div>
-    </div>
-    <div class="kpi-card kc-green">
-      <div class="kpi-label">Proveedores únicos</div>
-      <div class="kpi-val">${Number(d.proveedores_unicos).toLocaleString('es-AR')}</div>
-      <div class="kpi-sub">en SIPRO</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Funcionarios</div>
-      <div class="kpi-val">${Number(d.funcionarios_monitoreados).toLocaleString('es-AR')}</div>
-      <div class="kpi-sub">nómina JGM</div>
-    </div>`;
+function renderKPIs(kpis) {
+  document.getElementById('kpi-grid').innerHTML =
+    '<div class="kpi-card kc-alta"><div class="kpi-label">Alertas activas</div><div class="kpi-val">' + kpis.alertas_activas + '</div><div class="kpi-sub">' + kpis.alertas_alta + ' de riesgo alto</div></div>' +
+    '<div class="kpi-card kc-blue"><div class="kpi-label">Total contratos</div><div class="kpi-val">' + fmtK(kpis.total_contratos) + '</div><div class="kpi-sub">período monitoreado</div></div>' +
+    '<div class="kpi-card kc-blue"><div class="kpi-label">Monto total</div><div class="kpi-val">' + fmt(kpis.monto_total_ars) + '</div><div class="kpi-sub">ARS adjudicados</div></div>' +
+    '<div class="kpi-card kc-green"><div class="kpi-label">Proveedores únicos</div><div class="kpi-val">' + fmtK(kpis.proveedores_unicos) + '</div><div class="kpi-sub">en período activo</div></div>' +
+    '<div class="kpi-card"><div class="kpi-label">Funcionarios monitor</div><div class="kpi-val">' + fmtK(kpis.funcionarios_monitoreados) + '</div><div class="kpi-sub">JGM + Presidencia</div></div>';
 }
 
-// ── Gráfico ───────────────────────────────────────────────────────────────────
-async function cargarGrafico() {
-  const raw = (await apiFetch('/api/v1/contratos/por-organismo')) || D_ORG;
-  const d = raw.slice(0, 10);
+// ── Charts ────────────────────────────────────────────────────────────────────
+function renderChartOrg(data) {
   new Chart(document.getElementById('chart-org'), {
     type: 'bar',
     data: {
-      labels: d.map(r => r.organismo.length > 26 ? r.organismo.substring(0, 24) + '…' : r.organismo),
-      datasets: [{
-        data: d.map(r => +(r.monto_total / 1e6).toFixed(0)),
-        backgroundColor: '#2563eb18', borderColor: '#2563eb',
-        borderWidth: 1.5, borderRadius: 5,
-      }]
+      labels: data.map(function(d){return d.organismo;}),
+      datasets: [{ data: data.map(function(d){return d.monto_total/1e6;}), backgroundColor:'#2563eb22', borderColor:'#2563eb', borderWidth:1.5, borderRadius:4 }]
     },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ' $' + c.parsed.y.toLocaleString('es-AR') + 'M' } }
-      },
-      scales: {
-        x: { ticks: { color: '#64748b', font: { size: 10 } }, grid: { display: false } },
-        y: { ticks: { color: '#64748b', font: { size: 10 }, callback: v => '$' + v + 'M' }, grid: { color: '#e2e8f0' } }
-      }
-    }
+    options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{ticks:{callback:function(v){return '$'+v+'M';}}}}}
   });
 }
 
-// ── Alertas ───────────────────────────────────────────────────────────────────
-async function cargarAlertas() {
-  const d = (await apiFetch('/api/v1/alertas?limit=6')) || D_ALERTAS;
-  document.getElementById('alertas-lista').innerHTML = d.slice(0, 6).map(a => `
-    <div class="alerta-item ${a.nivel}">
-      <div class="atit"><span class="badge-n ${a.nivel}">${a.nivel}</span>${a.titulo}</div>
-      <div class="amet">${a.tipo}${a.monto_involucrado ? ' · ' + fmt(a.monto_involucrado) : ''} · ${(a.fecha_creacion || '').substring(0, 10)}</div>
-    </div>`).join('');
+function renderChartsNomina() {
+  var gestiones = ['Adorni','Francos','Posse','Pre-Milei','Desconocido'];
+  var colores   = ['#059669','#0891b2','#7c3aed','#64748b','#cbd5e1'];
+  var counts    = gestiones.map(function(g){ return allNomina.filter(function(n){return n.jgm_al_ingreso===g;}).length; });
+  new Chart(document.getElementById('chart-gestion-nomina'), {
+    type:'doughnut',
+    data:{labels:gestiones, datasets:[{data:counts, backgroundColor:colores, borderWidth:2}]},
+    options:{responsive:true, plugins:{legend:{position:'right', labels:{font:{size:11}}}}}
+  });
+  var jerarqCount = {};
+  allNomina.forEach(function(n){ var j=n.jerarquia||'Sin dato'; jerarqCount[j]=(jerarqCount[j]||0)+1; });
+  var top = Object.entries(jerarqCount).sort(function(a,b){return b[1]-a[1];}).slice(0,7);
+  new Chart(document.getElementById('chart-jerarquia'), {
+    type:'bar',
+    data:{
+      labels:top.map(function(t){return t[0].length>20?t[0].substring(0,20)+'…':t[0];}),
+      datasets:[{data:top.map(function(t){return t[1];}), backgroundColor:'#7c3aed22', borderColor:'#7c3aed', borderWidth:1.5, borderRadius:4}]
+    },
+    options:{indexAxis:'y', responsive:true, plugins:{legend:{display:false}}}
+  });
 }
 
-// ── Tabla ─────────────────────────────────────────────────────────────────────
-async function cargarContratos() {
-  allContratos = (await apiFetch('/api/v1/contratos?limit=200')) || D_CONTRATOS;
-  actualizarConteos();
-  filtrarTabla();
-}
-
-function filtrarTabla() {
-  const org  = document.getElementById('f-org').value.toLowerCase();
-  const prov = document.getElementById('f-prov').value.toLowerCase();
-  const tipo = document.getElementById('f-tipo').value.toLowerCase();
-
-  // Primero filtro por gestión JGM, luego por texto
-  const resultado = contratosEnGestion(jgmActivo).filter(c =>
-    (!org  || (c.organismo    || '').toLowerCase().includes(org))  &&
-    (!prov || (c.proveedor    || '').toLowerCase().includes(prov)) &&
-    (!tipo || (c.tipo_proceso || '').toLowerCase().includes(tipo))
-  );
-
-  renderTabla(resultado);
-
-  document.getElementById('filtros-count').innerHTML =
-    `<strong>${resultado.length}</strong> de ${allContratos.length} contratos`;
-}
-
-function renderTabla(data) {
-  document.getElementById('tbody').innerHTML = data.length
-    ? data.map(c => {
-        const gKey = getJGMDeContrato(c.fecha_adjudicacion);
-        return `<tr>
-          <td>${c.organismo || '—'}</td>
-          <td>${c.proveedor || '—'}</td>
-          <td class="mono">${c.cuit_proveedor || '—'}</td>
-          <td>${c.tipo_proceso || '—'}</td>
-          <td class="mono">${(c.fecha_adjudicacion || '').substring(0, 10) || '—'}</td>
-          <td>${chipJGM(gKey)}</td>
-          <td class="monto">${fmt(c.monto_adjudicado)}</td>
-        </tr>`;
-      }).join('')
-    : '<tr><td colspan="7" style="text-align:center;color:#64748b;padding:24px">Sin resultados para este período</td></tr>';
+function renderAlertas(alertas) {
+  document.getElementById('alertas-lista').innerHTML = alertas.map(function(a){
+    return '<div class="alerta-item ' + a.nivel + '"><div class="atit"><span class="badge-n ' + a.nivel + '">' + a.nivel + '</span>' + a.titulo + '</div><div class="amet">' + a.organismo + ' · ' + fmt(a.monto) + '</div></div>';
+  }).join('');
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-cargarKPIs();
-cargarGrafico();
-cargarAlertas();
-cargarContratos();
+(function init() {
+  allContratos = D_CONTRATOS;
+  allNomina    = D_NOMINA;
+
+  renderKPIs(D_KPIS);
+  renderChartOrg(D_ORG);
+  renderAlertas(D_ALERTAS);
+  renderChartsNomina();
+  renderCruces();
+
+  // switchRama dispara filtrarTabla + filtrarNomina + actualizarConteos
+  switchRama('jgm');
+  switchTab('contratos');
+})();
 </script>
 </body>
 </html>
