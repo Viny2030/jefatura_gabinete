@@ -1857,5 +1857,60 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410363/20260413",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública CDB 3190/2026",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410427/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
+    "proveedor": "FRANCO EMANUEL ROSSO",
+    "cuit": "23-31368727-9",
+    "tipo_contratacion": "Contratación Directa 02/2026",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": 29653415.48,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410428/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 29/2025",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410429/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 45/2025",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410365/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-63927711-5",
+    "tipo_contratacion": "Licitación Pública 54/2025",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410366/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
