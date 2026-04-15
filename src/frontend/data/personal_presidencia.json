@@ -3162,7 +3162,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 244/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329390/20250806);",
+    "norma_designacion": "[Resolución 244/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329390/20250806);;[Resolución 219/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340258/20260401);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23235158019.0,
     "fecha_ingreso": "2025-01-01"
@@ -3426,18 +3426,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría de Cultura",
-    "apellido": null,
-    "nombre": null,
+    "apellido": "CORNUT (AdH)",
+    "nombre": "Hernán Federico",
     "cargo": "Presidente/a",
     "jerarquia": "Ad Honorem",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Desconocido",
+    "jgm_al_ingreso": "Adorni",
     "genero": "No informado",
-    "norma_designacion": null,
+    "norma_designacion": "[Decreto 231/2026]     (https://www.boletinoficial.gob.ar/detalleAviso/primera/340557/20260410);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4322,18 +4322,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría de Cultura",
-    "apellido": null,
-    "nombre": null,
+    "apellido": "REPETTO (AdH)",
+    "nombre": "Juan Martín",
     "cargo": "Presidente/a",
     "jerarquia": "Ad Honorem",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Desconocido",
+    "jgm_al_ingreso": "Adorni",
     "genero": "No informado",
-    "norma_designacion": null,
+    "norma_designacion": "[Decreto 232/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340556/20260410);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4946,18 +4946,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría de Cultura",
-    "apellido": "DI PALMA",
-    "nombre": "Carlos Alberto",
+    "apellido": "STABILINI",
+    "nombre": "Dolores",
     "cargo": "Director/a",
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
-    "genero": "Masculino",
-    "norma_designacion": "[Resolución 336/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330732/20250902);",
+    "jgm_al_ingreso": "Adorni",
+    "genero": "Femenino",
+    "norma_designacion": "[Resolución 211/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340189/20260331);",
     "sueldo_bruto_estimado_ars": 4000000,
-    "cuil": 20137476615.0,
-    "fecha_ingreso": "2025-01-01"
+    "cuil": 27295919049.0,
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4970,7 +4970,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 198/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328619/20250721);",
+    "norma_designacion": "[Resolución 198/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328619/20250721);;[Resolución 220/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340259/20260401);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20382971834.0,
     "fecha_ingreso": "2025-01-01"
@@ -5090,18 +5090,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría de Cultura",
-    "apellido": "GAMBELLA ACOSTA",
-    "nombre": "Maximiliano Exequiel",
+    "apellido": "SCROFANI",
+    "nombre": "Alejandro Andrés",
     "cargo": "Director/a",
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 133/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325938/20250526);;[Resolución 46/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338012/20260130);",
+    "norma_designacion": "[Resolución 192/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339850/20260325);",
     "sueldo_bruto_estimado_ars": 4500000,
-    "cuil": 20370094293.0,
-    "fecha_ingreso": "2025-01-01"
+    "cuil": 20281767292.0,
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Presidencia de la Nación",

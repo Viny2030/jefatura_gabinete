@@ -1898,7 +1898,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Decisión Administrativa 875/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/313616/20240910);;[Resolución 288/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327561/20250627);;",
+    "norma_designacion": "[Decisión Administrativa 875/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/313616/20240910);;[Resolución 288/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327561/20250627);;[Resolución 85/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339719/20260320);;",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27329494581.0,
     "fecha_ingreso": "2024-01-01"
@@ -1914,7 +1914,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Decisión Administrativa 867/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/313292/20240904);;[Resolución 288/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327561/20250627);;",
+    "norma_designacion": "[Decisión Administrativa 867/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/313292/20240904);;[Resolución 288/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327561/20250627);;[Resolución 85/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339719/20260320);;;",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27370388518.0,
     "fecha_ingreso": "2024-01-01"
@@ -2274,18 +2274,18 @@
   {
     "organismo": "Jefatura de Gabinete de Ministros",
     "sub_organismo": null,
-    "apellido": null,
-    "nombre": null,
+    "apellido": "GATTOLIN",
+    "nombre": "Elizabeth Tosca",
     "cargo": "Intendente/a",
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Desconocido",
-    "genero": "No informado",
-    "norma_designacion": null,
+    "jgm_al_ingreso": "Adorni",
+    "genero": "Femenino",
+    "norma_designacion": "[Resolución 10/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339920/20260326);",
     "sueldo_bruto_estimado_ars": 3200000,
-    "cuil": null,
-    "fecha_ingreso": null
+    "cuil": 27149690838.0,
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Jefatura de Gabinete de Ministros",
@@ -3002,7 +3002,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Pre-Milei",
     "genero": "Masculino",
-    "norma_designacion": "[Decisión Administrativa 623/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/5462540/20220627);;[Resolución 182/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/283530/20230329);;[Resolución 965/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/299685/20231204);;[Resolución 179/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/314550/20240925);;[Resolución 288/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327561/20250627);;",
+    "norma_designacion": "[Decisión Administrativa 623/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/5462540/20220627);;[Resolución 182/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/283530/20230329);;[Resolución 965/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/299685/20231204);;[Resolución 179/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/314550/20240925);;[Resolución 288/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327561/20250627);;[Resolución 85/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339719/20260320);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20259828741.0,
     "fecha_ingreso": "2022-01-01"
@@ -3194,7 +3194,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 249/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/326495/20250605);",
+    "norma_designacion": "[Resolución 249/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/326495/20250605);;[Resolución 85/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339719/20260320);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20950429624.0,
     "fecha_ingreso": "2025-01-01"
@@ -3674,7 +3674,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Decisión Administrativa 412/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/308180/20240527);;[Resolución 196/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325053/20250509);",
+    "norma_designacion": "[Decisión Administrativa 412/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/308180/20240527);;[Resolución 196/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325053/20250509);;[Resolución 84/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339718/20260320);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27233279337.0,
     "fecha_ingreso": "2024-01-01"
@@ -4282,7 +4282,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Pre-Milei",
     "genero": "Masculino",
-    "norma_designacion": "[Decisión Administrativa 455/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/288002/20230609);;[Resolución 140/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328406/20250716);",
+    "norma_designacion": "[Decisión Administrativa 455/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/288002/20230609);;[Resolución 140/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328406/20250716);;[RESOL-2026-63-APN-AAIP](EX-2026-22321696- -APN-AAIP);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20287676787.0,
     "fecha_ingreso": "2023-01-01"
@@ -4578,18 +4578,18 @@
   {
     "organismo": "Jefatura de Gabinete de Ministros",
     "sub_organismo": null,
-    "apellido": null,
-    "nombre": null,
+    "apellido": "SORIA OLMEDO",
+    "nombre": "Hilva Karina",
     "cargo": "Coordinador/a",
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Desconocido",
-    "genero": "No informado",
-    "norma_designacion": null,
+    "jgm_al_ingreso": "Adorni",
+    "genero": "Femenino",
+    "norma_designacion": "[Resolución 12/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339922/20260326);",
     "sueldo_bruto_estimado_ars": 3200000,
-    "cuil": null,
-    "fecha_ingreso": null
+    "cuil": 27215886455.0,
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Jefatura de Gabinete de Ministros",
@@ -4610,18 +4610,18 @@
   {
     "organismo": "Jefatura de Gabinete de Ministros",
     "sub_organismo": null,
-    "apellido": null,
-    "nombre": null,
+    "apellido": "MESA",
+    "nombre": "Augusto Alfonso",
     "cargo": "Director/a",
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Desconocido",
-    "genero": "No informado",
-    "norma_designacion": null,
+    "jgm_al_ingreso": "Adorni",
+    "genero": "Masculino",
+    "norma_designacion": "[Resolución 11/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339921/20260326);",
     "sueldo_bruto_estimado_ars": 4500000,
-    "cuil": null,
-    "fecha_ingreso": null
+    "cuil": 20302939765.0,
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Jefatura de Gabinete de Ministros",
