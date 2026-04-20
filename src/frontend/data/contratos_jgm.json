@@ -1934,5 +1934,27 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410819/20260417",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL NORTE",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 2/2026",
+    "fecha_adjudicacion": "2026-04-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410872/20260420",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "comercial SERVICIOS INTEGRALES FOOD AND CATERING S.R.L. (",
+    "cuit": "30-69874219-0",
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0016-LPU25",
+    "fecha_adjudicacion": "2026-04-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410873/20260420",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
