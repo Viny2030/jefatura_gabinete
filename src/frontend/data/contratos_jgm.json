@@ -1956,5 +1956,38 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410873/20260420",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 26/2025",
+    "fecha_adjudicacion": "2026-04-21",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410967/20260421",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 43/2025",
+    "fecha_adjudicacion": "2026-04-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410968/20260421",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL Solicitudes de Provisin",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": null,
+    "fecha_adjudicacion": "2026-04-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410969/20260421",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
