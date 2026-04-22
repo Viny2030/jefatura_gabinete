@@ -3,7 +3,7 @@ name: Monitor Diario PEN
 on:
   schedule:
     - cron: '0 12 * * 1-5'  # 09:00 Argentina (UTC-3), lunes a viernes
-  workflow_dispatch:          # ejecución manual desde GitHub
+  workflow_dispatch:          # ejecuciÃ³n manual desde GitHub
 
 permissions:
   contents: write
@@ -14,13 +14,13 @@ jobs:
 
     steps:
 
-      # ── 1. Checkout ───────────────────────────────────────────────
+      # ââ 1. Checkout âââââââââââââââââââââââââââââââââââââââââââââââ
       - name: Checkout jefatura_gabinete1
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # ── 2. Checkout monitor_contratos_v2 como repo hermano ────────
+      # ââ 2. Checkout monitor_contratos_v2 como repo hermano ââââââââ
       - name: Checkout monitor_contratos_v2
         uses: actions/checkout@v4
         with:
@@ -29,24 +29,24 @@ jobs:
           path: monitor_contratos_v2
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── 3. Python ─────────────────────────────────────────────────
+      # ââ 3. Python âââââââââââââââââââââââââââââââââââââââââââââââââ
       - name: Configurar Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # ── 4. Dependencias ───────────────────────────────────────────
+      # ââ 4. Dependencias âââââââââââââââââââââââââââââââââââââââââââ
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
           pip install pandas requests beautifulsoup4 openpyxl lxml pdfminer.six holidays
 
-      # ── 5. Capturar fecha ─────────────────────────────────────────
+      # ââ 5. Capturar fecha âââââââââââââââââââââââââââââââââââââââââ
       - name: Capturar fecha
         id: fecha
         run: echo "fecha=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      # ── 6. Reclasificar reportes de monitor_contratos_v2 ─────────
+      # ââ 6. Reclasificar reportes de monitor_contratos_v2 âââââââââ
       - name: Reclasificar contratos PEN
         run: |
           python scripts/reclasificar_pen.py \
@@ -54,21 +54,21 @@ jobs:
             --todo
         continue-on-error: true
 
-      # ── 7. Actualizar nómina ──────────────────────────────────────
-      - name: Scraper nómina APN
+      # ââ 7. Actualizar nÃ³mina ââââââââââââââââââââââââââââââââââââââ
+      - name: Scraper nÃ³mina APN
         run: python scripts/scraper_nomina.py
         continue-on-error: true
 
-      # ── 8. Generar JSONs para dashboards ──────────────────────────
+      # ââ 8. Generar JSONs para dashboards ââââââââââââââââââââââââââ
       - name: Generar JSONs
         run: python scripts/generar_json.py
 
-      # ── 9. Motor de cruces CUIL vs CUIT ──────────────────────────
+      # ââ 9. Motor de cruces CUIL vs CUIT ââââââââââââââââââââââââââ
       - name: Cruces CUIL vs CUIT
         run: python scripts/cruzar_cuil_cuit.py
         continue-on-error: true
 
-      # ── 10. Commit y push ─────────────────────────────────────────
+      # ââ 10. Commit y push âââââââââââââââââââââââââââââââââââââââââ
       - name: Commit datos actualizados
         run: |
           git config --global user.name  'Robot Monitor PEN'
@@ -80,11 +80,20 @@ jobs:
           git diff --staged --quiet \
             && echo "Sin cambios nuevos" \
             && exit 0
-          git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} — datos actualizados"
+          git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} â datos actualizados"
           git push origin HEAD:main
 
-      # ── 11. Notificación éxito ────────────────────────────────────
-      - name: Notificar éxito
+      # ââ 11. Trigger Railway â guardar snapshot en PostgreSQL ââââââ
+      - name: Actualizar PostgreSQL en Railway
+        run: |
+          curl -s -X POST https://jefaturagabinete-production.up.railway.app/api/refresh \
+               -H "X-Refresh-Token: ${{ secrets.REFRESH_TOKEN }}" \
+               --max-time 120 | tee /tmp/refresh_result.json
+          cat /tmp/refresh_result.json
+        continue-on-error: true
+
+      # ââ 12. NotificaciÃ³n Ã©xito ââââââââââââââââââââââââââââââââââââ
+      - name: Notificar Ã©xito
         if: success()
         uses: dawidd6/action-send-mail@v3
         with:
@@ -95,13 +104,13 @@ jobs:
           password: ${{ secrets.MAIL_PASS }}
           to: viny01958@gmail.com
           from: Monitor PEN <${{ secrets.MAIL_USER }}>
-          subject: "✅ Monitor PEN OK — ${{ steps.fecha.outputs.fecha }}"
+          subject: "â Monitor PEN OK â ${{ steps.fecha.outputs.fecha }}"
           body: |
-            El pipeline diario del Monitor de Transparencia PEN se ejecutó correctamente.
+            El pipeline diario del Monitor de Transparencia PEN se ejecutÃ³ correctamente.
 
-            🔗 Ver run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            ð Ver run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-      # ── 12. Notificación fallo ────────────────────────────────────
+      # ââ 13. NotificaciÃ³n fallo ââââââââââââââââââââââââââââââââââââ
       - name: Notificar fallo
         if: failure()
         uses: dawidd6/action-send-mail@v3
@@ -113,13 +122,13 @@ jobs:
           password: ${{ secrets.MAIL_PASS }}
           to: viny01958@gmail.com
           from: Monitor PEN <${{ secrets.MAIL_USER }}>
-          subject: "❌ Monitor PEN FALLÓ — ${{ steps.fecha.outputs.fecha }}"
+          subject: "â Monitor PEN FALLÃ â ${{ steps.fecha.outputs.fecha }}"
           body: |
-            ⚠️ El pipeline diario falló y requiere revisión.
+            â ï¸ El pipeline diario fallÃ³ y requiere revisiÃ³n.
 
-            🔗 Ver logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            ð Ver logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
             Causas comunes:
             - monitor_contratos_v2 no tiene reportes nuevos
             - BORA / MapaDelEstado no respondieron
-            - Error en scripts de reclasificación
+            - Error en scripts de reclasificaciÃ³n
