@@ -2022,5 +2022,27 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411299/20260423",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL CRDOBA Contrataciones  Varias",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": null,
+    "fecha_adjudicacion": "2026-04-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411395/20260427",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - GENDARMERA NACIONAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 7/2026",
+    "fecha_adjudicacion": "2026-04-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411394/20260427",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
