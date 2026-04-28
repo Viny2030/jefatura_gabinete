@@ -2044,5 +2044,71 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411394/20260427",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CUYO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71620292-1",
+    "tipo_contratacion": "Licitación Pública 02/26",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": 40880000.0,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411455/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
+    "proveedor": "ZELARAYAN RICARDO JOSE",
+    "cuit": "20-33978502-4",
+    "tipo_contratacion": "Contratación Directa 02/26",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": 2185218.45,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411456/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 23/2025",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411457/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 28/2025",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411458/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
+    "proveedor": "FAVACARD S.A",
+    "cuit": "30-60499477-9",
+    "tipo_contratacion": "Licitación Pública 4/2026",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": 0.0,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411459/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 6/2026",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411460/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
