@@ -2110,5 +2110,27 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411460/20260428",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública INM 6053",
+    "fecha_adjudicacion": "2026-04-29",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411490/20260429",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL NEUQUN",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30717438643.0",
+    "tipo_contratacion": "Licitación Pública 02/2026",
+    "fecha_adjudicacion": "2026-04-29",
+    "monto_adjudicado": 72300000.0,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411491/20260429",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
