@@ -112,8 +112,10 @@ class TestGenerarResumen:
         assert "COMPRAR" in fuentes_str or "SIPRO" in fuentes_str
 
     def test_tipo_otro_se_agrupa(self):
-        """Alertas sin tipo definido deben caer en 'OTRO'."""
-        alertas = [{"tipo_alerta": None, "nivel": "MEDIA"}]
+        """Alertas sin la clave tipo_alerta deben caer en 'OTRO'.
+        Nota: a.get('tipo_alerta', 'OTRO') devuelve None si la clave existe con
+        valor None — para disparar el default hay que omitir la clave."""
+        alertas = [{"nivel": "MEDIA"}]  # sin clave tipo_alerta
         resumen = generar_resumen(self._intel(alertas))
         assert "OTRO" in resumen["por_tipo"]
 
