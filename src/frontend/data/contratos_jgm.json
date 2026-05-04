@@ -2198,5 +2198,104 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411566/20260430",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública INM 6038",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411616/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial  Guillermo  Enrique  Hermoso",
+    "cuit": "20-24777035-7",
+    "tipo_contratacion": "Licitación Pública 132/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411617/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUPO ALIMENTOS SA",
+    "cuit": "30-71596882-3",
+    "tipo_contratacion": "Licitación Pública 133/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411618/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUPO ALIMENTOS SA",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 139/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411619/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial  FERNANDO  ANDRES  RIOS",
+    "cuit": "20-31475754-9",
+    "tipo_contratacion": "Licitación Pública 140/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411620/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial Guillermo Enrique Hermoso",
+    "cuit": "20-24777035-7",
+    "tipo_contratacion": "Licitación Pública 141/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411621/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial PIDA PROVISION INTEGRAL DE ALIMENTOS SA",
+    "cuit": "30-71515003-0",
+    "tipo_contratacion": "Licitación Pública 142/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411622/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 31-0002-LPU21",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411623/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 31-0053-LPU24",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411624/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]

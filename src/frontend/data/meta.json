@@ -1,10 +1,10 @@
 {
-  "generado": "2026-05-01 13:24",
-  "total_contratos": 200,
+  "generado": "2026-05-04 14:07",
+  "total_contratos": 209,
   "total_personal": 6138,
   "ramas": {
     "jgm": {
-      "contratos": 200,
+      "contratos": 209,
       "personal": 611,
       "monto_total": 292566209.87
     },
