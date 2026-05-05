@@ -71,6 +71,7 @@ jobs:
             && echo "Sin cambios nuevos" \
             && exit 0
           git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} - datos actualizados"
+          git pull --rebase origin main
           git push origin HEAD:main
 
       - name: Actualizar PostgreSQL en Railway
