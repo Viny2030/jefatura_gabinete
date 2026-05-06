@@ -22,6 +22,50 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - ARMADA ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 431/2025",
+    "fecha_adjudicacion": "2026-02-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407960/20260223",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0029-LPU25",
+    "fecha_adjudicacion": "2026-02-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407961/20260223",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "33-57391612-9",
+    "tipo_contratacion": "Licitación Pública PROCESO COMPRAR  63-0063-LPU25",
+    "fecha_adjudicacion": "2026-02-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407962/20260223",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 10/2025",
+    "fecha_adjudicacion": "2026-02-24",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408002/20260224",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CUYO",
     "proveedor": "ELEVADORES  EXON  S.A.S",
     "cuit": null,
@@ -29,6 +73,72 @@
     "fecha_adjudicacion": "2026-02-24",
     "monto_adjudicado": 1176000.0,
     "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408003/20260224",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 39/2025",
+    "fecha_adjudicacion": "2026-02-24",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408004/20260224",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 40/2025",
+    "fecha_adjudicacion": "2026-02-24",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408005/20260224",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA Contrataciones Directas",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": null,
+    "fecha_adjudicacion": "2026-02-24",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408006/20260224",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR  63-0035-LPU25",
+    "fecha_adjudicacion": "2026-02-24",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408007/20260224",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública INM 6012",
+    "fecha_adjudicacion": "2026-02-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408073/20260226",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
+    "fecha_adjudicacion": "2026-02-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408074/20260226",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -44,6 +154,72 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 59/2025",
+    "fecha_adjudicacion": "2026-02-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408076/20260226",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - GENDARMERA NACIONAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-62557427-3",
+    "tipo_contratacion": "Licitación Pública 61/2025",
+    "fecha_adjudicacion": "2026-02-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408077/20260226",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0031-LPU25",
+    "fecha_adjudicacion": "2026-02-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408078/20260226",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0045-LPU25",
+    "fecha_adjudicacion": "2026-02-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408079/20260226",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 01/26",
+    "fecha_adjudicacion": "2026-02-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
+    "fecha_adjudicacion": "2026-02-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
     "proveedor": "ETAP SRL",
     "cuit": "30-64024633-9",
@@ -99,6 +275,28 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 01/26",
+    "fecha_adjudicacion": "2026-02-28",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
+    "fecha_adjudicacion": "2026-02-28",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
     "proveedor": "ETAP SRL",
     "cuit": "30-64024633-9",
@@ -154,6 +352,28 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 01/26",
+    "fecha_adjudicacion": "2026-03-01",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
+    "fecha_adjudicacion": "2026-03-01",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
     "proveedor": "ETAP SRL",
     "cuit": "30-64024633-9",
@@ -205,6 +425,17 @@
     "fecha_adjudicacion": "2026-03-01",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408147/20260227",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
+    "fecha_adjudicacion": "2026-03-02",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408190/20260302",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -220,6 +451,83 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 59/2025",
+    "fecha_adjudicacion": "2026-03-02",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408192/20260302",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública INM 6023",
+    "fecha_adjudicacion": "2026-03-03",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408195/20260303",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 0000001/2026",
+    "fecha_adjudicacion": "2026-03-03",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408196/20260303",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MENDOZA",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": "20-17986257-4",
+    "tipo_contratacion": "Contratación Directa 1/2026",
+    "fecha_adjudicacion": "2026-03-03",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408197/20260303",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - COMISIN NACIONAL DE REGULACIN DEL TRANSPORTE",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 4/2025",
+    "fecha_adjudicacion": "2026-03-03",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408198/20260303",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR  63-0044-LPU25",
+    "fecha_adjudicacion": "2026-03-03",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408199/20260303",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL Licitaciones Pblicas",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": null,
+    "fecha_adjudicacion": "2026-03-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408337/20260304",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
     "proveedor": "OLEIROS S.A. (",
     "cuit": "30-71543213-3",
@@ -227,6 +535,39 @@
     "fecha_adjudicacion": "2026-03-04",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408338/20260304",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0037-LPU25",
+    "fecha_adjudicacion": "2026-03-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408339/20260304",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": "20-33431651-4",
+    "tipo_contratacion": "Contratación Directa Modalidad Virtual  13/2025",
+    "fecha_adjudicacion": "2026-03-05",
+    "monto_adjudicado": 1131000.0,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408405/20260305",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": "30-69723276-8",
+    "tipo_contratacion": "Contratación Directa Modalidad Virtual 07/2025",
+    "fecha_adjudicacion": "2026-03-05",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408406/20260305",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -260,6 +601,28 @@
     "fecha_adjudicacion": "2026-03-05",
     "monto_adjudicado": 358000.0,
     "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408409/20260305",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": "20-37091579-8",
+    "tipo_contratacion": "Contratación Directa Modalidad Virtual 11/2025",
+    "fecha_adjudicacion": "2026-03-05",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408410/20260305",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": "30-71593195-4",
+    "tipo_contratacion": "Contratación Directa Modalidad Virtual 12/2025",
+    "fecha_adjudicacion": "2026-03-05",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408411/20260305",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -309,6 +672,17 @@
   },
   {
     "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": "30-71592624-1",
+    "tipo_contratacion": "Contratación Directa Modalidad Virtual 18/2025",
+    "fecha_adjudicacion": "2026-03-05",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408416/20260305",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
     "proveedor": "LOBOV CIA",
     "cuit": "30-54167722-0",
     "tipo_contratacion": "Contratación Directa Modalidad Virtual 19/2025",
@@ -330,6 +704,83 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
+    "fecha_adjudicacion": "2026-03-06",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
+    "fecha_adjudicacion": "2026-03-07",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
+    "fecha_adjudicacion": "2026-03-08",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-51989149-9",
+    "tipo_contratacion": "Licitación Pública 21/2025",
+    "fecha_adjudicacion": "2026-03-09",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408510/20260309",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 31-0020-LPU25",
+    "fecha_adjudicacion": "2026-03-09",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408511/20260309",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-61029860-1",
+    "tipo_contratacion": "Licitación Pública 80/2025",
+    "fecha_adjudicacion": "2026-03-09",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408512/20260309",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
+    "fecha_adjudicacion": "2026-03-09",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408513/20260309",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
     "proveedor": "SOLUCIONES  INTEGRALES  APLICADAS  SRL",
     "cuit": "30709196991",
@@ -337,6 +788,28 @@
     "fecha_adjudicacion": "2026-03-10",
     "monto_adjudicado": 988450.0,
     "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408554/20260310",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71048086-5",
+    "tipo_contratacion": "Licitación Pública 12/2025",
+    "fecha_adjudicacion": "2026-03-10",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408555/20260310",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-66362548-5",
+    "tipo_contratacion": "Licitación Pública 69/2025",
+    "fecha_adjudicacion": "2026-03-10",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408556/20260310",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -353,12 +826,122 @@
   },
   {
     "organismo": "JGM - AGENCIA DE ADMINISTRACIN DE BIENES DEL ESTADO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "20-39914546-6",
+    "tipo_contratacion": "Subasta Pública 100/2025",
+    "fecha_adjudicacion": "2026-03-10",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408558/20260310",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE ADMINISTRACIN DE BIENES DEL ESTADO",
     "proveedor": "CIUDAD G3 SOCIEDAD ANÓNIMA (",
     "cuit": "30-71826383-9",
     "tipo_contratacion": "Subasta Pública 392-0090-SPU25",
     "fecha_adjudicacion": "2026-03-10",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408559/20260310",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 21/2025",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408574/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA RO COLORADO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71046390-1",
+    "tipo_contratacion": "Licitación Pública 23/25",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408575/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 26/2025",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408576/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 63/2025",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408577/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-60407526-9",
+    "tipo_contratacion": "Licitación Pública 66/2025",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408578/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-66362548-5",
+    "tipo_contratacion": "Licitación Pública 74/2025",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408579/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 83/2025",
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408584/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO Listado rdenes de Compra Emitidas en el Mes de Febrero de 2026",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": null,
+    "fecha_adjudicacion": "2026-03-11",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408585/20260311",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0038-LPU25",
+    "fecha_adjudicacion": "2026-03-12",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408665/20260312",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -484,864 +1067,6 @@
     "gestion": "Milei"
   },
   {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "CEMYC S.R.L",
-    "cuit": "30-55598503-3",
-    "tipo_contratacion": "Licitación Pública 5/2026",
-    "fecha_adjudicacion": "2026-03-18",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408974/20260318",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GONZALO PAMPURI",
-    "cuit": "20-37247479-4",
-    "tipo_contratacion": "Licitación Pública 1232/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409092/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FRATELLI HERMANOS SRL",
-    "cuit": "30-71850768-1",
-    "tipo_contratacion": "Licitación Pública 1234/2025",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409093/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial CIUDAD TANQUE S.R.L",
-    "cuit": "30-71571501-1",
-    "tipo_contratacion": "Licitación Pública 32/2026",
-    "fecha_adjudicacion": "2026-03-19",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409094/20260319",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUB S.A",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 1182/2025",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 1235/2025",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
-    "cuit": "20-36599700-5",
-    "tipo_contratacion": "Licitación Pública 1240/2026",
-    "fecha_adjudicacion": "2026-03-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUB S.A",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 1182/2025",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 1235/2025",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
-    "cuit": "20-36599700-5",
-    "tipo_contratacion": "Licitación Pública 1240/2026",
-    "fecha_adjudicacion": "2026-03-21",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUB S.A",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 1182/2025",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 1235/2025",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
-    "cuit": "20-36599700-5",
-    "tipo_contratacion": "Licitación Pública 1240/2026",
-    "fecha_adjudicacion": "2026-03-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE CRDOBA - SECRETARA DE PLANEAMIENTO FSICO",
-    "proveedor": "ESCALA  CONSTRUCCIONES  S.R.L",
-    "cuit": "33-68096045-9",
-    "tipo_contratacion": "Licitación Pública 14/2026",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409240/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DEL OESTE",
-    "proveedor": "ARQUIMEDES  CONSTRUCCIONES  S.A.  (",
-    "cuit": "30-71456753-1",
-    "tipo_contratacion": "Contratación Directa por Urgencia 01/2026",
-    "fecha_adjudicacion": "2026-03-25",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409245/20260325",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
-    "proveedor": "CORPORACIÓN COSTA SUR SA",
-    "cuit": "30-71244662-1",
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409371/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
-    "proveedor": "AGROPECUARIA DON MARCELINO SRL",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 02/26",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409372/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial FERNANDO ANDRES RIOS",
-    "cuit": "30-71081955-2",
-    "tipo_contratacion": "Licitación Pública 1230/2025",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409373/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial SEISAN BA S.A",
-    "cuit": "30-71703506-9",
-    "tipo_contratacion": "Licitación Pública 1234/2025",
-    "fecha_adjudicacion": "2026-03-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409375/20260327",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial ROSA MARIA LEONOR POLLERO",
-    "cuit": "30-71872914-5",
-    "tipo_contratacion": "Licitación Pública 1244/2026",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409471/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
-    "proveedor": "GRUB S. A. (",
-    "cuit": "30-71464746-2",
-    "tipo_contratacion": "Licitación Pública 33/2025",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409473/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
-    "proveedor": "SITUS S.A",
-    "cuit": "30-70927224-8",
-    "tipo_contratacion": "Licitación Pública 34/2025",
-    "fecha_adjudicacion": "2026-03-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409474/20260330",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO DE INVESTIGACIONES CIENTFICAS Y TCNICAS PARA LA DEFENSA",
-    "proveedor": "GASTRONOM S.A (",
-    "cuit": "33-70924676-9",
-    "tipo_contratacion": "Licitación Pública 36-0003-LPU25",
-    "fecha_adjudicacion": "2026-03-31",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409558/20260331",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO DE INVESTIGACIONES CIENTFICAS Y TCNICAS PARA LA DEFENSA",
-    "proveedor": "GASTRONOM S.A (",
-    "cuit": "33-70924676-9",
-    "tipo_contratacion": "Licitación Pública 36-0003-LPU25",
-    "fecha_adjudicacion": "2026-04-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409703/20260401",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL POSADAS",
-    "proveedor": "DRIPLAN S.A",
-    "cuit": "30702227751",
-    "tipo_contratacion": "Contratación Directa 03/26",
-    "fecha_adjudicacion": "2026-04-10",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410309/20260410",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
-    "proveedor": "FRANCO EMANUEL ROSSO",
-    "cuit": "23-31368727-9",
-    "tipo_contratacion": "Contratación Directa 02/2026",
-    "fecha_adjudicacion": "2026-04-14",
-    "monto_adjudicado": 29653415.48,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410428/20260414",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "comercial SERVICIOS INTEGRALES FOOD AND CATERING S.R.L. (",
-    "cuit": "30-69874219-0",
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0016-LPU25",
-    "fecha_adjudicacion": "2026-04-20",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410873/20260420",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "comercial STATE GRID ARGENTINA S.A (",
-    "cuit": "30-71692181-2",
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0025-LPU25",
-    "fecha_adjudicacion": "2026-04-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411299/20260423",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
-    "proveedor": "ZELARAYAN RICARDO JOSE",
-    "cuit": "20-33978502-4",
-    "tipo_contratacion": "Contratación Directa 02/26",
-    "fecha_adjudicacion": "2026-04-28",
-    "monto_adjudicado": 2185218.45,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411456/20260428",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
-    "proveedor": "FAVACARD S.A",
-    "cuit": "30-60499477-9",
-    "tipo_contratacion": "Licitación Pública 4/2026",
-    "fecha_adjudicacion": "2026-04-28",
-    "monto_adjudicado": 0.0,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411459/20260428",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MENDOZA",
-    "proveedor": "de 2026. Adjudicatarios: Renglón N° 1: PARFET S.A.S",
-    "cuit": "30-71726918-3",
-    "tipo_contratacion": "Licitación Pública 5/2026",
-    "fecha_adjudicacion": "2026-04-30",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411564/20260430",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial  Guillermo  Enrique  Hermoso",
-    "cuit": "20-24777035-7",
-    "tipo_contratacion": "Licitación Pública 132/2026",
-    "fecha_adjudicacion": "2026-05-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411617/20260504",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial GRUPO ALIMENTOS SA",
-    "cuit": "30-71596882-3",
-    "tipo_contratacion": "Licitación Pública 133/2026",
-    "fecha_adjudicacion": "2026-05-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411618/20260504",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial  FERNANDO  ANDRES  RIOS",
-    "cuit": "20-31475754-9",
-    "tipo_contratacion": "Licitación Pública 140/2026",
-    "fecha_adjudicacion": "2026-05-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411620/20260504",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial Guillermo Enrique Hermoso",
-    "cuit": "20-24777035-7",
-    "tipo_contratacion": "Licitación Pública 141/2026",
-    "fecha_adjudicacion": "2026-05-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411621/20260504",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EJRCITO ARGENTINO",
-    "proveedor": "comercial PIDA PROVISION INTEGRAL DE ALIMENTOS SA",
-    "cuit": "30-71515003-0",
-    "tipo_contratacion": "Licitación Pública 142/2026",
-    "fecha_adjudicacion": "2026-05-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411622/20260504",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 10/2025",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407958/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ARMADA ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 431/2025",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407960/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0029-LPU25",
-    "fecha_adjudicacion": "2026-02-23",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2407961/20260223",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 10/2025",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408002/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Privada 39/2025",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408004/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA Contrataciones Directas",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408006/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR  63-0035-LPU25",
-    "fecha_adjudicacion": "2026-02-24",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408007/20260224",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública INM 6012",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408073/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408074/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 59/2025",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408076/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - GENDARMERA NACIONAL ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-62557427-3",
-    "tipo_contratacion": "Licitación Pública 61/2025",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408077/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0031-LPU25",
-    "fecha_adjudicacion": "2026-02-26",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408078/20260226",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-02-27",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-02-28",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 01/26",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408141/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-03-01",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408142/20260227",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública (Modo IV) 11/2021",
-    "fecha_adjudicacion": "2026-03-02",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408190/20260302",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 59/2025",
-    "fecha_adjudicacion": "2026-03-02",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408192/20260302",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública INM 6023",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408195/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 0000001/2026",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408196/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MENDOZA",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "20-17986257-4",
-    "tipo_contratacion": "Contratación Directa 1/2026",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408197/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE REGULACIN DEL TRANSPORTE",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 4/2025",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408198/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR  63-0044-LPU25",
-    "fecha_adjudicacion": "2026-03-03",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408199/20260303",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL Licitaciones Pblicas",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-03-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408337/20260304",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0037-LPU25",
-    "fecha_adjudicacion": "2026-03-04",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408339/20260304",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA FAMAILL",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": "20-33431651-4",
-    "tipo_contratacion": "Contratación Directa Modalidad Virtual  13/2025",
-    "fecha_adjudicacion": "2026-03-05",
-    "monto_adjudicado": 1131000.0,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408405/20260305",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-06",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-07",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0068-LPU24",
-    "fecha_adjudicacion": "2026-03-08",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408474/20260306",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-51989149-9",
-    "tipo_contratacion": "Licitación Pública 21/2025",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408510/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 31-0020-LPU25",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408511/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-61029860-1",
-    "tipo_contratacion": "Licitación Pública 80/2025",
-    "fecha_adjudicacion": "2026-03-09",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408512/20260309",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-71048086-5",
-    "tipo_contratacion": "Licitación Pública 12/2025",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408555/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-66362548-5",
-    "tipo_contratacion": "Licitación Pública 69/2025",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408556/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE ADMINISTRACIN DE BIENES DEL ESTADO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "20-39914546-6",
-    "tipo_contratacion": "Subasta Pública 100/2025",
-    "fecha_adjudicacion": "2026-03-10",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408558/20260310",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
-    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
-    "cuit": null,
-    "tipo_contratacion": "Contratación Directa 21/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408574/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA RO COLORADO",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": "30-71046390-1",
-    "tipo_contratacion": "Licitación Pública 23/25",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408575/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública 63/2025",
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408577/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO Listado rdenes de Compra Emitidas en el Mes de Febrero de 2026",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": null,
-    "fecha_adjudicacion": "2026-03-11",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408585/20260311",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
-    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
-    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
-    "cuit": null,
-    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0038-LPU25",
-    "fecha_adjudicacion": "2026-03-12",
-    "monto_adjudicado": null,
-    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408665/20260312",
-    "ejercicio": 2026,
-    "gestion": "Milei"
-  },
-  {
     "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": "30-64106337-8",
@@ -1349,6 +1074,17 @@
     "fecha_adjudicacion": "2026-03-16",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408860/20260316",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 86/2025",
+    "fecha_adjudicacion": "2026-03-16",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408861/20260316",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1397,6 +1133,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "23-20427139-9",
+    "tipo_contratacion": "Licitación Pública 1233/2025",
+    "fecha_adjudicacion": "2026-03-18",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408971/20260318",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - POLICA FEDERAL ARGENTINA",
     "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
     "cuit": null,
@@ -1404,6 +1151,61 @@
     "fecha_adjudicacion": "2026-03-18",
     "monto_adjudicado": null,
     "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408972/20260318",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 27/2025",
+    "fecha_adjudicacion": "2026-03-18",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408973/20260318",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
+    "proveedor": "CEMYC S.R.L",
+    "cuit": "30-55598503-3",
+    "tipo_contratacion": "Licitación Pública 5/2026",
+    "fecha_adjudicacion": "2026-03-18",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408974/20260318",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GONZALO PAMPURI",
+    "cuit": "20-37247479-4",
+    "tipo_contratacion": "Licitación Pública 1232/2025",
+    "fecha_adjudicacion": "2026-03-19",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409092/20260319",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial FRATELLI HERMANOS SRL",
+    "cuit": "30-71850768-1",
+    "tipo_contratacion": "Licitación Pública 1234/2025",
+    "fecha_adjudicacion": "2026-03-19",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409093/20260319",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial CIUDAD TANQUE S.R.L",
+    "cuit": "30-71571501-1",
+    "tipo_contratacion": "Licitación Pública 32/2026",
+    "fecha_adjudicacion": "2026-03-19",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409094/20260319",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1419,6 +1221,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - ARMADA ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 541/2025",
+    "fecha_adjudicacion": "2026-03-19",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409096/20260319",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": "30-71164320-2",
@@ -1426,6 +1239,39 @@
     "fecha_adjudicacion": "2026-03-19",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409097/20260319",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUB S.A",
+    "cuit": "30-71464746-2",
+    "tipo_contratacion": "Licitación Pública 1182/2025",
+    "fecha_adjudicacion": "2026-03-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial FERNANDO ANDRES RIOS",
+    "cuit": "20-31475754-9",
+    "tipo_contratacion": "Licitación Pública 1235/2025",
+    "fecha_adjudicacion": "2026-03-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
+    "cuit": "20-36599700-5",
+    "tipo_contratacion": "Licitación Pública 1240/2026",
+    "fecha_adjudicacion": "2026-03-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1444,6 +1290,50 @@
     "organismo": "JGM - ARMADA ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
+    "tipo_contratacion": "Licitación Pública 541/2025",
+    "fecha_adjudicacion": "2026-03-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409109/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUB S.A",
+    "cuit": "30-71464746-2",
+    "tipo_contratacion": "Licitación Pública 1182/2025",
+    "fecha_adjudicacion": "2026-03-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial FERNANDO ANDRES RIOS",
+    "cuit": "20-31475754-9",
+    "tipo_contratacion": "Licitación Pública 1235/2025",
+    "fecha_adjudicacion": "2026-03-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
+    "cuit": "20-36599700-5",
+    "tipo_contratacion": "Licitación Pública 1240/2026",
+    "fecha_adjudicacion": "2026-03-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ARMADA ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
     "tipo_contratacion": "Licitación Pública 524/2025",
     "fecha_adjudicacion": "2026-03-21",
     "monto_adjudicado": null,
@@ -1455,10 +1345,76 @@
     "organismo": "JGM - ARMADA ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
+    "tipo_contratacion": "Licitación Pública 541/2025",
+    "fecha_adjudicacion": "2026-03-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409109/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUB S.A",
+    "cuit": "30-71464746-2",
+    "tipo_contratacion": "Licitación Pública 1182/2025",
+    "fecha_adjudicacion": "2026-03-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409105/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial FERNANDO ANDRES RIOS",
+    "cuit": "20-31475754-9",
+    "tipo_contratacion": "Licitación Pública 1235/2025",
+    "fecha_adjudicacion": "2026-03-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409106/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial ESTUDIO INTEGRAL SUCLUPE CONSTRUCCIONES S.A.S",
+    "cuit": "20-36599700-5",
+    "tipo_contratacion": "Licitación Pública 1240/2026",
+    "fecha_adjudicacion": "2026-03-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409107/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ARMADA ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
     "tipo_contratacion": "Licitación Pública 524/2025",
     "fecha_adjudicacion": "2026-03-23",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409108/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ARMADA ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 541/2025",
+    "fecha_adjudicacion": "2026-03-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409109/20260320",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DE CRDOBA - SECRETARA DE PLANEAMIENTO FSICO",
+    "proveedor": "ESCALA  CONSTRUCCIONES  S.R.L",
+    "cuit": "33-68096045-9",
+    "tipo_contratacion": "Licitación Pública 14/2026",
+    "fecha_adjudicacion": "2026-03-25",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409240/20260325",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1481,6 +1437,28 @@
     "fecha_adjudicacion": "2026-03-25",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409243/20260325",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 1243/2026",
+    "fecha_adjudicacion": "2026-03-25",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409244/20260325",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DEL OESTE",
+    "proveedor": "ARQUIMEDES  CONSTRUCCIONES  S.A.  (",
+    "cuit": "30-71456753-1",
+    "tipo_contratacion": "Contratación Directa por Urgencia 01/2026",
+    "fecha_adjudicacion": "2026-03-25",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409245/20260325",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1518,6 +1496,39 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA AUSTRAL",
+    "proveedor": "CORPORACIÓN COSTA SUR SA",
+    "cuit": "30-71244662-1",
+    "tipo_contratacion": "Licitación Pública 01/26",
+    "fecha_adjudicacion": "2026-03-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409371/20260327",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
+    "proveedor": "AGROPECUARIA DON MARCELINO SRL",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 02/26",
+    "fecha_adjudicacion": "2026-03-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409372/20260327",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial FERNANDO ANDRES RIOS",
+    "cuit": "30-71081955-2",
+    "tipo_contratacion": "Licitación Pública 1230/2025",
+    "fecha_adjudicacion": "2026-03-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409373/20260327",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - EJRCITO ARGENTINO",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1529,6 +1540,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial SEISAN BA S.A",
+    "cuit": "30-71703506-9",
+    "tipo_contratacion": "Licitación Pública 1234/2025",
+    "fecha_adjudicacion": "2026-03-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409375/20260327",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": "30-71512526-5",
@@ -1536,6 +1558,17 @@
     "fecha_adjudicacion": "2026-03-27",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409376/20260327",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "27252357918",
+    "tipo_contratacion": "Licitación Pública 3/2026",
+    "fecha_adjudicacion": "2026-03-27",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409377/20260327",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1584,6 +1617,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial ROSA MARIA LEONOR POLLERO",
+    "cuit": "30-71872914-5",
+    "tipo_contratacion": "Licitación Pública 1244/2026",
+    "fecha_adjudicacion": "2026-03-30",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409471/20260330",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - ARMADA ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1595,6 +1639,28 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - COMISIN NACIONAL DE ENERGA ATMICA",
+    "proveedor": "GRUB S. A. (",
+    "cuit": "30-71464746-2",
+    "tipo_contratacion": "Licitación Pública 33/2025",
+    "fecha_adjudicacion": "2026-03-30",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409473/20260330",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
+    "proveedor": "SITUS S.A",
+    "cuit": "30-70927224-8",
+    "tipo_contratacion": "Licitación Pública 34/2025",
+    "fecha_adjudicacion": "2026-03-30",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409474/20260330",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - POLICA FEDERAL ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1602,6 +1668,17 @@
     "fecha_adjudicacion": "2026-03-31",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409557/20260331",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO DE INVESTIGACIONES CIENTFICAS Y TCNICAS PARA LA DEFENSA",
+    "proveedor": "GASTRONOM S.A (",
+    "cuit": "33-70924676-9",
+    "tipo_contratacion": "Licitación Pública 36-0003-LPU25",
+    "fecha_adjudicacion": "2026-03-31",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409558/20260331",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1639,6 +1716,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - INSTITUTO DE INVESTIGACIONES CIENTFICAS Y TCNICAS PARA LA DEFENSA",
+    "proveedor": "GASTRONOM S.A (",
+    "cuit": "33-70924676-9",
+    "tipo_contratacion": "Licitación Pública 36-0003-LPU25",
+    "fecha_adjudicacion": "2026-04-01",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409703/20260401",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1657,6 +1745,17 @@
     "fecha_adjudicacion": "2026-04-06",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409764/20260406",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE ESTABLECIMIENTOS DE SALUD",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 60/2025",
+    "fecha_adjudicacion": "2026-04-06",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2409765/20260406",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1716,6 +1815,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL POSADAS",
+    "proveedor": "DRIPLAN S.A",
+    "cuit": "30702227751",
+    "tipo_contratacion": "Contratación Directa 03/26",
+    "fecha_adjudicacion": "2026-04-10",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410309/20260410",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
     "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
     "cuit": null,
@@ -1760,6 +1870,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
+    "proveedor": "FRANCO EMANUEL ROSSO",
+    "cuit": "23-31368727-9",
+    "tipo_contratacion": "Contratación Directa 02/2026",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": 29653415.48,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410428/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - POLICA FEDERAL ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1767,6 +1888,17 @@
     "fecha_adjudicacion": "2026-04-14",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410429/20260414",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 45/2025",
+    "fecha_adjudicacion": "2026-04-14",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410365/20260414",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1815,6 +1947,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "comercial SERVICIOS INTEGRALES FOOD AND CATERING S.R.L. (",
+    "cuit": "30-69874219-0",
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0016-LPU25",
+    "fecha_adjudicacion": "2026-04-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410873/20260420",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - POLICA FEDERAL ARGENTINA",
     "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
     "cuit": null,
@@ -1822,6 +1965,17 @@
     "fecha_adjudicacion": "2026-04-21",
     "monto_adjudicado": null,
     "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410967/20260421",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 43/2025",
+    "fecha_adjudicacion": "2026-04-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2410968/20260421",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1859,6 +2013,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "comercial STATE GRID ARGENTINA S.A (",
+    "cuit": "30-71692181-2",
+    "tipo_contratacion": "Licitación Pública de Etapa Única Nacional 31-0025-LPU25",
+    "fecha_adjudicacion": "2026-04-23",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411299/20260423",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL CRDOBA Contrataciones  Varias",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1892,6 +2057,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
+    "proveedor": "ZELARAYAN RICARDO JOSE",
+    "cuit": "20-33978502-4",
+    "tipo_contratacion": "Contratación Directa 02/26",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": 2185218.45,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411456/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - POLICA FEDERAL ARGENTINA",
     "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
     "cuit": null,
@@ -1899,6 +2075,39 @@
     "fecha_adjudicacion": "2026-04-28",
     "monto_adjudicado": null,
     "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411457/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 28/2025",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411458/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MAR DEL PLATA",
+    "proveedor": "FAVACARD S.A",
+    "cuit": "30-60499477-9",
+    "tipo_contratacion": "Licitación Pública 4/2026",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": 0.0,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411459/20260428",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - POLICA FEDERAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Privada 6/2026",
+    "fecha_adjudicacion": "2026-04-28",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411460/20260428",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1936,6 +2145,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 31-0022-LPU19",
+    "fecha_adjudicacion": "2026-04-30",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411562/20260430",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA RO COLORADO",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": "30-71046390-1",
@@ -1943,6 +2163,17 @@
     "fecha_adjudicacion": "2026-04-30",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411563/20260430",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL MENDOZA",
+    "proveedor": "de 2026. Adjudicatarios: Renglón N° 1: PARFET S.A.S",
+    "cuit": "30-71726918-3",
+    "tipo_contratacion": "Licitación Pública 5/2026",
+    "fecha_adjudicacion": "2026-04-30",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411564/20260430",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1958,6 +2189,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - JEFATURA DE GABINETE DE MINISTROS",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública Nacional 06/2024",
+    "fecha_adjudicacion": "2026-04-30",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411566/20260430",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1965,6 +2207,72 @@
     "fecha_adjudicacion": "2026-05-04",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411616/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial  Guillermo  Enrique  Hermoso",
+    "cuit": "20-24777035-7",
+    "tipo_contratacion": "Licitación Pública 132/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411617/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUPO ALIMENTOS SA",
+    "cuit": "30-71596882-3",
+    "tipo_contratacion": "Licitación Pública 133/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411618/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial GRUPO ALIMENTOS SA",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 139/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411619/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial  FERNANDO  ANDRES  RIOS",
+    "cuit": "20-31475754-9",
+    "tipo_contratacion": "Licitación Pública 140/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411620/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial Guillermo Enrique Hermoso",
+    "cuit": "20-24777035-7",
+    "tipo_contratacion": "Licitación Pública 141/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411621/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "comercial PIDA PROVISION INTEGRAL DE ALIMENTOS SA",
+    "cuit": "30-71515003-0",
+    "tipo_contratacion": "Licitación Pública 142/2026",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411622/20260504",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -1980,6 +2288,17 @@
     "gestion": "Milei"
   },
   {
+    "organismo": "JGM - SERVICIO PENITENCIARIO FEDERAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 31-0053-LPU24",
+    "fecha_adjudicacion": "2026-05-04",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411624/20260504",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
     "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
     "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
     "cuit": null,
@@ -1987,6 +2306,17 @@
     "fecha_adjudicacion": "2026-05-05",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411642/20260505",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - BANCO DE LA NACIN ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública INM 6055",
+    "fecha_adjudicacion": "2026-05-05",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411643/20260505",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -2020,6 +2350,17 @@
     "fecha_adjudicacion": "2026-05-05",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411646/20260505",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CENTRAL",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 04/2026",
+    "fecha_adjudicacion": "2026-05-05",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411647/20260505",
     "ejercicio": 2026,
     "gestion": "Milei"
   },
@@ -2064,6 +2405,50 @@
     "fecha_adjudicacion": "2026-05-05",
     "monto_adjudicado": null,
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411651/20260505",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - NUCLEOELCTRICA ARGENTINA S.A.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación  Pública",
+    "fecha_adjudicacion": "2026-05-06",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411717/20260506",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 0320/2026",
+    "fecha_adjudicacion": "2026-05-06",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411718/20260506",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - GENDARMERA NACIONAL ARGENTINA",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 55/2025",
+    "fecha_adjudicacion": "2026-05-06",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411719/20260506",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO Listado rdenes de Compra Abril 2026",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": null,
+    "fecha_adjudicacion": "2026-05-06",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2411720/20260506",
     "ejercicio": 2026,
     "gestion": "Milei"
   }
