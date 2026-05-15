@@ -2913,5 +2913,93 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412062/20260514",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - INSTITUTO NACIONAL DE TECNOLOGA AGROPECUARIA - ESTACIN EXPERIMENTAL AGROPECUARIA SANTIAGO DEL ESTERO",
+    "proveedor": "POLICA  DE  LA  PROV  DE  SGO  DEL  ESTERO",
+    "cuit": "33-71602778-9",
+    "tipo_contratacion": "Contratación Directa 2/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412115/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71515003-0",
+    "tipo_contratacion": "Licitación Pública 224/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412116/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71434715-9",
+    "tipo_contratacion": "Licitación Pública 227/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412117/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71515003-0",
+    "tipo_contratacion": "Licitación Pública 228/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412118/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "GUILLERMO  ENRIQUE  HERMOSO",
+    "cuit": "20-24777035-7",
+    "tipo_contratacion": "Licitación Pública 84/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412119/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 86/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412120/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "CLAUDIO SANTIAGO PERALTA",
+    "cuit": "20-13675775-0",
+    "tipo_contratacion": "Licitación Pública 87/2026",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412121/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - ADMINISTRACIN NACIONAL DE LA SEGURIDAD SOCIAL",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública PROCESO COMPR.AR 63-0074-LPU25",
+    "fecha_adjudicacion": "2026-05-15",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412122/20260515",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
