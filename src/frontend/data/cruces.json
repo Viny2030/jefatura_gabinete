@@ -1,9 +1,9 @@
 {
-  "generado_en": "2026-05-14T07:46:09.046354",
-  "total": 2,
+  "generado_en": "2026-05-16T07:19:47.633787",
+  "total": 3,
   "altos": 0,
-  "medios": 2,
-  "monto_total": 232614496.0,
+  "medios": 3,
+  "monto_total": 237444496.0,
   "cruces": [
     {
       "nivel": "MEDIO",
@@ -18,6 +18,21 @@
       "monto_fmt": "$232.6M",
       "fecha": "2026-03-05",
       "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408413/20260305",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "BARRIONUEVO, Ignacio Santiago",
+      "cargo": "Coordinador/a",
+      "gestion": "Pre-Milei",
+      "empresa": "BARRIONUEVO ROBERTO MARCOS",
+      "cuit": "20254215121",
+      "organismo": "INSTITUTO NACIONAL DE TECNOLOGÍA AGROPECUARIA - ESTACIÓN EXPERIMENTAL AGROPECUARIA FAMAILLÁ",
+      "monto": 4830000.0,
+      "monto_fmt": "$4.8M",
+      "fecha": "2026-03-05",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408412/20260305",
       "contratos": 2
     },
     {
