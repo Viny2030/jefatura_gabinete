@@ -1,4 +1,3 @@
-# Reemplazar .gitignore completo
 @"
 .venv/
 .idea/
@@ -7,9 +6,7 @@ __pycache__/
 .env
 *.egg-info/
 contratos_jgm.csv
-# agregar al .gitignore
-echo "debug_*.html" >> .gitignore
-echo "diag_*.html" >> .gitignore
-echo "debug_*.txt" >> .gitignore
-echo "*.html" >> .gitignore
+debug_*.html
+diag_*.html
+debug_*.txt
 "@ | Out-File -FilePath .gitignore -Encoding utf8
