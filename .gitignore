@@ -7,4 +7,9 @@ __pycache__/
 .env
 *.egg-info/
 contratos_jgm.csv
+# agregar al .gitignore
+echo "debug_*.html" >> .gitignore
+echo "diag_*.html" >> .gitignore
+echo "debug_*.txt" >> .gitignore
+echo "*.html" >> .gitignore
 "@ | Out-File -FilePath .gitignore -Encoding utf8
