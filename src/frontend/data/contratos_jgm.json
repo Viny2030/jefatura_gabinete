@@ -3012,5 +3012,27 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412192/20260518",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 07/2022",
+    "fecha_adjudicacion": "2026-05-19",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412265/20260519",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA CUYO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": "30-71124491-9",
+    "tipo_contratacion": "Licitación Pública 03/26",
+    "fecha_adjudicacion": "2026-05-19",
+    "monto_adjudicado": 159720000.0,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412266/20260519",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
