@@ -3034,5 +3034,71 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412266/20260519",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 0000008/2026",
+    "fecha_adjudicacion": "2026-05-20",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412331/20260520",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL ADUANERA HIDROVA",
+    "proveedor": "RAHI#SDGOAI se ha adjudicado la misma al Sr. OLIVARES ANTONIO",
+    "cuit": "20-13112636-1",
+    "tipo_contratacion": "Licitación Pública 11/2026",
+    "fecha_adjudicacion": "2026-05-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412332/20260520",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "ONACE S.R.L",
+    "cuit": "33-70823623-9",
+    "tipo_contratacion": "Licitación Pública 207/2026",
+    "fecha_adjudicacion": "2026-05-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412333/20260520",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "TUX S.A",
+    "cuit": "30-71434715-9",
+    "tipo_contratacion": "Licitación Pública 210/2026",
+    "fecha_adjudicacion": "2026-05-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412334/20260520",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 92/2026",
+    "fecha_adjudicacion": "2026-05-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412335/20260520",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 97/2026",
+    "fecha_adjudicacion": "2026-05-20",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412336/20260520",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
