@@ -3100,5 +3100,49 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412336/20260520",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EMPRESA ARGENTINA DE NAVEGACIN AREA S.E.",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública (Modo IV) 06/2022",
+    "fecha_adjudicacion": "2026-05-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412405/20260521",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 0000006/2026",
+    "fecha_adjudicacion": "2026-05-21",
+    "monto_adjudicado": 2578738.0,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412406/20260521",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - AGENCIA DE RECAUDACIN Y CONTROL ADUANERO - DIRECCIN REGIONAL JUNN",
+    "proveedor": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/terce",
+    "cuit": null,
+    "tipo_contratacion": "Contratación Directa 0000009/2026",
+    "fecha_adjudicacion": "2026-05-21",
+    "monto_adjudicado": null,
+    "objeto": "[Medio] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412407/20260521",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - EJRCITO ARGENTINO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 94/2026",
+    "fecha_adjudicacion": "2026-05-21",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412408/20260521",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
