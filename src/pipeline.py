@@ -66,7 +66,7 @@ def step_tgn(anio=None):
 
 
 def step_motor(solo=None):
-    import motor_matrices as m
+    from src.engine import motor_matrices as m
     data = m.run(solo=solo)
     m.save(data)
     return data
