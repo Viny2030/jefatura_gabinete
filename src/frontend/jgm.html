@@ -541,8 +541,8 @@ var sortStateP = { col: null, asc: true };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 function fmt(n) {
-  if (!n && n !== 0) return '—';
-  if (n === 0) return 'Ad Honorem';
+  if (n === null || n === undefined || n !== n) return '—';
+  if (n === 0) return '—';
   if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
   if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
   return '$' + Math.round(n).toLocaleString('es-AR');
@@ -850,9 +850,9 @@ function initCharts() {
       labels: ['Posse (dic23-may24)', 'Francos (may24-oct25)', 'Adorni (nov25-hoy)'],
       datasets: [{
         data: [
-          allC.filter(function(c){ return getGestion(c.fecha_apertura)==='posse'; }).length,
-          allC.filter(function(c){ return getGestion(c.fecha_apertura)==='francos'; }).length,
-          allC.filter(function(c){ return getGestion(c.fecha_apertura)==='adorni'; }).length,
+          allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='posse'; }).length,
+          allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='francos'; }).length,
+          allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='adorni'; }).length,
         ],
         backgroundColor: ['#7c3aed33','#0891b233','#05966933'],
         borderColor:     ['#7c3aed',  '#0891b2',  '#059669'],
@@ -972,7 +972,14 @@ async function init() {
     if (elContratosTotal) elContratosTotal.textContent = allC.length.toLocaleString('es-AR');
     var monto = allC.reduce(function(s,c){ return s+(c.monto_adjudicado||0); }, 0);
     var elMonto = document.getElementById('k-monto-total');
-    if (elMonto) elMonto.textContent = fmt(monto);
+    if (elMonto) {
+    elMonto.textContent = monto > 0 ? fmt(monto) : 'Sin dato';
+    elMonto.style.fontSize = monto > 0 ? '' : '18px';
+  }
+  var kMontoEl = document.getElementById('k-monto-total');
+  if (kMontoEl && kMontoEl.nextElementSibling && monto === 0) {
+    kMontoEl.nextElementSibling.textContent = 'comprar.gob.ar no publica montos';
+  }
 
   } catch(e) {
     console.warn('JSON no disponible, usando datos vacíos:', e);

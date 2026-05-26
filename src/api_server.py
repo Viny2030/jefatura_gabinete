@@ -64,10 +64,29 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# ── Archivos estáticos: JSONs de datos accesibles desde el browser ─────────────
-# El jgm.html hace fetch('data/contratos_jgm.json') — este mount lo resuelve
-if FRONTEND_DATA.exists():
-    app.mount("/data", StaticFiles(directory=str(FRONTEND_DATA)), name="frontend-data")
+# ── Endpoints explícitos para JSONs de frontend ──────────────────────────────
+# StaticFiles no es confiable en Railway — usamos endpoints GET explícitos.
+# El jgm.html hace fetch('data/contratos_jgm.json') y estos endpoints responden.
+_JSON_FILES = [
+    "contratos_jgm.json", "contratos_sgp.json", "contratos_presidencia.json",
+    "personal_jgm.json",  "personal_sgp.json",  "personal_presidencia.json",
+    "meta.json", "cruces.json", "resumen_pen.json",
+]
+
+def _register_json_endpoints():
+    for fname in _JSON_FILES:
+        def _make(f):
+            @app.get(f"/data/{f}", include_in_schema=False)
+            def _h():
+                path = FRONTEND_DATA / f
+                if not path.exists():
+                    raise HTTPException(status_code=404, detail=f"{f} no encontrado")
+                return JSONResponse(content=json.loads(path.read_text(encoding="utf-8")))
+            _h.__name__ = f"serve_{f.replace('.','_').replace('-','_')}"
+            return _h
+        _make(fname)
+
+_register_json_endpoints()
 
 
 # ─── helpers ───────────────────────────────────────────────────────────────────
