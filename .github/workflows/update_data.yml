@@ -59,7 +59,7 @@ jobs:
         run: python scripts/cruzar_cuil_cuit.py
         continue-on-error: true
 
-      - name: Commit datos actualizados
+    - name: Commit datos actualizados
         run: |
           git config --global user.name 'Robot Monitor PEN'
           git config --global user.email 'robot@noreply.github.com'
@@ -68,10 +68,15 @@ jobs:
           git diff --staged --quiet \
             && echo "Sin cambios nuevos" \
             && exit 0
-          git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} - datos actualizados"
+          git stash
           git fetch origin main
-          git rebase -X theirs origin/main \
-            || (git rebase --abort && git merge -X ours origin/main)
+          git reset --hard origin/main
+          git stash pop || true
+          git add src/frontend/data/
+          git diff --staged --quiet \
+            && echo "Sin cambios nuevos" \
+            && exit 0
+          git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} - datos actualizados"
           git push origin HEAD:main
 
       - name: Actualizar PostgreSQL en Railway
