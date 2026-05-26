@@ -157,7 +157,7 @@ if FUENTE == "comprar":
     COLS_CON = [
         "numero_proceso", "organismo", "proveedor", "cuit",
         "tipo_contratacion", "fecha_str", "monto_adjudicado",
-        "objeto", "ejercicio", "gestion", "estado",
+        "objeto", "ejercicio", "gestion", "estado", "fecha_apertura",
     ]
 
     df_jgm  = df_con.copy()   # todo es JGM
@@ -180,12 +180,13 @@ else:
     df_con["gestion"]           = df_con.apply(asignar_gestion, axis=1)
     df_con["numero_proceso"]    = ""
     df_con["estado"]            = ""
+    df_con["fecha_apertura"]    = df_con["fecha_adjudicacion"].dt.strftime("%Y-%m-%d")
     print(f"    Gestiones: {df_con['gestion'].value_counts().to_dict()}")
 
     COLS_CON = [
         "numero_proceso", "organismo", "proveedor", "cuit",
         "tipo_contratacion", "fecha_str", "monto_adjudicado",
-        "objeto", "ejercicio", "gestion", "estado",
+        "objeto", "ejercicio", "gestion", "estado", "fecha_apertura",
     ]
 
     df_jgm  = filtrar_org_contratos(df_con, ORG_JGM,  ["JGM - "])
