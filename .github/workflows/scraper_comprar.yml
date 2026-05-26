@@ -43,7 +43,7 @@ jobs:
       - name: Correr scraper
         continue-on-error: true
         env:
-          DATABASE_URL: postgresql://user:password@localhost:5432/jgm_anticorrupcion
+          DATABASE_URL: ${{ secrets.RAILWAY_DATABASE_URL }}
         run: |
           for i in 1 2 3; do
             echo "Intento $i de 3..."
