@@ -3,7 +3,7 @@ api_server.py
 =============
 API REST para el portal anticorrupción JGM.
 Sirve los datos generados por pipeline.py como endpoints JSON.
-También sirve el dashboard HTML estático.
+También sirve el dashboard HTML estático y los JSONs de datos.
 
 Endpoints:
   GET /                     → index.html (portal principal)
@@ -15,6 +15,7 @@ Endpoints:
   GET /grafos_nodos.html    → grafo de nodos
   GET /manual_usuario.html  → manual
   GET /documentacion.html   → documentación técnica
+  GET /data/{filename}      → JSONs de datos (contratos, personal, meta, cruces)
   GET /api/health           → health check JSON
   GET /api/inteligencia     → datos completos (alertas + grafo)
   GET /api/alertas          → solo alertas (filtros: nivel, tipo)
@@ -40,13 +41,15 @@ from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Header, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 
-DATA_DIR = Path(__file__).parent.parent / "data"
-FRONTEND_DIR = Path(__file__).parent / "frontend"
+DATA_DIR      = Path(__file__).parent.parent / "data"
+FRONTEND_DIR  = Path(__file__).parent / "frontend"
+FRONTEND_DATA = FRONTEND_DIR / "data"
 REFRESH_TOKEN = os.getenv("REFRESH_TOKEN", "dev")
-PORT = int(os.getenv("PORT", 8000))
-DATABASE_URL = os.getenv("DATABASE_URL", "")
+PORT          = int(os.getenv("PORT", 8000))
+DATABASE_URL  = os.getenv("DATABASE_URL", "")
 
 app = FastAPI(
     title="Monitor Anticorrupción JGM — API",
@@ -61,6 +64,11 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+# ── Archivos estáticos: JSONs de datos accesibles desde el browser ─────────────
+# El jgm.html hace fetch('data/contratos_jgm.json') — este mount lo resuelve
+if FRONTEND_DATA.exists():
+    app.mount("/data", StaticFiles(directory=str(FRONTEND_DATA)), name="frontend-data")
+
 
 # ─── helpers ───────────────────────────────────────────────────────────────────
 
@@ -74,6 +82,15 @@ def _load(nombre: str) -> dict:
     if DATABASE_URL and nombre == "inteligencia.json":
         return _load_from_db() or {}
     return {}
+
+
+def _load_frontend(nombre: str):
+    """Carga un JSON del directorio src/frontend/data/."""
+    path = FRONTEND_DATA / nombre
+    if path.exists():
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return None
 
 
 def _load_from_db() -> dict | None:
@@ -107,49 +124,39 @@ def _serve_html(filename: str) -> HTMLResponse:
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def root():
-    """Página principal — sirve index.html."""
     return _serve_html("index.html")
-
 
 @app.get("/index.html", response_class=HTMLResponse, include_in_schema=False)
 def index_html():
     return _serve_html("index.html")
 
-
 @app.get("/jgm.html", response_class=HTMLResponse, include_in_schema=False)
 def jgm_html():
     return _serve_html("jgm.html")
-
 
 @app.get("/sgp.html", response_class=HTMLResponse, include_in_schema=False)
 def sgp_html():
     return _serve_html("sgp.html")
 
-
 @app.get("/presidencia.html", response_class=HTMLResponse, include_in_schema=False)
 def presidencia_html():
     return _serve_html("presidencia.html")
-
 
 @app.get("/alertas.html", response_class=HTMLResponse, include_in_schema=False)
 def alertas_html():
     return _serve_html("alertas.html")
 
-
 @app.get("/grafos_nodos.html", response_class=HTMLResponse, include_in_schema=False)
 def grafos_nodos_html():
     return _serve_html("grafos_nodos.html")
-
 
 @app.get("/manual_usuario.html", response_class=HTMLResponse, include_in_schema=False)
 def manual_usuario_html():
     return _serve_html("manual_usuario.html")
 
-
 @app.get("/documentacion.html", response_class=HTMLResponse, include_in_schema=False)
 def documentacion_html():
     return _serve_html("documentacion.html")
-
 
 @app.get("/dashboard.html", response_class=HTMLResponse, include_in_schema=False)
 def dashboard_html():
@@ -164,13 +171,26 @@ def dashboard_html():
     return HTMLResponse(content=html)
 
 
+# ─── endpoints de datos frontend (fallback si StaticFiles no alcanza) ──────────
+
+@app.get("/api/frontend/{filename}", tags=["Datos frontend"])
+def get_frontend_data(filename: str):
+    """Sirve JSONs de src/frontend/data/ como API — fallback para el dashboard."""
+    data = _load_frontend(filename)
+    if data is None:
+        raise HTTPException(status_code=404, detail=f"{filename} no encontrado en frontend/data/")
+    return JSONResponse(content=data)
+
+
 # ─── API endpoints ─────────────────────────────────────────────────────────────
 
 @app.get("/api/health")
 def health():
     """Health check — estado del servicio y último pipeline."""
     intel = _load("inteligencia.json")
-    meta = intel.get("meta", {})
+    meta  = intel.get("meta", {})
+    # También chequear meta del frontend
+    meta_fe = _load_frontend("meta.json") or {}
     db_ok = False
     if DATABASE_URL:
         try:
@@ -187,6 +207,12 @@ def health():
         "total_alertas": meta.get("total_alertas", 0),
         "alertas_alta": meta.get("alertas_alta", 0),
         "db_conectada": db_ok,
+        "frontend_data": {
+            "generado": meta_fe.get("generado"),
+            "fuente_contratos": meta_fe.get("fuente_contratos"),
+            "total_contratos": meta_fe.get("total_contratos", 0),
+            "total_personal": meta_fe.get("total_personal", 0),
+        },
         "timestamp": datetime.now().isoformat()
     }
 
@@ -199,9 +225,9 @@ def db_status():
     try:
         import psycopg2
         conn = psycopg2.connect(DATABASE_URL)
-        cur = conn.cursor()
+        cur  = conn.cursor()
         cur.execute("SELECT COUNT(*) FROM pipeline_snapshots")
-        total = cur.fetchone()[0]
+        total  = cur.fetchone()[0]
         cur.execute("SELECT created_at FROM pipeline_snapshots ORDER BY created_at DESC LIMIT 1")
         ultimo = cur.fetchone()
         cur.close()
@@ -227,16 +253,17 @@ def init_db(x_refresh_token: str = Header(None)):
     try:
         import psycopg2
         conn = psycopg2.connect(DATABASE_URL)
-        cur = conn.cursor()
+        cur  = conn.cursor()
         cur.execute("""
             CREATE TABLE IF NOT EXISTS pipeline_snapshots (
-                id SERIAL PRIMARY KEY,
-                payload JSONB NOT NULL,
+                id           SERIAL PRIMARY KEY,
+                payload      JSONB NOT NULL,
                 total_alertas INTEGER DEFAULT 0,
-                alertas_alta INTEGER DEFAULT 0,
-                created_at TIMESTAMPTZ DEFAULT NOW()
+                alertas_alta  INTEGER DEFAULT 0,
+                created_at   TIMESTAMPTZ DEFAULT NOW()
             );
-            CREATE INDEX IF NOT EXISTS idx_snapshots_created ON pipeline_snapshots (created_at DESC);
+            CREATE INDEX IF NOT EXISTS idx_snapshots_created
+                ON pipeline_snapshots (created_at DESC);
         """)
         conn.commit()
         cur.close()
@@ -258,26 +285,22 @@ def get_inteligencia():
 @app.get("/api/alertas")
 def get_alertas(
     nivel: str = Query(None, description="ALTA o MEDIA"),
-    tipo: str = Query(None, description="NEPOTISMO, CONFLICTO_SOCIETARIO, DESVIO_IAP_GLOBAL, etc.")
+    tipo:  str = Query(None, description="NEPOTISMO, CONFLICTO_SOCIETARIO, DESVIO_IAP_GLOBAL, etc.")
 ):
     """Lista de alertas con filtros opcionales."""
-    data = _load("inteligencia.json")
+    data    = _load("inteligencia.json")
     alertas = data.get("alertas", [])
     if nivel:
         alertas = [a for a in alertas if a.get("nivel", "").upper() == nivel.upper()]
     if tipo:
         alertas = [a for a in alertas if tipo.upper() in (a.get("tipo_alerta", "")).upper()]
-    return {
-        "total": len(alertas),
-        "alertas": alertas,
-        "meta": data.get("meta", {})
-    }
+    return {"total": len(alertas), "alertas": alertas, "meta": data.get("meta", {})}
 
 
 @app.get("/api/grafo")
 def get_grafo():
-    """Grafo de nodos para visualización (funcionarios, empresas, vínculos)."""
-    data = _load("inteligencia.json")
+    """Grafo de nodos para visualización."""
+    data  = _load("inteligencia.json")
     grafo = data.get("grafo", {})
     if not grafo:
         raise HTTPException(status_code=404, detail="Grafo no disponible todavía")
@@ -286,29 +309,25 @@ def get_grafo():
 
 @app.get("/api/contratos")
 def get_contratos(
-    tipo: str = Query(None, description="adjudicacion o convocatoria"),
+    tipo:      str   = Query(None, description="adjudicacion o convocatoria"),
     monto_min: float = Query(None, description="Monto mínimo en ARS"),
-    limit: int = Query(100, description="Máximo de resultados")
+    limit:     int   = Query(100,  description="Máximo de resultados")
 ):
     """Contratos y licitaciones de JGM."""
-    data = _load("comprar_raw.json")
+    data      = _load("comprar_raw.json")
     contratos = data.get("contratos", [])
     if tipo:
         contratos = [c for c in contratos if c.get("tipo") == tipo]
     if monto_min:
         contratos = [c for c in contratos if (c.get("monto_estimado") or 0) >= monto_min]
     contratos = sorted(contratos, key=lambda x: x.get("monto_estimado") or 0, reverse=True)
-    return {
-        "total": len(contratos),
-        "contratos": contratos[:limit],
-        "meta": data.get("meta", {})
-    }
+    return {"total": len(contratos), "contratos": contratos[:limit], "meta": data.get("meta", {})}
 
 
 @app.get("/api/bora")
 def get_bora(relevante_jgm: bool = Query(True)):
     """Publicaciones del BORA relevantes para JGM."""
-    data = _load("bora_raw.json")
+    data          = _load("bora_raw.json")
     publicaciones = data if isinstance(data, list) else []
     if relevante_jgm:
         publicaciones = [p for p in publicaciones if p.get("relevante_jgm")]
@@ -327,7 +346,7 @@ def get_resumen():
         return {
             "kpis": {
                 "total_alertas": meta.get("total_alertas", 0),
-                "alertas_alta": meta.get("alertas_alta", 0),
+                "alertas_alta":  meta.get("alertas_alta", 0),
                 "alertas_media": meta.get("alertas_media", 0),
             },
             "ultima_actualizacion": meta.get("ultima_actualizacion")
@@ -347,7 +366,6 @@ def refresh(x_refresh_token: str = Header(None)):
             capture_output=True, text=True, timeout=600,
             cwd=str(Path(__file__).parent)
         )
-        # Si hay DATABASE_URL, guardar snapshot en PostgreSQL
         if result.returncode == 0 and DATABASE_URL:
             _save_snapshot_to_db()
         return {
@@ -371,17 +389,10 @@ def _save_snapshot_to_db():
             return
         meta = intel.get("meta", {})
         conn = psycopg2.connect(DATABASE_URL)
-        cur = conn.cursor()
+        cur  = conn.cursor()
         cur.execute(
-            """
-            INSERT INTO pipeline_snapshots (payload, total_alertas, alertas_alta)
-            VALUES (%s, %s, %s)
-            """,
-            (
-                json.dumps(intel, ensure_ascii=False),
-                meta.get("total_alertas", 0),
-                meta.get("alertas_alta", 0),
-            )
+            "INSERT INTO pipeline_snapshots (payload, total_alertas, alertas_alta) VALUES (%s, %s, %s)",
+            (json.dumps(intel, ensure_ascii=False), meta.get("total_alertas", 0), meta.get("alertas_alta", 0))
         )
         conn.commit()
         cur.close()
