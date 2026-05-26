@@ -3199,5 +3199,27 @@
     "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412477/20260522",
     "ejercicio": 2026,
     "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DE QUILMES",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 2/26",
+    "fecha_adjudicacion": "2026-05-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412510/20260526",
+    "ejercicio": 2026,
+    "gestion": "Milei"
+  },
+  {
+    "organismo": "JGM - UNIVERSIDAD NACIONAL DE CRDOBA - SECRETARA DE PLANEAMIENTO FSICO",
+    "proveedor": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercer",
+    "cuit": null,
+    "tipo_contratacion": "Licitación Pública 40/2026",
+    "fecha_adjudicacion": "2026-05-26",
+    "monto_adjudicado": null,
+    "objeto": "[Bajo] https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412511/20260526",
+    "ejercicio": 2026,
+    "gestion": "Milei"
   }
 ]
