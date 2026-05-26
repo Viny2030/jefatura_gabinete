@@ -61,20 +61,17 @@ jobs:
 
       - name: Commit datos actualizados
         run: |
-          git config --global user.name  'Robot Monitor PEN'
-          git config --global user.email 'robot@noreply.github.com'
-          git add -f src/frontend/data/ || true
-          git add -f data/adjudicaciones_*.csv || true
-          git add -f data/cruces.json || true
-          git add -f data/mapeos_organismos.csv || true
-          git diff --staged --quiet \
+        git config --global user.name 'Robot Monitor PEN'
+        git config --global user.email 'robot@noreply.github.com'
+        git add -f src/frontend/data/ || true
+        git add -f data/adjudicaciones_*.csv || true
+        git diff --staged --quiet \
             && echo "Sin cambios nuevos" \
             && exit 0
-          git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} - datos actualizados"
-          git stash || true
-          git pull --rebase origin main || git rebase --abort
-          git stash pop || true
-          git push origin HEAD:main
+       git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} - datos actualizados"
+       git fetch origin main
+       git rebase -X theirs origin/main
+       git push origin HEAD:main
 
       - name: Actualizar PostgreSQL en Railway
         run: |
