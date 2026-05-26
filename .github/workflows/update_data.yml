@@ -59,7 +59,7 @@ jobs:
         run: python scripts/cruzar_cuil_cuit.py
         continue-on-error: true
 
-    - name: Commit datos actualizados
+      - name: Commit datos actualizados
         run: |
           git config --global user.name 'Robot Monitor PEN'
           git config --global user.email 'robot@noreply.github.com'
