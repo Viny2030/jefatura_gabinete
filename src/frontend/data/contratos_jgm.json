@@ -10,7 +10,8 @@
     "objeto": "Contratación de la firma EJES S.A. - servicio mensual de monitoreo de medios de comunicación",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "15/03/2024 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0001-CDI25",
@@ -23,7 +24,8 @@
     "objeto": "Solicitud de adquisición, renovación y actualización licencias Microsoft.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "23/01/2025 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0001-LPR24",
@@ -36,7 +38,8 @@
     "objeto": "Servicio de limpieza y desinfección de tanques de agua de los edificios pertenecientes a la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "13/06/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0001-LPR25",
@@ -49,7 +52,8 @@
     "objeto": "Adquisición de enlaces de INTERNET y enlaces LAN to LAN.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/02/2025 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0001-LPU25",
@@ -62,7 +66,8 @@
     "objeto": "SERVICIO INTEGRAL DE BARRIDO Y LIMPIEZA en los edificios de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/03/2025 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-CDI23",
@@ -75,7 +80,8 @@
     "objeto": "Convenio con la EMPRESA ARGENTINA DE SOLUCIONES SATELITALES SOCIEDAD ANÓNIMA AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "09/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-CDI24",
@@ -88,7 +94,8 @@
     "objeto": "Servicio de mantenimiento de persianas y portón de acceso vehicular",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/06/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-CDI25",
@@ -101,7 +108,8 @@
     "objeto": "Adquisición de elementos de protección personal para talleres de mantenimiento de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/05/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-LPR23",
@@ -114,7 +122,8 @@
     "objeto": "Servicio de guardería de vehículos para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "08/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-LPR24",
@@ -127,7 +136,8 @@
     "objeto": "PROVISIÓN DE ALIMENTOS PARA LAS DISTINTAS DEPENDENCIAS DE LA JEFATURA DE GABINETE DE MINISTROS.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/10/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-LPR25",
@@ -140,7 +150,8 @@
     "objeto": "Seguros con cobertura de Todo Riesgo Operativo y Responsabilidad Civil para JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "02/06/2025 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0002-LPU25",
@@ -153,7 +164,8 @@
     "objeto": "Servicio de mantenimiento integral, correctivo con asistencia tecnica para los ascensores de JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Disponible Para Adjudicar"
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "01/12/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-CDI23",
@@ -166,7 +178,8 @@
     "objeto": "Convenio con CORREO OFICIAL DE LA REPÚBLICA ARGENTINA S.A.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "20/01/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-CDI25",
@@ -179,7 +192,8 @@
     "objeto": "Adquisición de indumentaria y calzado para el personal de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/06/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-LPR23",
@@ -192,7 +206,8 @@
     "objeto": "Servicio de mantenimiento del Sistema de Administración de Recursos Humanos “SARHA”",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "24/04/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-LPR24",
@@ -205,7 +220,8 @@
     "objeto": "Adquisición de materiales eléctricos para la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "27/08/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-LPR25",
@@ -218,7 +234,8 @@
     "objeto": "Requerimiento Servicio de mantenimiento y soporte de base de datos Oracle y consultoría",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "24/06/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-LPR26",
@@ -231,7 +248,8 @@
     "objeto": "Adquisición de solución integral “llave en mano” para la renovación de licencias de equipos de Borde",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Preadjudicado"
+    "estado": "Preadjudicado",
+    "fecha_apertura": "17/04/2026 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-LPU23",
@@ -244,7 +262,8 @@
     "objeto": "Servicio de suscripción de Licencias ADOBE CREATIVE CLOUD FOR TEAMS ALL APPS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/02/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0003-LPU25",
@@ -257,7 +276,8 @@
     "objeto": "CONTRATACIÓN DE UN SERVICIO MANEJO INTEGRAL DE PLAGAS Y LIMPIEZA DE TANQUES DE AGUA POTABLE JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Disponible Para Adjudicar"
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "01/12/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0004-CDI23",
@@ -270,7 +290,8 @@
     "objeto": "Contratación de un servicio de monitoreo de medios de comunicación brindado por la firma EJES S.A.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "02/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0004-CDI24",
@@ -283,7 +304,8 @@
     "objeto": "Contratación de OTOBA S.A. para el servicio de alquiler de oficinas en inmueble",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "09/04/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0004-CDI25",
@@ -296,7 +318,8 @@
     "objeto": "Adquisición de útiles de oficina para la JEFATURA E GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "10/10/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0004-LPR23",
@@ -309,7 +332,8 @@
     "objeto": "Servicio de mantenimiento preventivo, correctivo y de emergencia de vehículos de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0005-CDI23",
@@ -322,7 +346,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE CUYO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "30/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0005-CDI24",
@@ -335,7 +360,8 @@
     "objeto": "Adquisicion de Certificados de Seguridad SSL a implementarse en Jefatura de Gabinete de Ministros",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "24/05/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0005-CDI25",
@@ -348,7 +374,8 @@
     "objeto": "Contratación de un Servicio Integral de Exámenes Preocupacionales",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/10/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0005-LPR23",
@@ -361,7 +388,8 @@
     "objeto": "Adquisición de bienes para el desarrollo de diferentes jornadas y actividades INJUVE",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0005-LPU24",
@@ -374,7 +402,8 @@
     "objeto": "Servicio de restauración y mantenimiento integral de los ascensores de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "04/11/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0006-CDI23",
@@ -387,7 +416,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE ROSARIO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0006-CDI25",
@@ -400,7 +430,8 @@
     "objeto": "CONTRATACIÓN DE SERVICIO INTEGRAL PARA LA GESTIÓN DE RESIDUOS PATOGÉNICOS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Fracasado"
+    "estado": "Fracasado",
+    "fecha_apertura": "16/10/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0006-LPR23",
@@ -413,7 +444,8 @@
     "objeto": "Adquisición de resmas de papel",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/04/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0006-LPR24",
@@ -426,7 +458,8 @@
     "objeto": "ADQUISICIÓN DE ARTÍCULOS DE LIMPIEZA PARA JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "20/09/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0007-CDI23",
@@ -439,7 +472,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DEL SUR y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0007-LPR23",
@@ -452,7 +486,8 @@
     "objeto": "ADQUISICIÓN DE ÚTILES DE OFICINA",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0007-LPR24",
@@ -465,7 +500,8 @@
     "objeto": "Adquisición de útiles de oficina para la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "20/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0007-LPR25",
@@ -478,7 +514,8 @@
     "objeto": "ADQUISICIÓN DE ALIMENTOS Y ALQUILER DE MÁQUINAS DE CAFÉ PARA LAS DISTINTAS DEPENDENCIAS DE LA JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado con doc. contractuales generados"
+    "estado": "Adjudicado con doc. contractuales generados",
+    "fecha_apertura": "16/12/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0007-LPU23",
@@ -491,7 +528,8 @@
     "objeto": "Adquisición computadoras portátiles y accesorios para la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "02/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0008-CDI23",
@@ -504,7 +542,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE LANÚS y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "30/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0008-LPR24",
@@ -517,7 +556,8 @@
     "objeto": "Servicio por el mantenimiento de la puerta automática de ingreso peatonal del edificio de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "26/08/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0008-LPR25",
@@ -530,7 +570,8 @@
     "objeto": "Servicio y Mantenimiento de Cortinas Metálicas para JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Disponible Para Adjudicar"
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "23/12/2025 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0009-CDI23",
@@ -543,7 +584,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE LA MATANZA y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0009-LPR23",
@@ -556,7 +598,8 @@
     "objeto": "Adquisición de materiales de conectividad y herramientas",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "15/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0009-LPR24",
@@ -569,7 +612,8 @@
     "objeto": "Adquisición de vestimenta y calzado para el personal de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "10/10/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0010-CDI23",
@@ -582,7 +626,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE LOMAS DE ZAMORA / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0010-LPR23",
@@ -595,7 +640,8 @@
     "objeto": "Servicio de readecuación del sector de la COORDINACION DE MEDICINA DEL TRABAJO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "19/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0011-CDI23",
@@ -608,7 +654,8 @@
     "objeto": "Convenio entre UNIVERSIDAD NACIONAL DE GENERAL SAN MARTÍN / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0011-LPR23",
@@ -621,7 +668,8 @@
     "objeto": "Adquisición de elementos para actividades deportivas",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "07/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0011-LPR24",
@@ -634,7 +682,8 @@
     "objeto": "Sistema de alarma contra robo del edificio sede de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "30/09/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0012-CDI23",
@@ -647,7 +696,8 @@
     "objeto": "Convenio entre UNIVERSIDAD NACIONAL RAÚL SCALABRINI ORTIZ / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "30/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0012-LPR23",
@@ -660,7 +710,8 @@
     "objeto": "Adquisición de materiales para promoción, difusión y organización de temáticas abordadas por INJUVE",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "03/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0012-LPR24",
@@ -673,7 +724,8 @@
     "objeto": "ADQUISICIÓN DE VAJILLA Y ARTÍCULOS DE BAZAR Y MENAJE PARA LA JEFATURA DE GABINETE DE MINISTROS.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "25/10/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0013-CDI23",
@@ -686,7 +738,8 @@
     "objeto": "Convenio entre UNIVERSIDAD NACIONAL DE TRES DE FEBRERO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0013-LPR23",
@@ -699,7 +752,8 @@
     "objeto": "Adquisición de materiales eléctricos para la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0013-LPR24",
@@ -712,7 +766,8 @@
     "objeto": "Solicitud de adquisición de desfibriladores",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "18/10/2024 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0013-LPU23",
@@ -725,7 +780,8 @@
     "objeto": "Servicio de mantenimiento preventivo, correctivo y de emergencia de equipos y sistemas de aires",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/06/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0014-CDI23",
@@ -738,7 +794,8 @@
     "objeto": "Contratación de los servicios de la “Asociación para el Fortalecimiento Comunitario”",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "27/02/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0014-LPR23",
@@ -751,7 +808,8 @@
     "objeto": "Adquisición de impresoras de códigos de barras y equipamientos varios para la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "18/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0014-LPU23",
@@ -764,7 +822,8 @@
     "objeto": "Servicio de envío de correos electrónicos transaccionales",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "07/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0015-LPR23",
@@ -777,7 +836,8 @@
     "objeto": "Servicio de renovación de licencias de antivirus para estaciones de trabajo y servidores",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "11/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0015-LPR24",
@@ -790,7 +850,8 @@
     "objeto": "Adquisición de Solución Llave en mano para Implementación de Sistema de CCTV Ed. Somisa JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0015-LPU22",
@@ -803,7 +864,8 @@
     "objeto": "Servicio de mantenimiento de equipos de aire acondicionado para edificios JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "09/02/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0016-LPR23",
@@ -816,7 +878,8 @@
     "objeto": "Contratación servicio integral de organización de eventos - Consejo Federal de la Sociedad Civil",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado con doc. contractuales generados"
+    "estado": "Adjudicado con doc. contractuales generados",
+    "fecha_apertura": "01/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0016-LPR24",
@@ -829,7 +892,8 @@
     "objeto": "Adquisición de elementos de protección personal para los distintos talleres de JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "15/10/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0016-LPU22",
@@ -842,7 +906,8 @@
     "objeto": "Servicio de producción logística integral para operativos territoriales de atención a ciudadanos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0016-LPU23",
@@ -855,7 +920,8 @@
     "objeto": "Servicio de soporte correctivo, técnico y evolutivo de la Plataforma de Firma Digital Remota",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "22/08/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0017-CDI23",
@@ -868,7 +934,8 @@
     "objeto": "Servicio de limpieza y desinfección de tanques de agua",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "09/03/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0017-LPR23",
@@ -881,7 +948,8 @@
     "objeto": "Servicio de impresión de libro",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "31/08/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0017-LPR24",
@@ -894,7 +962,8 @@
     "objeto": "Adquisición de Licencias Adobe",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "24/10/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0017-LPU22",
@@ -907,7 +976,8 @@
     "objeto": "CONTRATACIÓN DEL SERVICIO DE TRANSPORTE TERRESTRE DE PERSONAS EN EL MARCO DEL PROG. “DESARROLLARTE\"",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Fracasado"
+    "estado": "Fracasado",
+    "fecha_apertura": "23/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0017-LPU23",
@@ -920,7 +990,8 @@
     "objeto": "Servicio de infraestructura de la Plataforma de Firma Digital de la Autoridad Certificante ONTI",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "22/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0017-LPU24",
@@ -933,7 +1004,8 @@
     "objeto": "Solicitud de adquisición de computadoras de escritorio y portátiles para JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "29/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0018-CDI23",
@@ -946,7 +1018,8 @@
     "objeto": "Contratación de la Facultad Latinoamericana de Ciencias Sociales (FLACSO-Argentina) para estudio",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "24/02/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0018-LPR23",
@@ -959,7 +1032,8 @@
     "objeto": "Servicio de exámenes preocupacionales para personal de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "08/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0018-LPR24",
@@ -972,7 +1046,8 @@
     "objeto": "Adquisición, instalación y mantenimiento de servicios LAN to LAN, Internet y servicios TLS nivel 2",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "26/11/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0018-LPU23",
@@ -985,7 +1060,8 @@
     "objeto": "Contratación de servicios integrales de organización de eventos y alquiler de pantallas led",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "14/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0019-CDI23",
@@ -998,7 +1074,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE ENTRE RÍOS y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0019-LPR23",
@@ -1011,7 +1088,8 @@
     "objeto": "Adquisición de discos SSD para computadoras de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "21/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0019-LPR24",
@@ -1024,7 +1102,8 @@
     "objeto": "Solicitud de compra y recarga de matafuegos para la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "25/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0019-LPU23",
@@ -1037,7 +1116,8 @@
     "objeto": "servicios de producción logística integral para operativos territoriales de atención a ciudadanos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "08/09/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0019-LPU24",
@@ -1050,7 +1130,8 @@
     "objeto": "Solicitud de contratación servicio de mantenimiento Aire Acondicionado para las sedes de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "19/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0020-CDI23",
@@ -1063,7 +1144,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE SANTIAGO DEL ESTERO y la SECRETARÍA DE GESTIÓN Y EMPLEO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "31/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0020-LPR23",
@@ -1076,7 +1158,8 @@
     "objeto": "Adquisición de equipamiento para videoconferencias en la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "09/11/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0020-LPR24",
@@ -1089,7 +1172,8 @@
     "objeto": "Contratación de seguros para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/11/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0020-LPU23",
@@ -1102,7 +1186,8 @@
     "objeto": "Contratación asistencia técnica para actividades complementarias Festival Quiero",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/08/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0021-CDI23",
@@ -1115,7 +1200,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DEL LITORAL y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0021-LPU23",
@@ -1128,7 +1214,8 @@
     "objeto": "Adquisición de sillas ergonómicas para las dependencias de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Disponible Para Adjudicar"
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "11/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0022-CDI23",
@@ -1141,7 +1228,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DEL CHACO AUSTRAL y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "31/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0022-LPR24",
@@ -1154,7 +1242,8 @@
     "objeto": "Servicio de mantenimiento y soporte sistema SARHA - Liquidación de haberes JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "21/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0022-LPU23",
@@ -1167,7 +1256,8 @@
     "objeto": "Adquisición computadoras portátiles y accesorios para la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "20/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0023-CDI23",
@@ -1180,7 +1270,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL ARTURO JAURETCHE y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/03/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0023-LPR24",
@@ -1193,7 +1284,8 @@
     "objeto": "SERVICIO MANTENIMIENTO PREVENTIVO Y CORRECTIVO INTEGRAL DEL SISTEMA DE DETECCIÓN",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "20/11/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0024-CDI23",
@@ -1206,7 +1298,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE MISIONES y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "09/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0024-LPR22",
@@ -1219,7 +1312,8 @@
     "objeto": "adquisición de vestimenta para el personal",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "05/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0024-LPU24",
@@ -1232,7 +1326,8 @@
     "objeto": "Adquisición remodelación y mantenimiento Data Center JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "29/11/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0025-CDI23",
@@ -1245,7 +1340,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE SAN JUAN y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "02/08/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0025-LPR24",
@@ -1258,7 +1354,8 @@
     "objeto": "Servicio de mantenimiento preventivo, correctivo y de emergencia de la flota automotor",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "22/11/2024 13:00 Hrs."
   },
   {
     "numero_proceso": "79-0026-CDI23",
@@ -1271,7 +1368,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE RÍO NEGRO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "08/05/2023 13:00 Hrs."
   },
   {
     "numero_proceso": "79-0027-CDI23",
@@ -1284,7 +1382,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DEL NORDESTE y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/06/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0027-LPR22",
@@ -1297,7 +1396,8 @@
     "objeto": "Servicio de guardería de vehículos para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "01/02/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0028-CDI23",
@@ -1310,7 +1410,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE QUILMES y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "27/04/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0028-LPR24",
@@ -1323,7 +1424,8 @@
     "objeto": "SISTEMA DE CONTROL DE TIEMPO Y ASISTENCIA, CONTROL DE ACCESOS Y CONTROL DE VISITAS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "16/12/2024 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0029-CDI23",
@@ -1336,7 +1438,8 @@
     "objeto": "Convenio Interadministrativo entre la UEET Argentina Futura y EUDEBA S.E.M.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/04/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0030-CDI23",
@@ -1349,7 +1452,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE AVELLANEDA y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/05/2023 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0030-LPR22",
@@ -1362,7 +1466,8 @@
     "objeto": "Servicio de guardería de vehículos para la flota automotor de la JEFATURA DE GABINETE DE MINISTROS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "18/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0030-LPR24",
@@ -1375,7 +1480,8 @@
     "objeto": "Solicitud de adquisición de desfibriladores externos automáticos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "22/11/2024 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0031-CDI23",
@@ -1388,7 +1494,8 @@
     "objeto": "Adquisición de elementos para evento INJUVE",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "13/04/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0032-CDI23",
@@ -1401,7 +1508,8 @@
     "objeto": "Convenio Específico entre la UEETAF y la UNPAZ",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/06/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0033-CDI23",
@@ -1414,7 +1522,8 @@
     "objeto": "Contratación de FUNSAM para la realización de un estudio de investigación",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/04/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0033-LPR24",
@@ -1427,7 +1536,8 @@
     "objeto": "Adquisición de Licencias de Software Adobe",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "En Apertura"
+    "estado": "En Apertura",
+    "fecha_apertura": "04/12/2024 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0034-CDI23",
@@ -1440,7 +1550,8 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo del sistema de detección y extinción de incendios",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/04/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0035-CDI23",
@@ -1453,7 +1564,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE CUYO y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/04/2023 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0036-CDI23",
@@ -1466,7 +1578,8 @@
     "objeto": "Convenio entre UNIVERSIDAD NACIONAL RAÚL SCALABRINI ORTIZ / SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "11/04/2023 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0037-CDI23",
@@ -1479,7 +1592,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE SANTIAGO DEL ESTERO y la SECRETARÍA DE GESTIÓN Y EMPLEO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "11/04/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0038-CDI23",
@@ -1492,7 +1606,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DEL CHACO AUSTRAL y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/04/2023 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0039-CDI23",
@@ -1505,7 +1620,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE LANÚS y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "19/04/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0040-CDI23",
@@ -1518,7 +1634,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/05/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0041-CDI23",
@@ -1531,7 +1648,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y el INSTITUTO GEOGRAFICO NACIONAL",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/05/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0042-CDI23",
@@ -1544,7 +1662,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO y la UNIVERSIDAD TECNOLÓGICA NACION",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0043-CDI23",
@@ -1557,7 +1676,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/06/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0044-CDI23",
@@ -1570,7 +1690,8 @@
     "objeto": "Adquisición de sensores de monitoreo PRTG",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "08/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0046-CDI23",
@@ -1583,7 +1704,8 @@
     "objeto": "Servicio de provisión de diarios y revistas",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "21/04/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0047-CDI23",
@@ -1596,7 +1718,8 @@
     "objeto": "Convenio de Cooperación entre la SDG y la UNTREF",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "10/05/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0048-CDI23",
@@ -1609,7 +1732,8 @@
     "objeto": "Adquisición de insumos médicos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0049-CDI23",
@@ -1622,7 +1746,8 @@
     "objeto": "Adquisición de medicamentos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "22/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0050-CDI23",
@@ -1635,7 +1760,8 @@
     "objeto": "Provisión de paneles desmontables para techos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "17/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0051-CDI23",
@@ -1648,7 +1774,8 @@
     "objeto": "Adquisición de banderas argentinas de ceremonia y de flameo",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "17/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0052-CDI23",
@@ -1661,7 +1788,8 @@
     "objeto": "Convenio entre la UNIVERSIDAD NACIONAL DE TUCUMÁN y la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/07/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0053-CDI23",
@@ -1674,7 +1802,8 @@
     "objeto": "Servicio de medición de iluminación, ruido, puesta a tierra y estudio ergonómico",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0054-CDI23",
@@ -1687,7 +1816,8 @@
     "objeto": "Renovación de Licencias Microsoft",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/05/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0055-CDI23",
@@ -1700,7 +1830,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/06/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0056-CDI23",
@@ -1713,7 +1844,8 @@
     "objeto": "Servicio de mantenimiento y soporte del módulo INTEROPER.AR brindado por la firma UNITECH S.A.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "24/05/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0057-CDI23",
@@ -1726,7 +1858,8 @@
     "objeto": "Servicio de mantenimiento y soporte de la PLATAFORMA DE AUTENTICACIÓN ELECTRÓNICA CENTRAL (PAEC)",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "24/05/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0060-CDI23",
@@ -1739,7 +1872,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT Nube híbrida",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Disponible Para Adjudicar"
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "18/07/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0061-CDI23",
@@ -1752,7 +1886,8 @@
     "objeto": "Convenio UNSAM-SIP servicio soporte técnico en relacion al sistema de Gestión Documental Electrónica",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "12/06/2023 12:00 Hrs."
   },
   {
     "numero_proceso": "79-0062-CDI23",
@@ -1765,7 +1900,8 @@
     "objeto": "Provisión de paneles desmontables para techos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "23/06/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0063-CDI23",
@@ -1778,7 +1914,8 @@
     "objeto": "Convenio entre la UNIDAD EJECUTORA ESPECIAL TEMPORARIA “ARGENTINA FUTURA” y UBATEC S.A.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/06/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0064-CDI23",
@@ -1791,7 +1928,8 @@
     "objeto": "Servicio de validación biométrica para la aplicación Mi Argentina",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0065-CDI23",
@@ -1804,7 +1942,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE GESTIÓN Y EMPLEO PÚBLICO y LA UNIVERSIDAD NACIONAL DE LA MATANZA",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "31/08/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0066-CDI23",
@@ -1817,7 +1956,8 @@
     "objeto": "Convenio carta de Adhesión - YPF S.A. Combustibles y Aerolubricantes",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "21/07/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0067-CDI23",
@@ -1830,7 +1970,8 @@
     "objeto": "Contratación de GUADALQUIVIR S.A. para el servicio de alquiler de oficinas en inmueble",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "26/06/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0068-CDI22",
@@ -1843,7 +1984,8 @@
     "objeto": "Convenio Específico con la UNIVERSIDAD TECNOLÓGICA NACIONAL - FACULTAD REGIONAL SAN NICOLÁS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "27/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0068-CDI23",
@@ -1856,7 +1998,8 @@
     "objeto": "Adquisición de materiales para actividades educativas",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "17/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0069-CDI23",
@@ -1869,7 +2012,8 @@
     "objeto": "Convenio Específico entre la SUBSECRETARÍA DE COORDINACIÓN POLÍTICA E INSTITUCIONAL y la UNSAM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "01/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0070-CDI23",
@@ -1882,7 +2026,8 @@
     "objeto": "Servicio de desinfección con ozono para el saneamiento ambiental de los edificios de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0071-CDI22",
@@ -1895,7 +2040,8 @@
     "objeto": "Adquisición de vajilla",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "12/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0071-CDI23",
@@ -1908,7 +2054,8 @@
     "objeto": "Servicio de asistencia de emergencias y urgencias médicas",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "20/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0072-CDI23",
@@ -1921,7 +2068,8 @@
     "objeto": "Convenio entre la SIP y CORASA - Kits Robótica Educativa",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "21/07/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0076-CDI23",
@@ -1934,7 +2082,8 @@
     "objeto": "Convenio entre la SUBSECRETARIA DE RELACIONES DE LA SOCIEDAD CIVIL de la JGM y la UNTREF",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0077-CDI22",
@@ -1947,7 +2096,8 @@
     "objeto": "Convenio Específico con la UNIVERSIDAD TECNOLOGICA NACIONAL",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "09/01/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0077-CDI23",
@@ -1960,7 +2110,8 @@
     "objeto": "Convenio entre la UEETAF de la JGM y EUDEBA S.E.M.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "18/07/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0078-CDI22",
@@ -1973,7 +2124,8 @@
     "objeto": "Convenio Interadministrativo con CORREO OFICIAL DE LA REPUBLICA ARGENTINA S.A.",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "17/01/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0078-CDI23",
@@ -1986,7 +2138,8 @@
     "objeto": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Incendio-Todo Riesgo Operativo",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0079-CDI23",
@@ -1999,7 +2152,8 @@
     "objeto": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Responsabilidad Civil JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/09/2023 14:00 Hrs."
   },
   {
     "numero_proceso": "79-0080-CDI23",
@@ -2012,7 +2166,8 @@
     "objeto": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Equipo técnico",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0081-CDI22",
@@ -2025,7 +2180,8 @@
     "objeto": "Servicio de recarga, control trimestral de matafuegos y prueba hidráulica de mangueras",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "16/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0081-CDI23",
@@ -2038,7 +2194,8 @@
     "objeto": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Accidentes Personales UEETEB",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "06/09/2023 14:00 Hrs."
   },
   {
     "numero_proceso": "79-0082-CDI22",
@@ -2051,7 +2208,8 @@
     "objeto": "Convenio con la EMPRESA ARGENTINA DE SOLUCIONES SATELITALES SOCIEDAD ANÓNIMA AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Desierto"
+    "estado": "Desierto",
+    "fecha_apertura": "04/01/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0082-CDI23",
@@ -2064,7 +2222,8 @@
     "objeto": "Convenio JGM-NACIÓN SEGUROS S.A. - Seguro de Responsabilidad Civil UEETEB",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "06/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0083-CDI22",
@@ -2077,7 +2236,8 @@
     "objeto": "servicio de limpieza y desinfección de tanques de agua del edificio sede de la JGM",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "20/01/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0083-CDI23",
@@ -2090,7 +2250,8 @@
     "objeto": "Contratación de la FUNDACIÓN UNIVERSIDAD CATÓLICA ARGENTINA para un estudio de investigación",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Fracasado"
+    "estado": "Fracasado",
+    "fecha_apertura": "14/07/2023 11:00 Hrs."
   },
   {
     "numero_proceso": "79-0084-CDI23",
@@ -2103,7 +2264,8 @@
     "objeto": "Adquisición de equipamiento informático y fotográfico para el INSTITUTO NACIONAL DE JUVENTUDES",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "14/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0086-CDI23",
@@ -2116,7 +2278,8 @@
     "objeto": "Servicio de provisión de insumos, recolección y disposición final de residuos patogénicos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "18/08/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0087-CDI23",
@@ -2129,7 +2292,8 @@
     "objeto": "Contratación de la FUNDACIÓN UNIVERSIDAD CATÓLICA ARGENTINA para un estudio de investigación",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "30/08/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0089-CDI23",
@@ -2142,7 +2306,8 @@
     "objeto": "Contratación de UBATEC S.A. para la investigación de capacidades competitivas de las clases sociales",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "07/11/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0090-CDI23",
@@ -2155,7 +2320,8 @@
     "objeto": "Contratación de UBATEC S.A. para la realización de estudios del capital social en Argentina",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "07/11/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0091-CDI23",
@@ -2168,7 +2334,8 @@
     "objeto": "Servicio de recarga y mantenimiento de extintores y de la red de hidrantes de SGYEP",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "15/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0092-CDI23",
@@ -2181,7 +2348,8 @@
     "objeto": "Servicio de suscripción de licencias ZOOM BUSINESS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "22/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0093-CDI23",
@@ -2194,7 +2362,8 @@
     "objeto": "Servicio de provisión de insumos, recolección y disposición final de residuos patogénicos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "08/09/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0094-CDI23",
@@ -2207,7 +2376,8 @@
     "objeto": "Suscripción anual a diversas publicaciones de la LEY S.A. EDITORA E IMPRESORA",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "05/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0095-CDI23",
@@ -2220,7 +2390,8 @@
     "objeto": "Convenio entre la UEETEB y la UNIVERSIDAD NACIONAL ARTURO JAURETCHE",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "22/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0096-CDI23",
@@ -2233,7 +2404,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Pendiente Análisis"
+    "estado": "Pendiente Análisis",
+    "fecha_apertura": "18/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0097-CDI23",
@@ -2246,7 +2418,8 @@
     "objeto": "ADQUISICIÓN DE MEDICAMENTOS",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Dejado Sin Efecto"
+    "estado": "Dejado Sin Efecto",
+    "fecha_apertura": "22/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0098-CDI23",
@@ -2259,7 +2432,8 @@
     "objeto": "Adquisición de insumos médicos",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "28/09/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0099-CDI23",
@@ -2272,7 +2446,8 @@
     "objeto": "Convenio entre la SECRETARÍA DE INNOVACIÓN PÚBLICA y AR-SAT",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Disponible Para Adjudicar"
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "11/10/2023 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0100-CDI23",
@@ -2285,7 +2460,8 @@
     "objeto": "Contratación de los servicios de la ASOCIACIÓN PARA EL FORTALECIMIENTO COMUNITARIO",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/10/2023 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0102-CDI23",
@@ -2298,6 +2474,7 @@
     "objeto": "Contratación de los servicios del INSTITUTO DE INVESTIGACIÓN Y DESARROLLO DE LAS TELECOMUNICACIONES",
     "ejercicio": null,
     "gestion": "Sin datos",
-    "estado": "Adjudicado"
+    "estado": "Adjudicado",
+    "fecha_apertura": "31/10/2023 10:00 Hrs."
   }
 ]
