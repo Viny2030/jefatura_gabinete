@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-05-28T08:45:41.111925",
-  "total": 3,
+  "generado_en": "2026-05-29T08:44:16.086877",
+  "total": 4,
   "altos": 0,
-  "medios": 3,
+  "medios": 4,
   "monto_total": 237444496.0,
   "cruces": [
     {
@@ -48,6 +48,21 @@
       "monto_fmt": "$716",
       "fecha": "2026-03-05",
       "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408409/20260305",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "MARTIN, Cecilia Ángeles",
+      "cargo": "Director/a",
+      "gestion": "Posse",
+      "empresa": "LUCIANO MARTIN CASTILLO",
+      "cuit": "20462942738",
+      "organismo": "EJÉRCITO ARGENTINO",
+      "monto": 0,
+      "monto_fmt": "—",
+      "fecha": "2026-05-28",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412718/20260528",
       "contratos": 2
     }
   ]
