@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
@@ -558,6 +558,7 @@ footer a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script>
+let MEACI = {}; // CUITs sancionados internacionalmente
 // ── Períodos JGM ──────────────────────────────────────────────────────────────
 const JGM = {
   posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', cls: 'posse'   },
@@ -644,7 +645,7 @@ function renderC(data) {
     const gk = getGestion(c.fecha_adjudicacion);
     return `<tr>
       <td class="fw">${c.proveedor||'—'}</td>
-      <td class="mono">${c.cuit||'—'}</td>
+      <td class="mono">${c.cuit||'—'}${MEACI[c.cuit] ? ' <span class="chip-meaci" title="Sancionado internacionalmente — MEACI">🌍 ALERTA</span>' : ''}</td>
       <td style="font-size:11px">${c.tipo_contratacion||'—'}</td>
       <td class="mono">${(c.fecha_adjudicacion||'').substring(0,10)}</td>
       <td>${chipGestion(gk)}</td>
@@ -663,6 +664,7 @@ function sortC(col) {
     return sortStateC.asc ? (av>bv?1:-1) : (av<bv?1:-1);
   });
   filtrarC();
+  cargarMEACI((allC||[]).map(c=>c.cuit).filter(Boolean));
 }
 
 function exportCSV() {
@@ -871,6 +873,17 @@ function initCharts() {
   };
   document.addEventListener("keydown", function(e){ if(e.key==="Escape") cerrarDonacion(); });
 })();
+
+// ── MEACI: carga alertas internacionales en background ───────────────────────
+async function cargarMEACI(cuits) {
+  if (!cuits || !cuits.length) return;
+  try {
+    const r = await fetch('/api/cruce-cuits-bulk?cuits=' + cuits.slice(0,50).join(','));
+    const d = await r.json();
+    MEACI = d.alertas || {};
+  } catch(e) { /* MEACI no disponible */ }
+}
+
 </script>
 </body>
 </html>
