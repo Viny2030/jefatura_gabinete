@@ -394,3 +394,17 @@ def _save_snapshot_to_db():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("api_server:app", host="0.0.0.0", port=PORT, reload=False)
+
+
+# -- MEACI: CUITs sancionados internacionalmente ------------------------------
+MEACI_CUITS = set()  # Se poblará con lista real en próxima sesión
+
+@app.get("/api/cruce-cuits-bulk")
+def cruce_cuits_bulk(cuits: str = Query(..., description="CUITs separados por coma")):
+    """Verifica si algún CUIT está en lista de sancionados internacionales."""
+    lista = [c.strip().replace("-","").replace(".","") for c in cuits.split(",") if c.strip()]
+    alertas = {c: True for c in lista if c in MEACI_CUITS}
+    return {"alertas": alertas, "total": len(alertas)}
+
+
+# -- MEACI: CUITs sancionados internacionalmente ------------------------------
