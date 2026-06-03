@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
@@ -527,6 +527,7 @@ footer a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script>
+let MEACI = {}; // CUITs sancionados internacionalmente
 // ── Períodos JGM ──────────────────────────────────────────────────────────────
 const JGM = {
   posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', cls: 'posse'   },
@@ -833,7 +834,7 @@ function generarCruces() {
       + '<div class="cruce-meta">'
       +   '<span>👤 <strong>' + c.funcionario + '</strong> — ' + c.cargo + '</span>'
       +   '<span>🏢 <strong>' + c.empresa + '</strong></span>'
-      +   (c.nivel === 'ALTO' ? '<span>CUIT: <strong class="mono">' + c.cuit + '</strong></span>' : '')
+      +   (c.nivel === 'ALTO' ? '<span>CUIT: <strong class="mono">' + c.cuit + '</strong></span>' + (MEACI[c.cuit] ? ' <span class="chip-meaci" title="Sancionado internacionalmente — MEACI">🌍 ALERTA</span>' : '') : '')
       +   '<span>📋 <strong>' + c.contratos + '</strong> contrato' + (c.contratos !== 1 ? 's' : '') + '</span>'
       +   (c.monto ? '<span>💰 <strong>' + fmt(c.monto) + '</strong></span>' : '')
       +   '<span>Gestión: ' + chipGestion(c.gestion) + '</span>'
@@ -935,7 +936,7 @@ function renderCrucesDesdeJSON(data) {
       + '<div class="cruce-meta">'
       + (c.funcionario !== '—' ? '<span>👤 <strong>' + c.funcionario + '</strong> — ' + c.cargo + '</span>' : '')
       + '<span>🏢 <strong>' + c.empresa + '</strong></span>'
-      + (c.nivel === 'ALTO' ? '<span>CUIT: <strong class="mono">' + c.cuit + '</strong></span>' : '')
+      + (c.nivel === 'ALTO' ? '<span>CUIT: <strong class="mono">' + c.cuit + '</strong></span>' + (MEACI[c.cuit] ? ' <span class="chip-meaci" title="Sancionado internacionalmente — MEACI">🌍 ALERTA</span>' : '') : '')
       + '<span>📋 <strong>' + c.contratos + '</strong> contrato' + (c.contratos !== 1 ? 's' : '') + '</span>'
       + (c.monto_fmt && c.monto_fmt !== '—' ? '<span>💰 <strong>' + c.monto_fmt + '</strong></span>' : '')
       + '<span>🏛️ ' + c.organismo.substring(0, 60) + (c.organismo.length > 60 ? '…' : '') + '</span>'
@@ -994,6 +995,8 @@ async function init() {
   // Cruces: usar JSON del workflow si tiene datos, sino calcular en browser
   if (crucesData && crucesData.total > 0) {
     renderCrucesDesdeJSON(crucesData);
+    const cuitsCruces = (crucesData||[]).map(c=>c.cuit||c.proveedor_cuit).filter(Boolean);
+    cargarMEACI(cuitsCruces);
   } else {
     generarCruces();
   }
@@ -1044,6 +1047,17 @@ init();
   };
   document.addEventListener("keydown", function(e){ if(e.key==="Escape") cerrarDonacion(); });
 })();
+
+// ── MEACI: carga alertas internacionales en background ───────────────────────
+async function cargarMEACI(cuits) {
+  if (!cuits || !cuits.length) return;
+  try {
+    const r = await fetch('/api/cruce-cuits-bulk?cuits=' + cuits.slice(0,50).join(','));
+    const d = await r.json();
+    MEACI = d.alertas || {};
+  } catch(e) { /* MEACI no disponible */ }
+}
+
 </script>
 </body>
 </html>
