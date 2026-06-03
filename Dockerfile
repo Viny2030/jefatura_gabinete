@@ -15,4 +15,4 @@ RUN mkdir -p data src/frontend/data
 
 EXPOSE 8000
 
-CMD ["uvicorn", "src.api_server:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.api.api_server:app", "--host", "0.0.0.0", "--port", "8000"]
