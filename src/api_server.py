@@ -31,7 +31,6 @@ database = databases.Database(DATABASE_URL) if DATABASE_URL else None
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     if not DATABASE_URL:
-        raise RuntimeError("DATABASE_URL no configurada. Copiá .env.example a .env y completá los datos.")
     await database.connect()
     yield
     await database.disconnect()
