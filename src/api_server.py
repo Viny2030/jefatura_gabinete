@@ -24,14 +24,14 @@ MEACI_URL = "https://mapatransparencia-production.up.railway.app"
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
-if not DATABASE_URL:
-    raise RuntimeError("DATABASE_URL no configurada. Copiá .env.example a .env y completá los datos.")
-
-database = databases.Database(DATABASE_URL)
+# La validación se hace en lifespan para que pytest pueda importar `app` sin DATABASE_URL
+database = databases.Database(DATABASE_URL) if DATABASE_URL else None
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    if not DATABASE_URL:
+        raise RuntimeError("DATABASE_URL no configurada. Copiá .env.example a .env y completá los datos.")
     await database.connect()
     yield
     await database.disconnect()
@@ -314,8 +314,6 @@ async def grafo_nodos():
         "nodes": [dict(r) for r in func_rows] + [dict(r) for r in prov_rows],
         "edges": [dict(r) for r in edge_rows],
     }
-
-
 
 
 # ── MEACI: Cruce Internacional de CUIT ───────────────────────────────────────
