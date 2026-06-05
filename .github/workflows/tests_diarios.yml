@@ -33,27 +33,34 @@ jobs:
       - name: Capturar fecha
         id: fecha
         run: echo "fecha=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-        
-      - name: Limpiar caché Python
-        run: find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 
-      - name: Debug - verificar api_server        👈 agregá esto
+      - name: Limpiar cache Python
         run: |
-          python -c "import sys; sys.path.insert(0, 'src'); import api_server; print(api_server.__file__)"
-          grep -n "raise RuntimeError" src/api_server.py || echo "NO HAY RAISE EN src/api_server.py"
-          find . -name "api_server.py" | head -20
+          find . -name "*.pyc" -delete 2>/dev/null || true
+          find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
+
+      - name: Debug api_server
+        run: |
+          echo "=== Buscando api_server.py ==="
+          find . -name "api_server.py"
+          echo "=== Linea 28 de src/api_server.py ==="
+          sed -n '25,35p' src/api_server.py
+          echo "=== sys.path que usara pytest ==="
+          python -c "import sys; sys.path.insert(0, 'src/api'); import api_server; print('Importado desde:', api_server.__file__)"
 
       - name: Ejecutar tests unitarios
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           REFRESH_TOKEN: "test_token_ci"
         run: |
+          find . -name "*.pyc" -delete 2>/dev/null || true
           pytest tests/ \
             --ignore=tests/test_live.py \
             -v \
             --tb=short \
             --junitxml=test-results/unit.xml \
-            -p no:warnings
+            -p no:warnings \
+            --cache-clear
 
       - name: Subir resultados
         if: always()
