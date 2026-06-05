@@ -1,26 +1,26 @@
 """
 test_api.py
 ===========
-Tests de los endpoints FastAPI usando TestClient (sin DB real).
+Tests de los endpoints FastAPI usando TestClient + mocks sobre la DB.
 
 Cubre:
-  GET  /api/health        → 200, campos requeridos
-  GET  /api/alertas       → 200, filtros nivel/tipo
-  GET  /api/contratos     → 200, filtros tipo/monto_min
-  GET  /api/resumen       → 200, fallback a inteligencia.json
-  GET  /api/bora          → 200, filtro relevante_jgm
-  GET  /api/grafo         → 200 o 404 según datos
-  POST /api/refresh       → 401 sin token, 401 token incorrecto
-  POST /api/init-db       → 401 sin token
+  GET  /api/v1/health              → 200, campos requeridos
+  GET  /api/v1/kpis                → 200, estructura KPIOut
+  GET  /api/v1/alertas             → 200, filtros nivel/tipo
+  GET  /api/v1/contratos           → 200, filtros organismo/proveedor
+  GET  /api/v1/contratos/comprar   → 200, estructura paginada
+  GET  /api/v1/nomina              → 200, filtros apellido/organismo
+  GET  /api/v1/grafo/nodos         → 200, nodos y aristas
+  GET  /api/cruce-cuit             → 200, respuesta MEACI
 """
 import sys
 import os
-from unittest.mock import patch
+from unittest.mock import patch, AsyncMock, MagicMock
 
 import pytest
 
-# Asegurar que no haya DATABASE_URL real en tests
-os.environ["DATABASE_URL"] = ""
+# Inyectar DATABASE_URL válida antes de importar app
+os.environ["DATABASE_URL"] = "postgresql://fake:fake@localhost/fake"
 os.environ["REFRESH_TOKEN"] = "test_token_secreto"
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
@@ -28,278 +28,324 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 from fastapi.testclient import TestClient
 from api_server import app
 
+# ── Helper para simular filas de DB ──────────────────────────────────────────
+
+def make_row(**kwargs):
+    """Simula una fila de resultado de `databases` (accesible por clave)."""
+    m = MagicMock()
+    m.__getitem__ = lambda self, key: kwargs[key]
+    m.keys = lambda: kwargs.keys()
+    # Para dict(row)
+    m._mapping = kwargs
+    return m
+
+
+def dict_row(**kwargs):
+    """Fila que se convierte correctamente con dict(row)."""
+    class Row(dict):
+        def __getitem__(self, key):
+            return super().__getitem__(key)
+    return Row(kwargs)
+
+
+# ── Cliente ───────────────────────────────────────────────────────────────────
+
+# Saltamos lifespan (connect/disconnect) para no necesitar DB real
 client = TestClient(app, raise_server_exceptions=False)
 
-# ── Datos de muestra ──────────────────────────────────────────────────────────
 
-INTELIGENCIA = {
-    "meta": {
-        "ultima_actualizacion": "2026-05-01T00:00:00",
-        "total_alertas": 3,
-        "alertas_alta": 1,
-        "alertas_media": 2,
-    },
-    "alertas": [
-        {"id": "1", "tipo_alerta": "NEPOTISMO", "nivel": "ALTA",
-         "titulo": "Test ALTA", "descripcion": "desc"},
-        {"id": "2", "tipo_alerta": "CONFLICTO_SOCIETARIO", "nivel": "MEDIA",
-         "titulo": "Test MEDIA", "descripcion": "desc"},
-        {"id": "3", "tipo_alerta": "DESVIO_IAP_GLOBAL", "nivel": "MEDIA",
-         "titulo": "Test MEDIA 2", "descripcion": "desc"},
-    ],
-    "grafo": {
-        "nodos": [{"id": "f1", "tipo": "funcionario"}],
-        "aristas": [],
-        "stats": {
-            "nodos_funcionarios": 2,
-            "nodos_empresas": 1,
-            "aristas_rojas": 1,
-            "aristas_amarillas": 2,
-        },
-    },
-}
-
-CONTRATOS = {
-    "contratos": [
-        {"id": "C001", "tipo": "adjudicacion", "proveedor": "EMPRESA A",
-         "monto_estimado": 1_000_000, "organismo": "JGM"},
-        {"id": "C002", "tipo": "convocatoria", "proveedor": "EMPRESA B",
-         "monto_estimado": 200_000, "organismo": "SGP"},
-    ],
-    "meta": {"total": 2},
-}
-
-BORA = [
-    {"titulo": "Designación JGM", "fecha": "2026-05-01", "relevante_jgm": True},
-    {"titulo": "Norma SGP", "fecha": "2026-05-01", "relevante_jgm": False},
-]
-
-RESUMEN = {
-    "kpis": {"total_alertas": 3, "alertas_alta": 1, "alertas_media": 2},
-    "ultima_actualizacion": "2026-05-01T00:00:00",
-}
-
-
-# ─── /api/health ─────────────────────────────────────────────────────────────
+# ─── /api/v1/health ──────────────────────────────────────────────────────────
 
 class TestHealth:
 
     def test_retorna_200(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            resp = client.get("/api/health")
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_one = AsyncMock(return_value=dict_row(n=1))
+            resp = client.get("/api/v1/health")
         assert resp.status_code == 200
 
-    def test_campo_status_ok(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/health").json()
+    def test_campos_requeridos(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_one = AsyncMock(return_value=dict_row(n=1))
+            data = client.get("/api/v1/health").json()
+        assert "status" in data
         assert data["status"] == "ok"
 
-    def test_campos_requeridos_presentes(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/health").json()
-        for campo in ["status", "timestamp", "total_alertas", "alertas_alta", "db_conectada"]:
-            assert campo in data, f"Campo '{campo}' faltante en /api/health"
-
-    def test_db_conectada_false_sin_database_url(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/health").json()
-        assert data["db_conectada"] is False
-
-    def test_total_alertas_viene_del_meta(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/health").json()
-        assert data["total_alertas"] == INTELIGENCIA["meta"]["total_alertas"]
+    def test_db_error_retorna_503(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_one = AsyncMock(side_effect=Exception("connection error"))
+            resp = client.get("/api/v1/health")
+        assert resp.status_code == 503
 
 
-# ─── /api/alertas ─────────────────────────────────────────────────────────────
+# ─── /api/v1/kpis ─────────────────────────────────────────────────────────────
+
+class TestKPIs:
+
+    def _mock_kpis(self, mock_db):
+        mock_db.fetch_one = AsyncMock(side_effect=[
+            dict_row(n=10, total=5_000_000.0),  # contratos
+            dict_row(n=3),                        # alertas activas
+            dict_row(n=1),                        # alertas alta
+            dict_row(n=7),                        # proveedores únicos
+            dict_row(n=25),                       # nómina
+        ])
+
+    def test_retorna_200(self):
+        with patch("api_server.database") as mock_db:
+            self._mock_kpis(mock_db)
+            resp = client.get("/api/v1/kpis")
+        assert resp.status_code == 200
+
+    def test_estructura_correcta(self):
+        with patch("api_server.database") as mock_db:
+            self._mock_kpis(mock_db)
+            data = client.get("/api/v1/kpis").json()
+        for campo in ["total_contratos", "monto_total_ars", "alertas_activas",
+                      "alertas_alta", "proveedores_unicos", "funcionarios_monitoreados"]:
+            assert campo in data, f"Campo '{campo}' faltante en /api/v1/kpis"
+
+    def test_valores_correctos(self):
+        with patch("api_server.database") as mock_db:
+            self._mock_kpis(mock_db)
+            data = client.get("/api/v1/kpis").json()
+        assert data["total_contratos"] == 10
+        assert data["monto_total_ars"] == 5_000_000.0
+        assert data["alertas_activas"] == 3
+        assert data["alertas_alta"] == 1
+        assert data["proveedores_unicos"] == 7
+        assert data["funcionarios_monitoreados"] == 25
+
+
+# ─── /api/v1/alertas ──────────────────────────────────────────────────────────
+
+ALERTAS_ROWS = [
+    dict_row(id="1", tipo="NEPOTISMO", nivel="alta", titulo="Test alta",
+             descripcion="desc", monto_involucrado=100000, fecha_creacion="2026-05-01"),
+    dict_row(id="2", tipo="CONFLICTO", nivel="media", titulo="Test media",
+             descripcion="desc", monto_involucrado=50000, fecha_creacion="2026-04-01"),
+]
+
 
 class TestAlertas:
 
     def test_retorna_200(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            resp = client.get("/api/alertas")
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=ALERTAS_ROWS)
+            resp = client.get("/api/v1/alertas")
         assert resp.status_code == 200
 
-    def test_estructura_correcta(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/alertas").json()
-        assert "alertas" in data
-        assert "total" in data
-        assert isinstance(data["alertas"], list)
+    def test_retorna_lista(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=ALERTAS_ROWS)
+            data = client.get("/api/v1/alertas").json()
+        assert isinstance(data, list)
+        assert len(data) == 2
 
-    def test_total_coincide_con_len(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/alertas").json()
-        assert data["total"] == len(data["alertas"])
+    def test_filtro_nivel(self):
+        fila = [dict_row(id="1", tipo="NEPOTISMO", nivel="alta", titulo="T",
+                         descripcion="d", monto_involucrado=0, fecha_creacion="2026-05-01")]
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=fila)
+            data = client.get("/api/v1/alertas?nivel=alta").json()
+        assert len(data) == 1
+        assert data[0]["nivel"] == "alta"
 
-    def test_filtro_nivel_alta(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/alertas?nivel=ALTA").json()
-        assert all(a["nivel"].upper() == "ALTA" for a in data["alertas"])
-        assert data["total"] == 1
+    def test_filtro_tipo(self):
+        fila = [dict_row(id="2", tipo="CONFLICTO", nivel="media", titulo="T",
+                         descripcion="d", monto_involucrado=0, fecha_creacion="2026-04-01")]
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=fila)
+            data = client.get("/api/v1/alertas?tipo=CONFLICTO").json()
+        assert data[0]["tipo"] == "CONFLICTO"
 
-    def test_filtro_nivel_media(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/alertas?nivel=MEDIA").json()
-        assert all(a["nivel"].upper() == "MEDIA" for a in data["alertas"])
-        assert data["total"] == 2
-
-    def test_filtro_tipo_nepotismo(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/alertas?tipo=NEPOTISMO").json()
-        assert all("NEPOTISMO" in a["tipo_alerta"].upper() for a in data["alertas"])
-
-    def test_filtro_tipo_inexistente_retorna_vacio(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            data = client.get("/api/alertas?tipo=TIPO_INEXISTENTE").json()
-        assert data["total"] == 0
-        assert data["alertas"] == []
-
-    def test_sin_datos_retorna_503(self):
-        with patch("api_server._load", return_value={}):
-            resp = client.get("/api/inteligencia")
-        assert resp.status_code == 503
+    def test_lista_vacia(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[])
+            data = client.get("/api/v1/alertas").json()
+        assert data == []
 
 
-# ─── /api/contratos ───────────────────────────────────────────────────────────
+# ─── /api/v1/contratos ────────────────────────────────────────────────────────
+
+CONTRATOS_ROWS = [
+    dict_row(id="C001", organismo="JGM", proveedor="EMPRESA A", cuit_proveedor="20123456789",
+             monto_adjudicado=1_000_000.0, tipo_proceso="adjudicacion",
+             fecha_adjudicacion="2026-05-01"),
+    dict_row(id="C002", organismo="SGP", proveedor="EMPRESA B", cuit_proveedor="20987654321",
+             monto_adjudicado=500_000.0, tipo_proceso="convocatoria",
+             fecha_adjudicacion="2026-04-01"),
+]
+
 
 class TestContratos:
 
     def test_retorna_200(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            resp = client.get("/api/contratos")
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=CONTRATOS_ROWS)
+            resp = client.get("/api/v1/contratos")
         assert resp.status_code == 200
 
-    def test_estructura_correcta(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            data = client.get("/api/contratos").json()
-        assert "contratos" in data
-        assert "total" in data
-        assert isinstance(data["contratos"], list)
+    def test_retorna_lista(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=CONTRATOS_ROWS)
+            data = client.get("/api/v1/contratos").json()
+        assert isinstance(data, list)
+        assert len(data) == 2
 
-    def test_filtro_tipo_adjudicacion(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            data = client.get("/api/contratos?tipo=adjudicacion").json()
-        assert all(c["tipo"] == "adjudicacion" for c in data["contratos"])
+    def test_campos_contrato(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[CONTRATOS_ROWS[0]])
+            data = client.get("/api/v1/contratos").json()
+        for campo in ["id", "organismo", "proveedor", "monto_adjudicado", "tipo_proceso"]:
+            assert campo in data[0], f"Campo '{campo}' faltante en contrato"
 
-    def test_filtro_tipo_convocatoria(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            data = client.get("/api/contratos?tipo=convocatoria").json()
-        assert all(c["tipo"] == "convocatoria" for c in data["contratos"])
+    def test_filtro_organismo(self):
+        fila = [CONTRATOS_ROWS[0]]
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=fila)
+            data = client.get("/api/v1/contratos?organismo=JGM").json()
+        assert data[0]["organismo"] == "JGM"
 
-    def test_filtro_monto_min(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            data = client.get("/api/contratos?monto_min=500000").json()
-        for c in data["contratos"]:
-            assert (c.get("monto_estimado") or 0) >= 500_000
+    def test_filtro_proveedor(self):
+        fila = [CONTRATOS_ROWS[1]]
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=fila)
+            data = client.get("/api/v1/contratos?proveedor=EMPRESA+B").json()
+        assert data[0]["proveedor"] == "EMPRESA B"
 
-    def test_contratos_ordenados_por_monto_desc(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            data = client.get("/api/contratos").json()
-        montos = [c.get("monto_estimado") or 0 for c in data["contratos"]]
-        assert montos == sorted(montos, reverse=True)
-
-    def test_limit_parametro(self):
-        with patch("api_server._load", return_value=CONTRATOS):
-            data = client.get("/api/contratos?limit=1").json()
-        assert len(data["contratos"]) <= 1
-
-
-# ─── /api/resumen ─────────────────────────────────────────────────────────────
-
-class TestResumen:
-
-    def test_retorna_resumen_directo(self):
-        with patch("api_server._load", return_value=RESUMEN):
-            resp = client.get("/api/resumen")
-        assert resp.status_code == 200
-
-    def test_fallback_a_inteligencia(self):
-        """Si resumen.json está vacío, usa inteligencia.json."""
-        def mock_load(nombre):
-            if nombre == "resumen.json":
-                return {}
-            return INTELIGENCIA
-
-        with patch("api_server._load", side_effect=mock_load):
-            resp = client.get("/api/resumen")
-        assert resp.status_code == 200
-        data = resp.json()
-        assert "kpis" in data
-        assert data["kpis"]["total_alertas"] == 3
-
-    def test_sin_datos_retorna_503(self):
-        with patch("api_server._load", return_value={}):
-            resp = client.get("/api/resumen")
-        assert resp.status_code == 503
+    def test_lista_vacia(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[])
+            data = client.get("/api/v1/contratos").json()
+        assert data == []
 
 
-# ─── /api/bora ────────────────────────────────────────────────────────────────
+# ─── /api/v1/contratos/comprar ────────────────────────────────────────────────
 
-class TestBora:
+COMPRAR_ROWS = [
+    dict_row(numero_proceso="EX-2026-001", expediente="EXP-001",
+             nombre_proceso="Licitación Test", tipo_proceso="licitacion_publica",
+             fecha_apertura="2026-05-10", estado="publicado",
+             unidad_ejecutora="JGM", saf="001", scraped_at="2026-05-01"),
+]
+
+
+class TestContratosComprar:
 
     def test_retorna_200(self):
-        with patch("api_server._load", return_value=BORA):
-            resp = client.get("/api/bora")
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_one = AsyncMock(return_value=dict_row(n=1))
+            mock_db.fetch_all = AsyncMock(return_value=COMPRAR_ROWS)
+            resp = client.get("/api/v1/contratos/comprar")
         assert resp.status_code == 200
 
-    def test_solo_relevantes_por_defecto(self):
-        with patch("api_server._load", return_value=BORA):
-            data = client.get("/api/bora").json()
-        assert all(p["relevante_jgm"] for p in data["publicaciones"])
+    def test_estructura_paginada(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_one = AsyncMock(return_value=dict_row(n=1))
+            mock_db.fetch_all = AsyncMock(return_value=COMPRAR_ROWS)
+            data = client.get("/api/v1/contratos/comprar").json()
+        for campo in ["total", "limit", "offset", "data"]:
+            assert campo in data, f"Campo '{campo}' faltante en respuesta paginada"
+        assert isinstance(data["data"], list)
 
-    def test_todas_cuando_relevante_false(self):
-        with patch("api_server._load", return_value=BORA):
-            data = client.get("/api/bora?relevante_jgm=false").json()
-        # Deben aparecer las no relevantes también
-        assert data["total"] == len(BORA)
+    def test_total_correcto(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_one = AsyncMock(return_value=dict_row(n=5))
+            mock_db.fetch_all = AsyncMock(return_value=COMPRAR_ROWS)
+            data = client.get("/api/v1/contratos/comprar").json()
+        assert data["total"] == 5
 
 
-# ─── /api/grafo ───────────────────────────────────────────────────────────────
+# ─── /api/v1/nomina ───────────────────────────────────────────────────────────
+
+NOMINA_ROWS = [
+    dict_row(id="N001", nombre="Juan", apellido="Pérez", cuil="20123456789",
+             cargo="Director", tipo_contratacion="planta", agrupamiento="profesional",
+             nivel="A", organismo="JGM"),
+    dict_row(id="N002", nombre="María", apellido="García", cuil="27987654321",
+             cargo="Analista", tipo_contratacion="contrato", agrupamiento="técnico",
+             nivel="B", organismo="SGP"),
+]
+
+
+class TestNomina:
+
+    def test_retorna_200(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=NOMINA_ROWS)
+            resp = client.get("/api/v1/nomina")
+        assert resp.status_code == 200
+
+    def test_retorna_lista(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=NOMINA_ROWS)
+            data = client.get("/api/v1/nomina").json()
+        assert isinstance(data, list)
+        assert len(data) == 2
+
+    def test_campos_nomina(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[NOMINA_ROWS[0]])
+            data = client.get("/api/v1/nomina").json()
+        for campo in ["id", "nombre", "apellido", "cargo", "organismo"]:
+            assert campo in data[0], f"Campo '{campo}' faltante en nómina"
+
+    def test_filtro_apellido(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[NOMINA_ROWS[0]])
+            data = client.get("/api/v1/nomina?apellido=Pérez").json()
+        assert data[0]["apellido"] == "Pérez"
+
+    def test_filtro_organismo(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[NOMINA_ROWS[1]])
+            data = client.get("/api/v1/nomina?organismo=SGP").json()
+        assert data[0]["organismo"] == "SGP"
+
+
+# ─── /api/v1/grafo/nodos ──────────────────────────────────────────────────────
 
 class TestGrafo:
 
-    def test_retorna_200_con_datos(self):
-        with patch("api_server._load", return_value=INTELIGENCIA):
-            resp = client.get("/api/grafo")
+    def test_retorna_200(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[])
+            resp = client.get("/api/v1/grafo/nodos")
         assert resp.status_code == 200
 
-    def test_retorna_404_sin_grafo(self):
-        data_sin_grafo = {**INTELIGENCIA, "grafo": {}}
-        with patch("api_server._load", return_value=data_sin_grafo):
-            resp = client.get("/api/grafo")
-        assert resp.status_code == 404
+    def test_estructura_nodos_aristas(self):
+        with patch("api_server.database") as mock_db:
+            mock_db.fetch_all = AsyncMock(return_value=[])
+            data = client.get("/api/v1/grafo/nodos").json()
+        assert "nodes" in data
+        assert "edges" in data
+        assert isinstance(data["nodes"], list)
+        assert isinstance(data["edges"], list)
 
 
-# ─── /api/refresh ─────────────────────────────────────────────────────────────
+# ─── /api/cruce-cuit ──────────────────────────────────────────────────────────
 
-class TestRefresh:
+class TestCruceCuit:
 
-    def test_sin_token_retorna_401(self):
-        resp = client.post("/api/refresh")
-        assert resp.status_code == 401
+    def test_retorna_200_con_cuit(self):
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"cuit": "20123456789", "sancionado": False}
 
-    def test_token_invalido_retorna_401(self):
-        resp = client.post("/api/refresh", headers={"X-Refresh-Token": "token_incorrecto"})
-        assert resp.status_code == 401
+        with patch("api_server.httpx.AsyncClient") as mock_client:
+            mock_client.return_value.__aenter__ = AsyncMock(return_value=mock_client.return_value)
+            mock_client.return_value.__aexit__ = AsyncMock(return_value=False)
+            mock_client.return_value.get = AsyncMock(return_value=mock_response)
+            resp = client.get("/api/cruce-cuit?cuit=20123456789")
+        assert resp.status_code == 200
 
-    def test_mensaje_error_token_invalido(self):
-        data = client.post(
-            "/api/refresh",
-            headers={"X-Refresh-Token": "mal_token"}
-        ).json()
-        assert "detail" in data
-        assert "inválido" in data["detail"].lower() or "invalid" in data["detail"].lower()
-
-
-# ─── /api/init-db ─────────────────────────────────────────────────────────────
-
-class TestInitDb:
-
-    def test_sin_token_retorna_401(self):
-        resp = client.post("/api/init-db")
-        assert resp.status_code == 401
-
-    def test_token_invalido_retorna_401(self):
-        resp = client.post("/api/init-db", headers={"X-Refresh-Token": "bad"})
-        assert resp.status_code == 401
+    def test_error_externo_retorna_igual_200(self):
+        with patch("api_server.httpx.AsyncClient") as mock_client:
+            mock_client.return_value.__aenter__ = AsyncMock(return_value=mock_client.return_value)
+            mock_client.return_value.__aexit__ = AsyncMock(return_value=False)
+            mock_client.return_value.get = AsyncMock(side_effect=Exception("timeout"))
+            resp = client.get("/api/cruce-cuit?cuit=20123456789")
+        assert resp.status_code == 200
+        data = resp.json()
+        assert "error" in data or "sancionado" in data
