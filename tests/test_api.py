@@ -23,7 +23,7 @@ import pytest
 os.environ["DATABASE_URL"] = "postgresql://fake:fake@localhost/fake"
 os.environ["REFRESH_TOKEN"] = "test_token_secreto"
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src", "api"))
 
 from fastapi.testclient import TestClient
 from api_server import app
