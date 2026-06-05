@@ -36,7 +36,7 @@ jobs:
 
       - name: Ejecutar tests unitarios
         env:
-          DATABASE_URL: ""
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           REFRESH_TOKEN: "test_token_ci"
         run: |
           pytest tests/ \
