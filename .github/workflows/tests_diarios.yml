@@ -33,7 +33,9 @@ jobs:
       - name: Capturar fecha
         id: fecha
         run: echo "fecha=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-
+        
+      - name: Limpiar caché Python
+        run: find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
       - name: Ejecutar tests unitarios
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
