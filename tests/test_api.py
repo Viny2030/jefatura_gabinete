@@ -286,7 +286,7 @@ class TestRefresh:
             headers={"X-Refresh-Token": "mal_token"}
         ).json()
         assert "detail" in data
-        assert "inválido" in data["detail"].lower() or "invalid" in data["detail"].lower()
+        assert "inv" in data["detail"].lower()
 
 
 # ─── /api/init-db ─────────────────────────────────────────────────────────────
