@@ -634,7 +634,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 729/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/318968/20241230);;[Resolución 352/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331011/20250909);",
+    "norma_designacion": "[Resolución 729/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/318968/20241230);;[Resolución 352/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331011/20250909);;[Resolución 212/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342220/20260521);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20337352201.0,
     "fecha_ingreso": "2024-01-01"
@@ -1138,18 +1138,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría General",
-    "apellido": null,
-    "nombre": null,
+    "apellido": "PRIETO",
+    "nombre": "María Victoria",
     "cargo": "Director/a",
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Desconocido",
-    "genero": "No informado",
-    "norma_designacion": null,
+    "jgm_al_ingreso": "Adorni",
+    "genero": "Femenino",
+    "norma_designacion": "[Resolución 228/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342790/20260604);",
     "sueldo_bruto_estimado_ars": 4500000,
-    "cuil": null,
-    "fecha_ingreso": null
+    "cuil": 27391843568.0,
+    "fecha_ingreso": "2026-01-01"
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1298,18 +1298,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría General",
-    "apellido": "ORTOLANI",
-    "nombre": "Florencia",
+    "apellido": null,
+    "nombre": null,
     "cargo": "Coordinador/a",
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
-    "genero": "Femenino",
-    "norma_designacion": "[Decreto 408/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/307469/20240515);;[RESOL-2025-21-APN-SGP](EX-2024-135867952-APN-CGD#SGP);;[Resolución 395/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/332207/20251001);",
+    "jgm_al_ingreso": "Desconocido",
+    "genero": "No informado",
+    "norma_designacion": null,
     "sueldo_bruto_estimado_ars": 3200000,
-    "cuil": 27295472826.0,
-    "fecha_ingreso": "2024-01-01"
+    "cuil": null,
+    "fecha_ingreso": null
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1354,7 +1354,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Decreto 279/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/305145/20240326);;[RESOL-2024-730-APN-SGP](EX-2024-125512639- -APN-CGD#SGP);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);",
+    "norma_designacion": "[Decreto 279/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/305145/20240326);;[RESOL-2024-730-APN-SGP](EX-2024-125512639- -APN-CGD#SGP);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);;[Resolución 233/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342891/20260608);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20333774977.0,
     "fecha_ingreso": "2024-01-01"
@@ -1402,7 +1402,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 35/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320199/20250128);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);",
+    "norma_designacion": "[Resolución 35/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320199/20250128);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);;[Resolución 239/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342993/20260611);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27263489492.0,
     "fecha_ingreso": "2025-01-01"
