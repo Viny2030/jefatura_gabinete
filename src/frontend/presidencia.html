@@ -157,7 +157,8 @@ tr:hover td { background: #0891b205; }
   padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
 .chip-posse   { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
 .chip-francos { background: #ecfeff; color: #0891b2; border: 1px solid #a5f3fc; }
-.chip-adorni  { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-adorni   { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-santilli { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
 .chip-pre     { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
 .chip-sinep   { background: #eff6ff; color: #0891b2; border: 1px solid #bfdbfe; }
 .chip-auto    { background: #fdf4ff; color: #7c3aed; border: 1px solid #e9d5ff; }
@@ -282,9 +283,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="kpi-sub">2 de riesgo alto</div>
     </div>
     <div class="kpi-card kpi-green">
-      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-label">Designados Santilli</div>
       <div class="kpi-val">14</div>
-      <div class="kpi-sub">desde nov 2025</div>
+      <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card kpi-purple">
       <div class="kpi-label">Sub-organismos</div>
@@ -322,9 +323,14 @@ footer a { color: var(--accent); text-decoration: none; }
 
   <div class="kpi-grid" style="margin-bottom:20px">
     <div class="kpi-card">
+      <div class="kpi-label">Gestión Santilli</div>
+      <div class="kpi-val" id="k-santilli-c">—</div>
+      <div class="kpi-sub">jun 2026 → hoy</div>
+    </div>
+    <div class="kpi-card">
       <div class="kpi-label">Gestión Adorni</div>
       <div class="kpi-val" id="k-adorni-c">—</div>
-      <div class="kpi-sub">nov 2025 → hoy</div>
+      <div class="kpi-sub">nov 2025 → jun 2026</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Gestión Francos</div>
@@ -359,6 +365,7 @@ footer a { color: var(--accent); text-decoration: none; }
       </select>
       <select id="f-gest" onchange="filtrarC()">
         <option value="">Todas las gestiones</option>
+        <option value="santilli">Santilli</option>
         <option value="adorni">Adorni</option>
         <option value="francos">Francos</option>
         <option value="posse">Posse</option>
@@ -392,9 +399,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="kpi-sub">en nómina Presidencia</div>
     </div>
     <div class="kpi-card kpi-green">
-      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-label">Designados Santilli</div>
       <div class="kpi-val">14</div>
-      <div class="kpi-sub">desde nov 2025</div>
+      <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Femenino</div>
@@ -435,6 +442,7 @@ footer a { color: var(--accent); text-decoration: none; }
       </select>
       <select id="p-gest"    onchange="filtrarP()">
         <option value="">Todas las gestiones</option>
+        <option value="Santilli">Santilli</option>
         <option value="Adorni">Adorni</option>
         <option value="Francos">Francos</option>
         <option value="Posse">Posse</option>
@@ -521,7 +529,7 @@ footer a { color: var(--accent); text-decoration: none; }
       <span>CUIL: <strong class="mono">20-31209876-4</strong></span>
       <span>📋 <strong>2</strong> contratos</span>
       <span>💰 <strong>$8.6M</strong></span>
-      <span>Gestión: <span class="chip chip-adorni">MA Adorni</span></span>
+      <span>Gestión: <span class="chip chip-santilli">DS Santilli</span></span>
     </div>
   </div>
 
@@ -565,7 +573,8 @@ let MEACI = {}; // CUITs sancionados internacionalmente
 const JGM = {
   posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', cls: 'posse'   },
   francos: { nombre: 'Guillermo Francos', desde: '2024-05-27', hasta: '2025-10-31', cls: 'francos' },
-  adorni:  { nombre: 'Manuel Adorni',     desde: '2025-11-04', hasta: null,         cls: 'adorni'  },
+  adorni:   { nombre: 'Manuel Adorni',   desde: '2025-11-04', hasta: '2026-06-27', cls: 'adorni'   },
+  santilli: { nombre: 'Diego Santilli',  desde: '2026-06-30', hasta: null,         cls: 'santilli' },
 };
 
 // ── Estado ────────────────────────────────────────────────────────────────────
@@ -595,7 +604,7 @@ function chipGestion(key) {
   if (!key) return '—';
   const g = JGM[key];
   if (!g) {
-    const mapa = { 'Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
+    const mapa = { 'Santilli':'santilli','Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
     const cls = mapa[key] || 'pre';
     return `<span class="chip chip-${cls}">${key}</span>`;
   }
@@ -760,13 +769,14 @@ function initCharts() {
   new Chart(document.getElementById('chart-gestion'), {
     type: 'bar',
     data: {
-      labels: ['Posse\n(dic23-may24)', 'Francos\n(may24-oct25)', 'Adorni\n(nov25-hoy)'],
+      labels: ['Posse\n(dic23-may24)', 'Francos\n(may24-oct25)', 'Adorni\n(nov25-jun26)', 'Santilli\n(jun26-hoy)'],
       datasets: [{
         data: [allC.filter(c=>getGestion(c.fecha_adjudicacion)==='posse').length,
                allC.filter(c=>getGestion(c.fecha_adjudicacion)==='francos').length,
-               allC.filter(c=>getGestion(c.fecha_adjudicacion)==='adorni').length],
-        backgroundColor: ['#7c3aed33','#0891b233','#05966933'],
-        borderColor:     ['#7c3aed',  '#0891b2',  '#059669'],
+               allC.filter(c=>getGestion(c.fecha_adjudicacion)==='adorni').length,
+               allC.filter(c=>getGestion(c.fecha_adjudicacion)==='santilli').length],
+        backgroundColor: ['#7c3aed33','#0891b233','#05966933','#2563eb33'],
+        borderColor:     ['#7c3aed',  '#0891b2',  '#059669',  '#2563eb'],
         borderWidth: 1.5, borderRadius: 6,
       }]
     },
@@ -818,7 +828,7 @@ function initCharts() {
     </div>`).join('');
 
   // KPIs conteos por gestión
-  ['adorni','francos','posse'].forEach(k => {
+  ['santilli','adorni','francos','posse'].forEach(k => {
     const n = allC.filter(c => getGestion(c.fecha_adjudicacion) === k).length;
     const el = document.getElementById('k-' + k + '-c');
     if (el) el.textContent = n;

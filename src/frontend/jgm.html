@@ -158,6 +158,7 @@ tr:hover td { background: #1e40af05; }
 .chip-posse   { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
 .chip-francos { background: #ecfeff; color: #0891b2; border: 1px solid #a5f3fc; }
 .chip-adorni  { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-santilli { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
 .chip-pre     { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
 .chip-sinep   { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
 .chip-auto    { background: #fdf4ff; color: #7c3aed; border: 1px solid #e9d5ff; }
@@ -230,7 +231,7 @@ footer a { color: var(--accent); text-decoration: none; }
     <h1>Jefatura de Gabinete de Ministros</h1>
     <div class="sub">República Argentina · Poder Ejecutivo Nacional</div>
   </div>
-  <div class="badge-actual">✓ Manuel Adorni — activo</div>
+  <div class="badge-actual">✓ Diego Santilli — activo</div>
   <button class="don-btn" onclick="abrirDonacion()">💚 Apoyar</button>
 </header>
 
@@ -255,7 +256,7 @@ footer a { color: var(--accent); text-decoration: none; }
     <div class="gestion-actual">
       <div class="gav">MA</div>
       <div>
-        <div class="gnom">Manuel Adorni</div>
+        <div class="gnom">Diego Santilli</div>
         <div class="gper">04/11/2025 → actualidad · Gestión actual</div>
       </div>
     </div>
@@ -293,9 +294,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="kpi-sub">cruces detectados</div>
     </div>
     <div class="kpi-card kpi-green">
-      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-label">Designados Santilli</div>
       <div class="kpi-val">19</div>
-      <div class="kpi-sub">desde nov 2025</div>
+      <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card kpi-purple">
       <div class="kpi-label">Ad Honorem</div>
@@ -401,9 +402,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="kpi-sub">en nómina JGM</div>
     </div>
     <div class="kpi-card kpi-green">
-      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-label">Designados Santilli</div>
       <div class="kpi-val">19</div>
-      <div class="kpi-sub">desde nov 2025</div>
+      <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Femenino</div>
@@ -445,6 +446,7 @@ footer a { color: var(--accent); text-decoration: none; }
       <select id="p-gest"    onchange="filtrarP()">
         <option value="">Todas las gestiones</option>
         <option value="Adorni">Adorni</option>
+        <option value="Santilli">Santilli</option>
         <option value="Francos">Francos</option>
         <option value="Posse">Posse</option>
         <option value="Pre-Milei">Pre-Milei</option>
@@ -533,7 +535,8 @@ let MEACI = {}; // CUITs sancionados internacionalmente
 const JGM = {
   posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', cls: 'posse'   },
   francos: { nombre: 'Guillermo Francos', desde: '2024-05-27', hasta: '2025-10-31', cls: 'francos' },
-  adorni:  { nombre: 'Manuel Adorni',     desde: '2025-11-04', hasta: null,         cls: 'adorni'  },
+  adorni:   { nombre: 'Manuel Adorni',   desde: '2025-11-04', hasta: '2026-06-27', cls: 'adorni'   },
+  santilli: { nombre: 'Diego Santilli',  desde: '2026-06-30', hasta: null,         cls: 'santilli' },
 };
 
 // ── Estado ────────────────────────────────────────────────────────────────────
@@ -564,7 +567,7 @@ function chipGestion(key) {
   if (!key) return '—';
   var g = JGM[key];
   if (!g) {
-    var mapa = { 'Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
+    var mapa = { 'Santilli':'santilli','Adorni':'adorni','Francos':'francos','Posse':'posse','Pre-Milei':'pre' };
     var cls = mapa[key] || 'pre';
     return '<span class="chip chip-' + cls + '">' + key + '</span>';
   }
@@ -849,15 +852,16 @@ function initCharts() {
   new Chart(document.getElementById('chart-gestion'), {
     type: 'bar',
     data: {
-      labels: ['Posse (dic23-may24)', 'Francos (may24-oct25)', 'Adorni (nov25-hoy)'],
+      labels: ['Posse (dic23-may24)', 'Francos (may24-oct25)', 'Adorni (nov25-jun26)', 'Santilli (jun26-hoy)'],
       datasets: [{
         data: [
           allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='posse'; }).length,
           allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='francos'; }).length,
           allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='adorni'; }).length,
+          allC.filter(function(c){ var f=c.fecha_adjudicacion||c.fecha_apertura||''; return getGestion(f)==='santilli'; }).length,
         ],
-        backgroundColor: ['#7c3aed33','#0891b233','#05966933'],
-        borderColor:     ['#7c3aed',  '#0891b2',  '#059669'],
+        backgroundColor: ['#7c3aed33','#0891b233','#05966933','#2563eb33'],
+        borderColor:     ['#7c3aed',  '#0891b2',  '#059669',  '#2563eb'],
         borderWidth: 1.5, borderRadius: 6,
       }]
     },

@@ -115,7 +115,8 @@ code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11p
 .jgm-btn:hover { border-color: #93c5fd; background: #eff6ff; }
 .jgm-btn.active.posse   { border-color: #7c3aed; background: #f5f3ff; box-shadow: 0 0 0 3px #7c3aed18; }
 .jgm-btn.active.francos { border-color: #0891b2; background: #ecfeff; box-shadow: 0 0 0 3px #0891b218; }
-.jgm-btn.active.adorni  { border-color: #059669; background: #ecfdf5; box-shadow: 0 0 0 3px #05966918; }
+.jgm-btn.active.adorni    { border-color: #059669; background: #ecfdf5; box-shadow: 0 0 0 3px #05966918; }
+.jgm-btn.active.santilli  { border-color: #2563eb; background: #eff6ff; box-shadow: 0 0 0 3px #2563eb18; }
 .jgm-btn.active.todos   { border-color: var(--accent); background: #eff6ff; box-shadow: 0 0 0 3px #2563eb18; }
 .jgm-nombre  { font-size: 13px; font-weight: 700; color: var(--text); }
 .jgm-periodo { font-size: 10px; color: var(--muted); font-family: var(--mono); }
@@ -126,7 +127,8 @@ code { background: #fef3c7; padding: 1px 5px; border-radius: 3px; font-size: 11p
 }
 .av-posse   { background: #7c3aed; }
 .av-francos { background: #0891b2; }
-.av-adorni  { background: #059669; }
+.av-adorni    { background: #059669; }
+.av-santilli  { background: #2563eb; }
 .av-todos   { background: var(--accent); }
 .jgm-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
 .jgm-conteo { font-size: 11px; color: var(--muted); }
@@ -210,7 +212,8 @@ tr:hover td { background: #2563eb05; }
 .chip-jgm { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 99px; text-transform: uppercase; letter-spacing: .03em; white-space: nowrap; }
 .chip-posse   { background: #f5f3ff; color: #7c3aed; border: 1px solid #ddd6fe; }
 .chip-francos { background: #ecfeff; color: #0891b2; border: 1px solid #a5f3fc; }
-.chip-adorni  { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-adorni   { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.chip-santilli { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
 .chip-pre     { background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
 
 .chip-org { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 99px; white-space: nowrap; }
@@ -369,10 +372,20 @@ footer a { color: var(--accent); text-decoration: none; }
         <div class="jgm-avatar av-adorni">MA</div>
         <div>
           <div class="jgm-nombre">Manuel Adorni</div>
-          <div class="jgm-periodo">04/11/2025 → actualidad</div>
+          <div class="jgm-periodo">04/11/2025 → 27/06/2026</div>
         </div>
       </div>
       <div class="jgm-conteo" id="cnt-adorni">— contratos</div>
+    </button>
+    <button class="jgm-btn" data-jgm="santilli" onclick="seleccionarJGM('santilli')">
+      <div class="jgm-header">
+        <div class="jgm-avatar av-santilli">DS</div>
+        <div>
+          <div class="jgm-nombre">Diego Santilli</div>
+          <div class="jgm-periodo">30/06/2026 → actualidad</div>
+        </div>
+      </div>
+      <div class="jgm-conteo" id="cnt-santilli">— contratos</div>
     </button>
   </div>
 
@@ -453,9 +466,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="kpi-sub">Cultura, Legal y Técnica…</div>
     </div>
     <div class="kpi-card kc-green">
-      <div class="kpi-label">Designados Adorni</div>
+      <div class="kpi-label">Designados Santilli</div>
       <div class="kpi-val" id="n-adorni-kpi">19</div>
-      <div class="kpi-sub">Desde nov 2025</div>
+      <div class="kpi-sub">Desde jun 2026</div>
     </div>
     <div class="kpi-card kc-alta">
       <div class="kpi-label">Ad Honorem</div>
@@ -492,6 +505,7 @@ footer a { color: var(--accent); text-decoration: none; }
       </select>
       <select id="n-f-gestion" onchange="filtrarNomina()">
         <option value="">Todas las gestiones</option>
+        <option value="Santilli">Santilli</option>
         <option value="Adorni">Adorni</option>
         <option value="Francos">Francos</option>
         <option value="Posse">Posse</option>
@@ -599,7 +613,8 @@ footer a { color: var(--accent); text-decoration: none; }
 const JGM = {
   posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', clase: 'posse'   },
   francos: { nombre: 'Guillermo Francos', desde: '2024-05-27', hasta: '2025-10-31', clase: 'francos' },
-  adorni:  { nombre: 'Manuel Adorni',     desde: '2025-11-04', hasta: null,         clase: 'adorni'  },
+  adorni:   { nombre: 'Manuel Adorni',   desde: '2025-11-04', hasta: '2026-06-27', clase: 'adorni'   },
+  santilli: { nombre: 'Diego Santilli',  desde: '2026-06-30', hasta: null,         clase: 'santilli' },
 };
 
 // ── Estado global ─────────────────────────────────────────────────────────────
@@ -722,7 +737,7 @@ function chipJGM(key) {
 
 function chipGestion(gestion) {
   if (!gestion || gestion === 'Desconocido') return '<span style="color:#94a3b8">—</span>';
-  var mapa = { 'Adorni':'adorni', 'Francos':'francos', 'Posse':'posse', 'Pre-Milei':'pre' };
+  var mapa = { 'Santilli':'santilli', 'Adorni':'adorni', 'Francos':'francos', 'Posse':'posse', 'Pre-Milei':'pre' };
   var cls = mapa[gestion] || 'pre';
   return '<span class="chip-jgm chip-' + cls + '">' + gestion + '</span>';
 }
@@ -750,7 +765,7 @@ function contratosEnGestion(key) {
 function seleccionarJGM(key) {
   jgmActivo = key;
   document.querySelectorAll('.jgm-btn').forEach(function(b) {
-    b.classList.remove('active', 'todos', 'posse', 'francos', 'adorni');
+    b.classList.remove('active', 'todos', 'posse', 'francos', 'adorni', 'santilli');
   });
   var btn = document.querySelector('.jgm-btn[data-jgm="' + key + '"]');
   if (btn) btn.classList.add('active', key);
@@ -778,7 +793,7 @@ function seleccionarJGM(key) {
 }
 
 function actualizarConteos() {
-  ['todos','posse','francos','adorni'].forEach(function(k) {
+  ['todos','posse','francos','adorni','santilli'].forEach(function(k) {
     var n = contratosEnGestion(k).length;
     var el = document.getElementById('cnt-' + k);
     if (el) el.innerHTML = '<strong>' + n + '</strong> contrato' + (n !== 1 ? 's' : '');
@@ -1002,7 +1017,7 @@ function renderChartOrg(data) {
 }
 
 function renderChartsNomina() {
-  var gestiones = ['Adorni','Francos','Posse','Pre-Milei','Desconocido'];
+  var gestiones = ['Santilli','Adorni','Francos','Posse','Pre-Milei','Desconocido'];
   var colores   = ['#059669','#0891b2','#7c3aed','#64748b','#cbd5e1'];
   var counts    = gestiones.map(function(g){ return allNomina.filter(function(n){return n.jgm_al_ingreso===g;}).length; });
   new Chart(document.getElementById('chart-gestion-nomina'), {
