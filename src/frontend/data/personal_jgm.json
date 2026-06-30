@@ -6962,18 +6962,18 @@
   {
     "organismo": "Jefatura de Gabinete de Ministros",
     "sub_organismo": null,
-    "apellido": "HERMIDA CADEL",
-    "nombre": "Nicolás",
+    "apellido": "JANIEWICZ",
+    "nombre": "Federico",
     "cargo": "Director/a",
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Desconocido",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 76/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330534/20250829);;[Resolución 220/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334164/20251107);",
+    "norma_designacion": "RESOL-2026-151-APN-SCLYA#JGM",
     "sueldo_bruto_estimado_ars": 4000000,
-    "cuil": 20342301844.0,
-    "fecha_ingreso": "2025-01-01"
+    "cuil": 20272081345.0,
+    "fecha_ingreso": null
   },
   {
     "organismo": "Jefatura de Gabinete de Ministros",
@@ -6994,18 +6994,18 @@
   {
     "organismo": "Jefatura de Gabinete de Ministros",
     "sub_organismo": null,
-    "apellido": "JANIEWICZ",
-    "nombre": "Federico",
+    "apellido": null,
+    "nombre": null,
     "cargo": "Coordinador/a",
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
-    "genero": "Masculino",
-    "norma_designacion": "[Resolución 108/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/313026/20240829);",
+    "jgm_al_ingreso": "Desconocido",
+    "genero": "No informado",
+    "norma_designacion": null,
     "sueldo_bruto_estimado_ars": 3200000,
-    "cuil": 20272081345.0,
-    "fecha_ingreso": "2024-01-01"
+    "cuil": null,
+    "fecha_ingreso": null
   },
   {
     "organismo": "Jefatura de Gabinete de Ministros",
