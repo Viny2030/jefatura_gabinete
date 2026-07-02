@@ -2434,18 +2434,18 @@
   {
     "organismo": "Jefatura de Gabinete de Ministros",
     "sub_organismo": null,
-    "apellido": "VÁZQUEZ",
-    "nombre": "Aimé Ayelén",
+    "apellido": null,
+    "nombre": null,
     "cargo": "Titular",
     "jerarquia": "Secretario",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Adorni",
-    "genero": "Femenino",
-    "norma_designacion": "[Decreto 90/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338269/20260209);",
+    "jgm_al_ingreso": "Desconocido",
+    "genero": "No informado",
+    "norma_designacion": null,
     "sueldo_bruto_estimado_ars": 8000000,
-    "cuil": 27309377198.0,
-    "fecha_ingreso": "2026-01-01"
+    "cuil": null,
+    "fecha_ingreso": null
   },
   {
     "organismo": "Jefatura de Gabinete de Ministros",
