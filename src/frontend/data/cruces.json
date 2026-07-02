@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-07-01T08:51:12.624218",
-  "total": 4,
+  "generado_en": "2026-07-02T08:13:57.471427",
+  "total": 6,
   "altos": 0,
-  "medios": 4,
+  "medios": 6,
   "monto_total": 237444496.0,
   "cruces": [
     {
@@ -48,6 +48,36 @@
       "monto_fmt": "$716",
       "fecha": "2026-03-05",
       "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2408409/20260305",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "CASTILLO, Karina Paola",
+      "cargo": "Director/a",
+      "gestion": "Adorni",
+      "empresa": "LUCIANO MARTIN CASTILLO",
+      "cuit": "20462942738",
+      "organismo": "EJÉRCITO ARGENTINO",
+      "monto": 0,
+      "monto_fmt": "—",
+      "fecha": "2026-05-28",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412718/20260528",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "CASTILLO, Karina Paola",
+      "cargo": "Director/a",
+      "gestion": "Adorni",
+      "empresa": "IGNACIO ANDRES CASTILLO",
+      "cuit": "20480460279",
+      "organismo": "EJÉRCITO ARGENTINO",
+      "monto": 0,
+      "monto_fmt": "—",
+      "fecha": "2026-06-02",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412899/20260602",
       "contratos": 2
     },
     {
