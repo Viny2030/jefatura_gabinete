@@ -1000,7 +1000,7 @@ async function init() {
   // Cruces: usar JSON del workflow si tiene datos, sino calcular en browser
   if (crucesData && crucesData.total > 0) {
     renderCrucesDesdeJSON(crucesData);
-    const cuitsCruces = (crucesData||[]).map(c=>c.cuit||c.proveedor_cuit).filter(Boolean);
+    const cuitsCruces = ((crucesData && crucesData.cruces) || []).map(c=>c.cuit||c.proveedor_cuit).filter(Boolean);
     cargarMEACI(cuitsCruces);
   } else {
     generarCruces();
@@ -1066,4 +1066,3 @@ async function cargarMEACI(cuits) {
 </script>
 </body>
 </html>
-
