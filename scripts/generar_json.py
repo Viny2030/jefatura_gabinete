@@ -94,16 +94,26 @@ def filtrar_org_contratos(df, codigos, prefijos_rama=None):
     return df[mask]
 
 def asignar_gestion(row):
-    if pd.notna(row.get("fecha_adjudicacion")):
-        anio = row["fecha_adjudicacion"].year
-    elif pd.notna(row.get("ejercicio")):
-        anio = int(row["ejercicio"])
+    # Clasifica por período del Jefe de Gabinete según la fecha de adjudicación.
+    fa = row.get("fecha_adjudicacion")
+    if pd.notna(fa):
+        try:
+            ds = fa.strftime("%Y-%m-%d")
+        except AttributeError:
+            ds = str(fa)[:10]
     else:
         return "Sin datos"
-    if anio <= 2015: return "Kirchner/CFK"
-    if anio <= 2019: return "Macri"
-    if anio <= 2023: return "Alberto"
-    return "Milei"
+    if ds < "2023-12-10":
+        return "Pre-Milei"
+    for nombre, desde, hasta in [
+        ("Posse",    "2023-12-10", "2024-05-27"),
+        ("Francos",  "2024-05-27", "2025-10-31"),
+        ("Adorni",   "2025-11-04", "2026-06-27"),
+        ("Santilli", "2026-06-30", "2100-01-01"),
+    ]:
+        if desde <= ds <= hasta:
+            return nombre
+    return "Sin datos"
 
 # ── Banner ────────────────────────────────────────────────────────────────────
 print("\n" + "=" * 60)
@@ -114,9 +124,14 @@ print("=" * 60)
 
 # ── [1] Nómina ────────────────────────────────────────────────────────────────
 print("\n[1] Cargando nómina...")
-df_nom = pd.read_csv(NOMINA_CSV, encoding="utf-8-sig", low_memory=False)
-df_nom.columns = df_nom.columns.str.strip()
-print(f"    {len(df_nom):,} filas | columnas: {df_nom.columns.tolist()}")
+_HAY_NOMINA = os.path.exists(NOMINA_CSV)
+if _HAY_NOMINA:
+    df_nom = pd.read_csv(NOMINA_CSV, encoding="utf-8-sig", low_memory=False)
+    df_nom.columns = df_nom.columns.str.strip()
+    print(f"    {len(df_nom):,} filas | columnas: {df_nom.columns.tolist()}")
+else:
+    print(f"    [WARN] {NOMINA_CSV} no existe → NO se regeneran los personal_*.json (se conservan los actuales)")
+    df_nom = pd.DataFrame()
 
 # ── [2] Contratos ─────────────────────────────────────────────────────────────
 print("\n[2] Cargando contratos...")
@@ -281,9 +296,19 @@ for rama, cfg in RAMAS.items():
     guardar_json(registros_c, os.path.join(OUT_DIR, f"contratos_{rama}.json"))
 
     # Nómina
-    df_n = df_nom[df_nom.apply(cfg["filtro_nom"], axis=1)][cols_nom_ok].copy()
-    registros_n = df_n.to_dict(orient="records")
-    guardar_json(registros_n, os.path.join(OUT_DIR, f"personal_{rama}.json"))
+    # Nómina — solo si hay CSV; si no, se conserva el personal_*.json actual
+    if _HAY_NOMINA:
+        df_n = df_nom[df_nom.apply(cfg["filtro_nom"], axis=1)][cols_nom_ok].copy()
+        registros_n = df_n.to_dict(orient="records")
+        guardar_json(registros_n, os.path.join(OUT_DIR, f"personal_{rama}.json"))
+    else:
+        # Leer el personal ya publicado solo para contar (no lo reescribe)
+        _pn = os.path.join(OUT_DIR, f"personal_{rama}.json")
+        if os.path.exists(_pn):
+            with open(_pn, encoding="utf-8") as _f:
+                registros_n = json.load(_f)
+        else:
+            registros_n = []
 
     monto_total = float(df_c["monto_adjudicado"].sum()) if "monto_adjudicado" in df_c.columns else 0.0
     resumen[rama] = {
