@@ -19,14 +19,14 @@ jobs:
           cache: "pip"
       - name: Instalar dependencias
         run: pip install -r requirements.txt
-      - name: Correr scraper
+      - name: Correr scraper (JGM + SGP + Presidencia)
         continue-on-error: true
         env:
           DATABASE_URL: ${{ secrets.RAILWAY_DATABASE_URL }}
         run: |
           for i in 1 2 3; do
             echo "Intento $i de 3..."
-            python scripts/scraper_comprar.py --db --csv && break
+            python scripts/scraper_comprar.py --db --csv --area all && break
             echo "Falló intento $i, esperando 60s..."
             sleep 60
           done
@@ -35,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add contratos_jgm.csv
-          git diff --staged --quiet || git commit -m "chore: actualizar contratos JGM [$(date -u '+%Y-%m-%d')]"
+          git add contratos_jgm.csv contratos_sgp.csv contratos_presidencia.csv
+          git diff --staged --quiet || git commit -m "chore: actualizar contratos JGM/SGP/Presidencia [$(date -u '+%Y-%m-%d')]"
           git push
