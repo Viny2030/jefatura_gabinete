@@ -1,4 +1,4 @@
-﻿"""
+"""
 api_server.py
 =============
 API REST para el portal anticorrupciÃ³n JGM.
@@ -41,6 +41,7 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, Header, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
@@ -60,6 +61,12 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"]
 )
+
+# Servir los JSON estáticos que consumen jgm.html, sgp.html y presidencia.html
+# (fetch('data/contratos_jgm.json'), etc.). Sin este mount devuelven 404.
+_FRONTEND_DATA = FRONTEND_DIR / "data"
+if _FRONTEND_DATA.exists():
+    app.mount("/data", StaticFiles(directory=str(_FRONTEND_DATA)), name="frontend-data")
 
 
 # â”€â”€â”€ helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -408,4 +415,3 @@ def cruce_cuits_bulk(cuits: str = Query(..., description="CUITs separados por co
 
 
 # -- MEACI: CUITs sancionados internacionalmente ------------------------------
-
