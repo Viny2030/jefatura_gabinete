@@ -234,7 +234,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 363/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331323/20250915);",
+    "norma_designacion": "[Resolución 363/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331323/20250915);;[Resolución 263/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343576/20260625);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20161376117.0,
     "fecha_ingreso": "2025-01-01"
@@ -298,7 +298,7 @@
     "car_categoria": "A0",
     "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 15/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/319933/20250122);;[Resolución 367/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331388/20250916);",
+    "norma_designacion": "[Resolución 15/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/319933/20250122);;[Resolución 367/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331388/20250916);;[Resolución 263/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343576/20260625);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20318971642.0,
     "fecha_ingreso": "2025-01-01"
@@ -490,7 +490,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 453/2025](https://www.boletinoficial.gov.ar/detalleAviso/primera/334106/20251106);",
+    "norma_designacion": "[Resolución 453/2025](https://www.boletinoficial.gov.ar/detalleAviso/primera/334106/20251106);;[Resolución 248/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343223/20260617);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27266439143.0,
     "fecha_ingreso": "2025-01-01"
@@ -1226,7 +1226,7 @@
     "car_categoria": "A0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Decreto 334/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306037/20240419);;[RESOL-2024-725-APN-SGP](EX-2024-130222372-APN-CGD#SGP);;[Resolución 368/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331389/20250916);;",
+    "norma_designacion": "[Decreto 334/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306037/20240419);;[RESOL-2024-725-APN-SGP](EX-2024-130222372-APN-CGD#SGP);;[Resolución 368/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331389/20250916);;[Resolución 246/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343222/20260617);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20393387646.0,
     "fecha_ingreso": "2024-01-01"
@@ -1242,7 +1242,7 @@
     "car_categoria": "A0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Decreto 336/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306038/20240419);;[RESOL-2024-725-APN-SGP](EX-2024-130222372-APN-CGD#SGP);;[Resolución 368/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331389/20250916);;;;;;",
+    "norma_designacion": "[Decreto 336/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306038/20240419);;[RESOL-2024-725-APN-SGP](EX-2024-130222372-APN-CGD#SGP);;[Resolución 368/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331389/20250916);;[Resolución 246/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343222/20260617);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27177624700.0,
     "fecha_ingreso": "2024-01-01"
@@ -1370,7 +1370,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Decreto 360/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306459/20240426);;[RESOL-2024-725-APN-SGP](EX-2024-130222372-APN-CGD#SGP);;[Resolución 368/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331389/20250916);;;;",
+    "norma_designacion": "[Decreto 360/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306459/20240426);;[RESOL-2024-725-APN-SGP](EX-2024-130222372-APN-CGD#SGP);;[Resolución 368/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331389/20250916);;[Resolución 246/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343222/20260617);;;",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27389980779.0,
     "fecha_ingreso": "2024-01-01"

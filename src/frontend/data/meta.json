@@ -1,23 +1,23 @@
 {
-  "generado": "2026-07-03 14:02",
+  "generado": "2026-07-04 12:54",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 178,
-  "total_personal": 6406,
+  "total_personal": 6299,
   "ramas": {
     "jgm": {
       "contratos": 178,
-      "personal": 852,
-      "monto_total": 0.0
+      "personal": 817,
+      "monto_total": 970372956.0
     },
     "sgp": {
-      "contratos": 0,
+      "contratos": 250,
       "personal": 143,
       "monto_total": 0.0
     },
     "presidencia": {
-      "contratos": 0,
-      "personal": 444,
+      "contratos": 341,
+      "personal": 454,
       "monto_total": 0.0
     }
   }
