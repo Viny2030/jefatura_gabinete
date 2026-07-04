@@ -250,7 +250,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Pre-Milei",
     "genero": "Femenino",
-    "norma_designacion": "[Decreto 66/2022](https://www.boletinoficial.gob.ar/detalleAviso/primera/256940/20220202);;[RESOL-2022-454-APN-SGP](EX-2022-67737176-APN-CGD#SGP);;[RESOL-2023-279-APN-SGP](EX-2023-19226157-APN-CGD#SGP);;[RESOL-2024-38-APN-SGP](EX-2024-03934895-APN-CGD#SGP);;[RESOL-2024-524-APN-SGP](EX-2024-92314028- -APN-CGD#SGP);;[RESOL-2025-285-APN-SGP](EX-2025-57161948- -APN-CGD#SGP);;[Resolución 130/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340104/20260330);",
+    "norma_designacion": "[Decreto 66/2022](https://www.boletinoficial.gob.ar/detalleAviso/primera/256940/20220202);;[RESOL-2022-454-APN-SGP](EX-2022-67737176-APN-CGD#SGP);;[RESOL-2023-279-APN-SGP](EX-2023-19226157-APN-CGD#SGP);;[RESOL-2024-38-APN-SGP](EX-2024-03934895-APN-CGD#SGP);;[RESOL-2024-524-APN-SGP](EX-2024-92314028- -APN-CGD#SGP);;[RESOL-2025-285-APN-SGP](EX-2025-57161948- -APN-CGD#SGP);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27235682511.0,
     "fecha_ingreso": "2022-01-01"
@@ -426,7 +426,7 @@
     "car_categoria": "A0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 19/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/319993/20250123);;[Resolución 317/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329195/20250801);;[Resolución 165/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340921/20260417);",
+    "norma_designacion": "[Resolución 19/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/319993/20250123);;[Resolución 317/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329195/20250801);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20287528087.0,
     "fecha_ingreso": "2025-01-01"
@@ -466,6 +466,22 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría General",
+    "apellido": null,
+    "nombre": null,
+    "cargo": "Director/a",
+    "jerarquia": "Director - Segundo Nivel Operativo",
+    "escalafon": "Personal del SINEP",
+    "car_categoria": "B0",
+    "jgm_al_ingreso": "Desconocido",
+    "genero": "No informado",
+    "norma_designacion": null,
+    "sueldo_bruto_estimado_ars": 4000000,
+    "cuil": null,
+    "fecha_ingreso": null
+  },
+  {
+    "organismo": "Presidencia de la Nación",
+    "sub_organismo": "Secretaría General",
     "apellido": "VINELLI",
     "nombre": "Gastón Arnaldo",
     "cargo": "Director/a",
@@ -474,7 +490,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 291/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328218/20250711);;[Resolución 142/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340501/20260409);",
+    "norma_designacion": "[Resolución 291/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328218/20250711);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20277786002.0,
     "fecha_ingreso": "2025-01-01"
@@ -554,7 +570,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Decreto 949/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/316060/20241025);;[RESOL-2025-296-APN-SGP](EX-2025-64127456- -APN-CGD#SGP);;[Resolución 296/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328286/20250714);;[Resolución 142/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340501/20260409);",
+    "norma_designacion": "[Decreto 949/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/316060/20241025);;[RESOL-2025-296-APN-SGP](EX-2025-64127456- -APN-CGD#SGP);;[Resolución 296/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328286/20250714);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20178856708.0,
     "fecha_ingreso": "2024-01-01"
@@ -634,7 +650,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 729/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/318968/20241230);;[Resolución 352/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331011/20250909);;[Resolución 212/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342220/20260521);",
+    "norma_designacion": "[Resolución 729/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/318968/20241230);;[Resolución 352/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331011/20250909);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20337352201.0,
     "fecha_ingreso": "2024-01-01"
@@ -650,7 +666,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 728/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/318967/20241230);;[Resolución 352/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331011/20250909);;[Resolución 212/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342220/20260521);",
+    "norma_designacion": "[Resolución 728/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/318967/20241230);;[Resolución 352/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331011/20250909);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20172867937.0,
     "fecha_ingreso": "2024-01-01"
@@ -810,7 +826,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 718/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318638/20241223);;[Resolución 310/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328757/20250723);;[Resolución 164/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340920/20260417);",
+    "norma_designacion": "[Resolución 718/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318638/20241223);;[Resolución 310/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328757/20250723);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27164396075.0,
     "fecha_ingreso": "2024-01-01"
@@ -842,7 +858,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 697/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318302/20241217);;[Resolución 269/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327203/20250619);;[Resolución 129/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340702/20260414);;[Resolución 151/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340703/20260414);",
+    "norma_designacion": "[Resolución 697/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318302/20241217);;[Resolución 269/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327203/20250619);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20258952449.0,
     "fecha_ingreso": "2024-01-01"
@@ -906,7 +922,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Decreto 391/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/307000/20240509);;[RESOL-2024-527-APN-SGP](EX-2024-94887640- -APN-CGD#SGP);;[RESOL-2025-282-APN-SGP](EX-2025-57760535--APN-CGD#SGP);;[Resolución 282/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327871/20250704);;[Resolución 166/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340956/20260420);",
+    "norma_designacion": "[Decreto 391/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/307000/20240509);;[RESOL-2024-527-APN-SGP](EX-2024-94887640- -APN-CGD#SGP);;[RESOL-2025-282-APN-SGP](EX-2025-57760535--APN-CGD#SGP);;[Resolución 282/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327871/20250704);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20268138715.0,
     "fecha_ingreso": "2024-01-01"
@@ -1098,7 +1114,7 @@
     "car_categoria": "A0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Decreto 260/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/304886/20240319);;[RESOL-2024-569-APN-SGP](EX-2024-100468135- -APN-CGD#SGP);;[RESOL-2025-294-APN-SGP](EX-2025-64283220- -APN-CGD#SGP);;[Resolución 294/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328284/20250714);;[Resolución 144/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340502/20260409);",
+    "norma_designacion": "[Decreto 260/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/304886/20240319);;[RESOL-2024-569-APN-SGP](EX-2024-100468135- -APN-CGD#SGP);;[RESOL-2025-294-APN-SGP](EX-2025-64283220- -APN-CGD#SGP);;[Resolución 294/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328284/20250714);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20104640517.0,
     "fecha_ingreso": "2024-01-01"
@@ -1138,18 +1154,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría General",
-    "apellido": "PRIETO",
-    "nombre": "María Victoria",
+    "apellido": null,
+    "nombre": null,
     "cargo": "Director/a",
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Adorni",
-    "genero": "Femenino",
-    "norma_designacion": "[Resolución 228/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342790/20260604);",
+    "jgm_al_ingreso": "Desconocido",
+    "genero": "No informado",
+    "norma_designacion": null,
     "sueldo_bruto_estimado_ars": 4500000,
-    "cuil": 27391843568.0,
-    "fecha_ingreso": "2026-01-01"
+    "cuil": null,
+    "fecha_ingreso": null
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1162,7 +1178,7 @@
     "car_categoria": "A0",
     "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
-    "norma_designacion": "[Resolución 327/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329723/20250812);;[Resolución 178/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341242/20260428);",
+    "norma_designacion": "[Resolución 327/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329723/20250812);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20324958917.0,
     "fecha_ingreso": "2025-01-01"
@@ -1274,7 +1290,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 709/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318443/20241219);;[Resolución 295/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328285/20250714);;[Resolución 161/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340919/20260417);",
+    "norma_designacion": "[Resolución 709/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318443/20241219);;[Resolución 295/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328285/20250714);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27127799968.0,
     "fecha_ingreso": "2024-01-01"
@@ -1298,18 +1314,18 @@
   {
     "organismo": "Presidencia de la Nación",
     "sub_organismo": "Secretaría General",
-    "apellido": null,
-    "nombre": null,
+    "apellido": "ORTOLANI",
+    "nombre": "Florencia",
     "cargo": "Coordinador/a",
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Desconocido",
-    "genero": "No informado",
-    "norma_designacion": null,
+    "jgm_al_ingreso": "Posse",
+    "genero": "Femenino",
+    "norma_designacion": "[Decreto 408/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/307469/20240515);;[RESOL-2025-21-APN-SGP](EX-2024-135867952-APN-CGD#SGP);;[Resolución 395/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/332207/20251001);",
     "sueldo_bruto_estimado_ars": 3200000,
-    "cuil": null,
-    "fecha_ingreso": null
+    "cuil": 27295472826.0,
+    "fecha_ingreso": "2024-01-01"
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1354,7 +1370,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Posse",
     "genero": "Masculino",
-    "norma_designacion": "[Decreto 279/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/305145/20240326);;[RESOL-2024-730-APN-SGP](EX-2024-125512639- -APN-CGD#SGP);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);;[Resolución 233/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342891/20260608);",
+    "norma_designacion": "[Decreto 279/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/305145/20240326);;[RESOL-2024-730-APN-SGP](EX-2024-125512639- -APN-CGD#SGP);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20333774977.0,
     "fecha_ingreso": "2024-01-01"
@@ -1402,7 +1418,7 @@
     "car_categoria": "B0",
     "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
-    "norma_designacion": "[Resolución 35/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320199/20250128);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);;[Resolución 239/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342993/20260611);",
+    "norma_designacion": "[Resolución 35/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320199/20250128);;[Resolución 372/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331461/20250917);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27263489492.0,
     "fecha_ingreso": "2025-01-01"
