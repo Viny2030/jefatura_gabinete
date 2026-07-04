@@ -832,9 +832,24 @@ function initCharts() {
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
-(function init() {
-  allC = D_CONTRATOS;
-  allP = D_PERSONAL;
+(async function init() {
+  // Cargar datos REALES desde los JSON generados por el pipeline.
+  // Si el fetch falla (offline / archivo ausente), se usan los datos
+  // incrustados como último recurso para no dejar la página en blanco.
+  try {
+    const [rc, rp] = await Promise.all([
+      fetch('data/contratos_sgp.json'),
+      fetch('data/personal_sgp.json'),
+    ]);
+    const contratos = await rc.json();
+    const personal  = await rp.json();
+    allC = (Array.isArray(contratos) && contratos.length) ? contratos : D_CONTRATOS;
+    allP = (Array.isArray(personal)  && personal.length)  ? personal  : D_PERSONAL;
+  } catch (e) {
+    console.warn('JSON real no disponible, usando datos incrustados:', e);
+    allC = D_CONTRATOS;
+    allP = D_PERSONAL;
+  }
   filtrarC();
   filtrarP();
   initCharts();
