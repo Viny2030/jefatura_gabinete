@@ -128,71 +128,84 @@ print(f"    {len(df_con):,} filas | columnas: {df_con.columns.tolist()}")
 print("\n[3] Normalizando contratos...")
 
 if FUENTE == "comprar":
-    # CSV de comprar.gob.ar:
-    # numero_proceso | expediente | nombre_proceso | tipo_proceso
-    # fecha_apertura | estado     | unidad_ejecutora | saf | scraped_at
-
-    df_con["organismo"]         = df_con.get("unidad_ejecutora", pd.Series(dtype=str)).fillna("JGM")
-    df_con["sub_organismo"]     = ""
-    df_con["proveedor"]         = df_con.get("nombre_proceso",   pd.Series(dtype=str)).fillna("").str[:80]
-    df_con["cuit"]              = ""
-    df_con["cuit_proveedor"]    = ""
-    df_con["tipo_contratacion"] = df_con.get("tipo_proceso",     pd.Series(dtype=str)).fillna("")
-    df_con["monto_adjudicado"]  = None   # el listado de comprar.gob.ar no trae monto; se completa desde el detalle (abajo)
-
-    # ── Enriquecer con contratos_detalle.csv ─────────────────────────────────
-    # El scraper de detalle (scraper_detalle.yml) sí obtiene monto/CUIT/razón
-    # social entrando a cada proceso. Cruzamos por numero_proceso para no
-    # perder los montos que comprar.gob.ar solo publica en el detalle.
+    # ── Cargar detalle una sola vez (montos/CUIT/razón social) ───────────────
     _DETALLE_CSV = os.path.join(BASE, "..", "contratos_detalle.csv")
+    _mapa_detalle = None
     if os.path.exists(_DETALLE_CSV):
         try:
             _det = pd.read_csv(_DETALLE_CSV, encoding="utf-8-sig", low_memory=False)
             _det.columns = _det.columns.str.strip()
             _det["numero_proceso"] = _det["numero_proceso"].astype(str).str.strip()
-            _det["monto_adjudicado"] = pd.to_numeric(
-                _det.get("monto_adjudicado"), errors="coerce")
-            _mapa = _det.set_index("numero_proceso")
-
-            _np = df_con["numero_proceso"].astype(str).str.strip()
-            df_con["monto_adjudicado"] = _np.map(_mapa["monto_adjudicado"])
-            if "proveedor_cuit" in _mapa.columns:
-                df_con["cuit"] = _np.map(_mapa["proveedor_cuit"]).fillna("").astype(str).str.strip()
-            if "proveedor_razon" in _mapa.columns:
-                _razon = _np.map(_mapa["proveedor_razon"]).fillna("").astype(str).str.strip()
-                df_con["proveedor"] = _razon.where(_razon != "", df_con["proveedor"])
-
-            _n_montos = int((df_con["monto_adjudicado"] > 0).sum())
-            print(f"    Detalle cruzado: {_n_montos} contratos con monto (de {len(df_con)})")
+            _det["monto_adjudicado"] = pd.to_numeric(_det.get("monto_adjudicado"), errors="coerce")
+            _mapa_detalle = _det.set_index("numero_proceso")
         except Exception as e:
-            print(f"    [WARN] No se pudo cruzar contratos_detalle.csv: {e}")
-    else:
-        print("    [INFO] contratos_detalle.csv no encontrado; montos quedan vacíos")
+            print(f"    [WARN] No se pudo leer contratos_detalle.csv: {e}")
 
-    df_con["objeto"]            = df_con.get("nombre_proceso",   pd.Series(dtype=str)).fillna("")
-    df_con["fecha_adjudicacion"]= pd.to_datetime(df_con.get("fecha_apertura"), errors="coerce")
-    df_con["fecha_str"]         = df_con["fecha_adjudicacion"].dt.strftime("%Y-%m-%d")
-    df_con["ejercicio"]         = df_con["fecha_adjudicacion"].dt.year
-    df_con["gestion"]           = df_con.apply(asignar_gestion, axis=1)
-    # Mantener numero_proceso y estado del CSV original
-    if "numero_proceso" not in df_con.columns:
-        df_con["numero_proceso"] = ""
-    if "estado" not in df_con.columns:
-        df_con["estado"] = ""
+    def normalizar_comprar(dfc, etiqueta="JGM"):
+        """Normaliza un CSV de comprar.gob.ar al esquema del frontend.
+        Cruza montos/CUIT/razón social desde contratos_detalle.csv si está."""
+        dfc = dfc.copy()
+        dfc.columns = dfc.columns.str.strip()
+        dfc["organismo"]         = dfc.get("unidad_ejecutora", pd.Series(dtype=str)).fillna(etiqueta)
+        dfc["sub_organismo"]     = ""
+        dfc["proveedor"]         = dfc.get("nombre_proceso", pd.Series(dtype=str)).fillna("").str[:80]
+        dfc["cuit"]              = ""
+        dfc["cuit_proveedor"]    = ""
+        dfc["tipo_contratacion"] = dfc.get("tipo_proceso", pd.Series(dtype=str)).fillna("")
+        dfc["monto_adjudicado"]  = None
 
-    print(f"    Gestiones: {df_con['gestion'].value_counts().to_dict()}")
-    print(f"    Estados  : {df_con['estado'].value_counts().head(5).to_dict()}")
+        if _mapa_detalle is not None:
+            _np = dfc["numero_proceso"].astype(str).str.strip()
+            dfc["monto_adjudicado"] = _np.map(_mapa_detalle["monto_adjudicado"])
+            if "proveedor_cuit" in _mapa_detalle.columns:
+                dfc["cuit"] = _np.map(_mapa_detalle["proveedor_cuit"]).fillna("").astype(str).str.strip()
+            if "proveedor_razon" in _mapa_detalle.columns:
+                _razon = _np.map(_mapa_detalle["proveedor_razon"]).fillna("").astype(str).str.strip()
+                dfc["proveedor"] = _razon.where(_razon != "", dfc["proveedor"])
+            _n = int((dfc["monto_adjudicado"] > 0).sum())
+            print(f"    [{etiqueta}] detalle cruzado: {_n} contratos con monto (de {len(dfc)})")
 
-    # Para comprar.gob.ar todos los contratos son JGM (SAF 591)
+        dfc["objeto"]             = dfc.get("nombre_proceso", pd.Series(dtype=str)).fillna("")
+        # fecha_apertura viene como "17/02/2023 12:00 Hrs." → extraer dd/mm/yyyy
+        _fecha = dfc.get("fecha_apertura", pd.Series(dtype=str)).astype(str).str.extract(r"(\d{2}/\d{2}/\d{4})")[0]
+        dfc["fecha_adjudicacion"] = pd.to_datetime(_fecha, format="%d/%m/%Y", errors="coerce")
+        dfc["fecha_str"]          = dfc["fecha_adjudicacion"].dt.strftime("%Y-%m-%d")
+        dfc["ejercicio"]          = dfc["fecha_adjudicacion"].dt.year
+        dfc["gestion"]            = dfc.apply(asignar_gestion, axis=1)
+        if "numero_proceso" not in dfc.columns:
+            dfc["numero_proceso"] = ""
+        if "estado" not in dfc.columns:
+            dfc["estado"] = ""
+        return dfc
+
     COLS_CON = [
         "numero_proceso", "organismo", "proveedor", "cuit",
         "tipo_contratacion", "fecha_str", "monto_adjudicado",
         "objeto", "ejercicio", "gestion", "estado", "fecha_apertura",
     ]
 
-    df_jgm  = df_con.copy()   # todo es JGM
-    df_sgp  = pd.DataFrame(columns=COLS_CON)
-    df_pres = pd.DataFrame(columns=COLS_CON)
+    # JGM: el CSV principal ya cargado en df_con
+    df_jgm = normalizar_comprar(df_con, "JGM")
+    print(f"    Gestiones JGM: {df_jgm['gestion'].value_counts().to_dict()}")
+
+    # SGP y Presidencia: cargar sus CSV propios si el scraper los generó
+    def cargar_area_csv(nombre_csv, etiqueta):
+        ruta = os.path.join(BASE, "..", nombre_csv)
+        if os.path.exists(ruta):
+            try:
+                _df = pd.read_csv(ruta, encoding="utf-8-sig", low_memory=False)
+                if len(_df):
+                    print(f"    [{etiqueta}] {len(_df)} filas desde {nombre_csv}")
+                    return normalizar_comprar(_df, etiqueta)
+            except Exception as e:
+                print(f"    [WARN] No se pudo cargar {nombre_csv}: {e}")
+        else:
+            print(f"    [{etiqueta}] {nombre_csv} no encontrado → sin contratos (aún)")
+        return pd.DataFrame(columns=COLS_CON)
+
+    df_sgp  = cargar_area_csv("contratos_sgp.csv",         "SGP")
+    df_pres = cargar_area_csv("contratos_presidencia.csv", "PRESIDENCIA")
+
 
 else:
     # Fuente BORA: adjudicaciones_*.csv
