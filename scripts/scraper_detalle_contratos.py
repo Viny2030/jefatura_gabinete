@@ -44,7 +44,24 @@ warnings.filterwarnings("ignore")
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5433/jgm_anticorrupcion")
 BASE_URL     = "https://comprar.gob.ar/BuscarAvanzado.aspx"
 DETALLE_BASE = "https://comprar.gob.ar"
-SAF_ID       = "591"  # Jefatura de Gabinete de Ministros
+SAF_ID       = "591"  # Jefatura de Gabinete de Ministros (default / retrocompat)
+
+# Mapa prefijo-de-NUP → SAF (value de ddlJurisdicion en comprar.gob.ar).
+# El detalle debe buscar cada proceso bajo el SAF de su área; el prefijo del
+# número de proceso (ej. "79-0001-CDI24" → "79") lo identifica de forma única.
+PREFIJO_A_SAF = {
+    "79":  "591",   # JGM
+    "23":  "588",   # SGP - Secretaría General de la Presidencia
+    "83":  "1736",  # Presidencia · Cultura
+    "300": "586",   # Presidencia · Legal y Técnica
+    "457": "1737",  # Presidencia · Medios
+    "503": "1771",  # Presidencia · Comunicación y Medios
+}
+
+def saf_para_nup(nup):
+    """Devuelve el SAF correcto para un número de proceso según su prefijo."""
+    pref = str(nup).split("-")[0].strip()
+    return PREFIJO_A_SAF.get(pref, SAF_ID)
 
 DELAY_OK        = 1.5
 DELAY_ERR       = 6.0
@@ -90,6 +107,12 @@ def obtener_viewstate(session):
     for intento in range(1, MAX_RETRIES + 1):
         try:
             r = session.get(BASE_URL, headers=HEADERS_GET, timeout=30, verify=False)
+            # comprar.gob.ar responde 503 intermitente bajo carga → backoff y reintento
+            if r.status_code in (429, 503):
+                espera = DELAY_ERR * intento * 2
+                log.warning(f"ViewState HTTP {r.status_code} (intento {intento}) → espero {espera:.0f}s")
+                time.sleep(espera)
+                continue
             soup = BeautifulSoup(r.text, "html.parser")
             vs = {}
             for f in ["__VIEWSTATE", "__EVENTVALIDATION", "__VIEWSTATEGENERATOR"]:
@@ -140,7 +163,7 @@ def payload_base(vs, nup):
         "ctl00$CPH1$txtNumeroProceso":           nup,
         "ctl00$CPH1$txtExpediente":              "",
         "ctl00$CPH1$txtNombrePliego":            "",
-        "ctl00$CPH1$ddlJurisdicion":             SAF_ID,   # ← 591, no -2
+        "ctl00$CPH1$ddlJurisdicion":             saf_para_nup(nup),   # ← SAF del área del NUP
         "ctl00$CPH1$ddlUnidadEjecutora":         "-2",
         "ctl00$CPH1$ddlTipoProceso":             "-2",
         "ctl00$CPH1$ddlEstadoProceso":           "-2",
@@ -485,16 +508,129 @@ def modo_diagnostico(nup):
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
+def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
+    """Scrapea el detalle (monto/CUIT/razón) de los NUP listados en uno o más
+    CSV de área y actualiza out_csv. No depende de PostgreSQL.
+    Usa el SAF correcto por prefijo de NUP (saf_para_nup)."""
+    import csv as _csv
+
+    # NUP objetivo desde los CSV de área
+    objetivos = {}  # nup -> fila base
+    for path in csv_paths:
+        if not os.path.exists(path):
+            log.warning(f"CSV no encontrado: {path}")
+            continue
+        with open(path, encoding="utf-8-sig") as f:
+            for row in _csv.DictReader(f):
+                nup = (row.get("numero_proceso") or "").strip()
+                estado = (row.get("estado") or "").lower()
+                if nup and "djudicado" in estado:
+                    objetivos.setdefault(nup, row)
+
+    # Detalle ya existente → no re-scrapear lo que ya tiene monto
+    ya = {}
+    if os.path.exists(out_csv):
+        with open(out_csv, encoding="utf-8-sig") as f:
+            for row in _csv.DictReader(f):
+                ya[(row.get("numero_proceso") or "").strip()] = row
+
+    pendientes = [n for n in objetivos
+                  if not (ya.get(n) and (ya[n].get("monto_adjudicado") or "").strip() not in ("", "0", "0.00"))]
+    if limit:
+        pendientes = pendientes[:limit]
+
+    log.info(f"{len(objetivos)} adjudicados | {len(pendientes)} a scrapear (resto ya tiene monto)")
+
+    session = requests.Session()
+    session.verify = False
+    vs = obtener_viewstate(session)
+    if not vs:
+        log.error("No se pudo obtener ViewState")
+        return
+
+    COLS = ["numero_proceso", "nombre_proceso", "tipo_proceso", "estado",
+            "unidad_ejecutora", "organismo", "monto_adjudicado",
+            "proveedor_razon", "proveedor_cuit", "detalle_scrapeado"]
+
+    ok = sin = 0
+    t0 = time.time()
+    for i, nup in enumerate(pendientes, 1):
+        if i % REFRESH_VS_CADA == 0:
+            v = obtener_viewstate(session)
+            if v: vs = v
+        if i % 25 == 0 or i <= 3:
+            el = time.time() - t0
+            vel = i / el if el else 0
+            log.info(f"[{i}/{len(pendientes)}] ok={ok} sin={sin} | {vel:.2f}/s")
+
+        base = objetivos[nup]
+        fila = {
+            "numero_proceso":   nup,
+            "nombre_proceso":   base.get("nombre_proceso", ""),
+            "tipo_proceso":     base.get("tipo_proceso", ""),
+            "estado":           base.get("estado", ""),
+            "unidad_ejecutora": base.get("unidad_ejecutora", ""),
+            "organismo":        base.get("unidad_ejecutora", ""),
+            "monto_adjudicado": "",
+            "proveedor_razon":  "",
+            "proveedor_cuit":   "",
+            "detalle_scrapeado": "True",
+        }
+        try:
+            url = obtener_url_detalle(session, vs, nup)
+            if url:
+                time.sleep(0.4)
+                res = obtener_detalle(session, url)
+                if res and res.get("monto_adjudicado") is not None:
+                    fila["monto_adjudicado"] = f"{res['monto_adjudicado']:.2f}"
+                    fila["proveedor_razon"]  = res.get("proveedor_razon") or ""
+                    fila["proveedor_cuit"]   = res.get("proveedor_cuit") or ""
+                    ok += 1
+                    if ok <= 10:
+                        log.info(f"  ✅ {nup}: ${res['monto_adjudicado']:,.0f} | {str(res.get('proveedor_razon',''))[:35]}")
+                else:
+                    sin += 1
+            else:
+                sin += 1
+        except Exception as e:
+            log.warning(f"  {nup}: {type(e).__name__}")
+            sin += 1
+        ya[nup] = fila
+        time.sleep(DELAY_OK)
+
+    # Escribir out_csv (merge: lo ya existente + lo nuevo)
+    with open(out_csv, "w", newline="", encoding="utf-8") as f:
+        w = _csv.DictWriter(f, fieldnames=COLS)
+        w.writeheader()
+        for row in ya.values():
+            w.writerow({c: row.get(c, "") for c in COLS})
+
+    log.info(f"✅ {out_csv}: {ok} con monto, {sin} sin dato | {len(ya)} filas totales")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Scraper detalle contratos v5")
     parser.add_argument("--diag",    type=str,  default=None)
     parser.add_argument("--limit",   type=int,  default=None)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--reset",   action="store_true")
+    parser.add_argument("--csv",     nargs="*", default=None,
+                        help="Modo CSV (sin DB): lista de CSV de área a procesar. "
+                             "Vacío = jgm+sgp+presidencia por defecto.")
     args = parser.parse_args()
 
     if args.diag:
         modo_diagnostico(args.diag)
+        return
+
+    # ── Modo CSV (sin PostgreSQL) ────────────────────────────────────────────
+    if args.csv is not None:
+        csvs = args.csv or ["contratos_jgm.csv", "contratos_sgp.csv", "contratos_presidencia.csv"]
+        print("=" * 65)
+        print("SCRAPER DETALLE — MODO CSV (multi-área)")
+        print(f"   Fuentes: {', '.join(csvs)}")
+        print("=" * 65)
+        procesar_desde_csv(csvs, limit=args.limit)
         return
 
     print("=" * 65)
