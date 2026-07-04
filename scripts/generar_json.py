@@ -138,7 +138,37 @@ if FUENTE == "comprar":
     df_con["cuit"]              = ""
     df_con["cuit_proveedor"]    = ""
     df_con["tipo_contratacion"] = df_con.get("tipo_proceso",     pd.Series(dtype=str)).fillna("")
-    df_con["monto_adjudicado"]  = None   # comprar.gob.ar no publica montos en el listado
+    df_con["monto_adjudicado"]  = None   # el listado de comprar.gob.ar no trae monto; se completa desde el detalle (abajo)
+
+    # ── Enriquecer con contratos_detalle.csv ─────────────────────────────────
+    # El scraper de detalle (scraper_detalle.yml) sí obtiene monto/CUIT/razón
+    # social entrando a cada proceso. Cruzamos por numero_proceso para no
+    # perder los montos que comprar.gob.ar solo publica en el detalle.
+    _DETALLE_CSV = os.path.join(BASE, "..", "contratos_detalle.csv")
+    if os.path.exists(_DETALLE_CSV):
+        try:
+            _det = pd.read_csv(_DETALLE_CSV, encoding="utf-8-sig", low_memory=False)
+            _det.columns = _det.columns.str.strip()
+            _det["numero_proceso"] = _det["numero_proceso"].astype(str).str.strip()
+            _det["monto_adjudicado"] = pd.to_numeric(
+                _det.get("monto_adjudicado"), errors="coerce")
+            _mapa = _det.set_index("numero_proceso")
+
+            _np = df_con["numero_proceso"].astype(str).str.strip()
+            df_con["monto_adjudicado"] = _np.map(_mapa["monto_adjudicado"])
+            if "proveedor_cuit" in _mapa.columns:
+                df_con["cuit"] = _np.map(_mapa["proveedor_cuit"]).fillna("").astype(str).str.strip()
+            if "proveedor_razon" in _mapa.columns:
+                _razon = _np.map(_mapa["proveedor_razon"]).fillna("").astype(str).str.strip()
+                df_con["proveedor"] = _razon.where(_razon != "", df_con["proveedor"])
+
+            _n_montos = int((df_con["monto_adjudicado"] > 0).sum())
+            print(f"    Detalle cruzado: {_n_montos} contratos con monto (de {len(df_con)})")
+        except Exception as e:
+            print(f"    [WARN] No se pudo cruzar contratos_detalle.csv: {e}")
+    else:
+        print("    [INFO] contratos_detalle.csv no encontrado; montos quedan vacíos")
+
     df_con["objeto"]            = df_con.get("nombre_proceso",   pd.Series(dtype=str)).fillna("")
     df_con["fecha_adjudicacion"]= pd.to_datetime(df_con.get("fecha_apertura"), errors="coerce")
     df_con["fecha_str"]         = df_con["fecha_adjudicacion"].dt.strftime("%Y-%m-%d")
