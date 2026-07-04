@@ -30,6 +30,32 @@ warnings.filterwarnings("ignore")
 # ── Configuración ─────────────────────────────────────────────────────────────
 BASE_URL         = "https://comprar.gob.ar/BuscarAvanzado.aspx"
 SAF_ID           = "591"        # Jefatura de Gabinete de Ministros
+
+# Áreas a scrapear: cada una con su value de ddlJurisdicion en comprar.gob.ar
+# (verificado contra el dropdown de BuscarAvanzado.aspx).
+#   JGM  → 305 → value 591
+#   SGP  → 301 (Sec. General de la Presidencia) → value 588
+#   PRES → agrupación de secretarías de Presidencia
+AREAS = {
+    "jgm": {
+        "nombre": "Jefatura de Gabinete de Ministros",
+        "safs":   ["591"],
+        "csv":    "contratos_jgm.csv",
+    },
+    "sgp": {
+        "nombre": "Secretaría General de la Presidencia",
+        "safs":   ["588"],
+        "csv":    "contratos_sgp.csv",
+    },
+    "presidencia": {
+        "nombre": "Presidencia de la Nación",
+        # 337 Cultura(1736) · 338 Legal y Técnica(586) · 347 Medios(1737)
+        # 368 Comunicación y Medios(1771) · 366 Innovación Pública(1742)
+        "safs":   ["1736", "586", "1737", "1771", "1742"],
+        "csv":    "contratos_presidencia.csv",
+    },
+}
+
 FECHA_DESDE      = "01/01/2023"
 FILAS_POR_PAGINA = 10          # filas reales por página del GridView
 DELAY_SEG        = 1.5
@@ -215,7 +241,8 @@ def scrapear_pagina(session, vs, saf_id, fecha_desde, fecha_hasta, fecha_hasta_t
 
 
 # ── Scraping completo ─────────────────────────────────────────────────────────
-def scrapear_todos(verbose=True):
+def scrapear_todos(verbose=True, saf_id=None):
+    saf_id         = saf_id or SAF_ID
     session        = requests.Session()
     scraped_at     = datetime.now().isoformat()
     fecha_hasta    = datetime.today().strftime("%d/%m/%Y")
@@ -224,7 +251,7 @@ def scrapear_todos(verbose=True):
 
     if verbose:
         print("=" * 60)
-        print(f"Scraping comprar.gob.ar — SAF {SAF_ID} (JGM)")
+        print(f"Scraping comprar.gob.ar — SAF {saf_id}")
         print(f"Período: {FECHA_DESDE} → {fecha_hasta}")
         print("=" * 60)
 
@@ -237,7 +264,7 @@ def scrapear_todos(verbose=True):
 
     # PASO 2: Seleccionar SAF → actualiza dropdown unidades ejecutoras
     time.sleep(DELAY_SEG)
-    p2 = payload_base(vs, SAF_ID, FECHA_DESDE, fecha_hasta, fecha_hasta_ts)
+    p2 = payload_base(vs, saf_id, FECHA_DESDE, fecha_hasta, fecha_hasta_ts)
     p2["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$ddlJurisdicion"
     p2["__EVENTTARGET"]        = "ctl00$CPH1$ddlJurisdicion"
     p2["__EVENTARGUMENT"]      = ""
@@ -253,7 +280,7 @@ def scrapear_todos(verbose=True):
     time.sleep(DELAY_SEG)
     todos = []
     filas_p1, raw_p1 = scrapear_pagina(
-        session, vs, SAF_ID, FECHA_DESDE, fecha_hasta, fecha_hasta_ts,
+        session, vs, saf_id, FECHA_DESDE, fecha_hasta, fecha_hasta_ts,
         numero_pagina=1, scraped_at=scraped_at,
     )
     todos.extend(filas_p1)
@@ -270,7 +297,7 @@ def scrapear_todos(verbose=True):
     for num_pag in range(2, total_paginas + 1):
         time.sleep(DELAY_SEG)
         filas, _ = scrapear_pagina(
-            session, vs, SAF_ID, FECHA_DESDE, fecha_hasta, fecha_hasta_ts,
+            session, vs, saf_id, FECHA_DESDE, fecha_hasta, fecha_hasta_ts,
             numero_pagina=num_pag, scraped_at=scraped_at,
         )
         todos.extend(filas)
@@ -283,6 +310,28 @@ def scrapear_todos(verbose=True):
             print(f"  ⚠️  Diferencia de {abs(total - len(todos))} filas")
 
     return todos
+
+
+def scrapear_area(area_key, verbose=True):
+    """Scrapea todos los SAF de un área y devuelve las filas combinadas (dedup por numero_proceso)."""
+    area = AREAS[area_key]
+    if verbose:
+        print("\n" + "#" * 60)
+        print(f"# ÁREA: {area['nombre']}  ({len(area['safs'])} jurisdicción/es)")
+        print("#" * 60)
+    combinados = {}
+    for saf in area["safs"]:
+        try:
+            filas = scrapear_todos(verbose=verbose, saf_id=saf)
+        except Exception as e:
+            print(f"  ⚠️  Error scrapeando SAF {saf}: {e}")
+            continue
+        for f in filas:
+            combinados[f["numero_proceso"]] = f   # dedup
+    filas = list(combinados.values())
+    if verbose:
+        print(f"\n  ➡️  {area['nombre']}: {len(filas)} contratos únicos")
+    return filas
 
 
 # ── CSV ───────────────────────────────────────────────────────────────────────
@@ -359,25 +408,36 @@ def guardar_db(resultados):
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Scraper comprar.gob.ar JGM")
+    parser = argparse.ArgumentParser(description="Scraper comprar.gob.ar (JGM / SGP / Presidencia)")
     parser.add_argument("--db",  action="store_true", help="Guardar en PostgreSQL")
     parser.add_argument("--csv", action="store_true", help="Guardar en CSV")
+    parser.add_argument("--area", choices=list(AREAS.keys()) + ["all"], default="jgm",
+                        help="Área a scrapear: jgm (default), sgp, presidencia o all")
     args = parser.parse_args()
 
-    resultados = scrapear_todos(verbose=True)
+    areas_a_correr = list(AREAS.keys()) if args.area == "all" else [args.area]
 
-    if not resultados:
-        print("⚠️  Sin resultados")
-        sys.exit(1)
+    exit_code = 0
+    for area_key in areas_a_correr:
+        resultados = scrapear_area(area_key, verbose=True)
 
-    print(f"\nMuestra (primeras 3 filas):")
-    for r in resultados[:3]:
-        print(f"  {r['numero_proceso']} | {r['tipo_proceso']} | {r['estado']} | {r['fecha_apertura']}")
+        if not resultados:
+            print(f"⚠️  Sin resultados para {area_key}")
+            exit_code = 1
+            continue
 
-    if args.db:
-        guardar_db(resultados)
-    if args.csv:
-        guardar_csv(resultados)
+        print(f"\nMuestra {area_key} (primeras 3 filas):")
+        for r in resultados[:3]:
+            print(f"  {r['numero_proceso']} | {r['tipo_proceso']} | {r['estado']} | {r['fecha_apertura']}")
+
+        if args.db:
+            guardar_db(resultados)
+        if args.csv:
+            guardar_csv(resultados, path=AREAS[area_key]["csv"])
+        if not args.db and not args.csv:
+            print(f"\n(Sin --db ni --csv: solo se imprimieron los resultados de {area_key})")
+
     if not args.db and not args.csv:
-        print("\n(Sin --db ni --csv: solo se imprimieron los resultados)")
-        print("Usar: python scripts/scraper_comprar.py --csv")
+        print("\nUsar: python scripts/scraper_comprar.py --csv --area all")
+
+    sys.exit(exit_code)
