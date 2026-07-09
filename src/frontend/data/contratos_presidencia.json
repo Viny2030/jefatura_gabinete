@@ -360,7 +360,7 @@
     "objeto": "Adquisición de materiales",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "12/03/2026 13:00 Hrs."
   },
   {
@@ -500,7 +500,7 @@
     "objeto": "Contratación del alquiler (derecho de uso) del material orquestal",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "23/06/2026 13:00 Hrs."
   },
   {
@@ -584,7 +584,7 @@
     "objeto": "Adquisición de ropa de trabajo y elementos de protección personal para la SECRETARÍA DE CULTURA",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "11/02/2026 13:00 Hrs."
   },
   {
@@ -3748,7 +3748,7 @@
     "objeto": "Servicio técnico de mantenimiento preventivo y correctivo para TRES (3) escáneres de la SLYT.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "29/05/2026 10:00 Hrs."
   },
   {
@@ -3986,7 +3986,7 @@
     "objeto": "Suscripción a ERREIUS de la editorial ERREPAR S.A. Cs. Económicas.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Apertura",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "08/05/2026 10:00 Hrs."
   },
   {

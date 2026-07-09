@@ -220,7 +220,7 @@
     "objeto": "Adquisición de astas y bases reglamentarias de madera para exhibición de banderas de ceremonia.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "16/06/2026 12:00 Hrs."
   },
   {
@@ -668,7 +668,7 @@
     "objeto": "Renovación y provisión de licencias de software Microsoft destinado a la SGP.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Adjudicado con doc. contractuales generados",
+    "estado": "Adjudicado",
     "fecha_apertura": "21/05/2026 12:00 Hrs."
   },
   {
@@ -724,7 +724,7 @@
     "objeto": "Provisión de utensilios e insumos descartables, por un período de 6 meses para Casa de Gobierno.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Pendiente Afectación",
+    "estado": "Adjudicado",
     "fecha_apertura": "24/04/2026 11:00 Hrs."
   },
   {
@@ -990,7 +990,7 @@
     "objeto": "Provisión de frutas y verduras con destino a la Residencia Presidencial de Olivos",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "01/07/2026 10:00 Hrs."
   },
   {
