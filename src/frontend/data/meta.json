@@ -1,9 +1,9 @@
 {
-  "generado": "2026-07-22 13:51",
+  "generado": "2026-07-23 13:55",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 178,
-  "total_personal": 6299,
+  "total_personal": 0,
   "ramas": {
     "jgm": {
       "contratos": 178,
