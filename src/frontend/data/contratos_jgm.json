@@ -164,7 +164,7 @@
     "objeto": "Adquisición de DIECISIETE (17) Licencias de software Adobe Creative Cloud Pro for Teams",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "08/06/2026 09:00 Hrs."
   },
   {
@@ -390,6 +390,20 @@
     "gestion": "Francos",
     "estado": "Adjudicado",
     "fecha_apertura": "16/10/2025 10:00 Hrs."
+  },
+  {
+    "numero_proceso": "79-0005-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Adquisición de mangueras, recarga y mantenimiento de matafuegos y nichos hidrant",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-07-13",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de mangueras, recarga y mantenimiento de matafuegos y nichos hidrantes JGM",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "13/07/2026 10:00 Hrs."
   },
   {
     "numero_proceso": "79-0005-LPR23",

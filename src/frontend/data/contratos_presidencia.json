@@ -136,7 +136,7 @@
     "objeto": "Adquisición de Lámparas escénicas con destino al Palacio Libertad - Centro Cultural Domingo Faustino",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Apertura",
+    "estado": "Preadjudicado",
     "fecha_apertura": "16/06/2026 13:00 Hrs."
   },
   {
@@ -304,7 +304,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo de los sistemas de maquinaria escénica",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Apertura",
+    "estado": "Preadjudicado",
     "fecha_apertura": "17/06/2026 13:00 Hrs."
   },
   {
@@ -360,7 +360,7 @@
     "objeto": "Adquisición de materiales",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "12/03/2026 13:00 Hrs."
   },
   {
@@ -500,7 +500,7 @@
     "objeto": "Contratación del alquiler (derecho de uso) del material orquestal",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "23/06/2026 13:00 Hrs."
   },
   {
@@ -584,7 +584,7 @@
     "objeto": "Adquisición de ropa de trabajo y elementos de protección personal para la SECRETARÍA DE CULTURA",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Adjudicado",
     "fecha_apertura": "11/02/2026 13:00 Hrs."
   },
   {
@@ -3944,7 +3944,7 @@
     "objeto": "Servicio de soporte técnico para 2 centrales AstervoIP PBX-IP y 1 central teléfonica Asterix 13 Free",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "08/06/2026 11:00 Hrs."
   },
   {
@@ -4032,6 +4032,20 @@
     "fecha_apertura": "24/10/2025 12:00 Hrs."
   },
   {
+    "numero_proceso": "300-0007-LPR26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Servicio de mantenimiento preventivo y correctivo para TRES (3) Grupos Electróge",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-07-17",
+    "monto_adjudicado": null,
+    "objeto": "Servicio de mantenimiento preventivo y correctivo para TRES (3) Grupos Electrógenos de la SLYT.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "17/07/2026 10:00 Hrs."
+  },
+  {
     "numero_proceso": "300-0008-CDI23",
     "organismo": "300/000 - Dirección General de Administración - SECLyT",
     "proveedor": "Suscripción a las publicaciones periódicas de LA LEY S.A.E. e I. para el año 202",
@@ -4086,6 +4100,20 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "26/01/2026 11:00 Hrs."
+  },
+  {
+    "numero_proceso": "300-0008-LPR26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Adquisición de insumos alimenticios",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-07-13",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de insumos alimenticios",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "13/07/2026 11:00 Hrs."
   },
   {
     "numero_proceso": "300-0009-LPR23",

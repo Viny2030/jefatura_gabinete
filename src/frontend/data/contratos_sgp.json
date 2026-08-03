@@ -528,7 +528,7 @@
     "objeto": "CONTRATACIÓN DE UN SERVICIO TÉCNICO-PROFESIONAL ESPECIALIZADO EN CONTROL BROMATOLÓGICO",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Evaluacion",
+    "estado": "Fracasado",
     "fecha_apertura": "23/06/2026 10:00 Hrs."
   },
   {
@@ -584,7 +584,7 @@
     "objeto": "Adquisición de artículos de ferretería, herramientas, insumos de cerrajería y materiales de plomería",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "17/04/2026 12:00 Hrs."
   },
   {
@@ -780,7 +780,7 @@
     "objeto": "Mantenimiento preventivo, correctivo y riego de los espacios verdes de la R.P.O. y Casa de Gobierno",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "07/05/2026 12:00 Hrs."
   },
   {
@@ -990,7 +990,7 @@
     "objeto": "Provisión de frutas y verduras con destino a la Residencia Presidencial de Olivos",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "01/07/2026 10:00 Hrs."
   },
   {
@@ -1076,6 +1076,20 @@
     "gestion": "Francos",
     "estado": "Adjudicado",
     "fecha_apertura": "25/06/2025 12:00 Hrs."
+  },
+  {
+    "numero_proceso": "23-0008-CDI26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Adquisición de baterías eléctricas destinadas a los vehículos del Área de Transp",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-07-24",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de baterías eléctricas destinadas a los vehículos del Área de Transporte Terrestre",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Evaluacion",
+    "fecha_apertura": "24/07/2026 12:00 Hrs."
   },
   {
     "numero_proceso": "23-0008-LPR23",
@@ -1260,6 +1274,20 @@
     "fecha_apertura": "17/11/2025 12:00 Hrs."
   },
   {
+    "numero_proceso": "23-0009-LPR26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Alquiler de (5) módulos habitacionales de tipo contenedor y de (1) modulo sanita",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-07-31",
+    "monto_adjudicado": null,
+    "objeto": "Alquiler de (5) módulos habitacionales de tipo contenedor y de (1) modulo sanitario tipo contenedor.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "31/07/2026 12:00 Hrs."
+  },
+  {
     "numero_proceso": "23-0009-LPU23",
     "organismo": "23/000 - Dirección General de Administración - SG",
     "proveedor": "Adquisición de bebidas con destino a la Residencia Presidencial de Olivos",
@@ -1298,7 +1326,7 @@
     "objeto": "Servicio de ajustes y mantenimiento integral de ascensores de edificios de SGP",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Fracasado",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "27/05/2026 12:00 Hrs."
   },
   {
@@ -1424,7 +1452,7 @@
     "objeto": "Servicio de mantenimiento de cámaras frigoríficas, heladeras y freezers en CR y RPO",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "01/07/2026 12:00 Hrs."
   },
   {
