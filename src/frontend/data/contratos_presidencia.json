@@ -136,7 +136,7 @@
     "objeto": "Adquisición de Lámparas escénicas con destino al Palacio Libertad - Centro Cultural Domingo Faustino",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Fracasado",
     "fecha_apertura": "16/06/2026 13:00 Hrs."
   },
   {
@@ -152,6 +152,20 @@
     "gestion": "Pre-Milei",
     "estado": "Adjudicado",
     "fecha_apertura": "28/04/2023 12:00 Hrs."
+  },
+  {
+    "numero_proceso": "83-0002-LPU26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Servicio de provisión e instalación de film de control solar y protección UV en ",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-08-06",
+    "monto_adjudicado": null,
+    "objeto": "Servicio de provisión e instalación de film de control solar y protección UV en el Palacio Libertad",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "06/08/2026 13:00 Hrs."
   },
   {
     "numero_proceso": "83-0003-CDI23",
@@ -304,7 +318,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo de los sistemas de maquinaria escénica",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "17/06/2026 13:00 Hrs."
   },
   {
@@ -3668,6 +3682,20 @@
     "fecha_apertura": "23/01/2026 10:00 Hrs."
   },
   {
+    "numero_proceso": "300-0003-LPU26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Certificados de seguridad",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-08-05",
+    "monto_adjudicado": null,
+    "objeto": "Certificados de seguridad",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "05/08/2026 10:00 Hrs."
+  },
+  {
     "numero_proceso": "300-0004-CDI23",
     "organismo": "300/000 - Dirección General de Administración - SECLyT",
     "proveedor": "Servicio técnico de mantenimiento preventivo y correctivo para CATORCE (14) escá",
@@ -4112,7 +4140,7 @@
     "objeto": "Adquisición de insumos alimenticios",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "13/07/2026 11:00 Hrs."
   },
   {

@@ -1134,6 +1134,20 @@
     "fecha_apertura": "14/11/2025 12:00 Hrs."
   },
   {
+    "numero_proceso": "23-0008-LPR26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Adquisición de Indumentaria distintiva para el personal de la Casa Militar.",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-08-06",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de Indumentaria distintiva para el personal de la Casa Militar.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "06/08/2026 12:00 Hrs."
+  },
+  {
     "numero_proceso": "23-0008-LPU23",
     "organismo": "23/000 - Dirección General de Administración - SG",
     "proveedor": "Contratación servicio de mantenimiento preventivo y correctivo de ascensores des",
