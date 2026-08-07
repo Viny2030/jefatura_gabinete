@@ -24,30 +24,43 @@ Endpoints:
   GET /api/resumen          â†’ KPIs ejecutivos
   GET /api/db-status        â†’ estado de conexiÃ³n PostgreSQL
   POST /api/refresh         â†’ dispara pipeline (requiere X-Refresh-Token)
+  POST /api/v1/chat/{area}  â†’ agente IA de solo lectura (area: jgm|sgp|presidencia)
 
 Variables de entorno:
-  DATABASE_URL   â†’ URL de PostgreSQL (Railway la inyecta automÃ¡ticamente)
-  REFRESH_TOKEN  â†’ token secreto (default: "dev")
-  PORT           â†’ puerto (default: 8000)
+  DATABASE_URL          â†’ URL de PostgreSQL (Railway la inyecta automÃ¡ticamente)
+  REFRESH_TOKEN         â†’ token secreto (default: "dev")
+  PORT                  â†’ puerto (default: 8000)
+  ANTHROPIC_API_KEY     â†’ clave de la API de Claude (si falta, /api/v1/chat/* devuelve 503)
+  ANTHROPIC_MODEL       â†’ modelo a usar (default: "claude-sonnet-5")
+  CHAT_RATE_LIMIT_DIARIO â†’ mensajes por IP por dÃ­a en el chat (default: 30)
 """
 
 import json
 import os
 import subprocess
 import sys
+import time
+from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Header, Query
+import httpx
+from fastapi import FastAPI, HTTPException, Header, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 REFRESH_TOKEN = os.getenv("REFRESH_TOKEN", "dev")
 PORT = int(os.getenv("PORT", 8000))
 DATABASE_URL = os.getenv("DATABASE_URL", "")
+
+# ── Agente IA (chat) ──────────────────────────────────────────────────────────
+ANTHROPIC_API_KEY   = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_MODEL     = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
+CHAT_RATE_LIMIT_DIA = int(os.getenv("CHAT_RATE_LIMIT_DIARIO", "30"))  # mensajes por IP por día
 
 app = FastAPI(
     title="Monitor AnticorrupciÃ³n JGM â€” API",
@@ -340,6 +353,233 @@ def get_resumen():
             "ultima_actualizacion": meta.get("ultima_actualizacion")
         }
     return data
+
+
+
+# ─── Agente IA — chat de solo lectura por área ────────────────────────────────
+#
+# Endpoint público POST /api/v1/chat/{area} (area = jgm | sgp | presidencia).
+# El agente SOLO puede leer datos ya publicados en el portal (contratos,
+# personal, cruces) a través de "tools" — nunca escribe en la base ni ejecuta
+# código arbitrario. Cada respuesta debe basarse en los datos que devuelven
+# las tools; si no encuentra nada, tiene que decirlo en vez de inventar.
+#
+# Requiere la variable de entorno ANTHROPIC_API_KEY. Si no está configurada,
+# el endpoint devuelve 503 en vez de romper el resto de la API.
+
+AREAS_VALIDAS = {"jgm", "sgp", "presidencia"}
+_rate_limit_chat: dict[str, tuple[str, int]] = defaultdict(lambda: ("", 0))
+
+
+def _chat_rate_limit_ok(ip: str) -> bool:
+    """Límite simple por IP/día en memoria. No sobrevive a un restart ni se
+    comparte entre instancias — suficiente para desalentar abuso en un único
+    servicio de Railway; si se escala a más de una instancia, mover a Redis."""
+    hoy = datetime.now().strftime("%Y-%m-%d")
+    dia, cnt = _rate_limit_chat[ip]
+    if dia != hoy:
+        _rate_limit_chat[ip] = (hoy, 1)
+        return True
+    if cnt >= CHAT_RATE_LIMIT_DIA:
+        return False
+    _rate_limit_chat[ip] = (hoy, cnt + 1)
+    return True
+
+
+def _tool_buscar_contratos(area: str, proveedor: str = None, organismo: str = None,
+                            monto_min: float = None, limit: int = 15) -> list[dict]:
+    data = _load(f"contratos_{area}.json")
+    if not isinstance(data, list):
+        return []
+    out = data
+    if proveedor:
+        p = proveedor.lower()
+        out = [c for c in out if p in str(c.get("proveedor", "")).lower()]
+    if organismo:
+        o = organismo.lower()
+        out = [c for c in out if o in str(c.get("organismo", "")).lower()]
+    if monto_min:
+        out = [c for c in out if (c.get("monto_adjudicado") or 0) >= monto_min]
+    out = sorted(out, key=lambda c: c.get("monto_adjudicado") or 0, reverse=True)
+    return out[:limit]
+
+
+def _tool_buscar_personal(area: str, apellido: str = None, cargo: str = None,
+                           limit: int = 15) -> list[dict]:
+    data = _load(f"personal_{area}.json")
+    if not isinstance(data, list):
+        return []
+    out = data
+    if apellido:
+        a = apellido.lower()
+        out = [p for p in out if a in str(p.get("apellido", "")).lower()]
+    if cargo:
+        c = cargo.lower()
+        out = [p for p in out if c in str(p.get("cargo", "")).lower()]
+    return out[:limit]
+
+
+def _tool_buscar_cruces(apellido: str = None, limit: int = 10) -> list[dict]:
+    """Busca en cruces.json (generado por scripts/generar_cruces_pen.py).
+    Es un cruce a nivel de todo el monitor, no solo del área actual —
+    el agente debe aclararlo si el organismo del resultado no coincide."""
+    data = _load("cruces.json")
+    cruces = data.get("cruces", []) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    out = cruces
+    if apellido:
+        a = apellido.lower()
+        out = [c for c in out if a in str(c.get("funcionario", c.get("apellido", ""))).lower()]
+    return out[:limit]
+
+
+TOOLS_SCHEMA = [
+    {
+        "name": "buscar_contratos",
+        "description": "Busca contratos/adjudicaciones del área actual por proveedor, organismo o monto mínimo.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "proveedor": {"type": "string", "description": "Nombre o parte del nombre del proveedor"},
+                "organismo": {"type": "string", "description": "Nombre o parte del nombre del organismo"},
+                "monto_min": {"type": "number", "description": "Monto adjudicado mínimo en ARS"},
+            },
+        },
+    },
+    {
+        "name": "buscar_personal",
+        "description": "Busca funcionarios/autoridades del área actual por apellido o cargo.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "apellido": {"type": "string"},
+                "cargo": {"type": "string"},
+            },
+        },
+    },
+    {
+        "name": "buscar_cruces",
+        "description": "Busca alertas de cruce (funcionario que también es proveedor, o apellido coincidente) en todo el monitor, filtrando opcionalmente por apellido.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "apellido": {"type": "string"},
+            },
+        },
+    },
+]
+
+SYSTEM_PROMPT_TMPL = """Sos el asistente del Monitor de Transparencia del Poder Ejecutivo Nacional argentino, sección {area_label}.
+
+Reglas estrictas:
+- Respondé siempre en español, de forma breve y concreta.
+- SOLO podés afirmar datos que hayan sido devueltos por las tools (buscar_contratos, buscar_personal, buscar_cruces). Nunca inventes montos, nombres, CUITs ni fechas.
+- Si una búsqueda no devuelve resultados, decilo explícitamente ("no encontré coincidencias") en vez de sugerir que sí hay algo.
+- Cuando menciones una alerta de cruce, aclará que es un indicador algorítmico de riesgo (coincidencia de CUIL/apellido), no una acusación ni una determinación de responsabilidad.
+- Si te preguntan algo fuera de contratos/personal/cruces de este portal, decí que no es tu función y sugerí de qué se puede hablar.
+- No des consejos legales ni políticos; ceñite a describir los datos públicos."""
+
+AREA_LABELS = {
+    "jgm": "Jefatura de Gabinete de Ministros",
+    "sgp": "Secretaría General de la Presidencia",
+    "presidencia": "Presidencia de la Nación",
+}
+
+
+async def _ejecutar_tool(nombre: str, area: str, entrada: dict):
+    if nombre == "buscar_contratos":
+        return _tool_buscar_contratos(area, **entrada)
+    if nombre == "buscar_personal":
+        return _tool_buscar_personal(area, **entrada)
+    if nombre == "buscar_cruces":
+        return _tool_buscar_cruces(**entrada)
+    return {"error": f"tool desconocida: {nombre}"}
+
+
+async def _llamar_claude(client: httpx.AsyncClient, messages: list, system: str) -> dict:
+    r = await client.post(
+        "https://api.anthropic.com/v1/messages",
+        headers={
+            "x-api-key": ANTHROPIC_API_KEY,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+        },
+        json={
+            "model": ANTHROPIC_MODEL,
+            "max_tokens": 700,
+            "system": system,
+            "tools": TOOLS_SCHEMA,
+            "messages": messages,
+        },
+        timeout=30,
+    )
+    r.raise_for_status()
+    return r.json()
+
+
+class ChatIn(BaseModel):
+    mensaje: str
+    historial: list[dict] = []  # [{"role": "user"|"assistant", "texto": "..."}]
+
+
+@app.post("/api/v1/chat/{area}", tags=["Agente IA"])
+async def chat_agente(area: str, body: ChatIn, request: Request):
+    if area not in AREAS_VALIDAS:
+        raise HTTPException(status_code=404, detail=f"Área inválida: {area}")
+    if not ANTHROPIC_API_KEY:
+        raise HTTPException(status_code=503, detail="Agente no configurado (falta ANTHROPIC_API_KEY)")
+    if not body.mensaje or not body.mensaje.strip():
+        raise HTTPException(status_code=400, detail="Mensaje vacío")
+    if len(body.mensaje) > 800:
+        raise HTTPException(status_code=400, detail="Mensaje demasiado largo (máx. 800 caracteres)")
+
+    ip = request.client.host if request.client else "desconocida"
+    if not _chat_rate_limit_ok(ip):
+        raise HTTPException(
+            status_code=429,
+            detail=f"Límite de {CHAT_RATE_LIMIT_DIA} mensajes por día alcanzado. Volvé a intentar mañana.",
+        )
+
+    system = SYSTEM_PROMPT_TMPL.format(area_label=AREA_LABELS[area])
+
+    # Historial acotado: últimos 6 turnos, para no disparar el costo por request
+    messages = []
+    for turno in body.historial[-6:]:
+        rol = "assistant" if turno.get("role") == "assistant" else "user"
+        texto = str(turno.get("texto", ""))[:800]
+        if texto:
+            messages.append({"role": rol, "content": texto})
+    messages.append({"role": "user", "content": body.mensaje.strip()})
+
+    try:
+        async with httpx.AsyncClient() as client:
+            for _ in range(4):  # máximo 4 idas y vueltas de tool-use por mensaje
+                resp = await _llamar_claude(client, messages, system)
+                stop = resp.get("stop_reason")
+                bloques = resp.get("content", [])
+
+                if stop != "tool_use":
+                    texto = "".join(b.get("text", "") for b in bloques if b.get("type") == "text")
+                    return {"respuesta": texto.strip() or "No tengo una respuesta para eso.", "area": area}
+
+                messages.append({"role": "assistant", "content": bloques})
+                tool_results = []
+                for b in bloques:
+                    if b.get("type") != "tool_use":
+                        continue
+                    resultado = await _ejecutar_tool(b["name"], area, b.get("input", {}) or {})
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": b["id"],
+                        "content": json.dumps(resultado, ensure_ascii=False, default=str)[:4000],
+                    })
+                messages.append({"role": "user", "content": tool_results})
+
+            return {"respuesta": "No pude completar la búsqueda, probá con una consulta más simple.", "area": area}
+
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(status_code=502, detail=f"Error del proveedor de IA: {e.response.status_code}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error inesperado del agente: {e}")
 
 
 @app.post("/api/refresh")

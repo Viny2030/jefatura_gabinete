@@ -105,6 +105,27 @@ Detecta cuando el CUIL de un funcionario coincide exactamente con el CUIT de un 
 - **Sobreprecio**: contratos >40% sobre la mediana del rubro/organismo → alerta ALTA si >80%
 - **Concentración**: proveedor con >30% del gasto total de un organismo → alerta MEDIA/ALTA
 
+## Agente IA (chat por área)
+
+Cada ficha de área (`jgm.html`, `sgp.html`, `presidencia.html`) tiene una pestaña
+"🤖 Agente IA" con un chat de solo lectura sobre los datos de esa área
+(contratos, personal, cruces). El agente usa Claude (Anthropic) con
+tool-calling — solo puede leer los JSON ya publicados, nunca escribe en la
+base ni ejecuta código arbitrario, y tiene instrucciones explícitas de citar
+únicamente lo que devuelven las búsquedas (nunca inventar montos/nombres).
+
+Variables de entorno (servicio web en Railway):
+
+| Variable | Descripción | Default |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | Clave de la API de Claude. Sin esto, `/api/v1/chat/*` responde 503 en vez de romper el resto de la API. | — |
+| `ANTHROPIC_MODEL` | Modelo a usar | `claude-sonnet-5` |
+| `CHAT_RATE_LIMIT_DIARIO` | Mensajes por IP por día (protección de costo/abuso en un endpoint público) | `30` |
+
+El rate limit es en memoria (por proceso) — pensado para una sola instancia
+de Railway. Si en algún momento se escala a más de una instancia, hay que
+mover el contador a Redis o Postgres para que el límite sea global.
+
 ## Deploy en Railway
 
 1. Crear proyecto en Railway
@@ -112,6 +133,7 @@ Detecta cuando el CUIL de un funcionario coincide exactamente con el CUIT de un 
 3. Copiar `DATABASE_URL` de Railway a las variables de entorno del servicio web
 4. Conectar el repositorio GitHub → Railway detecta el `Dockerfile` automáticamente
 5. Agregar `DATABASE_URL` como secreto en GitHub Actions (`Settings → Secrets`)
+6. (Opcional) Agregar `ANTHROPIC_API_KEY` para activar el Agente IA — ver sección anterior
 
 ## Licencia
 

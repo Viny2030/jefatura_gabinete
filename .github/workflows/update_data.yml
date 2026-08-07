@@ -42,6 +42,7 @@ jobs:
         run: echo "fecha=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Reclasificar contratos PEN
+        id: reclasificar
         run: |
           python scripts/reclasificar_pen.py \
             --repo monitor_contratos_v2 \
@@ -49,15 +50,33 @@ jobs:
         continue-on-error: true
 
       - name: Scraper nomina APN
+        id: nomina
         run: python scripts/scraper_nomina.py
         continue-on-error: true
 
       - name: Generar JSONs
+        id: jsons
         run: python scripts/generar_json.py
 
-      - name: Cruces CUIL vs CUIT
-        run: python scripts/cruzar_cuil_cuit.py
-        continue-on-error: true
+      # Nota: el cruce CUIL/CUIT real (3 niveles) lo genera scripts/generar_cruces_pen.py
+      # en el workflow "Generador de Cruces PEN" (corre antes, a las 05:00 UTC).
+      # scripts/cruzar_cuil_cuit.py quedó como utilidad manual — correrlo acá pisaría
+      # ese cruce más completo con uno más simple (solo CUIL==CUIT exacto).
+
+      - name: Resumen de pasos opcionales
+        if: always()
+        run: |
+          echo "## Resumen del pipeline diario" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Paso | Resultado |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Reclasificar contratos PEN | ${{ steps.reclasificar.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Scraper nómina APN | ${{ steps.nomina.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Generar JSONs | ${{ steps.jsons.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.reclasificar.outcome }}" = "failure" ] || [ "${{ steps.nomina.outcome }}" = "failure" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "⚠️ Alguno de los pasos opcionales falló hoy (no bloquea el pipeline, pero conviene revisar los logs)." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Commit datos actualizados
         run: |

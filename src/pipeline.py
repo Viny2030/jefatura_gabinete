@@ -66,10 +66,31 @@ def step_tgn(anio=None):
 
 
 def step_motor(solo=None):
-    from src.engine import motor_matrices as m
-    data = m.run(solo=solo)
-    m.save(data)
-    return data
+    """
+    LEGACY: corre las matrices de cruce (kinship/corporate/cashflow) directo
+    contra PostgreSQL. Este NO es el camino que usa la app en producción
+    (Railway) — las alertas reales (cruces.json) se generan con
+    `scripts/generar_cruces_pen.py`, corrido por el workflow
+    "Generador de Cruces PEN". Este paso se mantiene solo por compatibilidad
+    histórica para quien quiera correr el motor contra una base Postgres
+    propia con las tablas nomina/contratos/vinculos/alertas pobladas
+    (ver src/database/schema_ddl.sql).
+    """
+    if not os.environ.get("DATABASE_URL"):
+        print("[MOTOR] DATABASE_URL no configurada — paso legacy omitido. "
+              "Las alertas de cruce reales se generan con "
+              "scripts/generar_cruces_pen.py, no con este paso.")
+        return None
+
+    # engine/ ya está en sys.path (ver arriba), igual que ingestion/ para los otros steps
+    import matrix_kinship, matrix_corporate, matrix_cashflow
+    matrix_kinship.main()
+    matrix_corporate.main()
+    matrix_cashflow.main()
+    print("[MOTOR] Matrices legacy ejecutadas (kinship/corporate/cashflow). "
+          "Resultados guardados directo en PostgreSQL (tablas vinculos/alertas); "
+          "este paso no devuelve un dict 'inteligencia' unificado.")
+    return None
 
 
 def generar_resumen(inteligencia):

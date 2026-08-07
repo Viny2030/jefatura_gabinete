@@ -20,6 +20,7 @@ Uso:
 
 import io
 import os
+import time
 import warnings
 import zipfile
 import requests
@@ -28,6 +29,34 @@ import pandas as pd
 from datetime import datetime
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+def get_con_reintentos(url, *, intentos=3, espera_seg=5, **kwargs):
+    """
+    GET con reintentos y backoff simple. Las 3 fuentes de nómina son APIs
+    gubernamentales que a veces devuelven 5xx/timeout de forma transitoria
+    (así fallaba el cron diario incluso cuando la fuente en general andaba
+    bien) — reintentar antes de rendirse evita esos falsos negativos.
+    """
+    ultimo_error = None
+    for intento in range(1, intentos + 1):
+        try:
+            r = requests.get(url, **kwargs)
+            if r.status_code >= 500 and intento < intentos:
+                print(f"    [RETRY] HTTP {r.status_code} (intento {intento}/{intentos}); "
+                      f"reintentando en {espera_seg}s...")
+                time.sleep(espera_seg)
+                continue
+            return r
+        except requests.exceptions.RequestException as e:
+            ultimo_error = e
+            if intento < intentos:
+                print(f"    [RETRY] Intento {intento}/{intentos} falló ({e}); "
+                      f"reintentando en {espera_seg}s...")
+                time.sleep(espera_seg)
+    if ultimo_error:
+        raise ultimo_error
+    return r
 
 # ── Configuración ──────────────────────────────────────────────────────────────
 BIEP_URL     = "https://biep.modernizacion.gob.ar/apps/directorio/archivos/datos.zip"
@@ -92,7 +121,7 @@ def descargar_mapadelestado() -> pd.DataFrame | None:
     """
     print(f"[MAPA] Descargando desde {MAPA_URL} ...")
     try:
-        r = requests.get(MAPA_URL, headers=HEADERS, timeout=TIMEOUT, verify=False)
+        r = get_con_reintentos(MAPA_URL, headers=HEADERS, timeout=TIMEOUT, verify=False)
         r.raise_for_status()
 
         # La API puede devolver JSON o CSV según el parámetro fi=
@@ -124,7 +153,7 @@ def descargar_biep() -> pd.DataFrame | None:
     """Descarga el ZIP del BIEP y retorna el DataFrame principal."""
     print(f"[BIEP] Intentando fallback desde {BIEP_URL} ...")
     try:
-        r = requests.get(BIEP_URL, timeout=TIMEOUT, verify=False)
+        r = get_con_reintentos(BIEP_URL, timeout=TIMEOUT, verify=False)
         r.raise_for_status()
         print(f"[BIEP] Descargado: {len(r.content)/1024:.0f} KB")
 
@@ -158,7 +187,7 @@ def descargar_biep() -> pd.DataFrame | None:
 def descargar_datosgob() -> pd.DataFrame | None:
     print(f"[DATOSGOB] Intentando fallback histórico desde datos.gob.ar ...")
     try:
-        r = requests.get(DATOSGOB_URL, headers=HEADERS, timeout=TIMEOUT, verify=False)
+        r = get_con_reintentos(DATOSGOB_URL, headers=HEADERS, timeout=TIMEOUT, verify=False)
         r.raise_for_status()
         df = pd.read_csv(io.StringIO(r.text), low_memory=False)
         print(f"[DATOSGOB] {len(df):,} filas, {len(df.columns)} columnas")

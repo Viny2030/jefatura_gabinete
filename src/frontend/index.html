@@ -243,7 +243,7 @@ footer a { color: #1e40af; text-decoration: none; }
     <div class="sub">República Argentina · Datos abiertos · Actualización diaria</div>
   </div>
   <button class="don-btn" onclick="abrirDonacion()">💚 Apoyar</button>
-  <div class="badge-demo">⚠ MODO DEMO</div>
+  <div class="badge-demo" id="badge-actualizacion" title="Los datos se generan automáticamente todos los días desde comprar.gob.ar, BORA y MapaDelEstado">⏳ Verificando datos…</div>
 </header>
 
 <div class="hero">
@@ -252,27 +252,27 @@ footer a { color: #1e40af; text-decoration: none; }
      cruces de interés y estructura orgánica.</p>
 </div>
 
-<!-- Stats globales -->
+<!-- Stats globales (se completan con datos reales vía JS, ver script al final del body) -->
 <div class="global-stats">
   <div class="gstat">
-    <div class="gstat-val">1.154</div>
+    <div class="gstat-val" id="gstat-autoridades">—</div>
     <div class="gstat-lbl">Autoridades monitoreadas</div>
   </div>
   <div class="gstat">
-    <div class="gstat-val">1.839</div>
+    <div class="gstat-val" id="gstat-contratos">—</div>
     <div class="gstat-lbl">Contratos registrados</div>
   </div>
   <div class="gstat">
-    <div class="gstat-val">$3.8B</div>
+    <div class="gstat-val" id="gstat-monto">—</div>
     <div class="gstat-lbl">ARS adjudicados</div>
   </div>
   <div class="gstat">
-    <div class="gstat-val">14</div>
+    <div class="gstat-val" id="gstat-alertas">—</div>
     <div class="gstat-lbl">Alertas activas</div>
   </div>
   <div class="gstat">
-    <div class="gstat-val">2</div>
-    <div class="gstat-lbl">Cruces detectados</div>
+    <div class="gstat-val" id="gstat-alertas-alto">—</div>
+    <div class="gstat-lbl">Alertas de nivel alto</div>
   </div>
 </div>
 
@@ -290,15 +290,15 @@ footer a { color: #1e40af; text-decoration: none; }
     </div>
     <div class="card-stats">
       <div class="stat">
-        <div class="stat-val">611</div>
+        <div class="stat-val" id="jgm-autoridades">—</div>
         <div class="stat-lbl">Autoridades</div>
       </div>
       <div class="stat">
-        <div class="stat-val">359</div>
+        <div class="stat-val" id="jgm-contratos">—</div>
         <div class="stat-lbl">Contratos</div>
       </div>
       <div class="stat">
-        <div class="stat-val">$1.4B</div>
+        <div class="stat-val" id="jgm-monto">—</div>
         <div class="stat-lbl">ARS</div>
       </div>
     </div>
@@ -346,15 +346,15 @@ footer a { color: #1e40af; text-decoration: none; }
     </div>
     <div class="card-stats">
       <div class="stat">
-        <div class="stat-val">144</div>
+        <div class="stat-val" id="sgp-autoridades">—</div>
         <div class="stat-lbl">Autoridades</div>
       </div>
       <div class="stat">
-        <div class="stat-val">436</div>
+        <div class="stat-val" id="sgp-contratos">—</div>
         <div class="stat-lbl">Contratos</div>
       </div>
       <div class="stat">
-        <div class="stat-val">$909M</div>
+        <div class="stat-val" id="sgp-monto">—</div>
         <div class="stat-lbl">ARS</div>
       </div>
     </div>
@@ -402,15 +402,15 @@ footer a { color: #1e40af; text-decoration: none; }
     </div>
     <div class="card-stats">
       <div class="stat">
-        <div class="stat-val">399</div>
+        <div class="stat-val" id="pres-autoridades">—</div>
         <div class="stat-lbl">Autoridades</div>
       </div>
       <div class="stat">
-        <div class="stat-val">1.044</div>
+        <div class="stat-val" id="pres-contratos">—</div>
         <div class="stat-lbl">Contratos</div>
       </div>
       <div class="stat">
-        <div class="stat-val">$1.5B</div>
+        <div class="stat-val" id="pres-monto">—</div>
         <div class="stat-lbl">ARS</div>
       </div>
     </div>
@@ -501,6 +501,78 @@ footer a { color: #1e40af; text-decoration: none; }
     navigator.clipboard.writeText(el.textContent).then(function(){ var b=el.nextElementSibling; b.textContent="✓ copiado"; b.classList.add("copiado"); setTimeout(function(){ b.textContent="copiar"; b.classList.remove("copiado"); },2000); });
   };
   document.addEventListener("keydown", function(e){ if(e.key==="Escape") cerrarDonacion(); });
+})();
+</script>
+
+<!-- Carga de KPIs reales desde data/meta.json y data/cruces.json (generados por
+     scripts/generar_json.py y scripts/generar_cruces_pen.py, ver README).
+     Antes estos números estaban hardcodeados en el HTML; ahora se completan
+     acá para que no queden desactualizados a medida que corre el scraping diario. -->
+<script>
+(function() {
+  function fmtEntero(n) {
+    if (n === null || n === undefined || isNaN(n)) return "—";
+    return Number(n).toLocaleString("es-AR");
+  }
+  function fmtMonto(n) {
+    if (!n) return "$0";
+    var abs = Math.abs(n);
+    if (abs >= 1e9) return "$" + (n / 1e9).toFixed(1) + "B";
+    if (abs >= 1e6) return "$" + (n / 1e6).toFixed(0) + "M";
+    return "$" + Number(n).toLocaleString("es-AR");
+  }
+  function set(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = val;
+  }
+
+  fetch("data/meta.json")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (meta) {
+      if (!meta || !meta.ramas) throw new Error("sin meta.json");
+      var r = meta.ramas || {};
+      var jgm = r.jgm || {}, sgp = r.sgp || {}, pres = r.presidencia || {};
+
+      set("gstat-autoridades", fmtEntero((jgm.personal || 0) + (sgp.personal || 0) + (pres.personal || 0)));
+      set("gstat-contratos", fmtEntero((jgm.contratos || 0) + (sgp.contratos || 0) + (pres.contratos || 0)));
+      set("gstat-monto", fmtMonto((jgm.monto_total || 0) + (sgp.monto_total || 0) + (pres.monto_total || 0)));
+
+      set("jgm-autoridades", fmtEntero(jgm.personal));
+      set("jgm-contratos", fmtEntero(jgm.contratos));
+      set("jgm-monto", fmtMonto(jgm.monto_total));
+
+      set("sgp-autoridades", fmtEntero(sgp.personal));
+      set("sgp-contratos", fmtEntero(sgp.contratos));
+      set("sgp-monto", fmtMonto(sgp.monto_total));
+
+      set("pres-autoridades", fmtEntero(pres.personal));
+      set("pres-contratos", fmtEntero(pres.contratos));
+      set("pres-monto", fmtMonto(pres.monto_total));
+
+      var badge = document.getElementById("badge-actualizacion");
+      if (badge) {
+        badge.textContent = meta.generado ? ("🟢 Datos actualizados: " + meta.generado) : "🟢 Datos en vivo";
+        badge.style.background = "#ecfdf5";
+        badge.style.color = "#065f46";
+        badge.style.borderColor = "#a7f3d0";
+      }
+    })
+    .catch(function () {
+      var badge = document.getElementById("badge-actualizacion");
+      if (badge) badge.textContent = "⚠ No se pudo verificar la última actualización";
+    });
+
+  fetch("data/cruces.json")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (c) {
+      if (!c) throw new Error("sin cruces.json");
+      set("gstat-alertas", fmtEntero(c.total));
+      set("gstat-alertas-alto", fmtEntero(c.altos));
+    })
+    .catch(function () {
+      set("gstat-alertas", "0");
+      set("gstat-alertas-alto", "0");
+    });
 })();
 </script>
 </body>

@@ -2,7 +2,17 @@
 cruzar_cuil_cuit.py
 ===================
 Cruza CUILs de la nómina APN contra CUITs de contratos para detectar
-funcionarios que también figuran como proveedores del Estado.
+funcionarios que también figuran como proveedores del Estado (Nivel 1:
+coincidencia exacta CUIL == CUIT).
+
+NOTA: este script ya NO corre automáticamente en el cron (update_data.yml).
+El cruce real y más completo (3 niveles: CUIL=CUIT, apellido en razón
+social, y proveedor que cobra en JGM + otro organismo) lo genera
+`scripts/generar_cruces_pen.py`, corrido por el workflow "Generador de
+Cruces PEN". Ese script escribe al mismo archivo de salida
+(src/frontend/data/cruces.json); correr este script encima pisaría ese
+cruce más completo con uno más simple. Se deja disponible para uso manual
+puntual (ej. debugging de un cruce exacto), no para el pipeline diario.
 
 Salida:
   src/frontend/data/cruces.json
@@ -12,6 +22,7 @@ Uso:
 """
 
 import os
+import glob
 import json
 import codecs
 import pandas as pd
@@ -23,8 +34,19 @@ DATA_DIR      = os.path.join(BASE, "..", "data")
 OUT_DIR       = os.path.join(BASE, "..", "src", "frontend", "data")
 os.makedirs(OUT_DIR, exist_ok=True)
 
-NOMINA_CSV    = os.path.join(DATA_DIR, "nomina_apn_procesada.csv")
-CONTRATOS_CSV = os.path.join(DATA_DIR, "adjudicaciones_20260406.csv")
+NOMINA_CSV = os.path.join(DATA_DIR, "nomina_apn_procesada.csv")
+
+# Antes esto era una fecha hardcodeada ("adjudicaciones_20260406.csv"), que
+# solo existía el día que se escribió el script — cualquier otro día
+# reventaba con FileNotFoundError. Ahora toma el más reciente disponible.
+_candidatos = sorted(glob.glob(os.path.join(DATA_DIR, "adjudicaciones_*.csv")))
+if not _candidatos:
+    raise FileNotFoundError(
+        f"No se encontró ningún data/adjudicaciones_*.csv en {DATA_DIR}. "
+        "Correr scripts/reclasificar_pen.py primero."
+    )
+CONTRATOS_CSV = _candidatos[-1]
+print(f"[INFO] Usando contratos: {os.path.basename(CONTRATOS_CSV)}")
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def normalizar_cuil(valor):

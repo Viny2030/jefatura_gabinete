@@ -282,7 +282,7 @@ footer a { color: var(--accent); text-decoration: none; }
     <div class="sub">Jefatura de Gabinete · Secretaría General · Presidencia de la Nación · República Argentina</div>
   </div>
   <button class="don-btn" onclick="abrirDonacion()">💚 Apoyar</button>
-  <div class="badge-demo">⚠ MODO DEMO</div>
+  <div class="badge-demo" title="Esta pantalla es un prototipo de UI sin conexión a datos en vivo. Para ver datos reales, entrá a jgm.html, sgp.html o presidencia.html desde el inicio">🛠 Vista previa de UI</div>
 </header>
 
 <!-- ── Selector de rama (nivel 1) ── -->
@@ -331,8 +331,9 @@ footer a { color: var(--accent); text-decoration: none; }
 <div class="tab-panel active" id="tab-contratos">
 
   <div class="demo-banner">
-    ⚡ Datos de demostración. Para datos reales: ejecutá los scrapers y levantá
-    <code>uvicorn src.api.api_server:app --port 8000</code> con <code>DATABASE_URL</code> configurada.
+    🛠 Esta pantalla (<code>dashboard.html</code>) es un prototipo de UI, no está conectada a los datos reales.
+    Los datos en vivo están en <a href="jgm.html">jgm.html</a>, <a href="sgp.html">sgp.html</a> y
+    <a href="presidencia.html">presidencia.html</a> (accesibles desde el inicio).
   </div>
 
   <div class="stitle">Filtrar por gestión — Jefe de Gabinete</div>
@@ -555,7 +556,7 @@ footer a { color: var(--accent); text-decoration: none; }
 <div class="tab-panel" id="tab-cruces">
 
   <div class="demo-banner">
-    🔗 Cruces entre nómina de autoridades y proveedores de contratos. En modo demo se muestran alertas de ejemplo. Con datos reales, el motor busca coincidencias de CUIL, apellido y razón social.
+    🔗 Cruces entre nómina de autoridades y proveedores de contratos. Esta pantalla es un prototipo de UI con datos de ejemplo. Los cruces reales (coincidencias de CUIL, apellido y razón social) están en <a href="jgm.html">jgm.html</a>, <a href="sgp.html">sgp.html</a> y <a href="presidencia.html">presidencia.html</a>, generados por <code>scripts/generar_cruces_pen.py</code>.
   </div>
 
   <div class="kpi-grid" style="margin-bottom:24px">
