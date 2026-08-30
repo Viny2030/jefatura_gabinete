@@ -239,6 +239,8 @@ footer a { color: var(--accent); text-decoration: none; }
   <a onclick="switchSec('contratos')" id="nav-contratos">📋 Contratos</a>
   <a onclick="switchSec('personal')"  id="nav-personal">👥 Personal</a>
   <a onclick="switchSec('cruces')"    id="nav-cruces">🔗 Cruces</a>
+  <a onclick="switchSec('organigrama')" id="nav-organigrama">🏛️ Organigrama</a>
+  <a onclick="switchSec('sigen')"       id="nav-sigen">🔍 SIGEN — Auditoría interna</a>
   <a onclick="switchSec('agente')"    id="nav-agente">🤖 Agente IA</a>
   <a href="manual_usuario.html">📖 Manual</a>
 </nav>
@@ -559,6 +561,39 @@ footer a { color: var(--accent); text-decoration: none; }
 
 </div><!-- /cruces -->
 
+<!-- ════════ ORGANIGRAMA ════════ -->
+<div class="seccion" id="sec-organigrama">
+  <div class="panel" style="margin-bottom:16px">
+    <div class="pb" style="font-size:12px;color:var(--muted);line-height:1.6">
+      Estructura de personal de Presidencia de la Nación, agrupada por sub-organismo y luego por jerarquía funcional, a partir de la nómina de designaciones ya publicada en la pestaña Personal. No es un organigrama oficial publicado por el organismo, sino una reconstrucción a partir de datos abiertos.
+    </div>
+  </div>
+  <div id="organigrama-container"></div>
+</div><!-- /organigrama -->
+
+<!-- ════════ SIGEN — AUDITORÍA INTERNA ════════ -->
+<div class="seccion" id="sec-sigen">
+  <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:14px 18px;margin-bottom:20px;font-size:12px;color:#92400e;line-height:1.6">
+    <strong>⚠ Alcance de estos datos:</strong> <span id="sigen-nota">Cargando…</span>
+  </div>
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card">
+      <div class="kpi-label">Informes publicados</div>
+      <div class="kpi-val" id="sk-total">—</div>
+      <div class="kpi-sub">Archivo Web de SIGEN</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Período cubierto</div>
+      <div class="kpi-val" id="sk-rango" style="font-size:18px">—</div>
+      <div class="kpi-sub">años con informes publicados</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Informes de auditoría interna — SIGEN (SAF 109)</h2></div>
+    <div id="sigen-container"></div>
+  </div>
+</div><!-- /sigen -->
+
 <!-- ════════ AGENTE IA ════════ -->
 <div class="seccion" id="sec-agente">
   <div class="panel" style="max-width:720px;margin:0 auto">
@@ -840,6 +875,83 @@ const D_PERSONAL = [
   { apellido:'NÚÑEZ',      nombre:'Roberto Oscar', cargo:'Responsable de área',                          jerarquia:'S-D',           escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Pre-Milei', genero:'Masculino', norma_designacion:'[Decisión Administrativa 112/2019](https://www.boletinoficial.gob.ar/detalleAviso/primera/205000/20190301)', sueldo_bruto_estimado_ars:1_800_000 },
 ];
 
+// ── Organigrama (derivado de allP, sin fetch nuevo) ──────────────────────────
+const JERARQUIA_ORDEN = ['Ministro','Secretario','Subsecretario','DN-DG','Director - Primer Nivel Operativo','Director - Segundo Nivel Operativo','Coordinador','Jefe de Departamento','Ad Honorem','S-D'];
+
+function ordenJerarquia(a, b) {
+  let ia = JERARQUIA_ORDEN.indexOf(a); if (ia === -1) ia = 999;
+  let ib = JERARQUIA_ORDEN.indexOf(b); if (ib === -1) ib = 999;
+  if (ia !== ib) return ia - ib;
+  return a.localeCompare(b);
+}
+
+function renderOrganigrama() {
+  const cont = document.getElementById('organigrama-container');
+  if (!cont) return;
+  if (!allP.length) {
+    cont.innerHTML = '<div class="panel"><div class="pb" style="text-align:center;color:var(--muted)">Sin datos de personal cargados todavía.</div></div>';
+    return;
+  }
+  const subs = {};
+  allP.forEach(p => {
+    const s = p.sub_organismo || 'Presidencia (directo)';
+    (subs[s] = subs[s] || []).push(p);
+  });
+  const subKeys = Object.keys(subs).sort((a,b) => subs[b].length - subs[a].length);
+  cont.innerHTML = subKeys.map(sk => {
+    const personas = subs[sk];
+    const grupos = {};
+    personas.forEach(p => { const j = p.jerarquia || 'Sin dato'; (grupos[j] = grupos[j] || []).push(p); });
+    const jKeys = Object.keys(grupos).sort(ordenJerarquia);
+    return `<div class="panel">
+      <div class="ph"><h2>${sk} <span style="color:var(--muted);font-weight:400;font-size:11px">(${personas.length})</span></h2></div>
+      <div class="pb" style="padding-top:0">
+      ${jKeys.map(jk => {
+        const lista = grupos[jk].slice().sort((a,b) => (a.apellido||'').localeCompare(b.apellido||''));
+        return `<div style="margin-top:14px">
+          <div class="stitle" style="margin-bottom:6px">${jk} (${lista.length})</div>
+          <div class="tw"><table><thead><tr><th>Apellido</th><th>Nombre</th><th>Cargo</th><th>Gestión</th><th>Decreto</th></tr></thead><tbody>
+          ${lista.map(p => `<tr>
+            <td class="fw">${p.apellido||'—'}</td>
+            <td>${p.nombre||'—'}</td>
+            <td style="font-size:11px">${p.cargo||'—'}</td>
+            <td>${chipGestion(p.jgm_al_ingreso)}</td>
+            <td>${extractDecretoLink(p.norma_designacion)}</td>
+          </tr>`).join('')}
+          </tbody></table></div></div>`;
+      }).join('')}
+      </div></div>`;
+  }).join('');
+}
+
+// ── SIGEN — Auditoría interna (desde data/sigen_auditorias.json) ────────────
+function loadSigen() {
+  fetch('data/sigen_auditorias.json').then(r => {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(d => renderSigen(d)).catch(e => {
+    console.warn('SIGEN no disponible:', e);
+    const el = document.getElementById('sigen-nota');
+    if (el) el.textContent = 'Los datos todavía no se generaron para esta instancia. Se actualizan automáticamente con el pipeline diario.';
+  });
+}
+
+function renderSigen(d) {
+  const elTotal = document.getElementById('sk-total'); if (elTotal) elTotal.textContent = d.total;
+  const elRango = document.getElementById('sk-rango'); if (elRango) elRango.textContent = `${d.anio_desde}–${d.anio_hasta}`;
+  const elNota  = document.getElementById('sigen-nota'); if (elNota) elNota.textContent = d.nota;
+  const cont = document.getElementById('sigen-container');
+  if (!cont) return;
+  cont.innerHTML = `<div class="tw"><table><thead><tr><th>Informe N°</th><th>Año</th><th>Descripción</th><th></th></tr></thead><tbody>
+    ${(d.informes||[]).slice(0,200).map(i => `<tr>
+      <td class="mono">${i.numero}</td>
+      <td>${i.anio||'—'}</td>
+      <td style="font-size:11px">${i.descripcion}</td>
+      <td><a href="${i.url}" target="_blank" style="color:var(--accent);font-size:11px">Ver documento →</a></td>
+    </tr>`).join('')}
+    </tbody></table></div>`;
+}
+
 // ── Charts ────────────────────────────────────────────────────────────────────
 function initCharts() {
   // Contratos por gestión
@@ -933,6 +1045,8 @@ function initCharts() {
   filtrarC();
   filtrarP();
   initCharts();
+  renderOrganigrama();
+  loadSigen();
 })();
 </script>
 

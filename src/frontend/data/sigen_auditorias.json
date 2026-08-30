@@ -1,0 +1,858 @@
+{
+  "total": 121,
+  "anio_desde": 2020,
+  "anio_hasta": 2026,
+  "informes": [
+    {
+      "numero": "00153/2026",
+      "anio": 2026,
+      "descripcion": "Ratificación de Remanente Provisorio FF 12 - Emitir la presente Certificación forma parte de la auditoría a ejecutar respecto de la información para la Cuenta de Inversión del ejercicio 2025 de la Sindicatura General de la Nación.",
+      "documento_id": "231717",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231717"
+    },
+    {
+      "numero": "00151/2026",
+      "anio": 2026,
+      "descripcion": "Ratificación de Remanente Provisorio FF 11 ejercicio 2025 - Emitir la presente Certificación forma parte de la auditoría a ejecutar respecto de la información para la Cuenta de Inversión del ejercicio 2025 de la Sindicatura General de la Nación.",
+      "documento_id": "231715",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231715"
+    },
+    {
+      "numero": "00110/2026",
+      "anio": 2026,
+      "descripcion": "CUENTA DE INVERSIÓN 2025 - Evaluar el control interno de los sistemas de información presupuestario y contable de la SINDICATURA GENERAL DE LA NACIÓN (SAF 109), incluyendo la metodología seguida para elaborar la documentación p ...",
+      "documento_id": "231602",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231602"
+    },
+    {
+      "numero": "00076/2026",
+      "anio": 2026,
+      "descripcion": "Ejecución Presupuestaria al 31.12.2025 - Analizar y evaluar la ejecución presupuestaria durante el cuarto trimestre del ejercicio 2025.",
+      "documento_id": "231459",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231459"
+    },
+    {
+      "numero": "00075/2026",
+      "anio": 2026,
+      "descripcion": "Gestión del Fondo Rotatorio - Relevamiento y análisis de la gestión del Fondo Rotatorio de la SINDICATURA GENERAL DE LA NACIÓN - SAF 109, verificando su correspondencia respecto a la normativa vigente.",
+      "documento_id": "231457",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231457"
+    },
+    {
+      "numero": "00071/2026",
+      "anio": 2026,
+      "descripcion": "CERTIFICACIÓN “MOVIMIENTO DE FONDO ROTATORIO” – CUADRO 1 ANEXO C – FF12 INSTRUCTIVO DE TRABAJO N° 1/2026 GPNyPT - Información sobre Cuadro 1 Anexo C “Movimiento de Fondo Rotatorio” (Fuente de Financiamiento 12) de la SINDICATURA GENERAL DE LA NACION, correspondiente al ejercicio 2025,",
+      "documento_id": "231447",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231447"
+    },
+    {
+      "numero": "00069/2026",
+      "anio": 2026,
+      "descripcion": "CERTIFICACIÓN “MOVIMIENTO DE FONDO ROTATORIO” – CUADRO 1 ANEXO C – FF11 INSTRUCTIVO DE TRABAJO N° 1/2026 GPNyPT - Información sobre Cuadro 1 Anexo C “Movimiento de Fondo Rotatorio” (Fuente de Financiamiento 11) de la SINDICATURA GENERAL DE LA NACION, correspondiente al ejercicio 2025",
+      "documento_id": "231445",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231445"
+    },
+    {
+      "numero": "00068/2026",
+      "anio": 2026,
+      "descripcion": "Tareas de Cierre al 31/12/2025 - Exponer las actividades desarrolladas con motivo del Cierre de Ejercicio 2025, que comprende el corte de documentación y registros al 31-12-2025.",
+      "documento_id": "231441",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231441"
+    },
+    {
+      "numero": "00558/2025",
+      "anio": 2025,
+      "descripcion": "Ejecución Presupuestaria al 30.09.2025 - Analizar y evaluar la ejecución presupuestaria durante el tercer trimestre del ejercicio 2025.",
+      "documento_id": "231156",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231156"
+    },
+    {
+      "numero": "00557/2025",
+      "anio": 2025,
+      "descripcion": "Proyectos informáticos críticos para la gestión organizacional - Controles relativos a los proyectos informáticos críticos para la gestión organizacional según Instructivo de Trabajo SIGEN N° 4/2025 GPNyPT.",
+      "documento_id": "231155",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231155"
+    },
+    {
+      "numero": "00556/2025",
+      "anio": 2025,
+      "descripcion": "Liquidación de Haberes del Personal - Relevar, analizar y evaluar los controles existentes en el proceso de liquidación de haberes, el cálculo de los conceptos remunerativos y el cumplimiento de la normativa, tanto en materia impositiva c ...",
+      "documento_id": "231153",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231153"
+    },
+    {
+      "numero": "00555/2025",
+      "anio": 2025,
+      "descripcion": "Registros Auditores y Postulantes - El área auditada fue la Gerencia de Planificación y Desarrollo Normativo (GPyDN) -Subgerencia de Planificación quien tenía, al momento del desarrollo del presente informe, la responsabilidad primaria ...",
+      "documento_id": "231152",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231152"
+    },
+    {
+      "numero": "00554/2025",
+      "anio": 2025,
+      "descripcion": "Proyectos Especiales - El presente informe tiene por objeto relevar y analizar las actividades desarrolladas por la Gerencia de Proyectos Especiales (GPE), en las intervenciones de asesoramiento y consultoría en el marco de ...",
+      "documento_id": "231150",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231150"
+    },
+    {
+      "numero": "00553/2025",
+      "anio": 2025,
+      "descripcion": "Otras actividades de supervisión del SCI - Relevar el subproceso denominado \"Otras actividades de supervisión del SCI\" llevado a cabo por la Gerencia de Control en las Unidades Organizativas que tiene a su cargo.",
+      "documento_id": "231146",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231146"
+    },
+    {
+      "numero": "00552/2025",
+      "anio": 2025,
+      "descripcion": "Compras y Contrataciones Año 2024 - Relevar y evaluar los procedimientos de control llevados a cabo por la Coordinación de Departamento de Compras (CDC), dependiente de la Gerencia de Coordinación Administrativa (GCA), para la gestión d ...",
+      "documento_id": "231142",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231142"
+    },
+    {
+      "numero": "00551/2025",
+      "anio": 2025,
+      "descripcion": "EJECUCIÓN PRESUPUESTARIA AL 30/06/2025 - Analizar y evaluar la ejecución presupuestaria durante el segundo trimestre del ejercicio 2025.",
+      "documento_id": "231140",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231140"
+    },
+    {
+      "numero": "00550/2025",
+      "anio": 2025,
+      "descripcion": "Emisión de normativa: Circulares, Instructivos, guías, otras, (de iniciativa propia o impuesta) - Analizar la gestión desarrollada por la “Gerencia de Planificación y Desarrollo Normativo”, a fin de evaluar su eficacia respecto a la elaboración de Circulares, Instructivos, Guías, otras (de iniciat ...",
+      "documento_id": "231137",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231137"
+    },
+    {
+      "numero": "00549/2025",
+      "anio": 2025,
+      "descripcion": "Administración y preservación del Patrimonio - Determinar los controles implementados en la Sindicatura General de la Nación (SIGEN) para gestionar los bienes incluidos en el patrimonio.",
+      "documento_id": "231135",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231135"
+    },
+    {
+      "numero": "00548/2025",
+      "anio": 2025,
+      "descripcion": "Tareas de Cierre por Cambio de Autoridades al 18/07/2025 - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre especial por cambio de Autoridades Superiores que comprende el corte de documentación y registros al 18 ...",
+      "documento_id": "231134",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231134"
+    },
+    {
+      "numero": "00547/2025",
+      "anio": 2025,
+      "descripcion": "CONTROL INTERNO (CUENTA DE INVERSION) - Determinar el estado de situación del Sistema de Control Interno vinculado con el proceso de elaboración de la Cuenta de Inversión.",
+      "documento_id": "231133",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231133"
+    },
+    {
+      "numero": "00546/2025",
+      "anio": 2025,
+      "descripcion": "CERTIFICACIÓN CUADRO I ANEXO “A” AL 30.06.2025 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURIA GENERAL DE LA NACION.",
+      "documento_id": "231131",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231131"
+    },
+    {
+      "numero": "00545/2025",
+      "anio": 2025,
+      "descripcion": "Administración de Proyectos Resolución N° 87/2022 - Relevamiento y análisis referente a la Administración de Proyectos Informáticos encarados por la Gerencia de Tecnología Informática (GTI), de acuerdo con los procedimientos vigentes.",
+      "documento_id": "231130",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231130"
+    },
+    {
+      "numero": "00544/2025",
+      "anio": 2025,
+      "descripcion": "EJECUCIÓN PRESUPUESTARIA AL 31-03-2025 - Analizar y evaluar la ejecución presupuestaria durante el primer trimestre del ejercicio 2025.",
+      "documento_id": "231129",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231129"
+    },
+    {
+      "numero": "00543/2025",
+      "anio": 2025,
+      "descripcion": "Régimen de Licencias y Franquicias - Analizar la gestión desarrollada por la “Gerencia de Capital Humano” en lo que respecta al cumplimiento del Régimen de Licencias y Franquicias aplicado a los agentes de la Sindicatura General de la Na ...",
+      "documento_id": "231128",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231128"
+    },
+    {
+      "numero": "00542/2025",
+      "anio": 2025,
+      "descripcion": "Proyección de ingresos del saf 109, relacionado con solicitud de incremento presupuestario - Fuente de Financiamiento 12-. - Esta Unidad de Auditoría Interna emite el presente informe elaborado en cumplimiento del art. 9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SIG ...",
+      "documento_id": "231127",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231127"
+    },
+    {
+      "numero": "00541/2025",
+      "anio": 2025,
+      "descripcion": "Cuenta de Inversión 2024 - Evaluar el control interno de los sistemas de información presupuestario y contable de la SINDICATURA GENERAL DE LA NACIÓN (SAF 109), incluyendo la metodología seguida para elaborar la documentación p ...",
+      "documento_id": "231125",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231125"
+    },
+    {
+      "numero": "00540/2025",
+      "anio": 2025,
+      "descripcion": "CERTIFICACIÓN ANEXO IV “RATIFICACIÓN DE REMANENTE PROVISORIO” FF 12 EJERCICIO 2024 INSTRUCTIVO DE TRABAJO N° 1/2025 - SNI - CERTIFICACIÓN ANEXO IV RATIFICACIÓN DE REMANENTE PROVISORIO” FF 12 EJERCICIO 2024",
+      "documento_id": "231124",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231124"
+    },
+    {
+      "numero": "00539/2025",
+      "anio": 2025,
+      "descripcion": "CERTIFICACIÓN ANEXO IV “RATIFICACIÓN DE REMANENTE PROVISORIO” FF 11 EJERCICIO 2024 INSTRUCTIVO DE TRABAJO N° 1/2025 – SIN - RATIFICACIÓN DE REMANENTE PROVISORIO” FF 11 EJERCICIO 2024",
+      "documento_id": "231123",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231123"
+    },
+    {
+      "numero": "00538/2025",
+      "anio": 2025,
+      "descripcion": "Resolución 87/2022 - Revisión del cumplimiento de los aspectos contemplados en la Resolución SIGEN Nº87/2022 referente a las Normas de Control Interno para TI.",
+      "documento_id": "231122",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231122"
+    },
+    {
+      "numero": "00537/2025",
+      "anio": 2025,
+      "descripcion": "Ejecución Presupuestaria al 31/12/2024 - Analizar y evaluar la ejecución presupuestaria del ejercicio 2024.",
+      "documento_id": "231121",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231121"
+    },
+    {
+      "numero": "00536/2025",
+      "anio": 2025,
+      "descripcion": "Tareas de Cierre al 31/12/2024 - Exponer las actividades desarrolladas con motivo del Cierre de Ejercicio 2024, que comprende el corte de documentación y registros al 31-12-2024.",
+      "documento_id": "231120",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231120"
+    },
+    {
+      "numero": "00535/2025",
+      "anio": 2025,
+      "descripcion": "“MOVIMIENTO DE FONDO ROTATORIO” – CUADRO 1 ANEXO C – FF12 - Información sobre Cuadro 1 Anexo C “Movimiento de Fondo Rotatorio” (Fuente de Financiamiento 12) de la SINDICATURA GENERAL DE LA NACION, correspondiente al ejercicio 2024, remitido a esta UAI mediante ...",
+      "documento_id": "231119",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231119"
+    },
+    {
+      "numero": "00534/2025",
+      "anio": 2025,
+      "descripcion": "MOVIMIENTO DE FONDO ROTATORIO” – CUADRO 1 ANEXO C – FF11 - Información sobre Cuadro 1 Anexo C “Movimiento de Fondo Rotatorio” (Fuente de Financiamiento 11) de la SINDICATURA GENERAL DE LA NACION, correspondiente al ejercicio 2024, remitido a esta UAI mediante ...",
+      "documento_id": "231118",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231118"
+    },
+    {
+      "numero": "00533/2025",
+      "anio": 2025,
+      "descripcion": "ANEXO I - “Movimientos Financieros (Caja y Bancos)” - CUADRO 1 ANEXO A. - La tarea realizada para emitir la presente Certificación forma parte de la auditoría a ejecutar respecto de la información para la Cuenta de Inversión del ejercicio 2024 de la Sindicatura General de l ...",
+      "documento_id": "231116",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231116"
+    },
+    {
+      "numero": "00532/2025",
+      "anio": 2025,
+      "descripcion": "Cumplimiento Decreto 72/2018 - Comité de Control. - Realizar un relevamiento respecto al cumplimiento de lo dispuesto por el Decreto N°72/2018 y su reglamentación.",
+      "documento_id": "231115",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231115"
+    },
+    {
+      "numero": "00530/2025",
+      "anio": 2025,
+      "descripcion": "Funcionamiento Interno de las Comisiones Fiscalizadoras y Síndicos Res SIGEN 179-2014 - Relevar y analizar las actividades correspondientes de las Comisiones Fiscalizadoras y los Síndicos designados a propuesta de la SINDICATURA GENERAL DE LA NACIÓN (SIGEN), en representación del Estado ...",
+      "documento_id": "231113",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231113"
+    },
+    {
+      "numero": "00529/2025",
+      "anio": 2025,
+      "descripcion": "Ejecución Presupuestaria al 30.06.2024 - Analizar y evaluar la ejecución presupuestaria durante el primer semestre del ejercicio 2024.",
+      "documento_id": "231112",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=231112"
+    },
+    {
+      "numero": "00019/2024",
+      "anio": 2024,
+      "descripcion": "SOLICITUD DE INCREMENTO PRESUPUESTARIO - FUENTE DE FINANCIAMIENTO 12-. - Esta Unidad de Auditoría Interna emite el presente informe elaborado en cumplimiento del art.9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SIGE ...",
+      "documento_id": "226311",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226311"
+    },
+    {
+      "numero": "00018/2024",
+      "anio": 2024,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO “C” FF 12 AL 31.12.2023 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "226310",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226310"
+    },
+    {
+      "numero": "00017/2024",
+      "anio": 2024,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO “C” FF 11 AL 31.12.2023 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "226307",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226307"
+    },
+    {
+      "numero": "00016/2024",
+      "anio": 2024,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO “A” Al 31/12/2023 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN",
+      "documento_id": "226304",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226304"
+    },
+    {
+      "numero": "00015/2024",
+      "anio": 2024,
+      "descripcion": "Informe Tareas de Cierre al 31.12.2023. - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre de Ejercicio 2023, que comprende el corte de documentación y registros al 31.12.2023.",
+      "documento_id": "226301",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226301"
+    },
+    {
+      "numero": "00699/2023",
+      "anio": 2023,
+      "descripcion": "TAREAS DE CIERRE Anexo IV - “Gestión de la UAI al 7 de diciembre de 2023” - Dar cuenta del grado de ejecución, al 7 de diciembre de 2023 del Plan Anual de Trabajo 2023 de la Unidad de Auditoría Interna (UAI) de la SINDICATURA GENERAL DE LA NACIÓN.",
+      "documento_id": "226054",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226054"
+    },
+    {
+      "numero": "00698/2023",
+      "anio": 2023,
+      "descripcion": "Tareas de Cierre especial al 7.12.2023 - CIRSI-2023-9-APN-SNI#SIGEN - ANEXO III - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre Especial por cambio de autoridades, que comprende el corte de documentación y registros al 07.12.2023 y ...",
+      "documento_id": "226053",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226053"
+    },
+    {
+      "numero": "00697/2023",
+      "anio": 2023,
+      "descripcion": "EJECUCION PRESUPUESTARIA EJERCICIO 2022 - Analizar y evaluar los procedimientos implementados por la Sindicatura General de la Nación para la programación y ejecución presupuestaria durante el ejercicio 2022 en cuanto al cumplimiento de los o ...",
+      "documento_id": "226052",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=226052"
+    },
+    {
+      "numero": "00686/2023",
+      "anio": 2023,
+      "descripcion": "COMPRAS y CONTRATACIONES 2022 - Relevar y evaluar los procedimientos de control llevados a cabo por la Coordinación de Departamento de Compras, dependiente de la Gerencia de Coordinación Administrativa (GCA) para la gestión de compr ...",
+      "documento_id": "225782",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=225782"
+    },
+    {
+      "numero": "00685/2023",
+      "anio": 2023,
+      "descripcion": "Certificación Cuadro I Anexo A al 31-10-2023 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURIA GENERAL DE LA NACION (DI-2023-APN-CGN#MEC del 19/1 ...",
+      "documento_id": "225781",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=225781"
+    },
+    {
+      "numero": "00684/2023",
+      "anio": 2023,
+      "descripcion": "GESTION DEL PATRIMONIO - Relevar y evaluar las actividades desarrolladas en la Sindicatura General de la Nación en relación al registro y resguardo de los activos denominados Bienes de Uso de los que dicha jurisdicción es tit ...",
+      "documento_id": "225780",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=225780"
+    },
+    {
+      "numero": "00683/2023",
+      "anio": 2023,
+      "descripcion": "Declaraciones Juradas Patrimoniales Integrales - El presente informe tiene por objeto verificar el grado de cumplimiento del personal obligado de la SINDICATURA GENERAL DE LA NACIÓN (SIGEN), respecto al deber de presentar las Declaraciones Juradas P ...",
+      "documento_id": "225779",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=225779"
+    },
+    {
+      "numero": "00517/2023",
+      "anio": 2023,
+      "descripcion": "PROYECCION DE INGRESOS DEL SAF 109, RELACIONADO CON SOLICITUD DE INCREMENTO PRESUPUESTARIO - FUENTE DE FINANCIAMIENTO 12-. - Esta Unidad de Auditoría Interna emite el presente informe elaborado en cumplimiento del art.9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SIGE ...",
+      "documento_id": "223902",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=223902"
+    },
+    {
+      "numero": "00516/2023",
+      "anio": 2023,
+      "descripcion": "Precios Testigo – Periodo 2021 - Relevamiento de los procesos llevados adelante por parte de la actual Gerencia de Precios Testigo de la Sindicatura General de la Nación, relacionados con la elaboración de Precios Testigo y los proce ...",
+      "documento_id": "223901",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=223901"
+    },
+    {
+      "numero": "00515/2023",
+      "anio": 2023,
+      "descripcion": "Seguimiento de la Ejecución Plan Anual U.A.I. 2023 – Primer Semestre - Informar el grado de cumplimiento de la ejecución del Plan Anual U.A.I. año 2023 - 1er. semestre, de la Unidad de Auditoría Interna (U.A.I.) de la Sindicatura General de la Nación (SIGEN).",
+      "documento_id": "223900",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=223900"
+    },
+    {
+      "numero": "00449/2023",
+      "anio": 2023,
+      "descripcion": "Cobertura de los Riesgos del Trabajo - El presente informe tiene por objeto “Evaluar los procesos implementados para el cumplimiento de la Ley N° 24557 en relación a las y los trabajadores de la Sindicatura General de la Nación (SIGEN): Pr ...",
+      "documento_id": "221987",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=221987"
+    },
+    {
+      "numero": "00447/2023",
+      "anio": 2023,
+      "descripcion": "Certificación del Cuadro I Anexo A al Cierre Intermedio al 30/06/2023 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURIA GENERAL DE LA NACION.",
+      "documento_id": "221985",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=221985"
+    },
+    {
+      "numero": "00446/2023",
+      "anio": 2023,
+      "descripcion": "Gestión de Sumarios - Relevamiento y estado de situación de los sumarios que lleva adelante la Coordinación de Departamento Sumarios de la Sindicatura General de la Nación.",
+      "documento_id": "221984",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=221984"
+    },
+    {
+      "numero": "00238/2023",
+      "anio": 2023,
+      "descripcion": "MANIFESTACION UAI PROYECCION RECURSOS PROPIOS EJERCICIO 2023 - Esta Unidad de Auditoría Interna emite el presente informe elaborado en cumplimiento del art.9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SIGE ...",
+      "documento_id": "219625",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=219625"
+    },
+    {
+      "numero": "00237/2023",
+      "anio": 2023,
+      "descripcion": "COMPRAS y CONTRATACIONES 2021 - El relevamiento de los procedimientos llevados a cabo por la Coordinación de Departamento de Compras, dependiente de la Gerencia de Coordinación Administrativa (GCA) para la gestión de compras y contr ...",
+      "documento_id": "219620",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=219620"
+    },
+    {
+      "numero": "00232/2023",
+      "anio": 2023,
+      "descripcion": "CERTIFICACION REMANENTE FF12 AL 31.12.2022 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio 2022 de la ...",
+      "documento_id": "219597",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=219597"
+    },
+    {
+      "numero": "00231/2023",
+      "anio": 2023,
+      "descripcion": "CERTIFICACION REMANENTE FF11 AL 31.12.2022 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio 2022 de la ...",
+      "documento_id": "219596",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=219596"
+    },
+    {
+      "numero": "00230/2023",
+      "anio": 2023,
+      "descripcion": "CUENTA DE INVERSION SAF 109 - Evaluar el grado de confiabilidad del sistema de control interno existente en la SINDICATURA GENERAL DE LA NACIÓN (SAF 109), así como el proceso de compilación y elaboración de la información de natur ...",
+      "documento_id": "219594",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=219594"
+    },
+    {
+      "numero": "00083/2023",
+      "anio": 2023,
+      "descripcion": "Cierre de Ejercicio al 31/12/2022. - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre de Ejercicio que comprende el corte de documentación y registros al 31 de diciembre de 2022, a fin de v ...",
+      "documento_id": "217337",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=217337"
+    },
+    {
+      "numero": "00082/2023",
+      "anio": 2023,
+      "descripcion": "Certificación Cuadro I Anexo C FF12 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "217336",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=217336"
+    },
+    {
+      "numero": "00081/2023",
+      "anio": 2023,
+      "descripcion": "Certificación Cuadro I Anexo C FF11. - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "217334",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=217334"
+    },
+    {
+      "numero": "00080/2023",
+      "anio": 2023,
+      "descripcion": "Certificación Cuadro I anexo A 31.12.2022. - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "217333",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=217333"
+    },
+    {
+      "numero": "00600/2022",
+      "anio": 2022,
+      "descripcion": "Sistema Portal de Empresas - Cumplimiento Resolución SIGEN N°163/2021 - Verificar la información de relevancia referida a las Empresas, Sociedades y Entidades que integran el ámbito de fiscalización, control y supervisión de esta Sindicatura General como así también la op ...",
+      "documento_id": "215908",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=215908"
+    },
+    {
+      "numero": "00599/2022",
+      "anio": 2022,
+      "descripcion": "Sistema Portal de Empresas - Cumplimiento Resolución SIGEN N°163/2021 - Verificar la información de relevancia referida a las Empresas, Sociedades y Entidades que integran el ámbito de fiscalización, control y supervisión de esta Sindicatura General como así también la op ...",
+      "documento_id": "215902",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=215902"
+    },
+    {
+      "numero": "00598/2022",
+      "anio": 2022,
+      "descripcion": "Verificación del cumplimiento de la presentación de las Declaraciones Juradas Patrimoniales Integrales correspondientes al Ejercicio 2021, ante la Oficina Anticorrupción (O.A.) - El presente informe tiene por objeto verificar el grado de cumplimiento del personal obligado de la SINDICATURA GENERAL DE LA NACIÓN (SIGEN), respecto al deber de presentar las Declaraciones Juradas P ...",
+      "documento_id": "215893",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=215893"
+    },
+    {
+      "numero": "00466/2022",
+      "anio": 2022,
+      "descripcion": "Compras y Contrataciones 2020 - Relevamiento de los procedimientos llevados a cabo por la Gerencia de Coordinación Administrativa (GCA) para la gestión de compras y contrataciones en el ejercicio 2020, su planificación, ejecución y ...",
+      "documento_id": "213850",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213850"
+    },
+    {
+      "numero": "00465/2022",
+      "anio": 2022,
+      "descripcion": "Intervención en los expedientes de Bonos de Consolidación de Deuda Pública - Verificar los procesos llevados a cabo por las distintas unidades organizacionales de la Sindicatura General de la Nación (SIGEN), en la tramitación de los expedientes concernientes a acreencias recla ...",
+      "documento_id": "213849",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213849"
+    },
+    {
+      "numero": "00450/2022",
+      "anio": 2022,
+      "descripcion": "Sistema Portal de Empresas - Cumplimiento Resolución SIGEN N°163/2021 - Verificar la información de relevancia referida a las Empresas, Sociedades y Entidades que integran el ámbito de fiscalización, control y supervisión de esta Sindicatura General como así también la op ...",
+      "documento_id": "213629",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213629"
+    },
+    {
+      "numero": "00449/2022",
+      "anio": 2022,
+      "descripcion": "SOLICITUD DE INCREMENTO PRESUPUESTARIO - FUENTE DE FINANCIAMIENTO 12-. - Esta Unidad de Auditoría Interna emite el presente informe elaborado en cumplimiento del art.9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SIGE ...",
+      "documento_id": "213628",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213628"
+    },
+    {
+      "numero": "00448/2022",
+      "anio": 2022,
+      "descripcion": "“Seguimiento de la Ejecución Plan Anual U.A.I. 2022 – Primer Semestre” - Informar el grado de cumplimiento de la ejecución del Plan Anual U.A.I. año 2022 - 1er. semestre, de la Unidad de Auditoría Interna (U.A.I.) de la Sindicatura General de la Nación (SIGEN).",
+      "documento_id": "213627",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213627"
+    },
+    {
+      "numero": "00446/2022",
+      "anio": 2022,
+      "descripcion": "Certificación UAI Cuadro I Anexo A al 30-6.2022 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURIA GENERAL DE LA NACION.",
+      "documento_id": "213625",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213625"
+    },
+    {
+      "numero": "00444/2022",
+      "anio": 2022,
+      "descripcion": "Registro Central de Personas con Discapacidad (RCPD) - 1er. semestre 2022 Decreto N° 312/2010 - Verificar el grado de cumplimiento en la remisión de la información al Registro Central de Personas con Discapacidad (RCPD), de las novedades producidas en la Sindicatura General de la Nación (SIGEN) ...",
+      "documento_id": "213602",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=213602"
+    },
+    {
+      "numero": "00295/2022",
+      "anio": 2022,
+      "descripcion": "Sistema Portal de Empresas - Cumplimiento Resolución SIGEN N°163/2021 - Verificar la información de relevancia referida a las Empresas, Sociedades y Entidades que integran el ámbito de fiscalización, control y supervisión de esta Sindicatura General como así también la op ...",
+      "documento_id": "212175",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=212175"
+    },
+    {
+      "numero": "00212/2022",
+      "anio": 2022,
+      "descripcion": "Erogaciones Monetarias. - Verificar el procedimiento implementado para las de Órdenes de Pago emitidas para cancelar pagos a proveedores y su documentación de respaldo en los ejercicios 2020 y 2021 que gestiona la Gerencia de ...",
+      "documento_id": "211012",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=211012"
+    },
+    {
+      "numero": "00211/2022",
+      "anio": 2022,
+      "descripcion": "Incremento Presupuestario FF12 - Esta Unidad de Auditoría Interna emite el presente informe elaborado en cumplimiento del art.9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SI ...",
+      "documento_id": "211010",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=211010"
+    },
+    {
+      "numero": "00148/2022",
+      "anio": 2022,
+      "descripcion": "Sistema Portal de Empresas Cumplimiento Resolución SIGEN N° 163/2021 - Verificar la información de relevancia referida a las Empresas, Sociedades y Entidades que integran el ámbito de fiscalización, control y supervisión de esta Sindicatura General como así también la op ...",
+      "documento_id": "209672",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209672"
+    },
+    {
+      "numero": "00147/2022",
+      "anio": 2022,
+      "descripcion": "Informe de Cuenta de Inversión al 31.12.2021-IT 003/2022 SNI. - Evaluar el grado de confiabilidad del sistema de control interno existente en la SINDICATURA GENERAL DE LA NACIÓN (SAF 109), así como el proceso de compilación y elaboración de la información de natur ...",
+      "documento_id": "209671",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209671"
+    },
+    {
+      "numero": "00146/2022",
+      "anio": 2022,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 12 AL 31-12-2021. - La tarea realizada para emitir la presente Certificación forma parte de la auditoría respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio 2021 de l ...",
+      "documento_id": "209670",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209670"
+    },
+    {
+      "numero": "00145/2022",
+      "anio": 2022,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 11 AL 31-12-2021 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio 2021 de l ...",
+      "documento_id": "209669",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209669"
+    },
+    {
+      "numero": "00142/2022",
+      "anio": 2022,
+      "descripcion": "Precios Testigo 2019 - Relevamiento de los procesos llevados adelante por parte de la Coordinación General de Precios Testigo, dependiente de la Gerencia de Actividades Extra Programáticas, de la Sindicatura General de la N ...",
+      "documento_id": "209666",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209666"
+    },
+    {
+      "numero": "00141/2022",
+      "anio": 2022,
+      "descripcion": "Tareas de Cierre de Ejercicio al 31/12/2021 - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre de Ejercicio 2021, que comprende el corte de documentación y registros al 31.12.2021.",
+      "documento_id": "209665",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209665"
+    },
+    {
+      "numero": "00140/2022",
+      "anio": 2022,
+      "descripcion": "Compras y Contrataciones en la Emergencia Sanitaria COVID-19 - Analizar la gestión de las compras y contrataciones llevadas a cabo por el Organismo bajo el Procedimiento aprobado por el Decreto de Necesidad y Urgencia 260/2020 que estableció la emergencia pública ...",
+      "documento_id": "209664",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209664"
+    },
+    {
+      "numero": "00139/2022",
+      "anio": 2022,
+      "descripcion": "Manifestación de la Unidad de Auditoría Interna de SIGEN vinculado a la declaración de baja de bienes de consumo. (Expediente Electrónico EX-2021-106994358-APN-SIGEN) informe complementario al IF-2022- 07995041-APN-UAI#SIGEN. - Constatar la existencia física de los bienes y la identificación de cada elemento detallado por la Gerencia de Coordinación Administrativa (GCA), en su IF-2022-13234126-APN-GCA#SIGEN de fecha 10.02.20 ...",
+      "documento_id": "209663",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209663"
+    },
+    {
+      "numero": "00138/2022",
+      "anio": 2022,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO C FF12, ESTADOS CONTABLES AL 31.12.2021 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "209662",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209662"
+    },
+    {
+      "numero": "00137/2022",
+      "anio": 2022,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO C FF11, ESTADOS CONTABLES AL 31.12.2021 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "209661",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209661"
+    },
+    {
+      "numero": "00136/2022",
+      "anio": 2022,
+      "descripcion": "Certificación cuadro I anexo A 31.12.2021 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "209660",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209660"
+    },
+    {
+      "numero": "00132/2022",
+      "anio": 2022,
+      "descripcion": "RCPD 2do semestre 2021-Decreto Nª312/2010 - Verificar el grado de cumplimiento en la remisión de la información al Registro Central de Personas con Discapacidad (RCPD), de las novedades producidas en la Sindicatura General de la Nación (SIGEN) ...",
+      "documento_id": "209656",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209656"
+    },
+    {
+      "numero": "00102/2022",
+      "anio": 2022,
+      "descripcion": "Manifestación de la UAI - Baja de Bienes Informáticos y de Consumo - Constatar la existencia física de los bienes y la identificación de cada elemento detallado por la Gerencia de Coordinación Administrativa (GCA), en su IF-2021-120033670-APN-SIGEN de fecha 10.12.2021 ...",
+      "documento_id": "209306",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=209306"
+    },
+    {
+      "numero": "00559/2021",
+      "anio": 2021,
+      "descripcion": "Certificación remanentes FF12 - Verificar que las cifras consignadas en el IF-2021-87775929-APN-GCA#SIGEN y documentación anexa embebida al mismo surgen de los registros presupuestarios y contables obrantes en el Organismo.",
+      "documento_id": "208775",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=208775"
+    },
+    {
+      "numero": "00558/2021",
+      "anio": 2021,
+      "descripcion": "Seguridad e Higiene - Relevamiento de las medidas implementadas en el ámbito de la Sindicatura General de la Nación (SIGEN), en materia de “Higiene y Seguridad”, a efectos de verificar la aplicación de la normativa vigente ...",
+      "documento_id": "208774",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=208774"
+    },
+    {
+      "numero": "00557/2021",
+      "anio": 2021,
+      "descripcion": "Sistema de seguimiento y acciones correctivas - SISAC - Verificar la implementación de acciones tendientes a regularizar las observaciones vertidas en los Informes de la Auditoría Interna de la SINDICATURA GENERAL DE LA NACIÓN que se encuentran registradas ...",
+      "documento_id": "208773",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=208773"
+    },
+    {
+      "numero": "00556/2021",
+      "anio": 2021,
+      "descripcion": "“Cumplimiento de la presentación de las Declaraciones Juradas Patrimoniales Integrales ante la Oficina Anticorrupción” - El presente informe tiene por objeto verificar el grado de cumplimiento de los agentes obligados de la SINDICATURA GENERAL DE LA NACIÓN (SIGEN), respecto al deber de presentar las Declaraciones Jurada ...",
+      "documento_id": "208772",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=208772"
+    },
+    {
+      "numero": "00555/2021",
+      "anio": 2021,
+      "descripcion": "\"Liquidación de Haberes\" - Verificar el funcionamiento de los controles internos existentes en el proceso de liquidación de haberes con referencia a las liquidaciones mensuales y corrientes, tanto del Personal de Planta Permane ...",
+      "documento_id": "208771",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=208771"
+    },
+    {
+      "numero": "00550/2021",
+      "anio": 2021,
+      "descripcion": "Seguimiento de la Ejecución Plan Anual U.A.I. 2021 – Primer Semestre - Informar el grado de cumplimiento de la ejecución del Plan Anual U.A.I. año 2021 - 1er. semestre, de la Unidad de Auditoría Interna (U.A.I.) de la Sindicatura General de la Nación (SIGEN).",
+      "documento_id": "208764",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=208764"
+    },
+    {
+      "numero": "00292/2021",
+      "anio": 2021,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO A , ESTADOS CONTABLES INTERMEDIOS AL 30.06.2021. - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "207506",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=207506"
+    },
+    {
+      "numero": "00291/2021",
+      "anio": 2021,
+      "descripcion": "RCPD 1er semestre 2021- Decreto Nº 312/2010 - Verificar el grado de cumplimiento en la remisión de la información al Registro Central de Personas con Discapacidad (RCPD), de las novedades producidas en la Sindicatura General de la Nación (SIGEN) ...",
+      "documento_id": "207505",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=207505"
+    },
+    {
+      "numero": "00290/2021",
+      "anio": 2021,
+      "descripcion": "SIGEN - PROYECCIÓN DE INGRESOS DEL SAF 109, RELACIONADO CON SOLICITUD DE INCREMENTO PRESUPUESTARIO - FUENTE DE FINANCIAMIENTO 12-. EX-2021-26780513-APN-SIGEN - Esta Unidad de Auditoría Interna emite el presente informe en cumplimiento del art.9 del Decreto N° 502/1994, acorde lo solicitado por la Gerencia de Coordinación Administrativa de esta SIGEN mediante ...",
+      "documento_id": "207504",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=207504"
+    },
+    {
+      "numero": "00289/2021",
+      "anio": 2021,
+      "descripcion": "Registro Central de Personas con Discapacidad - RCPD 2do semestre 2020 - Verificar el grado de cumplimiento en la remisión de la información al Registro Central de Personas con Discapacidad (RCPD), de las novedades producidas en la Sindicatura General de la Nación (SIGEN) ...",
+      "documento_id": "207503",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=207503"
+    },
+    {
+      "numero": "00285/2021",
+      "anio": 2021,
+      "descripcion": "Constitución de Cajas Chicas - Constitución de las Cajas Chicas en el Organismo, se definen los gastos a atender conforme al clasificador por objeto de gasto, se fijan los montos de las mismas, designa a sus responsables y sub-resp ...",
+      "documento_id": "207320",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=207320"
+    },
+    {
+      "numero": "00245/2021",
+      "anio": 2021,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 11 AL 31-12-2020 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría ejecutada respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio 2 ...",
+      "documento_id": "206116",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=206116"
+    },
+    {
+      "numero": "00244/2021",
+      "anio": 2021,
+      "descripcion": "Informe de Cuenta de Inversión al 31.12.2020-IT 003/2021 SNI. - Evaluar el grado de confiabilidad del sistema de control interno existente en la SINDICATURA GENERAL DE LA NACIÓN (SAF 109), así como el proceso de compilación y elaboración de la información de natur ...",
+      "documento_id": "206115",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=206115"
+    },
+    {
+      "numero": "00243/2021",
+      "anio": 2021,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO C FF12 EJERCICIO AL 31.12.2020 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "206114",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=206114"
+    },
+    {
+      "numero": "00242/2021",
+      "anio": 2021,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO C FF11, ESTADOS CONTABLES AL 31.12.2020 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "206111",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=206111"
+    },
+    {
+      "numero": "00240/2021",
+      "anio": 2021,
+      "descripcion": "CERTIFICACION CUADRO I ANEXO A EJERCICIO FINANCIERO AL 31.12.2020 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante CONTADURÍA GENERAL DE LA NACIÓN.",
+      "documento_id": "205947",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205947"
+    },
+    {
+      "numero": "00237/2021",
+      "anio": 2021,
+      "descripcion": "Atención de causas judiciales - Verificar la integridad y consistencia de la información obrante en la Sindicatura General de la Nación (SIGEN) de las causas judiciales en que actúa como parte actora o demandada.",
+      "documento_id": "205936",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205936"
+    },
+    {
+      "numero": "00236/2021",
+      "anio": 2021,
+      "descripcion": "Tareas de Cierre de Ejercicio al 31/12/2020 - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre de Ejercicio 2020, que comprende el corte de documentación y registros al 31.12.2020.",
+      "documento_id": "205934",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205934"
+    },
+    {
+      "numero": "00231/2021",
+      "anio": 2021,
+      "descripcion": "Gestión de las Contrataciones - El presente Informe tuvo por objeto Verificar y evaluar en forma integral, la gestión de las compras y contrataciones de la Sindicatura General de la Nación, en el período 2017/2019, desde la detecció ...",
+      "documento_id": "205885",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205885"
+    },
+    {
+      "numero": "00230/2021",
+      "anio": 2021,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 12 AL 31-12-2020 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría ejecutada respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio 2 ...",
+      "documento_id": "205827",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205827"
+    },
+    {
+      "numero": "00404/2020",
+      "anio": 2020,
+      "descripcion": "Manifestación de la Unidad de Auditoría Interna de SIGEN sobre declaración de inco-brabilidad EX-2020-01470004-APN-GCA#SIGEN (CD Expediente N° 238/2005 – SG – OMESYA). - Efectuar la intervención de la Unidad de Auditoría Interna a que alude el artículo 40 del Decreto N° 1344/2007, reglamentario del artículo 40 de la Ley N° 24.156 de ADMINISTRACION FINANCIERA Y DE LOS ...",
+      "documento_id": "205872",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205872"
+    },
+    {
+      "numero": "00403/2020",
+      "anio": 2020,
+      "descripcion": "Presentación de las Declaraciones Juradas Patrimoniales Integrales correspondientes al Ejercicio 2019 ante la Oficina Anticorrupción”. - El presente informe tiene por objeto verificar el grado de cumplimiento de los agentes obligados de la SINDICATURA GENERAL DE LA NACIÓN (SIGEN), respecto al deber de presentar las Declaraciones Jurada ...",
+      "documento_id": "205871",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205871"
+    },
+    {
+      "numero": "00402/2020",
+      "anio": 2020,
+      "descripcion": "CUMPLIMIENTO RESOLUCIÓN SIGEN Nº 10/2006 -INSTRUCTIVO DE TRABAJO SIGEN Nº 2/2020 - EJERCICIO 2019. - Evaluar el grado de confiabilidad del sistema de control interno existente en la SINDICATURA GENERAL DE LA NACIÓN (SAF 109), así como el proceso de compilación y elaboración de la información de natur ...",
+      "documento_id": "205865",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205865"
+    },
+    {
+      "numero": "00401/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 15 AL 31-12-2019 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría a ejecutar respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio ...",
+      "documento_id": "205861",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205861"
+    },
+    {
+      "numero": "00400/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 12 AL 31-12-2019 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría a ejecutar respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio ...",
+      "documento_id": "205859",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205859"
+    },
+    {
+      "numero": "00399/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN REMANENTE PRESUPUESTARIO DE LA FUENTE DE FINANCIAMIENTO 11 AL 31-12-2019 - La tarea realizada para emitir la presente Certificación forma parte de la auditoría a ejecutar respecto de la integridad de la información para la elaboración de la Cuenta de Inversión del ejercicio ...",
+      "documento_id": "205858",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205858"
+    },
+    {
+      "numero": "00398/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN DE LA UNIDAD DE AUDITORÍA INTERNA -CUADRO I ANEXO “A” AL 31.12.2019 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SIGEN, dicha tarea forma parte de la auditoría a ejecutar respecto de la información para la Cuenta de Inversió ...",
+      "documento_id": "205855",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205855"
+    },
+    {
+      "numero": "00397/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN DE LA UNIDAD DE AUDITORÍA INTERNA -CUADRO I ANEXO “C” FF 15 AL 31.12.2019 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante la CONTADURIA GENERAL DE LA NACION.",
+      "documento_id": "205848",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205848"
+    },
+    {
+      "numero": "00396/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN DE LA UNIDAD DE AUDITORÍA INTERNA -CUADRO I ANEXO “C” FF 12 AL 31.12.2019 - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante la CONTADURIA GENERAL DE LA NACION.",
+      "documento_id": "205846",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205846"
+    },
+    {
+      "numero": "00395/2020",
+      "anio": 2020,
+      "descripcion": "CERTIFICACIÓN DE LA UNIDAD DE AUDITORÍA INTERNA - CUADRO I ANEXO “C” FF 11 AL 31.12.2019 – INSTRUCTIVO 1/2020 GNICI - Certificar la información preparada por la Gerencia de Coordinación Administrativa de la SINDICATURA GENERAL DE LA NACIÓN a presentar ante la CONTADURIA GENERAL DE LA NACION.",
+      "documento_id": "205658",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205658"
+    },
+    {
+      "numero": "00394/2020",
+      "anio": 2020,
+      "descripcion": "TAREAS DE CIERRE EJERCICIO 2019 - El presente informe tiene por objeto exponer las actividades desarrolladas con motivo del Cierre de Ejercicio 2019, que comprende el corte de documentación y registros al 31.12.2019.",
+      "documento_id": "205646",
+      "url": "https://www.sigen.gob.ar/ArchivoWeb/ArchivosAdjuntos_Ver.aspx?IdDocumento=205646"
+    }
+  ],
+  "fuente": "Sindicatura General de la Nación (SIGEN) — Archivo Web de informes",
+  "fuente_url": "https://www.sigen.gob.ar/ArchivoWeb/Informes.aspx",
+  "generado": "2026-08-30T13:07:26",
+  "nota": "Informes de la Unidad de Auditoría Interna de la propia SIGEN sobre su gestión (SAF 109): cierres de ejercicio, certificaciones presupuestarias, compras y contrataciones, declaraciones juradas patrimoniales del personal, etc. No son auditorías de SIGEN sobre otros organismos del Poder Ejecutivo — la fuente no publica ese cruce en esta página. No implica acusación ni determinación de responsabilidad sobre ninguna persona."
+}

@@ -239,6 +239,8 @@ footer a { color: var(--accent); text-decoration: none; }
   <a onclick="switchSec('contratos')" id="nav-contratos">📋 Contratos</a>
   <a onclick="switchSec('personal')"  id="nav-personal">👥 Personal</a>
   <a onclick="switchSec('cruces')"    id="nav-cruces">🔗 Cruces</a>
+  <a onclick="switchSec('organigrama')" id="nav-organigrama">🏛️ Organigrama</a>
+  <a onclick="switchSec('decretos')"    id="nav-decretos">📜 Decretos y normativa</a>
   <a onclick="switchSec('agente')"    id="nav-agente">🤖 Agente IA</a>
   <a href="manual_usuario.html">📖 Manual</a>
 </nav>
@@ -557,6 +559,32 @@ footer a { color: var(--accent); text-decoration: none; }
 
 </div><!-- /cruces -->
 
+<!-- ════════ ORGANIGRAMA ════════ -->
+<div class="seccion" id="sec-organigrama">
+  <div class="panel" style="margin-bottom:16px">
+    <div class="pb" style="font-size:12px;color:var(--muted);line-height:1.6">
+      Estructura de personal jerárquico de la Secretaría General de la Presidencia, agrupada por jerarquía funcional a partir de la nómina de designaciones ya publicada en la pestaña Personal. No es un organigrama oficial publicado por el organismo, sino una reconstrucción a partir de datos abiertos.
+    </div>
+  </div>
+  <div id="organigrama-container"></div>
+</div><!-- /organigrama -->
+
+<!-- ════════ DECRETOS Y NORMATIVA ════════ -->
+<div class="seccion" id="sec-decretos">
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card">
+      <div class="kpi-label">Normas de designación</div>
+      <div class="kpi-val" id="decretos-count">—</div>
+      <div class="kpi-sub">con decreto/resolución vinculado, en Boletín Oficial</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Decretos y normativa de designación — SGP</h2></div>
+    <div class="pb" style="font-size:11px;color:var(--muted);padding-bottom:0">Agrupado por norma: cada fila es un decreto/resolución y las personas que designó, según la nómina ya publicada en Personal.</div>
+    <div id="decretos-container"></div>
+  </div>
+</div><!-- /decretos -->
+
 <!-- ════════ AGENTE IA ════════ -->
 <div class="seccion" id="sec-agente">
   <div class="panel" style="max-width:720px;margin:0 auto">
@@ -836,6 +864,82 @@ const D_PERSONAL = [
   { apellido:'ROMERO',    nombre:'Claudia Beatriz', cargo:'Responsable',         jerarquia:'S-D',               escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Pre-Milei', genero:'Femenino',  norma_designacion:'[Decisión Administrativa 234/2021](https://www.boletinoficial.gob.ar/detalleAviso/primera/240000/20210301)', sueldo_bruto_estimado_ars:1_800_000 },
 ];
 
+// ── Organigrama (derivado de allP, sin fetch nuevo) ──────────────────────────
+const JERARQUIA_ORDEN = ['Ministro','Secretario','Subsecretario','DN-DG','Director - Primer Nivel Operativo','Director - Segundo Nivel Operativo','Coordinador','Jefe de Departamento','Ad Honorem','S-D'];
+
+function ordenJerarquia(a, b) {
+  let ia = JERARQUIA_ORDEN.indexOf(a); if (ia === -1) ia = 999;
+  let ib = JERARQUIA_ORDEN.indexOf(b); if (ib === -1) ib = 999;
+  if (ia !== ib) return ia - ib;
+  return a.localeCompare(b);
+}
+
+function renderOrganigrama() {
+  const cont = document.getElementById('organigrama-container');
+  if (!cont) return;
+  if (!allP.length) {
+    cont.innerHTML = '<div class="panel"><div class="pb" style="text-align:center;color:var(--muted)">Sin datos de personal cargados todavía.</div></div>';
+    return;
+  }
+  const grupos = {};
+  allP.forEach(p => {
+    const j = p.jerarquia || 'Sin dato';
+    (grupos[j] = grupos[j] || []).push(p);
+  });
+  const keys = Object.keys(grupos).sort(ordenJerarquia);
+  cont.innerHTML = keys.map(k => {
+    const lista = grupos[k].slice().sort((a,b) => (a.apellido||'').localeCompare(b.apellido||''));
+    return `<div class="panel">
+      <div class="ph"><h2>${k} <span style="color:var(--muted);font-weight:400;font-size:11px">(${lista.length})</span></h2></div>
+      <div class="tw"><table><thead><tr><th>Apellido</th><th>Nombre</th><th>Cargo</th><th>Escalafón</th><th>Gestión</th><th>Decreto</th></tr></thead><tbody>
+      ${lista.map(p => `<tr>
+        <td class="fw">${p.apellido||'—'}</td>
+        <td>${p.nombre||'—'}</td>
+        <td style="font-size:11px">${p.cargo||'—'}</td>
+        <td>${chipEscalafon(p.escalafon||'')}</td>
+        <td>${chipGestion(p.jgm_al_ingreso)}</td>
+        <td>${extractDecretoLink(p.norma_designacion)}</td>
+      </tr>`).join('')}
+      </tbody></table></div></div>`;
+  }).join('');
+}
+
+// ── Decretos y normativa (derivado de allP.norma_designacion) ────────────────
+function fechaDeNorma(norma) {
+  const m = norma.match(/(\d{8})\)?;?\s*$/);
+  return m ? m[1] : '';
+}
+
+function renderDecretos() {
+  const cont  = document.getElementById('decretos-container');
+  const count = document.getElementById('decretos-count');
+  if (!cont) return;
+  const grupos = {};
+  allP.forEach(p => {
+    const norma = p.norma_designacion;
+    if (!norma || norma === 'nan') return;
+    (grupos[norma] = grupos[norma] || []).push(p);
+  });
+  const keys = Object.keys(grupos);
+  if (count) count.textContent = keys.length;
+  if (!keys.length) {
+    cont.innerHTML = '<div class="pb" style="text-align:center;color:var(--muted)">No hay normas de designación con dato disponible en este momento.</div>';
+    return;
+  }
+  keys.sort((a,b) => fechaDeNorma(b).localeCompare(fechaDeNorma(a)));
+  cont.innerHTML = `<div class="tw"><table><thead><tr><th>Norma</th><th>Personas designadas</th><th style="text-align:right">Cantidad</th></tr></thead><tbody>
+    ${keys.map(k => {
+      const personas = grupos[k];
+      const nombres = personas.map(p => `${p.apellido||''}, ${p.nombre||''}`).join(' · ');
+      return `<tr>
+        <td>${extractDecretoLink(k)}</td>
+        <td style="font-size:11px;max-width:520px">${nombres}</td>
+        <td style="text-align:right" class="fw">${personas.length}</td>
+      </tr>`;
+    }).join('')}
+    </tbody></table></div>`;
+}
+
 // ── Charts ────────────────────────────────────────────────────────────────────
 function initCharts() {
   // Contratos por gestión
@@ -930,6 +1034,8 @@ function initCharts() {
   filtrarC();
   filtrarP();
   initCharts();
+  renderOrganigrama();
+  renderDecretos();
 })();
 </script>
 

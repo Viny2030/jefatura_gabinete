@@ -240,6 +240,8 @@ footer a { color: var(--accent); text-decoration: none; }
   <a onclick="switchSec('contratos')" id="nav-contratos">📋 Contratos</a>
   <a onclick="switchSec('personal')"  id="nav-personal">👥 Personal</a>
   <a onclick="switchSec('cruces')"    id="nav-cruces">🔗 Cruces</a>
+  <a onclick="switchSec('organigrama')" id="nav-organigrama">🏛️ Organigrama</a>
+  <a onclick="switchSec('presupuesto')" id="nav-presupuesto">💰 Presupuesto</a>
   <a onclick="switchSec('agente')"    id="nav-agente">🤖 Agente IA</a>
   <a href="manual_usuario.html">📖 Manual</a>
 </nav>
@@ -520,6 +522,57 @@ footer a { color: var(--accent); text-decoration: none; }
   </div>
 
 </div><!-- /cruces -->
+
+<!-- ════════ ORGANIGRAMA ════════ -->
+<div class="seccion" id="sec-organigrama">
+  <div class="panel" style="margin-bottom:16px">
+    <div class="pb" style="font-size:12px;color:var(--muted);line-height:1.6">
+      Estructura de personal jerárquico de la Jefatura de Gabinete de Ministros, agrupada por jerarquía funcional a partir de la nómina de designaciones ya publicada en la pestaña Personal. No es un organigrama oficial publicado por el organismo, sino una reconstrucción a partir de datos abiertos.
+    </div>
+  </div>
+  <div id="organigrama-container"></div>
+</div><!-- /organigrama -->
+
+<!-- ════════ PRESUPUESTO ════════ -->
+<div class="seccion" id="sec-presupuesto">
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card">
+      <div class="kpi-label">Crédito vigente 2026</div>
+      <div class="kpi-val" id="pk-vigente">—</div>
+      <div class="kpi-sub">JGM · jurisdicción 25</div>
+    </div>
+    <div class="kpi-card kpi-green">
+      <div class="kpi-label">% Devengado</div>
+      <div class="kpi-val" id="pk-devengado">—</div>
+      <div class="kpi-sub">ejecución acumulada 2026</div>
+    </div>
+    <div class="kpi-card kpi-purple">
+      <div class="kpi-label">% Pagado</div>
+      <div class="kpi-val" id="pk-pagado">—</div>
+      <div class="kpi-sub">sobre crédito vigente</div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Ejecución por inciso</h2></div>
+    <div class="pb"><canvas id="chart-presupuesto-inciso" height="220"></canvas></div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Top programas por crédito vigente</h2></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Programa</th><th>Servicio</th><th style="text-align:right">Vigente (M ARS)</th><th style="text-align:right">Devengado (M ARS)</th></tr></thead>
+        <tbody id="tbody-programas"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Fuente y metodología</h2></div>
+    <div class="pb" style="font-size:11px;color:var(--muted);line-height:1.8">
+      <p id="presupuesto-nota">Cargando…</p>
+      <p style="margin-top:8px">Fuente: <a id="pk-fuente" href="https://www.presupuestoabierto.gob.ar" target="_blank" style="color:var(--accent)">Presupuesto Abierto — Dirección General de Sistemas de Información Financiera (MECON)</a> · unidad: millones de ARS corrientes.</p>
+    </div>
+  </div>
+</div><!-- /presupuesto -->
 
 <!-- ════════ AGENTE IA ════════ -->
 <div class="seccion" id="sec-agente">
@@ -924,6 +977,102 @@ function generarCruces() {
   }).join('');
 }
 
+// ── Organigrama (derivado de allP, sin fetch nuevo) ──────────────────────────
+var JERARQUIA_ORDEN = ['Ministro','Secretario','Subsecretario','DN-DG','Director - Primer Nivel Operativo','Director - Segundo Nivel Operativo','Coordinador','Jefe de Departamento','Ad Honorem','S-D'];
+
+function ordenJerarquia(a, b) {
+  var ia = JERARQUIA_ORDEN.indexOf(a); if (ia === -1) ia = 999;
+  var ib = JERARQUIA_ORDEN.indexOf(b); if (ib === -1) ib = 999;
+  if (ia !== ib) return ia - ib;
+  return a.localeCompare(b);
+}
+
+function renderOrganigrama() {
+  var cont = document.getElementById('organigrama-container');
+  if (!cont) return;
+  if (!allP.length) {
+    cont.innerHTML = '<div class="panel"><div class="pb" style="text-align:center;color:var(--muted)">Sin datos de personal cargados todavía.</div></div>';
+    return;
+  }
+  var grupos = {};
+  allP.forEach(function(p) {
+    var j = p.jerarquia || 'Sin dato';
+    (grupos[j] = grupos[j] || []).push(p);
+  });
+  var keys = Object.keys(grupos).sort(ordenJerarquia);
+  cont.innerHTML = keys.map(function(k) {
+    var lista = grupos[k].slice().sort(function(a,b){ return (a.apellido||'').localeCompare(b.apellido||''); });
+    return '<div class="panel">'
+      + '<div class="ph"><h2>' + k + ' <span style="color:var(--muted);font-weight:400;font-size:11px">(' + lista.length + ')</span></h2></div>'
+      + '<div class="tw"><table><thead><tr><th>Apellido</th><th>Nombre</th><th>Cargo</th><th>Escalafón</th><th>Gestión</th><th>Decreto</th></tr></thead><tbody>'
+      + lista.map(function(p) {
+          return '<tr>'
+            + '<td class="fw">' + (p.apellido||'—') + '</td>'
+            + '<td>' + (p.nombre||'—') + '</td>'
+            + '<td style="font-size:11px">' + (p.cargo||'—') + '</td>'
+            + '<td>' + chipEscalafon(p.escalafon||'') + '</td>'
+            + '<td>' + chipGestion(p.jgm_al_ingreso) + '</td>'
+            + '<td>' + extractDecretoLink(p.norma_designacion) + '</td>'
+            + '</tr>';
+        }).join('')
+      + '</tbody></table></div></div>';
+  }).join('');
+}
+
+// ── Presupuesto JGM (desde data/presupuesto_jgm.json) ────────────────────────
+function fmtM(nMillones) {
+  if (nMillones === null || nMillones === undefined) return '—';
+  return fmt(nMillones * 1e6);
+}
+
+function loadPresupuesto() {
+  fetch('data/presupuesto_jgm.json').then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(d) {
+    renderPresupuesto(d);
+  }).catch(function(e) {
+    console.warn('Presupuesto no disponible:', e);
+    var el;
+    el = document.getElementById('presupuesto-nota');
+    if (el) el.textContent = 'Los datos de presupuesto todavía no se generaron para esta instancia. Se actualizan automáticamente con el pipeline diario.';
+  });
+}
+
+function renderPresupuesto(d) {
+  var elV = document.getElementById('pk-vigente');       if (elV) elV.textContent = fmtM(d.totales.credito_vigente);
+  var elD = document.getElementById('pk-devengado');     if (elD) elD.textContent = d.pct_ejecucion_devengado + '%';
+  var elP = document.getElementById('pk-pagado');        if (elP) elP.textContent = d.pct_ejecucion_pagado + '%';
+  var elN = document.getElementById('presupuesto-nota'); if (elN) elN.textContent = d.nota + ' Última actualización de la fuente: ' + (d.fecha_actualizacion_fuente || d.generado || '—') + '.';
+
+  var ctx = document.getElementById('chart-presupuesto-inciso');
+  if (ctx && window.Chart) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: d.por_inciso.map(function(i){ return i.inciso; }),
+        datasets: [
+          { label: 'Vigente',   data: d.por_inciso.map(function(i){ return i.credito_vigente; }),   backgroundColor: '#1e40af55', borderColor: '#1e40af', borderWidth: 1.5, borderRadius: 4 },
+          { label: 'Devengado', data: d.por_inciso.map(function(i){ return i.credito_devengado; }), backgroundColor: '#05966955', borderColor: '#059669', borderWidth: 1.5, borderRadius: 4 },
+        ]
+      },
+      options: { responsive: true, plugins: { legend: { position: 'top' } }, scales: { y: { beginAtZero: true } } }
+    });
+  }
+
+  var tbody = document.getElementById('tbody-programas');
+  if (tbody) {
+    tbody.innerHTML = (d.top_programas || []).map(function(p) {
+      return '<tr>'
+        + '<td style="font-size:11px">' + (p.programa||'—') + '</td>'
+        + '<td style="font-size:10px;color:var(--muted)">' + (p.servicio||'—') + '</td>'
+        + '<td class="monto">' + fmtM(p.credito_vigente) + '</td>'
+        + '<td class="monto">' + fmtM(p.credito_devengado) + '</td>'
+        + '</tr>';
+    }).join('');
+  }
+}
+
 // ── Charts ────────────────────────────────────────────────────────────────────
 function initCharts() {
   new Chart(document.getElementById('chart-gestion'), {
@@ -1073,6 +1222,8 @@ async function init() {
   updateKPIsC();
   filtrarP();
   initCharts();
+  renderOrganigrama();
+  loadPresupuesto();
 
   // Cruces: usar JSON del workflow si tiene datos, sino calcular en browser
   if (crucesData && crucesData.total > 0) {
