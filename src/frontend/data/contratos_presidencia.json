@@ -164,7 +164,7 @@
     "objeto": "Servicio de provisión e instalación de film de control solar y protección UV en el Palacio Libertad",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Preadjudicado",
     "fecha_apertura": "06/08/2026 13:00 Hrs."
   },
   {
@@ -318,7 +318,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo de los sistemas de maquinaria escénica",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "17/06/2026 13:00 Hrs."
   },
   {
@@ -374,7 +374,7 @@
     "objeto": "Adquisición de materiales",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "12/03/2026 13:00 Hrs."
   },
   {
@@ -430,7 +430,7 @@
     "objeto": "Adquisición de herramientas y/o maquinarias",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "20/05/2026 13:00 Hrs."
   },
   {
@@ -514,7 +514,7 @@
     "objeto": "Contratación del alquiler (derecho de uso) del material orquestal",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "23/06/2026 13:00 Hrs."
   },
   {
@@ -3542,6 +3542,20 @@
     "fecha_apertura": "27/10/2025 10:00 Hrs."
   },
   {
+    "numero_proceso": "300-0002-LPU26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Licencias Forticare -Fortinet",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-08-26",
+    "monto_adjudicado": null,
+    "objeto": "Licencias Forticare -Fortinet",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "26/08/2026 11:00 Hrs."
+  },
+  {
     "numero_proceso": "300-0003-CDI23",
     "organismo": "300/000 - Dirección General de Administración - SECLyT",
     "proveedor": "Suscripción a las publicaciones de elDial.com “Biblioteca Jurídica online”.",
@@ -3692,7 +3706,7 @@
     "objeto": "Certificados de seguridad",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "05/08/2026 10:00 Hrs."
   },
   {
@@ -3776,7 +3790,7 @@
     "objeto": "Servicio técnico de mantenimiento preventivo y correctivo para TRES (3) escáneres de la SLYT.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "29/05/2026 10:00 Hrs."
   },
   {
@@ -4014,7 +4028,7 @@
     "objeto": "Suscripción a ERREIUS de la editorial ERREPAR S.A. Cs. Económicas.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "Adjudicado",
     "fecha_apertura": "08/05/2026 10:00 Hrs."
   },
   {
@@ -4140,7 +4154,7 @@
     "objeto": "Adquisición de insumos alimenticios",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "13/07/2026 11:00 Hrs."
   },
   {
