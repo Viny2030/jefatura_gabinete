@@ -1312,7 +1312,7 @@
     "objeto": "Alquiler de (5) módulos habitacionales de tipo contenedor y de (1) modulo sanitario tipo contenedor.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "31/07/2026 12:00 Hrs."
   },
   {
@@ -1480,7 +1480,7 @@
     "objeto": "Servicio de mantenimiento de cámaras frigoríficas, heladeras y freezers en CR y RPO",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "01/07/2026 12:00 Hrs."
   },
   {
@@ -1666,6 +1666,20 @@
     "fecha_apertura": "23/12/2025 12:00 Hrs."
   },
   {
+    "numero_proceso": "23-0012-LPR26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Adquisición de planchas de policarbonato, materiales de impermeabilización, zing",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-09-07",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de planchas de policarbonato, materiales de impermeabilización, zinguería, etc.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "07/09/2026 12:00 Hrs."
+  },
+  {
     "numero_proceso": "23-0012-LPU23",
     "organismo": "23/000 - Dirección General de Administración - SG",
     "proveedor": "Servicio de Mantenimiento de Sistemas de Refrigeración en Diversas Dependencias ",
@@ -1718,7 +1732,7 @@
     "objeto": "Contratación de servicios de conectividad, acceso a Internet, transmisión de datos y otros SGP",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "11/08/2026 12:00 Hrs."
   },
   {
@@ -1818,6 +1832,20 @@
     "gestion": "Adorni",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "05/12/2025 12:00 Hrs."
+  },
+  {
+    "numero_proceso": "23-0013-LPU26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Provisión de artículos de higiene y limpieza, por 6 meses, con opción a prórroga",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-09-07",
+    "monto_adjudicado": null,
+    "objeto": "Provisión de artículos de higiene y limpieza, por 6 meses, con opción a prórroga, para deps. de SGP",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "07/09/2026 12:00 Hrs."
   },
   {
     "numero_proceso": "23-0014-CDI23",

@@ -266,6 +266,20 @@
     "fecha_apertura": "11/11/2025 13:00 Hrs."
   },
   {
+    "numero_proceso": "83-0004-LPR26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Servicio de mantenimiento preventivo y correctivo del sistema de proyectores",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-09-04",
+    "monto_adjudicado": null,
+    "objeto": "Servicio de mantenimiento preventivo y correctivo del sistema de proyectores",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "04/09/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0004-LPU23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "Adquisición de Paneles de Pantallas y Accesorios (Video y Touring)",
@@ -4154,7 +4168,7 @@
     "objeto": "Adquisición de insumos alimenticios",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "Adjudicado",
     "fecha_apertura": "13/07/2026 11:00 Hrs."
   },
   {
