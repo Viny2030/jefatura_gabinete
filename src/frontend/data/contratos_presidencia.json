@@ -136,7 +136,7 @@
     "objeto": "Adquisición de Lámparas escénicas con destino al Palacio Libertad - Centro Cultural Domingo Faustino",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Fracasado",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "16/06/2026 13:00 Hrs."
   },
   {
@@ -164,7 +164,7 @@
     "objeto": "Servicio de provisión e instalación de film de control solar y protección UV en el Palacio Libertad",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "06/08/2026 13:00 Hrs."
   },
   {
@@ -444,7 +444,7 @@
     "objeto": "Adquisición de herramientas y/o maquinarias",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "20/05/2026 13:00 Hrs."
   },
   {
@@ -4098,7 +4098,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo para TRES (3) Grupos Electrógenos de la SLYT.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Preadjudicado",
     "fecha_apertura": "17/07/2026 10:00 Hrs."
   },
   {

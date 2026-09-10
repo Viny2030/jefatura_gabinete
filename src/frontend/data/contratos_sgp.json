@@ -1442,6 +1442,20 @@
     "fecha_apertura": "18/11/2025 13:00 Hrs."
   },
   {
+    "numero_proceso": "23-0010-LPR26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Servicio de mantenim. de campanas y extinción de incendios de cocinas de SGP",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-09-08",
+    "monto_adjudicado": null,
+    "objeto": "Servicio de mantenim. de campanas y extinción de incendios de cocinas de SGP",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "08/09/2026 12:00 Hrs."
+  },
+  {
     "numero_proceso": "23-0010-LPU24",
     "organismo": "23/000 - Dirección General de Administración - SG",
     "proveedor": "Adquisición de frutas y verduras para Casa de Gobierno y Residencia Presidencial",
@@ -1552,6 +1566,20 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "19/11/2025 12:00 Hrs."
+  },
+  {
+    "numero_proceso": "23-0011-LPR26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Provisión de neumáticos destinados a los vehículos que componen la flota de la S",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-09-10",
+    "monto_adjudicado": null,
+    "objeto": "Provisión de neumáticos destinados a los vehículos que componen la flota de la SGP.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "10/09/2026 12:00 Hrs."
   },
   {
     "numero_proceso": "23-0011-LPU23",
@@ -1676,7 +1704,7 @@
     "objeto": "Adquisición de planchas de policarbonato, materiales de impermeabilización, zinguería, etc.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Publicado",
+    "estado": "En Apertura",
     "fecha_apertura": "07/09/2026 12:00 Hrs."
   },
   {
@@ -1844,7 +1872,7 @@
     "objeto": "Provisión de artículos de higiene y limpieza, por 6 meses, con opción a prórroga, para deps. de SGP",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Publicado",
+    "estado": "En Apertura",
     "fecha_apertura": "07/09/2026 12:00 Hrs."
   },
   {
