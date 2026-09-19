@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-09-18T05:15:52.016636",
-  "total": 6,
+  "generado_en": "2026-09-19T05:15:10.819763",
+  "total": 7,
   "altos": 0,
-  "medios": 6,
+  "medios": 7,
   "monto_total": 237444496.0,
   "cruces": [
     {
@@ -93,6 +93,21 @@
       "monto_fmt": "—",
       "fecha": "2026-05-28",
       "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412718/20260528",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "TORRES, Ricardo Alberto",
+      "cargo": "Director/a",
+      "gestion": "Pre-Milei",
+      "empresa": "Torres del Paraná S.R.L. (",
+      "cuit": "30712216006",
+      "organismo": "MINISTERIO PÚBLICO FISCAL - PROCURACIÓN GENERAL DE LA NACIÓN",
+      "monto": 0,
+      "monto_fmt": "—",
+      "fecha": "2026-09-18",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2417656/20260918",
       "contratos": 2
     }
   ]
