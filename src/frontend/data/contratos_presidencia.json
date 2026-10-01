@@ -84,6 +84,20 @@
     "fecha_apertura": "08/03/2023 14:00 Hrs."
   },
   {
+    "numero_proceso": "83-0001-LPU26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Adquisición de artículos de librería",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-09-30",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de artículos de librería",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "30/09/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0002-CDI23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "Servicio de área protegida en el MINISTERIO DE CULTURA",
@@ -164,7 +178,7 @@
     "objeto": "Servicio de provisión e instalación de film de control solar y protección UV en el Palacio Libertad",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "06/08/2026 13:00 Hrs."
   },
   {
@@ -276,7 +290,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo del sistema de proyectores",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Adjudicado",
     "fecha_apertura": "04/09/2026 13:00 Hrs."
   },
   {
@@ -350,6 +364,20 @@
     "fecha_apertura": "02/12/2025 13:00 Hrs."
   },
   {
+    "numero_proceso": "83-0005-LPR26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Adquisición de Insumos de Pinturería",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-09-16",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de Insumos de Pinturería",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "16/09/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0005-LPU25",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "ALQUILER DE MAQUINARIAS PESADAS",
@@ -390,6 +418,20 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "12/03/2026 13:00 Hrs."
+  },
+  {
+    "numero_proceso": "83-0006-LPR26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Adquisición de Lámparas escénicas con destino al PALACIO LIBERTAD",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-09-21",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de Lámparas escénicas con destino al PALACIO LIBERTAD",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "21/09/2026 13:00 Hrs."
   },
   {
     "numero_proceso": "83-0006-LPU23",
@@ -444,7 +486,7 @@
     "objeto": "Adquisición de herramientas y/o maquinarias",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Preadjudicado",
+    "estado": "Adjudicado",
     "fecha_apertura": "20/05/2026 13:00 Hrs."
   },
   {
@@ -3472,6 +3514,20 @@
     "fecha_apertura": "07/11/2025 10:00 Hrs."
   },
   {
+    "numero_proceso": "300-0002-CDI26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "UNA (1) suscripción a las publicaciones de “El Derecho”, para el año 2027.",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-09-25",
+    "monto_adjudicado": null,
+    "objeto": "UNA (1) suscripción a las publicaciones de “El Derecho”, para el año 2027.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "25/09/2026 11:00 Hrs."
+  },
+  {
     "numero_proceso": "300-0002-LPR23",
     "organismo": "300/000 - Dirección General de Administración - SECLyT",
     "proveedor": "UN (1) Servicio de emergencias médicas.",
@@ -3566,7 +3622,7 @@
     "objeto": "Licencias Forticare -Fortinet",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "26/08/2026 11:00 Hrs."
   },
   {
@@ -3610,6 +3666,20 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "07/11/2025 11:00 Hrs."
+  },
+  {
+    "numero_proceso": "300-0003-CDI26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Suscripción a las publicaciones de elDial.com “Biblioteca Jurídica online” para ",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-09-24",
+    "monto_adjudicado": null,
+    "objeto": "Suscripción a las publicaciones de elDial.com “Biblioteca Jurídica online” para el año 2027.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "24/09/2026 11:00 Hrs."
   },
   {
     "numero_proceso": "300-0003-LPR23",
@@ -3720,7 +3790,7 @@
     "objeto": "Certificados de seguridad",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "05/08/2026 10:00 Hrs."
   },
   {
@@ -4000,7 +4070,7 @@
     "objeto": "Servicio de soporte técnico para 2 centrales AstervoIP PBX-IP y 1 central teléfonica Asterix 13 Free",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "08/06/2026 11:00 Hrs."
   },
   {
@@ -4098,7 +4168,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo para TRES (3) Grupos Electrógenos de la SLYT.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "17/07/2026 10:00 Hrs."
   },
   {
