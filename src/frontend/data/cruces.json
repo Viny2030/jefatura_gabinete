@@ -1,8 +1,8 @@
 {
-  "generado_en": "2026-10-01T05:17:42.068083",
-  "total": 7,
+  "generado_en": "2026-10-02T05:17:28.078082",
+  "total": 8,
   "altos": 0,
-  "medios": 7,
+  "medios": 8,
   "monto_total": 237444496.0,
   "cruces": [
     {
@@ -79,6 +79,21 @@
       "fecha": "2026-05-28",
       "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2412718/20260528",
       "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "GONZALEZ, Camila Belén",
+      "cargo": "Subsecretario/a",
+      "gestion": "Adorni",
+      "empresa": "FEDERICO EDUARDO GONZALEZ",
+      "cuit": "20304826291",
+      "organismo": "EJÉRCITO ARGENTINO",
+      "monto": 0,
+      "monto_fmt": "—",
+      "fecha": "2026-10-01",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2418302/20261001",
+      "contratos": 6
     },
     {
       "nivel": "MEDIO",
