@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-01 12:19",
+  "generado": "2026-10-02 12:18",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 179,
@@ -18,7 +18,7 @@
     "presidencia": {
       "contratos": 352,
       "personal": 454,
-      "monto_total": 5745170671.8
+      "monto_total": 6217389074.82
     }
   }
 }
