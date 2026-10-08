@@ -700,6 +700,20 @@
     "fecha_apertura": "16/03/2023 15:00 Hrs."
   },
   {
+    "numero_proceso": "83-0012-CDI26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Contratación del alquiler (derecho de uso) de material orquestal",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-07",
+    "monto_adjudicado": null,
+    "objeto": "Contratación del alquiler (derecho de uso) de material orquestal",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "07/10/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0012-LPR23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "Servicios de Alojamiento, Traslado y Catering destinados al 4º Encuentro de Paya",

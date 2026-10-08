@@ -836,7 +836,7 @@
     "objeto": "Provisión de bolsas institucionales destinado de uso protocolar de Dirección General de Ceremonial.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "21/08/2026 12:00 Hrs."
   },
   {
@@ -1410,7 +1410,7 @@
     "objeto": "Adquisición de las medallas premio Presidente de la Nación y premio Nación Argentina",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "25/09/2026 11:00 Hrs."
   },
   {
@@ -1466,7 +1466,7 @@
     "objeto": "Servicio de mantenim. de campanas y extinción de incendios de cocinas de SGP",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "08/09/2026 12:00 Hrs."
   },
   {
@@ -1592,7 +1592,7 @@
     "objeto": "Provisión de neumáticos destinados a los vehículos que componen la flota de la SGP.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "10/09/2026 12:00 Hrs."
   },
   {
@@ -2294,6 +2294,20 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "12/01/2026 12:00 Hrs."
+  },
+  {
+    "numero_proceso": "23-0018-LPU26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Adquisición de equipos de identificación por espectroscopia (tipo Raman).",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-10-06",
+    "monto_adjudicado": null,
+    "objeto": "Adquisición de equipos de identificación por espectroscopia (tipo Raman).",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "06/10/2026 12:00 Hrs."
   },
   {
     "numero_proceso": "23-0019-CDI23",
