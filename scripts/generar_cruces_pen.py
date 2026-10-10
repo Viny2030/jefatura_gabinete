@@ -91,10 +91,11 @@ def fmt_monto(n):
         n = float(n)
     except Exception:
         return "—"
+    # "B" se lee como "billones" en español: usamos "mil M" (miles de millones)
     if n >= 1e9:
-        return f"${n/1e9:.1f}B"
+        return f"${n/1e9:.1f} mil M".replace(".", ",")
     if n >= 1e6:
-        return f"${n/1e6:.1f}M"
+        return f"${n/1e6:.1f} M".replace(".", ",")
     return f"${n:,.0f}"
 
 
@@ -206,6 +207,62 @@ def nivel1(personal, contratos):
 
 
 # ── Nivel 2: Apellido en razón social ─────────────────────────────────────────
+# Apellidos muy frecuentes en Argentina (y apellidos que también son nombres de
+# pila). Con estos, una coincidencia de apellido no aporta señal: generaba
+# falsos positivos publicados con nombre y apellido de funcionarios reales.
+APELLIDOS_COMUNES = {
+    "GONZALEZ", "RODRIGUEZ", "GOMEZ", "FERNANDEZ", "LOPEZ", "DIAZ", "MARTINEZ",
+    "PEREZ", "GARCIA", "SANCHEZ", "ROMERO", "SOSA", "ALVAREZ", "TORRES", "RUIZ",
+    "RAMIREZ", "FLORES", "ACOSTA", "BENITEZ", "MEDINA", "SUAREZ", "HERRERA",
+    "AGUIRRE", "PEREYRA", "PEREIRA", "GUTIERREZ", "GIMENEZ", "JIMENEZ", "MOLINA",
+    "SILVA", "CASTRO", "ROJAS", "ORTIZ", "NUNEZ", "LUNA", "JUAREZ", "CABRERA",
+    "RIOS", "FERREYRA", "FERREIRA", "GODOY", "MORALES", "DOMINGUEZ", "MORENO",
+    "PERALTA", "VEGA", "CARRIZO", "QUIROGA", "CASTILLO", "LEDESMA", "MUNOZ",
+    "OJEDA", "PONCE", "VERA", "VAZQUEZ", "VASQUEZ", "VILLALBA", "CARDOZO",
+    "NAVARRO", "CORONEL", "ARIAS", "CABRAL", "BRITO", "FIGUEROA", "CORREA",
+    "CACERES", "GUZMAN", "MENDEZ", "PAEZ", "BLANCO", "ROLDAN", "ALONSO",
+    "AQUINO", "BARRIOS", "CEJAS", "CRUZ", "ESCOBAR", "FARIAS", "GAITAN",
+    "MANSILLA", "MIRANDA", "OLIVERA", "PAZ", "RIVERO", "SALAS", "SANTOS",
+    "SEGOVIA", "TOLEDO", "VARGAS", "VIDAL", "ZAPATA", "LUCERO", "MAIDANA",
+    "ARCE", "BUSTOS", "CENTURION", "ROMAN", "AYALA", "IBARRA", "MENDOZA",
+    "LOPEZ", "LEIVA", "ARGUELLO", "VELAZQUEZ", "AGUERO", "RAMOS", "REYES",
+    # apellidos que también son nombres de pila o palabras corrientes
+    "MARTIN", "DANIEL", "ROMAN", "LORENZO", "SIMON", "MATEO", "TOMAS", "ADRIAN",
+    "ANDRES", "BENITO", "FABIAN", "MARCOS", "NICOLAS", "PASCUAL", "VALENTIN",
+    "BLANCA", "ROSA", "PALMA", "CAMPOS", "MONTES", "PRADO", "SOLAR", "PUENTE",
+    "GRANDE", "NIETO", "LEON", "LOBO", "BRAVO", "DELGADO", "FUENTES",
+}
+
+# Personas humanas: CUIT con prefijo 20/23/24/27.
+PREFIJOS_PERSONA = ("20", "23", "24", "27")
+# Si al apellido le sigue una de estas palabras es casi siempre un topónimo o
+# nombre de fantasía ("TORRES DEL PARANA SRL"), no un apellido.
+CONECTORES_TOPONIMO = {"DEL", "DE", "LA", "LAS", "LOS", "EL"}
+
+
+def coincide_apellido(apellido, razon, cuit):
+    """Decide si `apellido` aparece en `razon` como apellido (no como nombre de
+    pila ni como parte de un topónimo). Devuelve True/False."""
+    if apellido in APELLIDOS_COMUNES:
+        return False
+    tok_ap = apellido.split()
+    tok_rz = razon.split()
+    n = len(tok_ap)
+    posiciones = [i for i in range(len(tok_rz) - n + 1) if tok_rz[i:i + n] == tok_ap]
+    if not posiciones:
+        return False
+    if str(cuit).startswith(PREFIJOS_PERSONA):
+        # Persona humana: el apellido va al principio ("PEREZ JUAN") o al final
+        # ("JUAN PEREZ"); en el medio suele ser un segundo nombre.
+        return any(i == 0 or i + n == len(tok_rz) for i in posiciones)
+    # Persona jurídica: descartar topónimos / nombres de fantasía.
+    for i in posiciones:
+        siguiente = tok_rz[i + n] if i + n < len(tok_rz) else ""
+        if siguiente not in CONECTORES_TOPONIMO:
+            return True
+    return False
+
+
 def nivel2(personal, contratos):
     agrupados = {}
 
@@ -213,13 +270,12 @@ def nivel2(personal, contratos):
         apellido = p["apellido"]
         if len(apellido) < 4:
             continue
-        regex = re.compile(r"\b" + re.escape(apellido) + r"\b")
 
         for c in contratos:
             razon = normalizar(c["proveedor"])
             if not razon:
                 continue
-            if regex.search(razon):
+            if coincide_apellido(apellido, razon, c["cuit"]):
                 key = f"{apellido}|{c['proveedor']}"
                 if key not in agrupados:
                     agrupados[key] = {

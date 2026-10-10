@@ -257,14 +257,17 @@ footer a { color: #1e40af; text-decoration: none; }
   <div class="gstat">
     <div class="gstat-val" id="gstat-autoridades">—</div>
     <div class="gstat-lbl">Autoridades monitoreadas</div>
+    <div class="gstat-lbl" id="gstat-autoridades-nota" style="font-size:10px"></div>
   </div>
   <div class="gstat">
     <div class="gstat-val" id="gstat-contratos">—</div>
-    <div class="gstat-lbl">Contratos registrados</div>
+    <div class="gstat-lbl">Procesos de compra registrados</div>
+    <div class="gstat-lbl" id="gstat-contratos-nota" style="font-size:10px"></div>
   </div>
   <div class="gstat">
     <div class="gstat-val" id="gstat-monto">—</div>
-    <div class="gstat-lbl">ARS adjudicados</div>
+    <div class="gstat-lbl">ARS adjudicados (monto informado)</div>
+    <div class="gstat-lbl" id="gstat-monto-nota" style="font-size:10px"></div>
   </div>
   <div class="gstat">
     <div class="gstat-val" id="gstat-alertas">—</div>
@@ -517,8 +520,9 @@ footer a { color: #1e40af; text-decoration: none; }
   function fmtMonto(n) {
     if (!n) return "$0";
     var abs = Math.abs(n);
-    if (abs >= 1e9) return "$" + (n / 1e9).toFixed(1) + "B";
-    if (abs >= 1e6) return "$" + (n / 1e6).toFixed(0) + "M";
+    // "B" se lee como "billones" en español: usamos "mil M" (miles de millones)
+    if (abs >= 1e9) return "$" + (n / 1e9).toFixed(1).replace(".", ",") + " mil M";
+    if (abs >= 1e6) return "$" + (n / 1e6).toFixed(0) + " M";
     return "$" + Number(n).toLocaleString("es-AR");
   }
   function set(id, val) {
@@ -549,12 +553,27 @@ footer a { color: #1e40af; text-decoration: none; }
       set("pres-contratos", fmtEntero(pres.contratos));
       set("pres-monto", fmtMonto(pres.monto_total));
 
+      // Notas de cobertura (sólo si meta.json trae los campos nuevos)
+      var ramas = [jgm, sgp, pres];
+      function suma(k) { var t = 0, ok = false; ramas.forEach(function (x) { if (typeof x[k] === "number") { t += x[k]; ok = true; } }); return ok ? t : null; }
+      var ident = suma("personal_identificado"), adj = suma("contratos_adjudicados"), conMonto = suma("contratos_con_monto");
+      var totC = (jgm.contratos || 0) + (sgp.contratos || 0) + (pres.contratos || 0);
+      if (ident !== null) set("gstat-autoridades-nota", fmtEntero(ident) + " con nombre identificado");
+      if (adj !== null) set("gstat-contratos-nota", fmtEntero(adj) + " adjudicados");
+      if (conMonto !== null) set("gstat-monto-nota", "suma de " + fmtEntero(conMonto) + " de " + fmtEntero(totC) + " procesos con monto publicado");
+
       var badge = document.getElementById("badge-actualizacion");
       if (badge) {
-        badge.textContent = meta.generado ? ("🟢 Datos actualizados: " + meta.generado) : "🟢 Datos en vivo";
-        badge.style.background = "#ecfdf5";
-        badge.style.color = "#065f46";
-        badge.style.borderColor = "#a7f3d0";
+        var dal = meta.datos_al || {};
+        var txt = meta.generado ? ("Procesado: " + meta.generado) : "Datos publicados";
+        if (dal.contratos) txt += " · Contratos al " + dal.contratos;
+        if (dal.personal) txt += " · Nómina al " + dal.personal;
+        // Si la nómina tiene más de 30 días, se avisa en ámbar en vez de verde.
+        var vieja = dal.personal && (Date.now() - new Date(dal.personal).getTime()) > 30 * 864e5;
+        badge.textContent = (vieja ? "🟡 " : "🟢 ") + txt;
+        badge.style.background = vieja ? "#fffbeb" : "#ecfdf5";
+        badge.style.color = vieja ? "#92400e" : "#065f46";
+        badge.style.borderColor = vieja ? "#fde68a" : "#a7f3d0";
       }
     })
     .catch(function () {

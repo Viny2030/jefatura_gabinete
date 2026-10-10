@@ -1,38 +1,39 @@
 """
 api_server.py
 =============
-API REST para el portal anticorrupciÃ³n JGM.
+API REST para el portal anticorrupción JGM.
 Sirve los datos generados por pipeline.py como endpoints JSON.
-TambiÃ©n sirve el dashboard HTML estÃ¡tico.
+También sirve el dashboard HTML estático.
 
 Endpoints:
-  GET /                     â†’ index.html (portal principal)
-  GET /jgm.html             â†’ ficha JGM
-  GET /sgp.html             â†’ ficha SGP
-  GET /presidencia.html     â†’ ficha Presidencia
-  GET /dashboard.html       â†’ dashboard con datos incrustados
-  GET /alertas.html         â†’ alertas
-  GET /grafos_nodos.html    â†’ grafo de nodos
-  GET /manual_usuario.html  â†’ manual
-  GET /documentacion.html   â†’ documentaciÃ³n tÃ©cnica
-  GET /api/health           â†’ health check JSON
-  GET /api/inteligencia     â†’ datos completos (alertas + grafo)
-  GET /api/alertas          â†’ solo alertas (filtros: nivel, tipo)
-  GET /api/grafo            â†’ solo grafo de nodos
-  GET /api/contratos        â†’ contratos/licitaciones JGM
-  GET /api/bora             â†’ publicaciones BORA relevantes
-  GET /api/resumen          â†’ KPIs ejecutivos
-  GET /api/db-status        â†’ estado de conexiÃ³n PostgreSQL
-  POST /api/refresh         â†’ dispara pipeline (requiere X-Refresh-Token)
-  POST /api/v1/chat/{area}  â†’ agente IA de solo lectura (area: jgm|sgp|presidencia)
+  GET /                     → index.html (portal principal)
+  GET /jgm.html             → ficha JGM
+  GET /sgp.html             → ficha SGP
+  GET /presidencia.html     → ficha Presidencia
+  GET /dashboard.html       → dashboard con datos incrustados
+  GET /alertas.html         → alertas
+  GET /grafos_nodos.html    → grafo de nodos
+  GET /manual_usuario.html  → manual
+  GET /documentacion.html   → documentación técnica
+  GET /api/health           → health check JSON
+  GET /api/inteligencia     → datos completos (alertas + grafo)
+  GET /api/alertas          → solo alertas (filtros: nivel, tipo)
+  GET /api/grafo            → solo grafo de nodos
+  GET /api/contratos        → contratos/licitaciones JGM
+  GET /api/bora             → publicaciones BORA relevantes
+  GET /api/resumen          → KPIs ejecutivos
+  GET /api/db-status        → estado de conexión PostgreSQL
+  POST /api/refresh         → dispara pipeline (requiere X-Refresh-Token)
+  POST /api/v1/chat/{area}  → agente IA de solo lectura (area: jgm|sgp|presidencia)
 
 Variables de entorno:
-  DATABASE_URL          â†’ URL de PostgreSQL (Railway la inyecta automÃ¡ticamente)
-  REFRESH_TOKEN         â†’ token secreto (default: "dev")
-  PORT                  â†’ puerto (default: 8000)
-  ANTHROPIC_API_KEY     â†’ clave de la API de Claude (si falta, /api/v1/chat/* devuelve 503)
-  ANTHROPIC_MODEL       â†’ modelo a usar (default: "claude-sonnet-5")
-  CHAT_RATE_LIMIT_DIARIO â†’ mensajes por IP por dÃ­a en el chat (default: 30)
+  DATABASE_URL          → URL de PostgreSQL (Railway la inyecta automáticamente)
+  REFRESH_TOKEN         → token secreto. Si no está definido, /api/refresh y /api/init-db
+                          rechazan todo pedido (antes el default era "dev", adivinable).
+  PORT                  → puerto (default: 8000)
+  ANTHROPIC_API_KEY     → clave de la API de Claude (si falta, /api/v1/chat/* devuelve 503)
+  ANTHROPIC_MODEL       → modelo a usar (default: "claude-sonnet-5")
+  CHAT_RATE_LIMIT_DIARIO → mensajes por IP por día en el chat (default: 30)
 """
 
 import json
@@ -53,7 +54,11 @@ from pydantic import BaseModel
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
-REFRESH_TOKEN = os.getenv("REFRESH_TOKEN", "dev")
+# Los JSON que publica el portal (contratos_*, personal_*, cruces, meta) viven en
+# src/frontend/data. DATA_DIR (src/data) queda como primera opción por si el
+# pipeline vuelve a escribir ahí; si el archivo no está, se busca en frontend/data.
+DATA_DIRS = [DATA_DIR, FRONTEND_DIR / "data"]
+REFRESH_TOKEN = os.getenv("REFRESH_TOKEN", "")
 PORT = int(os.getenv("PORT", 8000))
 DATABASE_URL = os.getenv("DATABASE_URL", "")
 
@@ -63,8 +68,8 @@ ANTHROPIC_MODEL     = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
 CHAT_RATE_LIMIT_DIA = int(os.getenv("CHAT_RATE_LIMIT_DIARIO", "30"))  # mensajes por IP por día
 
 app = FastAPI(
-    title="Monitor AnticorrupciÃ³n JGM â€” API",
-    description="Datos de alertas de parentesco, conflictos societarios y desvÃ­os de flujo de fondos",
+    title="Monitor Anticorrupción JGM — API",
+    description="Datos de alertas de parentesco, conflictos societarios y desvíos de flujo de fondos",
     version="1.0.0"
 )
 
@@ -82,14 +87,15 @@ if _FRONTEND_DATA.exists():
     app.mount("/data", StaticFiles(directory=str(_FRONTEND_DATA)), name="frontend-data")
 
 
-# â”€â”€â”€ helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─── helpers ───────────────────────────────────────────────────────────────────
 
 def _load(nombre: str) -> dict:
-    """Carga un JSON del directorio data/. Si no existe, intenta desde PostgreSQL."""
-    path = DATA_DIR / nombre
-    if path.exists():
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
+    """Carga un JSON de src/data o src/frontend/data. Si no existe, intenta desde PostgreSQL."""
+    for base in DATA_DIRS:
+        path = base / nombre
+        if path.exists():
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
     # Fallback: intentar desde PostgreSQL
     if DATABASE_URL and nombre == "inteligencia.json":
         return _load_from_db() or {}
@@ -97,7 +103,7 @@ def _load(nombre: str) -> dict:
 
 
 def _load_from_db() -> dict | None:
-    """Carga el Ãºltimo snapshot de inteligencia.json desde PostgreSQL."""
+    """Carga el último snapshot de inteligencia.json desde PostgreSQL."""
     try:
         import psycopg2
         conn = psycopg2.connect(DATABASE_URL)
@@ -123,11 +129,16 @@ def _serve_html(filename: str) -> HTMLResponse:
     return HTMLResponse(content=path.read_text(encoding="utf-8"))
 
 
-# â”€â”€â”€ rutas frontend â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+def _token_ok(token: str | None) -> bool:
+    """Sin REFRESH_TOKEN configurado no se acepta ningún token."""
+    return bool(REFRESH_TOKEN) and token == REFRESH_TOKEN
+
+
+# ─── rutas frontend ────────────────────────────────────────────────────────────
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def root():
-    """PÃ¡gina principal â€” sirve index.html."""
+    """Página principal — sirve index.html."""
     return _serve_html("index.html")
 
 
@@ -171,26 +182,23 @@ def documentacion_html():
     return _serve_html("documentacion.html")
 
 
-@app.get("/dashboard.html", response_class=HTMLResponse, include_in_schema=False)
+@app.get("/dashboard.html", include_in_schema=False)
 def dashboard_html():
-    """Dashboard HTML con datos incrustados como JS global."""
-    path = FRONTEND_DIR / "dashboard.html"
-    if not path.exists():
-        raise HTTPException(status_code=404, detail="Dashboard no encontrado")
-    intel = _load("inteligencia.json")
-    html = path.read_text(encoding="utf-8")
-    inject = f"\n<script>window.__JGM_DATA__ = {json.dumps(intel, ensure_ascii=False)};</script>\n"
-    html = html.replace("</head>", inject + "</head>", 1)
-    return HTMLResponse(content=html)
+    """dashboard.html sólo tiene datos de demostración fijos en el código (nombres,
+    CUIL y montos ficticios mezclados con funcionarios reales). Mientras no se
+    conecte a datos reales, se redirige a la portada para no publicarlos."""
+    return RedirectResponse(url="/", status_code=307)
 
 
-# â”€â”€â”€ API endpoints â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─── API endpoints ─────────────────────────────────────────────────────────────
 
 @app.get("/api/health")
 def health():
-    """Health check â€” estado del servicio y Ãºltimo pipeline."""
+    """Health check — estado del servicio y último pipeline."""
     intel = _load("inteligencia.json")
     meta = intel.get("meta", {})
+    meta_portal = _load("meta.json")
+    cruces = _load("cruces.json")
     db_ok = False
     if DATABASE_URL:
         try:
@@ -202,10 +210,10 @@ def health():
             db_ok = False
     return {
         "status": "ok",
-        "servicio": "Monitor AnticorrupciÃ³n JGM",
-        "ultima_actualizacion": meta.get("ultima_actualizacion"),
-        "total_alertas": meta.get("total_alertas", 0),
-        "alertas_alta": meta.get("alertas_alta", 0),
+        "servicio": "Monitor Anticorrupción JGM",
+        "ultima_actualizacion": meta.get("ultima_actualizacion") or meta_portal.get("generado"),
+        "total_alertas": meta.get("total_alertas", cruces.get("total", 0) if isinstance(cruces, dict) else 0),
+        "alertas_alta": meta.get("alertas_alta", cruces.get("altos", 0) if isinstance(cruces, dict) else 0),
         "db_conectada": db_ok,
         "timestamp": datetime.now().isoformat()
     }
@@ -213,7 +221,7 @@ def health():
 
 @app.get("/api/db-status")
 def db_status():
-    """Estado de la conexiÃ³n a PostgreSQL."""
+    """Estado de la conexión a PostgreSQL."""
     if not DATABASE_URL:
         return {"conectada": False, "motivo": "DATABASE_URL no configurada"}
     try:
@@ -232,7 +240,7 @@ def db_status():
             "ultimo_snapshot": ultimo[0].isoformat() if ultimo else None
         }
     except psycopg2.errors.UndefinedTable:
-        return {"conectada": True, "motivo": "Tabla pipeline_snapshots no creada aÃºn â€” correr /api/init-db"}
+        return {"conectada": True, "motivo": "Tabla pipeline_snapshots no creada aún — correr /api/init-db"}
     except Exception as e:
         return {"conectada": False, "motivo": str(e)}
 
@@ -240,8 +248,8 @@ def db_status():
 @app.post("/api/init-db")
 def init_db(x_refresh_token: str = Header(None)):
     """Crea las tablas en PostgreSQL si no existen."""
-    if x_refresh_token != REFRESH_TOKEN:
-        raise HTTPException(status_code=401, detail="Token invÃ¡lido")
+    if not _token_ok(x_refresh_token):
+        raise HTTPException(status_code=401, detail="Token inválido")
     if not DATABASE_URL:
         raise HTTPException(status_code=503, detail="DATABASE_URL no configurada")
     try:
@@ -296,19 +304,19 @@ def get_alertas(
 
 @app.get("/api/grafo")
 def get_grafo():
-    """Grafo de nodos para visualizaciÃ³n (funcionarios, empresas, vÃ­nculos)."""
+    """Grafo de nodos para visualización (funcionarios, empresas, vínculos)."""
     data = _load("inteligencia.json")
     grafo = data.get("grafo", {})
     if not grafo:
-        raise HTTPException(status_code=404, detail="Grafo no disponible todavÃ­a")
+        raise HTTPException(status_code=404, detail="Grafo no disponible todavía")
     return grafo
 
 
 @app.get("/api/contratos")
 def get_contratos(
     tipo: str = Query(None, description="adjudicacion o convocatoria"),
-    monto_min: float = Query(None, description="Monto mÃ­nimo en ARS"),
-    limit: int = Query(100, description="MÃ¡ximo de resultados")
+    monto_min: float = Query(None, description="Monto mínimo en ARS"),
+    limit: int = Query(100, description="Máximo de resultados")
 ):
     """Contratos y licitaciones de JGM."""
     data = _load("comprar_raw.json")
@@ -354,6 +362,92 @@ def get_resumen():
         }
     return data
 
+
+
+# ─── /api/v1 — alertas y grafo a partir de cruces.json ─────────────────────────
+# alertas.html y grafos_nodos.html consumen estas rutas. Se arman con el cruce
+# real que genera scripts/generar_cruces_pen.py (src/frontend/data/cruces.json).
+
+_NIVEL_V1 = {"ALTO": "alta", "MEDIO": "media", "BAJO": "baja"}
+
+
+def _cruces_lista() -> list[dict]:
+    data = _load("cruces.json")
+    if isinstance(data, dict):
+        return data.get("cruces", []) or []
+    return data if isinstance(data, list) else []
+
+
+def _tipo_v1(tipo: str) -> str:
+    t = (tipo or "").upper()
+    if "APELLIDO" in t:
+        return "apellido"
+    if "MULTI-ORGANISMO" in t:
+        return "concentracion"
+    return "societario"
+
+
+def _alerta_v1(c: dict) -> dict:
+    func = c.get("funcionario") or "—"
+    emp = c.get("empresa") or "—"
+    desc = (
+        f"{func} ({c.get('cargo') or '—'}) · Proveedor: {emp} (CUIT {c.get('cuit') or '—'}) · "
+        f"Organismo: {c.get('organismo') or '—'} · Contratos: {c.get('contratos', 0)}. "
+        "Indicador algorítmico de riesgo, no una acusación."
+    )
+    return {
+        "nivel": _NIVEL_V1.get(str(c.get("nivel", "")).upper(), "baja"),
+        "tipo": _tipo_v1(c.get("tipo")),
+        "titulo": c.get("tipo") or "Cruce",
+        "descripcion": desc,
+        "fecha_creacion": c.get("fecha"),
+        "monto_involucrado": c.get("monto") or None,
+        "link": c.get("link"),
+    }
+
+
+@app.get("/api/v1/alertas")
+def get_alertas_v1(
+    nivel: str = Query(None, description="alta | media | baja"),
+    tipo: str = Query(None, description="apellido | societario | concentracion"),
+    limit: int = Query(200, ge=1, le=1000),
+):
+    """Alertas de cruce para alertas.html (lista plana)."""
+    alertas = [_alerta_v1(c) for c in _cruces_lista()]
+    if nivel:
+        alertas = [a for a in alertas if a["nivel"] == nivel.lower()]
+    if tipo:
+        alertas = [a for a in alertas if a["tipo"] == tipo.lower()]
+    return alertas[:limit]
+
+
+@app.get("/api/v1/grafo/nodos")
+def get_grafo_v1():
+    """Nodos (funcionarios / proveedores) y aristas para grafos_nodos.html."""
+    nodes, edges, vistos = [], [], set()
+    for c in _cruces_lista():
+        prov_id = c.get("cuit") or c.get("empresa")
+        if not prov_id:
+            continue
+        if prov_id not in vistos:
+            vistos.add(prov_id)
+            nodes.append({"id": prov_id, "label": c.get("empresa") or prov_id, "grupo": "proveedor",
+                          "title": c.get("organismo") or ""})
+        func = c.get("funcionario")
+        if not func or func == "—":
+            continue
+        func_id = "F:" + func
+        if func_id not in vistos:
+            vistos.add(func_id)
+            nodes.append({"id": func_id, "label": func, "grupo": "funcionario",
+                          "title": c.get("cargo") or ""})
+        tipo = _tipo_v1(c.get("tipo"))
+        edges.append({
+            "from": func_id, "to": prov_id,
+            "type": {"apellido": "parentesco", "concentracion": "fondos"}.get(tipo, "societario"),
+            "nivel": _NIVEL_V1.get(str(c.get("nivel", "")).upper(), "baja"),
+        })
+    return {"nodes": nodes, "edges": edges}
 
 
 # ─── Agente IA — chat de solo lectura por área ────────────────────────────────
@@ -584,15 +678,15 @@ async def chat_agente(area: str, body: ChatIn, request: Request):
 
 @app.post("/api/refresh")
 def refresh(x_refresh_token: str = Header(None)):
-    """Dispara el pipeline de scraping y anÃ¡lisis."""
-    if x_refresh_token != REFRESH_TOKEN:
-        raise HTTPException(status_code=401, detail="Token invÃ¡lido")
+    """Dispara el pipeline de scraping y análisis."""
+    if not _token_ok(x_refresh_token):
+        raise HTTPException(status_code=401, detail="Token inválido")
     try:
-        pipeline_path = Path(__file__).parent / "pipeline.py"
+        pipeline_path = Path(__file__).parent.parent / "pipeline.py"  # src/pipeline.py
         result = subprocess.run(
             [sys.executable, str(pipeline_path)],
             capture_output=True, text=True, timeout=600,
-            cwd=str(Path(__file__).parent)
+            cwd=str(pipeline_path.parent)
         )
         # Si hay DATABASE_URL, guardar snapshot en PostgreSQL
         if result.returncode == 0 and DATABASE_URL:
@@ -610,7 +704,7 @@ def refresh(x_refresh_token: str = Header(None)):
 
 
 def _save_snapshot_to_db():
-    """Guarda el Ãºltimo inteligencia.json como snapshot en PostgreSQL."""
+    """Guarda el último inteligencia.json como snapshot en PostgreSQL."""
     try:
         import psycopg2
         intel = _load("inteligencia.json")

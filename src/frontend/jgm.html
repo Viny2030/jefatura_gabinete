@@ -623,7 +623,7 @@ var sortStateP = { col: null, asc: true };
 function fmt(n) {
   if (n === null || n === undefined || n !== n) return '—';
   if (n === 0) return '—';
-  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e9) return '$' + (n/1e9).toFixed(1).replace('.', ',') + ' mil M';
   if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
   return '$' + Math.round(n).toLocaleString('es-AR');
 }

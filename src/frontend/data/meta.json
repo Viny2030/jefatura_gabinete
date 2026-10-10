@@ -1,24 +1,38 @@
 {
-  "generado": "2026-10-09 12:17",
+  "generado": "2026-10-10 14:41",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
-  "total_contratos": 179,
-  "total_personal": 0,
+  "total_contratos": 795,
+  "total_personal": 1414,
   "ramas": {
     "jgm": {
       "contratos": 179,
+      "contratos_adjudicados": 127,
+      "contratos_con_monto": 10,
       "personal": 817,
+      "personal_identificado": 524,
       "monto_total": 1050196258.2900001
     },
     "sgp": {
       "contratos": 263,
+      "contratos_adjudicados": 209,
+      "contratos_con_monto": 7,
       "personal": 143,
+      "personal_identificado": 123,
       "monto_total": 119502053.8
     },
     "presidencia": {
       "contratos": 353,
+      "contratos_adjudicados": 237,
+      "contratos_con_monto": 20,
       "personal": 454,
+      "personal_identificado": 206,
       "monto_total": 6217389074.82
     }
+  },
+  "datos_al": {
+    "contratos": "2026-10-08",
+    "personal": "2026-07-06",
+    "nomina_regenerada_hoy": false
   }
 }

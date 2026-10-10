@@ -381,7 +381,7 @@ footer a { color: var(--accent); text-decoration: none; }
           <th onclick="sortC('proveedor')">Proveedor</th>
           <th>CUIT</th>
           <th onclick="sortC('tipo_contratacion')">Tipo</th>
-          <th onclick="sortC('fecha_adjudicacion')">Fecha</th>
+          <th onclick="sortC('fecha_adjudicacion')" title="Fecha de apertura del proceso según COMPR.AR">Fecha apertura</th>
           <th>Gestión</th>
           <th style="text-align:right" onclick="sortC('monto_adjudicado')">Monto ARS</th>
         </tr></thead>
@@ -634,7 +634,7 @@ let sortStateP = { col: null, asc: true };
 function fmt(n) {
   if (!n && n !== 0) return '—';
   if (n === 0) return 'Ad Honorem';
-  if (n >= 1e9) return '$' + (n/1e9).toFixed(1) + 'B';
+  if (n >= 1e9) return '$' + (n/1e9).toFixed(1).replace('.', ',') + ' mil M';
   if (n >= 1e6) return '$' + (n/1e6).toFixed(1) + 'M';
   return '$' + Math.round(n).toLocaleString('es-AR');
 }
@@ -1024,12 +1024,13 @@ function initCharts() {
     ]);
     const contratos = await rc.json();
     const personal  = await rp.json();
-    allC = (Array.isArray(contratos) && contratos.length) ? contratos : D_CONTRATOS;
-    allP = (Array.isArray(personal)  && personal.length)  ? personal  : D_PERSONAL;
+    allC = Array.isArray(contratos) ? contratos : [];
+    allP = Array.isArray(personal) ? personal : [];
   } catch (e) {
-    console.warn('JSON real no disponible, usando datos incrustados:', e);
-    allC = D_CONTRATOS;
-    allP = D_PERSONAL;
+    console.warn('JSON real no disponible:', e);
+    // No se muestran datos de ejemplo: serían cifras y nombres ficticios.
+    allC = [];
+    allP = [];
   }
   filtrarC();
   filtrarP();

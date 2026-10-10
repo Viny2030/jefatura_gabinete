@@ -24,6 +24,7 @@ Uso:
 import os
 import json
 import codecs
+import subprocess
 import pandas as pd
 from datetime import datetime
 
@@ -311,20 +312,47 @@ for rama, cfg in RAMAS.items():
             registros_n = []
 
     monto_total = float(df_c["monto_adjudicado"].sum()) if "monto_adjudicado" in df_c.columns else 0.0
+    # Indicadores de cobertura: cuánto del total tiene el dato que se suma/cuenta.
+    con_monto = int((pd.to_numeric(df_c["monto_adjudicado"], errors="coerce").fillna(0) > 0).sum()) \
+        if "monto_adjudicado" in df_c.columns else 0
+    adjudicados = int(df_c["estado"].astype(str).str.startswith("Adjudicado").sum()) \
+        if "estado" in df_c.columns else None
+    identificados = sum(1 for r in registros_n if r.get("apellido"))
     resumen[rama] = {
-        "contratos"  : len(registros_c),
-        "personal"   : len(registros_n),
-        "monto_total": monto_total,
+        "contratos"            : len(registros_c),
+        "contratos_adjudicados": adjudicados,
+        "contratos_con_monto"  : con_monto,
+        "personal"             : len(registros_n),
+        "personal_identificado": identificados,
+        "monto_total"          : monto_total,
     }
+
+
+def _fecha_commit(ruta):
+    """Fecha del último commit que cambió `ruta` (lo que de verdad indica cuándo
+    se actualizó el dato; `generado` cambia todos los días aunque nada cambie)."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", ruta],
+                             capture_output=True, text=True, timeout=20,
+                             cwd=os.path.dirname(os.path.abspath(ruta)))
+        return out.stdout.strip() or None
+    except Exception:
+        return None
 
 # ── [6] Meta ──────────────────────────────────────────────────────────────────
 meta = {
     "generado"        : datetime.now().strftime("%Y-%m-%d %H:%M"),
     "fuente_contratos": FUENTE,
     "csv_utilizado"   : os.path.basename(CONTRATOS_CSV),
-    "total_contratos" : len(df_con),
-    "total_personal"  : len(df_nom),
+    "total_contratos" : sum(r["contratos"] for r in resumen.values()),
+    "total_personal"  : sum(r["personal"] for r in resumen.values()),
     "ramas"           : resumen,
+    # Fecha del último cambio real de cada fuente (según git)
+    "datos_al"        : {
+        "contratos": max(filter(None, [_fecha_commit(os.path.join(OUT_DIR, f"contratos_{r}.json")) for r in RAMAS]), default=None),
+        "personal" : max(filter(None, [_fecha_commit(os.path.join(OUT_DIR, f"personal_{r}.json")) for r in RAMAS]), default=None),
+        "nomina_regenerada_hoy": _HAY_NOMINA,
+    },
 }
 guardar_json(meta, os.path.join(OUT_DIR, "meta.json"))
 
@@ -335,7 +363,7 @@ print("=" * 60)
 for rama, r in resumen.items():
     monto = r["monto_total"]
     if monto and monto >= 1e9:
-        monto_str = f"${monto/1e9:.1f}B"
+        monto_str = f"${monto/1e9:.1f} mil M"
     elif monto and monto >= 1e6:
         monto_str = f"${monto/1e6:.1f}M"
     elif monto:
