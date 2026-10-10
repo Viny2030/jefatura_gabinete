@@ -54,6 +54,24 @@ AREAS = {
         "safs":   ["1736", "586", "1737", "1771", "1742"],
         "csv":    "contratos_presidencia.csv",
     },
+    # Organismos que integran la jurisdicción 25 (JGM) en el Presupuesto 2026
+    # y compran con su propio SAF (fuente: crédito anual 2026, MECON). El SAF
+    # 368 (Comunicación y Prensa) ya se scrapea en "presidencia".
+    "jgm_ampliada": {
+        "nombre": "Jurisdicción JGM — organismos con SAF propio",
+        "safs":   ["1051",   # 103 CONICET
+                   "1316",   # 106 CONAE
+                   "1926",   # 336 Secretaría de Innovación, Ciencia y Tecnología
+                   "910",    # 107 Administración de Parques Nacionales
+                   "683",    # 207 ENACOM
+                   "1731",   # 322 Secretaría de Turismo y Ambiente
+                   "1829",   # 173 Agencia I+D+i
+                   "593",    # 205 AABE
+                   "1425",   # 121 Banco Nacional de Datos Genéticos
+                   "1998",   # 122 Centro Nacional de Ciberseguridad
+                   "1354"],  # 209 Agencia de Acceso a la Información Pública
+        "csv":    "contratos_jgm_ampliada.csv",
+    },
 }
 
 FECHA_DESDE      = "01/01/2023"

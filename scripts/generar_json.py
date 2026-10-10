@@ -378,6 +378,64 @@ def _fecha_commit(ruta):
     except Exception:
         return None
 
+# ── [5b] JGM ampliada: organismos de la jurisdicción con SAF propio ────────────
+# CONICET, CONAE, ENACOM, Parques, AABE, etc. (ver AREAS["jgm_ampliada"] en
+# scraper_comprar.py). No se suman a los totales de la rama "jgm" (SAF 305).
+ampliada = None
+if FUENTE == "comprar":
+    df_amp = cargar_area_csv("contratos_jgm_ampliada.csv", "JGM AMPLIADA")
+    if len(df_amp):
+        cols_amp = [c for c in COLS_CON if c in df_amp.columns]
+        df_out = df_amp[cols_amp].rename(columns={"fecha_str": "fecha_adjudicacion"}).copy()
+        # "saf" viene como "103 - Consejo Nacional de Investigaciones ..."
+        df_out["organismo_saf"] = df_amp.get("saf", pd.Series([""] * len(df_amp))).fillna("").astype(str).str.strip()
+        # Nombre vigente según el Presupuesto 2026 (COMPR.AR conserva nombres
+        # viejos, p. ej. "322 - Ministerio de Turismo y Deportes").
+        NOMBRES_2026 = {
+            "103": "Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
+            "106": "Comisión Nacional de Actividades Espaciales (CONAE)",
+            "107": "Administración de Parques Nacionales",
+            "121": "Banco Nacional de Datos Genéticos",
+            "122": "Centro Nacional de Ciberseguridad",
+            "173": "Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
+            "205": "Agencia de Administración de Bienes del Estado (AABE)",
+            "207": "Ente Nacional de Comunicaciones (ENACOM)",
+            "209": "Agencia de Acceso a la Información Pública",
+            "322": "Secretaría de Turismo y Ambiente",
+            "336": "Secretaría de Innovación, Ciencia y Tecnología",
+        }
+        _cod = df_out["organismo_saf"].str.extract(r"^(\d+)")[0].fillna("")
+        df_out["organismo_saf"] = [f"{c} - {NOMBRES_2026[c]}" if c in NOMBRES_2026 else o
+                                   for c, o in zip(_cod, df_out["organismo_saf"])]
+        registros_amp = df_out.to_dict(orient="records")
+        guardar_json(registros_amp, os.path.join(OUT_DIR, "contratos_jgm_ampliada.json"))
+
+        _m = pd.to_numeric(df_out["monto_adjudicado"], errors="coerce").fillna(0)
+        _mon = df_out["moneda"].fillna("") if "moneda" in df_out.columns else pd.Series([""] * len(df_out))
+        _ars = ~_mon.isin(["USD", "EUR"])
+        _adj = df_out["estado"].astype(str).str.startswith("Adjudicado")
+        por_org = []
+        for org, g in df_out.groupby("organismo_saf"):
+            idx = g.index
+            por_org.append({
+                "organismo":   org,
+                "procesos":    int(len(g)),
+                "adjudicados": int(_adj[idx].sum()),
+                "con_monto":   int((_m[idx] > 0).sum()),
+                "monto_ars":   float(_m[idx][_ars[idx]].sum()),
+                "monto_usd":   float(_m[idx][_mon[idx] == "USD"].sum()),
+            })
+        por_org.sort(key=lambda r: -r["procesos"])
+        ampliada = {
+            "procesos":    int(len(df_out)),
+            "adjudicados": int(_adj.sum()),
+            "con_monto":   int((_m > 0).sum()),
+            "monto_ars":   float(_m[_ars].sum()),
+            "monto_usd":   float(_m[_mon == "USD"].sum()),
+            "organismos":  por_org,
+        }
+        print(f"  [JGM AMPLIADA] {ampliada['procesos']} procesos en {len(por_org)} organismos")
+
 # ── [6] Meta ──────────────────────────────────────────────────────────────────
 meta = {
     "generado"        : datetime.now().strftime("%Y-%m-%d %H:%M"),
@@ -386,6 +444,7 @@ meta = {
     "total_contratos" : sum(r["contratos"] for r in resumen.values()),
     "total_personal"  : sum(r["personal"] for r in resumen.values()),
     "ramas"           : resumen,
+    "jgm_ampliada"    : ampliada,
     # Fecha del último cambio real de cada fuente (según git)
     "datos_al"        : {
         "contratos": max(filter(None, [_fecha_commit(os.path.join(OUT_DIR, f"contratos_{r}.json")) for r in RAMAS]), default=None),

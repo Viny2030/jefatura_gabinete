@@ -242,6 +242,7 @@ footer a { color: var(--accent); text-decoration: none; }
   <a onclick="switchSec('cruces')"    id="nav-cruces">🔗 Cruces</a>
   <a onclick="switchSec('organigrama')" id="nav-organigrama">🏛️ Organigrama</a>
   <a onclick="switchSec('presupuesto')" id="nav-presupuesto">💰 Presupuesto</a>
+  <a onclick="switchSec('ampliada'); cargarAmpliada()" id="nav-ampliada">🏢 Jurisdicción ampliada</a>
   <a onclick="switchSec('agente')"    id="nav-agente">🤖 Agente IA</a>
   <a href="manual_usuario.html">📖 Manual</a>
 </nav>
@@ -368,7 +369,7 @@ footer a { color: var(--accent); text-decoration: none; }
     </div>
     <div class="filtros">
       <input id="f-nup"    oninput="filtrarC()" placeholder="Nº proceso…"   style="width:160px"/>
-      <input id="f-nombre" oninput="filtrarC()" placeholder="Nombre…"        style="width:200px"/>
+      <input id="f-nombre" oninput="filtrarC()" placeholder="Objeto, proveedor o CUIT…" style="width:220px"/>
       <select id="f-tipo"  onchange="filtrarC()">
         <option value="">Todos los tipos</option>
         <option value="Contratación Directa">Contratación Directa</option>
@@ -580,6 +581,45 @@ footer a { color: var(--accent); text-decoration: none; }
   </div>
 </div><!-- /presupuesto -->
 
+<!-- ════════ JURISDICCIÓN AMPLIADA ════════ -->
+<div class="seccion" id="sec-ampliada">
+  <div style="font-size:12px;color:var(--muted);margin-bottom:14px;line-height:1.6">
+    Procesos de compra en COMPR.AR de los organismos que integran la jurisdicción JGM en el
+    Presupuesto 2026 y compran con su propio servicio administrativo (SAF): CONICET, CONAE, ENACOM,
+    Parques Nacionales, AABE, Secretaría de Innovación, Ciencia y Tecnología, entre otros.
+    Incluye procesos desde 2023, cuando varios de estos organismos dependían de otros ministerios.
+    No se suman a los indicadores de la pestaña Resumen (que corresponden al SAF 305).
+  </div>
+  <div class="kpi-grid" style="margin-bottom:20px">
+    <div class="kpi-card"><div class="kpi-label">Procesos</div><div class="kpi-val" id="ka-procesos">—</div><div class="kpi-sub" id="ka-procesos-sub">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Adjudicados</div><div class="kpi-val" id="ka-adj">—</div><div class="kpi-sub">con adjudicación en COMPR.AR</div></div>
+    <div class="kpi-card"><div class="kpi-label">Monto en pesos</div><div class="kpi-val" id="ka-monto">—</div><div class="kpi-sub" id="ka-monto-sub">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Monto en dólares</div><div class="kpi-val" id="ka-usd">—</div><div class="kpi-sub">contratos en USD</div></div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Por organismo</h2></div>
+    <div class="tw"><table><thead><tr>
+      <th>Organismo (SAF)</th><th style="text-align:right">Procesos</th><th style="text-align:right">Adjudicados</th>
+      <th style="text-align:right">Con monto</th><th style="text-align:right">Monto ARS</th><th style="text-align:right">Monto USD</th>
+    </tr></thead><tbody id="tbody-amp-org"></tbody></table></div>
+  </div>
+  <div class="panel">
+    <div class="ph"><h2>Procesos</h2><span id="amp-count" style="font-size:11px;color:var(--muted)"></span></div>
+    <div class="filtros">
+      <select id="fa-org" onchange="filtrarAmp()"><option value="">Todos los organismos</option></select>
+      <input id="fa-txt" oninput="filtrarAmp()" placeholder="Objeto, proveedor o CUIT…" style="width:240px"/>
+      <select id="fa-estado" onchange="filtrarAmp()">
+        <option value="">Todos los estados</option><option value="Adjudicado">Adjudicado</option>
+        <option value="Dejado Sin Efecto">Dejado Sin Efecto</option><option value="Desierto">Desierto</option>
+        <option value="Fracasado">Fracasado</option>
+      </select>
+    </div>
+    <div class="tw"><table><thead><tr>
+      <th>Nº Proceso</th><th>Organismo</th><th>Objeto</th><th>Proveedor</th><th>Fecha apertura</th><th>Estado</th><th style="text-align:right">Monto</th>
+    </tr></thead><tbody id="tbody-amp"></tbody></table></div>
+  </div>
+</div><!-- /ampliada -->
+
 <!-- ════════ AGENTE IA ════════ -->
 <div class="seccion" id="sec-agente">
   <div class="panel" style="max-width:720px;margin:0 auto">
@@ -742,8 +782,9 @@ function filtrarC() {
   var estado = document.getElementById('f-estado').value;
   var data = allC;
   if (nup)    data = data.filter(function(c){ return (c.numero_proceso||'').toLowerCase().indexOf(nup) >= 0; });
-  if (nombre) data = data.filter(function(c){ return (c.nombre_proceso||'').toLowerCase().indexOf(nombre) >= 0; });
-  if (tipo)   data = data.filter(function(c){ return (c.tipo_proceso||'') === tipo; });
+  if (nombre) data = data.filter(function(c){
+    return ((c.objeto||'') + ' ' + (c.proveedor||'') + ' ' + (c.cuit||'')).toLowerCase().indexOf(nombre) >= 0; });
+  if (tipo)   data = data.filter(function(c){ return (c.tipo_contratacion||c.tipo_proceso||'') === tipo; });
   if (estado) data = data.filter(function(c){ return (c.estado||'') === estado; });
   renderC(data);
 }
@@ -787,7 +828,7 @@ function sortC(col) {
 }
 
 function exportCSV() {
-  var h = ['numero_proceso','nombre_proceso','tipo_proceso','fecha_apertura','estado','unidad_ejecutora'];
+  var h = ['numero_proceso','objeto','proveedor','cuit','tipo_contratacion','fecha_apertura','estado','monto_adjudicado','moneda','fecha_perfeccionamiento'];
   var rows = allC.map(function(r){ return h.map(function(k){ return '"' + (r[k]||'').toString().replace(/"/g,'""') + '"'; }).join(','); });
   var a = document.createElement('a');
   a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(',')].concat(rows).join('\n'));
@@ -1406,6 +1447,62 @@ function actualizarArea(area) {
   }).catch(function() {
     setKpi('alertas', '—', 'cruces no disponibles');
   });
+}
+</script>
+<script>
+// ── Jurisdicción ampliada (carga al abrir la pestaña) ─────────────────────────
+var AMP = null;
+function cargarAmpliada() {
+  if (AMP) return;
+  AMP = [];
+  Promise.all([
+    fetch('data/contratos_jgm_ampliada.json').then(function(r){ return r.ok ? r.json() : []; }),
+    fetch('data/meta.json').then(function(r){ return r.json(); })
+  ]).then(function(res) {
+    AMP = Array.isArray(res[0]) ? res[0] : [];
+    var m = (res[1] && res[1].jgm_ampliada) || null;
+    function sinNum(t){ return String(t||'').replace(/^\d+\s*-\s*/, ''); }
+    if (m) {
+      document.getElementById('ka-procesos').textContent = m.procesos.toLocaleString('es-AR');
+      document.getElementById('ka-procesos-sub').textContent = 'en ' + m.organismos.length + ' organismos · desde 2023';
+      document.getElementById('ka-adj').textContent = m.adjudicados.toLocaleString('es-AR');
+      document.getElementById('ka-monto').textContent = m.monto_ars ? fmt(m.monto_ars) : 'Sin dato';
+      document.getElementById('ka-monto-sub').textContent = m.con_monto + ' procesos con monto publicado (se completa noche a noche)';
+      document.getElementById('ka-usd').textContent = m.monto_usd ? 'US$ ' + Math.round(m.monto_usd).toLocaleString('es-AR') : '—';
+      document.getElementById('tbody-amp-org').innerHTML = m.organismos.map(function(o){
+        return '<tr><td class="fw" style="font-size:12px">' + sinNum(o.organismo) + ' <span class="mono" style="color:var(--muted);font-size:10px">' + (String(o.organismo).split(' ')[0]||'') + '</span></td>'
+          + '<td style="text-align:right">' + o.procesos + '</td><td style="text-align:right">' + o.adjudicados + '</td>'
+          + '<td style="text-align:right">' + o.con_monto + '</td><td class="monto">' + (o.monto_ars ? fmt(o.monto_ars) : '—') + '</td>'
+          + '<td class="monto">' + (o.monto_usd ? 'US$ ' + Math.round(o.monto_usd).toLocaleString('es-AR') : '—') + '</td></tr>';
+      }).join('');
+      var sel = document.getElementById('fa-org');
+      m.organismos.forEach(function(o){ var op = document.createElement('option'); op.value = o.organismo; op.textContent = sinNum(o.organismo); sel.appendChild(op); });
+    } else {
+      document.getElementById('tbody-amp-org').innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted)">Todavía no hay datos de la jurisdicción ampliada.</td></tr>';
+    }
+    filtrarAmp();
+  }).catch(function(){ AMP = null; });
+}
+function filtrarAmp() {
+  if (!AMP) return;
+  var org = document.getElementById('fa-org').value;
+  var txt = document.getElementById('fa-txt').value.toLowerCase();
+  var est = document.getElementById('fa-estado').value;
+  var d = AMP;
+  if (org) d = d.filter(function(c){ return c.organismo_saf === org; });
+  if (txt) d = d.filter(function(c){ return ((c.objeto||'') + ' ' + (c.proveedor||'') + ' ' + (c.cuit||'')).toLowerCase().indexOf(txt) >= 0; });
+  if (est) d = d.filter(function(c){ return (c.estado||'') === est; });
+  document.getElementById('amp-count').textContent = d.length.toLocaleString('es-AR') + ' resultados' + (d.length > 300 ? ' (se muestran 300)' : '');
+  document.getElementById('tbody-amp').innerHTML = d.slice(0, 300).map(function(c){
+    var prov = (c.proveedor && c.objeto && c.objeto.indexOf(c.proveedor) === 0) ? '' : (c.proveedor||'');
+    return '<tr><td class="mono" style="font-size:11px;font-weight:700">' + (c.numero_proceso||'—') + '</td>'
+      + '<td style="font-size:10px;color:var(--muted)">' + String(c.organismo_saf||'').replace(/^\d+\s*-\s*/, '') + '</td>'
+      + '<td style="font-size:11px;max-width:300px">' + (c.objeto||'—') + '</td>'
+      + '<td style="font-size:11px">' + (prov ? prov + (c.cuit ? '<div class="mono" style="font-size:10px;color:var(--muted)">' + c.cuit + '</div>' : '') : '—') + '</td>'
+      + '<td class="mono" style="font-size:11px">' + (c.fecha_apertura||'').substring(0,10) + '</td>'
+      + '<td style="font-size:11px">' + (c.estado||'—') + '</td>'
+      + '<td class="monto" style="font-size:11px">' + fmtMontoC(c) + '</td></tr>';
+  }).join('');
 }
 </script>
 </body>

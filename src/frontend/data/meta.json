@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-10 18:19",
+  "generado": "2026-10-10 18:32",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 795,
@@ -36,8 +36,97 @@
       "contratos_usd": 0
     }
   },
+  "jgm_ampliada": {
+    "procesos": 1481,
+    "adjudicados": 985,
+    "con_monto": 0,
+    "monto_ars": 0.0,
+    "monto_usd": 0.0,
+    "organismos": [
+      {
+        "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
+        "procesos": 443,
+        "adjudicados": 221,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
+        "procesos": 231,
+        "adjudicados": 177,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "322 - Secretaría de Turismo y Ambiente",
+        "procesos": 187,
+        "adjudicados": 129,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "107 - Administración de Parques Nacionales",
+        "procesos": 162,
+        "adjudicados": 114,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "207 - Ente Nacional de Comunicaciones (ENACOM)",
+        "procesos": 143,
+        "adjudicados": 101,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "121 - Banco Nacional de Datos Genéticos",
+        "procesos": 75,
+        "adjudicados": 65,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "336 - Secretaría de Innovación, Ciencia y Tecnología",
+        "procesos": 74,
+        "adjudicados": 50,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
+        "procesos": 73,
+        "adjudicados": 57,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "209 - Agencia de Acceso a la Información Pública",
+        "procesos": 49,
+        "adjudicados": 42,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      },
+      {
+        "organismo": "173 - Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
+        "procesos": 44,
+        "adjudicados": 29,
+        "con_monto": 0,
+        "monto_ars": 0.0,
+        "monto_usd": 0.0
+      }
+    ]
+  },
   "datos_al": {
-    "contratos": "2026-10-08",
+    "contratos": "2026-10-10",
     "personal": "2026-07-06",
     "nomina_regenerada_hoy": false
   }

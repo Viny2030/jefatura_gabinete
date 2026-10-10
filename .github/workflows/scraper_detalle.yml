@@ -33,8 +33,11 @@ jobs:
         run: |
           for i in 1 2 3; do
             echo "Intento $i de 3..."
+            # --limit: ~7 s por proceso; 450 entran holgados en el timeout.
+            # Lo que no entra queda para la noche siguiente (checkpoint).
             python scripts/scraper_detalle_contratos.py --csv \
               contratos_jgm.csv contratos_sgp.csv contratos_presidencia.csv \
+              contratos_jgm_ampliada.csv --limit 450 \
               && break
             echo "Fallo intento $i, esperando 120s..."
             sleep 120

@@ -334,6 +334,7 @@ footer a { color: #1e40af; text-decoration: none; }
     </div>
     <div class="card-footer">
       <span>Gestiones: Posse · Francos · Adorni · Santilli</span>
+      <span id="jgm-ampliada-nota" style="display:block;font-size:11px;margin-top:4px"></span>
       <span class="ver">Ver JGM →</span>
     </div>
   </a>
@@ -552,6 +553,10 @@ footer a { color: #1e40af; text-decoration: none; }
       set("pres-autoridades", fmtEntero(typeof pres.personal_identificado === "number" ? pres.personal_identificado : pres.personal));
       set("pres-contratos", fmtEntero(pres.contratos));
       set("pres-monto", fmtMonto(pres.monto_total));
+      if (meta.jgm_ampliada && meta.jgm_ampliada.procesos) {
+        set("jgm-ampliada-nota", "+ " + fmtEntero(meta.jgm_ampliada.procesos) + " procesos de " +
+            meta.jgm_ampliada.organismos.length + " organismos de la jurisdicción (CONICET, CONAE, ENACOM…)");
+      }
 
       // Notas de cobertura (sólo si meta.json trae los campos nuevos)
       var ramas = [jgm, sgp, pres];
