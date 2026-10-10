@@ -328,6 +328,15 @@ for rama, cfg in RAMAS.items():
     }
 
 
+def _fecha_nomina():
+    ruta = os.path.join(OUT_DIR, "nomina_estado.json")
+    try:
+        with open(ruta, encoding="utf-8") as f:
+            return json.load(f).get("descargada")
+    except Exception:
+        return max(filter(None, [_fecha_commit(os.path.join(OUT_DIR, f"personal_{r}.json")) for r in RAMAS]), default=None)
+
+
 def _fecha_commit(ruta):
     """Fecha del último commit que cambió `ruta` (lo que de verdad indica cuándo
     se actualizó el dato; `generado` cambia todos los días aunque nada cambie)."""
@@ -350,7 +359,9 @@ meta = {
     # Fecha del último cambio real de cada fuente (según git)
     "datos_al"        : {
         "contratos": max(filter(None, [_fecha_commit(os.path.join(OUT_DIR, f"contratos_{r}.json")) for r in RAMAS]), default=None),
-        "personal" : max(filter(None, [_fecha_commit(os.path.join(OUT_DIR, f"personal_{r}.json")) for r in RAMAS]), default=None),
+        # La nómina se toma de nomina_estado.json (fecha de descarga real): el
+        # commit del archivo cambia también cuando sólo se recalculan campos.
+        "personal" : _fecha_nomina(),
         "nomina_regenerada_hoy": _HAY_NOMINA,
     },
 }

@@ -260,39 +260,39 @@ footer a { color: var(--accent); text-decoration: none; }
       <span style="color:#c4b5fd;font-size:14px">→</span>
       <span style="background:#fdf4ff;border:1px solid #ddd6fe;border-radius:6px;padding:4px 10px;font-weight:600;color:#7c3aed">Secretaría General</span>
     </div>
-    <div style="margin-left:auto;font-size:11px;color:var(--muted)">144 autoridades designadas · sub-organismo directo de Presidencia</div>
+    <div style="margin-left:auto;font-size:11px;color:var(--muted)">Sub-organismo directo de Presidencia</div>
   </div>
 
   <!-- KPIs -->
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-label">Autoridades designadas</div>
-      <div class="kpi-val">144</div>
+      <div class="kpi-val" data-kpi="titulares">—</div>
       <div class="kpi-sub">en nómina SGP</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Contratos registrados</div>
-      <div class="kpi-val">680</div>
-      <div class="kpi-sub">desde dic 2023</div>
+      <div class="kpi-val" data-kpi="contratos">—</div>
+      <div class="kpi-sub">desde 2023</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto total</div>
-      <div class="kpi-val">$6.2B</div>
+      <div class="kpi-val" data-kpi="monto">—</div>
       <div class="kpi-sub">ARS adjudicados</div>
     </div>
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Alertas activas</div>
-      <div class="kpi-val">4</div>
+      <div class="kpi-val" data-kpi="alertas">—</div>
       <div class="kpi-sub">2 de riesgo alto</div>
     </div>
     <div class="kpi-card kpi-green">
       <div class="kpi-label">Designados Santilli</div>
-      <div class="kpi-val">11</div>
+      <div class="kpi-val" data-kpi="santilli">—</div>
       <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card kpi-purple">
       <div class="kpi-label">Ad Honorem</div>
-      <div class="kpi-val">112</div>
+      <div class="kpi-val" data-kpi="adhonorem">—</div>
       <div class="kpi-sub">sin remuneración</div>
     </div>
   </div>
@@ -347,7 +347,7 @@ footer a { color: var(--accent); text-decoration: none; }
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto total</div>
-      <div class="kpi-val">$6.2B</div>
+      <div class="kpi-val" data-kpi="monto">—</div>
       <div class="kpi-sub">ARS adjudicados</div>
     </div>
   </div>
@@ -398,27 +398,27 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="kpi-grid" style="margin-bottom:20px">
     <div class="kpi-card">
       <div class="kpi-label">Total autoridades</div>
-      <div class="kpi-val">144</div>
+      <div class="kpi-val" data-kpi="titulares">—</div>
       <div class="kpi-sub">en nómina SGP</div>
     </div>
     <div class="kpi-card kpi-green">
       <div class="kpi-label">Designados Santilli</div>
-      <div class="kpi-val">11</div>
+      <div class="kpi-val" data-kpi="santilli">—</div>
       <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Femenino</div>
-      <div class="kpi-val">38%</div>
+      <div class="kpi-val" data-kpi="femenino">—</div>
       <div class="kpi-sub">de designados con dato</div>
     </div>
     <div class="kpi-card kpi-purple">
       <div class="kpi-label">Ad Honorem</div>
-      <div class="kpi-val">112</div>
+      <div class="kpi-val" data-kpi="adhonorem">—</div>
       <div class="kpi-sub">sin remuneración</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Sueldo est. promedio</div>
-      <div class="kpi-val">$3.1M</div>
+      <div class="kpi-val" data-kpi="sueldo_prom">—</div>
       <div class="kpi-sub">ARS bruto estimado</div>
     </div>
   </div>
@@ -484,69 +484,28 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="kpi-grid" style="margin-bottom:20px">
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Alertas totales</div>
-      <div class="kpi-val">3</div>
+      <div class="kpi-val" data-kpi="alertas">—</div>
       <div class="kpi-sub">cruces detectados</div>
     </div>
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Riesgo alto</div>
-      <div class="kpi-val">2</div>
+      <div class="kpi-val" data-kpi="alertas_alto">—</div>
       <div class="kpi-sub">coincidencia CUIL</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Riesgo medio</div>
-      <div class="kpi-val">2</div>
+      <div class="kpi-val" data-kpi="alertas_medio">—</div>
       <div class="kpi-sub">coincidencia apellido</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto involucrado</div>
-      <div class="kpi-val">$31.8M</div>
+      <div class="kpi-val" data-kpi="alertas_monto">—</div>
       <div class="kpi-sub">ARS en contratos alertados</div>
     </div>
   </div>
 
   <div class="stitle">Alertas detectadas — SGP</div>
-
-  <div class="cruce-card">
-    <div class="cruce-titulo">
-      <span class="badge-n alta">ALTO</span>
-      Coincidencia exacta de CUIL — Funcionario SGP / Proveedor
-    </div>
-    <div class="cruce-meta">
-      <span>👤 <strong>LÓPEZ, Sergio</strong> — Director Nacional SGP</span>
-      <span>🏢 <strong>LÓPEZ SISTEMAS SA</strong></span>
-      <span>CUIL: <strong class="mono">20-30456789-1</strong></span>
-      <span>📋 <strong>4</strong> contratos</span>
-      <span>💰 <strong>$18.6M</strong></span>
-      <span>Gestión: <span class="chip chip-francos">GF Francos</span></span>
-    </div>
-  </div>
-
-  <div class="cruce-card media">
-    <div class="cruce-titulo">
-      <span class="badge-n media">MEDIO</span>
-      Coincidencia de apellido — posible vínculo familiar
-    </div>
-    <div class="cruce-meta">
-      <span>🏢 <strong>TECNOSERV SRL</strong> — 7 contratos consecutivos TI</span>
-      <span>📋 <strong>7</strong> contratos</span>
-      <span>💰 <strong>$9.4M</strong></span>
-      <span>Gestión: <span class="chip chip-santilli">DS Santilli</span></span>
-    </div>
-  </div>
-
-  <div class="cruce-card media">
-    <div class="cruce-titulo">
-      <span class="badge-n media">MEDIO</span>
-      Cruce inter-organismos — apellido en SGP, proveedor en JGM
-    </div>
-    <div class="cruce-meta">
-      <span>👤 <strong>HERRERA, Marcelo</strong> — Jefe de Departamento SGP</span>
-      <span>🏢 <strong>HERRERA CONSULTING SA</strong> (contrato en JGM)</span>
-      <span>📋 <strong>1</strong> contrato</span>
-      <span>💰 <strong>$1.0M</strong></span>
-      <span>Gestión: <span class="chip chip-francos">GF Francos</span></span>
-    </div>
-  </div>
+  <div id="cruces-area"><div class="pb" style="color:var(--muted)">Cargando cruces…</div></div>
 
   <div class="panel" style="margin-top:24px">
     <div class="ph"><h2>Metodología</h2></div>
@@ -811,7 +770,7 @@ function filtrarP() {
 
 function renderP(data) {
   document.getElementById('tbody-p').innerHTML = data.slice(0, 400).map(p => `<tr>
-    <td class="fw">${p.apellido||'—'}</td>
+    ${(p.vacante || !p.apellido) ? '<td class="fw" style="color:var(--muted);font-style:italic">Cargo sin titular informado</td>' : '<td class="fw">' + p.apellido + '</td>'}
     <td>${p.nombre||'—'}</td>
     <td style="font-size:11px">${p.cargo||'—'}</td>
     <td style="font-size:11px;color:var(--muted)">${p.jerarquia||'—'}</td>
@@ -842,27 +801,6 @@ function exportCSVP() {
   a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent([h.join(','),...rows].join('\n'));
   a.download = 'personal_jgm.csv'; a.click();
 }
-
-// ── Datos demo ────────────────────────────────────────────────────────────────
-const D_CONTRATOS = [
-  { proveedor:'CONSULTORA NORTE SA',   cuit:'30-59876543-2', tipo_contratacion:'Concurso de precios',  fecha_adjudicacion:'2024-01-10', monto_adjudicado:2_100_000 },
-  { proveedor:'SERVICIO INTEGRAL SRL', cuit:'30-65432109-8', tipo_contratacion:'Licitación pública',   fecha_adjudicacion:'2025-03-14', monto_adjudicado:18_900_000 },
-  { proveedor:'TECNOSERV SRL',         cuit:'30-72109876-5', tipo_contratacion:'Contratación directa', fecha_adjudicacion:'2025-12-01', monto_adjudicado:4_200_000 },
-  { proveedor:'LÓPEZ SISTEMAS SA',     cuit:'20-30456789-1', tipo_contratacion:'Contratación directa', fecha_adjudicacion:'2024-06-15', monto_adjudicado:9_300_000 },
-  { proveedor:'DIGITAL HOUSE SRL',     cuit:'30-68123456-7', tipo_contratacion:'Licitación pública',   fecha_adjudicacion:'2024-09-22', monto_adjudicado:6_800_000 },
-  { proveedor:'SUÁREZ & HERMANOS SRL', cuit:'30-61234567-3', tipo_contratacion:'Concurso de precios',  fecha_adjudicacion:'2024-03-08', monto_adjudicado:2_800_000 },
-];
-
-const D_PERSONAL = [
-  { apellido:'SEÑORANS',  nombre:'Andrea Fabiana',  cargo:'Coordinador/a',      jerarquia:'Coordinador',        escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Adorni',    genero:'Femenino',  norma_designacion:'[Decreto 784/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/5957263/20251104)', sueldo_bruto_estimado_ars:3_200_000 },
-  { apellido:'MILEA',     nombre:'Aurora Dora',     cargo:'Coordinador/a',      jerarquia:'Coordinador',        escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Adorni',    genero:'Femenino',  norma_designacion:'[Decreto 784/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/5957263/20251104)', sueldo_bruto_estimado_ars:3_200_000 },
-  { apellido:'LORENZO',   nombre:'Demian',          cargo:'Coordinador/a',      jerarquia:'Coordinador',        escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Adorni',    genero:'Masculino', norma_designacion:'[Decreto 784/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/5957263/20251104)', sueldo_bruto_estimado_ars:3_200_000 },
-  { apellido:'IRAOLA',    nombre:'Francisco',       cargo:'Director/a General', jerarquia:'DN-DG',              escalafon:'Autoridad Superior del Poder Ejecutivo Nacional', jgm_al_ingreso:'Adorni',    genero:'Masculino', norma_designacion:'[Decreto 784/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/5957263/20251104)', sueldo_bruto_estimado_ars:5_000_000 },
-  { apellido:'LÓPEZ',     nombre:'Sergio',          cargo:'Director/a Nacional', jerarquia:'DN-DG',             escalafon:'Autoridad Superior del Poder Ejecutivo Nacional', jgm_al_ingreso:'Francos',   genero:'Masculino', norma_designacion:'[Decreto 412/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/312000/20240601)', sueldo_bruto_estimado_ars:5_000_000 },
-  { apellido:'SUÁREZ',    nombre:'Patricia',        cargo:'Coordinador/a',      jerarquia:'Coordinador',        escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Posse',     genero:'Femenino',  norma_designacion:'[Decreto 95/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/298000/20240115)',  sueldo_bruto_estimado_ars:3_200_000 },
-  { apellido:'HERRERA',   nombre:'Marcelo',         cargo:'Jefe/a de Departamento',jerarquia:'Jefe de Departamento',escalafon:'Personal del SINEP',                         jgm_al_ingreso:'Francos',   genero:'Masculino', norma_designacion:'[Decisión Administrativa 890/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/320000/20240801)', sueldo_bruto_estimado_ars:2_500_000 },
-  { apellido:'ROMERO',    nombre:'Claudia Beatriz', cargo:'Responsable',         jerarquia:'S-D',               escalafon:'Personal del SINEP',                             jgm_al_ingreso:'Pre-Milei', genero:'Femenino',  norma_designacion:'[Decisión Administrativa 234/2021](https://www.boletinoficial.gob.ar/detalleAviso/primera/240000/20210301)', sueldo_bruto_estimado_ars:1_800_000 },
-];
 
 // ── Organigrama (derivado de allP, sin fetch nuevo) ──────────────────────────
 const JERARQUIA_ORDEN = ['Ministro','Secretario','Subsecretario','DN-DG','Director - Primer Nivel Operativo','Director - Segundo Nivel Operativo','Coordinador','Jefe de Departamento','Ad Honorem','S-D'];
@@ -1035,6 +973,7 @@ function initCharts() {
   filtrarC();
   filtrarP();
   initCharts();
+  actualizarArea('sgp');
   renderOrganigrama();
   renderDecretos();
 })();
@@ -1093,6 +1032,89 @@ async function cargarMEACI(cuits) {
   } catch(e) { /* MEACI no disponible */ }
 }
 
+</script>
+<script>
+// ── Indicadores calculados desde los datos publicados ────────────────────────
+// Antes estas tarjetas tenían números fijos escritos en el HTML. Ahora todos
+// los elementos con data-kpi se completan a partir de allC / allP / cruces.json.
+function actualizarArea(area) {
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); }
+  function n(x) { return Number(x).toLocaleString('es-AR'); }
+  function setKpi(key, valor, sub) {
+    document.querySelectorAll('[data-kpi="' + key + '"]').forEach(function(el) {
+      el.textContent = valor;
+      var s = el.nextElementSibling;
+      if (sub != null && s && s.classList.contains('kpi-sub')) s.textContent = sub;
+    });
+  }
+  var C = (typeof allC !== 'undefined' && allC) || [];
+  var P = (typeof allP !== 'undefined' && allP) || [];
+
+  var tit = P.filter(function(p){ return !p.vacante && p.apellido; });
+  setKpi('titulares', n(tit.length), 'con titular · ' + n(P.length - tit.length) + ' cargos sin titular informado');
+
+  var adj = C.filter(function(c){ return String(c.estado || '').indexOf('Adjudicado') === 0; }).length;
+  var anios = C.map(function(c){ return c.ejercicio; }).filter(Boolean);
+  var desde = anios.length ? Math.min.apply(null, anios) : null;
+  setKpi('contratos', n(C.length), n(adj) + ' adjudicados' + (desde ? ' · desde ' + desde : ''));
+
+  var conMonto = C.filter(function(c){ return c.monto_adjudicado > 0; });
+  var monto = conMonto.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
+  setKpi('monto', conMonto.length ? fmt(monto) : 'Sin dato',
+         'suma de ' + n(conMonto.length) + ' de ' + n(C.length) + ' procesos con monto publicado');
+
+  setKpi('santilli', n(P.filter(function(p){ return p.jgm_al_ingreso === 'Santilli'; }).length),
+         'designados desde 30/06/2026');
+  setKpi('adhonorem', n(tit.filter(function(p){ return /ad honorem/i.test(p.jerarquia || ''); }).length),
+         'sin remuneración');
+  var subs = {};
+  P.forEach(function(p){ if (p.sub_organismo) subs[p.sub_organismo] = 1; });
+  setKpi('suborganismos', n(Object.keys(subs).length), 'con cargos en nómina');
+
+  var conGen = tit.filter(function(p){ return p.genero === 'Femenino' || p.genero === 'Masculino'; });
+  var fem = conGen.filter(function(p){ return p.genero === 'Femenino'; }).length;
+  setKpi('femenino', conGen.length ? Math.round(fem * 100 / conGen.length) + '%' : '—',
+         'de ' + n(conGen.length) + ' titulares con dato');
+
+  var sueldos = tit.map(function(p){ return p.sueldo_bruto_estimado_ars; }).filter(function(v){ return v > 0; });
+  setKpi('sueldo_prom', sueldos.length ? fmt(sueldos.reduce(function(a, b){ return a + b; }, 0) / sueldos.length) : '—',
+         'estimación por jerarquía, no dato oficial');
+
+  fetch('data/cruces.json').then(function(r){ return r.json(); }).then(function(d) {
+    var lista = (d.cruces || []).filter(function(c){ return (c.area || 'jgm') === area; });
+    var altos = lista.filter(function(c){ return c.nivel === 'ALTO'; });
+    var montoC = lista.reduce(function(s, c){ return s + (c.monto || 0); }, 0);
+    setKpi('alertas', n(lista.length), n(altos.length) + ' de nivel alto');
+    setKpi('alertas_alto', n(altos.length), 'CUIL = CUIT');
+    setKpi('alertas_medio', n(lista.length - altos.length), 'coincidencia de apellido');
+    setKpi('alertas_monto', montoC ? fmt(montoC) : '—', 'ARS en contratos alertados');
+
+    var cont = document.getElementById('cruces-area');
+    if (!cont) return;  // JGM tiene su propio render de cruces
+    if (!lista.length) {
+      cont.innerHTML = '<div class="panel"><div class="pb" style="text-align:center;color:var(--muted)">'
+        + 'Sin cruces detectados para esta área con los criterios actuales.</div></div>';
+      return;
+    }
+    cont.innerHTML = lista.map(function(c) {
+      var alto = c.nivel === 'ALTO';
+      return '<div class="cruce-card' + (alto ? '' : ' media') + '">'
+        + '<div class="cruce-titulo"><span class="badge-n ' + (alto ? 'alta' : 'media') + '">' + esc(c.nivel) + '</span> ' + esc(c.tipo) + '</div>'
+        + '<div class="cruce-meta">'
+        + '<span>👤 <strong>' + esc(c.funcionario) + '</strong> — ' + esc(c.cargo) + '</span>'
+        + '<span>🏢 <strong>' + esc(c.empresa) + '</strong> (CUIT ' + esc(c.cuit) + ')</span>'
+        + '<span>🏛 ' + esc(c.organismo) + '</span>'
+        + '<span>📋 <strong>' + esc(c.contratos) + '</strong> contrato(s)</span>'
+        + (c.monto ? '<span>💰 <strong>' + fmt(c.monto) + '</strong></span>' : '')
+        + '<span>Gestión: ' + chipGestion(c.gestion) + '</span>'
+        + (c.link ? '<span><a href="' + esc(c.link) + '" target="_blank" rel="noopener">Ver en BORA ↗</a></span>' : '')
+        + '</div></div>';
+    }).join('')
+    + '<div style="font-size:11px;color:var(--muted);margin-top:8px">Indicador algorítmico de riesgo (coincidencia de CUIL o apellido). No es una acusación ni determina responsabilidad.</div>';
+  }).catch(function() {
+    setKpi('alertas', '—', 'cruces no disponibles');
+  });
+}
 </script>
 </body>
 </html>

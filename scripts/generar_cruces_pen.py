@@ -28,6 +28,12 @@ log = logging.getLogger(__name__)
 # ── Rutas ─────────────────────────────────────────────────────────────────────
 BASE_DIR     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PERSONAL_JGM = os.path.join(BASE_DIR, "src", "frontend", "data", "personal_jgm.json")
+# Nómina de las tres áreas del portal (antes sólo se cruzaba JGM)
+PERSONAL_AREAS = {
+    "jgm":         PERSONAL_JGM,
+    "sgp":         os.path.join(BASE_DIR, "src", "frontend", "data", "personal_sgp.json"),
+    "presidencia": os.path.join(BASE_DIR, "src", "frontend", "data", "personal_presidencia.json"),
+}
 OUTPUT_JSON  = os.path.join(BASE_DIR, "src", "frontend", "data", "cruces.json")
 
 DATA_PATHS = [
@@ -101,23 +107,30 @@ def fmt_monto(n):
 
 # ── Carga de personal JGM ─────────────────────────────────────────────────────
 def cargar_personal():
-    with open(PERSONAL_JGM, encoding="utf-8") as f:
-        data = json.load(f)
     personal = []
-    for p in data:
-        cuil = cuil_a_str(p.get("cuil", ""))
-        apellido = normalizar(p.get("apellido", ""))
-        if not apellido or len(apellido) < 4:
+    for area, ruta in PERSONAL_AREAS.items():
+        if not os.path.exists(ruta):
+            log.warning(f"No existe {ruta}, se omite {area}")
             continue
-        personal.append({
-            "apellido":  apellido,
-            "nombre":    p.get("nombre", ""),
-            "cargo":     p.get("cargo", ""),
-            "jerarquia": p.get("jerarquia", ""),
-            "gestion":   p.get("jgm_al_ingreso", ""),
-            "cuil":      cuil,
-        })
-    log.info(f"Personal JGM cargado: {len(personal)} registros")
+        with open(ruta, encoding="utf-8") as f:
+            data = json.load(f)
+        n = 0
+        for p in data:
+            cuil = cuil_a_str(p.get("cuil", ""))
+            apellido = normalizar(p.get("apellido", ""))
+            if not apellido or len(apellido) < 4:
+                continue
+            personal.append({
+                "area":      area,
+                "apellido":  apellido,
+                "nombre":    p.get("nombre", ""),
+                "cargo":     p.get("cargo", ""),
+                "jerarquia": p.get("jerarquia", ""),
+                "gestion":   p.get("jgm_al_ingreso", ""),
+                "cuil":      cuil,
+            })
+            n += 1
+        log.info(f"Personal {area} cargado: {n} registros")
     return personal
 
 
@@ -188,6 +201,7 @@ def nivel1(personal, contratos):
             monto = parse_monto(c["monto_bora"])
             cruces.append({
                 "nivel":       "ALTO",
+                "area":        p["area"],
                 "tipo":        "CUIL/CUIT exacto — Funcionario activo / Proveedor",
                 "funcionario": f"{p['apellido']}, {p['nombre']}",
                 "cargo":       p["cargo"],
@@ -231,6 +245,8 @@ APELLIDOS_COMUNES = {
     "ANDRES", "BENITO", "FABIAN", "MARCOS", "NICOLAS", "PASCUAL", "VALENTIN",
     "BLANCA", "ROSA", "PALMA", "CAMPOS", "MONTES", "PRADO", "SOLAR", "PUENTE",
     "GRANDE", "NIETO", "LEON", "LOBO", "BRAVO", "DELGADO", "FUENTES",
+    "FRANCO", "GABRIEL", "BAUTISTA", "SALVADOR", "ISIDRO", "DAVID", "LUCAS",
+    "MARIANO", "JULIAN", "EMILIO", "FELIPE", "MANUEL", "ANGEL", "ESTEBAN",
 }
 
 # Personas humanas: CUIT con prefijo 20/23/24/27.
@@ -276,10 +292,11 @@ def nivel2(personal, contratos):
             if not razon:
                 continue
             if coincide_apellido(apellido, razon, c["cuit"]):
-                key = f"{apellido}|{c['proveedor']}"
+                key = f"{p['area']}|{apellido}|{p['nombre']}|{c['proveedor']}"
                 if key not in agrupados:
                     agrupados[key] = {
                         "nivel":       "MEDIO",
+                        "area":        p["area"],
                         "tipo":        "Apellido en razón social — posible vínculo",
                         "funcionario": f"{p['apellido']}, {p['nombre']}",
                         "cargo":       p["cargo"],
@@ -332,6 +349,7 @@ def nivel3(contratos):
 
         cruces.append({
             "nivel":       "MEDIO",
+            "area":        "jgm",
             "tipo":        f"Proveedor multi-organismo — JGM + {len(otros)} organismo(s) mas",
             "funcionario": "—",
             "cargo":       "—",
@@ -388,6 +406,9 @@ def main():
             "altos":       altos,
             "medios":      medios,
             "monto_total": monto_total,
+            "por_area":    {a: {"total": sum(1 for c in todos if c.get("area") == a),
+                                "altos": sum(1 for c in todos if c.get("area") == a and c["nivel"] == "ALTO")}
+                            for a in PERSONAL_AREAS},
             "cruces":      todos[:100],
         }
 

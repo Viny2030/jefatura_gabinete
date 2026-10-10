@@ -11,9 +11,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "Masculino",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": 20218346414.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -27,9 +28,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -43,9 +45,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -59,9 +62,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -75,9 +79,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -91,9 +96,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -107,9 +113,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 5000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -123,9 +130,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -141,7 +149,8 @@
     "norma_designacion": "[Decreto 85/2014](https://www.boletinoficial.gob.ar/detalleAviso/primera/101452/20140203?busqueda=1);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20129827298.0,
-    "fecha_ingreso": "2014-02-03"
+    "fecha_ingreso": "2014-02-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -157,7 +166,8 @@
     "norma_designacion": "[Decreto 85/2014](https://www.boletinoficial.gob.ar/detalleAviso/primera/101452/20140203?busqueda=1);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20226241508.0,
-    "fecha_ingreso": "2014-02-03"
+    "fecha_ingreso": "2014-02-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -173,7 +183,8 @@
     "norma_designacion": "[Decreto 85/2014](https://www.boletinoficial.gob.ar/detalleAviso/primera/101452/20140203?busqueda=1);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20148386820.0,
-    "fecha_ingreso": "2014-02-03"
+    "fecha_ingreso": "2014-02-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -189,7 +200,8 @@
     "norma_designacion": "[Decreto OCA Nº 159/18]();;[RESOL-2019-130-APN-SGP](EX-2018-61403595- -APN-CGD#SGP);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20148221953.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -205,7 +217,8 @@
     "norma_designacion": "[Decreto 85/2014](https://www.boletinoficial.gob.ar/detalleAviso/primera/101452/20140203?busqueda=1);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 27318813472.0,
-    "fecha_ingreso": "2014-02-03"
+    "fecha_ingreso": "2014-02-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -221,7 +234,8 @@
     "norma_designacion": "[Decreto 85/2014](https://www.boletinoficial.gob.ar/detalleAviso/primera/101452/20140203?busqueda=1);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20229220242.0,
-    "fecha_ingreso": "2014-02-03"
+    "fecha_ingreso": "2014-02-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -235,9 +249,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -251,9 +266,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -267,9 +283,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "Femenino",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": 27245633128.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -285,7 +302,8 @@
     "norma_designacion": "[Decreto 480/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328586/20250721);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20173665556.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-07-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -301,7 +319,8 @@
     "norma_designacion": "[Decreto 550/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329371/20250806);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20120942140.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -317,7 +336,8 @@
     "norma_designacion": "[Decreto 551/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329373/20250806);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20120802284.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -333,7 +353,8 @@
     "norma_designacion": "[Decreto 552/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329372/20250806);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20236439225.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -349,7 +370,8 @@
     "norma_designacion": "[RESOL-2025-351-APN-SIGEN](EX-2025-107932420-APN-SIGEN);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20149595040.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -363,9 +385,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -379,9 +402,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -395,9 +419,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -411,9 +436,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -427,9 +453,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -443,9 +470,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -459,9 +487,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -475,9 +504,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -491,9 +521,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -507,9 +538,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -523,9 +555,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -539,9 +572,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -555,9 +589,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -571,9 +606,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -587,9 +623,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -605,7 +642,8 @@
     "norma_designacion": "[Decreto 531/2021](https://www.boletinoficial.gov.ar/detalleAviso/primera/248324/20210819);;[Resolución 154/2022](https://www.boletinoficial.gob.ar/detalleAviso/primera/258850/20220311);;[Decreto 454/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/293441/20230905);;[Resolución 262/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/308824/20240607);;[Decreto 670/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331290/20250915);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20274981653.0,
-    "fecha_ingreso": "2021-01-01"
+    "fecha_ingreso": "2021-08-19",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -619,9 +657,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -635,9 +674,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -651,9 +691,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -667,9 +708,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -683,9 +725,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -699,9 +742,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -715,9 +759,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -731,9 +776,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -747,9 +793,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -763,9 +810,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -779,9 +827,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -795,9 +844,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -811,9 +861,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -827,9 +878,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -843,9 +895,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -859,9 +912,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -875,9 +929,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -891,9 +946,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -907,9 +963,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -923,9 +980,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -939,9 +997,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -955,9 +1014,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -971,9 +1031,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -987,9 +1048,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1003,9 +1065,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1019,9 +1082,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1035,9 +1099,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1051,9 +1116,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1067,9 +1133,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1080,12 +1147,13 @@
     "jerarquia": "S-D",
     "escalafon": "Sindicatura General de la Nación",
     "car_categoria": null,
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Femenino",
     "norma_designacion": "[Decreto 832/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334872/20251125);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 23215790584.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-11-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1099,9 +1167,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1115,9 +1184,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1131,9 +1201,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1147,9 +1218,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1163,9 +1235,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1179,9 +1252,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1195,9 +1269,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1211,9 +1286,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1227,9 +1303,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1243,9 +1320,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1259,9 +1337,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1275,9 +1354,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1291,9 +1371,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1307,9 +1388,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1323,9 +1405,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1341,7 +1424,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 27332716374.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1357,7 +1441,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20148224715.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1371,9 +1456,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1389,7 +1475,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20126207604.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1403,9 +1490,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1419,9 +1507,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1437,7 +1526,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 27175468302.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1453,7 +1543,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 27170505862.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1469,7 +1560,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20220619428.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1485,7 +1577,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/detalleAviso/primera/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20248704633.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1499,9 +1592,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1515,9 +1609,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1531,9 +1626,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1549,7 +1645,8 @@
     "norma_designacion": "[Resolución 59-E/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/164351/20170530);;[Resolución 160/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/193115/20181002);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 27134657265.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-05-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1563,9 +1660,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1579,9 +1677,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1595,9 +1694,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1611,9 +1711,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1627,9 +1728,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1643,9 +1745,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1659,9 +1762,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1675,9 +1779,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1691,9 +1796,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1707,9 +1813,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1723,9 +1830,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1739,9 +1847,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1755,9 +1864,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1771,9 +1881,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1787,9 +1898,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1803,9 +1915,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1819,9 +1932,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1835,9 +1949,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1851,9 +1966,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1867,9 +1983,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1883,9 +2000,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1899,9 +2017,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1915,9 +2034,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1931,9 +2051,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1947,9 +2068,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1963,9 +2085,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1979,9 +2102,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -1995,9 +2119,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2011,9 +2136,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2027,9 +2153,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2043,9 +2170,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2059,9 +2187,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2075,9 +2204,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2091,9 +2221,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2107,9 +2238,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2123,9 +2255,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2139,9 +2272,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2155,9 +2289,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2171,9 +2306,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2187,9 +2323,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2203,9 +2340,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2219,9 +2357,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2235,9 +2374,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2251,9 +2391,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2267,9 +2408,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2283,9 +2425,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2299,9 +2442,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2315,9 +2459,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2331,9 +2476,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2347,9 +2493,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2363,9 +2510,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2379,9 +2527,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2395,9 +2544,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2411,9 +2561,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2427,9 +2578,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2443,9 +2595,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2459,9 +2612,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2475,9 +2629,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2491,9 +2646,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2509,7 +2665,8 @@
     "norma_designacion": "[Decreto 431/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/307956/20240522);",
     "sueldo_bruto_estimado_ars": 1800000,
     "cuil": 20342152776.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-05-22",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2523,9 +2680,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2539,9 +2697,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2555,9 +2714,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2571,9 +2731,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2587,9 +2748,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2603,9 +2765,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1800000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2621,7 +2784,8 @@
     "norma_designacion": "[Decreto 254/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/323615/20250408);",
     "sueldo_bruto_estimado_ars": 12000000,
     "cuil": 23317629664.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-04-08",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2635,9 +2799,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2653,7 +2818,8 @@
     "norma_designacion": "[Decreto 282/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/324353/20250424);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 27384614952.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-04-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2669,7 +2835,8 @@
     "norma_designacion": "[Decreto 282/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/324353/20250424);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20169196223.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-04-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2685,7 +2852,8 @@
     "norma_designacion": "[Decreto 282/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/324353/20250424);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20324217038.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-04-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2696,12 +2864,13 @@
     "jerarquia": "Ministro",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 852/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/335462/20251203);",
     "sueldo_bruto_estimado_ars": 12000000,
     "cuil": 20214381800.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2712,12 +2881,13 @@
     "jerarquia": "Ministro",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Adorni",
+    "jgm_al_ingreso": "Santilli",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 572/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343968/20260703);",
     "sueldo_bruto_estimado_ars": 12000000,
     "cuil": 20270502661.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-07-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2728,12 +2898,13 @@
     "jerarquia": "Secretario",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Adorni",
+    "jgm_al_ingreso": "Santilli",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 573/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343967/20260703);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20358639284.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-07-03",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2744,12 +2915,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Sin Información",
     "car_categoria": null,
-    "jgm_al_ingreso": "Adorni",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 525/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329065/20250731);;[Aviso Comercial - Radio y Televisión Argentina S.A.U.](https://www.boletinoficial.gob.ar/detalleAviso/segunda/A1457507/20251219?busqueda=1);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20233269183.0,
-    "fecha_ingreso": "2025-12-19"
+    "fecha_ingreso": "2025-07-31",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2760,12 +2932,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Sin Información",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 576/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/310050/20240704);;[Decreto 498/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328835/20250725);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20149615262.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-07-04",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2779,9 +2952,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2795,9 +2969,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2811,9 +2986,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2827,9 +3003,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2843,9 +3020,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2856,12 +3034,13 @@
     "jerarquia": "Ad Honorem",
     "escalafon": "Sin Información",
     "car_categoria": null,
-    "jgm_al_ingreso": "Adorni",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 525/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329065/20250731);;[Aviso Comercial - Contenidos Artísticos e Informativos Sociedad Anónima Unipersonal ](https://www.boletinoficial.gob.ar/detalleAviso/segunda/A1457447/20251219?busqueda=1);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20233269183.0,
-    "fecha_ingreso": "2025-12-19"
+    "fecha_ingreso": "2025-07-31",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2872,12 +3051,13 @@
     "jerarquia": "Secretario",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 994/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/316724/20241107);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20219545453.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-11-07",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2893,7 +3073,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20178150937.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2909,7 +3090,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 23178395599.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2925,7 +3107,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27055705742.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2941,7 +3124,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 27165771635.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2957,7 +3141,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20113856654.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2973,7 +3158,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 27237427160.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -2989,7 +3175,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20183814894.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3005,7 +3192,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20184048702.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3021,7 +3209,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 27140157673.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3037,7 +3226,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20268730649.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3053,7 +3243,8 @@
     "norma_designacion": "[Decreto 673/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331367/20250916);;",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 27049721515.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3069,7 +3260,8 @@
     "norma_designacion": "[Decreto 102/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/302214/20240131);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 27064392501.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-01-31",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3085,7 +3277,8 @@
     "norma_designacion": "[Resolución 286/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330168/20250821);;[Resolución 411/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342049/20260518);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20138004458.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3101,7 +3294,8 @@
     "norma_designacion": "[Decisión Administrativa 1109/2016](http://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=266353);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27119566016.0,
-    "fecha_ingreso": "2016-01-01"
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3117,7 +3311,8 @@
     "norma_designacion": "[Resolución 273/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330013/20250819);;[Resolución 317/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341197/20260427);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27148863399.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-19",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3133,7 +3328,8 @@
     "norma_designacion": "[Decisión Administrativa 1134/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/185258/20180605);;[Resolución 378/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331245/20250912);;[Resolución 705/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334753/20251119);;[Resolución 366/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341795/20260511);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20216740689.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-06-05",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3149,7 +3345,8 @@
     "norma_designacion": "[Resolución 720/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/165601/20170627);;[Resolución 903/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336348/20251217);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27107943183.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-06-27",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3160,12 +3357,13 @@
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 846/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336178/20251215);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20173320133.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-15",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3181,7 +3379,8 @@
     "norma_designacion": "[Resolución 719/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/165600/20170627);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27265575086.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-06-27",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3197,7 +3396,8 @@
     "norma_designacion": "[Resolución 643/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/287469/20230531);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27244829452.0,
-    "fecha_ingreso": "2023-01-01"
+    "fecha_ingreso": "2023-05-31",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3213,7 +3413,8 @@
     "norma_designacion": "[Resolución 591/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/286817/20230518);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27239791803.0,
-    "fecha_ingreso": "2023-01-01"
+    "fecha_ingreso": "2023-05-18",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3229,7 +3430,8 @@
     "norma_designacion": "[Resolución 774/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/166210/20170710);;[Resolución 526/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342960/20260610);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27222645153.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-07-10",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3245,7 +3447,8 @@
     "norma_designacion": "[Decisión Administrativa 1957/2020](https://www.boletinoficial.gob.ar/detalleAviso/primera/236770/20201102);;[Resolución 591/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/333438/20251027);;[Resolución 851/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336179/20251215);;[Resolución 319/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341199/20260427);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27264018191.0,
-    "fecha_ingreso": "2020-01-01"
+    "fecha_ingreso": "2020-11-02",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3261,7 +3464,8 @@
     "norma_designacion": "[Decisión Administrativa 1433/2020](https://www.boletinoficial.gob.ar/detalleAviso/primera/233449/20200811);;[Resolución 378/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331245/20250912);;[Resolución 705/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334753/20251119);;[Resolución 318/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341198/20260427);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20285045070.0,
-    "fecha_ingreso": "2020-01-01"
+    "fecha_ingreso": "2020-08-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3277,7 +3481,8 @@
     "norma_designacion": "[Decisión Administrativa 515/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/166505/20170714);;[Resolución 230/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329080/20250731);;[Resolución 651/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334021/20251105);;[Resolución 323/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341239/20260428);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23286055354.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-07-14",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3293,7 +3498,8 @@
     "norma_designacion": "[Resolución 790/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/188560/20180724);;[Resolución 958/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/291293/20230801);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20257043429.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-07-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3309,7 +3515,8 @@
     "norma_designacion": "[Resolución 292/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330298/20250825);;[Resolución 400/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341885/20260513);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27142108246.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3325,7 +3532,8 @@
     "norma_designacion": "[Resolución 244/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329390/20250806);;[Resolución 219/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340258/20260401);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23235158019.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3339,9 +3547,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 4000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3357,7 +3566,8 @@
     "norma_designacion": "[Resolución 795/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/188562/20180724);;[Resolución 948/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/291292/20230801);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20137015170.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-07-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3373,7 +3583,8 @@
     "norma_designacion": "[Resolución 277/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330015/20250819);;[RESOL-2025-554-APN-SC](EX- 2025-78442915- -APN-DGDYD#SC);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27057212093.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-19",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3384,12 +3595,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decisión Administrativa 678/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/310957/20240722);;[Resolución 378/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331245/20250912);;[Resolución 705/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334753/20251119);;[Resolución 617/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343574/20260625);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20170305397.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-07-22",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3405,7 +3617,8 @@
     "norma_designacion": "[Resolución 886/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/189512/20180808);;[Resolución 1172/2023](https://www.boletinoficial.gov.ar/detalleAviso/primera/293383/20230904);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27165816701.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-08-08",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3416,12 +3629,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 878/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336271/20251216);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20173296143.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3432,12 +3646,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 831/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336177/20251215);;[Resolución 413/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341994/20260515);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20259545995.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-15",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3453,7 +3668,8 @@
     "norma_designacion": "[Decisión Administrativa 1147/2020](https://www.boletinoficial.gob.ar/detalleAviso/primera/231438/20200630);;[Resolución 378/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331245/20250912);;[Resolución 705/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334753/20251119);;[Resolución 313/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341138/20260424);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20200055005.0,
-    "fecha_ingreso": "2020-01-01"
+    "fecha_ingreso": "2020-06-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3469,7 +3685,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/322528/20250314);;[Resolución 710/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334754/20251119);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27179583653.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-03-14",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3485,7 +3702,8 @@
     "norma_designacion": "[Resolución 8/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320935/20250211);;[Resolución 265/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329852/20250814);;[Resolución 324/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341240/20260428);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20139265565.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-02-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3496,12 +3714,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decisión Administrativa 710/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/311144/20240724);;[Resolución 378/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331245/20250912);;[Resolución 705/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334753/20251119);;[Resolución 618/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343575/20260625);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20121838010.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-07-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3517,7 +3736,8 @@
     "norma_designacion": "[Resolución 520/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/333155/20251021);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27249579578.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-10-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3528,12 +3748,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 631/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/313631/20240910);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20217305005.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-09-10",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3549,7 +3770,8 @@
     "norma_designacion": "[Resolución 318/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330473/20250828);;[Resolución 412/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342050/20260518);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20168135875.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3565,7 +3787,8 @@
     "norma_designacion": "[Resolución 735/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/165743/20170630);;[Resolución 402/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331731/20250922);;[Resolución 725/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334819/20251120);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27226752000.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-06-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3581,7 +3804,8 @@
     "norma_designacion": "[Resolución 801/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/166211/20170710);;[Resolución 1289/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/268346/20220810);;[Resolución 394/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331460/20250917);;[RESOL-2025-580-APN-SC](EX-2025-91136289- -APN-DGDYD#SC);;[Resolución 580/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/333437/20251027);;[Resolución 534/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342961/20260610);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23214763729.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-07-10",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3597,7 +3821,8 @@
     "norma_designacion": "[Decreto 231/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340557/20260410);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20149512188.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-04-10",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3611,9 +3836,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3627,9 +3853,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3643,9 +3870,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3659,9 +3887,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3675,9 +3904,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3691,9 +3921,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3707,9 +3938,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3723,9 +3955,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3739,9 +3972,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3755,9 +3989,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3771,9 +4006,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3787,9 +4023,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3803,9 +4040,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3819,9 +4057,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3835,9 +4074,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3851,9 +4091,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3867,9 +4108,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3883,9 +4125,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3899,9 +4142,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3915,9 +4159,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3931,9 +4176,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3947,9 +4193,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3963,9 +4210,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3979,9 +4227,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -3995,9 +4244,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4011,9 +4261,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4027,9 +4278,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4043,9 +4295,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4059,9 +4312,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4075,9 +4329,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4091,9 +4346,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4107,9 +4363,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4123,9 +4380,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4139,9 +4397,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4155,9 +4414,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4171,9 +4431,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4187,9 +4448,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4203,9 +4465,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4219,9 +4482,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4235,9 +4499,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4251,9 +4516,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4267,9 +4533,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4283,9 +4550,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4299,9 +4567,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4315,9 +4584,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4331,9 +4601,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4347,9 +4618,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4363,9 +4635,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4379,9 +4652,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4395,9 +4669,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4411,9 +4686,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4427,9 +4703,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4443,9 +4720,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4459,9 +4737,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4475,9 +4754,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4493,7 +4773,8 @@
     "norma_designacion": "[Decreto 232/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340556/20260410);",
     "sueldo_bruto_estimado_ars": 0,
     "cuil": 20047055556.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-04-10",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4507,9 +4788,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4523,9 +4805,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4539,9 +4822,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4555,9 +4839,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4571,9 +4856,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4587,9 +4873,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4603,9 +4890,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4619,9 +4907,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4635,9 +4924,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4651,9 +4941,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4667,9 +4958,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4683,9 +4975,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 0,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4696,12 +4989,13 @@
     "jerarquia": "Subsecretario",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Decreto 1089/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318050/20241212);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 27368073429.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-12-12",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4717,7 +5011,8 @@
     "norma_designacion": "[Decisión Administrativa 241/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306470/20240426);;[Resolución 713/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/316964/20241114);;[Resolución 231/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329194/20250801);;[Resolución 278/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340918/20260417);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20170956959.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-04-26",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4733,7 +5028,8 @@
     "norma_designacion": "[Decisión Administrativa 391/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/308115/20240524);;[Resolución 362/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331010/20250909);;[Resolución 704/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334752/20251119);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27228489889.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-05-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4744,12 +5040,13 @@
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Resolución 95/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318301/20241217);;[Resolución 28/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/321838/20250225);;[Resolución 704/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334752/20251119);;",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27291365693.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-12-17",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4765,7 +5062,8 @@
     "norma_designacion": "[Decisión Administrativa 176/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/305348/20240404);;[Resolución 362/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331010/20250909);;[Resolución 704/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334752/20251119);;[Resolución 227/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340411/20260407);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20334796893.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-04-04",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4776,12 +5074,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 862/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336268/20251216);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 24432452340.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4797,7 +5096,8 @@
     "norma_designacion": "[Decisión Administrativa 240/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/306471/20240426);;[Resolución 362/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331010/20250909);;[Resolución 704/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334752/20251119);;[Resolución 355/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341626/20260506);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27395584826.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-04-26",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4813,7 +5113,8 @@
     "norma_designacion": "[Resolución 272/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330012/20250819);;[Resolución 505/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342832/20260605);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27185658487.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-19",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4824,12 +5125,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Decisión Administrativa 752/2024](https://www.boletinoficial.gov.ar/detalleAviso/primera/311697/20240805);;[RESOL-2025-16-APN-SC](EX-2025-04546181- APN-SC);;[Resolución 270/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330010/20250819);;[Resolución 446/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342493/20260528);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27230932994.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-08-05",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4845,7 +5147,8 @@
     "norma_designacion": "[Decisión Administrativa 531/2021](https://www.boletinoficial.gov.ar/detalleAviso/primera/245080/20210601);;[Resolución 114/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325421/20250516);;[Resolución 309/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330353/20250826);;[Resolución 384/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331387/20250916);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27285058398.0,
-    "fecha_ingreso": "2021-01-01"
+    "fecha_ingreso": "2021-06-01",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4856,12 +5159,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Decisión Administrativa 958/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315661/20241017);;[Resolución 17/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/321431/20250219);;[Resolución 310/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330354/20250826);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27160715036.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-17",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4877,7 +5181,8 @@
     "norma_designacion": "[Resolución 271/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330011/20250819);;[Resolución 437/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342434/20260527);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20282328594.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-19",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4888,12 +5193,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decisión Administrativa 766/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/312073/20240812);;[Resolución 176/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/327586/20250627);;[Resolución 306/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330351/20250826);;[Resolución 445/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342492/20260528);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20342243380.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-08-12",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4909,7 +5215,8 @@
     "norma_designacion": "[Resolución 293/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330299/20250825);;[Resolución 438/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342435/20260527);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27207421834.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4920,12 +5227,13 @@
     "jerarquia": "Director - Segundo Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 124/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/319124/20241231);;[Resolución 321/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330474/20250828);;[Resolución 384/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331387/20250916);;[Resolución 435/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342433/20260527);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20249053121.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-12-31",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4941,7 +5249,8 @@
     "norma_designacion": "[Decreto 574/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/329706/20250812);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20182625923.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-12",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4957,7 +5266,8 @@
     "norma_designacion": "[Decisión Administrativa 564/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/168332/20170801);;[Decisión Administrativa 908/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/172479/20171019);;[Resolución 319/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330405/20250827);;[Resolución 494/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/332324/202510033);;[Resolución 330/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341241/20260428);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 23264022584.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-08-01",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4973,7 +5283,8 @@
     "norma_designacion": "[Resolución 365/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341794/20260511);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20131374462.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-05-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -4989,7 +5300,8 @@
     "norma_designacion": "[Resolución 259/2023](https://www.boletinoficial.gob.ar/detalleAviso/primera/282816/20230317);;[Resolución 86/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338482/20260218);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27125506238.0,
-    "fecha_ingreso": "2023-01-01"
+    "fecha_ingreso": "2023-03-17",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5005,7 +5317,8 @@
     "norma_designacion": "[Resolución 8/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325295/20250514);;[Resolución 101/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338624/20260223);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20245604425.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-05-14",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5021,7 +5334,8 @@
     "norma_designacion": "[RESOL-2025-109-APN-SC](EX-2024-90703430- -APN-SICYT#JGM);;[Resolución 109/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/324840/20250506);;[Resolución 138/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339147/20260306);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23224342799.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-05-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5037,7 +5351,8 @@
     "norma_designacion": "[Resolución 328/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330547/20250829);;[Resolución 138/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339147/20260306);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20299294731.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5053,7 +5368,8 @@
     "norma_designacion": "[RESOL-2025-116-APN-SC](EX-2025-29041441- -APN-SC);;[Resolución 116/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325554/20250519);;[Resolución 101/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338624/20260223);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27251810856.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-05-19",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5067,9 +5383,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 3200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5085,7 +5402,8 @@
     "norma_designacion": "[Resolución 307/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330352/20250826);;[Resolución 406/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341886/20260513);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20245466545.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-08-26",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5101,7 +5419,8 @@
     "norma_designacion": "[Resolución 382/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331321/20250915);;[Resolución 409/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341993/20260515);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20165216149.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-15",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5117,7 +5436,8 @@
     "norma_designacion": "[Resolución 211/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340189/20260331);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27295919049.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-03-31",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5133,7 +5453,8 @@
     "norma_designacion": "[Resolución 198/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328619/20250721);;[Resolución 220/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340259/20260401);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20382971834.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-07-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5144,12 +5465,13 @@
     "jerarquia": "Subsecretario",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 1088/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318051/20241212);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20340206011.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-12-12",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5160,12 +5482,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Resolución 132/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/319209/20250102);;[Resolución 493/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/332323/20251003);;[Resolución 587/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343335/20260619);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 27280320272.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2025-01-02",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5181,7 +5504,8 @@
     "norma_designacion": "[Resolución 599/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343489/20260624);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27342151758.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-06-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5197,7 +5521,8 @@
     "norma_designacion": "[Resolución 426/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342218/20260521);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20353195493.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-05-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5213,7 +5538,8 @@
     "norma_designacion": "[RESOL-2025-222-APN-SC](EX-2025-60015012- -APN-DGDYD#SC);;[Resolución 231/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340412/20260407);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27407485195.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-04-07",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5229,7 +5555,8 @@
     "norma_designacion": "[Decreto 368/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342152/20260520);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20374672968.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-05-20",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5245,7 +5572,8 @@
     "norma_designacion": "[Resolución 82/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/323868/20250411);;[Resolución 902/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336347/20251217);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20228840336.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-04-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5261,7 +5589,8 @@
     "norma_designacion": "[Resolución 192/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339850/20260325);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20281767292.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-03-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5275,9 +5604,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 5000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5293,7 +5623,8 @@
     "norma_designacion": "[Resolución 226/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/340410/20260407);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27385361136.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-04-07",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5309,7 +5640,8 @@
     "norma_designacion": "[Resolución 136/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/326004/20250527);;[Resolución 46/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338012/20260130);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27376072652.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-05-27",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5325,7 +5657,8 @@
     "norma_designacion": "[RESOL-2025-30-APN-SC](EX-2025-12666938- -APN-SC);;[Resolución 30/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/321942/20250226);;[Resolución 698/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334620/20251117);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20323599913.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-02-26",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5341,7 +5674,8 @@
     "norma_designacion": "[Resolución 46/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/322676/20250318);;[Resolución 904/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336349/20251217);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20211150654.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-03-18",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5357,7 +5691,8 @@
     "norma_designacion": "[Resolución 429/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342219/20260521);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 27209886184.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-05-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5373,7 +5708,8 @@
     "norma_designacion": "[Resolución 220/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/328977/20250729);;[Resolución 47/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338013/20260130);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20137994551.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-07-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5389,7 +5725,8 @@
     "norma_designacion": "[Resolución 131/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/325937/20250526);;[Resolución 47/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338013/20260130);",
     "sueldo_bruto_estimado_ars": 4000000,
     "cuil": 20343903406.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-05-26",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5403,9 +5740,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 4000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5421,7 +5759,8 @@
     "norma_designacion": "[Decreto 202/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/304128/20240229);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20164983146.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-02-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5435,9 +5774,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5453,7 +5793,8 @@
     "norma_designacion": "[RESOL-2024-280-APN-SIGEN](EX-2024-61479328-APN-SIGEN);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27339840437.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5469,7 +5810,8 @@
     "norma_designacion": "[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 23291981984.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-06-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5485,7 +5827,8 @@
     "norma_designacion": "[Resolución 1643/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/278067/20221221);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20168330007.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-12-21",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5501,7 +5844,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27244599694.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5517,7 +5861,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 20208786254.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5531,9 +5876,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5549,7 +5895,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20179085942.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5565,7 +5912,8 @@
     "norma_designacion": "[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;;;;",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20166891737.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-09-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5581,7 +5929,8 @@
     "norma_designacion": "[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27324324955.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-09-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5597,7 +5946,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27177219067.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5613,7 +5963,8 @@
     "norma_designacion": "[Resolución 553/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330667/20250901);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27282055541.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-01",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5629,7 +5980,8 @@
     "norma_designacion": "[RESOL-2019-1823-APN-INCAA#MECCYT]();;[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20247819682.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-09-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5645,7 +5997,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27206982441.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5661,7 +6014,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20175568922.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5677,7 +6031,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20279426097.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5693,7 +6048,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20128137565.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5709,7 +6065,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27254342136.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5725,7 +6082,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 27366960363.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5741,7 +6099,8 @@
     "norma_designacion": "[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20296917002.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5757,7 +6116,8 @@
     "norma_designacion": "[RESOL-2019-1823-APN-INCAA#MECCYT]();;[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20302764604.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-09-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5773,7 +6133,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 20301724005.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5789,7 +6150,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 20332639588.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5805,7 +6167,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 27278313501.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5821,7 +6184,8 @@
     "norma_designacion": "[RESOL-2019-1823-APN-INCAA#MECCYT]();;[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27270948087.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-09-29",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5837,7 +6201,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 27276356114.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5853,7 +6218,8 @@
     "norma_designacion": "[Resolución 1591/2022](https://www.boletinoficial.gob.ar/detalleAviso/primera/277302/20221206);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27263713635.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-12-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5869,7 +6235,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 27256787925.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5885,7 +6252,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);´;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20298020913.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5901,7 +6269,8 @@
     "norma_designacion": "[Resolución 1261/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/189803/20180814);;[RESOL-2020-155-APN-INCAA#MC]();;[Resolución 687/2020](https://www.boletinoficial.gob.ar/detalleAviso/primera/237034/20201106);;[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20240423422.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-08-14",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5917,7 +6286,8 @@
     "norma_designacion": "[Resolución 1261/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/189803/20180814);;[RESOL-2020-155-APN-INCAA#MC]();;[Resolución 687/2020](https://www.boletinoficial.gob.ar/detalleAviso/primera/237034/20201106);;[Resolución 1254/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/272716/20220929);;[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20215060501.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-08-14",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5933,7 +6303,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 20177892794.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5949,7 +6320,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20173630450.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5965,7 +6337,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27203833283.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5981,7 +6354,8 @@
     "norma_designacion": "[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 27332107718.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-06-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -5997,7 +6371,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20247792717.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6013,7 +6388,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27341783092.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6029,7 +6405,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20299757049.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6045,7 +6422,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20255677188.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6061,7 +6439,8 @@
     "norma_designacion": "[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27252570263.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-06-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6077,7 +6456,8 @@
     "norma_designacion": "[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23269988029.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-06-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6093,7 +6473,8 @@
     "norma_designacion": "[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 27245297241.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-06-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6109,7 +6490,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27344898788.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6125,7 +6507,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20263311923.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6141,7 +6524,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);;",
     "sueldo_bruto_estimado_ars": 2500000,
     "cuil": 20288570990.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6157,7 +6541,8 @@
     "norma_designacion": "[Resolución 40/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/320187/20250128);;[Resolución 607/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331939/20250925);;[Resolución 208/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343132/20260616);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20190075959.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-01-28",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6173,7 +6558,8 @@
     "norma_designacion": "[Decreto 223/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/304304/20240306);;[Decreto 35/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/337714/20260126);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20215510922.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-03-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6189,7 +6575,8 @@
     "norma_designacion": "[Decreto 223/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/304304/20240306);;[Decreto 35/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/337714/20260126);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20288629626.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-03-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6205,7 +6592,8 @@
     "norma_designacion": "[RESOL-2021-185-APN-SIGEN](EX-2021-101600112-APN-SIGEN);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 23146144799.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6216,12 +6604,13 @@
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Femenino",
     "norma_designacion": "[Resolución 870/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336269/20251216);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27222762044.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-16",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6237,7 +6626,8 @@
     "norma_designacion": "[Resolución 537/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/333066/20251020);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27255601313.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-10-20",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6253,7 +6643,8 @@
     "norma_designacion": "[Decisión Administrativa 59/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/178665/20180209);;[Resolución 652/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334022/20251105);;[Resolución 927/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336820/20251229);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 23256861364.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-02-09",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6264,12 +6655,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Femenino",
     "norma_designacion": "[Resolución 730/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334820/20251120);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 27297183953.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-11-20",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6285,7 +6677,8 @@
     "norma_designacion": "[Decisión Administrativa 1188/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/276486/20221125);;[Resolución 316/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330404/20250827);;[Resolución 605/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/333660/20251030);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20336840148.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-11-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6296,12 +6689,13 @@
     "jerarquia": "Coordinador",
     "escalafon": "Personal del SINEP",
     "car_categoria": "B0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 424/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/318878/20241227);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20307247586.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-12-27",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6317,7 +6711,8 @@
     "norma_designacion": "[Resolución 87/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/338483/20260218);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27139147257.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-02-18",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6328,12 +6723,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 806/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/335970/20251211);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 23268851879.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6349,7 +6745,8 @@
     "norma_designacion": "[Decisión Administrativa 499/2021](https://www.boletinoficial.gov.ar/detalleAviso/primera/244752/20210526);;[Resolución 339/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330734/20250902);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20283092039.0,
-    "fecha_ingreso": "2021-01-01"
+    "fecha_ingreso": "2021-05-26",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6365,7 +6762,8 @@
     "norma_designacion": "[Resolución 183/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/339613/20260318);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20318015571.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-03-18",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6381,7 +6779,8 @@
     "norma_designacion": "[Decreto 455/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/308098/20240524);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20206476479.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-05-24",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6392,12 +6791,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Decreto 881/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315130/20241004);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 27056195535.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-04",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6408,12 +6808,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 882/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315131/20241004);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 20045578225.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-04",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6424,12 +6825,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Decreto 886/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315309/20241008);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 27114509820.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-08",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6440,12 +6842,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 887/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315310/20241008);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 20171990832.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-08",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6456,12 +6859,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 889/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315311/20241008);;[Decreto 476/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/343281/20260618);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 20060367958.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-08",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6472,12 +6876,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 890/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315312/20241008);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 20120456688.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-08",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6488,12 +6893,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 943/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/315874/20241022);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 20131211938.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-10-22",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6504,12 +6910,13 @@
     "jerarquia": "Sin Información",
     "escalafon": "Autoridad Superior del Poder Ejecutivo Nacional",
     "car_categoria": null,
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Decreto 927/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/336872/20251230);;[Decreto 358/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342035/20260518);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 23243351049.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-30",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6523,9 +6930,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6539,9 +6947,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6555,9 +6964,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6571,9 +6981,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6587,9 +6998,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6605,7 +7017,8 @@
     "norma_designacion": "[RESOL-2024-52-E-GDEBCRA-P#BCRA](EX-2024-00125640-GDEBCRA-SDD#BCRA);",
     "sueldo_bruto_estimado_ars": 8500000,
     "cuil": 20101409652.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6621,7 +7034,8 @@
     "norma_designacion": "[RESOL-2024-306-APN-SIGEN](EX-2024-70142944-APN-SIGEN);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 27115990832.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6632,12 +7046,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Francos",
     "genero": "Femenino",
     "norma_designacion": "[Resolución 26/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/309571/20240625);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 27246990862.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": "2024-06-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6651,9 +7066,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 5000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6664,12 +7080,13 @@
     "jerarquia": "DN-DG",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Posse",
+    "jgm_al_ingreso": "Desconocido",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 55/2024](https://www.boletinoficial.gob.ar/detalleAviso/primera/312884/202408277);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 20244319646.0,
-    "fecha_ingreso": "2024-01-01"
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6683,9 +7100,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 5000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6701,7 +7119,8 @@
     "norma_designacion": "[Resolución 420/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/342177/20260520);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 20233761975.0,
-    "fecha_ingreso": "2026-01-01"
+    "fecha_ingreso": "2026-05-20",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6715,9 +7134,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 4000000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6733,7 +7153,8 @@
     "norma_designacion": "[Decreto 645/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331138/20250911);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20308335829.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6747,9 +7168,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6763,9 +7185,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6779,9 +7202,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6795,9 +7219,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6811,9 +7236,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6827,9 +7253,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6843,9 +7270,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6859,9 +7287,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6875,9 +7304,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6891,9 +7321,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6907,9 +7338,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6923,9 +7355,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6941,7 +7374,8 @@
     "norma_designacion": "[RESOL-2025-388-APN-SIGEN](EX-2025-119899756-APN-SIGEN);",
     "sueldo_bruto_estimado_ars": 1200000,
     "cuil": 20111794813.0,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6957,7 +7391,8 @@
     "norma_designacion": "[Decisión Administrativa 433/2018](https://www.boletinoficial.gob.ar/#!DetalleNorma/181282/20180410);;[Resolución 170/2019](https://www.boletinoficial.gob.ar/detalleAviso/primera/207630/20190516);;[Resolución 1032/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/266293/20220712);;[Resolución 497/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/332594/20251008);",
     "sueldo_bruto_estimado_ars": 3200000,
     "cuil": 27255987238.0,
-    "fecha_ingreso": "2018-01-01"
+    "fecha_ingreso": "2018-04-10",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6971,9 +7406,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 3200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -6984,12 +7420,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 819/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/335971/20251211);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 23276081349.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-11",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7005,7 +7442,8 @@
     "norma_designacion": "[Decisión Administrativa 1061/2017](https://www.boletinoficial.gob.ar/#!DetalleNorma/175751/20171206);;[Resolución 1150/2020](https://www.boletinoficial.gob.ar/detalleAviso/primera/233231/20200807);;[Resolución 462/2021](https://www.boletinoficial.gob.ar/detalleAviso/primera/243018/20210415);;[Resolución 97/2022](https://www.boletinoficial.gob.ar/detalleAviso/primera/256763/20220128);;[Resolución 1219/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/268254/20220809);;[Resolución 497/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/332594/20251008);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 27251488466.0,
-    "fecha_ingreso": "2017-01-01"
+    "fecha_ingreso": "2017-12-06",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7016,12 +7454,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Femenino",
     "norma_designacion": "[Resolución 731/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334903/20251125);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 27394361564.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-11-25",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7032,12 +7471,13 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 679/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/334449/20251113);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20379846549.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-11-13",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7053,7 +7493,8 @@
     "norma_designacion": "[Decreto 250/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/262022/20220509);;[Decreto 342/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341865/20260513);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20256917999.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-05-09",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7069,7 +7510,8 @@
     "norma_designacion": "[Decreto 250/2022](https://www.boletinoficial.gov.ar/detalleAviso/primera/262022/20220509);;[Decreto 342/2026](https://www.boletinoficial.gob.ar/detalleAviso/primera/341865/20260513);",
     "sueldo_bruto_estimado_ars": 5000000,
     "cuil": 27229272018.0,
-    "fecha_ingreso": "2022-01-01"
+    "fecha_ingreso": "2022-05-09",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7083,9 +7525,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7099,9 +7542,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7115,9 +7559,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 8500000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7133,7 +7578,8 @@
     "norma_designacion": "[Decreto 637/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/330984/20250909);",
     "sueldo_bruto_estimado_ars": 8000000,
     "cuil": 20130777970.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-09",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7147,9 +7593,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7163,9 +7610,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7179,9 +7627,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7195,9 +7644,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7211,9 +7661,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7227,9 +7678,10 @@
     "jgm_al_ingreso": "Desconocido",
     "genero": "No informado",
     "norma_designacion": null,
-    "sueldo_bruto_estimado_ars": 1200000,
+    "sueldo_bruto_estimado_ars": null,
     "cuil": null,
-    "fecha_ingreso": null
+    "fecha_ingreso": null,
+    "vacante": true
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7245,7 +7697,8 @@
     "norma_designacion": "[Resolución 408/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/331732/20250922);;[Resolución 571/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/333377/20251024);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 27264652400.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-09-22",
+    "vacante": false
   },
   {
     "organismo": "Presidencia de la Nación",
@@ -7256,11 +7709,12 @@
     "jerarquia": "Director - Primer Nivel Operativo",
     "escalafon": "Personal del SINEP",
     "car_categoria": "A0",
-    "jgm_al_ingreso": "Francos",
+    "jgm_al_ingreso": "Adorni",
     "genero": "Masculino",
     "norma_designacion": "[Resolución 757/2025](https://www.boletinoficial.gob.ar/detalleAviso/primera/335355/20251201);",
     "sueldo_bruto_estimado_ars": 4500000,
     "cuil": 20147277114.0,
-    "fecha_ingreso": "2025-01-01"
+    "fecha_ingreso": "2025-12-01",
+    "vacante": false
   }
 ]

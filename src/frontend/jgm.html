@@ -278,32 +278,32 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="kpi-grid">
     <div class="kpi-card">
       <div class="kpi-label">Autoridades designadas</div>
-      <div class="kpi-val" id="k-personal-total">611</div>
+      <div class="kpi-val" id="k-personal-total" data-kpi="titulares">—</div>
       <div class="kpi-sub">en nómina activa</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Contratos registrados</div>
-      <div class="kpi-val" id="k-contratos-total">—</div>
-      <div class="kpi-sub">desde dic 2023</div>
+      <div class="kpi-val" id="k-contratos-total" data-kpi="contratos">—</div>
+      <div class="kpi-sub">desde 2023</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto total</div>
-      <div class="kpi-val" id="k-monto-total">—</div>
+      <div class="kpi-val" id="k-monto-total" data-kpi="monto">—</div>
       <div class="kpi-sub">ARS adjudicados</div>
     </div>
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Alertas activas</div>
-      <div class="kpi-val" id="k-alertas-total">—</div>
+      <div class="kpi-val" id="k-alertas-total" data-kpi="alertas">—</div>
       <div class="kpi-sub">cruces detectados</div>
     </div>
     <div class="kpi-card kpi-green">
       <div class="kpi-label">Designados Santilli</div>
-      <div class="kpi-val">19</div>
+      <div class="kpi-val" data-kpi="santilli">—</div>
       <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card kpi-purple">
       <div class="kpi-label">Ad Honorem</div>
-      <div class="kpi-val">112</div>
+      <div class="kpi-val" data-kpi="adhonorem">—</div>
       <div class="kpi-sub">sin remuneración</div>
     </div>
   </div>
@@ -338,7 +338,7 @@ footer a { color: var(--accent); text-decoration: none; }
     <div class="kpi-card">
       <div class="kpi-label">Total procesos</div>
       <div class="kpi-val" id="k-total-c">—</div>
-      <div class="kpi-sub">desde dic 2023</div>
+      <div class="kpi-sub">desde 2023</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Adjudicados</div>
@@ -401,27 +401,27 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="kpi-grid" style="margin-bottom:20px">
     <div class="kpi-card">
       <div class="kpi-label">Total autoridades</div>
-      <div class="kpi-val">611</div>
+      <div class="kpi-val" data-kpi="titulares">—</div>
       <div class="kpi-sub">en nómina JGM</div>
     </div>
     <div class="kpi-card kpi-green">
       <div class="kpi-label">Designados Santilli</div>
-      <div class="kpi-val">19</div>
+      <div class="kpi-val" data-kpi="santilli">—</div>
       <div class="kpi-sub">desde jun 2026</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Femenino</div>
-      <div class="kpi-val">43%</div>
+      <div class="kpi-val" data-kpi="femenino">—</div>
       <div class="kpi-sub">de designados con dato</div>
     </div>
     <div class="kpi-card kpi-purple">
       <div class="kpi-label">Ad Honorem</div>
-      <div class="kpi-val">112</div>
+      <div class="kpi-val" data-kpi="adhonorem">—</div>
       <div class="kpi-sub">sin remuneración</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Sueldo est. promedio</div>
-      <div class="kpi-val">$3.8M</div>
+      <div class="kpi-val" data-kpi="sueldo_prom">—</div>
       <div class="kpi-sub">ARS bruto estimado</div>
     </div>
   </div>
@@ -487,22 +487,22 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="kpi-grid" style="margin-bottom:20px">
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Alertas totales</div>
-      <div class="kpi-val" id="k-cruces-total">—</div>
+      <div class="kpi-val" id="k-cruces-total" data-kpi="alertas">—</div>
       <div class="kpi-sub">cruces detectados</div>
     </div>
     <div class="kpi-card kpi-alta">
       <div class="kpi-label">Riesgo alto</div>
-      <div class="kpi-val" id="k-cruces-alto">—</div>
+      <div class="kpi-val" id="k-cruces-alto" data-kpi="alertas_alto">—</div>
       <div class="kpi-sub">coincidencia CUIL</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Riesgo medio</div>
-      <div class="kpi-val" id="k-cruces-medio">—</div>
+      <div class="kpi-val" id="k-cruces-medio" data-kpi="alertas_medio">—</div>
       <div class="kpi-sub">coincidencia apellido</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Monto involucrado</div>
-      <div class="kpi-val" id="k-cruces-monto">—</div>
+      <div class="kpi-val" id="k-cruces-monto" data-kpi="alertas_monto">—</div>
       <div class="kpi-sub">ARS en contratos alertados</div>
     </div>
   </div>
@@ -820,7 +820,7 @@ function filtrarP() {
 function renderP(data) {
   document.getElementById('tbody-p').innerHTML = data.slice(0, 400).map(function(p){
     return '<tr>'
-      + '<td class="fw">' + (p.apellido||'—') + '</td>'
+      + ((p.vacante || !p.apellido) ? '<td class="fw" style="color:var(--muted);font-style:italic">Cargo sin titular informado</td>' : '<td class="fw">' + p.apellido + '</td>')
       + '<td>' + (p.nombre||'—') + '</td>'
       + '<td style="font-size:11px">' + (p.cargo||'—') + '</td>'
       + '<td style="font-size:11px;color:var(--muted)">' + (p.jerarquia||'—') + '</td>'
@@ -1139,6 +1139,15 @@ function initCharts() {
 
 // ── Cruces desde JSON externo (generado por workflow) ────────────────────────
 function renderCrucesDesdeJSON(data) {
+  // cruces.json trae las tres áreas: acá sólo se muestran las de JGM
+  var propias = (data.cruces || []).filter(function(c){ return (c.area || 'jgm') === 'jgm'; });
+  data = Object.assign({}, data, {
+    cruces: propias,
+    total: propias.length,
+    altos: propias.filter(function(c){ return c.nivel === 'ALTO'; }).length,
+    medios: propias.filter(function(c){ return c.nivel === 'MEDIO'; }).length,
+    monto_total: propias.reduce(function(s,c){ return s + (c.monto || 0); }, 0),
+  });
   document.getElementById('k-cruces-total').textContent = data.total || '0';
   document.getElementById('k-cruces-alto').textContent  = data.altos  || '0';
   document.getElementById('k-cruces-medio').textContent = data.medios || '0';
@@ -1222,11 +1231,12 @@ async function init() {
   updateKPIsC();
   filtrarP();
   initCharts();
+  actualizarArea('jgm');
   renderOrganigrama();
   loadPresupuesto();
 
   // Cruces: usar JSON del workflow si tiene datos, sino calcular en browser
-  if (crucesData && crucesData.total > 0) {
+  if (crucesData && Array.isArray(crucesData.cruces)) {
     renderCrucesDesdeJSON(crucesData);
     const cuitsCruces = ((crucesData && crucesData.cruces) || []).map(c=>c.cuit||c.proveedor_cuit).filter(Boolean);
     cargarMEACI(cuitsCruces);
@@ -1291,6 +1301,89 @@ async function cargarMEACI(cuits) {
   } catch(e) { /* MEACI no disponible */ }
 }
 
+</script>
+<script>
+// ── Indicadores calculados desde los datos publicados ────────────────────────
+// Antes estas tarjetas tenían números fijos escritos en el HTML. Ahora todos
+// los elementos con data-kpi se completan a partir de allC / allP / cruces.json.
+function actualizarArea(area) {
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; }); }
+  function n(x) { return Number(x).toLocaleString('es-AR'); }
+  function setKpi(key, valor, sub) {
+    document.querySelectorAll('[data-kpi="' + key + '"]').forEach(function(el) {
+      el.textContent = valor;
+      var s = el.nextElementSibling;
+      if (sub != null && s && s.classList.contains('kpi-sub')) s.textContent = sub;
+    });
+  }
+  var C = (typeof allC !== 'undefined' && allC) || [];
+  var P = (typeof allP !== 'undefined' && allP) || [];
+
+  var tit = P.filter(function(p){ return !p.vacante && p.apellido; });
+  setKpi('titulares', n(tit.length), 'con titular · ' + n(P.length - tit.length) + ' cargos sin titular informado');
+
+  var adj = C.filter(function(c){ return String(c.estado || '').indexOf('Adjudicado') === 0; }).length;
+  var anios = C.map(function(c){ return c.ejercicio; }).filter(Boolean);
+  var desde = anios.length ? Math.min.apply(null, anios) : null;
+  setKpi('contratos', n(C.length), n(adj) + ' adjudicados' + (desde ? ' · desde ' + desde : ''));
+
+  var conMonto = C.filter(function(c){ return c.monto_adjudicado > 0; });
+  var monto = conMonto.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
+  setKpi('monto', conMonto.length ? fmt(monto) : 'Sin dato',
+         'suma de ' + n(conMonto.length) + ' de ' + n(C.length) + ' procesos con monto publicado');
+
+  setKpi('santilli', n(P.filter(function(p){ return p.jgm_al_ingreso === 'Santilli'; }).length),
+         'designados desde 30/06/2026');
+  setKpi('adhonorem', n(tit.filter(function(p){ return /ad honorem/i.test(p.jerarquia || ''); }).length),
+         'sin remuneración');
+  var subs = {};
+  P.forEach(function(p){ if (p.sub_organismo) subs[p.sub_organismo] = 1; });
+  setKpi('suborganismos', n(Object.keys(subs).length), 'con cargos en nómina');
+
+  var conGen = tit.filter(function(p){ return p.genero === 'Femenino' || p.genero === 'Masculino'; });
+  var fem = conGen.filter(function(p){ return p.genero === 'Femenino'; }).length;
+  setKpi('femenino', conGen.length ? Math.round(fem * 100 / conGen.length) + '%' : '—',
+         'de ' + n(conGen.length) + ' titulares con dato');
+
+  var sueldos = tit.map(function(p){ return p.sueldo_bruto_estimado_ars; }).filter(function(v){ return v > 0; });
+  setKpi('sueldo_prom', sueldos.length ? fmt(sueldos.reduce(function(a, b){ return a + b; }, 0) / sueldos.length) : '—',
+         'estimación por jerarquía, no dato oficial');
+
+  fetch('data/cruces.json').then(function(r){ return r.json(); }).then(function(d) {
+    var lista = (d.cruces || []).filter(function(c){ return (c.area || 'jgm') === area; });
+    var altos = lista.filter(function(c){ return c.nivel === 'ALTO'; });
+    var montoC = lista.reduce(function(s, c){ return s + (c.monto || 0); }, 0);
+    setKpi('alertas', n(lista.length), n(altos.length) + ' de nivel alto');
+    setKpi('alertas_alto', n(altos.length), 'CUIL = CUIT');
+    setKpi('alertas_medio', n(lista.length - altos.length), 'coincidencia de apellido');
+    setKpi('alertas_monto', montoC ? fmt(montoC) : '—', 'ARS en contratos alertados');
+
+    var cont = document.getElementById('cruces-area');
+    if (!cont) return;  // JGM tiene su propio render de cruces
+    if (!lista.length) {
+      cont.innerHTML = '<div class="panel"><div class="pb" style="text-align:center;color:var(--muted)">'
+        + 'Sin cruces detectados para esta área con los criterios actuales.</div></div>';
+      return;
+    }
+    cont.innerHTML = lista.map(function(c) {
+      var alto = c.nivel === 'ALTO';
+      return '<div class="cruce-card' + (alto ? '' : ' media') + '">'
+        + '<div class="cruce-titulo"><span class="badge-n ' + (alto ? 'alta' : 'media') + '">' + esc(c.nivel) + '</span> ' + esc(c.tipo) + '</div>'
+        + '<div class="cruce-meta">'
+        + '<span>👤 <strong>' + esc(c.funcionario) + '</strong> — ' + esc(c.cargo) + '</span>'
+        + '<span>🏢 <strong>' + esc(c.empresa) + '</strong> (CUIT ' + esc(c.cuit) + ')</span>'
+        + '<span>🏛 ' + esc(c.organismo) + '</span>'
+        + '<span>📋 <strong>' + esc(c.contratos) + '</strong> contrato(s)</span>'
+        + (c.monto ? '<span>💰 <strong>' + fmt(c.monto) + '</strong></span>' : '')
+        + '<span>Gestión: ' + chipGestion(c.gestion) + '</span>'
+        + (c.link ? '<span><a href="' + esc(c.link) + '" target="_blank" rel="noopener">Ver en BORA ↗</a></span>' : '')
+        + '</div></div>';
+    }).join('')
+    + '<div style="font-size:11px;color:var(--muted);margin-top:8px">Indicador algorítmico de riesgo (coincidencia de CUIL o apellido). No es una acusación ni determina responsabilidad.</div>';
+  }).catch(function() {
+    setKpi('alertas', '—', 'cruces no disponibles');
+  });
+}
 </script>
 </body>
 </html>

@@ -58,6 +58,12 @@ jobs:
         id: jsons
         run: python scripts/generar_json.py
 
+      # Recalcula fecha de designación, gestión JGM, vacantes y sueldos no
+      # estimables sobre los personal_*.json (aunque la nómina no se haya
+      # podido descargar hoy). Es idempotente.
+      - name: Corregir campos derivados de personal
+        run: python scripts/corregir_personal.py
+
       # Nota: el cruce CUIL/CUIT real (3 niveles) lo genera scripts/generar_cruces_pen.py
       # en el workflow "Generador de Cruces PEN" (corre antes, a las 05:00 UTC).
       # scripts/cruzar_cuil_cuit.py quedó como utilidad manual — correrlo acá pisaría
@@ -98,13 +104,9 @@ jobs:
           git commit -m "Monitor PEN ${{ steps.fecha.outputs.fecha }} - datos actualizados"
           git push origin HEAD:main
 
-      - name: Actualizar PostgreSQL en Railway
-        run: |
-          curl -s -X POST https://jefaturagabinete-production.up.railway.app/api/refresh \
-               -H "X-Refresh-Token: ${{ secrets.REFRESH_TOKEN }}" \
-               --max-time 120 | tee /tmp/refresh_result.json
-          cat /tmp/refresh_result.json
-        continue-on-error: true
+      # (Se quitó el paso "Actualizar PostgreSQL en Railway": llamaba a
+      # /api/refresh, que corre el pipeline legacy dentro del servidor y no
+      # produce ningún dato que el portal use.)
 
       - name: Notificar exito
         if: success()

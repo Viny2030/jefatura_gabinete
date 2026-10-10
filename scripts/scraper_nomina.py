@@ -16,10 +16,17 @@ Salidas:
 
 Uso:
   python scripts/scraper_nomina.py
+  python scripts/scraper_nomina.py --archivo ruta/al/csv_descargado.csv
+
+Desde 2026 Mapa del Estado está detrás de un desafío de Cloudflare que bloquea
+descargas automáticas (GitHub Actions, curl, requests). Si falla, bajá el CSV
+desde el navegador y procesalo con --archivo (ver README / docs).
 """
 
+import argparse
 import io
 import os
+import sys
 import time
 import warnings
 import zipfile
@@ -27,6 +34,9 @@ import requests
 import urllib3
 import pandas as pd
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from gestiones import gestion_para_norma  # noqa: E402
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -401,37 +411,23 @@ def enriquecer(df: pd.DataFrame) -> pd.DataFrame:
 
     import re
 
-    # ── Parsear fecha desde norma_designacion (MapaDelEstado) ────────────────
-    # Formato en URL: /20251104? → 2025-11-04
+    # ── Fecha de designación y gestión JGM (MapaDelEstado) ───────────────────
+    # Se lee la fecha completa de la URL del BORA (ver scripts/gestiones.py).
+    # Si sólo se conoce el año, la fecha queda vacía (antes se ponía el 1/1).
     if "norma_designacion" in df.columns and "fecha_ingreso" not in df.columns:
-        def extraer_fecha_decreto(v):
-            if pd.isna(v):
-                return pd.NaT
-            # Buscar patrón /YYYYMMDD? en la URL del BORA
-            m = re.search(r'/(\d{8})[?\s]', str(v))
-            if m:
-                try:
-                    return pd.to_datetime(m.group(1), format="%Y%m%d")
-                except Exception:
-                    pass
-            # Buscar año-mes en número de decreto: "Decreto 784/2025"
-            m2 = re.search(r'(\d{3,4})/(\d{4})', str(v))
-            if m2:
-                anio = int(m2.group(2))
-                if 2000 <= anio <= 2030:
-                    return pd.Timestamp(year=anio, month=1, day=1)
-            return pd.NaT
-
-        df["fecha_ingreso"] = df["norma_designacion"].apply(extraer_fecha_decreto)
+        pares = df["norma_designacion"].apply(
+            lambda v: gestion_para_norma(None if pd.isna(v) else str(v)))
+        df["fecha_ingreso"] = pares.apply(lambda t: t[0])
+        df["jgm_al_ingreso"] = pares.apply(lambda t: t[1])
         ok = df["fecha_ingreso"].notna().sum()
-        print(f"[ENRICH] Fechas extraídas de decreto: {ok}/{len(df)}")
+        print(f"[ENRICH] Fechas de designación extraídas: {ok}/{len(df)}")
 
     # ── Antigüedad ────────────────────────────────────────────────────────────
     if "fecha_ingreso" in df.columns:
-        df["fecha_ingreso"] = pd.to_datetime(df["fecha_ingreso"], errors="coerce", dayfirst=True)
+        fi = pd.to_datetime(df["fecha_ingreso"], errors="coerce")
         hoy = pd.Timestamp.now()
-        df["antiguedad_anios"] = ((hoy - df["fecha_ingreso"]).dt.days / 365.25).round(1)
-        df["anio_ingreso"] = df["fecha_ingreso"].dt.year
+        df["antiguedad_anios"] = ((hoy - fi).dt.days / 365.25).round(1)
+        df["anio_ingreso"] = fi.dt.year
     elif "anio_ingreso" in df.columns:
         df["anio_ingreso"] = pd.to_numeric(df["anio_ingreso"], errors="coerce")
         df["antiguedad_anios"] = datetime.now().year - df["anio_ingreso"]
@@ -440,21 +436,15 @@ def enriquecer(df: pd.DataFrame) -> pd.DataFrame:
     if "anio_ingreso" in df.columns:
         df["ingreso_gestion_milei"] = df["anio_ingreso"] >= 2024
 
-    # ── Gestión JGM al momento de ingreso ────────────────────────────────────
-    def asignar_jgm(row):
-        fi = row.get("fecha_ingreso")
-        if pd.isna(fi):
-            return "Desconocido"
-        if fi >= pd.Timestamp("2025-11-04"):
-            return "Adorni"
-        if fi >= pd.Timestamp("2024-05-27"):
-            return "Francos"
-        if fi >= pd.Timestamp("2023-12-10"):
-            return "Posse"
-        return "Pre-Milei"
+    if "jgm_al_ingreso" not in df.columns:
+        df["jgm_al_ingreso"] = "Desconocido"
 
-    if "fecha_ingreso" in df.columns:
-        df["jgm_al_ingreso"] = df.apply(asignar_jgm, axis=1)
+    # ── Cargos sin titular: sin sueldo estimado ──────────────────────────────
+    if "apellido" in df.columns:
+        vac = df["apellido"].isna() | (df["apellido"].astype(str).str.strip() == "")
+        df["vacante"] = vac
+        if "sueldo_bruto_estimado_ars" in df.columns:
+            df.loc[vac, "sueldo_bruto_estimado_ars"] = None
 
     # ── Género ────────────────────────────────────────────────────────────────
     if "genero" in df.columns:
@@ -541,13 +531,22 @@ def resumen(df: pd.DataFrame):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
+    ap = argparse.ArgumentParser(description="Nómina APN (Mapa del Estado)")
+    ap.add_argument("--archivo", help="CSV de Mapa del Estado bajado a mano desde el navegador")
+    args = ap.parse_args()
+
     print("=" * 60)
     print("SCRAPER NÓMINA APN — MapaDelEstado / BIEP / datos.gob.ar")
     print(f"Ejecutado: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
-    # 1. Descargar (cascada de fuentes)
-    df_raw = descargar_nomina()
+    # 1. Descargar (cascada de fuentes) o leer el CSV bajado a mano
+    if args.archivo:
+        print(f"[LOCAL] Leyendo {args.archivo}")
+        df_raw = pd.read_csv(args.archivo, encoding="utf-8-sig", sep=None, engine="python")
+        print(f"[LOCAL] {len(df_raw):,} filas, columnas: {list(df_raw.columns)}")
+    else:
+        df_raw = descargar_nomina()
 
     # Guardar raw antes de procesar
     df_raw.to_csv(RAW_CSV, index=False, encoding="utf-8-sig")
@@ -567,6 +566,18 @@ def main():
 
     # 6. Guardar
     guardar(df_raw, df)
+
+    # Registrar la fecha real de la nómina (la usa generar_json.py para mostrar
+    # "Nómina al ..." en la portada).
+    estado = os.path.join(os.path.dirname(__file__), "..", "src", "frontend", "data", "nomina_estado.json")
+    import json as _json
+    with open(estado, "w", encoding="utf-8") as f:
+        _json.dump({
+            "descargada": datetime.now().strftime("%Y-%m-%d"),
+            "fuente": f"archivo local {os.path.basename(args.archivo)}" if args.archivo
+                      else "Mapa del Estado (mapadelestado.dyte.gob.ar)",
+            "nota": "Fecha de la última descarga real de la nómina. La escribe scripts/scraper_nomina.py.",
+        }, f, ensure_ascii=False, indent=2)
 
     # 7. Resumen
     resumen(df)

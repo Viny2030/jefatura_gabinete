@@ -1,0 +1,5 @@
+{
+  "descargada": "2026-07-06",
+  "fuente": "Mapa del Estado (mapadelestado.dyte.gob.ar)",
+  "nota": "Fecha de la última descarga real de la nómina. La escribe scripts/scraper_nomina.py cuando la descarga funciona."
+}
