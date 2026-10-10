@@ -157,6 +157,18 @@ if FUENTE == "comprar":
         except Exception as e:
             print(f"    [WARN] No se pudo leer contratos_detalle.csv: {e}")
 
+    def normalizar_moneda(m):
+        m = (m or "").lower()
+        if not m:
+            return ""
+        if "dolar" in m or "dólar" in m:
+            return "USD"
+        if "euro" in m:
+            return "EUR"
+        if "peso" in m:
+            return "ARS"
+        return m.upper()[:10]
+
     def normalizar_comprar(dfc, etiqueta="JGM"):
         """Normaliza un CSV de comprar.gob.ar al esquema del frontend.
         Cruza montos/CUIT/razón social desde contratos_detalle.csv si está."""
@@ -169,6 +181,8 @@ if FUENTE == "comprar":
         dfc["cuit_proveedor"]    = ""
         dfc["tipo_contratacion"] = dfc.get("tipo_proceso", pd.Series(dtype=str)).fillna("")
         dfc["monto_adjudicado"]  = None
+        dfc["moneda"]            = ""
+        dfc["fecha_perfeccionamiento"] = ""
 
         if _mapa_detalle is not None:
             _np = dfc["numero_proceso"].astype(str).str.strip()
@@ -178,6 +192,13 @@ if FUENTE == "comprar":
             if "proveedor_razon" in _mapa_detalle.columns:
                 _razon = _np.map(_mapa_detalle["proveedor_razon"]).fillna("").astype(str).str.strip()
                 dfc["proveedor"] = _razon.where(_razon != "", dfc["proveedor"])
+            # Moneda del contrato (COMPR.AR publica montos en ARS y en USD)
+            if "moneda" in _mapa_detalle.columns:
+                _mon = _np.map(_mapa_detalle["moneda"]).fillna("").astype(str).str.strip()
+                dfc["moneda"] = _mon.map(normalizar_moneda)
+            if "fecha_perfeccionamiento" in _mapa_detalle.columns:
+                _fp = _np.map(_mapa_detalle["fecha_perfeccionamiento"]).fillna("").astype(str).str.strip()
+                dfc["fecha_perfeccionamiento"] = pd.to_datetime(_fp, format="%d/%m/%Y", errors="coerce").dt.strftime("%Y-%m-%d").fillna("")
             _n = int((dfc["monto_adjudicado"] > 0).sum())
             print(f"    [{etiqueta}] detalle cruzado: {_n} contratos con monto (de {len(dfc)})")
 
@@ -196,7 +217,8 @@ if FUENTE == "comprar":
 
     COLS_CON = [
         "numero_proceso", "organismo", "proveedor", "cuit",
-        "tipo_contratacion", "fecha_str", "monto_adjudicado",
+        "tipo_contratacion", "fecha_str", "monto_adjudicado", "moneda",
+        "fecha_perfeccionamiento",
         "objeto", "ejercicio", "gestion", "estado", "fecha_apertura",
     ]
 
@@ -311,7 +333,13 @@ for rama, cfg in RAMAS.items():
         else:
             registros_n = []
 
-    monto_total = float(df_c["monto_adjudicado"].sum()) if "monto_adjudicado" in df_c.columns else 0.0
+    _m = pd.to_numeric(df_c["monto_adjudicado"], errors="coerce").fillna(0) if "monto_adjudicado" in df_c.columns else pd.Series(dtype=float)
+    _mon = df_c["moneda"].fillna("") if "moneda" in df_c.columns else pd.Series([""] * len(df_c))
+    # Pesos: moneda ARS o sin informar (filas viejas). Dólares se informan aparte.
+    _es_ars = ~_mon.isin(["USD", "EUR"])
+    monto_total = float(_m[_es_ars].sum()) if len(_m) else 0.0
+    monto_usd = float(_m[_mon == "USD"].sum()) if len(_m) else 0.0
+    contratos_usd = int(((_mon == "USD") & (_m > 0)).sum()) if len(_m) else 0
     # Indicadores de cobertura: cuánto del total tiene el dato que se suma/cuenta.
     con_monto = int((pd.to_numeric(df_c["monto_adjudicado"], errors="coerce").fillna(0) > 0).sum()) \
         if "monto_adjudicado" in df_c.columns else 0
@@ -325,6 +353,8 @@ for rama, cfg in RAMAS.items():
         "personal"             : len(registros_n),
         "personal_identificado": identificados,
         "monto_total"          : monto_total,
+        "monto_usd"            : monto_usd,
+        "contratos_usd"        : contratos_usd,
     }
 
 

@@ -560,7 +560,9 @@ footer a { color: #1e40af; text-decoration: none; }
       var totC = (jgm.contratos || 0) + (sgp.contratos || 0) + (pres.contratos || 0);
       if (ident !== null) set("gstat-autoridades-nota", fmtEntero(ident) + " con titular · " + fmtEntero(((jgm.personal||0)+(sgp.personal||0)+(pres.personal||0)) - ident) + " sin titular informado");
       if (adj !== null) set("gstat-contratos-nota", fmtEntero(adj) + " adjudicados");
-      if (conMonto !== null) set("gstat-monto-nota", "suma de " + fmtEntero(conMonto) + " de " + fmtEntero(totC) + " procesos con monto publicado");
+      var usd = suma("monto_usd"), nUsd = suma("contratos_usd");
+      if (conMonto !== null) set("gstat-monto-nota", "en pesos; " + fmtEntero(conMonto) + " de " + fmtEntero(totC) + " procesos con monto publicado"
+        + (usd ? " · más US$ " + fmtEntero(Math.round(usd)) + " en " + fmtEntero(nUsd) + " contratos en dólares" : ""));
 
       var badge = document.getElementById("badge-actualizacion");
       if (badge) {

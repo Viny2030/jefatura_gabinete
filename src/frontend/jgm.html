@@ -356,6 +356,11 @@ footer a { color: var(--accent); text-decoration: none; }
       <div class="kpi-sub">scraping automático</div>
     </div>
   </div>
+  <div style="font-size:11px;color:var(--muted);margin:-8px 0 16px">
+    Procesos de la Dirección General Técnico-Administrativa de JGM (SAF 305) publicados en COMPR.AR.
+    Los organismos de la jurisdicción con servicio administrativo propio (CONICET, ENACOM, Secretaría de
+    Innovación, Ciencia y Tecnología, CONAE, Parques Nacionales, etc.) compran con su propio SAF y no están incluidos.
+  </div>
   <div class="panel">
     <div class="ph">
       <h2>Contratos y procesos — JGM</h2>
@@ -383,11 +388,12 @@ footer a { color: var(--accent); text-decoration: none; }
       <table>
         <thead><tr>
           <th onclick="sortC('numero_proceso')">Nº Proceso</th>
-          <th onclick="sortC('nombre_proceso')">Nombre</th>
-          <th onclick="sortC('tipo_proceso')">Tipo</th>
+          <th onclick="sortC('objeto')">Objeto</th>
+          <th onclick="sortC('proveedor')">Proveedor</th>
+          <th onclick="sortC('tipo_contratacion')">Tipo</th>
           <th onclick="sortC('fecha_apertura')">Fecha apertura</th>
           <th onclick="sortC('estado')">Estado</th>
-          <th>Unidad Ejecutora</th>
+          <th style="text-align:right" onclick="sortC('monto_adjudicado')">Monto</th>
         </tr></thead>
         <tbody id="tbody-c"></tbody>
       </table>
@@ -751,16 +757,19 @@ function renderC(data) {
   };
   document.getElementById('tbody-c').innerHTML = data.slice(0,300).map(function(c){
     var est = COLORES[c.estado] || {bg:'#64748b20',fg:'#64748b'};
-    var ue  = (c.unidad_ejecutora||'').replace(/^[0-9]+\/[0-9]+ - /, '');
-    var nom = (c.nombre_proceso||'—');
+    // Campos del JSON publicado: objeto, proveedor (razón social si se obtuvo el
+    // detalle; si no, generar_json pone el objeto), tipo_contratacion, cuit.
+    var nom = (c.objeto||c.nombre_proceso||'—');
+    var prov = (c.proveedor && c.objeto && c.objeto.indexOf(c.proveedor) === 0) ? '' : (c.proveedor||'');
     var fec = (c.fecha_apertura||'').substring(0,10);
     return '<tr>'
       + '<td class="mono" style="font-size:11px;font-weight:700">' + (c.numero_proceso||'—') + '</td>'
       + '<td style="font-size:11px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + nom + '">' + nom + '</td>'
-      + '<td style="font-size:11px">' + (c.tipo_proceso||'—') + '</td>'
+      + '<td style="font-size:11px">' + (prov ? prov + (c.cuit ? '<div class="mono" style="font-size:10px;color:var(--muted)">' + c.cuit + '</div>' : '') : '<span style="color:var(--muted)">—</span>') + '</td>'
+      + '<td style="font-size:11px">' + (c.tipo_contratacion||c.tipo_proceso||'—') + '</td>'
       + '<td class="mono" style="font-size:11px">' + fec + '</td>'
       + '<td><span style="background:' + est.bg + ';color:' + est.fg + ';padding:2px 8px;border-radius:99px;font-size:10px;font-weight:700">' + (c.estado||'—') + '</span></td>'
-      + '<td style="font-size:10px;color:var(--muted)">' + ue + '</td>'
+      + '<td class="monto" style="font-size:11px">' + fmtMontoC(c) + '</td>'
       + '</tr>';
   }).join('');
   document.getElementById('fc-count').innerHTML =
@@ -1303,6 +1312,16 @@ async function cargarMEACI(cuits) {
 
 </script>
 <script>
+// Monto de un contrato con su moneda (COMPR.AR publica contratos en ARS y USD)
+function fmtMontoC(c) {
+  if (!c || !(c.monto_adjudicado > 0)) return '—';
+  if (c.moneda === 'USD') return 'US$ ' + Math.round(c.monto_adjudicado).toLocaleString('es-AR');
+  if (c.moneda === 'EUR') return '€ ' + Math.round(c.monto_adjudicado).toLocaleString('es-AR');
+  return fmt(c.monto_adjudicado);
+}
+function esPesos(c) { return !c.moneda || c.moneda === 'ARS'; }
+</script>
+<script>
 // ── Indicadores calculados desde los datos publicados ────────────────────────
 // Antes estas tarjetas tenían números fijos escritos en el HTML. Ahora todos
 // los elementos con data-kpi se completan a partir de allC / allP / cruces.json.
@@ -1328,9 +1347,13 @@ function actualizarArea(area) {
   setKpi('contratos', n(C.length), n(adj) + ' adjudicados' + (desde ? ' · desde ' + desde : ''));
 
   var conMonto = C.filter(function(c){ return c.monto_adjudicado > 0; });
-  var monto = conMonto.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
-  setKpi('monto', conMonto.length ? fmt(monto) : 'Sin dato',
-         'suma de ' + n(conMonto.length) + ' de ' + n(C.length) + ' procesos con monto publicado');
+  var enPesos = conMonto.filter(esPesos);
+  var monto = enPesos.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
+  var usd = conMonto.filter(function(c){ return c.moneda === 'USD'; });
+  var montoUsd = usd.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
+  setKpi('monto', enPesos.length ? fmt(monto) : 'Sin dato',
+         'ARS en ' + n(enPesos.length) + ' de ' + n(C.length) + ' procesos con monto publicado'
+         + (usd.length ? ' · más US$ ' + Math.round(montoUsd).toLocaleString('es-AR') + ' en ' + n(usd.length) + ' en dólares' : ''));
 
   setKpi('santilli', n(P.filter(function(p){ return p.jgm_al_ingreso === 'Santilli'; }).length),
          'designados desde 30/06/2026');

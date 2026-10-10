@@ -383,7 +383,7 @@ footer a { color: var(--accent); text-decoration: none; }
           <th onclick="sortC('tipo_contratacion')">Tipo</th>
           <th onclick="sortC('fecha_adjudicacion')" title="Fecha de apertura del proceso según COMPR.AR">Fecha apertura</th>
           <th>Gestión</th>
-          <th style="text-align:right" onclick="sortC('monto_adjudicado')">Monto ARS</th>
+          <th style="text-align:right" onclick="sortC('monto_adjudicado')">Monto</th>
         </tr></thead>
         <tbody id="tbody-c"></tbody>
       </table>
@@ -729,7 +729,7 @@ function renderC(data) {
       <td style="font-size:11px">${c.tipo_contratacion||'—'}</td>
       <td class="mono">${(c.fecha_adjudicacion||'').substring(0,10)}</td>
       <td>${chipGestion(gk)}</td>
-      <td class="monto">${fmt(c.monto_adjudicado)}</td>
+      <td class="monto">${fmtMontoC(c)}</td>
     </tr>`;
   }).join('');
   document.getElementById('fc-count').innerHTML =
@@ -1041,6 +1041,16 @@ async function cargarMEACI(cuits) {
 
 </script>
 <script>
+// Monto de un contrato con su moneda (COMPR.AR publica contratos en ARS y USD)
+function fmtMontoC(c) {
+  if (!c || !(c.monto_adjudicado > 0)) return '—';
+  if (c.moneda === 'USD') return 'US$ ' + Math.round(c.monto_adjudicado).toLocaleString('es-AR');
+  if (c.moneda === 'EUR') return '€ ' + Math.round(c.monto_adjudicado).toLocaleString('es-AR');
+  return fmt(c.monto_adjudicado);
+}
+function esPesos(c) { return !c.moneda || c.moneda === 'ARS'; }
+</script>
+<script>
 // ── Indicadores calculados desde los datos publicados ────────────────────────
 // Antes estas tarjetas tenían números fijos escritos en el HTML. Ahora todos
 // los elementos con data-kpi se completan a partir de allC / allP / cruces.json.
@@ -1066,9 +1076,13 @@ function actualizarArea(area) {
   setKpi('contratos', n(C.length), n(adj) + ' adjudicados' + (desde ? ' · desde ' + desde : ''));
 
   var conMonto = C.filter(function(c){ return c.monto_adjudicado > 0; });
-  var monto = conMonto.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
-  setKpi('monto', conMonto.length ? fmt(monto) : 'Sin dato',
-         'suma de ' + n(conMonto.length) + ' de ' + n(C.length) + ' procesos con monto publicado');
+  var enPesos = conMonto.filter(esPesos);
+  var monto = enPesos.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
+  var usd = conMonto.filter(function(c){ return c.moneda === 'USD'; });
+  var montoUsd = usd.reduce(function(s, c){ return s + c.monto_adjudicado; }, 0);
+  setKpi('monto', enPesos.length ? fmt(monto) : 'Sin dato',
+         'ARS en ' + n(enPesos.length) + ' de ' + n(C.length) + ' procesos con monto publicado'
+         + (usd.length ? ' · más US$ ' + Math.round(montoUsd).toLocaleString('es-AR') + ' en ' + n(usd.length) + ' en dólares' : ''));
 
   setKpi('santilli', n(P.filter(function(p){ return p.jgm_al_ingreso === 'Santilli'; }).length),
          'designados desde 30/06/2026');

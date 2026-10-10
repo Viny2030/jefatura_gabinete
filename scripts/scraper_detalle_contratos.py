@@ -217,19 +217,22 @@ def encontrar_ctl_para_nup(panel_html, nup):
 def obtener_url_detalle(session, vs, nup):
     for intento in range(1, MAX_RETRIES + 1):
         try:
-            # PASO A: seleccionar SAF 591
-            seleccionar_saf(session, vs, nup)
-            time.sleep(0.5)
-
-            # PASO B: buscar NUP dentro de SAF 591
+            # Búsqueda por número de proceso: hay que usar btnListarPliegoNumero.
+            # btnListarPliegoAvanzado (lo que se usaba antes) ignora el número y
+            # devuelve la primera página del SAF, así que sólo se encontraban los
+            # procesos que caían en esa página (37 de 573 con monto).
             p = payload_base(vs, nup)
-            p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$btnListarPliegoAvanzado"
-            p["__EVENTTARGET"]        = "ctl00$CPH1$btnListarPliegoAvanzado"
-            p["__EVENTARGUMENT"]      = "undefined"
+            p["ctl00$CPH1$ddlJurisdicion"] = "-2"
+            p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$btnListarPliegoNumero"
+            p["__EVENTTARGET"]        = "ctl00$CPH1$btnListarPliegoNumero"
+            p["__EVENTARGUMENT"]      = ""
             p["__ASYNCPOST"]          = "true"
 
             r = session.post(BASE_URL, data=p, headers=HEADERS_AJAX,
                              timeout=45, verify=False)
+            if r.status_code in (429, 503):
+                time.sleep(DELAY_ERR * intento * 2)
+                continue
             actualizar_viewstate(r.text, vs)
 
             if "GridListaPliegos" not in r.text:
@@ -245,6 +248,7 @@ def obtener_url_detalle(session, vs, nup):
             # PASO C: click en el link correcto
             time.sleep(0.5)
             p2 = payload_base(vs, nup)
+            p2["ctl00$CPH1$ddlJurisdicion"] = "-2"
             target = f"ctl00$CPH1$GridListaPliegos${ctl}$lnkNumeroProceso"
             p2["ctl00$ScriptManager1"] = f"ctl00$ScriptManager1|{target}"
             p2["__EVENTTARGET"]        = target
@@ -306,7 +310,8 @@ def limpiar_cuit(texto):
 
 def parsear_detalle(html):
     soup = BeautifulSoup(html, "html.parser")
-    resultado = {"monto_adjudicado": None, "proveedor_razon": None, "proveedor_cuit": None}
+    resultado = {"monto_adjudicado": None, "proveedor_razon": None, "proveedor_cuit": None,
+                 "moneda": None, "fecha_perfeccionamiento": None}
 
     tabla = None
     for tag in soup.find_all(["h4", "h3", "h2", "strong", "b"]):
@@ -325,13 +330,25 @@ def parsear_detalle(html):
                 break
 
     if not tabla:
+        # Contrataciones directas / convenios: no publican documento contractual
+        # con monto, pero sí la tabla "Razón social | Número CUIT" del proveedor.
+        for t in soup.find_all("table"):
+            ths = [c.get_text(strip=True).lower() for c in t.find_all("th")]
+            if ths[:2] == ["razón social", "número cuit"]:
+                for fila in t.find_all("tr")[1:]:
+                    tds = fila.find_all("td")
+                    if len(tds) >= 2 and tds[0].get_text(strip=True):
+                        resultado["proveedor_razon"] = tds[0].get_text(strip=True)[:255]
+                        resultado["proveedor_cuit"] = limpiar_cuit(tds[1].get_text(strip=True))
+                        break
+                break
         return resultado
 
     filas = tabla.find_all("tr")
     if not filas:
         return resultado
 
-    col_nombre = col_cuit = col_monto = col_tipo = None
+    col_nombre = col_cuit = col_monto = col_tipo = col_moneda = col_fecha = None
     for i, cell in enumerate(filas[0].find_all(["th", "td"])):
         t = cell.get_text(strip=True).lower()
         if "nombre" in t and "cuit" not in t:
@@ -342,12 +359,16 @@ def parsear_detalle(html):
             col_monto = i
         elif t == "tipo":
             col_tipo = i
+        elif t == "moneda":
+            col_moneda = i
+        elif "perfeccionamiento" in t:
+            col_fecha = i
 
     if col_nombre is None: col_nombre = 1
     if col_cuit   is None: col_cuit   = 2
     if col_monto  is None: col_monto  = 6
 
-    mejor_monto = mejor_proveedor = mejor_cuit = None
+    mejor_monto = mejor_proveedor = mejor_cuit = mejor_moneda = mejor_fecha = None
 
     for fila in filas[1:]:
         cells = fila.find_all("td")
@@ -357,21 +378,23 @@ def parsear_detalle(html):
         cuit   = limpiar_cuit(cells[col_cuit].get_text(strip=True)) if col_cuit < len(cells) else None
         monto  = limpiar_monto(cells[col_monto].get_text(strip=True)) if col_monto < len(cells) else None
         tipo   = cells[col_tipo].get_text(strip=True).lower() if col_tipo and col_tipo < len(cells) else ""
+        moneda = cells[col_moneda].get_text(strip=True) if col_moneda is not None and col_moneda < len(cells) else ""
+        fecha  = cells[col_fecha].get_text(strip=True) if col_fecha is not None and col_fecha < len(cells) else ""
 
         if monto is not None:
             if tipo == "original":
-                mejor_monto = monto
-                mejor_proveedor = nombre
-                mejor_cuit = cuit
+                mejor_monto, mejor_proveedor, mejor_cuit = monto, nombre, cuit
+                mejor_moneda, mejor_fecha = moneda, fecha
                 break
             if mejor_monto is None or monto > mejor_monto:
-                mejor_monto = monto
-                mejor_proveedor = nombre
-                mejor_cuit = cuit
+                mejor_monto, mejor_proveedor, mejor_cuit = monto, nombre, cuit
+                mejor_moneda, mejor_fecha = moneda, fecha
 
     resultado["monto_adjudicado"] = mejor_monto
     resultado["proveedor_razon"]  = mejor_proveedor[:255] if mejor_proveedor else None
     resultado["proveedor_cuit"]   = mejor_cuit
+    resultado["moneda"]           = mejor_moneda or None
+    resultado["fecha_perfeccionamiento"] = mejor_fecha or None
     return resultado
 
 
@@ -534,12 +557,30 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
             for row in _csv.DictReader(f):
                 ya[(row.get("numero_proceso") or "").strip()] = row
 
+    def _tiene_monto(row):
+        # Las filas viejas no tienen moneda: se re-scrapean para no sumar
+        # dólares como pesos.
+        return ((row.get("monto_adjudicado") or "").strip() not in ("", "0", "0.00")
+                and (row.get("moneda") or "").strip() != "")
+
+    def _intentado_hace_poco(row, dias=14):
+        f = (row.get("detalle_fecha") or "").strip()
+        if not f:
+            return False  # nunca se intentó con la búsqueda por número
+        try:
+            return (datetime.now() - datetime.fromisoformat(f)).days < dias
+        except ValueError:
+            return False
+
+    # Sin monto: se reintenta cada 14 días (el monto aparece cuando se firma
+    # el documento contractual). Los nunca intentados van primero.
     pendientes = [n for n in objetivos
-                  if not (ya.get(n) and (ya[n].get("monto_adjudicado") or "").strip() not in ("", "0", "0.00"))]
+                  if not (ya.get(n) and (_tiene_monto(ya[n]) or _intentado_hace_poco(ya[n])))]
+    pendientes.sort(key=lambda n: (bool((ya.get(n) or {}).get("detalle_fecha")), n))
     if limit:
         pendientes = pendientes[:limit]
 
-    log.info(f"{len(objetivos)} adjudicados | {len(pendientes)} a scrapear (resto ya tiene monto)")
+    log.info(f"{len(objetivos)} adjudicados | {len(pendientes)} a scrapear (resto con monto o intentado hace < 14 días)")
 
     session = requests.Session()
     session.verify = False
@@ -550,7 +591,15 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
 
     COLS = ["numero_proceso", "nombre_proceso", "tipo_proceso", "estado",
             "unidad_ejecutora", "organismo", "monto_adjudicado",
-            "proveedor_razon", "proveedor_cuit", "detalle_scrapeado"]
+            "proveedor_razon", "proveedor_cuit", "moneda", "fecha_perfeccionamiento",
+            "detalle_scrapeado", "detalle_fecha"]
+
+    def _escribir():
+        with open(out_csv, "w", newline="", encoding="utf-8") as f:
+            w = _csv.DictWriter(f, fieldnames=COLS)
+            w.writeheader()
+            for row in ya.values():
+                w.writerow({c: row.get(c, "") for c in COLS})
 
     ok = sin = 0
     t0 = time.time()
@@ -575,6 +624,7 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
             "proveedor_razon":  "",
             "proveedor_cuit":   "",
             "detalle_scrapeado": "True",
+            "detalle_fecha":    datetime.now().strftime("%Y-%m-%d"),
         }
         try:
             url = obtener_url_detalle(session, vs, nup)
@@ -585,10 +635,16 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
                     fila["monto_adjudicado"] = f"{res['monto_adjudicado']:.2f}"
                     fila["proveedor_razon"]  = res.get("proveedor_razon") or ""
                     fila["proveedor_cuit"]   = res.get("proveedor_cuit") or ""
+                    fila["moneda"]           = res.get("moneda") or ""
+                    fila["fecha_perfeccionamiento"] = res.get("fecha_perfeccionamiento") or ""
                     ok += 1
                     if ok <= 10:
                         log.info(f"  ✅ {nup}: ${res['monto_adjudicado']:,.0f} | {str(res.get('proveedor_razon',''))[:35]}")
                 else:
+                    # Sin monto publicado: igual guardar razón social / CUIT si están
+                    if res:
+                        fila["proveedor_razon"] = res.get("proveedor_razon") or ""
+                        fila["proveedor_cuit"]  = res.get("proveedor_cuit") or ""
                     sin += 1
             else:
                 sin += 1
@@ -596,14 +652,12 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
             log.warning(f"  {nup}: {type(e).__name__}")
             sin += 1
         ya[nup] = fila
+        if i % 25 == 0:
+            _escribir()  # checkpoint: si el job se corta por timeout no se pierde lo hecho
         time.sleep(DELAY_OK)
 
     # Escribir out_csv (merge: lo ya existente + lo nuevo)
-    with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        w = _csv.DictWriter(f, fieldnames=COLS)
-        w.writeheader()
-        for row in ya.values():
-            w.writerow({c: row.get(c, "") for c in COLS})
+    _escribir()
 
     log.info(f"✅ {out_csv}: {ok} con monto, {sin} sin dato | {len(ya)} filas totales")
 

@@ -186,6 +186,34 @@ def cargar_contratos_pen():
             except Exception as e:
                 log.debug(f"  Error leyendo {archivo}: {e}")
 
+    # Contratos propios del portal (COMPR.AR JGM/SGP/Presidencia) con CUIT del
+    # proveedor, obtenidos por scripts/scraper_detalle_contratos.py.
+    detalle = os.path.join(BASE_DIR, "contratos_detalle.csv")
+    if os.path.exists(detalle):
+        try:
+            dfd = pd.read_csv(detalle, dtype=str).fillna("")
+            n0 = len(registros)
+            for _, row in dfd.iterrows():
+                cuit = cuit_a_str(row.get("proveedor_cuit", ""))
+                if not cuit:
+                    continue
+                es_usd = "dolar" in row.get("moneda", "").lower()
+                registros.append({
+                    "cuit":       cuit,
+                    "proveedor":  row.get("proveedor_razon", "").strip(),
+                    "organismo":  row.get("unidad_ejecutora", "").strip() or row.get("organismo", "").strip(),
+                    # en ARS; los contratos en dólares no se suman a montos en pesos
+                    "monto_bora": None if es_usd else row.get("monto_adjudicado"),
+                    "monto_tgn":  None,
+                    "fecha":      row.get("detalle_fecha", "")[:10],
+                    "link":       f"https://comprar.gob.ar/BuscarAvanzado.aspx (proceso {row.get('numero_proceso', '')})",
+                    "nivel_riesgo": "",
+                })
+            rutas_usadas.append(detalle)
+            log.info(f"  + {len(registros) - n0} contratos con CUIT desde contratos_detalle.csv (COMPR.AR)")
+        except Exception as e:
+            log.warning(f"No se pudo leer {detalle}: {e}")
+
     log.info(f"Contratos PEN cargados: {len(registros)} registros con CUIT de {len(rutas_usadas)} fuentes")
     return registros
 
