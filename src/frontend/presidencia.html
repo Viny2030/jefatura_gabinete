@@ -582,7 +582,9 @@ footer a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script>
-let MEACI = {}; // CUITs sancionados internacionalmente
+let MEACI = {}; // CUITs sancionados internacionalmente (clave: CUIT de 11 dígitos)
+function _cuitN(c) { return String(c || '').replace(/\D/g, ''); }
+function meaciDe(c) { return MEACI[_cuitN(c)]; }
 // ── Períodos JGM ──────────────────────────────────────────────────────────────
 const JGM = {
   posse:   { nombre: 'Nicolás Posse',     desde: '2023-12-10', hasta: '2024-05-27', cls: 'posse'   },
@@ -725,7 +727,7 @@ function renderC(data) {
     const gk = getGestion(c.fecha_adjudicacion);
     return `<tr>
       <td class="fw">${c.proveedor||'—'}</td>
-      <td class="mono">${c.cuit||'—'}${MEACI[c.cuit] ? ' <span class="chip-meaci" title="Sancionado internacionalmente — MEACI">🌍 ALERTA</span>' : ''}</td>
+      <td class="mono">${c.cuit||'—'}${meaciDe(c.cuit) ? ' <span class="chip-meaci" title="Sancionado internacionalmente — MEACI">🌍 ALERTA</span>' : ''}</td>
       <td style="font-size:11px">${c.tipo_contratacion||'—'}</td>
       <td class="mono">${(c.fecha_adjudicacion||'').substring(0,10)}</td>
       <td>${chipGestion(gk)}</td>
@@ -744,7 +746,6 @@ function sortC(col) {
     return sortStateC.asc ? (av>bv?1:-1) : (av<bv?1:-1);
   });
   filtrarC();
-  cargarMEACI((allC||[]).map(c=>c.cuit).filter(Boolean));
 }
 
 function exportCSV() {
@@ -979,6 +980,7 @@ function initCharts() {
   }
   filtrarC();
   filtrarP();
+  cargarMEACI((allC || []).map(c => c.cuit), filtrarC);
   initCharts();
   actualizarArea('presidencia');
   renderOrganigrama();
@@ -1030,12 +1032,18 @@ function initCharts() {
 })();
 
 // ── MEACI: carga alertas internacionales en background ───────────────────────
-async function cargarMEACI(cuits) {
-  if (!cuits || !cuits.length) return;
+async function cargarMEACI(cuits, alTerminar) {
+  // Consulta todos los CUIT (de a 50) y vuelve a dibujar si alguno está sancionado.
+  const lista = [...new Set((cuits || []).map(_cuitN).filter(c => c.length === 11))];
+  if (!lista.length) return;
   try {
-    const r = await fetch('/api/cruce-cuits-bulk?cuits=' + cuits.slice(0,50).join(','));
-    const d = await r.json();
-    MEACI = d.alertas || {};
+    for (let i = 0; i < lista.length; i += 50) {
+      const r = await fetch('/api/cruce-cuits-bulk?cuits=' + lista.slice(i, i + 50).join(','));
+      if (!r.ok) continue;
+      const d = await r.json();
+      Object.assign(MEACI, d.alertas || {});
+    }
+    if (Object.keys(MEACI).length && typeof alTerminar === 'function') alTerminar();
   } catch(e) { /* MEACI no disponible */ }
 }
 

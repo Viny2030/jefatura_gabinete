@@ -738,14 +738,41 @@ if __name__ == "__main__":
 
 
 # -- MEACI: CUITs sancionados internacionalmente ------------------------------
-MEACI_CUITS = set()  # Se poblará con lista real en próxima sesión
+# Antes MEACI_CUITS era un set() vacío "a poblar": el cruce nunca marcaba nada.
+# Ahora se consulta en vivo la API del MEACI (empresas sancionadas en casos
+# multijurisdiccionales de la OCDE con filial en Argentina), con caché de 6 h.
+MEACI_API_URL = os.getenv("MEACI_API_URL", "https://meaci-production.up.railway.app").rstrip("/")
+_MEACI_CACHE: dict[str, tuple[float, dict | None]] = {}
+_MEACI_TTL = 6 * 3600
+
+
+def _cuit_digitos(c: str) -> str:
+    d = "".join(ch for ch in str(c) if ch.isdigit())
+    return d if len(d) == 11 else ""
+
 
 @app.get("/api/cruce-cuits-bulk")
-def cruce_cuits_bulk(cuits: str = Query(..., description="CUITs separados por coma")):
-    """Verifica si algun CUIT esta en lista de sancionados internacionales."""
-    lista = [c.strip().replace("-","").replace(".","") for c in cuits.split(",") if c.strip()]
-    alertas = {c: True for c in lista if c in MEACI_CUITS}
-    return {"alertas": alertas, "total": len(alertas)}
+def cruce_cuits_bulk(cuits: str = Query(..., description="CUITs separados por coma (máx. 200)")):
+    """Verifica CUITs contra el MEACI. Devuelve {cuit_11_digitos: {empresa, pais}}."""
+    lista = list(dict.fromkeys(c for c in (_cuit_digitos(x) for x in cuits.split(",")) if c))[:200]
+    ahora = time.time()
+    pendientes = [c for c in lista if c not in _MEACI_CACHE or ahora - _MEACI_CACHE[c][0] > _MEACI_TTL]
+    error = None
+    for i in range(0, len(pendientes), 50):
+        lote = pendientes[i:i + 50]
+        try:
+            r = httpx.get(f"{MEACI_API_URL}/api/cruce-cuits-bulk", params={"cuits": ",".join(lote)}, timeout=8)
+            r.raise_for_status()
+            alertas = r.json().get("alertas", {}) or {}
+            for c in lote:
+                a = alertas.get(c)
+                _MEACI_CACHE[c] = (ahora, {"empresa": a.get("empresa"), "pais": a.get("pais")} if a else None)
+        except Exception as e:  # MEACI caído: no se cachea, se reintenta en la próxima consulta
+            error = f"MEACI no disponible: {type(e).__name__}"
+            break
+    alertas = {c: _MEACI_CACHE[c][1] for c in lista if c in _MEACI_CACHE and _MEACI_CACHE[c][1]}
+    return {"alertas": alertas, "total": len(alertas), "consultados": len(lista),
+            "fuente": "MEACI-OCDE", "error": error}
 
 
 # -- MEACI: CUITs sancionados internacionalmente ------------------------------
