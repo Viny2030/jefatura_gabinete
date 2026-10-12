@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-10 18:32",
+  "generado": "2026-10-12 12:26",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 795,
@@ -18,12 +18,12 @@
     "sgp": {
       "contratos": 263,
       "contratos_adjudicados": 209,
-      "contratos_con_monto": 7,
+      "contratos_con_monto": 174,
       "personal": 143,
       "personal_identificado": 123,
-      "monto_total": 119502053.8,
-      "monto_usd": 0.0,
-      "contratos_usd": 0
+      "monto_total": 6946116964.4800005,
+      "monto_usd": 6410261.680000001,
+      "contratos_usd": 26
     },
     "presidencia": {
       "contratos": 353,
@@ -39,9 +39,9 @@
   "jgm_ampliada": {
     "procesos": 1481,
     "adjudicados": 985,
-    "con_monto": 0,
-    "monto_ars": 0.0,
-    "monto_usd": 0.0,
+    "con_monto": 255,
+    "monto_ars": 11107488590.650002,
+    "monto_usd": 16207657.55,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
@@ -55,9 +55,9 @@
         "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
         "procesos": 231,
         "adjudicados": 177,
-        "con_monto": 0,
-        "monto_ars": 0.0,
-        "monto_usd": 0.0
+        "con_monto": 176,
+        "monto_ars": 8492479721.17,
+        "monto_usd": 5001794.44
       },
       {
         "organismo": "322 - Secretaría de Turismo y Ambiente",
@@ -95,9 +95,9 @@
         "organismo": "336 - Secretaría de Innovación, Ciencia y Tecnología",
         "procesos": 74,
         "adjudicados": 50,
-        "con_monto": 0,
-        "monto_ars": 0.0,
-        "monto_usd": 0.0
+        "con_monto": 50,
+        "monto_ars": 2318950200.14,
+        "monto_usd": 11205548.86
       },
       {
         "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
@@ -119,9 +119,9 @@
         "organismo": "173 - Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
         "procesos": 44,
         "adjudicados": 29,
-        "con_monto": 0,
-        "monto_ars": 0.0,
-        "monto_usd": 0.0
+        "con_monto": 29,
+        "monto_ars": 296058669.34000003,
+        "monto_usd": 314.25
       }
     ]
   },
