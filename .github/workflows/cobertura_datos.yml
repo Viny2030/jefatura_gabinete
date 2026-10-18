@@ -1,0 +1,38 @@
+name: Cobertura de datos de contratos
+
+# Falla (y GitHub manda el mail de job fallido) si un área se queda sin
+# montos o si la razón social / montos caen más de 30 % respecto del día
+# anterior. Los commits de los bots se pushean con GITHUB_TOKEN y no disparan
+# "on: push", por eso se engancha a los workflows que generan los datos.
+
+on:
+  workflow_run:
+    workflows: ["Monitor Diario PEN", "Proteger detalle de contratos (post-scraper)"]
+    types: [completed]
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cobertura:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Compara contra main de hace 24 h (no contra HEAD~1: en un día hay
+      # varios commits de bots y la caída puede quedar repartida).
+      - name: Verificar cobertura
+        run: |
+          REF=$(git rev-list -n1 --before="24 hours ago" origin/main || true)
+          python scripts/verificar_cobertura.py --contra "${REF:-HEAD~1}"

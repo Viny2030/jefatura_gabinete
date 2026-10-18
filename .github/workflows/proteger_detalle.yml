@@ -1,0 +1,47 @@
+name: Proteger detalle de contratos (post-scraper)
+
+# Corre apenas termina el scraper de detalle nocturno y restaura desde el
+# historial de git la razón social / CUIT / monto que esa corrida haya borrado
+# (ver scripts/proteger_detalle.py y docs/REFORMAS_P0.md). Termina antes de
+# "Monitor Diario PEN" (12:00 UTC), que regenera los JSON del portal.
+
+on:
+  workflow_run:
+    workflows: ["Scraper Detalle Contratos — Nocturno (JGM + SGP + Presidencia)"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  proteger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout (historial completo)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restaurar campos borrados
+        run: python scripts/proteger_detalle.py --commits 400
+
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add contratos_detalle.csv contratos_detalle_recuperados.csv 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nada que restaurar"
+          else
+            git commit -m "chore: restaurar detalle de contratos borrado por el scraper [$(date -u '+%Y-%m-%d')]"
+            git pull --rebase origin main || git rebase --abort
+            git push
+          fi
