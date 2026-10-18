@@ -339,3 +339,16 @@ class TestProcesarDesdeCsv:
         sc.procesar_desde_csv([str(area)], out_csv=str(out), dias_reintento=0)
         assert "79-0004-CDI25" in llamados and "79-0003-CDI25" not in llamados  # el de monto no
         assert self._leer(out)["79-0001-CDI24"]["detalle_fecha"] == hoy
+
+
+def test_sin_conexion_sale_con_error(tmp_path, monkeypatch):
+    """Sin ViewState (ConnectTimeout) el modo CSV sale con código != 0 para
+    que el bucle de reintentos del workflow funcione."""
+    area = tmp_path / "contratos_jgm.csv"
+    area.write_text("numero_proceso,estado\n79-0001-CDI24,Adjudicado\n", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(sc, "obtener_viewstate", lambda s: None)
+    monkeypatch.setattr(sys, "argv", ["scraper", "--csv", str(area)])
+    with pytest.raises(SystemExit) as e:
+        sc.main()
+    assert e.value.code == 1
