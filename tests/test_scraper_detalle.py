@@ -326,3 +326,16 @@ class TestProcesarDesdeCsv:
         assert "79-0002-CDI25: sin_tabla" in texto
         assert "79-0004-CDI25: sin_url" in texto
         assert "79-0005-CDI25: sin_monto" in texto
+
+    def test_dias_reintento(self, entorno, monkeypatch):
+        area, out = entorno
+        hoy = sc.datetime.now().strftime("%Y-%m-%d")
+        sc.procesar_desde_csv([str(area)], out_csv=str(out))  # todos quedan con fecha de hoy
+        llamados = []
+        monkeypatch.setattr(sc, "obtener_url_detalle",
+                            lambda s, vs, nup: llamados.append(nup) or (None, sc.SIN_URL))
+        sc.procesar_desde_csv([str(area)], out_csv=str(out))
+        assert llamados == []  # 14 días por defecto: nada que reintentar
+        sc.procesar_desde_csv([str(area)], out_csv=str(out), dias_reintento=0)
+        assert "79-0004-CDI25" in llamados and "79-0003-CDI25" not in llamados  # el de monto no
+        assert self._leer(out)["79-0001-CDI24"]["detalle_fecha"] == hoy

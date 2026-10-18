@@ -575,7 +575,7 @@ def fusionar_fila(previa, nueva):
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
-def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
+def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None, dias_reintento=14):
     """Scrapea el detalle (monto/CUIT/razón) de los NUP listados en uno o más
     CSV de área y actualiza out_csv. No depende de PostgreSQL.
     Usa el SAF correcto por prefijo de NUP (saf_para_nup)."""
@@ -607,7 +607,7 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
         return ((row.get("monto_adjudicado") or "").strip() not in ("", "0", "0.00")
                 and (row.get("moneda") or "").strip() != "")
 
-    def _intentado_hace_poco(row, dias=14):
+    def _intentado_hace_poco(row, dias=dias_reintento):
         f = (row.get("detalle_fecha") or "").strip()
         if not f:
             return False  # nunca se intentó con la búsqueda por número
@@ -616,7 +616,7 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
         except ValueError:
             return False
 
-    # Sin monto: se reintenta cada 14 días (el monto aparece cuando se firma
+    # Sin monto: se reintenta cada dias_reintento días (14 por defecto) (el monto aparece cuando se firma
     # el documento contractual). Los nunca intentados van primero.
     pendientes = [n for n in objetivos
                   if not (ya.get(n) and (_tiene_monto(ya[n]) or _intentado_hace_poco(ya[n])))]
@@ -624,7 +624,8 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
     if limit:
         pendientes = pendientes[:limit]
 
-    log.info(f"{len(objetivos)} adjudicados | {len(pendientes)} a scrapear (resto con monto o intentado hace < 14 días)")
+    log.info(f"{len(objetivos)} adjudicados | {len(pendientes)} a scrapear "
+             f"(resto con monto o intentado hace < {dias_reintento} días)")
 
     session = requests.Session()
     session.verify = False
@@ -724,6 +725,9 @@ def main():
     parser.add_argument("--csv",     nargs="*", default=None,
                         help="Modo CSV (sin DB): lista de CSV de área a procesar. "
                              "Vacío = jgm+sgp+presidencia por defecto.")
+    parser.add_argument("--dias", type=int, default=14,
+                        help="Modo CSV: reintentar los NUP sin monto intentados hace "
+                             ">= N días (default 14; 0 = reintentar todos).")
     args = parser.parse_args()
 
     if args.diag:
@@ -737,7 +741,7 @@ def main():
         print("SCRAPER DETALLE — MODO CSV (multi-área)")
         print(f"   Fuentes: {', '.join(csvs)}")
         print("=" * 65)
-        procesar_desde_csv(csvs, limit=args.limit)
+        procesar_desde_csv(csvs, limit=args.limit, dias_reintento=args.dias)
         return
 
     print("=" * 65)
