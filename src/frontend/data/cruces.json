@@ -1,16 +1,16 @@
 {
-  "generado_en": "2026-10-17T05:14:27.776068",
-  "total": 11,
+  "generado_en": "2026-10-18T05:14:37.824452",
+  "total": 10,
   "altos": 0,
-  "medios": 11,
-  "monto_total": 56475973.21,
+  "medios": 10,
+  "monto_total": 27315973.21,
   "por_area": {
     "jgm": {
       "total": 6,
       "altos": 0
     },
     "sgp": {
-      "total": 1,
+      "total": 0,
       "altos": 0
     },
     "presidencia": {
@@ -19,22 +19,6 @@
     }
   },
   "cruces": [
-    {
-      "nivel": "MEDIO",
-      "area": "sgp",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "GALLI, Juan Manuel",
-      "cargo": "Subsecretario/a",
-      "gestion": "Francos",
-      "empresa": "Alejandro Luis Galli",
-      "cuit": "20184140757",
-      "organismo": "83/000 - Dirección General de Administración Financiera - MC",
-      "monto": 29160000.0,
-      "monto_fmt": "$29,2 M",
-      "fecha": "",
-      "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 83-0001-CDI26)",
-      "contratos": 1
-    },
     {
       "nivel": "MEDIO",
       "area": "jgm",
