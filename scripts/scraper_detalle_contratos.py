@@ -632,7 +632,7 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None, d
     vs = obtener_viewstate(session)
     if not vs:
         log.error("No se pudo obtener ViewState")
-        return
+        return None
 
     COLS = ["numero_proceso", "nombre_proceso", "tipo_proceso", "estado",
             "unidad_ejecutora", "organismo", "monto_adjudicado",
@@ -741,7 +741,11 @@ def main():
         print("SCRAPER DETALLE — MODO CSV (multi-área)")
         print(f"   Fuentes: {', '.join(csvs)}")
         print("=" * 65)
-        procesar_desde_csv(csvs, limit=args.limit, dias_reintento=args.dias)
+        res = procesar_desde_csv(csvs, limit=args.limit, dias_reintento=args.dias)
+        if res is None:
+            # Sin conexión con COMPR.AR (ConnectTimeout desde los runners de
+            # GitHub): salir con error para que el workflow reintente.
+            sys.exit(1)
         return
 
     print("=" * 65)
