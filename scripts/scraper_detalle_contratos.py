@@ -6,13 +6,15 @@ Obtiene monto_adjudicado + proveedor_razon + proveedor_cuit para cada
 contrato adjudicado en la DB usando BuscarAvanzado.aspx.
 
 FLUJO POR CONTRATO:
-  1. GET  → obtener ViewState
-  2. POST → seleccionar SAF 591 (carga unidades ejecutoras)
-  3. POST → buscar NUP con btnListarPliegoAvanzado + ddlJurisdicion=591
-  4. Identificar ctl dinámico del NUP en los resultados
-  5. POST → click en lnkNumeroProceso → redirect VistaPreviaPliegoCiudadano
-  6. Parsear tabla "Documento contractual por proveedor"
-  7. UPDATE en DB
+  1. GET  → obtener ViewState (una vez por sesión, se refresca cada 200)
+  2. POST async → btnListarPliegoNumero, ddlJurisdicion=-2, sin rango de fechas
+  3. Identificar ctl dinámico del NUP en los resultados
+  4. POST → click en lnkNumeroProceso → redirect VistaPreviaPliegoCiudadano
+  5. Parsear tabla "Documento contractual por proveedor"
+  6. UPDATE en DB / merge en contratos_detalle.csv (sin borrar datos previos)
+
+Cada NUP sin monto deja en el log su motivo: sin_url, error_servidor,
+sin_tabla o sin_monto.
 
 MODOS:
   --diag NUP     diagnóstico de un NUP específico
@@ -68,6 +70,13 @@ DELAY_ERR       = 6.0
 MAX_RETRIES     = 3
 REFRESH_VS_CADA = 200
 CHECKPOINT_CADA = 100
+DXSCRIPT_DEFAULT = "1_103,1_105,2_13,2_12,2_7,1_96,1_100,1_83,2_6"
+
+# Motivos de fallo que se registran en el log por cada NUP sin monto.
+SIN_URL        = "sin_url"         # la búsqueda no devolvió el NUP o el link no llevó al detalle
+ERROR_SERVIDOR = "error_servidor"  # COMPR.AR respondió 0|error|500|| / 5xx / excepción de red
+SIN_TABLA      = "sin_tabla"       # la vista del pliego no tiene tabla de proveedor
+SIN_MONTO      = "sin_monto"       # hay tabla pero sin monto publicado
 
 CHECKPOINT_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -118,8 +127,11 @@ def obtener_viewstate(session):
             for f in ["__VIEWSTATE", "__EVENTVALIDATION", "__VIEWSTATEGENERATOR"]:
                 el = soup.find("input", {"id": f})
                 vs[f] = el["value"] if el else ""
+            # La página ya no trae el input DXScript: el cliente DevExpress lo
+            # arma con los recursos que cargó (<script id="dxis_…" src="/DXR.axd?r=1_103">).
             dx = soup.find("input", {"name": "DXScript"})
-            vs["DXScript"] = dx["value"] if dx else "1_103,1_105,2_13,2_12,2_7,1_96,1_100,1_83,2_6"
+            ids = re.findall(r'id="dxis_\d+"\s+src="/DXR\.axd\?r=([\d_]+)"', r.text)
+            vs["DXScript"] = (dx["value"] if dx else ",".join(ids)) or DXSCRIPT_DEFAULT
             if vs["__VIEWSTATE"]:
                 return vs
         except Exception as e:
@@ -144,18 +156,23 @@ def extraer_panel(texto_crudo, panel_id):
     return m2.group(1).rstrip("|") if m2 else ""
 
 
-def payload_base(vs, nup):
+def payload_base(vs, nup, fechas=True):
+    """Campos del formulario de BuscarAvanzado.aspx.
+
+    fechas=False deja vacío el rango de apertura, como lo manda el navegador en
+    la búsqueda rápida por número. Desde 2026-10 el servidor responde
+    '0|error|500||' a btnListarPliegoNumero (y al click en el resultado) si
+    viaja el rango 10/12/2023 → hoy."""
     hoy = datetime.today().strftime("%d/%m/%Y")
     ts  = str(int(datetime.today().replace(
         hour=0, minute=0, second=0, microsecond=0).timestamp() * 1000))
-    return {
-        "DXScript":                              vs["DXScript"],
+    p = {
+        "DXScript":                              vs.get("DXScript") or DXSCRIPT_DEFAULT,
         "__EVENTTARGET":                         "",
         "__EVENTARGUMENT":                       "",
         "__LASTFOCUS":                           "",
         "__VIEWSTATE":                           vs["__VIEWSTATE"],
         "__VIEWSTATEGENERATOR":                  vs["__VIEWSTATEGENERATOR"],
-        "__EVENTVALIDATION":                     vs["__EVENTVALIDATION"],
         "ctl00$CtrlMenuPortal$logIn$txtUsername$txtTextBox":         "",
         "ctl00$CtrlMenuPortal$logIn$textBoxUserRecuperoContrasenia": "",
         "ctl00$CtrlMenuPortal$logIn$txtMail$txtTextBox":             "",
@@ -189,17 +206,17 @@ def payload_base(vs, nup):
         "ctl00_CPH1_devPopupVistaPreviaProcesoCompraCiudadanoWS": "0:0:-1:0:0:0:0:0:",
         "ctl00_CPH1_devPopupVistaPreviaPliegoWS": "0:0:-1:0:0:0:0:0:",
     }
-
-
-def seleccionar_saf(session, vs, nup):
-    """Paso previo obligatorio: seleccionar SAF 591 para cargar unidades ejecutoras."""
-    p = payload_base(vs, nup)
-    p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$ddlJurisdicion"
-    p["__EVENTTARGET"]        = "ctl00$CPH1$ddlJurisdicion"
-    p["__EVENTARGUMENT"]      = ""
-    r = session.post(BASE_URL, data=p, headers=HEADERS_AJAX, timeout=30, verify=False)
-    actualizar_viewstate(r.text, vs)
-    return r
+    # La página dejó de emitir __EVENTVALIDATION; sólo se manda si vino.
+    if vs.get("__EVENTVALIDATION"):
+        p["__EVENTVALIDATION"] = vs["__EVENTVALIDATION"]
+    if not fechas:
+        for lado in ("Desde", "Hasta"):
+            pre = f"ctl00_CPH1_devDteEdtFechaApertura{lado}"
+            p[f"{pre}_Raw"]   = "N"
+            p[f"{pre}_DDDWS"] = "0:0:-1:0:0:0:0:0:"
+            p[f"ctl00$CPH1$devDteEdtFechaApertura{lado}"] = ""
+            p[f"ctl00$CPH1$devDteEdtFechaApertura{lado}$DDD$C"] = ""
+    return p
 
 
 # ── Identificar ctl correcto para el NUP ─────────────────────────────────────
@@ -214,14 +231,33 @@ def encontrar_ctl_para_nup(panel_html, nup):
 
 
 # ── Buscar NUP → URL de detalle ───────────────────────────────────────────────
+def es_error_async(texto):
+    """Respuesta delta de ASP.NET AJAX con error de servidor (ej. '0|error|500||')."""
+    return bool(re.match(r"\d+\|error\|\d+\|", texto or ""))
+
+
+def extraer_url_vista_previa(texto):
+    m = re.search(
+        r"((?:https://comprar\.gob\.ar)?/PLIEGO/VistaPreviaPliegoCiudadano\.aspx\?qs=[^\s\"'<|]+)",
+        texto or "",
+    )
+    if not m:
+        return None
+    url = m.group(1).replace("&amp;", "&")
+    return url if url.startswith("http") else DETALLE_BASE + url
+
+
 def obtener_url_detalle(session, vs, nup):
+    """Busca el NUP y sigue el link al detalle. Devuelve (url, motivo):
+    motivo es None si hay URL, o SIN_URL / ERROR_SERVIDOR."""
+    motivo = SIN_URL
     for intento in range(1, MAX_RETRIES + 1):
         try:
             # Búsqueda por número de proceso: hay que usar btnListarPliegoNumero.
-            # btnListarPliegoAvanzado (lo que se usaba antes) ignora el número y
-            # devuelve la primera página del SAF, así que sólo se encontraban los
-            # procesos que caían en esa página (37 de 573 con monto).
-            p = payload_base(vs, nup)
+            # btnListarPliegoAvanzado ignora el número y devuelve la primera
+            # página del SAF. Jurisdicción -2 (todas) y sin rango de fechas,
+            # igual que la búsqueda rápida del navegador.
+            p = payload_base(vs, nup, fechas=False)
             p["ctl00$CPH1$ddlJurisdicion"] = "-2"
             p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$btnListarPliegoNumero"
             p["__EVENTTARGET"]        = "ctl00$CPH1$btnListarPliegoNumero"
@@ -230,24 +266,21 @@ def obtener_url_detalle(session, vs, nup):
 
             r = session.post(BASE_URL, data=p, headers=HEADERS_AJAX,
                              timeout=45, verify=False)
-            if r.status_code in (429, 503):
+            if r.status_code in (429, 503) or r.status_code >= 500 or es_error_async(r.text):
+                motivo = ERROR_SERVIDOR
+                log.debug(f"  {nup}: servidor respondió {r.status_code} {r.text[:40]!r}")
                 time.sleep(DELAY_ERR * intento * 2)
                 continue
             actualizar_viewstate(r.text, vs)
 
-            if "GridListaPliegos" not in r.text:
-                return None
-
             panel = extraer_panel(r.text, "ctl00_CPH1_UpdatePanel1")
             ctl   = encontrar_ctl_para_nup(panel, nup)
-
             if not ctl:
-                log.debug(f"  {nup} no encontrado en resultados del panel")
-                return None
+                return None, SIN_URL
 
-            # PASO C: click en el link correcto
+            # Click en el link del resultado → redirect a VistaPreviaPliegoCiudadano
             time.sleep(0.5)
-            p2 = payload_base(vs, nup)
+            p2 = payload_base(vs, nup, fechas=False)
             p2["ctl00$CPH1$ddlJurisdicion"] = "-2"
             target = f"ctl00$CPH1$GridListaPliegos${ctl}$lnkNumeroProceso"
             p2["ctl00$ScriptManager1"] = f"ctl00$ScriptManager1|{target}"
@@ -256,27 +289,22 @@ def obtener_url_detalle(session, vs, nup):
 
             r2 = session.post(BASE_URL, data=p2, headers=HEADERS_GET,
                               timeout=45, verify=False, allow_redirects=True)
+            if r2.status_code >= 500 or es_error_async(r2.text):
+                motivo = ERROR_SERVIDOR
+                time.sleep(DELAY_ERR * intento * 2)
+                continue
 
             if "VistaPreviaPliegoCiudadano" in r2.url:
-                return r2.url
-
-            m = re.search(
-                r"((?:https://comprar\.gob\.ar)?/PLIEGO/VistaPreviaPliegoCiudadano\.aspx\?qs=[^\s\"'<]+)",
-                r2.text,
-            )
-            if m:
-                url = m.group(1)
-                if not url.startswith("http"):
-                    url = DETALLE_BASE + url
-                return url
-
-            return None
+                return r2.url, None
+            url = extraer_url_vista_previa(r2.text)
+            return (url, None) if url else (None, SIN_URL)
 
         except Exception as e:
+            motivo = ERROR_SERVIDOR
             log.warning(f"  obtener_url intento {intento} [{nup}]: {e}")
             time.sleep(DELAY_ERR * intento)
 
-    return None
+    return None, motivo
 
 
 # ── Parser de detalle ─────────────────────────────────────────────────────────
@@ -310,8 +338,10 @@ def limpiar_cuit(texto):
 
 def parsear_detalle(html):
     soup = BeautifulSoup(html, "html.parser")
+    # "tabla": qué tabla se encontró ("contractual", "proveedor" o None);
+    # sirve para distinguir sin_tabla de sin_monto en el log.
     resultado = {"monto_adjudicado": None, "proveedor_razon": None, "proveedor_cuit": None,
-                 "moneda": None, "fecha_perfeccionamiento": None}
+                 "moneda": None, "fecha_perfeccionamiento": None, "tabla": None}
 
     tabla = None
     for tag in soup.find_all(["h4", "h3", "h2", "strong", "b"]):
@@ -335,6 +365,7 @@ def parsear_detalle(html):
         for t in soup.find_all("table"):
             ths = [c.get_text(strip=True).lower() for c in t.find_all("th")]
             if ths[:2] == ["razón social", "número cuit"]:
+                resultado["tabla"] = "proveedor"
                 for fila in t.find_all("tr")[1:]:
                     tds = fila.find_all("td")
                     if len(tds) >= 2 and tds[0].get_text(strip=True):
@@ -344,6 +375,7 @@ def parsear_detalle(html):
                 break
         return resultado
 
+    resultado["tabla"] = "contractual"
     filas = tabla.find_all("tr")
     if not filas:
         return resultado
@@ -399,15 +431,26 @@ def parsear_detalle(html):
 
 
 def obtener_detalle(session, url):
+    """Devuelve el dict de parsear_detalle, o None si el servidor no respondió 200."""
     for intento in range(1, MAX_RETRIES + 1):
         try:
             r = session.get(url, headers=HEADERS_GET, timeout=30, verify=False)
             if r.status_code == 200:
                 return parsear_detalle(r.text)
+            time.sleep(DELAY_ERR * intento)
         except Exception as e:
             log.warning(f"  GET detalle intento {intento}: {e}")
             time.sleep(DELAY_ERR * intento)
     return None
+
+
+def motivo_detalle(res):
+    """Motivo de fallo para un detalle ya descargado (None = tiene monto)."""
+    if res is None:
+        return ERROR_SERVIDOR
+    if res.get("monto_adjudicado") is not None:
+        return None
+    return SIN_TABLA if not res.get("tabla") else SIN_MONTO
 
 
 # ── Base de datos ─────────────────────────────────────────────────────────────
@@ -477,7 +520,7 @@ def guardar_checkpoint(procesados):
 # ── Modo diagnóstico ──────────────────────────────────────────────────────────
 def modo_diagnostico(nup):
     print(f"\n{'='*65}")
-    print(f"DIAGNÓSTICO — NUP: {nup}")
+    print(f"DIAGNÓSTICO — NUP: {nup}  (SAF por prefijo: {saf_para_nup(nup)})")
     print(f"{'='*65}")
 
     session = requests.Session()
@@ -488,46 +531,47 @@ def modo_diagnostico(nup):
     if not vs:
         print("ERROR: no se pudo obtener ViewState")
         return
-    print(f"    OK — len={len(vs['__VIEWSTATE'])}")
+    print(f"    OK — len={len(vs['__VIEWSTATE'])} DXScript={vs['DXScript']} "
+          f"EVENTVALIDATION={'sí' if vs['__EVENTVALIDATION'] else 'no'}")
 
-    print(f"\n[2] Seleccionando SAF {SAF_ID}...")
-    seleccionar_saf(session, vs, nup)
-    print("    OK")
-
-    print(f"\n[3] Buscando NUP {nup} en SAF {SAF_ID}...")
-    p = payload_base(vs, nup)
-    p["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$btnListarPliegoAvanzado"
-    p["__EVENTTARGET"]        = "ctl00$CPH1$btnListarPliegoAvanzado"
-    p["__EVENTARGUMENT"]      = "undefined"
-    p["__ASYNCPOST"]          = "true"
-    r = session.post(BASE_URL, data=p, headers=HEADERS_AJAX, timeout=45, verify=False)
-    actualizar_viewstate(r.text, vs)
-
-    panel = extraer_panel(r.text, "ctl00_CPH1_UpdatePanel1")
-    ctl   = encontrar_ctl_para_nup(panel, nup)
-    print(f"    ctl detectado: {ctl}")
-
-    if not ctl:
-        soup = BeautifulSoup(panel, "html.parser")
-        nups = [a.get_text(strip=True)
-                for a in soup.find_all("a", id=re.compile(r"lnkNumeroProceso"))]
-        print(f"    NUPs en resultados: {nups[:5]}")
-        return
-
-    print("\n[4] Obteniendo URL de detalle...")
-    url = obtener_url_detalle(session, vs, nup)
+    print("\n[2] Buscando por número y siguiendo el link al detalle...")
+    url, motivo = obtener_url_detalle(session, vs, nup)
     if not url:
-        print("    ⚠️  No se obtuvo URL")
+        print(f"    ⚠️  No se obtuvo URL — motivo: {motivo}")
         return
     print(f"    URL: {url[:100]}...")
 
-    print("\n[5] Descargando y parseando detalle...")
-    r2 = session.get(url, headers=HEADERS_GET, timeout=30, verify=False)
-    resultado = parsear_detalle(r2.text)
-    print("\n    Resultado:")
-    for k, v in resultado.items():
+    print("\n[3] Descargando y parseando detalle...")
+    time.sleep(0.4)
+    resultado = obtener_detalle(session, url)
+    print(f"\n    Resultado (motivo: {motivo_detalle(resultado) or 'ok'}):")
+    for k, v in (resultado or {}).items():
         print(f"    {k:22s}: {v}")
     print(f"\n{'='*65}")
+
+
+# ── Merge de contratos_detalle.csv ───────────────────────────────────────────
+def fusionar_fila(previa, nueva):
+    """Combina la fila ya guardada con el resultado del nuevo intento.
+
+    - Si el nuevo intento trajo monto, manda el nuevo (es el dato más reciente).
+    - Si no trajo monto y la fila previa tenía proveedor o monto, se conservan
+      los valores previos y sólo se actualiza detalle_fecha: un fallo (503,
+      búsqueda rota, página sin tabla) nunca borra datos buenos.
+    - Si la previa no tenía datos, se guarda lo que haya traído el intento
+      (ej. razón social / CUIT sin monto publicado)."""
+    if not previa:
+        return dict(nueva)
+    if (nueva.get("monto_adjudicado") or "").strip():
+        return {**previa, **nueva}
+    if ((previa.get("proveedor_razon") or "").strip()
+            or (previa.get("monto_adjudicado") or "").strip()):
+        out = dict(previa)
+        out["detalle_fecha"] = nueva.get("detalle_fecha", out.get("detalle_fecha", ""))
+        return out
+    out = dict(previa)
+    out.update({k: v for k, v in nueva.items() if (v or "").strip() or k not in out})
+    return out
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -602,6 +646,7 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
                 w.writerow({c: row.get(c, "") for c in COLS})
 
     ok = sin = 0
+    motivos = {}
     t0 = time.time()
     for i, nup in enumerate(pendientes, 1):
         if i % REFRESH_VS_CADA == 0:
@@ -626,12 +671,14 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
             "detalle_scrapeado": "True",
             "detalle_fecha":    datetime.now().strftime("%Y-%m-%d"),
         }
+        motivo = None
         try:
-            url = obtener_url_detalle(session, vs, nup)
+            url, motivo = obtener_url_detalle(session, vs, nup)
             if url:
                 time.sleep(0.4)
                 res = obtener_detalle(session, url)
-                if res and res.get("monto_adjudicado") is not None:
+                motivo = motivo_detalle(res)
+                if motivo is None:
                     fila["monto_adjudicado"] = f"{res['monto_adjudicado']:.2f}"
                     fila["proveedor_razon"]  = res.get("proveedor_razon") or ""
                     fila["proveedor_cuit"]   = res.get("proveedor_cuit") or ""
@@ -645,13 +692,16 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
                     if res:
                         fila["proveedor_razon"] = res.get("proveedor_razon") or ""
                         fila["proveedor_cuit"]  = res.get("proveedor_cuit") or ""
-                    sin += 1
-            else:
-                sin += 1
         except Exception as e:
-            log.warning(f"  {nup}: {type(e).__name__}")
+            log.warning(f"  {nup}: {type(e).__name__}: {e}")
+            motivo = ERROR_SERVIDOR
+        if motivo:
             sin += 1
-        ya[nup] = fila
+            motivos[motivo] = motivos.get(motivo, 0) + 1
+            conserva = " (se conservan datos previos)" if (
+                (ya.get(nup) or {}).get("proveedor_razon") or (ya.get(nup) or {}).get("monto_adjudicado")) else ""
+            log.info(f"  ✗ {nup}: {motivo}{conserva}")
+        ya[nup] = fusionar_fila(ya.get(nup), fila)
         if i % 25 == 0:
             _escribir()  # checkpoint: si el job se corta por timeout no se pierde lo hecho
         time.sleep(DELAY_OK)
@@ -660,6 +710,9 @@ def procesar_desde_csv(csv_paths, out_csv="contratos_detalle.csv", limit=None):
     _escribir()
 
     log.info(f"✅ {out_csv}: {ok} con monto, {sin} sin dato | {len(ya)} filas totales")
+    if motivos:
+        log.info("Motivos sin dato: " + ", ".join(f"{k}={v}" for k, v in sorted(motivos.items())))
+    return {"ok": ok, "sin": sin, "motivos": motivos}
 
 
 def main():
@@ -742,26 +795,33 @@ def main():
             eta = datetime.fromtimestamp(time.time() + eta_seg).strftime("%H:%M")
             log.info(f"[{i:>5}/{total}] ok={ok} sin={sin_dato} | {vel:.2f}/s ETA~{eta}")
 
-        url = obtener_url_detalle(session, vs, nup)
+        url, motivo = obtener_url_detalle(session, vs, nup)
         procesados.add(nup)
 
         if not url:
-            actualizar_contrato(conn, contrato["id"], {}, dry_run=args.dry_run)
+            log.info(f"  ✗ {nup}: {motivo}")
+            # Error de servidor: no marcar detalle_scrapeado, así se reintenta.
+            if motivo != ERROR_SERVIDOR:
+                actualizar_contrato(conn, contrato["id"], {}, dry_run=args.dry_run)
             sin_dato += 1
             time.sleep(DELAY_OK)
             continue
 
         time.sleep(0.4)
         resultado = obtener_detalle(session, url)
+        motivo = motivo_detalle(resultado)
 
-        if resultado and resultado.get("monto_adjudicado") is not None:
+        if motivo is None:
             actualizar_contrato(conn, contrato["id"], resultado, dry_run=args.dry_run)
             ok += 1
             if ok <= 10:
                 log.info(f"  ✅ {nup}: ${resultado['monto_adjudicado']:,.0f} | "
                          f"{str(resultado.get('proveedor_razon',''))[:40]}")
         else:
-            actualizar_contrato(conn, contrato["id"], {}, dry_run=args.dry_run)
+            log.info(f"  ✗ {nup}: {motivo}")
+            if motivo != ERROR_SERVIDOR:
+                # Sin monto: igual guardar razón social / CUIT si están
+                actualizar_contrato(conn, contrato["id"], resultado or {}, dry_run=args.dry_run)
             sin_dato += 1
 
         if i % CHECKPOINT_CADA == 0:
