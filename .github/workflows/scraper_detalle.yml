@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 4 * * *"    # 01:00 ART = 04:00 UTC
   workflow_dispatch:
+    inputs:
+      dias:
+        description: "Reintentar NUP sin monto intentados hace >= N días (0 = todos)"
+        required: false
+        default: "14"
 
 jobs:
   scrape-detalle:
@@ -30,14 +35,18 @@ jobs:
       # prefijo de NUP. Reintenta ante 503 intermitentes de comprar.gob.ar.
       - name: Correr scraper de detalle (multi-area)
         continue-on-error: true
+        env:
+          # En la corrida programada no hay inputs: queda el default 14.
+          DIAS: ${{ inputs.dias || '14' }}
         run: |
+          case "$DIAS" in ''|*[!0-9]*) echo "dias inválido: $DIAS"; exit 1;; esac
           for i in 1 2 3; do
             echo "Intento $i de 3..."
             # --limit: ~7 s por proceso; 450 entran holgados en el timeout.
             # Lo que no entra queda para la noche siguiente (checkpoint).
             python scripts/scraper_detalle_contratos.py --csv \
               contratos_jgm.csv contratos_sgp.csv contratos_presidencia.csv \
-              contratos_jgm_ampliada.csv --limit 450 \
+              contratos_jgm_ampliada.csv --limit 450 --dias "$DIAS" \
               && break
             echo "Fallo intento $i, esperando 120s..."
             sleep 120
