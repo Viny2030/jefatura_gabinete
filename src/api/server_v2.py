@@ -34,11 +34,7 @@ else:                                # tests (pythonpath = src/api)
     from api_server import app
     import chat_v2
 
-_tiene_prefijo_v2 = any(getattr(r, "path", "").startswith("/api/v2") for r in chat_v2.router.routes)
-if _tiene_prefijo_v2:
-    app.include_router(chat_v2.router)
-else:
-    app.include_router(chat_v2.router, prefix="/api/v2")
+app.include_router(chat_v2.router)
 
 
 def _reemplazar_chat_v1() -> bool:
