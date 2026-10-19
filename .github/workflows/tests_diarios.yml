@@ -89,7 +89,7 @@ jobs:
 
       - name: Ejecutar smoke tests
         env:
-          LIVE_URL: https://jefaturagabinete-production.up.railway.app
+          LIVE_URL: https://jefatura.ecosistematransparencia.com.ar
         run: |
           pytest tests/test_live.py \
             -v \
@@ -178,7 +178,7 @@ jobs:
             Tests unitarios: OK
             Smoke tests Railway: FALLARON
 
-            URL: https://jefaturagabinete-production.up.railway.app
+            URL: https://jefatura.ecosistematransparencia.com.ar
 
             Ver logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 

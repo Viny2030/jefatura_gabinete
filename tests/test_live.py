@@ -15,7 +15,7 @@ import requests
 
 BASE_URL = os.environ.get(
     "LIVE_URL",
-    "https://jefaturagabinete-production.up.railway.app"
+    "https://jefatura.ecosistematransparencia.com.ar"
 ).rstrip("/")
 
 TIMEOUT = 20  # segundos
