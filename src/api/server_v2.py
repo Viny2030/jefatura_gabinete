@@ -10,7 +10,7 @@ Arranque (Railway → Settings → Deploy → Custom Start Command):
     uvicorn src.api.server_v2:app --host 0.0.0.0 --port $PORT
 
   (Railway expande $PORT solo si el comando corre en un shell; si no, usar
-   el puerto fijo 8000 como en el Dockerfile:  ... --port 8000)
+   el puerto fijo 8000 como en el Dockerfile:   ... --port 8000)
 
 Variables de entorno nuevas (todas opcionales):
 
@@ -34,7 +34,11 @@ else:                                # tests (pythonpath = src/api)
     from api_server import app
     import chat_v2
 
-app.include_router(chat_v2.router)
+_tiene_prefijo_v2 = any(getattr(r, "path", "").startswith("/api/v2") for r in chat_v2.router.routes)
+if _tiene_prefijo_v2:
+    app.include_router(chat_v2.router)
+else:
+    app.include_router(chat_v2.router, prefix="/api/v2")
 
 
 def _reemplazar_chat_v1() -> bool:
