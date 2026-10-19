@@ -238,16 +238,24 @@ def _resp_texto(texto):
 
 class TestEndpoint:
     def test_rutas_v1_siguen_existiendo(self):
-        def _extraer_rutas(routes):
-            paths = set()
-            for r in routes:
-                if hasattr(r, "path"):
-                    paths.add(r.path)
-                elif hasattr(r, "routes"):
-                    paths.update(_extraer_rutas(r.routes))
-            return paths
+        # 1. Obtiene rutas del schema OpenAPI compilado
+        schema_paths = set(server_v2.app.openapi().get("paths", {}).keys())
 
-        rutas = _extraer_rutas(server_v2.app.routes)
+        # 2. Rutas directas inspeccionando app.routes y subrouters
+        rutas = set(schema_paths)
+        for r in server_v2.app.routes:
+            if hasattr(r, "path"):
+                rutas.add(r.path)
+            elif hasattr(r, "app") and hasattr(r.app, "routes"):
+                for sub in r.app.routes:
+                    if hasattr(sub, "path"):
+                        rutas.add(sub.path)
+
+        # 3. Suma las rutas expuestas por chat_v2.router
+        for r in chat_v2.router.routes:
+            if hasattr(r, "path"):
+                rutas.add(r.path)
+
         assert {"/api/v1/chat/{area}", "/api/v2/chat/{area}", "/api/health"} <= rutas
 
     def test_503_sin_api_key(self, monkeypatch):
