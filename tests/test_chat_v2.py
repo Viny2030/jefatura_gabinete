@@ -238,7 +238,16 @@ def _resp_texto(texto):
 
 class TestEndpoint:
     def test_rutas_v1_siguen_existiendo(self):
-        rutas = {r.path for r in server_v2.app.routes}
+        def _extraer_rutas(routes):
+            paths = set()
+            for r in routes:
+                if hasattr(r, "path"):
+                    paths.add(r.path)
+                elif hasattr(r, "routes"):
+                    paths.update(_extraer_rutas(r.routes))
+            return paths
+
+        rutas = _extraer_rutas(server_v2.app.routes)
         assert {"/api/v1/chat/{area}", "/api/v2/chat/{area}", "/api/health"} <= rutas
 
     def test_503_sin_api_key(self, monkeypatch):
