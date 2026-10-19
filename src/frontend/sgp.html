@@ -731,10 +731,26 @@ function renderC(data) {
     `<strong>${data.length}</strong> resultado${data.length!==1?'s':''}`;
 }
 
+// Ordenar por monto sin mezclar monedas: pesos, después dólares, después
+// euros; dentro de cada moneda por importe. Sin monto siempre al final.
+function cmpMonto(a, b, asc) {
+  function clave(c) {
+    var m = Number(c.monto_adjudicado) || 0;
+    if (!(m > 0)) return null;
+    var g = (!c.moneda || c.moneda === 'ARS') ? 0 : (c.moneda === 'USD' ? 1 : 2);
+    return [g, m];
+  }
+  var ka = clave(a), kb = clave(b);
+  if (!ka || !kb) return ka ? -1 : (kb ? 1 : 0);
+  if (ka[0] !== kb[0]) return ka[0] - kb[0];
+  return asc ? ka[1] - kb[1] : kb[1] - ka[1];
+}
+
 function sortC(col) {
   sortStateC.asc = sortStateC.col === col ? !sortStateC.asc : true;
   sortStateC.col = col;
   allC.sort((a,b) => {
+    if (col === 'monto_adjudicado') return cmpMonto(a, b, sortStateC.asc);
     const av = a[col]||'', bv = b[col]||'';
     return sortStateC.asc ? (av>bv?1:-1) : (av<bv?1:-1);
   });

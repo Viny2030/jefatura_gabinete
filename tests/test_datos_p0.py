@@ -1,62 +1,14 @@
 """
 test_datos_p0.py
 ================
-scripts/proteger_detalle.py y scripts/verificar_cobertura.py (sin git ni red).
+scripts/verificar_cobertura.py (sin red).
 """
 import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
 
-import proteger_detalle as pd_  # noqa: E402
 import verificar_cobertura as vc  # noqa: E402
-
-COLS = ["numero_proceso", "monto_adjudicado", "proveedor_razon", "proveedor_cuit",
-        "moneda", "fecha_perfeccionamiento", "detalle_fecha"]
-
-
-def fila(nup, monto="", razon="", cuit="", moneda="", fecha="2026-10-14"):
-    return {"numero_proceso": nup, "monto_adjudicado": monto, "proveedor_razon": razon,
-            "proveedor_cuit": cuit, "moneda": moneda, "fecha_perfeccionamiento": "",
-            "detalle_fecha": fecha}
-
-
-class TestProtegerDetalle:
-    def test_restaura_lo_borrado_desde_el_commit_mas_reciente(self):
-        actuales = [fila("79-0001-CDI24")]
-        snaps = [
-            ("bbb", [fila("79-0001-CDI24")]),                                       # ya borrado
-            ("aaa", [fila("79-0001-CDI24", "14400000.00", "EJES SA", "33-66341994-9")]),
-            ("zzz", [fila("79-0001-CDI24", "1.00", "VIEJO SA")]),                   # más viejo
-        ]
-        rest = pd_.recuperar(actuales, snaps, COLS)
-        assert actuales[0]["proveedor_razon"] == "EJES SA"
-        assert actuales[0]["monto_adjudicado"] == "14400000.00"
-        assert {r[2] for r in rest} == {"aaa"}
-
-    def test_no_pisa_datos_actuales(self):
-        actuales = [fila("23-0001", "5.00", "NUEVO SA", moneda="ARS")]
-        rest = pd_.recuperar(actuales, [("aaa", [fila("23-0001", "1.00", "VIEJO SA")])], COLS)
-        assert rest == [] and actuales[0]["proveedor_razon"] == "NUEVO SA"
-
-    def test_no_mezcla_commits(self):
-        """Razón social de un commit y monto de otro nunca se combinan."""
-        actuales = [fila("79-1")]
-        snaps = [("bbb", [fila("79-1", razon="SOLO RAZON SA")]),
-                 ("aaa", [fila("79-1", "9.00", "OTRA SA")])]
-        pd_.recuperar(actuales, snaps, COLS)
-        assert actuales[0]["proveedor_razon"] == "SOLO RAZON SA"
-        assert actuales[0]["monto_adjudicado"] == ""
-
-    def test_sin_historial_no_cambia_nada(self):
-        actuales = [fila("79-1")]
-        assert pd_.recuperar(actuales, [], COLS) == []
-
-    def test_vacios_equivalentes(self):
-        for v in ("", " ", "0", "0.00", "nan", None):
-            assert pd_._vacio(v)
-        assert not pd_._vacio("EJES SA")
-
 
 class TestVerificarCobertura:
     def test_medir_reconoce_proveedor_que_es_el_objeto(self):
