@@ -1,5 +1,5 @@
 {
-  "generado": "2026-10-19 12:18",
+  "generado": "2026-10-19 14:45",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 795,
@@ -8,12 +8,12 @@
     "jgm": {
       "contratos": 179,
       "contratos_adjudicados": 127,
-      "contratos_con_monto": 10,
+      "contratos_con_monto": 120,
       "personal": 817,
       "personal_identificado": 524,
-      "monto_total": 1050196258.2900001,
-      "monto_usd": 0.0,
-      "contratos_usd": 0
+      "monto_total": 4381480969.44,
+      "monto_usd": 3444660.56,
+      "contratos_usd": 5
     },
     "sgp": {
       "contratos": 263,
@@ -28,20 +28,20 @@
     "presidencia": {
       "contratos": 353,
       "contratos_adjudicados": 237,
-      "contratos_con_monto": 76,
+      "contratos_con_monto": 233,
       "personal": 454,
       "personal_identificado": 206,
-      "monto_total": 7294297125.540001,
-      "monto_usd": 0.0,
-      "contratos_usd": 0
+      "monto_total": 15237830292.03,
+      "monto_usd": 525709.0,
+      "contratos_usd": 1
     }
   },
   "jgm_ampliada": {
     "procesos": 1481,
     "adjudicados": 985,
-    "con_monto": 661,
-    "monto_ars": 136709493450.15,
-    "monto_usd": 324292712.64,
+    "con_monto": 925,
+    "monto_ars": 154935905977.09003,
+    "monto_usd": 418839031.12999994,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
@@ -71,24 +71,24 @@
         "organismo": "107 - Administración de Parques Nacionales",
         "procesos": 162,
         "adjudicados": 114,
-        "con_monto": 0,
-        "monto_ars": 0.0,
-        "monto_usd": 0.0
+        "con_monto": 112,
+        "monto_ars": 8680413909.51,
+        "monto_usd": 5099774.25
       },
       {
         "organismo": "207 - Ente Nacional de Comunicaciones (ENACOM)",
         "procesos": 143,
         "adjudicados": 101,
-        "con_monto": 75,
-        "monto_ars": 3257900842.54,
-        "monto_usd": 15247190.020000001
+        "con_monto": 101,
+        "monto_ars": 6908852098.5,
+        "monto_usd": 104247463.46
       },
       {
         "organismo": "121 - Banco Nacional de Datos Genéticos",
         "procesos": 75,
         "adjudicados": 65,
-        "con_monto": 0,
-        "monto_ars": 0.0,
+        "con_monto": 63,
+        "monto_ars": 1787625334.36,
         "monto_usd": 0.0
       },
       {
@@ -103,17 +103,17 @@
         "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
         "procesos": 73,
         "adjudicados": 57,
-        "con_monto": 0,
-        "monto_ars": 0.0,
-        "monto_usd": 0.0
+        "con_monto": 21,
+        "monto_ars": 3678762844.4300003,
+        "monto_usd": 366957.28
       },
       {
         "organismo": "209 - Agencia de Acceso a la Información Pública",
         "procesos": 49,
         "adjudicados": 42,
-        "con_monto": 0,
-        "monto_ars": 0.0,
-        "monto_usd": 0.0
+        "con_monto": 42,
+        "monto_ars": 428659182.68,
+        "monto_usd": 79313.52
       },
       {
         "organismo": "173 - Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-10-18",
+    "contratos": "2026-10-19",
     "personal": "2026-07-06",
     "nomina_regenerada_hoy": false
   }
