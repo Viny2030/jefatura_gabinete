@@ -335,7 +335,7 @@
     "objeto": "SERVICIO DE IMPRESIÓN, COPIADO Y DIGITALIZACIÓN DE DOCUMENTOS POR DOCE (12) MESES CON PRORROGA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "21/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -403,7 +403,7 @@
     "objeto": "Insumos para la Gerencia de Organización y Sistemas",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "15/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -456,6 +456,23 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "12/01/2026 10:00 Hrs.",
+    "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
+  },
+  {
+    "numero_proceso": "91-0003-LPU26",
+    "organismo": "91/00 - Departamento de Compras, Mantenimiento y Suministros",
+    "proveedor": "Adquisición de una Infraestructura de Red – Equipamiento Telecomunicaciones CONI",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-10-15",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de una Infraestructura de Red – Equipamiento Telecomunicaciones CONICET",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "15/10/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
   {
@@ -947,7 +964,7 @@
     "objeto": "Insumos para Archivo Av. Rivadavia",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado con doc. contractuales generados",
     "fecha_apertura": "14/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -1015,7 +1032,7 @@
     "objeto": "Adquisición de Insumos Para Cafetería 2026",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "16/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -5163,7 +5180,7 @@
     "objeto": "Renovación de licencias de software ENVI + SARScape para uso técnico de la Gerencia de Observación",
     "ejercicio": 2023,
     "gestion": "Pre-Milei",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "24/02/2023 15:00 Hrs.",
     "organismo_saf": "106 - Comisión Nacional de Actividades Espaciales (CONAE)"
   },
@@ -6817,6 +6834,23 @@
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
+    "numero_proceso": "74-0007-CDI26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "servicio de alquiler de cochera fija para el vehículo oficial Ford Ranger KZZ513",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-15",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "servicio de alquiler de cochera fija para el vehículo oficial Ford Ranger KZZ513 que forma parte de",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "15/10/2026 10:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
     "numero_proceso": "74-0007-LPR26",
     "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
     "proveedor": "GREENWATTS S.A.",
@@ -7086,6 +7120,23 @@
     "gestion": "Francos",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "20/05/2025 11:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
+    "numero_proceso": "74-0015-CDI26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "Adquisición de trampa para captura",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-16",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de trampa para captura",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "16/10/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
@@ -7494,6 +7545,23 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "04/11/2025 10:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
+    "numero_proceso": "74-0024-LPU26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "Adquisición de 1 (UNA) Retroexcavadora",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-10-16",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de 1 (UNA) Retroexcavadora",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "16/10/2026 09:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
@@ -8257,7 +8325,7 @@
     "objeto": "Adquisición de elementos informáticos y eléctricos para tareas del personal técnico",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "En Evaluacion",
+    "estado": "Adjudicado",
     "fecha_apertura": "25/06/2026 12:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8274,7 +8342,7 @@
     "objeto": "Adquisición de herramientas y elementos de trabajo para Personal Técnico del Organismo.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "22/07/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8376,7 +8444,7 @@
     "objeto": "Adquisición Guias Únicas de Tránsito",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "29/07/2026 12:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8427,7 +8495,7 @@
     "objeto": "Servicio de impresión de guías de especies",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "07/09/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8478,7 +8546,7 @@
     "objeto": "Adquisición de indumentaria y calzado para tareas de campo del personal técnico DNC",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Adjudicado",
     "fecha_apertura": "28/09/2026 09:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8512,7 +8580,7 @@
     "objeto": "Adquisición de televisor Smart y soporte de tv.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "10/09/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8529,7 +8597,7 @@
     "objeto": "Adquisición municiones y elementos de sujeción de armamento del CGN",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "08/09/2026 09:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8546,7 +8614,7 @@
     "objeto": "Servicio de impresión de SIETE MIL QUINIENTAS (7.500) LÁMINAS SERIE 3 DE BIODIVERSIDAD",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Pendiente Afectación",
     "fecha_apertura": "14/09/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8563,7 +8631,7 @@
     "objeto": "Adquisición de sombreros reglamentarios destinados al CGN de las Áreas Protegidas del Organismo.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "24/09/2026 11:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8820,6 +8888,23 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "17/11/2025 10:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
+    "numero_proceso": "74-0449-LPR26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "Cobertura Seguro de Enseres (transporte Mudanza)",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-02",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Cobertura Seguro de Enseres (transporte Mudanza)",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "02/11/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
@@ -9792,6 +9877,23 @@
     "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
   },
   {
+    "numero_proceso": "454-0004-LPU26",
+    "organismo": "454/000 - Subdirección de Compras y Contrataciones",
+    "proveedor": "NEPTUNO NAAP SOFTWARE –GESTIÓN DE ACTIVOS E INVENTARIO– FISCALIZACIONES DE INFRA",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-10-20",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "NEPTUNO NAAP SOFTWARE –GESTIÓN DE ACTIVOS E INVENTARIO– FISCALIZACIONES DE INFRAESTRUCTURA EN SITIO",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "20/10/2026 11:30 Hrs.",
+    "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
+  },
+  {
     "numero_proceso": "454-0005-CDI24",
     "organismo": "454/000 - Subdirección de Compras y Contrataciones",
     "proveedor": "IDS BOILER SRL",
@@ -10010,6 +10112,23 @@
     "gestion": "Francos",
     "estado": "Adjudicado",
     "fecha_apertura": "26/06/2025 11:30 Hrs.",
+    "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
+  },
+  {
+    "numero_proceso": "454-0006-LPR26",
+    "organismo": "454/000 - Subdirección de Compras y Contrataciones",
+    "proveedor": "REPARACIÓN Y MANTENIMIENTO PREVENTIVO Y CORRECTIVO PARA LA INSTALACIÓN TÉRMICA D",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-10-15",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "REPARACIÓN Y MANTENIMIENTO PREVENTIVO Y CORRECTIVO PARA LA INSTALACIÓN TÉRMICA DE PERÚ 103 CABA",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Preadjudicado",
+    "fecha_apertura": "15/10/2026 11:30 Hrs.",
     "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
   },
   {
@@ -15737,7 +15856,7 @@
     "objeto": "Servicio custodia para resguardo de inms.del Estado Nacional bajo jurisdicción de AABE en CABA y PBA",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Pendiente Análisis",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "11/05/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -15907,7 +16026,7 @@
     "objeto": "Concesión de Uso para explotación comercial  Autopista  Ricchieri Km. 29 - Pcia.- Bs. As.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado con doc. contractuales generados",
     "fecha_apertura": "12/06/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -16247,7 +16366,7 @@
     "objeto": "Concesión de Uso para explotación comercial- Locales calle San Martin N° 652/658 Prov. SAN LUIS",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "19/08/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -16859,7 +16978,7 @@
     "objeto": "Conc. de Uso para explotación comercial inmueble ubicado VILLA MARTELLI",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Pendiente Acto Administrativo de Preselección",
+    "estado": "En apertura segundo sobre",
     "fecha_apertura": "09/02/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -16910,7 +17029,7 @@
     "objeto": "Servicio de logística con personal de carga y descarga, remolque de vehículos y volquetes para AABE.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "Adjudicado",
     "fecha_apertura": "13/07/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -17097,7 +17216,7 @@
     "objeto": "Servicio de mantenimiento integral para los Desfibriladores Externos Automáticos para AABE.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "31/07/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -17590,7 +17709,7 @@
     "objeto": "Venta del Vehículo MARCA: MERCEDES BENZ, MODELO: SPRINTER, AÑO: 2015, DOMINIO: PAL 109",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "18/06/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -17947,7 +18066,7 @@
     "objeto": "Servicio de Enlace Full Internet de 600 Mbps para uso de la AGENCIA.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "28/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -19477,7 +19596,7 @@
     "objeto": "Venta del Vehículo MARCA: PEUGEOT MODELO: 407 SV SPORT V6 TIPTRONIC SEDAN 4 PTAS- DOMINIO: HDM 144",
     "ejercicio": 2024,
     "gestion": "Posse",
-    "estado": "Fracasado",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "11/04/2024 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -19749,7 +19868,7 @@
     "objeto": "Venta automovil deportivo cupé marca Toyota modelo 86 GT A/T dominio MTZ557",
     "ejercicio": 2024,
     "gestion": "Francos",
-    "estado": "Desierto",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "12/12/2024 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20446,7 +20565,7 @@
     "objeto": "FORD VAN, AÑO: 1997, DOMINIO: KOS551 (INAES)",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "23/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20820,7 +20939,7 @@
     "objeto": "Venta Inmueble Santos Dumont Nº 2.677 - CIUDAD AUTÓNOMA DE BUENOS AIRES",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "18/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20854,7 +20973,7 @@
     "objeto": "Venta Inmueble calle Teniente General Eustaquio Frías Nº 247/249,CABA.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "21/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -21216,6 +21335,23 @@
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
   {
+    "numero_proceso": "392-0094-SPU26",
+    "organismo": "392/000 - Dirección General de Administración - AABE",
+    "proveedor": "Venta Inmueble calle Lavalle Nº 658/62/66, entre calles Maipú y Florida, 2º Piso",
+    "cuit": "",
+    "tipo_contratacion": "Subasta Pública",
+    "fecha_adjudicacion": "2026-10-28",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Venta Inmueble calle Lavalle Nº 658/62/66, entre calles Maipú y Florida, 2º Piso, UF 172 CABA.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "28/10/2026 12:00 Hrs.",
+    "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
+  },
+  {
     "numero_proceso": "392-0095-SPU24",
     "organismo": "392/000 - Dirección General de Administración - AABE",
     "proveedor": "Matias Plaul",
@@ -21245,7 +21381,7 @@
     "objeto": "Inmueble sito en Lavalle Nº 658/62/66, 5º Piso, UF 309, entre calles Maipú y Florida, CABA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "09/10/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -21279,7 +21415,7 @@
     "objeto": "Venta Inmueble Calle 45 S/Nº y Calle 2 S/Nº, LA PLATA,  PROVINCIA DE  BUENOS AIRES",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Desierto",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "30/01/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -21383,6 +21519,23 @@
     "gestion": "Adorni",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "19/02/2026 12:00 Hrs.",
+    "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
+  },
+  {
+    "numero_proceso": "392-0099-SPU26",
+    "organismo": "392/000 - Dirección General de Administración - AABE",
+    "proveedor": "Venta Inmueble Autopista Ezeiza-Cañuelas, tramo Jorge Newbery altura Km. 1620, E",
+    "cuit": "",
+    "tipo_contratacion": "Subasta Pública",
+    "fecha_adjudicacion": "2026-10-16",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Venta Inmueble Autopista Ezeiza-Cañuelas, tramo Jorge Newbery altura Km. 1620, Ezeiza, Pcia. Bs. As.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Evaluacion",
+    "fecha_apertura": "16/10/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
   {
@@ -23409,6 +23562,23 @@
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
   {
+    "numero_proceso": "494-0002-LPU26",
+    "organismo": "494 - Área de Compras y Contrataciones",
+    "proveedor": "Adquisición insumos para el Laboratorio del BNDG",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-10-23",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición insumos para el Laboratorio del BNDG",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "23/10/2026 10:00 Hrs.",
+    "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
+  },
+  {
     "numero_proceso": "494-0003-CDI23",
     "organismo": "494 - Área de Compras y Contrataciones",
     "proveedor": "Contratación Plataforma de videoconferencia (Zoom) - BNDG",
@@ -23749,6 +23919,23 @@
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
   {
+    "numero_proceso": "494-0005-CDI26",
+    "organismo": "494 - Área de Compras y Contrataciones",
+    "proveedor": "Adquisición de drogas y artículos desinfectantes para el Laboratorio del BNDG",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-22",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de drogas y artículos desinfectantes para el Laboratorio del BNDG",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "22/10/2026 10:00 Hrs.",
+    "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
+  },
+  {
     "numero_proceso": "494-0005-LPR23",
     "organismo": "494 - Área de Compras y Contrataciones",
     "proveedor": "ROYAL DOOR SRL",
@@ -23795,7 +23982,7 @@
     "objeto": "Servicio mantenimiento preventivo y correctivo del control de acceso - monitoreo BNDG",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Adjudicado",
     "fecha_apertura": "11/09/2026 10:00 Hrs.",
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
@@ -23848,6 +24035,23 @@
     "gestion": "Francos",
     "estado": "Adjudicado",
     "fecha_apertura": "10/09/2024 11:00 Hrs.",
+    "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
+  },
+  {
+    "numero_proceso": "494-0006-CDI26",
+    "organismo": "494 - Área de Compras y Contrataciones",
+    "proveedor": "Adquisición de material plástico, descartable y otros insumos para el Laboratori",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-30",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de material plástico, descartable y otros insumos para el Laboratorio del BNDG",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "30/10/2026 10:00 Hrs.",
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
   {
@@ -24035,6 +24239,23 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "28/11/2025 12:00 Hrs.",
+    "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
+  },
+  {
+    "numero_proceso": "494-0008-LPR26",
+    "organismo": "494 - Área de Compras y Contrataciones",
+    "proveedor": "Provisión, instalación, configuración e integración de grupo electrogeno - BNDG",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-10-30",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Provisión, instalación, configuración e integración de grupo electrogeno - BNDG",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "30/10/2026 10:00 Hrs.",
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
   {
@@ -24968,7 +25189,7 @@
     "objeto": "Servicio de Policia adicional",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "03/09/2026 13:00 Hrs.",
     "organismo_saf": "209 - Agencia de Acceso a la Información Pública"
   },
@@ -25004,6 +25225,23 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "09/12/2025 13:00 Hrs.",
+    "organismo_saf": "209 - Agencia de Acceso a la Información Pública"
+  },
+  {
+    "numero_proceso": "490-0008-CDI26",
+    "organismo": "490 - Agencia de Acceso a la Información Pública",
+    "proveedor": "Suscripcion licencia Adobe Creative Cloud  Pro y Certificado TLS/SSL",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-19",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Suscripcion licencia Adobe Creative Cloud  Pro y Certificado TLS/SSL",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Disponible Para Adjudicar",
+    "fecha_apertura": "19/10/2026 12:00 Hrs.",
     "organismo_saf": "209 - Agencia de Acceso a la Información Pública"
   },
   {

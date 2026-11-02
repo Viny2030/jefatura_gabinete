@@ -460,7 +460,7 @@
     "objeto": "Adquisición de mangueras, recarga y mantenimiento de matafuegos y nichos hidrantes JGM",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "13/07/2026 10:00 Hrs."
   },
   {
@@ -752,6 +752,22 @@
     "fecha_apertura": "31/03/2023 09:00 Hrs."
   },
   {
+    "numero_proceso": "79-0010-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Servicio integral de provisión en alquiler de equipos y máquinas de abastecimien",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-20",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio integral de provisión en alquiler de equipos y máquinas de abastecimiento de energía",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Adjudicado",
+    "fecha_apertura": "20/10/2026 08:00 Hrs."
+  },
+  {
     "numero_proceso": "79-0010-LPR23",
     "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
     "proveedor": "NORBERTO SPINELLI SRL",
@@ -782,6 +798,22 @@
     "gestion": "Pre-Milei",
     "estado": "Adjudicado",
     "fecha_apertura": "31/03/2023 09:00 Hrs."
+  },
+  {
+    "numero_proceso": "79-0011-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Servicio integral de provisión en alquiler de estructuras y vallados",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-20",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio integral de provisión en alquiler de estructuras y vallados",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Adjudicado",
+    "fecha_apertura": "20/10/2026 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0011-LPR23",
@@ -832,6 +864,22 @@
     "fecha_apertura": "30/03/2023 10:00 Hrs."
   },
   {
+    "numero_proceso": "79-0012-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Servicio integral de producción y coordinación general",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-20",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio integral de producción y coordinación general",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Adjudicado",
+    "fecha_apertura": "20/10/2026 10:00 Hrs."
+  },
+  {
     "numero_proceso": "79-0012-LPR23",
     "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
     "proveedor": "BARBARA SOFIA MACEDO",
@@ -878,6 +926,22 @@
     "gestion": "Pre-Milei",
     "estado": "Adjudicado",
     "fecha_apertura": "31/03/2023 10:00 Hrs."
+  },
+  {
+    "numero_proceso": "79-0013-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Servicio integral de provisión en alquiler de pantallas LED",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-28",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio integral de provisión en alquiler de pantallas LED",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "28/10/2026 09:00 Hrs."
   },
   {
     "numero_proceso": "79-0013-LPR23",
@@ -944,6 +1008,22 @@
     "fecha_apertura": "27/02/2023 12:00 Hrs."
   },
   {
+    "numero_proceso": "79-0014-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Serv. integral de prov. y colocación de alfombras y cortinas",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-28",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Serv. integral de prov. y colocación de alfombras y cortinas",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "28/10/2026 12:00 Hrs."
+  },
+  {
     "numero_proceso": "79-0014-LPR23",
     "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
     "proveedor": "ID GROUP S.A.",
@@ -974,6 +1054,22 @@
     "gestion": "Pre-Milei",
     "estado": "Adjudicado",
     "fecha_apertura": "07/08/2023 10:00 Hrs."
+  },
+  {
+    "numero_proceso": "79-0015-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Contratación de un servicio integral de alquiler de sistemas de sonido e ilumina",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-29",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Contratación de un servicio integral de alquiler de sistemas de sonido e iluminación",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "29/10/2026 08:00 Hrs."
   },
   {
     "numero_proceso": "79-0015-LPR23",
@@ -1022,6 +1118,22 @@
     "gestion": "Pre-Milei",
     "estado": "Adjudicado",
     "fecha_apertura": "09/02/2023 10:00 Hrs."
+  },
+  {
+    "numero_proceso": "79-0016-CDI26",
+    "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
+    "proveedor": "Servicio integral de Host Broadcasting",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-11-02",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio integral de Host Broadcasting",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "02/11/2026 08:00 Hrs."
   },
   {
     "numero_proceso": "79-0016-LPR23",

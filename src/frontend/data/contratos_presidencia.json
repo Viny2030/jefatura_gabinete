@@ -272,6 +272,22 @@
     "fecha_apertura": "08/03/2023 11:00 Hrs."
   },
   {
+    "numero_proceso": "83-0003-LPU26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Servicio de Mantenimiento de Bombas de Agua",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-10-16",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio de Mantenimiento de Bombas de Agua",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "16/10/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0004-CDI23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "Adquisición de Equipos de Comunicación (Handies de Alta Frecuencia) - Museo Hist",
@@ -492,7 +508,7 @@
     "objeto": "Adquisición de Lámparas escénicas con destino al PALACIO LIBERTAD",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "21/09/2026 13:00 Hrs."
   },
   {
@@ -558,6 +574,22 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "20/05/2026 13:00 Hrs."
+  },
+  {
+    "numero_proceso": "83-0007-LPR26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Contratación de un servicio de envíos masivos de email, automatización y data ma",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-10-14",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Contratación de un servicio de envíos masivos de email, automatización y data marketing",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "14/10/2026 13:00 Hrs."
   },
   {
     "numero_proceso": "83-0007-LPU23",
@@ -704,6 +736,22 @@
     "fecha_apertura": "21/04/2023 14:00 Hrs."
   },
   {
+    "numero_proceso": "83-0010-CDI26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "ADQUISICIÓN EQUIPOS CONSOLAS DE ILUMINACIÓN",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-14",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "ADQUISICIÓN EQUIPOS CONSOLAS DE ILUMINACIÓN",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Desierto",
+    "fecha_apertura": "14/10/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0010-LPR23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "MDP Sistemas Digitales S.R.L.",
@@ -768,6 +816,22 @@
     "fecha_apertura": "25/04/2023 12:00 Hrs."
   },
   {
+    "numero_proceso": "83-0011-CDI26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "ADQUISICIÓN DE LIBROS PARA EL MNBA",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-10-15",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "ADQUISICIÓN DE LIBROS PARA EL MNBA",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "15/10/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0011-LPR23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "B.A. SANI SA",
@@ -812,7 +876,7 @@
     "objeto": "Contratación del alquiler (derecho de uso) de material orquestal",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "07/10/2026 13:00 Hrs."
   },
   {
@@ -4044,7 +4108,7 @@
     "objeto": "UNA (1) suscripción a las publicaciones de “El Derecho”, para el año 2027.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Adjudicado",
     "fecha_apertura": "25/09/2026 11:00 Hrs."
   },
   {
@@ -4156,7 +4220,7 @@
     "objeto": "Licencias Forticare -Fortinet",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "26/08/2026 11:00 Hrs."
   },
   {
@@ -4780,7 +4844,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo para TRES (3) Grupos Electrógenos de la SLYT.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "17/07/2026 10:00 Hrs."
   },
   {

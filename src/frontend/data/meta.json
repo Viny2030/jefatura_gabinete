@@ -1,13 +1,13 @@
 {
-  "generado": "2026-10-30 12:13",
+  "generado": "2026-11-02 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
-  "total_contratos": 795,
+  "total_contratos": 811,
   "total_personal": 1414,
   "ramas": {
     "jgm": {
-      "contratos": 179,
-      "contratos_adjudicados": 127,
+      "contratos": 186,
+      "contratos_adjudicados": 131,
       "contratos_con_monto": 120,
       "personal": 817,
       "personal_identificado": 524,
@@ -16,8 +16,8 @@
       "contratos_usd": 5
     },
     "sgp": {
-      "contratos": 263,
-      "contratos_adjudicados": 209,
+      "contratos": 268,
+      "contratos_adjudicados": 214,
       "contratos_con_monto": 186,
       "personal": 143,
       "personal_identificado": 123,
@@ -26,8 +26,8 @@
       "contratos_usd": 29
     },
     "presidencia": {
-      "contratos": 353,
-      "contratos_adjudicados": 237,
+      "contratos": 357,
+      "contratos_adjudicados": 240,
       "contratos_con_monto": 233,
       "personal": 454,
       "personal_identificado": 206,
@@ -37,16 +37,16 @@
     }
   },
   "jgm_ampliada": {
-    "procesos": 1481,
-    "adjudicados": 985,
+    "procesos": 1495,
+    "adjudicados": 996,
     "con_monto": 925,
-    "monto_ars": 154935905977.09003,
+    "monto_ars": 154935905977.09,
     "monto_usd": 418839031.12999994,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
-        "procesos": 443,
-        "adjudicados": 221,
+        "procesos": 445,
+        "adjudicados": 224,
         "con_monto": 207,
         "monto_ars": 103906246596.16998,
         "monto_usd": 292791965.07
@@ -69,27 +69,35 @@
       },
       {
         "organismo": "107 - Administración de Parques Nacionales",
-        "procesos": 162,
-        "adjudicados": 114,
+        "procesos": 166,
+        "adjudicados": 118,
         "con_monto": 112,
         "monto_ars": 8680413909.51,
         "monto_usd": 5099774.25
       },
       {
         "organismo": "207 - Ente Nacional de Comunicaciones (ENACOM)",
-        "procesos": 143,
+        "procesos": 145,
         "adjudicados": 101,
         "con_monto": 101,
-        "monto_ars": 6908852098.5,
+        "monto_ars": 6908852098.499999,
         "monto_usd": 104247463.46
       },
       {
         "organismo": "121 - Banco Nacional de Datos Genéticos",
-        "procesos": 75,
-        "adjudicados": 65,
+        "procesos": 79,
+        "adjudicados": 66,
         "con_monto": 63,
         "monto_ars": 1787625334.36,
         "monto_usd": 0.0
+      },
+      {
+        "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
+        "procesos": 74,
+        "adjudicados": 60,
+        "con_monto": 21,
+        "monto_ars": 3678762844.4300003,
+        "monto_usd": 366957.28
       },
       {
         "organismo": "336 - Secretaría de Innovación, Ciencia y Tecnología",
@@ -100,16 +108,8 @@
         "monto_usd": 11205548.86
       },
       {
-        "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
-        "procesos": 73,
-        "adjudicados": 57,
-        "con_monto": 21,
-        "monto_ars": 3678762844.4300003,
-        "monto_usd": 366957.28
-      },
-      {
         "organismo": "209 - Agencia de Acceso a la Información Pública",
-        "procesos": 49,
+        "procesos": 50,
         "adjudicados": 42,
         "con_monto": 42,
         "monto_ars": 428659182.68,
