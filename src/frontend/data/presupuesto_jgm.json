@@ -5,53 +5,53 @@
   "unidad": "millones_ars",
   "totales": {
     "credito_presupuestado": 1263912.4,
-    "credito_vigente": 1408980.8,
-    "credito_comprometido": 1059028.5,
-    "credito_devengado": 1008485.5,
-    "credito_pagado": 873840.4
+    "credito_vigente": 1418980.8,
+    "credito_comprometido": 1062748.7,
+    "credito_devengado": 1023823.4,
+    "credito_pagado": 891530.2
   },
-  "pct_ejecucion_devengado": 71.6,
-  "pct_ejecucion_pagado": 62.0,
+  "pct_ejecucion_devengado": 72.2,
+  "pct_ejecucion_pagado": 62.8,
   "por_inciso": [
     {
       "inciso": "Gastos en personal",
       "credito_presupuestado": 755751.2,
       "credito_vigente": 740261.6,
-      "credito_comprometido": 658853.1,
-      "credito_devengado": 629199.9,
-      "credito_pagado": 582520.2
+      "credito_comprometido": 666273.2,
+      "credito_devengado": 647030.2,
+      "credito_pagado": 587961.6
     },
     {
       "inciso": "Servicios no personales",
       "credito_presupuestado": 313765.2,
-      "credito_vigente": 413994.6,
-      "credito_comprometido": 281030.8,
-      "credito_devengado": 268031.0,
-      "credito_pagado": 216851.0
+      "credito_vigente": 423483.0,
+      "credito_comprometido": 284426.9,
+      "credito_devengado": 267668.8,
+      "credito_pagado": 222448.8
     },
     {
       "inciso": "Bienes de uso",
       "credito_presupuestado": 71478.5,
       "credito_vigente": 144956.6,
-      "credito_comprometido": 64668.0,
-      "credito_devengado": 57420.4,
-      "credito_pagado": 33218.8
+      "credito_comprometido": 62419.2,
+      "credito_devengado": 60667.7,
+      "credito_pagado": 38129.8
     },
     {
       "inciso": "Transferencias",
       "credito_presupuestado": 100784.5,
-      "credito_vigente": 93926.7,
-      "credito_comprometido": 44943.4,
-      "credito_devengado": 44763.5,
-      "credito_pagado": 32525.5
+      "credito_vigente": 93835.8,
+      "credito_comprometido": 39945.5,
+      "credito_devengado": 39279.1,
+      "credito_pagado": 33819.4
     },
     {
       "inciso": "Bienes de consumo",
       "credito_presupuestado": 20929.0,
-      "credito_vigente": 15441.0,
-      "credito_comprometido": 9452.6,
-      "credito_devengado": 8990.1,
-      "credito_pagado": 8644.1
+      "credito_vigente": 16043.6,
+      "credito_comprometido": 9603.3,
+      "credito_devengado": 9096.9,
+      "credito_pagado": 9089.8
     },
     {
       "inciso": "Incremento de activos financieros",
@@ -69,9 +69,19 @@
       "servicio": "Consejo Nacional de Investigaciones Científicas y Técnicas",
       "credito_presupuestado": 567035.6,
       "credito_vigente": 560785.1,
-      "credito_comprometido": 520677.5,
-      "credito_devengado": 520636.0,
-      "credito_pagado": 465714.0
+      "credito_comprometido": 521265.4,
+      "credito_devengado": 521223.8,
+      "credito_pagado": 466162.4
+    },
+    {
+      "programa_id": "1",
+      "programa": "Actividades Centrales",
+      "servicio": "Ente Nacional de Comunicaciones",
+      "credito_presupuestado": 169632.0,
+      "credito_vigente": 183077.9,
+      "credito_comprometido": 138996.1,
+      "credito_devengado": 124217.1,
+      "credito_pagado": 118176.4
     },
     {
       "programa_id": "16",
@@ -79,39 +89,29 @@
       "servicio": "Comisión Nacional de Actividades Espaciales",
       "credito_presupuestado": 26947.6,
       "credito_vigente": 177603.6,
-      "credito_comprometido": 55944.2,
-      "credito_devengado": 54945.4,
-      "credito_pagado": 38909.7
-    },
-    {
-      "programa_id": "1",
-      "programa": "Actividades Centrales",
-      "servicio": "Ente Nacional de Comunicaciones",
-      "credito_presupuestado": 169632.0,
-      "credito_vigente": 170799.7,
-      "credito_comprometido": 130177.8,
-      "credito_devengado": 117180.8,
-      "credito_pagado": 114764.1
+      "credito_comprometido": 65445.3,
+      "credito_devengado": 64548.0,
+      "credito_pagado": 45848.7
     },
     {
       "programa_id": "26",
       "programa": "Fortalecimiento de las Tecnologias de la Informacion y  las Comunicaciones",
       "servicio": "Secretaría de Innovación, Ciencia y Tecnología",
       "credito_presupuestado": 49066.0,
-      "credito_vigente": 75888.1,
-      "credito_comprometido": 66464.1,
-      "credito_devengado": 58723.5,
-      "credito_pagado": 21507.8
+      "credito_vigente": 75894.5,
+      "credito_comprometido": 55532.1,
+      "credito_devengado": 54219.5,
+      "credito_pagado": 22650.7
     },
     {
       "programa_id": "17",
       "programa": "Conservacion y Administracion de Areas Naturales Protegidas",
       "servicio": "Administración de Parques Nacionales",
       "credito_presupuestado": 71022.6,
-      "credito_vigente": 69408.3,
-      "credito_comprometido": 54458.7,
-      "credito_devengado": 44118.4,
-      "credito_pagado": 43913.1
+      "credito_vigente": 69688.3,
+      "credito_comprometido": 54974.4,
+      "credito_devengado": 47778.7,
+      "credito_pagado": 44156.3
     },
     {
       "programa_id": "18",
@@ -119,19 +119,19 @@
       "servicio": "Consejo Nacional de Investigaciones Científicas y Técnicas",
       "credito_presupuestado": 43758.9,
       "credito_vigente": 46719.3,
-      "credito_comprometido": 39527.0,
-      "credito_devengado": 39395.1,
-      "credito_pagado": 36395.0
+      "credito_comprometido": 40580.0,
+      "credito_devengado": 40438.7,
+      "credito_pagado": 36895.0
     },
     {
       "programa_id": "25",
       "programa": "Innovacion Administrativa",
       "servicio": "Secretaría de Innovación, Ciencia y Tecnología",
       "credito_presupuestado": 22665.4,
-      "credito_vigente": 30186.4,
-      "credito_comprometido": 18793.0,
-      "credito_devengado": 16862.9,
-      "credito_pagado": 10081.9
+      "credito_vigente": 29521.4,
+      "credito_comprometido": 14377.4,
+      "credito_devengado": 13533.4,
+      "credito_pagado": 10816.6
     },
     {
       "programa_id": "44",
@@ -139,9 +139,9 @@
       "servicio": "Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
       "credito_presupuestado": 29289.0,
       "credito_vigente": 29272.6,
-      "credito_comprometido": 12110.1,
-      "credito_devengado": 11060.6,
-      "credito_pagado": 10616.2
+      "credito_comprometido": 12125.4,
+      "credito_devengado": 11566.9,
+      "credito_pagado": 10636.2
     },
     {
       "programa_id": "80",
@@ -149,19 +149,19 @@
       "servicio": "Secretaría de Turismo y Ambiente",
       "credito_presupuestado": 23022.9,
       "credito_vigente": 22895.3,
-      "credito_comprometido": 6258.6,
-      "credito_devengado": 6145.9,
-      "credito_pagado": 5071.0
+      "credito_comprometido": 6583.5,
+      "credito_devengado": 6493.2,
+      "credito_pagado": 5333.8
     },
     {
       "programa_id": "50",
       "programa": "Formulacion y Ejecucion de Politica en Ciencia y Tecnica",
       "servicio": "Secretaría de Innovación, Ciencia y Tecnología",
       "credito_presupuestado": 31989.1,
-      "credito_vigente": 18256.2,
+      "credito_vigente": 18125.6,
       "credito_comprometido": 15434.9,
-      "credito_devengado": 13681.5,
-      "credito_pagado": 12851.4
+      "credito_devengado": 14423.9,
+      "credito_pagado": 13291.0
     },
     {
       "programa_id": "34",
@@ -169,9 +169,9 @@
       "servicio": "Agencia de Administración de Bienes del Estado",
       "credito_presupuestado": 16017.6,
       "credito_vigente": 17878.0,
-      "credito_comprometido": 15592.6,
-      "credito_devengado": 15174.5,
-      "credito_pagado": 14944.6
+      "credito_comprometido": 16777.9,
+      "credito_devengado": 16352.2,
+      "credito_pagado": 15161.9
     },
     {
       "programa_id": "16",
@@ -179,9 +179,9 @@
       "servicio": "Secretaría de Comunicación y Prensa",
       "credito_presupuestado": 30715.7,
       "credito_vigente": 16544.9,
-      "credito_comprometido": 7259.3,
-      "credito_devengado": 6846.0,
-      "credito_pagado": 6811.5
+      "credito_comprometido": 7924.0,
+      "credito_devengado": 7593.1,
+      "credito_pagado": 7213.0
     },
     {
       "programa_id": "94",
@@ -189,9 +189,9 @@
       "servicio": "Secretaría de Innovación, Ciencia y Tecnología",
       "credito_presupuestado": 12552.0,
       "credito_vigente": 15627.1,
-      "credito_comprometido": 10686.9,
-      "credito_devengado": 10686.9,
-      "credito_pagado": 3598.5
+      "credito_comprometido": 4549.8,
+      "credito_devengado": 4062.7,
+      "credito_pagado": 4062.7
     },
     {
       "programa_id": "16",
@@ -199,9 +199,9 @@
       "servicio": "Instituto Nacional de Promoción Turística",
       "credito_presupuestado": 13851.0,
       "credito_vigente": 13568.4,
-      "credito_comprometido": 10868.6,
-      "credito_devengado": 8146.3,
-      "credito_pagado": 8009.0
+      "credito_comprometido": 11095.5,
+      "credito_devengado": 8339.0,
+      "credito_pagado": 8120.3
     },
     {
       "programa_id": "24",
@@ -209,15 +209,15 @@
       "servicio": "Ente Nacional de Comunicaciones",
       "credito_presupuestado": 17159.0,
       "credito_vigente": 13304.0,
-      "credito_comprometido": 2093.9,
-      "credito_devengado": 1997.7,
+      "credito_comprometido": 2156.4,
+      "credito_devengado": 2122.2,
       "credito_pagado": 1791.9
     }
   ],
   "fuente": "Presupuesto Abierto — Dirección General de Sistemas de Información Financiera (MECON)",
   "fuente_url": "https://www.presupuestoabierto.gob.ar",
   "dataset_url": "https://dgsiaf-repo.mecon.gob.ar/repository/pa/datasets/2026/credito-anual-2026.zip",
-  "fecha_actualizacion_fuente": "Última actualización del ejercicio 2026: 23 Octubre 2026.",
-  "generado": "2026-10-26T10:38:44",
+  "fecha_actualizacion_fuente": "Última actualización del ejercicio 2026: 30 Octubre 2026.",
+  "generado": "2026-11-02T10:32:10",
   "nota": "Créditos presupuestarios y ejecución acumulada del ejercicio 2026 en millones de pesos corrientes, tal como los publica el Ministerio de Economía. La ejecución (% devengado / % pagado) es acumulada desde el inicio del ejercicio, no del mes en curso."
 }
