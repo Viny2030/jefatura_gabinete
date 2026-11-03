@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-02 12:11",
+  "generado": "2026-11-03 12:10",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 811,
@@ -8,30 +8,30 @@
     "jgm": {
       "contratos": 186,
       "contratos_adjudicados": 131,
-      "contratos_con_monto": 120,
+      "contratos_con_monto": 124,
       "personal": 817,
       "personal_identificado": 524,
-      "monto_total": 4381480969.44,
+      "monto_total": 19376549570.9,
       "monto_usd": 3444660.56,
       "contratos_usd": 5
     },
     "sgp": {
       "contratos": 268,
       "contratos_adjudicados": 214,
-      "contratos_con_monto": 186,
+      "contratos_con_monto": 191,
       "personal": 143,
       "personal_identificado": 123,
-      "monto_total": 7211398670.83,
-      "monto_usd": 7156954.680000001,
-      "contratos_usd": 29
+      "monto_total": 7240651870.83,
+      "monto_usd": 7376954.68,
+      "contratos_usd": 30
     },
     "presidencia": {
       "contratos": 357,
       "contratos_adjudicados": 240,
-      "contratos_con_monto": 233,
+      "contratos_con_monto": 236,
       "personal": 454,
       "personal_identificado": 206,
-      "monto_total": 15237830292.03,
+      "monto_total": 15287614444.660002,
       "monto_usd": 525709.0,
       "contratos_usd": 1
     }
@@ -39,17 +39,17 @@
   "jgm_ampliada": {
     "procesos": 1495,
     "adjudicados": 996,
-    "con_monto": 925,
-    "monto_ars": 154935905977.09,
-    "monto_usd": 418839031.12999994,
+    "con_monto": 935,
+    "monto_ars": 155116419212.09,
+    "monto_usd": 418855213.5,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
         "procesos": 445,
         "adjudicados": 224,
-        "con_monto": 207,
-        "monto_ars": 103906246596.16998,
-        "monto_usd": 292791965.07
+        "con_monto": 209,
+        "monto_ars": 103998544906.16998,
+        "monto_usd": 292808147.44
       },
       {
         "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
@@ -71,8 +71,8 @@
         "organismo": "107 - Administración de Parques Nacionales",
         "procesos": 166,
         "adjudicados": 118,
-        "con_monto": 112,
-        "monto_ars": 8680413909.51,
+        "con_monto": 116,
+        "monto_ars": 8717803254.51,
         "monto_usd": 5099774.25
       },
       {
@@ -87,16 +87,16 @@
         "organismo": "121 - Banco Nacional de Datos Genéticos",
         "procesos": 79,
         "adjudicados": 66,
-        "con_monto": 63,
-        "monto_ars": 1787625334.36,
+        "con_monto": 64,
+        "monto_ars": 1828419274.36,
         "monto_usd": 0.0
       },
       {
         "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
         "procesos": 74,
         "adjudicados": 60,
-        "con_monto": 21,
-        "monto_ars": 3678762844.4300003,
+        "con_monto": 24,
+        "monto_ars": 3688794484.4300003,
         "monto_usd": 366957.28
       },
       {
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-10-19",
+    "contratos": "2026-11-02",
     "personal": "2026-07-06",
     "nomina_regenerada_hoy": false
   }
