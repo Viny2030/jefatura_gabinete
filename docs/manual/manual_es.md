@@ -81,6 +81,7 @@ El portal se actualiza solo con workflows de GitHub Actions. Cada workflow guard
 | 10:30 (07:30) lunes | Presupuesto y SIGEN | Actualiza el crédito y la ejecución de la JGM (Presupuesto Abierto) y los informes de la SIGEN. | `presupuesto_jgm.json`, `sigen_auditorias.json` |
 | Al subir un CSV a `nomina/` | Nómina APN — desde CSV subido | Procesa la nómina bajada a mano (sección 6.3) y regenera los JSON del portal. | `src/frontend/data/*.json` |
 | 12:00 (09:00) lunes a viernes | Monitor Diario PEN | Reclasifica los reportes de `monitor_contratos`, intenta bajar la nómina, genera los JSON del portal y recalcula los campos derivados del personal. Manda un mail con el resultado. | `src/frontend/data/*.json` |
+| 13:00 (10:00) del día 1 de cada mes | Recordatorio — nómina desactualizada | Si la nómina tiene más de 30 días, manda un mail con los pasos de la sección 6.3. | — |
 | Después de Monitor Diario y 13:00 (10:00) | Cobertura de datos | Falla, y GitHub avisa por mail, si un área se queda sin montos o si la cobertura cae más de un 30 % respecto de 24 horas antes. | — |
 
 ### 6.2 Repositorios de los que depende
@@ -108,7 +109,7 @@ Alternativa sin pasar por la web de GitHub: desde la copia local, en la rama `ma
 .\scripts\actualizar_nomina.ps1 -Csv C:\ruta\al\archivo.csv
 ```
 
-Conviene actualizar la nómina una vez por mes o cuando haya cambios de autoridades.
+Conviene actualizar la nómina una vez por mes o cuando haya cambios de autoridades. El día 1 de cada mes, si tiene más de 30 días, llega un mail recordándolo.
 
 **Informes SIGEN.** La SIGEN corta las conexiones que no vienen de Argentina, así que el paso SIGEN del workflow semanal puede fallar. Desde una PC en Argentina:
 

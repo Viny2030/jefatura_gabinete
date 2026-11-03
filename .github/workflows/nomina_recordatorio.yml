@@ -1,0 +1,64 @@
+name: Recordatorio — nómina desactualizada
+
+# Mapa del Estado exige navegador, así que la nómina se actualiza a mano
+# (subiendo el CSV a nomina/, ver nomina/README.md). Este workflow manda un
+# mail el día 1 de cada mes si la última nómina tiene más de 30 días.
+on:
+  schedule:
+    - cron: "0 13 1 * *"   # día 1 de cada mes, 10:00 ART
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Antigüedad de la nómina
+        id: edad
+        run: |
+          python3 - <<'PYEOF' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import date
+          with open("src/frontend/data/nomina_estado.json", encoding="utf-8") as f:
+              descargada = json.load(f)["descargada"]
+          dias = (date.today() - date.fromisoformat(descargada)).days
+          print(f"descargada={descargada}")
+          print(f"dias={dias}")
+          print(f"vieja={'true' if dias > 30 else 'false'}")
+          PYEOF
+
+      - name: Resumen
+        run: |
+          echo "Nómina al ${{ steps.edad.outputs.descargada }} (${{ steps.edad.outputs.dias }} días)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Avisar por mail
+        if: steps.edad.outputs.vieja == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          to: viny01958@gmail.com
+          from: Monitor PEN <${{ secrets.MAIL_USER }}>
+          subject: "Monitor PEN — actualizar la nómina (${{ steps.edad.outputs.dias }} días)"
+          body: |
+            La nómina del portal es del ${{ steps.edad.outputs.descargada }} (hace ${{ steps.edad.outputs.dias }} días).
+
+            Para actualizarla:
+            1. Abrir en el navegador
+               https://mapadelestado.dyte.gob.ar/back/api/datos.php?db=m&id=9&fi=csv
+               y guardar el CSV.
+            2. Subirlo a la carpeta nomina/ del repositorio:
+               ${{ github.server_url }}/${{ github.repository }}/upload/main/nomina
+               y hacer "Commit changes".
+
+            El workflow "Nómina APN — desde CSV subido" la publica solo en unos minutos.
+            Detalle: manual, sección 6.3 — https://jefatura.ecosistematransparencia.com.ar/manual_usuario.html#es-6
