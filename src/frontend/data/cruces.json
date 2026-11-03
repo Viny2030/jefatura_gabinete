@@ -1,12 +1,12 @@
 {
-  "generado_en": "2026-11-03T05:10:40.359894",
-  "total": 27,
+  "generado_en": "2026-11-03T20:08:18.418432",
+  "total": 25,
   "altos": 0,
-  "medios": 27,
+  "medios": 25,
   "monto_total": 553162820.17,
   "por_area": {
     "jgm": {
-      "total": 20,
+      "total": 18,
       "altos": 0
     },
     "sgp": {
@@ -119,6 +119,38 @@
       "nivel": "MEDIO",
       "area": "jgm",
       "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "NAVARRETE, Eleonora María",
+      "cargo": "Director/a",
+      "gestion": "Adorni",
+      "empresa": "ADRIANA MABEL NAVARRETE",
+      "cuit": "27276112886",
+      "organismo": "AGENCIA DE RECAUDACIÓN Y CONTROL ADUANERO - DIRECCIÓN REGIONAL ADUANERA CENTRAL",
+      "monto": 10797314.0,
+      "monto_fmt": "$10,8 M",
+      "fecha": "2026-10-19",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2419131/20261019",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "area": "jgm",
+      "tipo": "Apellido en razón social — posible vínculo",
+      "funcionario": "NAVARRETE, Lorenzo Gonzalo",
+      "cargo": "Jefe/a de Unidad",
+      "gestion": "Desconocido",
+      "empresa": "ADRIANA MABEL NAVARRETE",
+      "cuit": "27276112886",
+      "organismo": "AGENCIA DE RECAUDACIÓN Y CONTROL ADUANERO - DIRECCIÓN REGIONAL ADUANERA CENTRAL",
+      "monto": 10797314.0,
+      "monto_fmt": "$10,8 M",
+      "fecha": "2026-10-19",
+      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2419131/20261019",
+      "contratos": 2
+    },
+    {
+      "nivel": "MEDIO",
+      "area": "jgm",
+      "tipo": "Apellido en razón social — posible vínculo",
       "funcionario": "SOUZA, Patricia Noemí",
       "cargo": "Director/a",
       "gestion": "Pre-Milei",
@@ -129,70 +161,6 @@
       "monto_fmt": "$10,7 M",
       "fecha": "2026-10-19",
       "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 28-0014-CDI24)",
-      "contratos": 1
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "NAVARRETE, Eleonora María",
-      "cargo": "Director/a",
-      "gestion": "Adorni",
-      "empresa": "MABEL NAVARRETE",
-      "cuit": "27276112886",
-      "organismo": "AGENCIA DE RECAUDACIÓN Y CONTROL ADUANERO - DIRECCIÓN REGIONAL ADUANERA CENTRAL",
-      "monto": 5398657.0,
-      "monto_fmt": "$5,4 M",
-      "fecha": "2026-10-19",
-      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2419131/20261019",
-      "contratos": 1
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "NAVARRETE, Eleonora María",
-      "cargo": "Director/a",
-      "gestion": "Adorni",
-      "empresa": "ADRIANA MABEL NAVARRETE",
-      "cuit": "27276112886",
-      "organismo": "AGENCIA DE RECAUDACIÓN Y CONTROL ADUANERO - DIRECCIÓN REGIONAL ADUANERA CENTRAL",
-      "monto": 5398657.0,
-      "monto_fmt": "$5,4 M",
-      "fecha": "2026-10-19",
-      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2419131/20261019",
-      "contratos": 1
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "NAVARRETE, Lorenzo Gonzalo",
-      "cargo": "Jefe/a de Unidad",
-      "gestion": "Desconocido",
-      "empresa": "MABEL NAVARRETE",
-      "cuit": "27276112886",
-      "organismo": "AGENCIA DE RECAUDACIÓN Y CONTROL ADUANERO - DIRECCIÓN REGIONAL ADUANERA CENTRAL",
-      "monto": 5398657.0,
-      "monto_fmt": "$5,4 M",
-      "fecha": "2026-10-19",
-      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2419131/20261019",
-      "contratos": 1
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "NAVARRETE, Lorenzo Gonzalo",
-      "cargo": "Jefe/a de Unidad",
-      "gestion": "Desconocido",
-      "empresa": "ADRIANA MABEL NAVARRETE",
-      "cuit": "27276112886",
-      "organismo": "AGENCIA DE RECAUDACIÓN Y CONTROL ADUANERO - DIRECCIÓN REGIONAL ADUANERA CENTRAL",
-      "monto": 5398657.0,
-      "monto_fmt": "$5,4 M",
-      "fecha": "2026-10-19",
-      "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2419131/20261019",
       "contratos": 1
     },
     {
@@ -449,7 +417,7 @@
       "monto_fmt": "—",
       "fecha": "2026-09-08",
       "link": "https://www.boletinoficial.gob.ar/detalleAviso/tercera/2417170/20260908",
-      "contratos": 2
+      "contratos": 1
     }
   ]
 }
