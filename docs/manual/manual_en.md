@@ -81,6 +81,7 @@ The site updates itself through GitHub Actions workflows. Each workflow saves it
 | 10:30 (07:30) Monday | Presupuesto y SIGEN | Updates the JGM's appropriation and execution (Presupuesto Abierto) and the SIGEN reports. | `presupuesto_jgm.json`, `sigen_auditorias.json` |
 | When a CSV is uploaded to `nomina/` | Nómina APN — desde CSV subido | Processes the manually downloaded payroll (section 6.3) and regenerates the site's JSON files. | `src/frontend/data/*.json` |
 | 12:00 (09:00) Monday to Friday | Monitor Diario PEN | Reclassifies the `monitor_contratos` reports, tries to download the payroll, generates the site's JSON files and recomputes the staff's derived fields. Emails the result. | `src/frontend/data/*.json` |
+| 13:00 (10:00) on the 1st of each month | Recordatorio — nómina desactualizada | If the payroll is more than 30 days old, sends an email with the steps in section 6.3. | — |
 | After Monitor Diario and at 13:00 (10:00) | Cobertura de datos | Fails, and GitHub sends an email, if an area loses its amounts or coverage drops by more than 30 % compared with 24 hours earlier. | — |
 
 ### 6.2 Upstream repositories
@@ -108,7 +109,7 @@ Alternative without the GitHub website: from the local copy, on the `main` branc
 .\scripts\actualizar_nomina.ps1 -Csv C:\path\to\file.csv
 ```
 
-Updating the payroll once a month, or whenever officials change, is enough.
+Updating the payroll once a month, or whenever officials change, is enough. On the 1st of each month, if it is more than 30 days old, a reminder email arrives.
 
 **SIGEN reports.** SIGEN drops connections that do not come from Argentina, so the SIGEN step of the weekly workflow may fail. From a PC in Argentina:
 
