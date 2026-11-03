@@ -1,0 +1,60 @@
+name: Nómina APN — desde CSV subido
+
+# Mapa del Estado exige navegador (desafío de Cloudflare): ningún workflow
+# puede bajar la nómina. Este workflow procesa el CSV que se baja a mano y se
+# sube desde la web de GitHub a nomina/ (Add file → Upload files).
+# Ver docs/manual/manual_es.md, sección 6.3.
+on:
+  push:
+    branches: [main]
+    paths: ["nomina/*.csv"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos-portal
+  cancel-in-progress: false
+
+jobs:
+  procesar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install pandas requests beautifulsoup4 openpyxl lxml holidays
+
+      - name: Elegir el CSV más reciente
+        id: csv
+        run: |
+          f=$(git log -1 --name-only --format= -- 'nomina/*.csv' | head -1)
+          [ -n "$f" ] && [ -f "$f" ] || f=$(ls -t nomina/*.csv | head -1)
+          [ -f "$f" ] || { echo "No hay ningún CSV en nomina/"; exit 1; }
+          echo "Procesando $f"
+          echo "archivo=$f" >> "$GITHUB_OUTPUT"
+
+      - name: Procesar nómina
+        run: python scripts/scraper_nomina.py --archivo "${{ steps.csv.outputs.archivo }}"
+
+      - name: Generar JSONs
+        run: |
+          python scripts/generar_json.py
+          python scripts/corregir_personal.py
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/frontend/data/
+          if git diff --staged --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Nómina APN desde ${{ steps.csv.outputs.archivo }} [$(date -u '+%Y-%m-%d')]"
+          git pull --rebase origin main
+          git push
