@@ -2,7 +2,7 @@
 """
 generar_cruces_pen.py
 =====================
-Cruza funcionarios JGM con proveedores del PEN (monitor_contratos_v2 + gob_bo_comprar_tgn).
+Cruza funcionarios JGM con proveedores del PEN (monitor_contratos + gob_bo_comprar_tgn).
 
 NIVELES:
   Nivel 1 — CUIL funcionario == CUIT proveedor              → ALTO
@@ -39,7 +39,7 @@ OUTPUT_JSON  = os.path.join(BASE_DIR, "src", "frontend", "data", "cruces.json")
 DATA_PATHS = [
     os.path.join(BASE_DIR, "..", "monitor", "data"),
     os.path.join(BASE_DIR, "..", "tgn", "data"),
-    r"C:\Users\ASUS\PycharmProjects\monitor_contratos_v2\data",
+    r"C:\Users\ASUS\PycharmProjects\monitor_contratos\data",
     r"C:\Users\ASUS\PycharmProjects\gob_bo_comprar_tgn\data",
 ]
 
@@ -178,8 +178,9 @@ def cargar_contratos_pen():
                         "proveedor":  str(row.get("proveedor_adjudicado", "")).strip(),
                         "organismo":  str(row.get("organismo_contratante", "")).strip(),
                         "monto_bora": row.get("monto_adjudicado_bora"),
-                        "monto_tgn":  row.get("monto_cobrado_tgn"),
-                        "fecha":      str(row.get("fecha", ""))[:10],
+                        # monitor_contratos: monto_pagado_tgn y fecha_publicacion
+                        "monto_tgn":  row.get("monto_cobrado_tgn", row.get("monto_pagado_tgn")),
+                        "fecha":      str(row.get("fecha", row.get("fecha_publicacion", "")))[:10],
                         "link":       str(row.get("link_bora", "")),
                         "nivel_riesgo": str(row.get("nivel_riesgo_licit", "")),
                     })

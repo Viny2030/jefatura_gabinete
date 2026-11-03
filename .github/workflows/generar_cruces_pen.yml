@@ -19,11 +19,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           path: jgm
 
-      - name: Checkout monitor_contratos_v2
+      - name: Checkout monitor_contratos
         uses: actions/checkout@v4
         with:
-          repository: Viny2030/monitor_contratos_v2
-          ref: feature/base-datos
+          repository: Viny2030/monitor_contratos
           path: monitor
 
       - name: Checkout gob_bo_comprar_tgn
