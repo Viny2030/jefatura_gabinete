@@ -76,7 +76,7 @@ jobs:
           echo "| Paso | Resultado |" >> "$GITHUB_STEP_SUMMARY"
           echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Reclasificar contratos PEN | ${{ steps.reclasificar.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Scraper nómina APN | ${{ steps.nomina.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Scraper nómina APN | ${{ steps.nomina.outcome }} (si falla: Mapa del Estado exige navegador; subir el CSV a nomina/, ver nomina/README.md) |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Generar JSONs | ${{ steps.jsons.outcome }} |" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ steps.reclasificar.outcome }}" = "failure" ] || [ "${{ steps.nomina.outcome }}" = "failure" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"

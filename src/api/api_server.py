@@ -741,7 +741,7 @@ if __name__ == "__main__":
 # Antes MEACI_CUITS era un set() vacío "a poblar": el cruce nunca marcaba nada.
 # Ahora se consulta en vivo la API del MEACI (empresas sancionadas en casos
 # multijurisdiccionales de la OCDE con filial en Argentina), con caché de 6 h.
-MEACI_API_URL = os.getenv("MEACI_API_URL", "https://meaci-production.up.railway.app").rstrip("/")
+MEACI_API_URL = os.getenv("MEACI_API_URL", "https://meaci.ecosistematransparencia.com.ar").rstrip("/")
 _MEACI_CACHE: dict[str, tuple[float, dict | None]] = {}
 _MEACI_TTL = 6 * 3600
 

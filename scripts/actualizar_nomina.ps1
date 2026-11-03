@@ -1,41 +1,40 @@
-﻿# actualizar_nomina.ps1
+﻿﻿# actualizar_nomina.ps1
 # ---------------------------------------------------------------------------
-# Mapa del Estado está detrás de un desafío de Cloudflare: GitHub Actions y
-# los scripts no pueden descargar la nómina. Este script procesa el CSV que
-# bajás a mano desde el navegador y sube el resultado.
+# Mapa del Estado (mapadelestado.dyte.gob.ar) está detrás de un desafío de
+# Cloudflare que exige un navegador: ningún script puede descargar la nómina,
+# ni desde GitHub Actions ni desde una PC en Argentina. El paso "Scraper
+# nómina APN" del workflow diario falla por eso, y el portal conserva los
+# personal_*.json que haya en main.
 #
-# 1. Abrí en el navegador (pasa el desafío solo):
-#    https://mapadelestado.dyte.gob.ar/back/api/datos.php?db=m&id=9&fi=csv
-#    y guardá el archivo (por ejemplo en Descargas\mapa_estado.csv).
-# 2. Desde la carpeta del repo:
-#    .\scripts\actualizar_nomina.ps1 -Csv "$HOME\Downloads\mapa_estado.csv"
+# Procedimiento (ver docs/manual/manual_es.md, sección 6.3):
+#   1. Abrir en el navegador
+#      https://mapadelestado.dyte.gob.ar/back/api/datos.php?db=m&id=9&fi=csv
+#      y guardar el CSV.
+#   2. .\scripts\actualizar_nomina.ps1 -Csv C:\ruta\al\archivo.csv
 # ---------------------------------------------------------------------------
 param(
-    [Parameter(Mandatory = $true)][string]$Csv,
-    [switch]$SinPush
+    [Parameter(Mandatory = $true)][string]$Csv
 )
 $ErrorActionPreference = "Stop"
-Set-Location (Split-Path $PSScriptRoot -Parent)
 
-if (-not (Test-Path $Csv)) { throw "No existe el archivo $Csv" }
+$Csv = (Resolve-Path $Csv).Path
+Set-Location (Split-Path $PSScriptRoot -Parent)
+$py = if (Test-Path ".venv\Scripts\python.exe") { ".venv\Scripts\python.exe" } else { "python" }
 
 git pull --ff-only origin main
+if ($LASTEXITCODE -ne 0) { throw "git pull falló: dejá la copia local en main y sin cambios." }
 
-python scripts/scraper_nomina.py --archivo "$Csv"
-if ($LASTEXITCODE -ne 0) { throw "Falló scraper_nomina.py" }
+& $py scripts/scraper_nomina.py --archivo $Csv
+if ($LASTEXITCODE -ne 0) { throw "Falló scraper_nomina.py (¿el CSV es el de Mapa del Estado?)" }
 
-python scripts/generar_json.py
+& $py scripts/generar_json.py
 if ($LASTEXITCODE -ne 0) { throw "Falló generar_json.py" }
 
-python scripts/corregir_personal.py
+& $py scripts/corregir_personal.py
 if ($LASTEXITCODE -ne 0) { throw "Falló corregir_personal.py" }
 
-git add src/frontend/data/personal_jgm.json src/frontend/data/personal_sgp.json `
-        src/frontend/data/personal_presidencia.json src/frontend/data/meta.json `
-        src/frontend/data/nomina_estado.json
+git add src/frontend/data/
+git diff --staged --quiet
+if ($LASTEXITCODE -eq 0) { Write-Host "Sin cambios en la nómina."; exit 0 }
 git commit -m "Nómina APN actualizada a mano $(Get-Date -Format yyyy-MM-dd)"
-
-if (-not $SinPush) {
-    git push origin main
-    Write-Host "Listo. Los cruces se recalculan solos esta noche (workflow Generador de Cruces PEN)."
-}
+git push origin main

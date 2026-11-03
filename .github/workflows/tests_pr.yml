@@ -1,0 +1,43 @@
+name: Tests en Pull Requests
+
+# Corre los tests unitarios en cada PR contra main, para no mergear a ciegas.
+# Los smoke tests contra producción y los mails quedan en tests_diarios.yml.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    name: Tests Unitarios
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest httpx
+
+      - name: Ejecutar tests unitarios
+        env:
+          REFRESH_TOKEN: "test_token_ci"
+        run: |
+          pytest tests/ \
+            --ignore=tests/test_live.py \
+            --tb=short \
+            -p no:warnings \
+            --cache-clear
