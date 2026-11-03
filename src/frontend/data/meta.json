@@ -1,16 +1,16 @@
 {
-  "generado": "2026-11-03 12:10",
+  "generado": "2026-11-03 20:47",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 811,
-  "total_personal": 1414,
+  "total_personal": 0,
   "ramas": {
     "jgm": {
       "contratos": 186,
       "contratos_adjudicados": 131,
       "contratos_con_monto": 124,
-      "personal": 817,
-      "personal_identificado": 524,
+      "personal": 0,
+      "personal_identificado": 0,
       "monto_total": 19376549570.9,
       "monto_usd": 3444660.56,
       "contratos_usd": 5
@@ -19,8 +19,8 @@
       "contratos": 268,
       "contratos_adjudicados": 214,
       "contratos_con_monto": 191,
-      "personal": 143,
-      "personal_identificado": 123,
+      "personal": 0,
+      "personal_identificado": 0,
       "monto_total": 7240651870.83,
       "monto_usd": 7376954.68,
       "contratos_usd": 30
@@ -29,8 +29,8 @@
       "contratos": 357,
       "contratos_adjudicados": 240,
       "contratos_con_monto": 236,
-      "personal": 454,
-      "personal_identificado": 206,
+      "personal": 0,
+      "personal_identificado": 0,
       "monto_total": 15287614444.660002,
       "monto_usd": 525709.0,
       "contratos_usd": 1
@@ -126,8 +126,8 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-11-02",
-    "personal": "2026-07-06",
-    "nomina_regenerada_hoy": false
+    "contratos": "2026-11-03",
+    "personal": "2026-11-03",
+    "nomina_regenerada_hoy": true
   }
 }
