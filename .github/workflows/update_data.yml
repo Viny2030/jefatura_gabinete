@@ -19,12 +19,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Checkout monitor_contratos_v2
+      - name: Checkout monitor_contratos
         uses: actions/checkout@v4
         with:
-          repository: Viny2030/monitor_contratos_v2
-          ref: feature/base-datos
-          path: monitor_contratos_v2
+          repository: Viny2030/monitor_contratos
+          path: monitor_contratos
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configurar Python 3.12
@@ -45,7 +44,7 @@ jobs:
         id: reclasificar
         run: |
           python scripts/reclasificar_pen.py \
-            --repo monitor_contratos_v2 \
+            --repo monitor_contratos \
             --todo
         continue-on-error: true
 
@@ -140,6 +139,6 @@ jobs:
             El pipeline diario fallo y requiere revision.
             Ver logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
             Causas comunes:
-            - monitor_contratos_v2 no tiene reportes nuevos
+            - monitor_contratos no tiene reportes nuevos
             - BORA / MapaDelEstado no respondieron
             - Error en scripts de reclasificacion

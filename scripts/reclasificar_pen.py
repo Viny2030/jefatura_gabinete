@@ -37,7 +37,7 @@ DATA_DIR = os.path.join(BASE, "..", "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # Ruta al repo hermano (ajustable con --repo)
-REPO_DEFAULT = os.path.join(BASE, "..", "..", "monitor_contratos_v2")
+REPO_DEFAULT = os.path.join(BASE, "..", "..", "monitor_contratos")
 
 # Archivo de mapeos manuales persistentes
 MAPEOS_FILE = os.path.join(DATA_DIR, "mapeos_organismos.csv")
@@ -269,7 +269,8 @@ def convertir_a_csv(df_raw, fecha_reporte):
             continue
 
         # Fecha
-        fecha_adj = row.get("fecha", fecha_reporte)
+        # monitor_contratos usa fecha_publicacion en lugar de fecha
+        fecha_adj = row.get("fecha", row.get("fecha_publicacion", fecha_reporte))
         try:
             fecha_adj = pd.to_datetime(fecha_adj).strftime("%Y-%m-%d")
         except Exception:
@@ -305,7 +306,7 @@ def convertir_a_csv(df_raw, fecha_reporte):
             "monto_adjudicado":   monto,
             "moneda":             "Peso Argentino",
             "objeto":             objeto[:300],
-            "fuente":             "BORA via monitor_contratos_v2",
+            "fuente":             "BORA via monitor_contratos",
             "fecha_ingesta":      datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "nro_proceso":        nro,
             "proveedor":          prov,
@@ -349,10 +350,10 @@ def guardar_csv(df_nuevo):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Reclasifica salidas de monitor_contratos_v2 por JGM/SGP/Presidencia"
+        description="Reclasifica salidas de monitor_contratos por JGM/SGP/Presidencia"
     )
     parser.add_argument("--repo",  default=REPO_DEFAULT,
-                        help="Ruta al repo monitor_contratos_v2")
+                        help="Ruta al repo monitor_contratos")
     parser.add_argument("--todo",  action="store_true",
                         help="Procesar todos los reportes históricos")
     parser.add_argument("--dias",  type=int, default=None,
@@ -396,7 +397,7 @@ def main():
 
     # ── Seleccionar archivos ──────────────────────────────────────────────────
     print("\n" + "="*60)
-    print("RECLASIFICADOR PEN — monitor_contratos_v2 → jefatura_gabinete1")
+    print("RECLASIFICADOR PEN — monitor_contratos → jefatura_gabinete1")
     print(f"Ejecutado: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("="*60)
     print(f"\n[1] Reportes disponibles: {len(archivos)}")
@@ -424,6 +425,10 @@ def main():
         fecha_reporte = _fecha_str(path)
         df_raw  = leer_reporte(path)
         if df_raw.empty:
+            # Reporte sin hojas de adjudicaciones (p. ej. "Sin Datos" cuando
+            # BORA/Comprar/TGN no respondieron): se avisa en vez de saltearlo
+            # en silencio, para que una fuente caída se vea en el log.
+            print(f"  ⚠️  {nombre}: sin hoja de adjudicaciones — reporte vacío")
             continue
 
         df_norm = convertir_a_csv(df_raw, fecha_reporte)
