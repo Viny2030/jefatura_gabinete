@@ -531,7 +531,7 @@ footer a { color: #1e40af; text-decoration: none; }
     if (el) el.textContent = val;
   }
 
-  fetch("data/meta.json")
+  fetch("data/meta.json", {cache: 'no-cache'})
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (meta) {
       if (!meta || !meta.ramas) throw new Error("sin meta.json");
@@ -588,7 +588,7 @@ footer a { color: #1e40af; text-decoration: none; }
       if (badge) badge.textContent = "⚠ No se pudo verificar la última actualización";
     });
 
-  fetch("data/cruces.json")
+  fetch("data/cruces.json", {cache: 'no-cache'})
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (c) {
       if (!c) throw new Error("sin cruces.json");
