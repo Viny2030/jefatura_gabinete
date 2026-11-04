@@ -80,6 +80,22 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+
+@app.middleware("http")
+async def _sin_cache_vieja(request: Request, call_next):
+    """Los JSON de /data y las páginas cambian a diario.
+
+    Sin Cache-Control el navegador aplica caché heurística (≈10% de la edad del
+    Last-Modified) y puede mostrar datos de ayer después de un deploy (pasó con
+    meta.json el 4/11/2026: el portal seguía en 0 autoridades). no-cache obliga
+    a revalidar; con ETag la respuesta es un 304 sin cuerpo si no cambió.
+    """
+    response = await call_next(request)
+    path = request.url.path
+    if path.startswith("/data/") or path == "/" or path.endswith(".html"):
+        response.headers["Cache-Control"] = "no-cache"
+    return response
+
 # Servir los JSON estáticos que consumen jgm.html, sgp.html y presidencia.html
 # (fetch('data/contratos_jgm.json'), etc.). Sin este mount devuelven 404.
 _FRONTEND_DATA = FRONTEND_DIR / "data"
