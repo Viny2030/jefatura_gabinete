@@ -877,7 +877,7 @@ function renderOrganigrama() {
 
 // ── SIGEN — Auditoría interna (desde data/sigen_auditorias.json) ────────────
 function loadSigen() {
-  fetch('data/sigen_auditorias.json').then(r => {
+  fetch('data/sigen_auditorias.json', {cache: 'no-cache'}).then(r => {
     if (!r.ok) throw new Error('HTTP ' + r.status);
     return r.json();
   }).then(d => renderSigen(d)).catch(e => {
@@ -981,8 +981,8 @@ function initCharts() {
   // Fallback a datos incrustados si el fetch falla.
   try {
     const [rc, rp] = await Promise.all([
-      fetch('data/contratos_presidencia.json'),
-      fetch('data/personal_presidencia.json'),
+      fetch('data/contratos_presidencia.json', {cache: 'no-cache'}),
+      fetch('data/personal_presidencia.json', {cache: 'no-cache'}),
     ]);
     const contratos = await rc.json();
     const personal  = await rp.json();
@@ -1125,7 +1125,7 @@ function actualizarArea(area) {
   setKpi('sueldo_prom', sueldos.length ? fmt(sueldos.reduce(function(a, b){ return a + b; }, 0) / sueldos.length) : '—',
          'estimación por jerarquía, no dato oficial');
 
-  fetch('data/cruces.json').then(function(r){ return r.json(); }).then(function(d) {
+  fetch('data/cruces.json', {cache: 'no-cache'}).then(function(r){ return r.json(); }).then(function(d) {
     var lista = (d.cruces || []).filter(function(c){ return (c.area || 'jgm') === area; });
     var altos = lista.filter(function(c){ return c.nivel === 'ALTO'; });
     var montoC = lista.reduce(function(s, c){ return s + (c.monto || 0); }, 0);

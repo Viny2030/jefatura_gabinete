@@ -1094,7 +1094,7 @@ function fmtM(nMillones) {
 }
 
 function loadPresupuesto() {
-  fetch('data/presupuesto_jgm.json').then(function(r) {
+  fetch('data/presupuesto_jgm.json', {cache: 'no-cache'}).then(function(r) {
     if (!r.ok) throw new Error('HTTP ' + r.status);
     return r.json();
   }).then(function(d) {
@@ -1259,9 +1259,9 @@ async function init() {
 
   try {
     var responses = await Promise.all([
-      fetch('data/contratos_jgm.json'),
-      fetch('data/personal_jgm.json'),
-      fetch('data/cruces.json'),
+      fetch('data/contratos_jgm.json', {cache: 'no-cache'}),
+      fetch('data/personal_jgm.json', {cache: 'no-cache'}),
+      fetch('data/cruces.json', {cache: 'no-cache'}),
     ]);
     allC = await responses[0].json();
     allP = await responses[1].json();
@@ -1430,7 +1430,7 @@ function actualizarArea(area) {
   setKpi('sueldo_prom', sueldos.length ? fmt(sueldos.reduce(function(a, b){ return a + b; }, 0) / sueldos.length) : '—',
          'estimación por jerarquía, no dato oficial');
 
-  fetch('data/cruces.json').then(function(r){ return r.json(); }).then(function(d) {
+  fetch('data/cruces.json', {cache: 'no-cache'}).then(function(r){ return r.json(); }).then(function(d) {
     var lista = (d.cruces || []).filter(function(c){ return (c.area || 'jgm') === area; });
     var altos = lista.filter(function(c){ return c.nivel === 'ALTO'; });
     var montoC = lista.reduce(function(s, c){ return s + (c.monto || 0); }, 0);
@@ -1473,8 +1473,8 @@ function cargarAmpliada() {
   if (AMP) return;
   AMP = [];
   Promise.all([
-    fetch('data/contratos_jgm_ampliada.json').then(function(r){ return r.ok ? r.json() : []; }),
-    fetch('data/meta.json').then(function(r){ return r.json(); })
+    fetch('data/contratos_jgm_ampliada.json', {cache: 'no-cache'}).then(function(r){ return r.ok ? r.json() : []; }),
+    fetch('data/meta.json', {cache: 'no-cache'}).then(function(r){ return r.json(); })
   ]).then(function(res) {
     AMP = Array.isArray(res[0]) ? res[0] : [];
     var m = (res[1] && res[1].jgm_ampliada) || null;
