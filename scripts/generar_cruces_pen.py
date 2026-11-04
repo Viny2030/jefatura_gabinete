@@ -405,6 +405,11 @@ def main():
     log.info("=" * 60)
 
     personal  = cargar_personal()
+    if not personal:
+        # Nómina vacía (p. ej. un CSV con formato nuevo dejó los personal_*.json
+        # en []): no pisar el cruces.json publicado con una lista vacía.
+        log.error("personal_*.json vacíos → no se regenera cruces.json")
+        raise SystemExit(1)
     contratos = cargar_contratos_pen()
 
     if not contratos:

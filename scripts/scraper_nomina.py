@@ -297,12 +297,54 @@ def normalizar_columnas(df: pd.DataFrame) -> pd.DataFrame:
 
         # ── Web ───────────────────────────────────────────────────────────────
         "web":                         "web",
+
+        # ── Export BIME "estructura_autoridades_APN" (oct 2026) ───────────────
+        # Mismas columnas que Mapa del Estado, con prefijo uo_ (unidad
+        # organizativa) y aut_ (autoridad) en lugar de autoridad_.
+        "uo_jurisdiccion":             "organismo",
+        "uo_subjurisdiccion":          "sub_organismo",
+        "uo_unidad_superior":          "unidad_politica",
+        "uo_reporta_a":                "reporta_a",
+        "uo_nombre_corto":             "nombre_corto",
+        "uo_tipo_administracion":      "tipo_administracion",
+        "uo_jerarquia":                "unidad_rango",
+        "uo_clase":                    "unidad_clase",
+        "uo_normativa":                "norma_competencias_objetivos",
+        "uo_web":                      "web",
+        "aut_tratamiento":             "tratamiento",
+        "aut_nombre":                  "nombre",
+        "aut_apellido":                "apellido",
+        "aut_dni":                     "dni",
+        "aut_cuil":                    "cuil",
+        "aut_sexo":                    "genero",
+        "aut_norma_designacion":       "norma_designacion",
     }
 
     rename = {col: MAPPER[col] for col in df.columns if col in MAPPER}
     df = df.rename(columns=rename)
     print(f"[NORM] Columnas mapeadas: {list(rename.keys())} → {list(rename.values())}")
     return df
+
+
+def validar_nomina(df: pd.DataFrame) -> None:
+    """Corta con error si el CSV no tiene el formato esperado.
+
+    Sin esto, un CSV con columnas renombradas produce personal_*.json vacíos y
+    el portal muestra 0 autoridades (pasó con el export BIME de oct 2026).
+    Mejor que el workflow falle y se conserven los datos publicados.
+    """
+    faltan = [c for c in ("organismo", "cargo", "apellido") if c not in df.columns]
+    if faltan:
+        raise SystemExit(
+            f"❌ El CSV no tiene las columnas {faltan} después de normalizar. "
+            "Probablemente cambió el formato del export: agregar los nombres "
+            "nuevos al MAPPER de normalizar_columnas().")
+    org = df["organismo"].astype(str)
+    n_mon = org.str.contains("Jefatura de Gabinete|Presidencia de la Naci", regex=True).sum()
+    if n_mon == 0:
+        raise SystemExit("❌ El CSV no tiene ninguna fila de JGM ni de Presidencia.")
+    print(f"[CHECK] {len(df):,} filas · {n_mon:,} de JGM/Presidencia · "
+          f"{df['apellido'].notna().sum():,} con titular")
 
 
 # ── Clasificación tipo de planta ──────────────────────────────────────────────
@@ -554,6 +596,7 @@ def main():
 
     # 2. Normalizar columnas
     df = normalizar_columnas(df_raw.copy())
+    validar_nomina(df)
 
     # 3. Clasificar tipo de planta
     df = clasificar_tipo_planta(df)

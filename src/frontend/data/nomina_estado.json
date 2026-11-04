@@ -1,5 +1,5 @@
 {
-  "descargada": "2026-11-03",
+  "descargada": "2026-11-04",
   "fuente": "archivo local BIME_estructura_autoridades_APN_20261026.csv",
   "nota": "Fecha de la última descarga real de la nómina. La escribe scripts/scraper_nomina.py."
 }
