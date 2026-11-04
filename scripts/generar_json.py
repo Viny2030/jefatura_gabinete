@@ -130,6 +130,12 @@ if _HAY_NOMINA:
     df_nom = pd.read_csv(NOMINA_CSV, encoding="utf-8-sig", low_memory=False)
     df_nom.columns = df_nom.columns.str.strip()
     print(f"    {len(df_nom):,} filas | columnas: {df_nom.columns.tolist()}")
+    if "organismo" not in df_nom.columns or df_nom.empty:
+        # CSV con formato desconocido: no pisar los personal_*.json publicados
+        # con listas vacías (el portal mostraría 0 autoridades).
+        print("    [WARN] la nómina no tiene columna 'organismo' → se conservan los personal_*.json actuales")
+        _HAY_NOMINA = False
+        df_nom = pd.DataFrame()
 else:
     print(f"    [WARN] {NOMINA_CSV} no existe → NO se regeneran los personal_*.json (se conservan los actuales)")
     df_nom = pd.DataFrame()
@@ -345,7 +351,9 @@ for rama, cfg in RAMAS.items():
         if "monto_adjudicado" in df_c.columns else 0
     adjudicados = int(df_c["estado"].astype(str).str.startswith("Adjudicado").sum()) \
         if "estado" in df_c.columns else None
-    identificados = sum(1 for r in registros_n if r.get("apellido"))
+    # NaN es "truthy": contar solo apellidos que son texto no vacío.
+    identificados = sum(1 for r in registros_n
+                        if isinstance(r.get("apellido"), str) and r["apellido"].strip())
     resumen[rama] = {
         "contratos"            : len(registros_c),
         "contratos_adjudicados": adjudicados,
