@@ -300,3 +300,21 @@ class TestInitDb:
     def test_token_invalido_retorna_401(self):
         resp = client.post("/api/init-db", headers={"X-Refresh-Token": "bad"})
         assert resp.status_code == 401
+
+
+# ─── Cache-Control: los datos del día no quedan cacheados en el navegador ─────
+
+class TestSinCacheVieja:
+
+    def test_json_de_data_revalida(self):
+        resp = client.get("/data/meta.json")
+        assert resp.status_code == 200
+        assert resp.headers.get("cache-control") == "no-cache"
+
+    def test_portada_revalida(self):
+        resp = client.get("/")
+        assert resp.headers.get("cache-control") == "no-cache"
+
+    def test_api_no_se_toca(self):
+        resp = client.get("/api/health")
+        assert "cache-control" not in resp.headers
