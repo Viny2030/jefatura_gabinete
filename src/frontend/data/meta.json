@@ -1,13 +1,13 @@
 {
-  "generado": "2026-11-04 12:11",
+  "generado": "2026-11-05 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
-  "total_contratos": 811,
+  "total_contratos": 813,
   "total_personal": 1343,
   "ramas": {
     "jgm": {
       "contratos": 186,
-      "contratos_adjudicados": 131,
+      "contratos_adjudicados": 134,
       "contratos_con_monto": 124,
       "personal": 710,
       "personal_identificado": 404,
@@ -16,7 +16,7 @@
       "contratos_usd": 5
     },
     "sgp": {
-      "contratos": 268,
+      "contratos": 269,
       "contratos_adjudicados": 214,
       "contratos_con_monto": 191,
       "personal": 141,
@@ -26,7 +26,7 @@
       "contratos_usd": 30
     },
     "presidencia": {
-      "contratos": 357,
+      "contratos": 358,
       "contratos_adjudicados": 240,
       "contratos_con_monto": 236,
       "personal": 492,
@@ -37,15 +37,15 @@
     }
   },
   "jgm_ampliada": {
-    "procesos": 1495,
-    "adjudicados": 996,
+    "procesos": 1497,
+    "adjudicados": 997,
     "con_monto": 935,
-    "monto_ars": 155116419212.09,
+    "monto_ars": 155116419212.09003,
     "monto_usd": 418855213.5,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
-        "procesos": 445,
+        "procesos": 446,
         "adjudicados": 224,
         "con_monto": 209,
         "monto_ars": 103998544906.16998,
@@ -69,8 +69,8 @@
       },
       {
         "organismo": "107 - Administración de Parques Nacionales",
-        "procesos": 166,
-        "adjudicados": 118,
+        "procesos": 167,
+        "adjudicados": 119,
         "con_monto": 116,
         "monto_ars": 8717803254.51,
         "monto_usd": 5099774.25

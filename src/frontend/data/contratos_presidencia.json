@@ -4976,6 +4976,22 @@
     "fecha_apertura": "12/11/2025 10:00 Hrs."
   },
   {
+    "numero_proceso": "300-0009-LPR26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Servicio de mantenimiento predictivo, preventivo y correctivo de UN ascensor -Se",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-03",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio de mantenimiento predictivo, preventivo y correctivo de UN ascensor -Sede Campichuelo.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "03/11/2026 10:00 Hrs."
+  },
+  {
     "numero_proceso": "300-0010-LPR23",
     "organismo": "300/000 - Dirección General de Administración - SECLyT",
     "proveedor": "EMELEC S.A.",

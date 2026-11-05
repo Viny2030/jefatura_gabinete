@@ -335,7 +335,7 @@
     "objeto": "SERVICIO DE IMPRESIÓN, COPIADO Y DIGITALIZACIÓN DE DOCUMENTOS POR DOCE (12) MESES CON PRORROGA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "En Evaluacion",
     "fecha_apertura": "21/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -964,7 +964,7 @@
     "objeto": "Insumos para Archivo Av. Rivadavia",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Adjudicado con doc. contractuales generados",
+    "estado": "Adjudicado",
     "fecha_apertura": "14/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -7560,7 +7560,7 @@
     "objeto": "Adquisición de 1 (UNA) Retroexcavadora",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "16/10/2026 09:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8614,7 +8614,7 @@
     "objeto": "Servicio de impresión de SIETE MIL QUINIENTAS (7.500) LÁMINAS SERIE 3 DE BIODIVERSIDAD",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Afectación",
+    "estado": "Adjudicado con doc. contractuales generados",
     "fecha_apertura": "14/09/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8903,7 +8903,7 @@
     "objeto": "Cobertura Seguro de Enseres (transporte Mudanza)",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Publicado",
+    "estado": "En Apertura",
     "fecha_apertura": "02/11/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8990,6 +8990,23 @@
     "gestion": "Francos",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "20/01/2025 10:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
+    "numero_proceso": "74-0495-LPR26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "Servicio de mantenimiento de ascensores",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-05",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio de mantenimiento de ascensores",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "05/11/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
@@ -10127,7 +10144,7 @@
     "objeto": "REPARACIÓN Y MANTENIMIENTO PREVENTIVO Y CORRECTIVO PARA LA INSTALACIÓN TÉRMICA DE PERÚ 103 CABA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "15/10/2026 11:30 Hrs.",
     "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
   },
@@ -20349,6 +20366,23 @@
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
   {
+    "numero_proceso": "392-0048-SPU24",
+    "organismo": "392/000 - Dirección General de Administración - AABE",
+    "proveedor": "Venta Vehículo Marca: PEUGEOT 407 SV SPORT V6 TIPTRONIC, SEDAN 4 puertas - Año: ",
+    "cuit": "",
+    "tipo_contratacion": "Subasta Pública",
+    "fecha_adjudicacion": "2026-11-05",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Venta Vehículo Marca: PEUGEOT 407 SV SPORT V6 TIPTRONIC, SEDAN 4 puertas - Año: 2008",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "05/11/2026 12:00 Hrs.",
+    "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
+  },
+  {
     "numero_proceso": "392-0048-SPU25",
     "organismo": "392/000 - Dirección General de Administración - AABE",
     "proveedor": "Venta en LOTE de CUATRO (4) vehículos INAES - LOTE N° 2",
@@ -21347,7 +21381,7 @@
     "objeto": "Venta Inmueble calle Lavalle Nº 658/62/66, entre calles Maipú y Florida, 2º Piso, UF 172 CABA.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Pendiente de Inicio Subasta",
     "fecha_apertura": "28/10/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -21381,7 +21415,7 @@
     "objeto": "Inmueble sito en Lavalle Nº 658/62/66, 5º Piso, UF 309, entre calles Maipú y Florida, CABA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "09/10/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },

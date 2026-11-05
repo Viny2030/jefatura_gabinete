@@ -2428,7 +2428,7 @@
     "objeto": "Puesta en valor, certific.,mantenim. prev., correct. y ot, adq. de materiales  red de incendios SGP",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "28/10/2026 12:00 Hrs."
   },
   {
@@ -2814,6 +2814,22 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "20/01/2026 10:00 Hrs."
+  },
+  {
+    "numero_proceso": "23-0019-LPU26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Servicio integral de reparación y mantenimiento preventivo y correctivo del Data",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-11-05",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio integral de reparación y mantenimiento preventivo y correctivo del Data Center.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "05/11/2026 12:00 Hrs."
   },
   {
     "numero_proceso": "23-0020-CDI24",
