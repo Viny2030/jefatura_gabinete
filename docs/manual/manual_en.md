@@ -204,7 +204,26 @@ The API is open for queries (GET). Interactive documentation is at `/docs`.
 
 The data files can also be downloaded directly, for example `/data/meta.json`, `/data/cruces.json` or `/data/contratos_jgm.json`.
 
-## 9. Author and contact
+## 9. 🕸️ How this site connects to the rest of the ecosystem
+
+This site is part of the **Transparency Ecosystem**: eleven monitors that query each other. Below, which sites it exchanges data with ("uses →" = takes data from that site; "← used by" = that site takes data from this one) and which official sources feed it. The graph is interactive: click any site to see its profile.
+
+[Open the full graph ↗](https://mapa.ecosistematransparencia.com.ar/grafo?nodo=jefatura&lang=en)
+
+**Connections**
+
+- **uses → MEACI**: Queries MEACI's sanctioned-CUIT list live (6 h cache) to flag suppliers.
+- **← used by Mapa**: Link and live status of the site.
+
+**Official sources**
+
+- Mapa del Estado (roster)
+- COMPR.AR / datos.gob.ar
+- Official Gazette
+
+Every connection in detail, and how figures are cross-checked between sites: [mapa.ecosistematransparencia.com.ar/en/manual#conexiones](https://mapa.ecosistematransparencia.com.ar/en/manual#conexiones)
+
+## 10. Author and contact
 
 Vicente Humberto Monteverde, Ph.D. — Doctor of Economic Sciences, researcher in public transparency. Author of the Regressive Income Transfer theory and developer of the XAI approach applied to public procurement. Published in the Journal of Financial Crime (Emerald Publishing).
 
