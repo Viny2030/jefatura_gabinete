@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-05 12:11",
+  "generado": "2026-11-06 12:10",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 813,
@@ -8,10 +8,10 @@
     "jgm": {
       "contratos": 186,
       "contratos_adjudicados": 134,
-      "contratos_con_monto": 124,
+      "contratos_con_monto": 127,
       "personal": 710,
       "personal_identificado": 404,
-      "monto_total": 19376549570.9,
+      "monto_total": 21708974728.9,
       "monto_usd": 3444660.56,
       "contratos_usd": 5
     },
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-11-03",
+    "contratos": "2026-11-05",
     "personal": "2026-11-04",
     "nomina_regenerada_hoy": false
   }
