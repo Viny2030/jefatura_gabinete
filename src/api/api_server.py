@@ -69,7 +69,7 @@ CHAT_RATE_LIMIT_DIA = int(os.getenv("CHAT_RATE_LIMIT_DIARIO", "30"))  # mensajes
 
 app = FastAPI(
     title="Monitor Anticorrupción JGM — API",
-    description="Datos de alertas de parentesco, conflictos societarios y desvíos de flujo de fondos",
+    description="Datos de alertas por coincidencia de apellido, conflictos societarios y desvíos de flujo de fondos",
     version="1.0.0"
 )
 
@@ -460,7 +460,7 @@ def get_grafo_v1():
         tipo = _tipo_v1(c.get("tipo"))
         edges.append({
             "from": func_id, "to": prov_id,
-            "type": {"apellido": "parentesco", "concentracion": "fondos"}.get(tipo, "societario"),
+            "type": {"apellido": "apellido", "concentracion": "fondos"}.get(tipo, "societario"),
             "nivel": _NIVEL_V1.get(str(c.get("nivel", "")).upper(), "baja"),
         })
     return {"nodes": nodes, "edges": edges}

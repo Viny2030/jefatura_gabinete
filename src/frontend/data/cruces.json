@@ -1,12 +1,12 @@
 {
   "generado_en": "2026-11-07T05:09:46.180596",
-  "total": 22,
+  "total": 17,
   "altos": 0,
-  "medios": 22,
-  "monto_total": 262805020.10999998,
+  "medios": 17,
+  "monto_total": 177588140.10999998,
   "por_area": {
     "jgm": {
-      "total": 15,
+      "total": 10,
       "altos": 0
     },
     "sgp": {
@@ -19,22 +19,6 @@
     }
   },
   "cruces": [
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "ARTURO, María de la Paz",
-      "cargo": "Director/a",
-      "gestion": "Francos",
-      "empresa": "Universidad Nacional Arturo Jauretche",
-      "cuit": "30711340161",
-      "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
-      "monto": 81208880.0,
-      "monto_fmt": "$81,2 M",
-      "fecha": "2026-10-19",
-      "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 79-0023-CDI23)",
-      "contratos": 2
-    },
     {
       "nivel": "MEDIO",
       "area": "presidencia",
@@ -151,22 +135,6 @@
       "nivel": "MEDIO",
       "area": "jgm",
       "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "MEDICO, Ana Gabriela",
-      "cargo": "Subgerente/a",
-      "gestion": "Desconocido",
-      "empresa": "SOCORRO MEDICO PRIVADO SA",
-      "cuit": "30612213417",
-      "organismo": "79/000 - Dirección General Técnico - Administrativa - JGM",
-      "monto": 4008000.0,
-      "monto_fmt": "$4,0 M",
-      "fecha": "2026-10-19",
-      "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 79-0071-CDI23)",
-      "contratos": 2
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
       "funcionario": "ZARATE, Pedro Orlando",
       "cargo": "Intendente/a",
       "gestion": "Francos",
@@ -263,38 +231,6 @@
       "nivel": "MEDIO",
       "area": "jgm",
       "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "GERMAN, Nicolás Andrés",
-      "cargo": "Director/a Titular",
-      "gestion": "Desconocido",
-      "empresa": "VAN ZANDWEGHE MARCELO L Y VAN ZANDWEGHE GERMAN P SH",
-      "cuit": "30680288158",
-      "organismo": "15 - Subgerencia de Compras y Contrataciones",
-      "monto": 0,
-      "monto_fmt": "—",
-      "fecha": "2026-10-12",
-      "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 15-0003-LPU24)",
-      "contratos": 1
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "GERMAN, Nicolás Andrés",
-      "cargo": "Director/a Titular",
-      "gestion": "Desconocido",
-      "empresa": "German Gianattasio",
-      "cuit": "20200068263",
-      "organismo": "392/000 - Dirección General de Administración - AABE",
-      "monto": 0,
-      "monto_fmt": "—",
-      "fecha": "2026-10-19",
-      "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 392-0109-SPU25)",
-      "contratos": 1
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
       "funcionario": "MENDIETA, Diego Ariel",
       "cargo": "Jefe/a de Unidad",
       "gestion": "Desconocido",
@@ -338,22 +274,6 @@
       "fecha": "2026-10-19",
       "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 392-0011-SPU24)",
       "contratos": 11
-    },
-    {
-      "nivel": "MEDIO",
-      "area": "jgm",
-      "tipo": "Apellido en razón social — posible vínculo",
-      "funcionario": "GIULIANO, Gabriel Osvaldo",
-      "cargo": "Coordinador/a",
-      "gestion": "Pre-Milei",
-      "empresa": "Giuliano Woloszanowski",
-      "cuit": "20399145466",
-      "organismo": "392/000 - Dirección General de Administración - AABE",
-      "monto": 0,
-      "monto_fmt": "—",
-      "fecha": "2026-10-19",
-      "link": "https://comprar.gob.ar/BuscarAvanzado.aspx (proceso 392-0100-SPU25)",
-      "contratos": 2
     },
     {
       "nivel": "MEDIO",

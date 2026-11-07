@@ -116,6 +116,7 @@ def cargar_personal():
             data = json.load(f)
         n = 0
         for p in data:
+            NOMBRES_PILA.update(normalizar(p.get("nombre", "")).split())
             cuil = cuil_a_str(p.get("cuil", ""))
             apellido = normalizar(p.get("apellido", ""))
             if not apellido or len(apellido) < 4:
@@ -278,6 +279,45 @@ APELLIDOS_COMUNES = {
     "MARIANO", "JULIAN", "EMILIO", "FELIPE", "MANUEL", "ANGEL", "ESTEBAN",
 }
 
+# Nombres de pila: si el apellido de un funcionario también es un nombre de pila
+# ("GERMAN", "ARTURO", "GIULIANO"), aparecer en una razón social no dice nada:
+# casi siempre es el nombre del proveedor ("German Gianattasio") o un homenaje
+# ("Universidad Nacional Arturo Jauretche"). Se completa al cargar la nómina con
+# todos los nombres de pila de los funcionarios (ver cargar_personal).
+NOMBRES_PILA_BASE = {
+    "AGUSTIN", "ALAN", "ALBERTO", "ALEJANDRO", "ALEJANDRA", "ALFREDO", "ALICIA", "ANA", "ANDREA",
+    "ANIBAL", "ANTONIO", "ARIEL", "ARMANDO", "ARTURO", "AUGUSTO", "BEATRIZ", "BRIAN", "BRUNO",
+    "CAMILA", "CARLA", "CARLOS", "CAROLINA", "CECILIA", "CESAR", "CLARA", "CLAUDIA", "CLAUDIO",
+    "CRISTIAN", "CRISTINA", "DAMIAN", "DANIELA", "DARIO", "DIEGO", "EDUARDO", "ELENA", "ENRIQUE",
+    "ERNESTO", "EUGENIA", "EZEQUIEL", "FACUNDO", "FEDERICO", "FERNANDO", "FLORENCIA", "FRANCISCO",
+    "GASTON", "GERARDO", "GERMAN", "GIULIANO", "GONZALO", "GRACIELA", "GUILLERMO", "GUSTAVO",
+    "HECTOR", "HERNAN", "HORACIO", "HUGO", "IGNACIO", "IVAN", "JAVIER", "JORGE", "JOSE", "JUAN",
+    "JULIO", "JULIETA", "LAURA", "LEANDRO", "LEONARDO", "LORENA", "LUCIA", "LUCIANO", "LUIS",
+    "MARCELO", "MARIA", "MARINA", "MARIO", "MATIAS", "MAURICIO", "MAXIMILIANO", "MIGUEL", "NATALIA",
+    "NESTOR", "NORBERTO", "OMAR", "OSCAR", "OSVALDO", "PABLO", "PATRICIA", "PAULA", "PEDRO", "RAUL",
+    "RICARDO", "ROBERTO", "RODRIGO", "ROMINA", "RUBEN", "SANTIAGO", "SEBASTIAN", "SERGIO", "SILVIA",
+    "SOFIA", "SUSANA", "VALERIA", "VERONICA", "VICTOR", "WALTER",
+}
+NOMBRES_PILA = set(NOMBRES_PILA_BASE)
+
+# Entidades cuyo nombre suele homenajear a una persona: el apellido que aparece
+# ahí no es el de un dueño ni el de un socio.
+INSTITUCIONES = {
+    "UNIVERSIDAD", "HOSPITAL", "INSTITUTO", "FUNDACION", "COLEGIO", "ESCUELA", "CLUB",
+    "ASOCIACION", "COOPERATIVA", "MUNICIPALIDAD", "SANATORIO", "CONSEJO", "FACULTAD",
+    "BIBLIOTECA", "MUTUAL", "SINDICATO", "FEDERACION", "CONFEDERACION", "CAMARA",
+    "PARROQUIA", "OBISPADO", "ARZOBISPADO", "ENTE",
+}
+
+# En una persona jurídica el apellido de un socio va seguido del fin del nombre,
+# de la forma societaria, de una inicial o de un conector ("SOUZA A Y SOUZA R
+# SOC DE HECHO", "PEREZ HNOS SA"). Si le sigue otra palabra suele ser una palabra
+# común del nombre de fantasía ("SOCORRO MEDICO PRIVADO SA").
+SIGUEN_A_APELLIDO = {
+    "SA", "SRL", "SAS", "SH", "SOC", "SOCIEDAD", "SAIC", "SACI", "SACIF", "SAICF", "SCA",
+    "HNOS", "HERMANOS", "E", "Y", "CIA", "HIJOS", "SUCESORES", "SUC", "UTE", "COOP",
+}
+
 # Personas humanas: CUIT con prefijo 20/23/24/27.
 PREFIJOS_PERSONA = ("20", "23", "24", "27")
 # Si al apellido le sigue una de estas palabras es casi siempre un topónimo o
@@ -290,6 +330,8 @@ def coincide_apellido(apellido, razon, cuit):
     pila ni como parte de un topónimo). Devuelve True/False."""
     if apellido in APELLIDOS_COMUNES:
         return False
+    if any(t in NOMBRES_PILA for t in apellido.split()):
+        return False
     tok_ap = apellido.split()
     tok_rz = razon.split()
     n = len(tok_ap)
@@ -300,10 +342,12 @@ def coincide_apellido(apellido, razon, cuit):
         # Persona humana: el apellido va al principio ("PEREZ JUAN") o al final
         # ("JUAN PEREZ"); en el medio suele ser un segundo nombre.
         return any(i == 0 or i + n == len(tok_rz) for i in posiciones)
-    # Persona jurídica: descartar topónimos / nombres de fantasía.
+    # Persona jurídica: descartar homenajes, topónimos y nombres de fantasía.
+    if any(t in INSTITUCIONES for t in tok_rz):
+        return False
     for i in posiciones:
         siguiente = tok_rz[i + n] if i + n < len(tok_rz) else ""
-        if siguiente not in CONECTORES_TOPONIMO:
+        if siguiente == "" or siguiente in SIGUEN_A_APELLIDO or len(siguiente) == 1:
             return True
     return False
 

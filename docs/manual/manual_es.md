@@ -25,7 +25,7 @@ Todos los datos provienen de fuentes públicas oficiales. El portal no requiere 
 | SGP (`sgp.html`) | Ficha de la Secretaría General: contratos y adjudicaciones, personal, alertas y decretos de designación. |
 | Presidencia (`presidencia.html`) | Ficha de Presidencia: contratos y adjudicaciones, personal, alertas e informes de auditoría interna de la SIGEN (SAF 109). |
 | Alertas (`alertas.html`) | Todas las alertas de cruce, con filtros por nivel (alta, media, baja) y por tipo. |
-| Grafo (`grafos_nodos.html`) | Red de vínculos entre funcionarios y proveedores, con filtros, leyenda y estadísticas. |
+| Grafo (`grafos_nodos.html`) | Red de vínculos entre funcionarios y proveedores, con el nombre de cada nodo, filtros, leyenda y estadísticas, en español y en inglés (sección 4.1). |
 | Documentación (`documentacion.html`) | Documentación técnica del sistema. |
 | Manual (`manual_usuario.html`) | Este manual, en español y en inglés. |
 
@@ -54,9 +54,25 @@ Para reducir falsos positivos, el cruce por apellido:
 
 - Ignora apellidos de menos de 4 letras y una lista de apellidos muy frecuentes en Argentina (González, Rodríguez, Pérez, etc.) o que también son nombres de pila (Martín, Daniel, Lorenzo, etc.).
 - Si el proveedor es una persona humana (CUIT 20, 23, 24 o 27), exige que el apellido esté al principio o al final del nombre, no en el medio, donde suele ser un segundo nombre.
-- Si el proveedor es una empresa, descarta topónimos y nombres de fantasía ("TORRES DEL PARANÁ S.R.L.").
+- Si el proveedor es una empresa, descarta topónimos y nombres de fantasía ("TORRES DEL PARANÁ S.R.L."). Además exige que al apellido le siga el fin del nombre, la forma societaria (S.A., S.R.L., S.H., Hnos.), una inicial o "y": así "SOCORRO MÉDICO PRIVADO S.A." no coincide con el apellido Médico.
+- Descarta los apellidos que también son nombres de pila: los de una lista fija y todos los nombres de pila que aparecen en la nómina. Así "Germán Gianattasio" no coincide con el apellido Germán.
+- Descarta universidades, hospitales, institutos, fundaciones, clubes y otras instituciones, cuyo nombre suele homenajear a una persona ("Universidad Nacional Arturo Jauretche").
 
 Cada alerta muestra el funcionario y su cargo, la gestión, el proveedor y su CUIT, el organismo, la cantidad de contratos, el monto y el enlace al aviso. Una alerta media pide revisar el caso, no presume un vínculo.
+
+### 4.1 Grafo de relaciones
+
+La página **Grafo** (`grafos_nodos.html`) dibuja las mismas alertas como una red. Cada nodo lleva su nombre:
+
+- **Funcionario** (azul): apellido y nombre, tal como figuran en la nómina. Al hacer clic se ven su cargo y la cantidad de vínculos.
+- **Proveedor** (verde): la razón social, tal como figura en el contrato. Al hacer clic se ven su CUIT y la cantidad de vínculos.
+
+Las líneas indican el tipo de cruce:
+
+- **Coincidencia de apellido** (roja): el apellido del funcionario aparece en el nombre del proveedor, con los filtros descritos arriba. Es una señal para revisar y **no prueba parentesco**. Hasta noviembre de 2026 el grafo la rotulaba "parentesco"; se corrigió porque el cruce solo compara textos.
+- **Vínculo societario** (naranja) y **flujo de fondos** (violeta), cuando el motor de cruce los detecta.
+
+Las líneas punteadas son alertas de nivel medio o bajo y las continuas, de nivel alto. Los filtros permiten elegir el tipo de vínculo y el nivel, y el buscador ubica un nodo por nombre o CUIT. El botón **ES / EN** del encabezado cambia el idioma de la página; `grafos_nodos.html?lang=en` la abre en inglés.
 
 ## 5. Agente IA
 
