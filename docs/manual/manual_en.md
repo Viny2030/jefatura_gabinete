@@ -25,7 +25,7 @@ All data comes from official public sources. The site requires no registration.
 | SGP (`sgp.html`) | General Secretariat: contracts and awards, staff, alerts and appointment decrees. |
 | Presidency (`presidencia.html`) | Office of the President: contracts and awards, staff, alerts and SIGEN internal audit reports (SAF 109). |
 | Alerts (`alertas.html`) | Every cross-check alert, filterable by level (high, medium, low) and by type. |
-| Graph (`grafos_nodos.html`) | Network of links between officials and suppliers, with filters, legend and statistics. |
+| Graph (`grafos_nodos.html`) | Network of links between officials and suppliers, with every node named, filters, legend and statistics, in Spanish and English (section 4.1). |
 | Documentation (`documentacion.html`) | Technical documentation of the system. |
 | Manual (`manual_usuario.html`) | This manual, in Spanish and English. |
 
@@ -54,9 +54,25 @@ To reduce false positives, the surname check:
 
 - Ignores surnames shorter than 4 letters and a list of surnames that are very common in Argentina (González, Rodríguez, Pérez, etc.) or are also first names (Martín, Daniel, Lorenzo, etc.).
 - When the supplier is an individual (CUIT starting with 20, 23, 24 or 27), requires the surname to be at the beginning or end of the name, not in the middle, where it is usually a middle name.
-- When the supplier is a company, discards place names and trade names ("TORRES DEL PARANÁ S.R.L.").
+- When the supplier is a company, discards place names and trade names ("TORRES DEL PARANÁ S.R.L."). It also requires the surname to be followed by the end of the name, the legal form (S.A., S.R.L., S.H., Hnos.), an initial or "y" (and): this way "SOCORRO MÉDICO PRIVADO S.A." does not match the surname Médico.
+- Discards surnames that are also first names: those in a fixed list and every first name that appears in the staff roster. This way "Germán Gianattasio" does not match the surname Germán.
+- Discards universities, hospitals, institutes, foundations, clubs and other institutions, whose names usually pay tribute to a person ("Universidad Nacional Arturo Jauretche").
 
 Each alert shows the official and their position, the administration, the supplier and its CUIT, the body, the number of contracts, the amount and the link to the notice. A medium alert calls for a review; it does not presume a link.
+
+### 4.1 Relationship graph
+
+The **Grafo (Graph)** page (`grafos_nodos.html`) draws the same alerts as a network. Every node carries its name:
+
+- **Official** (blue): surname and first name, as listed in the staff roster. Clicking it shows the position and the number of links.
+- **Supplier** (green): the company or personal name, as listed in the contract. Clicking it shows the CUIT and the number of links.
+
+Lines show the type of check:
+
+- **Surname match** (red): the official's surname appears in the supplier's name, after the filters described above. It is a signal worth reviewing and **does not prove kinship**. Until November 2026 the graph labelled it "kinship"; this was corrected because the check only compares text.
+- **Corporate link** (orange) and **flow of funds** (purple), when the matching engine detects them.
+
+Dashed lines are medium- or low-level alerts and solid lines are high-level ones. The filters select the link type and level, and the search box finds a node by name or CUIT. The **ES / EN** button in the header switches the page language; `grafos_nodos.html?lang=en` opens it in English.
 
 ## 5. AI Agent
 
@@ -143,6 +159,14 @@ The Scraper Detalle accepts a `dias` parameter: `0` retries every process withou
 | Failed "Cobertura de datos" email | An area lost amounts or company names. | Read the workflow log: it says which area and by how much. It is usually a COMPR.AR 503 error and fixes itself on the next Scraper Detalle run. |
 | "Railway sin respuesta" email | The site did not answer the smoke tests. | Check the latest Railway deployment and the environment variables. |
 | Chat answers with a message limit | The daily limit for that IP was reached. | Wait until the next day, or raise `CHAT_RATE_LIMIT_DIARIO` on Railway. |
+
+### 6.6 Workflow graph
+
+The workflow graph sums up this section in an interactive drawing with four columns: **sources** (COMPR.AR, the Contratos site, gob_bo_comprar_tgn, the APN staff roster, Presupuesto Abierto and SIGEN), **automated processes** (the workflows in table 6.1), **stored data** (the CSV and JSON files they produce) and **what the portal publishes** (body pages, alerts, relationship graph, AI agent, API and control emails). Every node carries its name; clicking one shows where it gets data from and what it feeds.
+
+- [Open the workflow graph ↗](https://mapa.ecosistematransparencia.com.ar/funcionamiento?sitio=jefatura&lang=en)
+
+It is different from the **information graph** (section 4.1), which shows the site's data: officials, suppliers and their links.
 
 ## 7. Development and deployment
 
