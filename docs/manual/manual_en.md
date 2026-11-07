@@ -160,6 +160,14 @@ The Scraper Detalle accepts a `dias` parameter: `0` retries every process withou
 | "Railway sin respuesta" email | The site did not answer the smoke tests. | Check the latest Railway deployment and the environment variables. |
 | Chat answers with a message limit | The daily limit for that IP was reached. | Wait until the next day, or raise `CHAT_RATE_LIMIT_DIARIO` on Railway. |
 
+### 6.6 Workflow graph
+
+The workflow graph sums up this section in an interactive drawing with four columns: **sources** (COMPR.AR, the Contratos site, gob_bo_comprar_tgn, the APN staff roster, Presupuesto Abierto and SIGEN), **automated processes** (the workflows in table 6.1), **stored data** (the CSV and JSON files they produce) and **what the portal publishes** (body pages, alerts, relationship graph, AI agent, API and control emails). Every node carries its name; clicking one shows where it gets data from and what it feeds.
+
+- [Open the workflow graph ↗](https://mapa.ecosistematransparencia.com.ar/funcionamiento?sitio=jefatura&lang=en)
+
+It is different from the **information graph** (section 4.1), which shows the site's data: officials, suppliers and their links.
+
 ## 7. Development and deployment
 
 ### 7.1 Local installation

@@ -160,6 +160,14 @@ El Scraper Detalle acepta el parámetro `dias`: con `0` reintenta todos los proc
 | Mail "Railway sin respuesta" | El sitio no respondió a los smoke tests. | Revisar el último despliegue en Railway y las variables de entorno. |
 | El chat responde "Límite de mensajes" | Se alcanzó el límite diario de esa IP. | Esperar al día siguiente, o subir `CHAT_RATE_LIMIT_DIARIO` en Railway. |
 
+### 6.6 Grafo de funcionamiento
+
+El grafo de funcionamiento resume esta sección en un dibujo interactivo con cuatro columnas: **fuentes** (COMPR.AR, el sitio Contratos, gob_bo_comprar_tgn, la nómina APN, Presupuesto Abierto y SIGEN), **procesos automáticos** (los workflows de la tabla 6.1), **datos guardados** (los CSV y JSON que generan) y **lo que publica** el portal (fichas, alertas, grafo de relaciones, Agente IA, API y mails de control). Cada nodo lleva su nombre; al hacer clic en uno se ve de dónde recibe datos y a qué alimenta.
+
+- [Abrir el grafo de funcionamiento ↗](https://mapa.ecosistematransparencia.com.ar/funcionamiento?sitio=jefatura)
+
+Es distinto del **grafo de información** (sección 4.1), que muestra los datos del sitio: funcionarios, proveedores y sus vínculos.
+
 ## 7. Desarrollo y despliegue
 
 ### 7.1 Instalación local
