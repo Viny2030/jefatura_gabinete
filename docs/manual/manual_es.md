@@ -204,7 +204,26 @@ La API es de acceso libre para consultas (GET). La documentación interactiva es
 
 Los archivos de datos también se pueden descargar directamente, por ejemplo `/data/meta.json`, `/data/cruces.json` o `/data/contratos_jgm.json`.
 
-## 9. Autor y contacto
+## 9. 🕸️ Relación con los otros sitios del ecosistema
+
+Este sitio es parte del **Ecosistema de Transparencia**: once monitores que se consultan entre sí. Abajo, con qué sitios intercambia datos ("usa →" = toma datos de ese sitio; "← lo usa" = ese sitio toma datos de este) y de qué fuentes oficiales se alimenta. El grafo es interactivo: hacé clic en cualquier sitio para ver su ficha.
+
+[Abrir el grafo completo ↗](https://mapa.ecosistematransparencia.com.ar/grafo?nodo=jefatura)
+
+**Conexiones**
+
+- **usa → MEACI**: Consulta en vivo la lista de CUIT sancionadas de MEACI (caché 6 h) para marcar proveedores.
+- **← lo usa Mapa**: Enlace y estado en vivo del sitio.
+
+**Fuentes oficiales**
+
+- Mapa del Estado (nómina)
+- COMPR.AR / datos.gob.ar
+- Boletín Oficial
+
+Detalle de todas las conexiones y de cómo se verifican las cifras entre sitios: [mapa.ecosistematransparencia.com.ar/manual#conexiones](https://mapa.ecosistematransparencia.com.ar/manual#conexiones)
+
+## 10. Autor y contacto
 
 Ph.D. Vicente Humberto Monteverde — Doctor en Ciencias Económicas, investigador en transparencia pública. Autor de la teoría de la Transferencia Regresiva de Ingresos y desarrollador del enfoque XAI aplicado a las contrataciones públicas. Publicaciones en Journal of Financial Crime (Emerald Publishing).
 
