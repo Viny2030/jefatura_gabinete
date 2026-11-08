@@ -245,6 +245,7 @@ footer a { color: #1e40af; text-decoration: none; }
   <button class="don-btn" onclick="abrirDonacion()">💚 Apoyar</button>
   <div class="badge-demo" id="badge-actualizacion" title="Los datos se generan automáticamente todos los días desde comprar.gob.ar, BORA y MapaDelEstado">⏳ Verificando datos…</div>
 </header>
+<div id="frescura-ficha" data-api="/api/frescura" style="padding:0 1rem"></div>
 
 <div class="hero">
   <h2>Monitoreo de contratos, nómina y alertas<br>del Poder Ejecutivo Nacional</h2>
@@ -601,5 +602,6 @@ footer a { color: #1e40af; text-decoration: none; }
     });
 })();
 </script>
+<script src="/data/frescura.js" defer></script>
 </body>
 </html>
