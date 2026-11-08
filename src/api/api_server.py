@@ -235,6 +235,42 @@ def health():
     }
 
 
+@app.get("/api/frescura")
+def frescura():
+    """Ficha de frescura (formato común del ecosistema, ver frescura.py): de
+    dónde sale cada dato, qué período cubre, cuándo se cargó y si está atrasado."""
+    from frescura import evaluar, fecha_es
+
+    meta = _load("meta.json") or {}
+    datos_al = meta.get("datos_al") or {}
+    nomina = _load("nomina_estado.json") or {}
+    cruces = _load("cruces.json") or {}
+    presu = _load("presupuesto_jgm.json") or {}
+    sigen = _load("sigen_auditorias.json") or {}
+    corte_presu = fecha_es((presu.get("fecha_actualizacion_fuente") or "").split(":")[-1])  # "...ejercicio 2026: 30 Octubre 2026."
+    return evaluar("jefatura", [
+        {"id": "contratos", "dato": "Contratos de JGM, SGP y Presidencia", "fuente": "COMPR.AR",
+         "periodo": f"hasta {datos_al['contratos']}" if datos_al.get("contratos") else "sin dato",
+         "periodo_fin": datos_al.get("contratos"), "ultima_carga": meta.get("generado"),
+         "frecuencia": "días hábiles", "max_dias_carga": 5, "max_dias_periodo": 10},
+        {"id": "nomina", "dato": "Nómina de autoridades", "fuente": "Mapa del Estado (carga manual)",
+         "periodo": f"descargada el {nomina['descargada']}" if nomina.get("descargada") else "sin dato",
+         "periodo_fin": nomina.get("descargada"), "ultima_carga": None,
+         "frecuencia": "manual, mensual", "max_dias_periodo": 45, "nota": nomina.get("fuente")},
+        {"id": "cruces", "dato": "Coincidencias entre nómina y proveedores", "fuente": "Cálculo propio (contratos y nómina)",
+         "periodo": f"{cruces.get('total', 0)} coincidencias", "ultima_carga": cruces.get("generado_en"),
+         "frecuencia": "diaria", "max_dias_carga": 3},
+        {"id": "presupuesto", "dato": f"Presupuesto de la JGM {presu.get('ejercicio') or ''}".strip(),
+         "fuente": "Presupuesto Abierto", "fuente_url": presu.get("fuente_url"),
+         "periodo": f"al {corte_presu.isoformat()}" if corte_presu else "sin dato", "periodo_fin": corte_presu,
+         "ultima_carga": presu.get("generado"), "frecuencia": "semanal", "max_dias_carga": 10, "max_dias_periodo": 45},
+        {"id": "sigen", "dato": "Informes de auditoría interna de la SIGEN", "fuente": "SIGEN (Archivo Web)",
+         "fuente_url": sigen.get("fuente_url"),
+         "periodo": f"{sigen.get('anio_desde')}-{sigen.get('anio_hasta')}" if sigen.get("anio_hasta") else "sin dato",
+         "ultima_carga": sigen.get("generado"), "frecuencia": "semanal (puede requerir carga manual)", "max_dias_carga": 30},
+    ])
+
+
 @app.get("/api/db-status")
 def db_status():
     """Estado de la conexión a PostgreSQL."""
