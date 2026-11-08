@@ -3,14 +3,14 @@ api_server.py
 =============
 API REST para el portal anticorrupción JGM.
 Sirve los datos generados por pipeline.py como endpoints JSON.
-También sirve el dashboard HTML estático.
+También sirve las páginas HTML del portal.
 
 Endpoints:
   GET /                     → index.html (portal principal)
   GET /jgm.html             → ficha JGM
   GET /sgp.html             → ficha SGP
   GET /presidencia.html     → ficha Presidencia
-  GET /dashboard.html       → dashboard con datos incrustados
+  GET /dashboard.html       → redirige a / (página retirada)
   GET /alertas.html         → alertas
   GET /grafos_nodos.html    → grafo de nodos
   GET /manual_usuario.html  → manual
@@ -200,9 +200,8 @@ def documentacion_html():
 
 @app.get("/dashboard.html", include_in_schema=False)
 def dashboard_html():
-    """dashboard.html sólo tiene datos de demostración fijos en el código (nombres,
-    CUIL y montos ficticios mezclados con funcionarios reales). Mientras no se
-    conecte a datos reales, se redirige a la portada para no publicarlos."""
+    """El prototipo con datos de demostración se retiró del repositorio. La ruta
+    queda para que los enlaces viejos lleven a la portada en lugar de dar 404."""
     return RedirectResponse(url="/", status_code=307)
 
 

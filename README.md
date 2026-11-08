@@ -15,7 +15,7 @@ mapadelestado     ──▶   scraper_nomina.py  ──▶
 Motor de cruce           FastAPI                Frontend público
 ──────────────           ───────                ────────────────
 matrix_kinship.py  ──▶
-matrix_corporate.py──▶  /api/v1/...     ──▶   dashboard.html
+matrix_corporate.py──▶  /api/v1/...     ──▶   index.html
 matrix_cashflow.py ──▶                         grafo_nodos.html
                                                alertas.html
 ```
@@ -82,7 +82,7 @@ python src/engine/matrix_cashflow.py
 # 8. Levantar API
 uvicorn src.api.api_server:app --reload --port 8000
 
-# 9. Abrir dashboard
+# 9. Abrir el portal
 # http://localhost:8000
 ```
 
