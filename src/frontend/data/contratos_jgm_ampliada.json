@@ -335,7 +335,7 @@
     "objeto": "SERVICIO DE IMPRESIÓN, COPIADO Y DIGITALIZACIÓN DE DOCUMENTOS POR DOCE (12) MESES CON PRORROGA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "21/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -8342,7 +8342,7 @@
     "objeto": "Adquisición de herramientas y elementos de trabajo para Personal Técnico del Organismo.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Pendiente Análisis",
     "fecha_apertura": "22/07/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8903,7 +8903,7 @@
     "objeto": "Cobertura Seguro de Enseres (transporte Mudanza)",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Preadjudicado",
     "fecha_apertura": "02/11/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -9005,7 +9005,7 @@
     "objeto": "Servicio de mantenimiento de ascensores",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Publicado",
+    "estado": "En Apertura",
     "fecha_apertura": "05/11/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -9770,7 +9770,7 @@
     "objeto": "IMPLEMENTACIÓN DEL SIS. ALERTA TEMPRANA AlertAR MEDIANTE LA PROVISIÓN DE PLATAFORMA CELL BROADCAST",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "22/07/2026 11:30 Hrs.",
     "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
   },
@@ -16043,7 +16043,7 @@
     "objeto": "Concesión de Uso para explotación comercial  Autopista  Ricchieri Km. 29 - Pcia.- Bs. As.",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Adjudicado con doc. contractuales generados",
+    "estado": "Adjudicado",
     "fecha_apertura": "12/06/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -16128,7 +16128,7 @@
     "objeto": "Concesión de Uso para explotación comercial- Locales Av. Las Heras, CABA",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Adjudicado con doc. contractuales generados",
+    "estado": "Adjudicado",
     "fecha_apertura": "12/06/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -16638,7 +16638,7 @@
     "objeto": "Concesión de Uso para la explotación comercial gastronómica, Av. del Libertador N° 1.902, CABA",
     "ejercicio": 2026,
     "gestion": "Adorni",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado con doc. contractuales generados",
     "fecha_apertura": "22/06/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -17794,7 +17794,7 @@
     "objeto": "Servicio de Mantenimiento integral, preventivo, correctivo y de emergencia para la Flota Automotor.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Pendiente Análisis",
     "fecha_apertura": "21/08/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -18287,7 +18287,7 @@
     "objeto": "Adquisición de CIENTO CINCUENTA (150) Monitores de 24”, para AABE.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "En Evaluacion",
     "fecha_apertura": "18/08/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20378,7 +20378,7 @@
     "objeto": "Venta Vehículo Marca: PEUGEOT 407 SV SPORT V6 TIPTRONIC, SEDAN 4 puertas - Año: 2008",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Publicado",
+    "estado": "En Apertura",
     "fecha_apertura": "05/11/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20839,6 +20839,23 @@
     "gestion": "Francos",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "06/10/2025 12:00 Hrs.",
+    "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
+  },
+  {
+    "numero_proceso": "392-0068-SPU24",
+    "organismo": "392/000 - Dirección General de Administración - AABE",
+    "proveedor": "Venta del Vehículo MARCA: PEUGEOT PARTNER PATAGÓNICA, DOMINIO: LOD 342, AÑO: 2.0",
+    "cuit": "",
+    "tipo_contratacion": "Subasta Pública",
+    "fecha_adjudicacion": "2026-11-06",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Venta del Vehículo MARCA: PEUGEOT PARTNER PATAGÓNICA, DOMINIO: LOD 342, AÑO: 2.012.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "06/11/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
   {
@@ -21381,7 +21398,7 @@
     "objeto": "Venta Inmueble calle Lavalle Nº 658/62/66, entre calles Maipú y Florida, 2º Piso, UF 172 CABA.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente de Inicio Subasta",
+    "estado": "En Evaluacion",
     "fecha_apertura": "28/10/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },

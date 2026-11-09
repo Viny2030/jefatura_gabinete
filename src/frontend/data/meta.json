@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-06 12:10",
+  "generado": "2026-11-09 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 813,
@@ -7,7 +7,7 @@
   "ramas": {
     "jgm": {
       "contratos": 186,
-      "contratos_adjudicados": 134,
+      "contratos_adjudicados": 135,
       "contratos_con_monto": 127,
       "personal": 710,
       "personal_identificado": 404,
@@ -27,7 +27,7 @@
     },
     "presidencia": {
       "contratos": 358,
-      "contratos_adjudicados": 240,
+      "contratos_adjudicados": 241,
       "contratos_con_monto": 236,
       "personal": 492,
       "personal_identificado": 243,
@@ -37,16 +37,16 @@
     }
   },
   "jgm_ampliada": {
-    "procesos": 1497,
-    "adjudicados": 997,
+    "procesos": 1498,
+    "adjudicados": 998,
     "con_monto": 935,
     "monto_ars": 155116419212.09003,
     "monto_usd": 418855213.5,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
-        "procesos": 446,
-        "adjudicados": 224,
+        "procesos": 447,
+        "adjudicados": 225,
         "con_monto": 209,
         "monto_ars": 103998544906.16998,
         "monto_usd": 292808147.44
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-11-05",
+    "contratos": "2026-11-06",
     "personal": "2026-11-04",
     "nomina_regenerada_hoy": false
   }
