@@ -1,8 +1,8 @@
 {
-  "generado": "2026-11-11 12:11",
+  "generado": "2026-11-12 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
-  "total_contratos": 813,
+  "total_contratos": 814,
   "total_personal": 1343,
   "ramas": {
     "jgm": {
@@ -16,7 +16,7 @@
       "contratos_usd": 5
     },
     "sgp": {
-      "contratos": 269,
+      "contratos": 270,
       "contratos_adjudicados": 214,
       "contratos_con_monto": 191,
       "personal": 141,
@@ -37,15 +37,15 @@
     }
   },
   "jgm_ampliada": {
-    "procesos": 1498,
+    "procesos": 1503,
     "adjudicados": 998,
     "con_monto": 935,
-    "monto_ars": 155116419212.09003,
+    "monto_ars": 155116419212.09,
     "monto_usd": 418855213.5,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
-        "procesos": 447,
+        "procesos": 448,
         "adjudicados": 225,
         "con_monto": 209,
         "monto_ars": 103998544906.16998,
@@ -53,7 +53,7 @@
       },
       {
         "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
-        "procesos": 231,
+        "procesos": 232,
         "adjudicados": 177,
         "con_monto": 176,
         "monto_ars": 8492479721.17,
@@ -69,10 +69,10 @@
       },
       {
         "organismo": "107 - Administración de Parques Nacionales",
-        "procesos": 167,
+        "procesos": 168,
         "adjudicados": 119,
         "con_monto": 116,
-        "monto_ars": 8717803254.51,
+        "monto_ars": 8717803254.509998,
         "monto_usd": 5099774.25
       },
       {
@@ -93,7 +93,7 @@
       },
       {
         "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
-        "procesos": 74,
+        "procesos": 76,
         "adjudicados": 60,
         "con_monto": 24,
         "monto_ars": 3688794484.4300003,
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-11-09",
+    "contratos": "2026-11-11",
     "personal": "2026-11-04",
     "nomina_regenerada_hoy": false
   }

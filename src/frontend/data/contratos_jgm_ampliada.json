@@ -335,7 +335,7 @@
     "objeto": "SERVICIO DE IMPRESIÓN, COPIADO Y DIGITALIZACIÓN DE DOCUMENTOS POR DOCE (12) MESES CON PRORROGA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "21/09/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
@@ -1071,6 +1071,23 @@
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
   {
+    "numero_proceso": "91-0012-CDI26",
+    "organismo": "91/00 - Departamento de Compras, Mantenimiento y Suministros",
+    "proveedor": "Seguro contra incendio y seguro responsabilidad civil Av. Rivadavia y Anexos",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-11-12",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Seguro contra incendio y seguro responsabilidad civil Av. Rivadavia y Anexos",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "12/11/2026 10:00 Hrs.",
+    "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
+  },
+  {
     "numero_proceso": "91-0013-CDI23",
     "organismo": "91/00 - Departamento de Compras, Mantenimiento y Suministros",
     "proveedor": "ADQUISICIÓN DE TÓNER ORIGINALES 2023",
@@ -1102,6 +1119,23 @@
     "gestion": "Adorni",
     "estado": "Adjudicado",
     "fecha_apertura": "10/12/2025 10:00 Hrs.",
+    "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
+  },
+  {
+    "numero_proceso": "91-0013-CDI26",
+    "organismo": "91/00 - Departamento de Compras, Mantenimiento y Suministros",
+    "proveedor": "Adquisición de Resmas de Papel",
+    "cuit": "",
+    "tipo_contratacion": "Contratación Directa",
+    "fecha_adjudicacion": "2026-11-12",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de Resmas de Papel",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "12/11/2026 10:00 Hrs.",
     "organismo_saf": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)"
   },
   {
@@ -2496,6 +2530,23 @@
     "gestion": "Francos",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "10/10/2024 15:00 Hrs.",
+    "organismo_saf": "106 - Comisión Nacional de Actividades Espaciales (CONAE)"
+  },
+  {
+    "numero_proceso": "15-0009-LPR26",
+    "organismo": "15 - Subgerencia de Compras y Contrataciones",
+    "proveedor": "Provisión de botellones de agua potable de mesa para consumo en ambas sedes de l",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-12",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Provisión de botellones de agua potable de mesa para consumo en ambas sedes de la CONAE.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "12/11/2026 11:00 Hrs.",
     "organismo_saf": "106 - Comisión Nacional de Actividades Espaciales (CONAE)"
   },
   {
@@ -7803,6 +7854,23 @@
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
+    "numero_proceso": "74-0032-LPU26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "Adquisición de motores  para embarcaciones.",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-11-12",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de motores  para embarcaciones.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "12/11/2026 10:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
     "numero_proceso": "74-0033-CDI23",
     "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
     "proveedor": "NACION SEGUROS S.A.",
@@ -8342,7 +8410,7 @@
     "objeto": "Adquisición de herramientas y elementos de trabajo para Personal Técnico del Organismo.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Análisis",
+    "estado": "Pendiente Afectación",
     "fecha_apertura": "22/07/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -8614,7 +8682,7 @@
     "objeto": "Servicio de impresión de SIETE MIL QUINIENTAS (7.500) LÁMINAS SERIE 3 DE BIODIVERSIDAD",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Adjudicado con doc. contractuales generados",
+    "estado": "Adjudicado",
     "fecha_apertura": "14/09/2026 10:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -17097,7 +17165,7 @@
     "objeto": "servicios de organización, gestión y realización de subastas electrónicas y de intermediación",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "15/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -18287,7 +18355,7 @@
     "objeto": "Adquisición de CIENTO CINCUENTA (150) Monitores de 24”, para AABE.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "18/08/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20873,6 +20941,23 @@
     "gestion": "Adorni",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "20/11/2025 12:00 Hrs.",
+    "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
+  },
+  {
+    "numero_proceso": "392-0070-SPU26",
+    "organismo": "392/000 - Dirección General de Administración - AABE",
+    "proveedor": "Venta de inmueble sito en Cajaravilla Nº 4675 C.A.B.A.",
+    "cuit": "",
+    "tipo_contratacion": "Subasta Pública",
+    "fecha_adjudicacion": "2026-11-12",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Venta de inmueble sito en Cajaravilla Nº 4675 C.A.B.A.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "12/11/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
   {

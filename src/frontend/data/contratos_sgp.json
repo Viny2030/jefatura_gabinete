@@ -2272,6 +2272,22 @@
     "fecha_apertura": "27/12/2024 12:00 Hrs."
   },
   {
+    "numero_proceso": "23-0014-LPR26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Adquisición de Distintivos y Presentes Institucionales de Casa Militar.",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-12",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de Distintivos y Presentes Institucionales de Casa Militar.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "12/11/2026 12:00 Hrs."
+  },
+  {
     "numero_proceso": "23-0014-LPU23",
     "organismo": "23/000 - Dirección General de Administración - SG",
     "proveedor": "Servicio de Fumigación y Servicio de limpieza y desinfección de tanques Chapadma",
