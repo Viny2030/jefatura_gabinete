@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-12 12:11",
+  "generado": "2026-11-13 12:10",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 814,
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-11-11",
+    "contratos": "2026-11-12",
     "personal": "2026-11-04",
     "nomina_regenerada_hoy": false
   }
