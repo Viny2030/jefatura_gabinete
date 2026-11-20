@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-19 12:10",
+  "generado": "2026-11-20 12:10",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 814,
@@ -39,8 +39,8 @@
   "jgm_ampliada": {
     "procesos": 1503,
     "adjudicados": 998,
-    "con_monto": 937,
-    "monto_ars": 159831219212.09,
+    "con_monto": 938,
+    "monto_ars": 159834639212.09,
     "monto_usd": 418855213.5,
     "organismos": [
       {
@@ -71,8 +71,8 @@
         "organismo": "107 - Administración de Parques Nacionales",
         "procesos": 168,
         "adjudicados": 119,
-        "con_monto": 116,
-        "monto_ars": 8717803254.509998,
+        "con_monto": 117,
+        "monto_ars": 8721223254.509998,
         "monto_usd": 5099774.25
       },
       {
