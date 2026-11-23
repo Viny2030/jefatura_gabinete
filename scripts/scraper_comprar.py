@@ -164,12 +164,12 @@ def payload_base(vs, saf_id, fecha_desde, fecha_hasta, fecha_hasta_ts):
         "ctl00$CPH1$devDteEdtFechaAperturaDesde":                     fecha_desde,
         "ctl00_CPH1_devDteEdtFechaAperturaDesde_DDDWS":               "0:0:12000:30:1584:0:0:0",
         "ctl00_CPH1_devDteEdtFechaAperturaDesde_DDD_C_FNPWS":         "0:0:-1:0:0:0:0:0:",
-        "ctl00$CPH1$devDteEdtFechaAperturaDesde$DDD$C":               f"{fecha_desde}:{fecha_desde}",
+        "ctl00$CPH1$devDteEdtFechaAperturaDesde$DDD$C":               datetime.today().strftime("%m/%d/%Y"),
         "ctl00_CPH1_devDteEdtFechaAperturaHasta_Raw":                 fecha_hasta_ts,
         "ctl00$CPH1$devDteEdtFechaAperturaHasta":                     fecha_hasta,
         "ctl00_CPH1_devDteEdtFechaAperturaHasta_DDDWS":               "0:0:12000:30:1584:0:0:0",
         "ctl00_CPH1_devDteEdtFechaAperturaHasta_DDD_C_FNPWS":         "0:0:-1:0:0:0:0:0:",
-        "ctl00$CPH1$devDteEdtFechaAperturaHasta$DDD$C":               fecha_hasta,
+        "ctl00$CPH1$devDteEdtFechaAperturaHasta$DDD$C":               datetime.today().strftime("%m/%d/%Y"),
         "ctl00$CPH1$ddlResultadoOrdenadoPor":                         "PLI.Pliego.NumeroPliego",
         "ctl00$CPH1$ddlTipoOperacion":                                "-2",
         "ctl00$CPH1$hidEstadoListaPliegos":                           "NOREPORTEEXCEL",
@@ -286,6 +286,14 @@ def scrapear_todos(verbose=True, saf_id=None):
     p2["ctl00$ScriptManager1"] = "ctl00$ScriptManager1|ctl00$CPH1$ddlJurisdicion"
     p2["__EVENTTARGET"]        = "ctl00$CPH1$ddlJurisdicion"
     p2["__EVENTARGUMENT"]      = ""
+    p2["__ASYNCPOST"]          = "true"
+    # En este paso (recién elegido el organismo) el sitio todavía no tiene
+    # fechas cargadas: hay que mandar los campos de fecha "vacíos", igual que
+    # hace el navegador antes de que el usuario las complete.
+    p2["ctl00_CPH1_devDteEdtFechaAperturaDesde_Raw"] = "N"
+    p2["ctl00$CPH1$devDteEdtFechaAperturaDesde"]     = ""
+    p2["ctl00_CPH1_devDteEdtFechaAperturaHasta_Raw"] = "N"
+    p2["ctl00$CPH1$devDteEdtFechaAperturaHasta"]     = ""
     r2 = session.post(BASE_URL, data=p2, headers=HEADERS_AJAX, verify=False)
     actualizar_viewstate(r2.text, vs)
     if verbose:
