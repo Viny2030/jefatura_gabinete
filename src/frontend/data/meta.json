@@ -1,8 +1,8 @@
 {
-  "generado": "2026-11-23 12:12",
+  "generado": "2026-11-23 20:18",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
-  "total_contratos": 814,
+  "total_contratos": 817,
   "total_personal": 1343,
   "ramas": {
     "jgm": {
@@ -16,7 +16,7 @@
       "contratos_usd": 5
     },
     "sgp": {
-      "contratos": 270,
+      "contratos": 271,
       "contratos_adjudicados": 214,
       "contratos_con_monto": 191,
       "personal": 141,
@@ -26,35 +26,35 @@
       "contratos_usd": 30
     },
     "presidencia": {
-      "contratos": 358,
+      "contratos": 360,
       "contratos_adjudicados": 241,
       "contratos_con_monto": 237,
       "personal": 492,
       "personal_identificado": 243,
-      "monto_total": 15314910944.660002,
+      "monto_total": 15314910944.66,
       "monto_usd": 525709.0,
       "contratos_usd": 1
     }
   },
   "jgm_ampliada": {
-    "procesos": 1503,
-    "adjudicados": 998,
+    "procesos": 1521,
+    "adjudicados": 1006,
     "con_monto": 938,
     "monto_ars": 159834639212.09,
     "monto_usd": 418855213.5,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
-        "procesos": 448,
-        "adjudicados": 225,
+        "procesos": 455,
+        "adjudicados": 226,
         "con_monto": 211,
         "monto_ars": 108713344906.16998,
         "monto_usd": 292808147.44
       },
       {
         "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
-        "procesos": 232,
-        "adjudicados": 177,
+        "procesos": 237,
+        "adjudicados": 178,
         "con_monto": 176,
         "monto_ars": 8492479721.17,
         "monto_usd": 5001794.44
@@ -69,8 +69,8 @@
       },
       {
         "organismo": "107 - Administración de Parques Nacionales",
-        "procesos": 168,
-        "adjudicados": 119,
+        "procesos": 170,
+        "adjudicados": 122,
         "con_monto": 117,
         "monto_ars": 8721223254.509998,
         "monto_usd": 5099774.25
@@ -78,22 +78,22 @@
       {
         "organismo": "207 - Ente Nacional de Comunicaciones (ENACOM)",
         "procesos": 145,
-        "adjudicados": 101,
+        "adjudicados": 102,
         "con_monto": 101,
         "monto_ars": 6908852098.499999,
         "monto_usd": 104247463.46
       },
       {
         "organismo": "121 - Banco Nacional de Datos Genéticos",
-        "procesos": 79,
+        "procesos": 80,
         "adjudicados": 66,
         "con_monto": 64,
-        "monto_ars": 1828419274.36,
+        "monto_ars": 1828419274.3600001,
         "monto_usd": 0.0
       },
       {
         "organismo": "103 - Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET)",
-        "procesos": 76,
+        "procesos": 77,
         "adjudicados": 60,
         "con_monto": 24,
         "monto_ars": 3688794484.4300003,
@@ -109,15 +109,15 @@
       },
       {
         "organismo": "209 - Agencia de Acceso a la Información Pública",
-        "procesos": 50,
-        "adjudicados": 42,
+        "procesos": 51,
+        "adjudicados": 44,
         "con_monto": 42,
         "monto_ars": 428659182.68,
         "monto_usd": 79313.52
       },
       {
         "organismo": "173 - Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
-        "procesos": 44,
+        "procesos": 45,
         "adjudicados": 29,
         "con_monto": 29,
         "monto_ars": 296058669.34000003,

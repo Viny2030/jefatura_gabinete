@@ -640,6 +640,22 @@
     "fecha_apertura": "19/04/2023 13:30 Hrs."
   },
   {
+    "numero_proceso": "83-0008-LPR26",
+    "organismo": "83/000 - Dirección General de Administración Financiera - MC",
+    "proveedor": "Adquisición de insumos de ferretería y elementos (Subsecretaría de Gestión y Des",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-17",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de insumos de ferretería y elementos (Subsecretaría de Gestión y Desarrollo Cultural)",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "17/11/2026 13:00 Hrs."
+  },
+  {
     "numero_proceso": "83-0008-LPU23",
     "organismo": "83/000 - Dirección General de Administración Financiera - MC",
     "proveedor": "Eldu Trafoconsult SA",
@@ -4528,6 +4544,22 @@
     "fecha_apertura": "15/11/2024 12:00 Hrs."
   },
   {
+    "numero_proceso": "300-0004-LPU26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Licencias Veeam",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-11-13",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Licencias Veeam",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "13/11/2026 09:00 Hrs."
+  },
+  {
     "numero_proceso": "300-0005-CDI23",
     "organismo": "300/000 - Dirección General de Administración - SECLyT",
     "proveedor": "IJ INTERNATIONAL LEGAL GROUP SA",
@@ -4988,7 +5020,7 @@
     "objeto": "Servicio de mantenimiento predictivo, preventivo y correctivo de UN ascensor -Sede Campichuelo.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "03/11/2026 10:00 Hrs."
   },
   {

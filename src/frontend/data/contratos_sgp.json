@@ -1788,7 +1788,7 @@
     "objeto": "Adquisición 1 equipo autoelevador de dos columnas electro-hidráulico - Dpto Transporte Terrestre",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Fracasado",
     "fecha_apertura": "26/10/2026 12:00 Hrs."
   },
   {
@@ -1948,7 +1948,7 @@
     "objeto": "Adquisición de Artículos de Librería y útiles de oficina para áreas de la Secretaría General.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "27/10/2026 12:00 Hrs."
   },
   {
@@ -1996,7 +1996,7 @@
     "objeto": "Adquisición de planchas de policarbonato, materiales de impermeabilización, zinguería, etc.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "07/09/2026 12:00 Hrs."
   },
   {
@@ -2156,7 +2156,7 @@
     "objeto": "Adquisición de repuestos tipo autopartes para vehículos de la flota de la Presidencia de la Nación.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "22/10/2026 12:00 Hrs."
   },
   {
@@ -2284,7 +2284,7 @@
     "objeto": "Adquisición de Distintivos y Presentes Institucionales de Casa Militar.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Publicado",
+    "estado": "En Evaluacion",
     "fecha_apertura": "12/11/2026 12:00 Hrs."
   },
   {
@@ -2348,7 +2348,7 @@
     "objeto": "Provisión de productos secos de almacén, con destino a CR y RPO",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "15/09/2026 12:00 Hrs."
   },
   {
@@ -2844,7 +2844,7 @@
     "objeto": "Servicio integral de reparación y mantenimiento preventivo y correctivo del Data Center.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "05/11/2026 12:00 Hrs."
   },
   {
@@ -2958,6 +2958,22 @@
     "gestion": "Francos",
     "estado": "Adjudicado",
     "fecha_apertura": "20/12/2024 12:00 Hrs."
+  },
+  {
+    "numero_proceso": "23-0021-LPU26",
+    "organismo": "23/000 - Dirección General de Administración - SG",
+    "proveedor": "Adquisición de DOS (2) equipos de seguridad tipo kit detector contra medidas ele",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-11-17",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Adquisición de DOS (2) equipos de seguridad tipo kit detector contra medidas electrónicas.",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "17/11/2026 12:00 Hrs."
   },
   {
     "numero_proceso": "23-0022-CDI23",
