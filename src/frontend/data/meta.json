@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23 20:21",
+  "generado": "2026-11-24 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 817,
@@ -39,25 +39,25 @@
   "jgm_ampliada": {
     "procesos": 1521,
     "adjudicados": 1006,
-    "con_monto": 938,
-    "monto_ars": 159834639212.09,
-    "monto_usd": 418855213.5,
+    "con_monto": 946,
+    "monto_ars": 160057384857.89,
+    "monto_usd": 418871508.5,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
         "procesos": 455,
         "adjudicados": 226,
-        "con_monto": 211,
-        "monto_ars": 108713344906.16998,
+        "con_monto": 212,
+        "monto_ars": 108814738826.16998,
         "monto_usd": 292808147.44
       },
       {
         "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
         "procesos": 237,
         "adjudicados": 178,
-        "con_monto": 176,
+        "con_monto": 177,
         "monto_ars": 8492479721.17,
-        "monto_usd": 5001794.44
+        "monto_usd": 5017594.44
       },
       {
         "organismo": "322 - Secretaría de Turismo y Ambiente",
@@ -71,16 +71,16 @@
         "organismo": "107 - Administración de Parques Nacionales",
         "procesos": 170,
         "adjudicados": 122,
-        "con_monto": 117,
-        "monto_ars": 8721223254.509998,
+        "con_monto": 120,
+        "monto_ars": 8734263259.009998,
         "monto_usd": 5099774.25
       },
       {
         "organismo": "207 - Ente Nacional de Comunicaciones (ENACOM)",
         "procesos": 145,
         "adjudicados": 102,
-        "con_monto": 101,
-        "monto_ars": 6908852098.499999,
+        "con_monto": 102,
+        "monto_ars": 6999602098.5,
         "monto_usd": 104247463.46
       },
       {
@@ -111,9 +111,9 @@
         "organismo": "209 - Agencia de Acceso a la Información Pública",
         "procesos": 51,
         "adjudicados": 44,
-        "con_monto": 42,
-        "monto_ars": 428659182.68,
-        "monto_usd": 79313.52
+        "con_monto": 44,
+        "monto_ars": 446220903.98,
+        "monto_usd": 79808.52
       },
       {
         "organismo": "173 - Agencia Nacional de Promoción de la Investigación, el Desarrollo Tecnológico y la Innovación",
