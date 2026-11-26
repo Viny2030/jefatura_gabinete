@@ -1,8 +1,8 @@
 {
-  "generado": "2026-11-25 12:11",
+  "generado": "2026-11-26 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
-  "total_contratos": 817,
+  "total_contratos": 818,
   "total_personal": 1343,
   "ramas": {
     "jgm": {
@@ -26,7 +26,7 @@
       "contratos_usd": 30
     },
     "presidencia": {
-      "contratos": 360,
+      "contratos": 361,
       "contratos_adjudicados": 241,
       "contratos_con_monto": 237,
       "personal": 492,
@@ -37,8 +37,8 @@
     }
   },
   "jgm_ampliada": {
-    "procesos": 1521,
-    "adjudicados": 1006,
+    "procesos": 1523,
+    "adjudicados": 1010,
     "con_monto": 946,
     "monto_ars": 160057384857.89,
     "monto_usd": 418871508.5,
@@ -46,7 +46,7 @@
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
         "procesos": 455,
-        "adjudicados": 226,
+        "adjudicados": 228,
         "con_monto": 212,
         "monto_ars": 108814738826.16998,
         "monto_usd": 292808147.44
@@ -69,15 +69,15 @@
       },
       {
         "organismo": "107 - Administración de Parques Nacionales",
-        "procesos": 170,
-        "adjudicados": 122,
+        "procesos": 171,
+        "adjudicados": 123,
         "con_monto": 120,
         "monto_ars": 8734263259.009998,
         "monto_usd": 5099774.25
       },
       {
         "organismo": "207 - Ente Nacional de Comunicaciones (ENACOM)",
-        "procesos": 145,
+        "procesos": 146,
         "adjudicados": 102,
         "con_monto": 102,
         "monto_ars": 6999602098.5,
@@ -86,7 +86,7 @@
       {
         "organismo": "121 - Banco Nacional de Datos Genéticos",
         "procesos": 80,
-        "adjudicados": 66,
+        "adjudicados": 67,
         "con_monto": 64,
         "monto_ars": 1828419274.3600001,
         "monto_usd": 0.0

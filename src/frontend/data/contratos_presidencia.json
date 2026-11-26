@@ -444,7 +444,7 @@
     "objeto": "Adquisición de Insumos de Pinturería",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "En Evaluacion",
     "fecha_apertura": "16/09/2026 13:00 Hrs."
   },
   {
@@ -5054,6 +5054,22 @@
     "gestion": "Adorni",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "30/01/2026 11:00 Hrs."
+  },
+  {
+    "numero_proceso": "300-0010-LPR26",
+    "organismo": "300/000 - Dirección General de Administración - SECLyT",
+    "proveedor": "Servicio de mantenimiento  de los sistemas de detección y extinción de incendio",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Privada",
+    "fecha_adjudicacion": "2026-11-26",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio de mantenimiento  de los sistemas de detección y extinción de incendio",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "26/11/2026 11:00 Hrs."
   },
   {
     "numero_proceso": "300-0011-LPR25",

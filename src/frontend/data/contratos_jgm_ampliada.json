@@ -6557,7 +6557,7 @@
     "objeto": "Provisión y contratación del servicio de instalación y puesta en funcionamiento de baterías.",
     "ejercicio": 2025,
     "gestion": "Adorni",
-    "estado": "Fracasado",
+    "estado": "Dejado Sin Efecto",
     "fecha_apertura": "19/12/2025 12:00 Hrs.",
     "organismo_saf": "336 - Secretaría de Innovación, Ciencia y Tecnología"
   },
@@ -6746,6 +6746,23 @@
     "gestion": "Francos",
     "estado": "Adjudicado",
     "fecha_apertura": "03/10/2025 09:00 Hrs.",
+    "organismo_saf": "107 - Administración de Parques Nacionales"
+  },
+  {
+    "numero_proceso": "74-0002-CPU26",
+    "organismo": "74/00 - ADMINISTRACIÓN DE PARQUES NACIONALES - COORDINACIÓN DE CONTRATACIONES",
+    "proveedor": "Servicio Plataforma Digital y Subasta Online de Turnos Cotos de Caza – PN Lanín ",
+    "cuit": "",
+    "tipo_contratacion": "Concurso Público",
+    "fecha_adjudicacion": "2026-11-26",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "Servicio Plataforma Digital y Subasta Online de Turnos Cotos de Caza – PN Lanín y Nahuel Huapi",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "Publicado",
+    "fecha_apertura": "26/11/2026 11:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
   {
@@ -8818,7 +8835,7 @@
     "objeto": "Adquisición de sombreros reglamentarios destinados al CGN de las Áreas Protegidas del Organismo.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Afectación",
+    "estado": "Adjudicado",
     "fecha_apertura": "24/09/2026 11:00 Hrs.",
     "organismo_saf": "107 - Administración de Parques Nacionales"
   },
@@ -10076,7 +10093,7 @@
     "objeto": "SERVICIO DE TELEFONÍA CELULAR MÓVIL Y TRANSFERENCIA DE DATOS",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Preadjudicado",
+    "estado": "Disponible Para Adjudicar",
     "fecha_apertura": "15/09/2026 11:30 Hrs.",
     "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
   },
@@ -10248,6 +10265,23 @@
     "gestion": "Francos",
     "estado": "Dejado Sin Efecto",
     "fecha_apertura": "26/06/2025 11:30 Hrs.",
+    "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
+  },
+  {
+    "numero_proceso": "454-0005-LPU26",
+    "organismo": "454/000 - Subdirección de Compras y Contrataciones",
+    "proveedor": "SERVICIO DE LIMPIEZA Y MAESTRANZA, PARA LAS DEPENDENCIAS DEL ENTE NACIONAL DE CO",
+    "cuit": "",
+    "tipo_contratacion": "Licitación Pública",
+    "fecha_adjudicacion": "2026-11-25",
+    "monto_adjudicado": null,
+    "moneda": "",
+    "fecha_perfeccionamiento": "",
+    "objeto": "SERVICIO DE LIMPIEZA Y MAESTRANZA, PARA LAS DEPENDENCIAS DEL ENTE NACIONAL DE COMUNICACIONES",
+    "ejercicio": 2026,
+    "gestion": "Santilli",
+    "estado": "En Apertura",
+    "fecha_apertura": "25/11/2026 11:30 Hrs.",
     "organismo_saf": "207 - Ente Nacional de Comunicaciones (ENACOM)"
   },
   {
@@ -17335,7 +17369,7 @@
     "objeto": "servicios de organización, gestión y realización de subastas electrónicas y de intermediación",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "15/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -17879,7 +17913,7 @@
     "objeto": "Adquisición de Insumos Informáticos para el uso de la AGENCIA DE ADMINISTRACIÓN DE BIENES DEL ESTADO",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "Adjudicado con doc. contractuales generados",
     "fecha_apertura": "15/07/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -18338,7 +18372,7 @@
     "objeto": "Servicio de Enlace Full Internet de 600 Mbps para uso de la AGENCIA.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Pendiente Adjudicaci?n",
     "fecha_apertura": "28/09/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -18542,7 +18576,7 @@
     "objeto": "Adquisición de CIENTO CINCUENTA (150) Monitores de 24”, para AABE.",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Pendiente Adjudicaci?n",
+    "estado": "En Evaluacion",
     "fecha_apertura": "18/08/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -20701,7 +20735,7 @@
     "objeto": "Venta Inmueble Avenida Córdoba Nª 5.405/11 - CIUDAD AUTÓNOMA DE BUENOS AIRES -",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Fracasado",
     "fecha_apertura": "27/08/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -21789,7 +21823,7 @@
     "objeto": "Inmueble sito en Lavalle Nº 658/62/66, 5º Piso, UF 309, entre calles Maipú y Florida, CABA",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "09/10/2026 12:00 Hrs.",
     "organismo_saf": "205 - Agencia de Administración de Bienes del Estado (AABE)"
   },
@@ -23982,7 +24016,7 @@
     "objeto": "Adquisición insumos para el Laboratorio del BNDG",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Evaluacion",
+    "estado": "Preadjudicado",
     "fecha_apertura": "23/10/2026 10:00 Hrs.",
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
@@ -24543,7 +24577,7 @@
     "objeto": "Servicio de mantenimiento preventivo y correctivo de los equipos críticos del Laboratorio BNDG",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "En Apertura",
+    "estado": "Preadjudicado",
     "fecha_apertura": "18/11/2026 11:00 Hrs.",
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
@@ -24679,7 +24713,7 @@
     "objeto": "Provisión, instalación, configuración e integración de grupo electrogeno - BNDG",
     "ejercicio": 2026,
     "gestion": "Santilli",
-    "estado": "Disponible Para Adjudicar",
+    "estado": "Adjudicado",
     "fecha_apertura": "30/10/2026 10:00 Hrs.",
     "organismo_saf": "121 - Banco Nacional de Datos Genéticos"
   },
