@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-26 12:11",
+  "generado": "2026-11-27 12:11",
   "fuente_contratos": "comprar",
   "csv_utilizado": "contratos_jgm.csv",
   "total_contratos": 818,
@@ -39,17 +39,17 @@
   "jgm_ampliada": {
     "procesos": 1523,
     "adjudicados": 1010,
-    "con_monto": 946,
-    "monto_ars": 160057384857.89,
-    "monto_usd": 418871508.5,
+    "con_monto": 949,
+    "monto_ars": 160363196507.89,
+    "monto_usd": 418878686.1999999,
     "organismos": [
       {
         "organismo": "205 - Agencia de Administración de Bienes del Estado (AABE)",
         "procesos": 455,
         "adjudicados": 228,
-        "con_monto": 212,
+        "con_monto": 213,
         "monto_ars": 108814738826.16998,
-        "monto_usd": 292808147.44
+        "monto_usd": 292815325.14
       },
       {
         "organismo": "106 - Comisión Nacional de Actividades Espaciales (CONAE)",
@@ -71,8 +71,8 @@
         "organismo": "107 - Administración de Parques Nacionales",
         "procesos": 171,
         "adjudicados": 123,
-        "con_monto": 120,
-        "monto_ars": 8734263259.009998,
+        "con_monto": 121,
+        "monto_ars": 8881084659.009998,
         "monto_usd": 5099774.25
       },
       {
@@ -87,8 +87,8 @@
         "organismo": "121 - Banco Nacional de Datos Genéticos",
         "procesos": 80,
         "adjudicados": 67,
-        "con_monto": 64,
-        "monto_ars": 1828419274.3600001,
+        "con_monto": 65,
+        "monto_ars": 1987409524.3600001,
         "monto_usd": 0.0
       },
       {
@@ -126,7 +126,7 @@
     ]
   },
   "datos_al": {
-    "contratos": "2026-11-23",
+    "contratos": "2026-11-26",
     "personal": "2026-11-04",
     "nomina_regenerada_hoy": false
   }
